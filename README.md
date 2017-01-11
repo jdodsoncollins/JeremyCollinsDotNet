@@ -16,7 +16,25 @@ Steps from Ubuntu 14 LTS command line, once local install is done:
 
 6. git clone in a site, such as this one: `git clone https://github.com/jdodsoncollins/JeremyCollinsDotNet.git`
 
-7. cd into directory with above git clone, and run `jekyll build`. This places built files into the '_site' directory
+7. cd to your new directory and install bundler with `gem install bundler`
+
+8. Install gems with `bundle install`
+
+9. cd into directory with above git clone, and run `jekyll build`. This places built files into the '_site' directory
+
+10. Ensure your server is set to point its root to '_site/index.html'
+
+- If using Apache, here are some settings for this important last bit (since the above #10 leaves out some details)
+- 1. Enter `sudo nano /etc/apache2/sites-available/000-default.conf` and edit the line 'DocumentRoot /var/www/html' to point at where the git clone '_sites' directory is. Go to your served web address now, and you'll see a `403` 'forbidden' error though.
+- 2. Enter `sudo nano /etc/apache2/apache2.conf` and add the following to the end of the file with your directory added in below
+```<Directory /home/you/project/_site>
+  Options Indexes FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>```  
+
+- 3. Reload apache `sudo service apache2 reload`
+- 4. It should be live. To deploy updates, `git pull` on your server and redeploy jekyll
 
 
 # Local Installation
