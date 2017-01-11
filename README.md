@@ -1,4 +1,26 @@
 ##JeremyCollins.net web source
+
+# Remote Installation on Ubuntu Server
+
+Steps from Ubuntu 14 LTS command line, once local install is done:
+
+1. go to root web directory for project using server config of your choice
+
+2. Run command to install ruby, the ruby development libraries: `sudo apt-get install ruby ruby-dev make gcc nodejs`
+
+3. Install the Jekyll gem system wide `sudo gem install jekyll`
+
+4. Check installation `jekyll -v`
+
+5. Make sure git is installed: `sudo apt-get install git`
+
+6. git clone in a site, such as this one: `git clone https://github.com/jdodsoncollins/JeremyCollinsDotNet.git`
+
+7. cd into directory with above git clone, and run `jekyll build`. This places built files into the '_site' directory
+
+
+# Local Installation
+
 #### Based on the [Neo-HPSTR Jekyll Theme](http://aronbordin.com/neo-hpstr-jekyll-theme)
 
 
