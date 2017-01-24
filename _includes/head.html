@@ -3,6 +3,10 @@
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
 
+<!-- Wondering about the page source? -->
+<!-- This site is built using Jekyll, so you'll want to see the pre-compiled source. -->
+<!-- Take a look at https://github.com/jdodsoncollins/JeremyCollinsDotNet and https://jekyllrb.com -->
+
 {% if site.owner.twitter or site.twitter %}<!-- Twitter Cards -->
 {% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
 {% else %}<meta name="twitter:card" content="summary">{% endif %}
