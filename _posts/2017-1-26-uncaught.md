@@ -15,7 +15,8 @@ With the recent release of Angular 1.6, I've updated a codebase and ran into a n
 Possibly unhandled rejection: {"status":400,"statusText":"SearchCtrl._labot5d8x did not register the event: searching"}
 ```
 
-![Browser console error](/images/unhandled-rejection.png)
+
+<img src="/images/unhandled-rejection.png" alt="Browser console error" class="image-md">
 
 The statusText above really isn't super important. The `Possibly unhandled rejection` is the tricky one, due to its generic-ness.
 
