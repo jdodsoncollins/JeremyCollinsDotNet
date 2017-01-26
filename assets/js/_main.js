@@ -78,9 +78,9 @@ $(document).ready(function(){
         "position": "bottom",
         "content": [
           "<a class='fa fa-search' href='/search'></a>",
-          "<a class='fa fa-envelope' href='#/'></a>",
-          "<a class='fa fa-twitter' href='#/'></a>",
-          "<a class='fa fa-facebook' href='#/'></a>"
+          "<a class='fa fa-envelope' href='mailto:jeremy@jeremycollins.net'></a>",
+          "<a class='fa fa-twitter' href='http://twitter.com/jollins'></a>",
+          "<a class='fa fa-linkedin' href='https://www.linkedin.com/in/jeremy-collins-37807911'></a>"
         ]
       }
     ]
