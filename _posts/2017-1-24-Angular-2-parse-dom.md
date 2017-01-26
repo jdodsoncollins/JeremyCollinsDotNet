@@ -6,7 +6,7 @@ modified: 2017-01-24
 tags: [angular, angular2]
 categories: [development]
 #image:
-#    feature: feature.jpg
+#    feature: abstract-2.jpg
 #    credit: dargadgetz
 #    creditlink: http://www.dargadgetz.com/ios-8-abstract-wallpaper-pack-for-iphone-5s-5c-and-ipod-touch-retina/
 ---
