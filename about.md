@@ -6,6 +6,8 @@ share: true
 
 # About Jeremy
 
+<img src="/images/mugshot.jpg" alt="Jeremy Collins" class="mugshot">
+
 Hi, I'm Jeremy. I'm a Software Engineer at [Event Farm](eventfarm.com), and previously I was at [Act-On](act-on.com). Professionally, I focus on developing attractive, fast, component-based progressive webapps. I also tinker with native mobile app development, and the blending in between (such as [React Native](https://facebook.github.io/react-native/)). I've been doing this a few years now, after teaching myself web development. Previous to this, I worked technical support and wrote domuentation, and it was my undergrad years at college before that. 
 
 Outside of my time spent in front of computers, I'm a history and politics buff. Local community organizations are important for every region, and I try to contribute to some of the ones around me, often as a volunteer developer / web admin. My wife and I are also dedicated cat guarians.

@@ -7,8 +7,6 @@ tags: [angular, angular2]
 categories: [development]
 #image:
 #    feature: abstract-2.jpg
-#    credit: dargadgetz
-#    creditlink: http://www.dargadgetz.com/ios-8-abstract-wallpaper-pack-for-iphone-5s-5c-and-ipod-touch-retina/
 ---
 
 This is a fairly specific need, but one which comes up when working with web application that are not entirely API-driven.
