@@ -32,6 +32,8 @@ menu:
         url: 'https://www.linkedin.com/in/jeremy-collins-37807911'
       - title: 'Twitter'
         url: 'https://twitter.com/jollins'
+      - title: 'Email'
+        url: "javascript:var email='jeremy@'+'jeremycollins.net'; window.location.href='mailto:'+email"
 
 # Owner/author information
 owner:

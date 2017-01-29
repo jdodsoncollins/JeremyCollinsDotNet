@@ -28,14 +28,14 @@
             </ul>
           </li>
         {% elsif menu.submenu %}
-            {% if menu.url contains 'http://' or menu.url contains 'https://' %}
+            {% if menu.url contains 'http://' or menu.url contains 'https://' or sub.url contains 'javascript:' %}
               <li class="header-item {{class}}"><a href="{{menu.url}}" target="_blank"><h3>{{ menu.title }}</h3></a>
             {% else %}
               <li class="header-item {{class}}"><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a>
             {% endif %}
             <ul class="header-submenu">
               {% for sub in menu.submenu %}
-                {% if sub.url contains 'http://' or sub.url contains 'https://' %}
+                {% if sub.url contains 'http://' or sub.url contains 'https://' or sub.url contains 'javascript:' %}
                     <li class="sub-item"><a href="{{sub.url}}">{{sub.title}}</a></li>
                 {% else %}
                     <li class="sub-item"><a href="{{site.url}}{{sub.url}}">{{sub.title}}</a></li>
@@ -44,7 +44,7 @@
             </ul>
           </li>
         {% else %}
-            {% if menu.url contains 'http://' or menu.url contains 'https://' %}
+            {% if menu.url contains 'http://' or menu.url contains 'https://' or sub.url contains 'javascript:' %}
                 <li class="header-item {{class}}"><a href="{{menu.url}}" target="_blank"><h3>{{ menu.title }}</h3></a></li>
             {% else %}
                 <li class="header-item {{class}}"><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a></li>
@@ -101,7 +101,11 @@
         <li><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a>
           <ul>
             {% for sub in menu.submenu %}
-              <li><a href="{{site.url}}{{sub.url}}">{{sub.title}}</a></li>
+                {% if sub.url contains 'http://' or sub.url contains 'https://' or sub.url contains 'javascript:' %}
+                    <li><a href="{{sub.url}}">{{sub.title}}</a></li>
+                {% else %}
+                    <li><a href="{{site.url}}{{sub.url}}">{{sub.title}}</a></li>
+                {% endif %}
             {% endfor %}
           </ul>
         </li>
