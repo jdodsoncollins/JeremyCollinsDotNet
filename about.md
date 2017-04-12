@@ -10,13 +10,15 @@ share: true
 
 Hi, I'm Jeremy. I'm a Software Engineer at [Event Farm](eventfarm.com), and previously I was at [Act-On](act-on.com). Professionally, I focus on developing attractive, fast, component-based progressive webapps. I also tinker with native mobile app development, and the blending in between (such as [React Native](https://facebook.github.io/react-native/)). I've been doing this a few years now, after teaching myself web development. Previous to this, I worked technical support and wrote domuentation, and it was my undergrad years at college before that. 
 
-Outside of my time spent in front of computers, I'm a history and politics buff. Local community organizations are important for every region, and I try to contribute to some of the ones around me, often as a volunteer developer / web admin. 
-
 I live in Los Angeles with my wife and cat (our precious baby). We are fans of reading, watching historical dramas, and wandering the surprisingly walkable neighborhoods of LA.
 
 # Recent Completed Work
 * [Event Farm Homepage](eventfarm.com)
-    * The official company website, built as a static HTML site with Angular JS. CakePHP back-end. My goal was to make it load fast without having to sacrifice graphical richness, and it rates highly on most performance and bandwidth usage benchmarks.
+    * The official company website, built as a static HTML site with AngularJS. CakePHP back-end. My goal was to make it load fast without having to sacrifice graphical richness, and it rates highly on most performance and bandwidth usage benchmarks.
+* [RoomCast](roomcast.teleadapt.com)
+    * A one-pager (with modals) product site, built with AngularJS components for the interactive and animated elements, and optimized for quick performance. Built with webpack.
+* [Bulletproof Bear](bulletproofbear.com)
+    * This website project consisted of creating a child-theme of [Vice](https://themeforest.net/item/vice-music-band-dj-and-radio-wordpress-theme/10067870) to pare down assets, improve performance on a rather heavy Javascript package, and provide a 2017-era flat-ish reskin on top of an existing CMS package
 * [ADEMS](adems2017.vote)
     * I volunteered myself to create a landing page able to take in an address and return voter district data. This leverages the Google Geolocation API and the [OpenStates](https://openstates.org) API
 * Plus what you may find on [my Github account](https://github.com/jdodsoncollins)
