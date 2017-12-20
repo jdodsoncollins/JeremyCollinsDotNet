@@ -13,14 +13,12 @@ Hi, I'm Jeremy. I'm a Software Engineer at [Event Farm](eventfarm.com), and prev
 I live in Los Angeles with my wife and cat (our precious baby). We are fans of reading, watching historical dramas, and wandering the surprisingly walkable neighborhoods of LA.
 
 # Recent Completed Work
+* [Codable](http://appstore.com/codable)
+    * Front-end web developer tools, but in an iOS app (iPhone only for now). Allows resizing of the browser view, JavaScript console access, as well as browsing and modifying the DOM of the current page.
 * [Event Farm Homepage](eventfarm.com)
     * The official company website, built as a static HTML site with AngularJS. CakePHP back-end. My goal was to make it load fast without having to sacrifice graphical richness, and it rates highly on most performance and bandwidth usage benchmarks.
 * [RoomCast](roomcast.teleadapt.com)
     * A one-pager (with modals) product site, built with AngularJS components for the interactive and animated elements, and optimized for quick performance. Built with webpack.
-* [Bulletproof Bear](bulletproofbear.com)
-    * This website project consisted of creating a child-theme of [Vice](https://themeforest.net/item/vice-music-band-dj-and-radio-wordpress-theme/10067870) to pare down assets, improve performance on a rather heavy Javascript package, and provide a 2017-era flat-ish reskin on top of an existing CMS package
-* [ADEMS](adems2017.vote)
-    * I volunteered myself to create a landing page able to take in an address and return voter district data. This leverages the Google Geolocation API and the [OpenStates](https://openstates.org) API
 * Plus what you may find on [my Github account](https://github.com/jdodsoncollins)
 
 # About this page

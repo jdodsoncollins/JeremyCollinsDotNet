@@ -1,0 +1,29 @@
+---
+layout: post
+title: Codable Web Development Tools for iOS released
+description: "I've released iOS application that brings a subset of desktop browser developer tools to mobile"
+modified: 2017-02-11
+tags: [ios, swift, web]
+categories: [development]
+#image:
+#    feature: abstract-6.jpg
+---
+
+After a few months of evening work and *a lot* of experimentation, I've released an iOS app.
+
+<img src="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" alt="Codable screenshot" class="image-md">
+
+Codable provides three primary features:
+- resizable viewport with scaling, allowing you to view any URL as if you were on a smaller **or** larger iOS screen size
+- JavaScript console support
+- Rendered DOM node navigation and HTML/CSS manipulation
+
+By my knowledge, there are two other functional apps on the iOS app store that do these same functions. It's a pretty niche use-case to want to do front-end web debugging and editing from mobile I know, but it's something *I've* wanted to do many times.
+
+Codable leverages one API endpoint quite heavily and uniquely: [WKWebView.evaluateJavaScipt()](https://developer.apple.com/documentation/webkit/wkwebview/1415017-evaluatejavascript)
+
+If you click through on that link, you'll see that it *isn't too helpful*. There is no APIs for grabbing browser errors, the console, the pre-rendered source, or the rendered DOM. So, how do you grab it? Via JavaScript, from the above API. Lots of different JS commends running through the communication hole that bridges Apple's WKWebView and the web contents therein.
+
+I'm planning on open-sourcing an example app on GitHub that illustrates a pattern used to accomplish the above and then I'll elaborate more on it. There were challenges I had to work through that weren't already covered by someone else's blog post.
+
+[Go to Codable on the App Store](http://appstore.com/codable)
