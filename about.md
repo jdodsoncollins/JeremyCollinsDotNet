@@ -15,9 +15,9 @@ I live in Los Angeles with my wife and cat (our precious baby). We are fans of r
 # Recent Completed Work
 * [Codable](http://appstore.com/codable)
     * Front-end web developer tools, but in an iOS app (iPhone only for now). Allows resizing of the browser view, JavaScript console access, as well as browsing and modifying the DOM of the current page.
-* [Event Farm Homepage](eventfarm.com)
-    * The official company website, built as a static HTML site with AngularJS. CakePHP back-end. My goal was to make it load fast without having to sacrifice graphical richness, and it rates highly on most performance and bandwidth usage benchmarks.
-* [RoomCast](roomcast.teleadapt.com)
+* [Event Farm Homepage](https://eventfarm.com)
+    * The official company website, built as a static HTML site with Angular handling routing in some areas. My goal was to make it load fast without having to sacrifice graphical richness, and it rates highly on most performance and bandwidth usage benchmarks. My day job is working on the Event Farm web, mobile and back-end (requires login to see though)
+* [RoomCast](http://roomcast.teleadapt.com)
     * A one-pager (with modals) product site, built with AngularJS components for the interactive and animated elements, and optimized for quick performance. Built with webpack.
 * Plus what you may find on [my Github account](https://github.com/jdodsoncollins)
 
