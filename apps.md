@@ -6,7 +6,7 @@ share: true
 
 # Apps
 
-<a href="(http://appstore.com/codable"><img class="drop-shadow" src="/images/codable-icon.png" style="display: block; vertical-align: middle; height: 90px; border-radius: 25px; border: 1px solid transparent;"></a>
+<a href="(http://appstore.com/codable"><img src="/images/codable-icon.png" style="display: block; vertical-align: middle; height: 90px; border-radius: 25px; border: 1px solid transparent;"></a>
 ### Codable
 #### Platform: iOS (iPhone only)
 #### Price: Free
@@ -26,31 +26,31 @@ The desire for this app came about from me getting work-related messages about f
 
 <div style="margin: 0 auto; text-align: center;">
 <a href="/images/UNADJUSTEDNONRAW_thumb_227d.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_227d.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_227d.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_227a.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_227a.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_227a.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_227b.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_227b.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_227b.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_227c.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_227c.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_227c.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_2277.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_2277.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2277.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 <a href="/images/UNADJUSTEDNONRAW_thumb_2280.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_2280.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2280.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_2278.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_2278.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2278.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 <a href="/images/UNADJUSTEDNONRAW_thumb_2279.jpg" target="_blank">
-<img class="drop-shadow" src="/images/UNADJUSTEDNONRAW_thumb_2279.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2279.jpg" style="width: 200px; height: auto; padding: 10px; display: inline-block" alt="Codable screenshot" class="image-md drop-shadow">
 </a>
 </div>
 
