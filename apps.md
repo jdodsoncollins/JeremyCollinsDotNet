@@ -9,6 +9,7 @@ share: true
 <a href="(http://appstore.com/codable"><img src="/images/codable-icon.png" style="display: block; vertical-align: middle; height: 90px; border-radius: 25px; border: 1px solid transparent;"></a>
 ### Codable
 #### Platform: iOS (iPhone only)
+#### Price: Free
 
 Codable for iPhone provides these primary features:
 - resizable viewport with scaling, allowing you to view any URL as if you were on a smaller **or** larger iOS screen size

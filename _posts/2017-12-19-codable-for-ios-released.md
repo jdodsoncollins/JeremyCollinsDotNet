@@ -22,7 +22,7 @@ By my knowledge, there are two other functional apps on the iOS app store that d
 
 Codable leverages one API endpoint quite heavily and uniquely: [WKWebView.evaluateJavaScipt()](https://developer.apple.com/documentation/webkit/wkwebview/1415017-evaluatejavascript)
 
-If you click through on that link, you'll see that it *isn't too helpful*. There is no APIs for grabbing browser errors, the console, the pre-rendered source, or the rendered DOM. So, how do you grab it? Via JavaScript, from the above API. Lots of different JS commends running through the communication hole that bridges Apple's WKWebView and the web contents therein.
+If you click through on that link, you'll see that it *isn't too helpful*. There is no APIs for grabbing browser errors, the console, the pre-rendered source, or the rendered DOM. So, how do you grab it? Via JavaScript, from the above API. There is pretty much a constant stream of JS dom-query scripts being applied to the browser, and a JSON-ified node list script response is then captured coming out.
 
 I'm planning on open-sourcing an example app on GitHub that illustrates a pattern used to accomplish the above and then I'll elaborate more on it. There were challenges I had to work through that weren't already covered by someone else's blog post.
 
