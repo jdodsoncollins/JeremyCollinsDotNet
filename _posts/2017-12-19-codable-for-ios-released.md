@@ -11,7 +11,7 @@ categories: [development]
 
 After a few months of evening work and *a lot* of experimentation, I've released an iOS app.
 
-<img src="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" alt="Codable screenshot" class="image-md">
+<img src="/images/UNADJUSTEDNONRAW_thumb_2276.jpg" alt="Codable screenshot" class="image-md drop-shadow">
 
 Codable provides three primary features:
 - resizable viewport with scaling, allowing you to view any URL as if you were on a smaller **or** larger iOS screen size
