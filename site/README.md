@@ -14,7 +14,7 @@ JeremyCollins.net is deployed using a [Traefik](https://docs.traefik.io/) contai
 1. [Install Docker](https://docs.docker.com/install/)
 2. Install bundler with `gem install bundler`
 3. Install gems with `bundle install`
-4. Change directory to `/site` and run Jekyll with `bundle exec jekyll serve --watch` or `bundle exec jekyll serve
+4. Change directory to `/site` and run Jekyll with `bundle exec jekyll serve --watch` or `bundle exec jekyll build`
 
 --- or ---
 
