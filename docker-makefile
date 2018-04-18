@@ -1,0 +1,20 @@
+include .env
+export TAG=${REPOSITORY}:${VERSION}
+export LATEST=${REPOSITORY}
+
+default: build
+
+build:
+	docker build -t ${TAG} .
+
+build-latest:
+	docker build -t ${LATEST} -t ${TAG} .
+
+push-latest: push
+	docker push ${LATEST}
+
+push:
+	docker push ${TAG}
+
+run:
+	docker run --rm ${TAG}
