@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 
-url: http://jeremycollins.net
+url: https://jeremycollins.net
 
 # draw your top menu here
 # each item must have a title and a url.
@@ -41,7 +41,7 @@ menu:
 # Owner/author information
 owner:
   name:           Jeremy Collins
-  site:           http://jeremycollins.net
+  site:           https://jeremycollins.net
   avatar:         images/avatar.jpg
   bio:            "I'm a Software Engineer, most interested in developing attractive, fast, component-based progressive webapps. I also tinker with mobile app development for fun."
   email:          jeremy@jeremycollins.net
