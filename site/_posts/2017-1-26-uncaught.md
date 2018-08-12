@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Handling 'Possibly Unhandled Rejection' in Angualr 1.6
+title: Handling 'Possibly Unhandled Rejection' in Angular 1.6
 description: "How to configure your app config to ignore this error"
 modified: 2017-01-26
 tags: [angular, javascript]
