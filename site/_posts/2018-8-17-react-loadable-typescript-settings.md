@@ -54,7 +54,7 @@ export class HasDynamicImport extends React.Component<HasDynamicImportProps, Has
   }
 
   public setAsyncComponent() {
-    const loadableGrapesInstanceComponent = Loadable.Map({
+    const loadableInstanceComponent = Loadable.Map({
       loader: {
         AsyncComponentImport: () => {
           return import( /* webpackChunkName: "ComponentWrapper" */ '../components/AsyncComponent');
@@ -71,7 +71,7 @@ export class HasDynamicImport extends React.Component<HasDynamicImportProps, Has
         />;
       },
     });
-    this.setState({ loadableComponent });
+    this.setState({ loadableComponent: loadableInstanceComponent });
   }
 
   public render() {
@@ -84,7 +84,7 @@ export class HasDynamicImport extends React.Component<HasDynamicImportProps, Has
     return (
       <section id='container'>
         <article className='w-screen'>
-          <this.state.loadableGrapesInstanceComponent
+          <this.state.loadableComponent
             propThing={this.props.propThing}
           />
         </article>
