@@ -20,7 +20,7 @@ Stack used here:
 - WebPack 4
 
 
-####React TSX Class:
+#### React TSX Class:
 
 
 ```$javascript
@@ -82,7 +82,7 @@ export class HasDynamicImport extends React.Component<HasDynamicImportProps, Has
         </div>);
     }
     return (
-      <section id='grapesjs-container'>
+      <section id='container'>
         <article className='w-screen'>
           <this.state.loadableGrapesInstanceComponent
             propThing={this.props.propThing}
@@ -108,7 +108,7 @@ But what if its compiling fine, but your `return import( /* webpackChunkName: "C
 You *should* see something like
 ```
                                 main.0cf7b02de965f7714959.package.js   X KiB                    main  [emitted]  main
-              vendor~ComponentWrapper.0cf7b02de965f7714959.package.js  X MiB  vendor~GrapesJSWrapper  [emitted]  vendor~ComponentWrapper
+              vendor~ComponentWrapper.0cf7b02de965f7714959.package.js  X MiB  vendor~ComponentWrapper  [emitted]  vendor~ComponentWrapper
                          vendor~main.0cf7b02de965f7714959.package.js  X MiB             vendor~main  [emitted]  vendor~main
                                                           index.html  1.81 KiB                          [emitted]  
 ```
