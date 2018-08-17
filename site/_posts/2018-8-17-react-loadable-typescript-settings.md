@@ -19,7 +19,9 @@ Stack used here:
 - TypeScript 3
 - WebPack 4
 
+
 ####React TSX Class:
+
 
 ```$javascript
 import * as React from 'react';
@@ -94,7 +96,7 @@ export class HasDynamicImport extends React.Component<HasDynamicImportProps, Has
 ```
 
 Highlights from above:
-- Note how `this.state.loadableComponent` is used to house the loadable component, rather than declaring it as a `const` outside the class. If declared outside the class as shown in other docs, it exits in memory when you don't want it to.
+- Note how `this.state.loadableComponent` is used to house the loadable component, rather than declaring it as a `const` outside the class. If declared outside the class as shown in other docs, it exists in memory when you don't want it to.
 - My example above intentionally does not load a `Loading...`component but you can do that. The `Map` is also being used to transfer props. See [React Loadable](https://github.com/jamiebuilds/react-loadable) docs.
 - Note how I am importing things, by referencing the exports. TypeScript imports modules a little differently than your typical CRA JS.
 - This handles the passing of internal class values via props, where the props are passed in first through the `render`. This guards against passing in `undefined` props on load
