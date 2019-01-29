@@ -9,6 +9,9 @@ categories: [development]
 #    feature: abstract-4.jpg
 ---
 
+### Update: Ignore the below; you'd be crazy to not just use [React.Suspense](https://reactjs.org/docs/code-splitting.html) ###
+
+
 Recently I added code splitting and dynamic imports to a React + TypeScript + WebPack project using [React Loadable](https://github.com/jamiebuilds/react-loadable). However, it took a few hours to work though getting the JS chunks to properly split rather than get bundled together into a single chunk.
 
 

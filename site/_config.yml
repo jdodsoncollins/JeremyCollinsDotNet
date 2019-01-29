@@ -1,6 +1,5 @@
 title:            JeremyCollins.net
 description:      Personal website for Jeremy Collins
-google_verification_code: 3uZOrv-nBo1-6yZezXsSzbeqsdUob7GiG-Q_KpVBOQc
 # put your disqus here
 disqus_shortname:
 reading_time:     true # if true, shows the estimated reading time for a post
@@ -66,7 +65,7 @@ background:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-38793751-2
-google_verify:
+google_verify: 3uZOrv-nBo1-6yZezXsSzbeqsdUob7GiG-Q_KpVBOQc
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
