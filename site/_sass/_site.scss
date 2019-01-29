@@ -54,8 +54,10 @@
 }
 .entry-content {
 	.mugshot {
-		float: left;
 		padding: 25px;
+		border-radius: 50%;
+		margin: 0 auto;
+		display: block;
 	}
 	.image-md {
 		max-width: 400px;

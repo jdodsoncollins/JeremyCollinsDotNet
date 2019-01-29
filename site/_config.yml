@@ -1,6 +1,6 @@
 title:            JeremyCollins.net
 description:      Personal website for Jeremy Collins
-
+google_verification_code: 3uZOrv-nBo1-6yZezXsSzbeqsdUob7GiG-Q_KpVBOQc
 # put your disqus here
 disqus_shortname:
 reading_time:     true # if true, shows the estimated reading time for a post
@@ -33,8 +33,6 @@ menu:
     submenu:
       - title: 'LinkedIn'
         url: 'https://www.linkedin.com/in/jeremy-collins-37807911'
-      - title: 'Twitter'
-        url: 'https://twitter.com/jollins'
       - title: 'Email'
         url: "javascript:var email='jeremy@'+'jeremycollins.net'; window.location.href='mailto:'+email"
 
@@ -46,13 +44,13 @@ owner:
   bio:            "I'm a Software Engineer, most interested in developing attractive, fast, component-based progressive webapps. I also tinker with mobile app development for fun."
   email:          jeremy@jeremycollins.net
   # Twitter nick for use in Twitter cards and follow button.
-  twitter: jollins # if no twitter in this config, the twitter follow button will be removed
+  twitter: # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
   github: jdodsoncollins
 
 # Twitter account associated with the site if different from owner/author twitter account.
 # Used in Twitter cards.
-twitter: jcollins
+twitter:
 
 # Social networking links used in author block underneath posts. Update and remove as you like.
 social:
@@ -102,5 +100,5 @@ page_layout: page
 titlecase: true
 
 include: [".htaccess"]
-exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "vendor/bundle"]
 gems: [jekyll-paginate]
