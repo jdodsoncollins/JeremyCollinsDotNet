@@ -6,7 +6,7 @@ share: true
 
 # Apps
 
-<a href="(http://appstore.com/codable"><img src="/images/codable-icon.png" style="display: block; vertical-align: middle; height: 90px; border-radius: 25px; border: 1px solid transparent;"></a>
+<a href="http://appstore.com/codable"><img src="/images/codable-icon.png" style="display: block; vertical-align: middle; height: 90px; border-radius: 25px; border: 1px solid transparent;"></a>
 ### Codable
 #### Platform: iOS (iPhone only)
 #### Price: Free
