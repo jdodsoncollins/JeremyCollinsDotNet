@@ -8,15 +8,19 @@ share: true
 
 <img src="/images/mugshot.jpg" alt="Jeremy Collins" class="mugshot">
 
-Hi, I'm Jeremy. I'm a Software Engineer at [Fanbank](fanbank.com), and previously I was at [Event Farm](eventfarm.com) and [Act-On](act-on.com). Professionally, I focus on developing attractive, fast, component-based progressive webapps.
+Oh, hello there. This is my personal portfolio website, though it is rarely updated and mostly serves as the public front-end for various things this server runs.
+
+# About me
+
+I'm a Software Engineer, focusing on web with some mobile here and there. 
 
 # Recent Work
+* [HitRecord Web](https://www.hitrecord.org)
+    * HitRecord as a service is a collaboration tool for users, focused on positivity and being a welcoming network. Behind the curtain, it is an Angular web front-end with a Rails API. The web and mobile clients are new, clean, and we take pride in making them as good as they can be.
 * [Fanbank API, Consumer, and Business Portal](https://www.fanbank.com)
-    * I'm currently a full-stack developer for the Fanbank platform, which is a e-commerce and marketing product powered by Node, React SPAs, and server-side React. Fanbank's consumer product is freely available.
+    * During my stint as a west-side LA resident, I served as a full-stack developer for the Fanbank platform. Fanbank is a e-commerce and marketing product powered by Node, React SPAs, and server-side React. 
 * [Codable](http://appstore.com/codable)
     * Front-end web developer tools, but in an iOS app (iPhone only for now). Allows resizing of the browser view, JavaScript console access, as well as browsing and modifying the DOM of the current page.
-* [Event Farm Core Platform](https://eventfarm.com)
-    * I'm was one of the primary authors of the Event Farm Core platform web application front-end, which is built upon Angular (v2+), webpack, typescript, RxJS and NgRX Store. Event Farm is a paid service, however demo accounts and limited free accounts are available.
 * Plus what you may find on [my Github account](https://github.com/jdodsoncollins)
 
 # About this page
