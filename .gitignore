@@ -3,4 +3,4 @@ _site
 .jekyll-metadata
 *pass.txt
 .history
-/node_modules
+**/node_modules
