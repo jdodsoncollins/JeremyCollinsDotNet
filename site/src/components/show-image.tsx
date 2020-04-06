@@ -23,12 +23,8 @@ export const ShowImage = (props) => (
     `}
 
         render={(data) => {
-            const image = data.images.edges.find(n => {
-                console.log(n.node.relativePath);
-                return n.node.relativePath.includes(props.filename);
-            });
-            if (!image) { return null; }
-            console.log('image found', image);
+            const image = data.images.edges.find(n => n.node.relativePath.includes(props.filename));
+            if (!image) return null;
 
             const imageSizes = image.node.childImageSharp.sizes;
             return (
