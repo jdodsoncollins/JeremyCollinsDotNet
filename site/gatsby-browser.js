@@ -6,6 +6,7 @@ export const wrapRootElement = ({ element }) => {
   window.addEventListener('beforeunload', function (e) {
     e.preventDefault();
     if (window.localStorage && window.localStorage.getItem('theme-ui-color-mode')) window.localStorage.removeItem('theme-ui-color-mode');
+    return;
   });
   return (
     <>{element}</>
