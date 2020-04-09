@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://jeremycollins.net/sitemap.xml
