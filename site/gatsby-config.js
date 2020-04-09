@@ -82,10 +82,8 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-theme-ui',
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-sitemap`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
