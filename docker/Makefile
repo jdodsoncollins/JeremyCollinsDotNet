@@ -7,5 +7,5 @@ build-latest: package
 latest: build-latest push-latest
 
 package:
-	cd ../site && gatsby build
+	cd ../site && gatsby clean && gatsby build
 	tar -cz -f app.tgz -C ../site/public .

@@ -8,7 +8,6 @@ import Navigation from "@lekoarts/gatsby-theme-minimal-blog/src/components/navig
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes"
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
 import { ShowImage } from "../../../components/show-image"
-import { useEffect } from "react"
 
 const Header = () => {
   const { siteTitle, siteLogoAlt, siteLogo } = useSiteMetadata()

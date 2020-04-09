@@ -8,6 +8,8 @@ module.exports = {
     siteTitleAlt: `JeremyCollinsDotNet`,
     siteLogo: `logo.png`,
     siteLogoAlt: `logo-inv.png`,
+    author: 'Jeremy Collins',
+    authorEmail: 'jeremy@jeremycollins.net',
     siteUrl: `https://jeremycollins.net`,
   },
   plugins: [

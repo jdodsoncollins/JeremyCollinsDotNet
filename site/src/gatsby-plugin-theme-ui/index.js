@@ -43,6 +43,13 @@ export default {
   ...tailwind,
   useCustomProperties: true,
   useColorSchemeMediaQuery: true,
+  images: {
+    thumbnail: {
+      width: 480,
+      height: `auto`,
+      borderRadius: 2,
+    },
+  },
   colors: {
     ...tailwind.colors,
     primary: tailwind.colors.purple[7],

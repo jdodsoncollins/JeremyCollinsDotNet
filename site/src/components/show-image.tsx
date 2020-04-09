@@ -22,17 +22,17 @@ export const ShowImage = (props) => (
       }
     `}
 
-        render={(data) => {
-            const image = data.images.edges.find(n => n.node.relativePath.includes(props.filename));
-            if (!image) return null;
+    render={(data) => {
+        const image = data.images.edges.find(n => n.node.relativePath.includes(props.filename));
+        if (!image) return null;
 
-            const imageSizes = image.node.childImageSharp.sizes;
-            return (
-                <Img
-                    {...props}
-                    sizes={imageSizes}
-                />
-            );
-        }}
-    />
+        const imageSizes = image.node.childImageSharp.sizes;
+        return (
+            <Img
+                {...props}
+                sizes={imageSizes}
+            />
+        );
+    }}
+  />
 )

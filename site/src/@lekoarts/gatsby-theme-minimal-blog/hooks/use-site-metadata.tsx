@@ -11,6 +11,7 @@ type Props = {
       siteLanguage: string
       siteImage: string
       author: string,
+      authorEmail: string,
       siteLogo: string
       siteLogoAlt: string,
       [key: string]: unknown
@@ -31,6 +32,7 @@ const useSiteMetadata = () => {
           siteLanguage
           siteImage
           author
+          authorEmail
           siteLogo
           siteLogoAlt
         }

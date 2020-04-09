@@ -11,6 +11,8 @@ import Listing from "@lekoarts/gatsby-theme-minimal-blog/src/components/listing"
 import List from "@lekoarts/gatsby-theme-minimal-blog/src/components/list"
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes"
+import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
+import { useEffect } from "react"
 
 type PostsProps = {
   posts: {
@@ -29,6 +31,19 @@ type PostsProps = {
 
 const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig()
+  const { authorEmail } = useSiteMetadata()
+
+  // we do not want try to avoid exposing the contact email to web scrapers
+  useEffect(() => {
+    const emailLink = document.querySelector('a[href="email-added-here-async-to-discourage-scraping"]')
+    if (!authorEmail || !emailLink) return
+    emailLink.addEventListener("click", (e) => {
+      if (e.target.href.includes("email-added-here-async-to-discourage-scraping")) e.preventDefault();
+    });
+    setTimeout(() => {
+      emailLink.setAttribute('href', `mailto:${authorEmail}`)}, 2000
+    )
+  }, [])
 
   return (
     <Layout>
