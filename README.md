@@ -21,9 +21,3 @@ Docker container extends `nginx-alpine` container, so follow any appropriate ngi
 
 1. `cd site && npm install`
 2. Use `gatsby develop` to build and run locally. This site is built with [Gatsby](https://www.gatsbyjs.org/) so basic familiarity is needed if you roll with this project.
-
-As far as UI goes, this site implements and extends the theme [Minimal Blog by LekoArts](https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-minimal-blog), with the following customizations:
-- Overridden primary components (header, footer, homepage, post)
-- A few added utility components (such as a graphql optimized image-loader component and root wrapper)
-- New hooks and texts
-- [Theme UI](https://www.gatsbyjs.org/docs/theme-ui/) overrides (most notably, the site should automatically toggle light or dark mode depending on your device settings, if applicable)
