@@ -16,7 +16,7 @@ export const wrapRootElement = ({ element }) => {
     o.async=1; o.src=t; o.id='fathom-script';
     m.parentNode.insertBefore(o,m)
   })(document, window, '//fathom.jeremycollins.net/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'DECCX');
+  fathom('set', 'siteId', 'RJWEQ');
   fathom('trackPageview');
   return (
     <>{element}</>
