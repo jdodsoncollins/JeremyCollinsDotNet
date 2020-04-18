@@ -4,7 +4,7 @@ This is the source for jeremycollins.net. Tech stack relied upon for deployment:
 
 Deployment stack, optional:
 - Docker
-- Traefik
+- [Traefik](https://containo.us/traefik/)
 
 Local server & client:
 - NodeJS
