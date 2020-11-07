@@ -7,6 +7,8 @@ tags:
   - pi
 ---
 
+*Update November 2020:* This appears to still work on macOS Big Sur (release candidate), using the latest Raspbian
+
 I've now had a few days of reliable, consistent automated Time Machine backups accomplished via my Mac and Rapberry Pi 4B now, attached to a spare 1TB 2.5" USB 3.0 drive. This has persisted across multiple reboots of both the Pi and Mac, so I think it's solid enough to write down for the world. Using the Pi 4B alongside some spare drives can give you a very versatile, cost-effective NAS and server.
 
 Protocols & software used that differentiate this from other guides on this subject:
@@ -28,7 +30,7 @@ Prerequisites:
     - If you encounter errors or see `/dev/sda` but not `/dev/sda1`, you are missing a proper partition to format most likely. I ran into this and used [Gparted](https://gparted.org/download.php) to repartition the drive
 - Next, we want to auto-mount it to a designated folder, so run `sudo nano /etc/fstab`
     - Let's create a directory to mount onto, so `mkdir /mnt/usbtimemachine`. Note: If you don't want to mount onto `/mnt/usbtimemachine` feel free to change this directory name
-    - Add this line to the bottom of the file: `UDID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /mnt/usbtimemachine ext4   force,nofail,rw,noauto   0   0`
+    - Add this line to the bottom of the file: `UUID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /mnt/usbtimemachine ext4   force,nofail,rw,noauto   0   0`
 - Reboot, and now run `df -h` and make sure your drive is present. `sudo fdisk -l` also for a little more verbosity. Make sure everything looks good based on the specs of the drive.
 
 #### Afp and time machine broadcast setup on the Pi
