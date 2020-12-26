@@ -7,7 +7,7 @@ tags:
   - pi
 ---
 
-*Update December 2020:* This appears to work on macOS Big Sur, using the latest Raspbian. Config also now uses HFS+ as the drive filesystem and SMB as the network protocol, which I previously could not get to work (had to rely on AFP and ext4).
+*Update December 2020:* This appears to work on macOS Big Sur, using the latest Raspbian. Config also now uses HFS+ as the drive filesystem and AFP as the network protocol. SMB as the networking protocol I have not been able to get working reliably.
 
 I've now had a few months of reliable, consistent automated Time Machine backups accomplished via my Mac and Rapberry Pi 4B now, attached to a spare 1TB 2.5" USB 3.0 drive. Using the Pi 4B alongside some spare drives can give you a very versatile, cost-effective NAS and server.
 
@@ -16,7 +16,7 @@ I've now had a few months of reliable, consistent automated Time Machine backups
 Prerequisites:
 - Ensure your Pi is fully up to date `sudo apt-get update && sudo apt-get upgrade -y`
 - Make sure the Pi uses a static IP on your local network (there are good guides on this, it is out of scope for this post)
-- Install dependencies: `sudo apt install samba avahi-daemon`
+- Install dependencies: `sudo apt install samba avahi-daemon hfsutils hfsprogs`
 
 #### Connecting and mounting the drive on the Pi
 - Plug in your drive into a USB port on the Pi and get the drive UUID with `ls -lha /dev/disk/by-uuid`. *Make note of the drive reference and UUID* 
@@ -42,24 +42,46 @@ Prerequisites:
     fruit:time machine = yes
 ```
 
+- edit file: `sudo nano /etc/netatalk/afp.conf`
+
+And append
+```
+[Global]
+  mimic model = TimeCapsule6,106
+
+[Time Machine]
+  path = /media/pi/TimeMachine
+  time machine = yes
+```
+
 - Launch services `sudo service avahi-daemon start` and `sudo service netatalk start`
 
 #### Find the Time Machine server on your mac
-- Finder > Connect to server
-    - Enter `smb://192.168.1.50/` (use the local static IP for your pi instead though)
+- Let's verify the drive is being properly shared. Go to Finder > Connect to server
+    - Enter `afp://192.168.1.50/` (use the local static IP for your pi instead though)
     - You should be prompted for your pi login info
 
-![Connect to server](./connect-to-smb.png)
+![Connect to server](./connect-to-afp.png)
 
-- Next, go to System Preferences > Time Machine
+- Go to System Preferences > Time Machine
     - Select Disk > find your Disk
     - You'll be prompted to log in again with your pi user
     - It would be wise to encrypt your backup when macOS asks you here, since it will be plainly readable on the external drive otherwise
 
 And that should do it! 
 
-![Time Machine](./time-machine-progress.png)
+![Time Machine](./time-machine.png)
 
+
+#### Troubleshooting
+
+##### Drive appears read-only
+![Read Only](./read-only.png)
+- Set drive permissions (such as `sudo sudo chmod -R 777 /media/pi/TimeMachine)
+- Alternatively, delete the above mount-point directory (`sudo rmdir /media/pi/TimeMachine`) and reboot (this fixed an issue for me that chmod did not)
+
+##### General drive unreliability
+- Ensure above permissions are set, and also verify disk integrity --- `sudo fsck.hfsplus -f /dev/sda1` (or simply re-format)
 
 ##### Similar guides to try if this fails (this guide is a mashup of these two, with some sprinking of edited commands)
 [Gregology's Raspberry Pi Time Machine](https://gregology.net/2018/09/raspberry-pi-time-machine/) -- this guide is most similar to this one, but uses ext4 instead of hfsplus
