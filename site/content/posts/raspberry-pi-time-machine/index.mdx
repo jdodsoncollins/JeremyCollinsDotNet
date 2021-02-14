@@ -30,7 +30,7 @@ Prerequisites:
 - Install netatalk: `sudo apt-get install netatalk -y`
 - edit nsswitch.conf `sudo nano /etc/nsswitch.conf`
     - Line `hosts:          files mdns4_minimal [NOTFOUND=return] dns` becomes `hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns`
-- edit samba config: `/etc/avahi/services.samba.service` and append
+- edit smb config: `sudo nano etc/samba/smb.conf` and append
 
 ```
 [backups]
