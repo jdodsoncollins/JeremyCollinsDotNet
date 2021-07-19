@@ -77,7 +77,7 @@ And that should do it!
 
 ##### Drive appears read-only
 ![Read Only](./read-only.png)
-- Set drive permissions (such as `sudo chmod -R 777 /media/pi/TimeMachine`)
+- Set drive permissions (such as `sudo chown -R pi:pi /media/pi/`)
 - Alternatively, delete the above mount-point directory (`sudo rmdir /media/pi/TimeMachine`) and reboot (this fixed an issue for me that chmod did not)
 
 ##### General drive unreliability
