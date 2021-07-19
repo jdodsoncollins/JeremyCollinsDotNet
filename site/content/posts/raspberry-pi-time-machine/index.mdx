@@ -23,7 +23,7 @@ Prerequisites:
     - * For the purposes of this guide, my drive reference will be `/dev/sda1` and UUID is `8c9d728a-54f3-4948-81ea-f0482c89fc73`
 - Format our drive to HFS+ format: `sudo mkfs.hfs /dev/sda1 -v TimeMachine` or use [Gparted](https://gparted.org/download.php) to repartition the drive and label it `TimeMachine`
 - Next, we want to auto-mount it to a designated folder, so run `sudo nano /etc/fstab`
-    - Add this line to the bottom of the file: `UUID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /media/pi/TimeMachine hfsplus   force,nofail,rw,noauto   0   0` (if your username is not `pi`, edit this path to use your nane instead and do the same in subsequent areas)
+    - Add this line to the bottom of the file: `UUID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /media/pi/TimeMachine hfsplus   force,nofail,rw,noauto   0   0` (if your username is not `pi`, edit this path to use your name instead and do the same in subsequent areas)
 - Reboot, and now run `df -h` and make sure your drive is present. `sudo fdisk -l` also for a little more verbosity. Make sure everything looks good based on the specs of the drive.
 
 #### Networking from Pi
@@ -82,6 +82,14 @@ And that should do it!
 
 ##### General drive unreliability
 - Ensure above permissions are set, and also verify disk integrity --- `sudo fsck.hfsplus -f /dev/sda1` (or simply re-format)
+
+##### TimeMachine does not find drive
+- You can configure the timemachine through the CLI instead 
+    * You must first allow terminal full disk access to your mac - see [this guide](https://osxdaily.com/2018/10/09/fix-operation-not-permitted-terminal-error-macos/) for more help
+  *  The following command will ask you for both your laptop admin password AND your raspberry pi password
+     ```bash
+     sudo tmutil setdestination -ap "afp://pi@192.168.1.50/TimeMachine" # (use the local static IP for your pi instead though)
+     ```
 
 ##### Similar guides to try if this fails (this guide is a mashup of these two, with some sprinking of edited commands)
 [Gregology's Raspberry Pi Time Machine](https://gregology.net/2018/09/raspberry-pi-time-machine/) -- this guide is most similar to this one, but uses ext4 instead of hfsplus
