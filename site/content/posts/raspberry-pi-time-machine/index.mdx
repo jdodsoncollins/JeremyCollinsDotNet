@@ -23,14 +23,14 @@ Prerequisites:
     - * For the purposes of this guide, my drive reference will be `/dev/sda1` and UUID is `8c9d728a-54f3-4948-81ea-f0482c89fc73`
 - Format our drive to HFS+ format: `sudo mkfs.hfs /dev/sda1 -v TimeMachine` or use [Gparted](https://gparted.org/download.php) to repartition the drive and label it `TimeMachine`
 - Next, we want to auto-mount it to a designated folder, so run `sudo nano /etc/fstab`
-    - Add this line to the bottom of the file: `UUID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /media/pi/TimeMachine hfsplus   force,nofail,rw,noauto   0   0` (if your username is not `pi`, edit this path to use your name instead and do the same in subsequent areas)
+- Add this line to the bottom of the file: `UUID=8c9d728a-54f3-4948-81ea-f0482c89fc73 /media/pi/TimeMachine hfsplus   force,nofail,rw   0   0` (if your username is not `pi`, edit this path to use your nane instead and do the same in subsequent areas)
 - Reboot, and now run `df -h` and make sure your drive is present. `sudo fdisk -l` also for a little more verbosity. Make sure everything looks good based on the specs of the drive.
 
 #### Networking from Pi
 - Install netatalk: `sudo apt-get install netatalk -y`
 - edit nsswitch.conf `sudo nano /etc/nsswitch.conf`
     - Line `hosts:          files mdns4_minimal [NOTFOUND=return] dns` becomes `hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns`
-- edit smb config: `sudo nano etc/samba/smb.conf` and append
+- edit smb config: `sudo nano /etc/samba/smb.conf` and append
 
 ```
 [backups]
