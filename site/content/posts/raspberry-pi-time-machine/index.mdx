@@ -7,7 +7,7 @@ tags:
   - pi
 ---
 
-*Update December 2020:* This appears to work on macOS Big Sur, using the latest Raspbian. Config also now uses HFS+ as the drive filesystem and AFP as the network protocol. SMB as the networking protocol I have not been able to get working reliably.
+*Update Nov 2021:* Applied changes suggested by Alexis, Johnny, and Joel. Full changes are logged in the git history for this post. Thank you all.
 
 I've now had a few months of reliable, consistent automated Time Machine backups accomplished via my Mac and Rapberry Pi 4B now, attached to a spare 1TB 2.5" USB 3.0 drive. Using the Pi 4B alongside some spare drives can give you a very versatile, cost-effective NAS and server.
 
@@ -87,4 +87,5 @@ And that should do it!
 [Gregology's Raspberry Pi Time Machine](https://gregology.net/2018/09/raspberry-pi-time-machine/) -- this guide is most similar to this one, but uses ext4 instead of hfsplus
 
 [Mudge's Using a Raspberry Pi for Time Machine](https://mudge.name/2019/11/12/using-a-raspberry-pi-for-time-machine/) -- uses ext4 and smb as a protocol, and other steps look good but I couldn't get the macOS Time Machine service to find it
+
 
