@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata"
+import Analytics from "../../../components/analytics"
 
 const Footer = () => {
   const { siteTitle } = useSiteMetadata()
@@ -23,6 +24,7 @@ const Footer = () => {
       <div>
         &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved.
       </div>
+      <Analytics></Analytics>
     </footer>
   )
 }

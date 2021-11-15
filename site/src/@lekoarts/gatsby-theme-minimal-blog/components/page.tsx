@@ -3,6 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout"
 import SEO from "@lekoarts/gatsby-theme-minimal-blog/src/components/seo"
+import Analytics from "../../../components/analytics"
 
 type PageProps = {
   data: {
