@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx, Styled } from "theme-ui"
-import { Box } from "@theme-ui/components"
-import { Link } from "gatsby"
+
+import * as React from "react"
+import { jsx, Link as TLink, Box } from "theme-ui"
+import { Link } from 'theme-ui'
 import ItemTags from "@lekoarts/gatsby-theme-minimal-blog/src/components/item-tags"
 
 type BlogListItemProps = {
@@ -12,7 +12,7 @@ type BlogListItemProps = {
     date: string
     excerpt: string
     description: string
-    timeToRead: number
+    timeToRead?: number
     tags?: {
       name: string
       slug: string
@@ -23,9 +23,9 @@ type BlogListItemProps = {
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
   <Box mb={4}>
-    <Styled.a as={Link} to={post.slug} sx={{ fontSize: [1, 2, 3], color: `text` }}>
+    <Link href={post.slug} sx={{ fontSize: [1, 2, 3], color: `text` }}>
       {post.title}
-    </Styled.a>
+    </Link>
     <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
       <time>{post.date}</time>
       {post.tags && showTags && (
