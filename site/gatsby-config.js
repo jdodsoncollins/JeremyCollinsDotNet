@@ -8,7 +8,9 @@ module.exports = {
   siteMetadata: {
     siteLanguage: `en`,
     siteTitle: `JeremyCollins.net`,
+    siteTitleAlt: `JeremyCollins.net`,
     siteUrl: `https://jeremycollins.net`,
+    siteHeadline: `Jeremy Collins' web presence`,
     siteDescription: `Jeremy Collins' web presence`,
     siteImage: `logo.png`,
     author: `jdodsoncollins`,
