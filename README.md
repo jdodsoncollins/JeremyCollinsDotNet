@@ -19,7 +19,7 @@ Docker container extends `nginx-alpine` container, so follow any appropriate ngi
 
 ##### Local Development
 
-1. `cd site && npm install`
-2. Use `npx gatsby develop` to build and run locally. This site is built with [Gatsby](https://www.gatsbyjs.org/) so basic familiarity is needed if you roll with this project.
+1. `cd site && npm install --legacy-peer-deps` (node version 16 recommended)
+2. Use `npm run develop` to build and run locally. This site is built with [Gatsby](https://www.gatsbyjs.org/) so basic familiarity is needed if you roll with this project.
 
 Note: Anyone else using this build will likely need to remove or modify my [Fathom](https://usefathom.com) script in `analytics.tsx`
