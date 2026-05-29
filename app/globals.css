@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  
+  /* Light mode colors */
+  --color-background: #fff;
+  --color-foreground: #1a1a2e;
+  --color-muted: #f5f5f7;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+  --color-primary: #1a1a2e;
+  --color-primary-foreground: #fff;
+  --color-secondary: #5f6c80;
+  --color-accent: #3b82f6;
+  --color-heading: #1a1a2e;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  .dark {
+    color-scheme: dark;
+    --color-background: #1a1a2e;
+    --color-foreground: #e4e4e7;
+    --color-muted: #252538;
+    --color-muted-foreground: #a1a1aa;
+    --color-border: #3f3f5a;
+    --color-primary: #e4e4e7;
+    --color-primary-foreground: #1a1a2e;
+    --color-secondary: #a1a1aa;
+    --color-heading: #fff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern";
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+/* Prose styles for MDX content */
+.prose {
+  @apply text-foreground leading-relaxed;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-heading font-semibold mt-8 mb-4;
+}
+
+.prose h1 {
+  @apply text-3xl;
+}
+.prose h2 {
+  @apply text-2xl;
+}
+.prose h3 {
+  @apply text-xl;
+}
+.prose h4 {
+  @apply text-lg font-medium;
+}
+.prose h5 {
+  @apply text-base font-medium;
+}
+.prose h6 {
+  @apply text-sm font-medium uppercase tracking-wide;
+}
+
+.prose p {
+  @apply my-4;
+}
+
+.prose a {
+  @apply text-accent underline underline-offset-2 hover:text-accent/80 transition-colors;
+}
+
+.prose strong {
+  @apply font-semibold text-heading;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4 pl-6;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-border pl-4 italic text-secondary my-4;
+}
+
+.prose pre {
+  @apply bg-muted rounded-lg p-4 overflow-x-auto my-4 text-sm;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose img {
+  @apply rounded-lg my-6 max-w-full h-auto;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
+
+.prose table {
+  @apply w-full my-4 border-collapse;
+}
+
+.prose th,
+.prose td {
+  @apply border border-border px-3 py-2 text-left;
+}
+
+.prose th {
+  @apply bg-muted font-semibold;
+}
