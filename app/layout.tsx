@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -61,6 +62,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
