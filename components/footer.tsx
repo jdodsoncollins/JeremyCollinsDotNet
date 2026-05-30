@@ -8,10 +8,7 @@ export function Footer() {
             <span className="text-foreground">Jeremy Collins</span>
           </div>
           <p className="text-xs text-muted-foreground/60 font-mono">
-            <span className="text-circuit">{"</"}</span>
-            <span className="text-neon-green">built_with</span>
-            <span className="text-circuit">{">"}</span>{" "}
-            Next.js + Tailwind CSS
+            Built with Next.js + Tailwind CSS
           </p>
         </div>
       </div>

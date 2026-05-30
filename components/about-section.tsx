@@ -1,9 +1,9 @@
 export function AboutSection() {
   const roles = [
-    { period: "2021 — present", company: "Webflow", title: "Sr. Software Engineer" },
-    { period: "2019 — 2021", company: "MasterClass", title: "Software Engineer" },
-    { period: "2017 — 2019", company: "HitRecord", title: "Software Engineer" },
-    { period: "2015 — 2017", company: "Event Farm", title: "Front-End Engineer" },
+    { period: "2021 - present", company: "Webflow", title: "Sr. Software Engineer" },
+    { period: "2019 - 2021", company: "MasterClass", title: "Software Engineer" },
+    { period: "2017 - 2019", company: "HitRecord", title: "Software Engineer" },
+    { period: "2015 - 2017", company: "Event Farm", title: "Front-End Engineer" },
   ];
 
   return (
@@ -13,7 +13,7 @@ export function AboutSection() {
         {/* Section label */}
         <div className="mb-10">
           <span className="font-mono text-xs text-neon-cyan tracking-[0.25em] uppercase">
-            // ABOUT
+            About
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
             <span className="text-foreground">Who I</span>{" "}
@@ -34,7 +34,7 @@ export function AboutSection() {
             <p>
               I&apos;m a product engineer with a full-stack background and a
               strong lean toward the front end. I enjoy working at the
-              intersection of design and engineering — writing the kind of code
+              intersection of design and engineering, writing the kind of code
               that shapes what a product feels like to use.
             </p>
             <p>
@@ -45,15 +45,15 @@ export function AboutSection() {
             </p>
             <p>
               Outside of work I build iOS apps. Codable is a Safari extension
-              that brings web developer tools — element inspector, console, and
-              more — to mobile browsers.
+              that brings web developer tools (element inspector, console, and
+              more) to mobile browsers.
             </p>
           </div>
 
           {/* Timeline */}
           <div>
             <p className="font-mono text-xs text-neon-green tracking-[0.2em] uppercase mb-6">
-              {">"} EXPERIENCE:
+              Experience
             </p>
             <ol className="space-y-5">
               {roles.map((role, i) => (
@@ -83,10 +83,6 @@ export function AboutSection() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 mt-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neon-cyan/20 to-transparent" />
-          <span className="font-mono text-xs text-muted-foreground/30 tracking-[0.2em]">
-            EOF_ABOUT
-          </span>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neon-cyan/20 to-transparent" />
         </div>
       </div>

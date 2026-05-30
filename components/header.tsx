@@ -33,9 +33,9 @@ export function Header() {
       <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-display text-lg tracking-wider text-neon-green hover:neon-glow transition-all glitch"
+          className="font-display text-lg tracking-wider text-neon-green hover:neon-glow transition-all"
         >
-          JC://
+          JC
         </Link>
         <div className="flex items-center gap-6">
           <button
