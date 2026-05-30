@@ -11,13 +11,14 @@ export function AboutSection() {
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Section label */}
-        <div className="mb-10">
+        <div className="mb-10 hacf-streak">
           <span className="font-mono text-xs text-neon-cyan tracking-[0.25em] uppercase">
             About
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
-            <span className="text-foreground">Who I</span>{" "}
+            <span className="text-foreground hacf-flare">Who I</span>{" "}
             <span
+              className="hacf-flare"
               style={{
                 WebkitTextStroke: "1px #00ccff",
                 color: "transparent",

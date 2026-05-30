@@ -46,11 +46,11 @@ export function HeroSection() {
 
         {/* Name */}
         <h1 className="font-display font-black leading-none mb-6">
-          <span className="block text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight">
+          <span className="block text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight hacf-flare">
             JEREMY
           </span>
           <span
-            className="block text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight neon-glow-subtle"
+            className="block text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight neon-glow-subtle hacf-flare"
           >
             COLLINS
           </span>

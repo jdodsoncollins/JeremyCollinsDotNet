@@ -48,7 +48,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceMono.variable} ${orbitron.variable} bg-background`}>
-      <body className="font-mono antialiased">{children}</body>
+      <body className="font-mono antialiased">
+        {children}
+        {/* HACF-inspired overlay effects */}
+        <div className="hacf-scanlines" aria-hidden="true" />
+        <div className="hacf-grain" aria-hidden="true" />
+        <div className="hacf-sweep-line" aria-hidden="true" />
+      </body>
     </html>
   );
 }

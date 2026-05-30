@@ -256,3 +256,126 @@
   text-shadow: 0 0 10px currentColor;
   opacity: 0.3;
 }
+
+/* HACF-inspired CRT scan lines overlay */
+.hacf-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* HACF-inspired subtle grain/noise texture */
+.hacf-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* HACF-inspired horizontal light streak */
+.hacf-streak {
+  position: relative;
+}
+
+.hacf-streak::before {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.05) 20%,
+    rgba(0, 255, 136, 0.15) 50%,
+    rgba(0, 255, 136, 0.05) 80%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Light flare on section headers */
+.hacf-flare {
+  position: relative;
+  display: inline-block;
+}
+
+.hacf-flare::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: 50%;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 136, 0.08) 0%,
+    transparent 70%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+/* Animated scan line sweep (subtle) */
+@keyframes hacf-sweep {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.hacf-sweep-line {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.1) 30%,
+    rgba(0, 255, 136, 0.2) 50%,
+    rgba(0, 255, 136, 0.1) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 9997;
+  animation: hacf-sweep 8s ease-in-out infinite;
+}
+
+/* Glitch effect on hover for images */
+.hacf-glitch-hover {
+  position: relative;
+}
+
+.hacf-glitch-hover:hover {
+  filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='glitch'%3E%3CfeOffset in='SourceGraphic' dx='2' dy='0' result='r'/%3E%3CfeOffset in='SourceGraphic' dx='-2' dy='0' result='b'/%3E%3CfeColorMatrix in='r' type='matrix' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3CfeColorMatrix in='b' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0'/%3E%3CfeBlend in2='r' mode='screen'/%3E%3C/filter%3E%3C/svg%3E#glitch");
+}
