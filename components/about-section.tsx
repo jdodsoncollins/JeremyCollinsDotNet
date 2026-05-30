@@ -20,7 +20,7 @@ export function AboutSection() {
             <span
               className="hacf-flare"
               style={{
-                WebkitTextStroke: "1px #00ccff",
+                WebkitTextStroke: "1px #ff6688",
                 color: "transparent",
               }}
             >
@@ -53,14 +53,14 @@ export function AboutSection() {
 
           {/* Timeline */}
           <div>
-            <p className="font-mono text-xs text-neon-green tracking-[0.2em] uppercase mb-6">
+            <p className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-6">
               Experience
             </p>
             <ol className="space-y-5">
               {roles.map((role, i) => (
                 <li key={i} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <span className="w-2 h-2 rounded-full bg-neon-green flex-shrink-0 mt-1" />
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-1" />
                     {i < roles.length - 1 && (
                       <span className="flex-1 w-px bg-border/50 mt-2" />
                     )}
@@ -84,7 +84,7 @@ export function AboutSection() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 mt-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neon-cyan/20 to-transparent" />
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         </div>
       </div>
     </section>

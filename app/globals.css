@@ -50,45 +50,45 @@
 
 :root {
   --radius: 0.5rem;
-  /* Y2K Dark Circuit Theme */
-  --background: #0a0a0f;
-  --foreground: #e0e0e8;
-  --card: #12121a;
-  --card-foreground: #e0e0e8;
-  --popover: #12121a;
-  --popover-foreground: #e0e0e8;
-  --primary: #00ff88;
-  --primary-foreground: #0a0a0f;
-  --secondary: #1a1a2e;
-  --secondary-foreground: #e0e0e8;
-  --muted: #16161f;
-  --muted-foreground: #8888a0;
+  /* HACF Dark Theme - Red/Magenta Primary */
+  --background: #0a0608;
+  --foreground: #e8e0e2;
+  --card: #120a0c;
+  --card-foreground: #e8e0e2;
+  --popover: #120a0c;
+  --popover-foreground: #e8e0e2;
+  --primary: #ff2244;
+  --primary-foreground: #0a0608;
+  --secondary: #1a1218;
+  --secondary-foreground: #e8e0e2;
+  --muted: #16101a;
+  --muted-foreground: #a08890;
   --accent: #ff0066;
   --accent-foreground: #ffffff;
   --destructive: #ff3333;
   --destructive-foreground: #ffffff;
-  --border: #2a2a3e;
-  --input: #1a1a2e;
-  --ring: #00ff88;
-  --chart-1: #00ff88;
+  --border: #3a2028;
+  --input: #1a1218;
+  --ring: #ff2244;
+  --chart-1: #ff2244;
   --chart-2: #ff0066;
-  --chart-3: #00ccff;
-  --chart-4: #ffcc00;
-  --chart-5: #cc00ff;
-  --sidebar: #0f0f14;
-  --sidebar-foreground: #e0e0e8;
-  --sidebar-primary: #00ff88;
-  --sidebar-primary-foreground: #0a0a0f;
-  --sidebar-accent: #1a1a2e;
-  --sidebar-accent-foreground: #e0e0e8;
-  --sidebar-border: #2a2a3e;
-  --sidebar-ring: #00ff88;
-  /* Custom Y2K colors */
-  --circuit: #00ff88;
-  --glow: #00ccff;
+  --chart-3: #ff6688;
+  --chart-4: #cc0044;
+  --chart-5: #ff3366;
+  --sidebar: #0f080a;
+  --sidebar-foreground: #e8e0e2;
+  --sidebar-primary: #ff2244;
+  --sidebar-primary-foreground: #0a0608;
+  --sidebar-accent: #1a1218;
+  --sidebar-accent-foreground: #e8e0e2;
+  --sidebar-border: #3a2028;
+  --sidebar-ring: #ff2244;
+  /* HACF-inspired colors */
+  --circuit: #ff2244;
+  --glow: #ff6688;
   --neon: #ff0066;
-  --neon-green: #00ff88;
-  --neon-cyan: #00ccff;
+  --neon-green: #ff2244;
+  --neon-cyan: #ff6688;
   --neon-magenta: #ff0066;
 }
 
@@ -101,13 +101,13 @@
   }
 }
 
-/* Circuit board pattern */
+/* Circuit board pattern - HACF red */
 .circuit-bg {
   background-image: 
-    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 34, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 34, 68, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.02) 1px, transparent 1px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
 }
@@ -131,9 +131,9 @@
   z-index: 10;
 }
 
-/* Glow effects */
+/* Glow effects - HACF red */
 .glow-primary {
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+  text-shadow: 0 0 10px rgba(255, 34, 68, 0.5), 0 0 20px rgba(255, 34, 68, 0.3);
 }
 
 .glow-accent {
@@ -141,15 +141,15 @@
 }
 
 .glow-blue {
-  text-shadow: 0 0 10px rgba(0, 204, 255, 0.5), 0 0 20px rgba(0, 204, 255, 0.3);
+  text-shadow: 0 0 10px rgba(255, 102, 136, 0.5), 0 0 20px rgba(255, 102, 136, 0.3);
 }
 
 .box-glow {
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2), 0 0 30px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 15px rgba(255, 34, 68, 0.25), 0 0 30px rgba(255, 34, 68, 0.15);
 }
 
 .box-glow-accent {
-  box-shadow: 0 0 15px rgba(255, 0, 102, 0.2), 0 0 30px rgba(255, 0, 102, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 102, 0.25), 0 0 30px rgba(255, 0, 102, 0.15);
 }
 
 /* Animated circuit line */
@@ -229,26 +229,26 @@
   font-family: var(--font-orbitron), sans-serif;
 }
 
-/* Subtle neon glow for text */
+/* Subtle neon glow for text - HACF red */
 .neon-glow-subtle {
-  text-shadow: 0 0 20px rgba(0, 255, 136, 0.15), 0 0 40px rgba(0, 255, 136, 0.08);
+  text-shadow: 0 0 20px rgba(255, 34, 68, 0.2), 0 0 40px rgba(255, 34, 68, 0.1), 0 0 60px rgba(255, 34, 68, 0.05);
 }
 
-/* Subtle button glow effects */
+/* Subtle button glow effects - HACF red */
 .neon-btn-glow {
-  box-shadow: 0 0 12px rgba(0, 255, 136, 0.25), 0 0 24px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 15px rgba(255, 34, 68, 0.35), 0 0 30px rgba(255, 34, 68, 0.15), 0 0 45px rgba(255, 34, 68, 0.05);
 }
 
 .neon-btn-glow-green {
-  box-shadow: 0 0 8px rgba(0, 255, 136, 0.15), 0 0 16px rgba(0, 255, 136, 0.05);
+  box-shadow: 0 0 12px rgba(255, 34, 68, 0.25), 0 0 24px rgba(255, 34, 68, 0.1);
 }
 
 .neon-btn-glow-cyan {
-  box-shadow: 0 0 8px rgba(0, 204, 255, 0.15), 0 0 16px rgba(0, 204, 255, 0.05);
+  box-shadow: 0 0 12px rgba(255, 102, 136, 0.25), 0 0 24px rgba(255, 102, 136, 0.1);
 }
 
 .neon-btn-glow-magenta {
-  box-shadow: 0 0 8px rgba(255, 0, 102, 0.15), 0 0 16px rgba(255, 0, 102, 0.05);
+  box-shadow: 0 0 12px rgba(255, 0, 102, 0.25), 0 0 24px rgba(255, 0, 102, 0.1);
 }
 
 /* Subtle glow for section labels */
@@ -257,7 +257,7 @@
   opacity: 0.3;
 }
 
-/* HACF-inspired CRT scan lines overlay */
+/* HACF-inspired CRT scan lines overlay - more visible */
 .hacf-scanlines {
   position: fixed;
   top: 0;
@@ -270,9 +270,27 @@
     0deg,
     transparent 0px,
     transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
   );
+}
+
+/* Secondary scan lines with red tint */
+.hacf-scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 4px,
+    rgba(255, 34, 68, 0.015) 4px,
+    rgba(255, 34, 68, 0.015) 8px
+  );
+  pointer-events: none;
 }
 
 /* HACF-inspired subtle grain/noise texture */
@@ -288,7 +306,7 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* HACF-inspired horizontal light streak */
+/* HACF-inspired horizontal light streak - red */
 .hacf-streak {
   position: relative;
 }
@@ -296,43 +314,84 @@
 .hacf-streak::before {
   content: '';
   position: absolute;
-  left: -20%;
-  right: -20%;
+  left: -30%;
+  right: -30%;
   top: 50%;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(0, 255, 136, 0.05) 20%,
-    rgba(0, 255, 136, 0.15) 50%,
-    rgba(0, 255, 136, 0.05) 80%,
+    rgba(255, 34, 68, 0.08) 15%,
+    rgba(255, 34, 68, 0.25) 50%,
+    rgba(255, 34, 68, 0.08) 85%,
     transparent 100%
   );
   transform: translateY(-50%);
   pointer-events: none;
 }
 
-/* Light flare on section headers */
+/* Additional horizontal flare line */
+.hacf-streak::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: 50%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.03) 20%,
+    rgba(255, 34, 68, 0.08) 50%,
+    rgba(255, 34, 68, 0.03) 80%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+/* Light flare on section headers - HACF red, more prominent */
 .hacf-flare {
   position: relative;
   display: inline-block;
 }
 
+.hacf-flare::before {
+  content: '';
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.3) 30%,
+    rgba(255, 102, 136, 0.5) 50%,
+    rgba(255, 34, 68, 0.3) 70%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .hacf-flare::after {
   content: '';
   position: absolute;
-  left: -10px;
-  right: -10px;
+  left: -15%;
+  right: -15%;
   top: 50%;
-  height: 20px;
+  height: 30px;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 255, 136, 0.08) 0%,
+    rgba(255, 34, 68, 0.12) 0%,
+    rgba(255, 34, 68, 0.05) 40%,
     transparent 70%
   );
   transform: translateY(-50%);
   pointer-events: none;
-  filter: blur(4px);
+  filter: blur(6px);
 }
 
 /* Animated scan line sweep (subtle) */
@@ -357,18 +416,39 @@
   position: fixed;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(0, 255, 136, 0.1) 30%,
-    rgba(0, 255, 136, 0.2) 50%,
-    rgba(0, 255, 136, 0.1) 70%,
+    rgba(255, 34, 68, 0.15) 20%,
+    rgba(255, 102, 136, 0.4) 50%,
+    rgba(255, 34, 68, 0.15) 80%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 9997;
-  animation: hacf-sweep 8s ease-in-out infinite;
+  animation: hacf-sweep 6s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 34, 68, 0.3), 0 0 40px rgba(255, 34, 68, 0.15);
+}
+
+/* Second sweep line with offset timing */
+.hacf-sweep-line-2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.1) 30%,
+    rgba(255, 34, 68, 0.2) 50%,
+    rgba(255, 34, 68, 0.1) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 9996;
+  animation: hacf-sweep 6s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
 /* Glitch effect on hover for images */

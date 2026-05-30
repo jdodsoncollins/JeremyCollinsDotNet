@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0f",
+  themeColor: "#0a0608",
   width: "device-width",
   initialScale: 1,
 };
@@ -54,6 +54,7 @@ export default function RootLayout({
         <div className="hacf-scanlines" aria-hidden="true" />
         <div className="hacf-grain" aria-hidden="true" />
         <div className="hacf-sweep-line" aria-hidden="true" />
+        <div className="hacf-sweep-line-2" aria-hidden="true" />
       </body>
     </html>
   );

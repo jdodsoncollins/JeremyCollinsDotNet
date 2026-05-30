@@ -82,7 +82,7 @@ export function HeroSection() {
               e.preventDefault();
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-neon-green text-background font-display font-bold text-xs tracking-[0.2em] uppercase rounded-lg hover:bg-neon-cyan transition-colors neon-btn-glow"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-display font-bold text-xs tracking-[0.2em] uppercase rounded-lg hover:bg-neon-cyan transition-colors neon-btn-glow"
           >
             View Projects
             <span className="opacity-60">→</span>
@@ -93,7 +93,7 @@ export function HeroSection() {
         <div className="flex flex-wrap items-center gap-3 mb-16">
           <a
             href="mailto:jeremy@jeremycollins.net"
-            className="inline-flex items-center gap-2 px-4 py-2 border border-neon-green/30 text-neon-green font-mono text-xs tracking-[0.15em] uppercase rounded-lg hover:border-neon-green hover:bg-neon-green/5 transition-all neon-btn-glow-green"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-primary font-mono text-xs tracking-[0.15em] uppercase rounded-lg hover:border-primary hover:bg-primary/5 transition-all neon-btn-glow-green"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
@@ -127,7 +127,7 @@ export function HeroSection() {
 
         {/* Divider */}
         <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neon-green/20 to-transparent" />
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         </div>
       </div>
     </section>
