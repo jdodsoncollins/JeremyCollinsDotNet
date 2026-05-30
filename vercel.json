@@ -1,6 +1,8 @@
 {
-  "buildCommand": "bash ./build.sh",
-  "outputDirectory": ".next",
-  "devCommand": "pnpm dev",
-  "framework": "nextjs"
+  "buildCommand": "cd .. && bash ./build.sh",
+  "installCommand": "cd .. && pnpm install",
+  "outputDirectory": "../.next",
+  "devCommand": "cd .. && pnpm dev",
+  "framework": "nextjs",
+  "rootDirectory": "."
 }
