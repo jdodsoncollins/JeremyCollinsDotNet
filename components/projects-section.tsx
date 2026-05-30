@@ -64,14 +64,12 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
           {/* Card header */}
           <div className="p-6 md:p-8 border-b border-border/40">
             <div className="flex items-start gap-5 mb-6">
-              <div className="w-14 h-14 rounded-xl overflow-hidden border border-border/60 flex-shrink-0 box-glow">
-                <Image
-                  src="/codable/codable-icon.png"
-                  alt="Codable App Icon"
-                  width={56}
-                  height={56}
-                  className="w-full h-full object-cover"
-                />
+              <div
+                className="w-14 h-14 rounded-xl border border-neon-green/40 flex-shrink-0 flex items-center justify-center bg-background"
+                style={{ boxShadow: "0 0 16px rgba(0,255,136,0.15)" }}
+                aria-hidden="true"
+              >
+                <span className="font-display font-black text-xl text-neon-green leading-none">C</span>
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold text-foreground tracking-wide">
