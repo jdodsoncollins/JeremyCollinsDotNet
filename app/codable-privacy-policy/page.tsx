@@ -12,7 +12,8 @@ export default function CodablePrivacyPolicy() {
   return (
     <div className="relative min-h-screen">
       <CircuitBackground />
-      <Header />
+      <div className="relative z-10">
+        <Header />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6">
           {/* Page header */}
@@ -159,6 +160,7 @@ export default function CodablePrivacyPolicy() {
         </div>
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
