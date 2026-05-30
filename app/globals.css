@@ -228,3 +228,31 @@
 .font-display {
   font-family: var(--font-orbitron), sans-serif;
 }
+
+/* Subtle neon glow for text */
+.neon-glow-subtle {
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.15), 0 0 40px rgba(0, 255, 136, 0.08);
+}
+
+/* Subtle button glow effects */
+.neon-btn-glow {
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.25), 0 0 24px rgba(0, 255, 136, 0.1);
+}
+
+.neon-btn-glow-green {
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.15), 0 0 16px rgba(0, 255, 136, 0.05);
+}
+
+.neon-btn-glow-cyan {
+  box-shadow: 0 0 8px rgba(0, 204, 255, 0.15), 0 0 16px rgba(0, 204, 255, 0.05);
+}
+
+.neon-btn-glow-magenta {
+  box-shadow: 0 0 8px rgba(255, 0, 102, 0.15), 0 0 16px rgba(255, 0, 102, 0.05);
+}
+
+/* Subtle glow for section labels */
+.section-label-glow {
+  text-shadow: 0 0 10px currentColor;
+  opacity: 0.3;
+}

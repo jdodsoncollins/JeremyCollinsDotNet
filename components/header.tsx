@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,9 +34,15 @@ export function Header() {
       <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-display text-lg tracking-wider text-neon-green hover:neon-glow transition-all"
+          className="hover:opacity-80 transition-opacity"
         >
-          JC
+          <Image
+            src="/inv-logo.png"
+            alt="Jeremy Collins"
+            width={40}
+            height={40}
+            className="h-8 w-auto"
+          />
         </Link>
         <div className="flex items-center gap-6">
           <button
