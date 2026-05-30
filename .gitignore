@@ -4,3 +4,5 @@ _site
 *pass.txt
 .history
 node_modules/
+.env*
+.vercel
