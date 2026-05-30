@@ -340,7 +340,7 @@
   opacity: 0.3;
 }
 
-/* HACF-inspired CRT scan lines overlay - more visible, excludes images */
+/* HACF-inspired CRT scan lines overlay */
 .hacf-scanlines {
   position: fixed;
   top: 0;
@@ -348,7 +348,7 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100;
   background: repeating-linear-gradient(
     0deg,
     transparent 0px,
@@ -356,7 +356,6 @@
     rgba(0, 0, 0, 0.08) 2px,
     rgba(0, 0, 0, 0.08) 4px
   );
-  mix-blend-mode: multiply;
 }
 
 /* Secondary scan lines with red tint */
@@ -377,9 +376,10 @@
   pointer-events: none;
 }
 
-/* Isolate images from scan line blend mode */
-img, .no-scanlines {
-  isolation: isolate;
+/* Container for images that should be above scan lines */
+.no-scanlines {
+  position: relative;
+  z-index: 200;
 }
 
 /* HACF-inspired subtle grain/noise texture */
@@ -390,7 +390,7 @@ img, .no-scanlines {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 99;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
@@ -495,7 +495,7 @@ img, .no-scanlines {
     transparent 100%
   );
   pointer-events: none;
-  z-index: 9997;
+  z-index: 98;
   animation: hacf-sweep 6s ease-in-out infinite;
   box-shadow: 0 0 20px rgba(255, 34, 68, 0.3), 0 0 40px rgba(255, 34, 68, 0.15);
 }
@@ -515,7 +515,7 @@ img, .no-scanlines {
     transparent 100%
   );
   pointer-events: none;
-  z-index: 9996;
+  z-index: 97;
   animation: hacf-sweep 6s ease-in-out infinite;
   animation-delay: 3s;
 }

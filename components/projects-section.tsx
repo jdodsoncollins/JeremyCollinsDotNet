@@ -136,7 +136,7 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
                 <button
                   key={shot.src}
                   onClick={() => setExpandedImage(shot.src)}
-                  className="group relative flex-shrink-0 w-24 md:w-28"
+                  className="group relative flex-shrink-0 w-24 md:w-28 no-scanlines"
                   aria-label={`Expand screenshot: ${shot.label}`}
                 >
                   {/* Phone frame ratio ~9:19.5 */}
@@ -173,10 +173,10 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
       {/* Lightbox */}
       {expandedImage && (
         <div
-          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[300] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setExpandedImage(null)}
         >
-          <div className="relative max-w-xs w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-xs w-full no-scanlines" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setExpandedImage(null)}
               className="absolute -top-10 right-0 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider"
