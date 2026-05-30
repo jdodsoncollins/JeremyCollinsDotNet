@@ -46,7 +46,6 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
             Projects
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
-            <span className="text-foreground hacf-flare">Featured</span>{" "}
             <span
               className="hacf-flare"
               style={{
@@ -54,7 +53,7 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
                 color: "transparent",
               }}
             >
-              Work
+              Featured Work
             </span>
           </h2>
         </div>

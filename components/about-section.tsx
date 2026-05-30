@@ -16,7 +16,6 @@ export function AboutSection() {
             About
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
-            <span className="text-foreground hacf-flare">Who I</span>{" "}
             <span
               className="hacf-flare"
               style={{
@@ -24,7 +23,7 @@ export function AboutSection() {
                 color: "transparent",
               }}
             >
-              Am
+              Who I Am
             </span>
           </h2>
         </div>
