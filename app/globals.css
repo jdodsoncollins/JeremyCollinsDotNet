@@ -46,6 +46,7 @@
   --color-neon-green: var(--neon-green);
   --color-neon-cyan: var(--neon-cyan);
   --color-neon-magenta: var(--neon-magenta);
+  --font-display: var(--font-orbitron), 'Orbitron Fallback', sans-serif;
 }
 
 :root {
@@ -90,10 +91,6 @@
   --neon-green: #00ff88;
   --neon-cyan: #00ccff;
   --neon-magenta: #ff0066;
-}
-
-@theme inline {
-  --font-display: var(--font-orbitron), 'Orbitron Fallback', sans-serif;
 }
 
 @layer base {
