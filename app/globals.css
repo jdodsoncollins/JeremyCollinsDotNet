@@ -234,6 +234,89 @@
   text-shadow: 0 0 20px rgba(255, 34, 68, 0.2), 0 0 40px rgba(255, 34, 68, 0.1), 0 0 60px rgba(255, 34, 68, 0.05);
 }
 
+/* Derezzed button effect - pixelated edges */
+.derez-btn {
+  position: relative;
+  clip-path: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+}
+
+.derez-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  clip-path: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+  z-index: -1;
+}
+
+/* Derezzed outline button */
+.derez-btn-outline {
+  position: relative;
+  background: transparent;
+  clip-path: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+}
+
+.derez-btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--background);
+  clip-path: polygon(
+    0 3px,
+    3px 3px,
+    3px 0,
+    calc(100% - 3px) 0,
+    calc(100% - 3px) 3px,
+    100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 3px) 100%,
+    3px 100%,
+    3px calc(100% - 3px),
+    0 calc(100% - 3px)
+  );
+  z-index: -1;
+}
+
 /* Subtle button glow effects - HACF red */
 .neon-btn-glow {
   box-shadow: 0 0 15px rgba(255, 34, 68, 0.35), 0 0 30px rgba(255, 34, 68, 0.15), 0 0 45px rgba(255, 34, 68, 0.05);
@@ -351,29 +434,10 @@
   filter: blur(4px);
 }
 
-/* Light flare on section headers - HACF red, more prominent */
+/* Light flare on section headers - HACF red, positioned below text */
 .hacf-flare {
   position: relative;
   display: inline-block;
-}
-
-.hacf-flare::before {
-  content: '';
-  position: absolute;
-  left: -30%;
-  right: -30%;
-  top: 50%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 34, 68, 0.3) 30%,
-    rgba(255, 102, 136, 0.5) 50%,
-    rgba(255, 34, 68, 0.3) 70%,
-    transparent 100%
-  );
-  transform: translateY(-50%);
-  pointer-events: none;
 }
 
 .hacf-flare::after {
@@ -381,15 +445,14 @@
   position: absolute;
   left: -15%;
   right: -15%;
-  top: 50%;
-  height: 30px;
+  bottom: -8px;
+  height: 20px;
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 34, 68, 0.12) 0%,
-    rgba(255, 34, 68, 0.05) 40%,
-    transparent 70%
+    rgba(255, 34, 68, 0.15) 0%,
+    rgba(255, 34, 68, 0.05) 50%,
+    transparent 80%
   );
-  transform: translateY(-50%);
   pointer-events: none;
   filter: blur(6px);
 }
