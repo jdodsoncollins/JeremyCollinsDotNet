@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 const SCREENSHOTS = [
   {
@@ -30,12 +31,9 @@ const SCREENSHOTS = [
   },
 ];
 
-interface ProjectsSectionProps {
-  expandedImage: string | null;
-  setExpandedImage: (src: string | null) => void;
-}
+export function ProjectsSection() {
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
-export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-20 border-t border-border/50">
       <div className="max-w-4xl mx-auto px-6">
@@ -65,8 +63,7 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
           <div className="p-6 md:p-8 border-b border-border/40">
             <div className="flex items-start gap-5 mb-6">
               <div
-                className="w-14 h-14 rounded-xl border border-primary/40 flex-shrink-0 flex items-center justify-center bg-background"
-                style={{ boxShadow: "0 0 16px rgba(255,34,68,0.2)" }}
+                className="codable-icon w-14 h-14 rounded-xl border border-primary/40 flex-shrink-0 flex items-center justify-center bg-background"
                 aria-hidden="true"
               >
                 <span className="font-display font-black text-xl text-primary leading-none">C</span>

@@ -4,8 +4,17 @@ import { CircuitBackground } from "@/components/circuit-background";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Codable Privacy Policy | JeremyCollins.net",
-  description: "Privacy Policy for Codable iOS application",
+  title: "Codable Privacy Policy",
+  description: "Privacy policy for Codable, Jeremy Collins' iOS Safari web developer tools app.",
+  alternates: {
+    canonical: "/codable-privacy-policy",
+  },
+  openGraph: {
+    title: "Codable Privacy Policy",
+    description: "Privacy policy for Codable, an iOS Safari web developer tools app.",
+    url: "/codable-privacy-policy",
+    type: "article",
+  },
 };
 
 export default function CodablePrivacyPolicy() {

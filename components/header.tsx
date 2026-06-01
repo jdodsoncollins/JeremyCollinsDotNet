@@ -1,37 +1,14 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToProjects = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60 transition-all duration-300">
+      <nav
+        className="max-w-5xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4"
+        aria-label="Primary navigation"
+      >
         <Link
           href="/"
           className="hover:opacity-80 transition-opacity"
@@ -44,13 +21,14 @@ export function Header() {
             className="h-8 w-auto"
           />
         </Link>
-        <div className="flex items-center gap-6">
-          <button
-            onClick={scrollToProjects}
+        <ThemeSwitcher />
+        <div className="flex items-center gap-4 md:gap-6">
+          <a
+            href="#projects"
             className="text-sm text-muted-foreground hover:text-neon-cyan transition-colors tracking-wide"
           >
             Projects
-          </button>
+          </a>
           <a
             href="https://github.com/jdodsoncollins"
             target="_blank"
