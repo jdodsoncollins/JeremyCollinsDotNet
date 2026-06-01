@@ -4,4 +4,6 @@ _site
 *pass.txt
 .history
 node_modules/
+.next/
+out/
 .vercel
