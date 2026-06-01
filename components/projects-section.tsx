@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SCREENSHOTS = [
   {
@@ -33,6 +33,21 @@ const SCREENSHOTS = [
 
 export function ProjectsSection() {
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!expandedImage) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setExpandedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [expandedImage]);
 
   return (
     <section id="projects" className="py-20 border-t border-border/50">
