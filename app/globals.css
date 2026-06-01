@@ -94,23 +94,23 @@
 
 :root[data-era="1990s"] {
   --radius: 0;
-  --background: #c0c0c0;
+  --background: #d4d0c8;
   --foreground: #050505;
-  --card: #d9d9d9;
+  --card: #ece9d8;
   --card-foreground: #050505;
   --popover: #ffffe1;
   --popover-foreground: #050505;
   --primary: #000080;
   --primary-foreground: #ffffff;
-  --secondary: #a8a8a8;
+  --secondary: #c0c0c0;
   --secondary-foreground: #050505;
-  --muted: #d0d0d0;
-  --muted-foreground: #404040;
+  --muted: #ece9d8;
+  --muted-foreground: #111111;
   --accent: #800080;
   --accent-foreground: #ffffff;
   --destructive: #800000;
   --destructive-foreground: #ffffff;
-  --border: #808080;
+  --border: #404040;
   --input: #ffffff;
   --ring: #000080;
   --chart-1: #000080;
@@ -118,7 +118,7 @@
   --chart-3: #800080;
   --chart-4: #808000;
   --chart-5: #800000;
-  --sidebar: #c0c0c0;
+  --sidebar: #d4d0c8;
   --sidebar-foreground: #050505;
   --sidebar-primary: #000080;
   --sidebar-primary-foreground: #ffffff;
@@ -147,7 +147,7 @@
   --secondary: #b9dcff;
   --secondary-foreground: #102235;
   --muted: #e7f4ff;
-  --muted-foreground: #4f6780;
+  --muted-foreground: #314f69;
   --accent: #2cc8ff;
   --accent-foreground: #06233c;
   --destructive: #d8336b;
@@ -699,13 +699,40 @@
   box-shadow: 0 0 16px rgba(255, 34, 68, 0.2);
 }
 
+.era-logo {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+}
+
+.era-logo-mark {
+  display: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  overflow: visible;
+}
+
+:root[data-era="1980s"] .era-logo-1980s,
+:root[data-era="1990s"] .era-logo-1990s,
+:root[data-era="2000s"] .era-logo-2000s {
+  display: block;
+}
+
+:root[data-era="1980s"] .era-logo {
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 8px rgba(255, 102, 136, 0.4));
+}
+
 /* 1990s: desktop OS bevels, classic web color, low resolution texture */
 :root[data-era="1990s"] body {
   background:
-    linear-gradient(45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.08) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.08) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.26) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.26) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.14) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.14) 75%),
     var(--background);
   background-position: 0 0, 0 8px, 8px -8px, -8px 0;
   background-size: 16px 16px;
@@ -713,13 +740,20 @@
 
 :root[data-era="1990s"] header {
   color: #050505;
-  background: #c0c0c0 !important;
-  border-bottom: 2px solid #404040;
-  box-shadow: inset 0 1px #ffffff, inset 0 -1px #808080;
+  background: #d4d0c8 !important;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 0 2px #ffffff, inset 0 -2px #808080, 0 2px #404040;
 }
 
-:root[data-era="1990s"] header img {
-  filter: invert(1);
+:root[data-era="1990s"] header nav::before {
+  content: "File Edit View Go Window Help";
+  position: absolute;
+  left: 5.5rem;
+  top: 0.35rem;
+  color: #111111;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
 }
 
 :root[data-era="1990s"] .font-display,
@@ -732,7 +766,7 @@
     linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
   background-size: 16px 16px;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 :root[data-era="1990s"] .hacf-scanlines,
@@ -756,8 +790,48 @@
 :root[data-era="1990s"] .theme-switcher,
 :root[data-era="1990s"] .theme-info,
 :root[data-era="1990s"] .theme-tooltip {
-  background: #c0c0c0;
+  background: #d4d0c8;
+  border-color: #000000 !important;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, inset 1px 1px #f5f5f5, inset -1px -1px #808080;
+}
+
+:root[data-era="1990s"] article {
+  position: relative;
+  padding-top: 1.9rem;
+  border-width: 2px;
+}
+
+:root[data-era="1990s"] article::before {
+  content: "Codable.exe";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  height: 1.35rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.45rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+:root[data-era="1990s"] article::after {
+  content: "_ [] X";
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  z-index: 1;
+  color: #000000;
+  background: #d4d0c8;
+  padding: 0 0.25rem;
   box-shadow: inset 1px 1px #ffffff, inset -1px -1px #404040;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
 }
 
 :root[data-era="1990s"] .hacf-streak::before,
@@ -770,6 +844,19 @@
   color: var(--foreground) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
+}
+
+:root[data-era="1990s"] [class*="text-muted-foreground"] {
+  color: #111111 !important;
+}
+
+:root[data-era="1990s"] [class*="text-neon-cyan"],
+:root[data-era="1990s"] [class*="text-primary"] {
+  color: #000080 !important;
+}
+
+:root[data-era="1990s"] [class*="text-neon-magenta"] {
+  color: #800080 !important;
 }
 
 :root[data-era="1990s"] .neon-glow-subtle,
@@ -786,7 +873,7 @@
 :root[data-era="1990s"] button[class*="border"] {
   clip-path: none;
   border-radius: 0;
-  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #404040;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
 }
 
 :root[data-era="1990s"] .rounded-xl,
@@ -806,7 +893,13 @@
 :root[data-era="1990s"] .box-glow,
 :root[data-era="1990s"] .box-glow-accent,
 :root[data-era="1990s"] .codable-icon {
-  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #404040;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
+}
+
+:root[data-era="1990s"] .era-logo {
+  color: #000000;
+  width: 2.75rem;
+  height: 2.5rem;
 }
 
 :root[data-era="1990s"] .theme-switcher-option[data-active="true"] {
@@ -828,13 +921,15 @@
 }
 
 :root[data-era="2000s"] header {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(166, 216, 255, 0.76) 48%, rgba(90, 169, 232, 0.82) 52%, rgba(27, 111, 198, 0.86)) !important;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.95), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(166, 216, 255, 0.8) 46%, rgba(75, 157, 224, 0.86) 47%, rgba(25, 105, 192, 0.9)) !important;
   border-bottom: 1px solid rgba(22, 94, 161, 0.65);
   box-shadow: 0 12px 28px rgba(0, 83, 157, 0.18), inset 0 1px rgba(255, 255, 255, 0.9);
 }
 
-:root[data-era="2000s"] header img {
-  filter: invert(1) drop-shadow(0 1px rgba(255, 255, 255, 0.8));
+:root[data-era="2000s"] .era-logo {
+  filter: drop-shadow(0 7px 14px rgba(0, 86, 160, 0.28));
 }
 
 :root[data-era="2000s"] .font-display {
@@ -865,9 +960,28 @@
 :root[data-era="2000s"] .theme-switcher,
 :root[data-era="2000s"] .theme-info,
 :root[data-era="2000s"] .theme-tooltip {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(229, 246, 255, 0.74) 45%, rgba(197, 230, 255, 0.78));
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.38) 35%, transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(229, 246, 255, 0.78) 46%, rgba(181, 222, 255, 0.72) 47%, rgba(222, 244, 255, 0.84));
   border-radius: 18px;
-  box-shadow: 0 18px 44px rgba(0, 86, 160, 0.18), inset 0 1px rgba(255, 255, 255, 0.95);
+  box-shadow: 0 26px 64px rgba(0, 86, 160, 0.24), inset 0 1px rgba(255, 255, 255, 0.98), inset 0 -1px rgba(0, 98, 180, 0.12);
+}
+
+:root[data-era="2000s"] article {
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-era="2000s"] article::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 1rem;
+  height: 6rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0));
+  pointer-events: none;
 }
 
 :root[data-era="2000s"] .hacf-streak::before,
@@ -896,13 +1010,15 @@
 }
 
 :root[data-era="2000s"] .derez-btn {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(188, 232, 255, 0.65) 44%, var(--primary) 45%, #0050b8 100%);
-  box-shadow: 0 12px 28px rgba(0, 116, 217, 0.32), inset 0 1px rgba(255, 255, 255, 0.95);
+  background: #006fd1;
+  border-color: #0050a8;
+  box-shadow: 0 6px 14px rgba(0, 116, 217, 0.22), inset 0 1px rgba(255, 255, 255, 0.38);
 }
 
 :root[data-era="2000s"] .derez-btn-outline {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(214, 240, 255, 0.42));
-  box-shadow: 0 8px 20px rgba(0, 116, 217, 0.12), inset 0 1px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: #0074d9;
+  box-shadow: 0 5px 12px rgba(0, 116, 217, 0.12), inset 0 1px rgba(255, 255, 255, 0.7);
 }
 
 :root[data-era="2000s"] .derez-btn::before,
@@ -917,7 +1033,11 @@
 :root[data-era="2000s"] .box-glow,
 :root[data-era="2000s"] .box-glow-accent,
 :root[data-era="2000s"] .codable-icon {
-  box-shadow: 0 16px 36px rgba(0, 116, 217, 0.18), inset 0 1px rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 24px rgba(0, 116, 217, 0.14), inset 0 1px rgba(255, 255, 255, 0.72);
+}
+
+:root[data-era="2000s"] .codable-icon {
+  background: radial-gradient(circle at 35% 18%, #ffffff, #d8f1ff 44%, #b6dcff 100%);
 }
 
 :root[data-era="2000s"] .theme-switcher-option[data-active="true"] {

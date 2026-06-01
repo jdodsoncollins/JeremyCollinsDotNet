@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { EraLogo } from "@/components/era-logo";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function Header() {
@@ -12,14 +12,9 @@ export function Header() {
         <Link
           href="/"
           className="hover:opacity-80 transition-opacity"
+          aria-label="Jeremy Collins home"
         >
-          <Image
-            src="/inv-logo.png"
-            alt="Jeremy Collins"
-            width={40}
-            height={40}
-            className="h-8 w-auto"
-          />
+          <EraLogo />
         </Link>
         <ThemeSwitcher />
         <div className="flex items-center gap-4 md:gap-6">
