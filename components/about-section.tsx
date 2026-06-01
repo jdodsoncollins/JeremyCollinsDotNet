@@ -1,9 +1,10 @@
 export function AboutSection() {
   const roles = [
-    { period: "2021 - present", company: "Webflow", title: "Sr. Software Engineer" },
-    { period: "2019 - 2021", company: "MasterClass", title: "Software Engineer" },
-    { period: "2017 - 2019", company: "HitRecord", title: "Software Engineer" },
-    { period: "2015 - 2017", company: "Event Farm", title: "Front-End Engineer" },
+    { period: "2023 - present", company: "Webflow", title: "Sr. Software Engineer" },
+    { period: "2022", company: "MasterClass", title: "Software Engineer" },
+    { period: "2019 - 2022", company: "HitRecord", title: "Software Engineer" },
+    { period: "2018", company: "Plink", title: "Software Engineer" },
+    { period: "2015 - 2018", company: "Event Farm", title: "Front-End Engineer" },
   ];
 
   return (
