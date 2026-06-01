@@ -50,7 +50,8 @@ export function ThemeSwitcher() {
           i
         </button>
         <div className="theme-tooltip" role="tooltip">
-          I like computing history, and this is a small personal one-pager.
+          This is a theme switcher to emulate styles of the decades. The theme you choose will persist,
+          otherwise it is randomized. I like computing history, and this is a small personal one-pager.
           Might as well make it fun.
         </div>
       </div>

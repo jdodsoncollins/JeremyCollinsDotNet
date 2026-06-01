@@ -94,9 +94,9 @@
 
 :root[data-era="1990s"] {
   --radius: 0;
-  --background: #d4d0c8;
+  --background: #d8d4cc;
   --foreground: #050505;
-  --card: #ece9d8;
+  --card: #e6e2d8;
   --card-foreground: #050505;
   --popover: #ffffe1;
   --popover-foreground: #050505;
@@ -104,7 +104,7 @@
   --primary-foreground: #ffffff;
   --secondary: #c0c0c0;
   --secondary-foreground: #050505;
-  --muted: #ece9d8;
+  --muted: #e9e6dd;
   --muted-foreground: #111111;
   --accent: #800080;
   --accent-foreground: #ffffff;
@@ -726,23 +726,24 @@
   filter: drop-shadow(0 0 8px rgba(255, 102, 136, 0.4));
 }
 
-/* 1990s: desktop OS bevels, classic web color, low resolution texture */
+/* 1990s: Mac OS Platinum bevels, classic web color, low resolution texture */
 :root[data-era="1990s"] body {
   background:
-    linear-gradient(45deg, rgba(255, 255, 255, 0.26) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.26) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.14) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.14) 75%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.07) 50% 62.5%, transparent 62.5%),
+    repeating-linear-gradient(90deg, #d8d4cc 0 1px, #f2efe7 1px 2px, #c7c3ba 2px 3px, #dedad1 3px 6px),
     var(--background);
-  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-  background-size: 16px 16px;
+  background-size: 16px 16px, 6px 6px, auto;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-weight: 600;
+  -webkit-font-smoothing: auto;
+  text-rendering: geometricPrecision;
 }
 
 :root[data-era="1990s"] header {
   color: #050505;
-  background: #d4d0c8 !important;
+  background: linear-gradient(180deg, #ece9e1 0%, #d8d4cc 45%, #c6c2ba 100%) !important;
   border-bottom: 2px solid #000000;
-  box-shadow: inset 0 2px #ffffff, inset 0 -2px #808080, 0 2px #404040;
+  box-shadow: inset 0 2px #ffffff, inset 0 -2px #7d7a73, 0 2px #404040;
 }
 
 :root[data-era="1990s"] header nav::before {
@@ -751,14 +752,16 @@
   left: 5.5rem;
   top: 0.35rem;
   color: #111111;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-size: 0.62rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
 }
 
 :root[data-era="1990s"] .font-display,
 :root[data-era="1990s"] .font-mono {
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-weight: 700;
 }
 
 :root[data-era="1990s"] .circuit-bg {
@@ -790,9 +793,9 @@
 :root[data-era="1990s"] .theme-switcher,
 :root[data-era="1990s"] .theme-info,
 :root[data-era="1990s"] .theme-tooltip {
-  background: #d4d0c8;
+  background: linear-gradient(180deg, #ece9e1 0%, #d8d4cc 38%, #c9c5bd 100%);
   border-color: #000000 !important;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, inset 1px 1px #f5f5f5, inset -1px -1px #808080;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, inset 1px 1px #f7f4ee, inset -1px -1px #7d7a73;
 }
 
 :root[data-era="1990s"] article {
@@ -813,7 +816,7 @@
   padding-left: 0.45rem;
   color: #ffffff;
   background: linear-gradient(90deg, #000080, #1084d0);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -829,7 +832,7 @@
   background: #d4d0c8;
   padding: 0 0.25rem;
   box-shadow: inset 1px 1px #ffffff, inset -1px -1px #404040;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-size: 0.65rem;
   font-weight: 700;
 }
@@ -851,8 +854,12 @@
 }
 
 :root[data-era="1990s"] [class*="text-neon-cyan"],
-:root[data-era="1990s"] [class*="text-primary"] {
+:root[data-era="1990s"] [class~="text-primary"] {
   color: #000080 !important;
+}
+
+:root[data-era="1990s"] [class*="text-primary-foreground"] {
+  color: #ffffff !important;
 }
 
 :root[data-era="1990s"] [class*="text-neon-magenta"] {
@@ -873,7 +880,27 @@
 :root[data-era="1990s"] button[class*="border"] {
   clip-path: none;
   border-radius: 0;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-weight: 700;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, 1px 1px 0 #000000;
+}
+
+:root[data-era="1990s"] .derez-btn {
+  color: #ffffff !important;
+  background: #000080 !important;
+  border: 2px solid #000000 !important;
+  text-shadow: 1px 0 0 #000000;
+}
+
+:root[data-era="1990s"] .derez-btn:hover {
+  color: #ffffff !important;
+  background: #1084d0 !important;
+}
+
+:root[data-era="1990s"] .derez-btn-outline,
+:root[data-era="1990s"] a[class*="border"],
+:root[data-era="1990s"] button[class*="border"] {
+  background: #d8d4cc;
 }
 
 :root[data-era="1990s"] .rounded-xl,
