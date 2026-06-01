@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <CircuitBackground />
-      <div className="relative z-10">
+      <div className="relative">
         <Header />
         <main>
           <HeroSection />

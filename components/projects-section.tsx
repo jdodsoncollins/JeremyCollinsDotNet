@@ -59,7 +59,7 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
         </div>
 
         {/* Codable card */}
-        <article className="border border-border/60 bg-card/20 backdrop-blur-sm">
+        <article className="border border-border/60 bg-card/20">
 
           {/* Card header */}
           <div className="p-6 md:p-8 border-b border-border/40">
