@@ -24,7 +24,7 @@ export function AboutSection() {
                 color: "transparent",
               }}
             >
-              Who I Am
+              Who I am
             </span>
           </h2>
         </div>
@@ -33,21 +33,27 @@ export function AboutSection() {
           {/* Bio */}
           <div className="space-y-4 font-mono text-sm text-muted-foreground leading-relaxed">
             <p>
-              I&apos;m a product engineer with a full-stack background and a
-              strong lean toward the front end. I enjoy working at the
-              intersection of design and engineering, writing the kind of code
-              that shapes what a product feels like to use.
+              I&apos;m a product engineer with a full-stack background. I like
+              working on products where understanding the business and market
+              makes the engineering work better.
             </p>
             <p>
-              I care about the craft: performance, accessibility, and the small
-              details that make interfaces feel responsive and alive. I like
-              working on teams where product thinking and technical depth go
-              hand in hand.
+              My current focus is using agentic tooling and automation to build
+              larger, more complex systems with less manual overhead. I care
+              about the craft, but I also care about changing the way the work
+              gets done.
             </p>
             <p>
-              Outside of work I build iOS apps. Codable is a Safari extension
-              that brings web developer tools (element inspector, console, and
-              more) to mobile browsers.
+              I follow industry shifts closely and try a lot of new products,
+              tools, and workflows. The web still matters to me as an open
+              platform with portable standards and room for independent
+              software.
+            </p>
+            <p>
+              Outside of work I build iOS apps. Codable brings web developer
+              tools to mobile Safari. It has no monetization or tracking. I
+              published it because I think these tools should exist on mobile
+              devices.
             </p>
           </div>
 

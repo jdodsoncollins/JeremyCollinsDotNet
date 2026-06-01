@@ -5,27 +5,27 @@ import Image from "next/image";
 const SCREENSHOTS = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vwBoDeA6eaVZaQMV31VdaJpyxSLUbD.png",
-    alt: "Codable — Extension intro screen showing Safari-native web developer tools",
+    alt: "Codable: Extension intro screen showing Safari-native web developer tools",
     label: "Extension",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IT5OAZP3SDmVkAMRytVlHJnA2xYyoz.png",
-    alt: "Codable — Console panel showing JavaScript log output from a live page",
+    alt: "Codable: Console panel showing JavaScript log output from a live page",
     label: "Console",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eQvswFWMeXE7PuAi41Pqzw9osBqBki.png",
-    alt: "Codable — Resize mode showing responsive viewport at iPhone Pro dimensions",
+    alt: "Codable: Resize mode showing responsive viewport at iPhone Pro dimensions",
     label: "Resize",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IjtKYzN3A0zPrLA4Ovqmrwr501TTB7.png",
-    alt: "Codable — AI Code generation panel with prompt input and generated JavaScript",
+    alt: "Codable: AI Code generation panel with prompt input and generated JavaScript",
     label: "AI Code",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-C6qUg0GcQ7PtGVKfyDnsZyA8raicBy.png",
-    alt: "Codable — Scratchpad with syntax-highlighted JavaScript and live output",
+    alt: "Codable: Scratchpad with syntax-highlighted JavaScript and live output",
     label: "Scratchpad",
   },
 ];
@@ -83,9 +83,10 @@ export function ProjectsSection({ expandedImage, setExpandedImage }: ProjectsSec
 
             <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-xl mb-6">
               Safari-native web developer tools and element inspector for iOS.
-              Inspect HTML, styles, network requests, and console output — run
+              Inspect HTML, styles, network requests, and console output. Run
               a JavaScript scratchpad, test responsive viewports, and generate
-              code with Apple Intelligence.
+              code with Apple Intelligence. Codable has no monetization or
+              tracking.
             </p>
 
             {/* Feature list */}

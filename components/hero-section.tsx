@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const TAGLINES = [
   "FULL-STACK SOFTWARE DEVELOPER",
   "PRODUCT ENGINEER",
-  "FRONT-END SPECIALIST",
+  "AUTOMATION-MINDED ENGINEER",
   "WEB PLATFORM ADVOCATE",
 ];
 
@@ -66,13 +66,6 @@ export function HeroSection() {
           </span>
           <span className="cursor-blink inline-block w-0.5 h-5 bg-neon-cyan ml-0.5" />
         </div>
-
-        {/* Intro paragraph */}
-        <p className="font-mono text-sm md:text-base text-muted-foreground max-w-xl leading-relaxed mb-12">
-          Building for the open web. I enjoy working at the intersection of
-          design and engineering, applying real domain knowledge to shape
-          what I help build.
-        </p>
 
         {/* Primary CTA */}
         <div className="flex flex-wrap items-center gap-4 mb-8">
