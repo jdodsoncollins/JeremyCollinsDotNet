@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Mono, Orbitron } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -122,6 +123,7 @@ export default function RootLayout({
         <div className="hacf-grain" aria-hidden="true" />
         <div className="hacf-sweep-line" aria-hidden="true" />
         <div className="hacf-sweep-line-2" aria-hidden="true" />
+        <Analytics />
       </body>
     </html>
   );
