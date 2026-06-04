@@ -5,8 +5,10 @@ import { useEffect, useState } from "react";
 const TAGLINES = [
   "FULL-STACK SOFTWARE DEVELOPER",
   "PRODUCT ENGINEER",
-  "AUTOMATION-MINDED ENGINEER",
+  "FRONT-END SPECIALIST",
   "WEB PLATFORM ADVOCATE",
+  "BUILDER",
+  "LIFE-LONG LEARNER",
 ];
 
 export function HeroSection() {
