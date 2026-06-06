@@ -32,6 +32,24 @@ export function EraLogo() {
         <path d="M13 26c2.2 2.3 5.5 3.4 8.8 2.7 4.7-1 7.7-5.6 6.8-10.3" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
         <path d="M13 26c2.2 2.3 5.5 3.4 8.8 2.7 4.7-1 7.7-5.6 6.8-10.3" fill="none" stroke="#043a7a" strokeWidth="1.2" strokeLinecap="round" />
       </svg>
+
+      <svg className="era-logo-mark era-logo-modern" viewBox="0 0 40 40" role="img">
+        <defs>
+          <linearGradient id="era-logo-modern-shell" x1="7" x2="33" y1="4" y2="36" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#ffffff" stopOpacity="0.94" />
+            <stop offset="0.48" stopColor="#9db7ff" stopOpacity="0.46" />
+            <stop offset="1" stopColor="#111827" stopOpacity="0.62" />
+          </linearGradient>
+          <linearGradient id="era-logo-modern-stroke" x1="10" x2="30" y1="7" y2="33" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#c7d2fe" />
+            <stop offset="1" stopColor="#f8fafc" />
+          </linearGradient>
+        </defs>
+        <rect x="6" y="6" width="28" height="28" rx="9" fill="url(#era-logo-modern-shell)" stroke="rgba(255,255,255,0.52)" strokeWidth="1.2" />
+        <path d="M14 26c2.2 2.2 5.4 3.1 8.4 2.4 4.7-1.1 7.6-5.7 6.6-10.4" fill="none" stroke="url(#era-logo-modern-stroke)" strokeWidth="3" strokeLinecap="round" />
+        <path d="M12 14h16" stroke="rgba(255,255,255,0.72)" strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M12 19h9" stroke="rgba(255,255,255,0.48)" strokeWidth="1.4" strokeLinecap="round" />
+      </svg>
     </span>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const THEMES = ["1980s", "1990s", "2000s"] as const;
+const THEMES = ["1980s", "1990s", "2000s", "modern"] as const;
 const STORAGE_KEY = "jeremycollins-theme-era";
 
 type EraTheme = (typeof THEMES)[number];

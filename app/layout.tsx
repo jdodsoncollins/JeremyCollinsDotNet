@@ -90,7 +90,7 @@ const themeInitScript = `
 (() => {
   try {
     const key = "jeremycollins-theme-era";
-    const themes = ["1980s", "1990s", "2000s"];
+    const themes = ["1980s", "1990s", "2000s", "modern"];
     const saved = window.localStorage.getItem(key);
     const theme = themes.includes(saved || "")
       ? saved
