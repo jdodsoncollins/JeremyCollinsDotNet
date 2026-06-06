@@ -61,11 +61,8 @@ export function EraLogo() {
         </defs>
         <circle cx="20" cy="20" r="17" fill="url(#era-logo-aqua-shell)" stroke="#004f9f" strokeWidth="1.2" />
         <g clipPath="url(#era-logo-aqua-clip)" fill="none" stroke="url(#era-logo-aqua-stroke)" strokeLinecap="square">
-          <path d="M8 7A18 18 0 1 1 8 33" strokeWidth="3.4" />
-          <path d="M11.5 28.5A13 13 0 1 1 28.5 11.5" strokeWidth="3" />
-          <path d="M14.5 26A9 9 0 1 1 26.2 26" strokeWidth="2.8" />
+          <path d="M14.5 26A9 9 0 1 1 26.2 26" strokeWidth="3.2" />
           <path d="M18 9.5h5.5" strokeWidth="1.1" opacity="0.85" />
-          <path d="M22 11.7h6" strokeWidth="1.1" opacity="0.72" />
           <path d="M15.5 31h5.5" strokeWidth="1.1" opacity="0.72" />
         </g>
         <ellipse cx="20" cy="12" rx="12.5" ry="6.4" fill="rgba(255,255,255,0.58)" />
