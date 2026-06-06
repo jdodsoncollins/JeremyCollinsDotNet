@@ -769,11 +769,11 @@
   filter: drop-shadow(0 0 8px rgba(255, 102, 136, 0.4));
 }
 
-/* 1990s: Mac OS Platinum bevels, classic web color, low resolution texture */
+/* 1990s: pixel-art texture, beOS-like bevels, classic web color */
 :root[data-era="1990s"] body {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.07) 50% 62.5%, transparent 62.5%),
-    repeating-linear-gradient(90deg, #d8d4cc 0 1px, #f2efe7 1px 2px, #c7c3ba 2px 3px, #dedad1 3px 6px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.06) 50% 62.5%, transparent 62.5%),
+    repeating-linear-gradient(90deg, #dcd8cf 0 1px, #f3f0e8 1px 2px, #c9c4ba 2px 3px, #e2ded4 3px 6px),
     var(--background);
   background-size: 16px 16px, 6px 6px, auto;
   font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
@@ -784,21 +784,11 @@
 
 :root[data-era="1990s"] header {
   color: #050505;
-  background: linear-gradient(180deg, #ece9e1 0%, #d8d4cc 45%, #c6c2ba 100%) !important;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #eee9dc 0%, #d9d3c7 52%, #c7c1b5 100%) !important;
   border-bottom: 2px solid #000000;
-  box-shadow: inset 0 2px #ffffff, inset 0 -2px #7d7a73, 0 2px #404040;
-}
-
-:root[data-era="1990s"] header nav::before {
-  content: "File Edit View Go Window Help";
-  position: absolute;
-  left: 5.5rem;
-  top: 0.35rem;
-  color: #111111;
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  box-shadow: inset 0 2px #ffffff, inset 0 -2px #7d7a73, 0 2px #34322e, 0 4px #f4d13a;
 }
 
 :root[data-era="1990s"] .font-display,
@@ -839,48 +829,33 @@
 :root[data-era="1990s"] .theme-switcher,
 :root[data-era="1990s"] .theme-info,
 :root[data-era="1990s"] .theme-tooltip {
-  background: linear-gradient(180deg, #ece9e1 0%, #d8d4cc 38%, #c9c5bd 100%);
-  border-color: #000000 !important;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, inset 1px 1px #f7f4ee, inset -1px -1px #7d7a73;
+  background:
+    radial-gradient(circle at 0 0, rgba(244, 209, 58, 0.18), transparent 6rem),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 12px),
+    linear-gradient(180deg, #eee9dc 0%, #ddd7cb 42%, #ccc6ba 100%);
+  border-color: #202020 !important;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 3px 3px 0 #050505;
 }
 
 :root[data-era="1990s"] article {
   position: relative;
-  padding-top: 1.9rem;
   border-width: 2px;
+  border-radius: 2px;
 }
 
 :root[data-era="1990s"] article::before {
-  content: "Codable.exe";
+  content: "";
   position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  height: 1.35rem;
-  display: flex;
-  align-items: center;
-  padding-left: 0.45rem;
-  color: #ffffff;
-  background: linear-gradient(90deg, #000080, #1084d0);
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-:root[data-era="1990s"] article::after {
-  content: "_ [] X";
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  z-index: 1;
-  color: #000000;
-  background: #d4d0c8;
-  padding: 0 0.25rem;
-  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #404040;
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
-  font-size: 0.65rem;
-  font-weight: 700;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background:
+    linear-gradient(90deg, #f4d13a 0 50%, #000080 50% 100%),
+    #f4d13a;
+  border: 2px solid #202020;
+  box-shadow: inset 2px 2px #fff6a8, inset -2px -2px #8c7618, 2px 2px 0 #050505;
+  pointer-events: none;
 }
 
 :root[data-era="1990s"] .hacf-streak::before,
@@ -925,10 +900,10 @@
 :root[data-era="1990s"] a[class*="border"],
 :root[data-era="1990s"] button[class*="border"] {
   clip-path: none;
-  border-radius: 0;
+  border-radius: 2px;
   font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-weight: 700;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040, 1px 1px 0 #000000;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
 }
 
 :root[data-era="1990s"] .derez-btn {
@@ -946,12 +921,12 @@
 :root[data-era="1990s"] .derez-btn-outline,
 :root[data-era="1990s"] a[class*="border"],
 :root[data-era="1990s"] button[class*="border"] {
-  background: #d8d4cc;
+  background: #e4decf;
 }
 
 :root[data-era="1990s"] .rounded-xl,
 :root[data-era="1990s"] .rounded-full {
-  border-radius: 0;
+  border-radius: 2px;
 }
 
 :root[data-era="1990s"] .derez-btn::before,
@@ -966,7 +941,7 @@
 :root[data-era="1990s"] .box-glow,
 :root[data-era="1990s"] .box-glow-accent,
 :root[data-era="1990s"] .codable-icon {
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
 }
 
 :root[data-era="1990s"] .era-logo {
@@ -978,7 +953,7 @@
 :root[data-era="1990s"] .theme-switcher-option[data-active="true"] {
   color: #ffffff;
   background: #000080;
-  box-shadow: inset 1px 1px #0000c0, inset -1px -1px #000040;
+  box-shadow: inset 1px 1px #2b4fd4, inset -1px -1px #000040, 1px 1px 0 #050505;
 }
 
 :root[data-era="1990s"] .cursor-blink {
