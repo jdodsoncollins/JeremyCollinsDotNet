@@ -755,6 +755,7 @@
   width: 2.25rem;
   height: 2.25rem;
   overflow: visible;
+  object-fit: contain;
 }
 
 :root[data-era="1980s"] .era-logo-1980s,

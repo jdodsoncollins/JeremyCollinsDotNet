@@ -75,16 +75,7 @@ export function EraLogo() {
         <path d="M10 8H30" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" opacity="0.72" />
       </svg>
 
-      <svg className="era-logo-mark era-logo-modern" viewBox="0 0 40 40" role="img">
-        <g fill="none" stroke="currentColor" strokeLinecap="square">
-          <path d="M8 7A18 18 0 1 1 8 33" strokeWidth="3.1" />
-          <path d="M11.5 28.5A13 13 0 1 1 28.5 11.5" strokeWidth="2.6" />
-          <path d="M14.5 26A9 9 0 1 1 26.2 26" strokeWidth="2.6" />
-          <path d="M18 9.5h5.5" strokeWidth="0.9" opacity="0.9" />
-          <path d="M22 11.7h6" strokeWidth="0.9" opacity="0.9" />
-          <path d="M15.5 31h5.5" strokeWidth="0.9" opacity="0.9" />
-        </g>
-      </svg>
+      <img className="era-logo-mark era-logo-modern" src="/inv-logo.png" alt="" />
     </span>
   );
 }
