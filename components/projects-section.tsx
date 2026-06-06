@@ -10,6 +10,11 @@ const SCREENSHOTS = [
     label: "Extension",
   },
   {
+    src: "/codable/IMG_0187.PNG",
+    alt: "Codable: Elements panel inspecting a selected Safari page paragraph",
+    label: "Elements",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IT5OAZP3SDmVkAMRytVlHJnA2xYyoz.png",
     alt: "Codable: Console panel showing JavaScript log output from a live page",
     label: "Console",
