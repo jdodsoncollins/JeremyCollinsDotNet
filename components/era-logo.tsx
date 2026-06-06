@@ -33,11 +33,15 @@ export function EraLogo() {
       <svg className="era-logo-mark era-logo-1990s" viewBox="0 0 40 40" role="img">
         <rect x="6" y="6" width="28" height="28" fill="#ece7db" stroke="#000" strokeWidth="2" shapeRendering="crispEdges" />
         <rect x="9" y="9" width="22" height="3" fill="#000080" shapeRendering="crispEdges" />
-        <g fill="none" stroke="#050505" strokeLinecap="square">
-          <path d="M10 10.5A15 15 0 1 1 10 29.5" strokeWidth="2.6" />
-          <path d="M13 14.2A10 10 0 1 1 26.8 27" strokeWidth="2.4" />
-          <path d="M16 26A7 7 0 1 1 25.8 25.7" strokeWidth="2.2" />
-          <path d="M17.5 12.5h8" strokeWidth="1" />
+        <g fill="none" stroke="#050505" strokeLinecap="square" strokeLinejoin="miter" shapeRendering="crispEdges">
+          <path d="M11 15V11H29V29H24" strokeWidth="2.4" />
+          <path d="M20 31H10V25" strokeWidth="2.4" />
+          <path d="M10 22V17" strokeWidth="2.4" />
+          <path d="M15 27V15H27V20" strokeWidth="2.2" />
+          <path d="M22 26H16" strokeWidth="2.2" />
+          <path d="M18 25V18H24V25" strokeWidth="2" />
+          <path d="M17 13H24" strokeWidth="1" />
+          <path d="M18 30H22" strokeWidth="1" />
         </g>
       </svg>
 
@@ -56,17 +60,19 @@ export function EraLogo() {
             <stop offset="1" stopColor="#003d91" />
           </linearGradient>
           <clipPath id="era-logo-aqua-clip">
-            <circle cx="20" cy="20" r="17" />
+            <rect x="5" y="5" width="30" height="30" rx="7" />
           </clipPath>
         </defs>
-        <circle cx="20" cy="20" r="17" fill="url(#era-logo-aqua-shell)" stroke="#004f9f" strokeWidth="1.2" />
-        <g clipPath="url(#era-logo-aqua-clip)" fill="none" stroke="url(#era-logo-aqua-stroke)" strokeLinecap="square">
-          <path d="M14.5 26A9 9 0 1 1 26.2 26" strokeWidth="3.2" />
-          <path d="M18 9.5h5.5" strokeWidth="1.1" opacity="0.85" />
-          <path d="M15.5 31h5.5" strokeWidth="1.1" opacity="0.72" />
+        <rect x="5" y="5" width="30" height="30" rx="7" fill="url(#era-logo-aqua-shell)" stroke="#004f9f" strokeWidth="1.2" />
+        <g clipPath="url(#era-logo-aqua-clip)" fill="none" stroke="url(#era-logo-aqua-stroke)" strokeLinecap="square" strokeLinejoin="miter">
+          <path d="M9 10H30V30H10" strokeWidth="2.8" />
+          <path d="M13 27V14H27V20" strokeWidth="2.6" />
+          <path d="M17 26V18H24V26" strokeWidth="2.4" />
+          <path d="M18 12h6" strokeWidth="1" opacity="0.85" />
+          <path d="M16 31h6" strokeWidth="1" opacity="0.72" />
         </g>
-        <ellipse cx="20" cy="12" rx="12.5" ry="6.4" fill="rgba(255,255,255,0.58)" />
-        <path d="M9 7A18 18 0 0 1 31.5 9" fill="none" stroke="#ffffff" strokeWidth="1.3" strokeLinecap="round" opacity="0.72" />
+        <ellipse cx="20" cy="12" rx="11.5" ry="5.6" fill="rgba(255,255,255,0.58)" />
+        <path d="M10 8H30" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" opacity="0.72" />
       </svg>
 
       <svg className="era-logo-mark era-logo-modern" viewBox="0 0 40 40" role="img">
