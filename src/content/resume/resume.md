@@ -26,8 +26,9 @@ Senior Software Engineer
 Aug 2022 to Present
 
 - Led lifecycle and growth engineering work across dashboard surfaces, paywalls, usage visibility, notifications, and customer-facing product development.
-- Rebuilt bandwidth metering and reconciliation paths from legacy reporting systems to Druid-backed workflows, improving usage accuracy for overage notifications, upgrade prompts, and billing operations.
-- Built Webflow's per-site Web Application Firewall from early AI-assisted prototype through production rollout, spanning edge validation, domain packages, server APIs, dashboard UI, security hardening, and enterprise beta support.
+- Built an internal admin MCP platform with approximately 20 tools spanning billing, entitlements, account state, payments, observability, CI, and internal systems, helping support and engineering teams trace complex customer-account issues across multiple sources of truth.
+- Rebuilt bandwidth metering and overage lifecycle workflows, supporting approximately $6M in annual incremental revenue through accurate usage pipelines, proactive customer notifications, dashboard visibility, and billing reconciliation.
+- Took Webflow's per-site Web Application Firewall from early proof of concept through production rollout, expanding a basic blocker into a configurable customer-facing rule system tied to an estimated $4M self-serve opportunity and subsequent enterprise adoption.
 - Owned customer-facing overage notification flows across in-app banners and email, including phased rollout controls, audience targeting, multi-overage support, and operational safeguards for auto-upgrade workflows.
 - Shipped usage dashboard improvements that clarified plan limits, bandwidth consumption, Analyze and Optimize add-on usage, and upgrade paths for self-serve customers.
 - Built migration, logging, and defensive cache tooling around entitlement and subscription data, giving product and engineering teams cleaner signals for billing and lifecycle experiments.
@@ -94,4 +95,4 @@ B.A. Communication and Political Science
 
 ## Technologies
 
-TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, GraphQL, SQL, Druid, ClickHouse, Stigg, Knock, Statsig, Optimizely, Codex, OpenCode, agentic coding, harness engineering, system design, HTML, CSS, Git, analytics instrumentation.
+TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, SwiftUI, Zod, Nest.js, SQL, Druid, Stigg, Knock, Statsig, Datadog, MCP, Codex, OpenCode, agentic coding, system design, Git, analytics instrumentation.
