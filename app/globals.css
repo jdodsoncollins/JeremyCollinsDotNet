@@ -477,7 +477,7 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 100;
+  z-index: 20;
   background: repeating-linear-gradient(
     0deg,
     transparent 0px,
@@ -508,7 +508,7 @@
 /* Container for images that should be above scan lines */
 .no-scanlines {
   position: relative;
-  z-index: 200;
+  z-index: 30;
 }
 
 /* HACF-inspired subtle grain/noise texture */
@@ -519,7 +519,7 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 99;
+  z-index: 19;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
@@ -624,7 +624,7 @@
     transparent 100%
   );
   pointer-events: none;
-  z-index: 98;
+  z-index: 18;
   animation: hacf-sweep 6s ease-in-out infinite;
   box-shadow: 0 0 20px rgba(255, 34, 68, 0.3), 0 0 40px rgba(255, 34, 68, 0.15);
 }
@@ -644,7 +644,7 @@
     transparent 100%
   );
   pointer-events: none;
-  z-index: 97;
+  z-index: 17;
   animation: hacf-sweep 6s ease-in-out infinite;
   animation-delay: 3s;
 }
