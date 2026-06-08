@@ -78,7 +78,13 @@ Founder & Developer
 Jun 2017 to Present
 
 - Built and maintained a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
-- Owned product design, development, release, support, and maintenance independently.
+
+### Open Source
+
+Contributor  
+Jul 2020 to Present
+
+- Contributed to various developer tooling open source projects.
 
 ## Education
 
@@ -88,4 +94,4 @@ B.A. Communication and Political Science
 
 ## Technologies
 
-TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, GraphQL, SQL, Druid, ClickHouse, Stigg, Knock, Optimizely, HTML, CSS, Git, analytics instrumentation.
+TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, GraphQL, SQL, Druid, ClickHouse, Stigg, Knock, Statsig, Optimizely, Codex, OpenCode, agentic coding, harness engineering, system design, HTML, CSS, Git, analytics instrumentation.
