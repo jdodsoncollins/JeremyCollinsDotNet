@@ -17,7 +17,6 @@ Focused on growth engineering, lifecycle surfaces, usage-based billing, analytic
 - Led growth-focused product initiatives spanning onboarding, activation, monetization, usage-based billing, and experimentation.
 - Built customer-facing dashboards, notification systems, billing migration tooling, and enterprise security surfaces.
 - Developed analytics, experimentation, and metering workflows supporting data-informed product decisions.
-- Built and maintained independent developer tooling for mobile Safari through Codable.
 
 ## Experience
 
@@ -47,7 +46,7 @@ Senior Developer
 Jul 2019 to Apr 2022
 
 - Led frontend modernization and growth engineering work during platform relaunch, including experimentation with Optimizely for the Class Projects product launch.
-- Built learning platform systems across APIs, content models, customer experiences, CMS tooling, and frontend architecture through acquisition by MasterClass.
+- Focused on modernized Angular frontend and Rails backend performance, reducing time-to-interactive delays and improving search optimization of a globally used consumer social app.
 
 ### Plink.ai
 
@@ -66,7 +65,7 @@ Sep 2015 to Sep 2018
 
 ### Act-On
 
-Solutions Engineer / Software Engineer  
+Solutions Engineer  
 Jun 2012 to Sep 2015
 
 - Delivered customer-facing implementation support and built WYSIWYG email, form, and webpage editing tools.
