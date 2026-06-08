@@ -30,11 +30,11 @@ test("/resume page reads the Markdown source and exposes the PDF link", () => {
   assert.match(page, /className="resumePage"/);
 });
 
-test("home hero links to the online resume page", () => {
+test("home hero does not link to the online resume page", () => {
   const hero = fs.readFileSync(heroPath, "utf8");
 
-  assert.match(hero, /href="\/resume"/);
-  assert.match(hero, />\s*RESUME\s*</);
+  assert.doesNotMatch(hero, /href="\/resume"/);
+  assert.doesNotMatch(hero, />\s*RESUME\s*</);
 });
 
 test("PDF export writes to the public resume asset path", () => {
