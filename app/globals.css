@@ -1294,6 +1294,219 @@
   background: var(--accent);
 }
 
+/* Resume: source-controlled Markdown rendered as readable web and print output */
+.resumeShell {
+  background:
+    radial-gradient(circle at 15% 8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 24rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--background) 92%, white), var(--background));
+}
+
+.resumePage {
+  width: min(100%, 58rem);
+  margin: 0 auto;
+  padding: 8rem 1.5rem 5rem;
+  color: #2f3338;
+}
+
+.resumeDocument {
+  background: #fbfaf7;
+  color: #34383d;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
+  padding: clamp(2rem, 6vw, 4.25rem);
+  font-family: "Avenir Next", "SF Pro Text", "Helvetica Neue", sans-serif;
+  line-height: 1.58;
+}
+
+.resumeDocument .resumeHeader {
+  color: inherit;
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.resumeKicker,
+.resumeDocument h2 {
+  color: #9aa0a8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.resumeKicker {
+  margin-bottom: 1.45rem;
+}
+
+.resumeDocument h1 {
+  margin: 0 0 0.55rem;
+  color: #25282d;
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
+}
+
+.resumeDocument .resumeHeader p:first-of-type {
+  color: #25282d;
+  font-size: 1.03rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.resumeDocument .resumeHeader p {
+  margin: 0.45rem 0 0;
+  color: #666d76;
+}
+
+.resumeSection {
+  margin-top: 2.3rem;
+}
+
+.resumeDocument h2 {
+  margin: 0 0 1rem;
+}
+
+.resumeEntry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-top: 1.55rem;
+}
+
+.resumeDocument h3 {
+  margin: 0 0 0.2rem;
+  color: #30343a;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.resumeDocument p {
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
+}
+
+.resumeEntry > p:first-of-type {
+  margin-top: 0;
+  color: #6e747c;
+  font-size: 0.88rem;
+}
+
+.resumeDocument ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.resumeDocument li {
+  margin: 0.28rem 0;
+  padding-left: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.resumeDocument a {
+  color: #174ea6;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.resumeDownload {
+  margin-top: 2.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #e2e4e7;
+}
+
+.resumeDownload a {
+  display: inline-flex;
+  min-height: 2.55rem;
+  align-items: center;
+  border: 1px solid #cfd4dc;
+  border-radius: 999px;
+  padding: 0 1.15rem;
+  color: #25282d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@page {
+  size: Letter;
+  margin: 0.55in 0.6in;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  body > script,
+  body > div[aria-hidden="true"],
+  .resumeShell > header,
+  .resumeShell > footer,
+  .resumeDownload {
+    display: none !important;
+  }
+
+  .resumeShell,
+  .resumePage,
+  .resumeDocument {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    border: 0;
+    box-shadow: none;
+    color: #222222;
+  }
+
+  .resumeDocument {
+    font-size: 10.2pt;
+    line-height: 1.42;
+  }
+
+  .resumeDocument h1 {
+    color: #222222;
+    font-size: 28pt;
+    letter-spacing: -0.045em;
+  }
+
+  .resumeKicker,
+  .resumeDocument h2 {
+    color: #777777;
+    font-size: 7.5pt;
+  }
+
+  .resumeDocument h3 {
+    color: #222222;
+    font-size: 10.2pt;
+  }
+
+  .resumeSection {
+    margin-top: 18pt;
+  }
+
+  .resumeEntry {
+    margin-top: 11pt;
+  }
+
+  .resumeDocument p,
+  .resumeDocument li,
+  .resumeEntry > p:first-of-type {
+    font-size: 9pt;
+  }
+
+  .resumeDocument a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
 @media (max-width: 720px) {
   .theme-switcher-wrap {
     order: 3;

@@ -19,7 +19,7 @@ export function Header() {
         <ThemeSwitcher />
         <div className="flex items-center gap-4 md:gap-6">
           <a
-            href="#projects"
+            href="/#projects"
             className="text-sm text-muted-foreground hover:text-neon-cyan transition-colors tracking-wide"
           >
             Projects
