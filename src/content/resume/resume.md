@@ -16,11 +16,11 @@ Experienced leading initiatives across onboarding, activation, monetization, fro
 
 ## Current Focus
 
-- Working directly with customers to identify high-impact product opportunities.
-- Building product intuition backed by analytics, experimentation, and observed user behavior.
-- Using agentic coding and automation to increase builder leverage beyond traditional SDLC workflows.
-- Shipping smaller, faster, more measurable product iterations.
-- Creating systems that help small teams achieve outsized impact.
+- Worked directly with customers to identify high-impact product opportunities.
+- Built product intuition backed by analytics, experimentation, and observed user behavior.
+- Used agentic coding and automation to increase builder leverage beyond traditional SDLC workflows.
+- Shipped smaller, faster, more measurable product iterations.
+- Created systems that help small teams achieve outsized impact.
 
 ## Selected Impact
 
@@ -28,7 +28,7 @@ Experienced leading initiatives across onboarding, activation, monetization, fro
 - Built customer-facing software across SaaS, education, creator, event, and marketing platforms.
 - Led frontend modernization and platform migration efforts across multiple organizations.
 - Developed analytics and experimentation workflows supporting data-informed product decisions.
-- Built and maintain independent developer tooling for mobile Safari through Codable.
+- Built and maintained independent developer tooling for mobile Safari through Codable.
 
 ## Experience
 
@@ -37,12 +37,12 @@ Experienced leading initiatives across onboarding, activation, monetization, fro
 Senior Software Engineer  
 Aug 2022 to Present
 
-- Product engineer on growth-oriented initiatives focused on onboarding, activation, experimentation, and customer-facing product development.
-- Work across product, design, data, marketing, and engineering to identify opportunities and ship measurable improvements to user journeys.
-- Lead implementation of experiments and product changes from hypothesis through instrumentation, rollout, and iteration.
-- Contribute to analytics and data workflows that improve visibility into customer behavior and activation funnels.
-- Explore agentic coding workflows and automation as a way to increase product development leverage and reduce overhead in traditional engineering cycles.
-- Focus on building stronger customer feedback loops and product sense grounded in direct user understanding and data.
+- Worked as a product engineer on growth-oriented initiatives focused on onboarding, activation, experimentation, and customer-facing product development.
+- Worked across product, design, data, marketing, and engineering to identify opportunities and shipped measurable improvements to user journeys.
+- Led implementation of experiments and product changes from hypothesis through instrumentation, rollout, and iteration.
+- Contributed to analytics and data workflows that improved visibility into customer behavior and activation funnels.
+- Explored agentic coding workflows and automation as a way to increase product development leverage and reduce overhead in traditional engineering cycles.
+- Focused on building stronger customer feedback loops and product sense grounded in direct user understanding and data.
 
 ### MasterClass
 
@@ -104,9 +104,9 @@ Jun 2012 to Jan 2015
 Founder & Developer  
 Jun 2017 to Present
 
-- Built and maintain a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
+- Built and maintained a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
 - Designed and implemented responsive viewport testing, DOM inspection, CSS manipulation, console output, network visibility, and JavaScript scratchpad workflows.
-- Own product design, development, release, support, and maintenance independently.
+- Owned product design, development, release, support, and maintenance independently.
 - Published without monetization or tracking, reflecting a belief in useful independent software and open web tooling.
 
 ## Education

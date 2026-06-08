@@ -783,7 +783,7 @@
   text-rendering: geometricPrecision;
 }
 
-:root[data-era="1990s"] header {
+:root[data-era="1990s"] header:not(.resumeHeader) {
   color: #050505;
   background:
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 4px),
@@ -969,7 +969,7 @@
     linear-gradient(180deg, #eef8ff 0%, #c8e7ff 55%, #b9d9f5 100%);
 }
 
-:root[data-era="2000s"] header {
+:root[data-era="2000s"] header:not(.resumeHeader) {
   background:
     radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.95), transparent 42%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(166, 216, 255, 0.8) 46%, rgba(75, 157, 224, 0.86) 47%, rgba(25, 105, 192, 0.9)) !important;
@@ -1107,7 +1107,7 @@
   text-rendering: geometricPrecision;
 }
 
-:root[data-era="modern"] header {
+:root[data-era="modern"] header:not(.resumeHeader) {
   background: rgba(7, 10, 18, 0.62) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28), inset 0 -1px rgba(255, 255, 255, 0.05);
@@ -1309,20 +1309,59 @@
 }
 
 .resumeDocument {
+  position: relative;
+  overflow: visible;
   background: #fbfaf7;
   color: #34383d;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
   padding: clamp(2rem, 6vw, 4.25rem);
   font-family: "Avenir Next", "SF Pro Text", "Helvetica Neue", sans-serif;
   line-height: 1.58;
 }
 
-.resumeDocument .resumeHeader {
-  color: inherit;
+:root[data-era] .resumeDocument {
+  background: #fbfaf7 !important;
+  color: #34383d !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+:root[data-era] .resumeDocument::before,
+:root[data-era] .resumeDocument::after {
+  content: none !important;
+  display: none !important;
+}
+
+:root[data-era] .resumeDocument > * {
+  position: static !important;
+}
+
+:root[data-era] .resumeDocument .resumeHeader {
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: inherit !important;
   background: transparent !important;
-  border: 0;
-  box-shadow: none;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+:root[data-era] .resumeDocument .resumeDownload {
+  background: transparent !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 .resumeKicker,
@@ -1341,7 +1380,7 @@
 
 .resumeDocument h1 {
   margin: 0 0 0.55rem;
-  color: #25282d;
+  color: #25282d !important;
   font-size: clamp(2.25rem, 6vw, 4.25rem);
   font-weight: 800;
   letter-spacing: -0.075em;
@@ -1349,7 +1388,7 @@
 }
 
 .resumeDocument .resumeHeader p:first-of-type {
-  color: #25282d;
+  color: #25282d !important;
   font-size: 1.03rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -1357,7 +1396,7 @@
 
 .resumeDocument .resumeHeader p {
   margin: 0.45rem 0 0;
-  color: #666d76;
+  color: #666d76 !important;
 }
 
 .resumeSection {
@@ -1376,7 +1415,7 @@
 
 .resumeDocument h3 {
   margin: 0 0 0.2rem;
-  color: #30343a;
+  color: #30343a !important;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.09em;
@@ -1398,6 +1437,7 @@
 .resumeDocument ul {
   margin: 0.55rem 0 0;
   padding-left: 1.15rem;
+  list-style: disc outside;
 }
 
 .resumeDocument li {
