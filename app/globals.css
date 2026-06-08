@@ -1485,6 +1485,11 @@
     background: #ffffff !important;
   }
 
+  * {
+    -webkit-print-color-adjust: economy !important;
+    print-color-adjust: economy !important;
+  }
+
   body > script,
   body > div[aria-hidden="true"],
   .resumeShell > header,
@@ -1499,10 +1504,27 @@
     width: auto;
     margin: 0;
     padding: 0;
-    background: #ffffff !important;
-    border: 0;
-    box-shadow: none;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
     color: #222222;
+  }
+
+  :root[data-era] .resumeShell,
+  :root[data-era] .resumePage,
+  :root[data-era] .resumeDocument {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  :root[data-era] .resumeDocument::before,
+  :root[data-era] .resumeDocument::after {
+    content: none !important;
+    display: none !important;
   }
 
   .resumeDocument {
