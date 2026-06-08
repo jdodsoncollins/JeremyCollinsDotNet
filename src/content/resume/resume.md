@@ -8,26 +8,15 @@ jeremy@jeremycollins.net
 
 ## Summary
 
-Product engineer and builder with 10+ years of experience creating customer-facing software across SaaS, education, creator, event, and marketing platforms.
+Product engineer and builder with 10+ years of experience across SaaS, education, creator, event, and marketing platforms.
 
-Focused on identifying high-leverage opportunities through direct customer understanding, product intuition, analytics, experimentation, and rapid iteration.
-
-Experienced leading initiatives across onboarding, activation, monetization, frontend architecture, and product growth. Currently focused on becoming a higher-impact builder: working directly with customers, developing product sense backed by data, and using agentic coding workflows to compress the distance between idea, implementation, and feedback.
-
-## Current Focus
-
-- Worked directly with customers to identify high-impact product opportunities.
-- Built product intuition backed by analytics, experimentation, and observed user behavior.
-- Used agentic coding and automation to increase builder leverage beyond traditional SDLC workflows.
-- Shipped smaller, faster, more measurable product iterations.
-- Created systems that help small teams achieve outsized impact.
+Focused on growth engineering, lifecycle surfaces, usage-based billing, analytics, experimentation, and rapid product iteration. Used direct customer understanding, data workflows, and AI-assisted development to compress the distance between product idea, implementation, and feedback.
 
 ## Selected Impact
 
-- Led growth-focused product initiatives spanning onboarding, activation, monetization, and experimentation.
-- Built customer-facing software across SaaS, education, creator, event, and marketing platforms.
-- Led frontend modernization and platform migration efforts across multiple organizations.
-- Developed analytics and experimentation workflows supporting data-informed product decisions.
+- Led growth-focused product initiatives spanning onboarding, activation, monetization, usage-based billing, and experimentation.
+- Built customer-facing dashboards, notification systems, billing migration tooling, and enterprise security surfaces.
+- Developed analytics, experimentation, and metering workflows supporting data-informed product decisions.
 - Built and maintained independent developer tooling for mobile Safari through Codable.
 
 ## Experience
@@ -37,40 +26,35 @@ Experienced leading initiatives across onboarding, activation, monetization, fro
 Senior Software Engineer  
 Aug 2022 to Present
 
-- Worked as a product engineer on growth-oriented initiatives focused on onboarding, activation, experimentation, and customer-facing product development.
-- Worked across product, design, data, marketing, and engineering to identify opportunities and shipped measurable improvements to user journeys.
-- Led implementation of experiments and product changes from hypothesis through instrumentation, rollout, and iteration.
-- Contributed to analytics and data workflows that improved visibility into customer behavior and activation funnels.
-- Explored agentic coding workflows and automation as a way to increase product development leverage and reduce overhead in traditional engineering cycles.
-- Focused on building stronger customer feedback loops and product sense grounded in direct user understanding and data.
+- Led lifecycle and growth engineering work across dashboard surfaces, paywalls, usage visibility, notifications, and customer-facing product development.
+- Rebuilt bandwidth metering and reconciliation paths from legacy reporting systems to Druid-backed workflows, improving usage accuracy for overage notifications, upgrade prompts, and billing operations.
+- Built Webflow's per-site Web Application Firewall from early AI-assisted prototype through production rollout, spanning edge validation, domain packages, server APIs, dashboard UI, security hardening, and enterprise beta support.
+- Owned customer-facing overage notification flows across in-app banners and email, including phased rollout controls, audience targeting, multi-overage support, and operational safeguards for auto-upgrade workflows.
+- Shipped usage dashboard improvements that clarified plan limits, bandwidth consumption, Analyze and Optimize add-on usage, and upgrade paths for self-serve customers.
+- Built migration, logging, and defensive cache tooling around entitlement and subscription data, giving product and engineering teams cleaner signals for billing and lifecycle experiments.
+- Used AI-assisted development workflows to accelerate prototypes and demos, then hardened production code through schema validation, rollout flags, observability, and security review.
 
 ### MasterClass
 
 Software Engineer  
 Apr 2022 to Aug 2022
 
-- Worked on Growth initiatives focused on payments, promotions, and subscription conversion.
-- Transitioned pre-paywall experiences from Rails-served React applications to Next.js.
-- Implemented and maintained experimentation infrastructure using Optimizely and internal testing systems.
+- Worked on growth initiatives focused on payments, promotions, subscription conversion, experimentation, and Next.js migration work.
 
 ### HitRecord
 
 Senior Developer  
 Jul 2019 to Apr 2022
 
-- Led major frontend modernization efforts during platform relaunch.
-- Built learning platform systems including APIs, content models, customer experiences, and CMS tooling.
-- Worked across Angular, TypeScript, Ruby on Rails, NgRx, RxJS, XState, and frontend architecture.
-- Contributed through acquisition by MasterClass in 2022.
+- Led frontend modernization and growth engineering work during platform relaunch, including experimentation with Optimizely for the Class Projects product launch.
+- Built learning platform systems across APIs, content models, customer experiences, CMS tooling, and frontend architecture through acquisition by MasterClass.
 
 ### Plink.ai
 
 Software Engineer  
 Sep 2018 to Jul 2019
 
-- Worked across TypeScript, JavaScript, React, server-rendered applications, and Node-based APIs.
-- Built asset library functionality spanning multiple Node applications and React frontends.
-- Helped transition JavaScript codebases to TypeScript and led major dependency modernization efforts.
+- Built TypeScript, React, server-rendered application, and Node API features for marketing and asset management workflows.
 
 ### Event Farm
 
@@ -78,24 +62,14 @@ Software Engineer
 Sep 2015 to Sep 2018
 
 - Led rewrite of legacy frontend into a modern Angular application while maintaining support for the existing AngularJS and jQuery application.
-- Directed UX overhaul of ticket management systems.
-- Built visual page-building tools supporting responsive web experiences and reusable templates.
+- Built ticket management and visual page-building tools supporting responsive web experiences.
 
 ### Act-On
 
-Junior Software Engineer  
-Jan 2015 to Sep 2015
+Solutions Engineer / Software Engineer  
+Jun 2012 to Sep 2015
 
-- Worked on the Content & Delivery team building WYSIWYG email, form, and webpage builders.
-- Added responsive design support for user-created content.
-
-### Act-On
-
-Senior Solutions Engineer  
-Jun 2012 to Jan 2015
-
-- Delivered custom webpages, interactive scripts, and customer-facing implementation support.
-- Served in a hybrid professional services, developer relations, and technical implementation role.
+- Delivered customer-facing implementation support and built WYSIWYG email, form, and webpage editing tools.
 
 ## Projects
 
@@ -105,9 +79,7 @@ Founder & Developer
 Jun 2017 to Present
 
 - Built and maintained a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
-- Designed and implemented responsive viewport testing, DOM inspection, CSS manipulation, console output, network visibility, and JavaScript scratchpad workflows.
 - Owned product design, development, release, support, and maintenance independently.
-- Published without monetization or tracking, reflecting a belief in useful independent software and open web tooling.
 
 ## Education
 
@@ -117,4 +89,4 @@ B.A. Communication and Political Science
 
 ## Technologies
 
-TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, GraphQL, SQL, ClickHouse, HTML, CSS, Git, experimentation platforms, analytics instrumentation.
+TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, GraphQL, SQL, Druid, ClickHouse, Stigg, Knock, Optimizely, HTML, CSS, Git, analytics instrumentation.
