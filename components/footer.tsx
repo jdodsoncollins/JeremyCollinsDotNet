@@ -1,10 +1,21 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="border-t border-border bg-background/50 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-muted-foreground font-mono">
-            <span className="text-neon-green">&copy;</span> {new Date().getFullYear()}{" "}
+            <span className="text-neon-green">&copy;</span>{" "}
+            <span suppressHydrationWarning>{year ?? new Date().getFullYear()}</span>{" "}
             <span className="text-foreground">Jeremy Collins</span>
           </div>
           <p className="text-xs text-muted-foreground/60 font-mono">
