@@ -16,7 +16,7 @@ Focused on growth engineering, lifecycle surfaces, usage-based billing, analytic
 
 - Led growth-focused product initiatives spanning onboarding, activation, monetization, usage-based billing, and experimentation.
 - Built customer-facing dashboards, notification systems, billing migration tooling, and enterprise security surfaces.
-- Developed analytics, experimentation, and metering workflows supporting data-informed product decisions.
+- Built internal tooling and AI-assisted workflows that shortened support and engineering investigations across billing, entitlements, observability, CI, and account state.
 
 ## Experience
 
@@ -31,7 +31,6 @@ Aug 2022 to Present
 - Took Webflow's per-site Web Application Firewall from early proof of concept through production rollout, expanding a basic blocker into a configurable customer-facing rule system tied to an estimated $4M self-serve opportunity and subsequent enterprise adoption.
 - Shipped usage dashboard improvements that clarified plan limits, bandwidth consumption, Analyze and Optimize add-on usage, and upgrade paths for self-serve customers.
 - Built migration, logging, and defensive cache tooling around entitlement and subscription data, giving product and engineering teams cleaner signals for billing and lifecycle experiments.
-- Used AI-assisted development workflows to accelerate prototypes and demos, then hardened production code through schema validation, rollout flags, observability, and security review.
 
 ### MasterClass
 
@@ -94,4 +93,4 @@ B.A. Communication and Political Science
 
 ## Technologies
 
-TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, SwiftUI, Zod, Nest.js, SQL, Druid, Stigg, Knock, Statsig, Datadog, MCP, Codex, OpenCode, agentic coding, system design, Git, analytics instrumentation.
+TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, SwiftUI, Zod, Nest.js, SQL, Druid, Stigg, Knock, Statsig, Datadog, Braintrust, MCP, Codex, OpenCode, agentic coding, system design, Git, analytics instrumentation.
