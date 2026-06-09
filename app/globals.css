@@ -1528,13 +1528,16 @@
   }
 
   .resumeDocument {
+    font-family: "Avenir Next", "SF Pro Text", "Helvetica Neue", sans-serif !important;
     font-size: 10.2pt;
+    font-weight: 400 !important;
     line-height: 1.42;
   }
 
   .resumeDocument h1 {
     color: #222222;
     font-size: 28pt;
+    font-weight: 800 !important;
     letter-spacing: -0.045em;
   }
 
@@ -1542,11 +1545,13 @@
   .resumeDocument h2 {
     color: #777777;
     font-size: 7.5pt;
+    font-weight: 700 !important;
   }
 
   .resumeDocument h3 {
     color: #222222;
     font-size: 10.2pt;
+    font-weight: 800 !important;
   }
 
   .resumeSection {
@@ -1561,6 +1566,7 @@
   .resumeDocument li,
   .resumeEntry > p:first-of-type {
     font-size: 9pt;
+    font-weight: 400 !important;
   }
 
   .resumeDocument a {
