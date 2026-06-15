@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mobileflow OAuth Callback",
@@ -11,43 +10,86 @@ export const metadata: Metadata = {
 };
 
 export default function MobileflowCallback() {
+  // This runs on the client after mount. We also have an inline script below for earlier execution.
+  // The goal is to immediately forward the ?code=...&state=... (and any other params Webflow sent)
+  // to the app's custom scheme so ASWebAuthenticationSession can complete the OAuth.
+  if (typeof window !== "undefined") {
+    // Safety: try immediately if possible
+    tryRedirect();
+  }
+
+  function tryRedirect() {
+    try {
+      const search = window.location.search || "";
+      const hash = window.location.hash || "";
+      const target = "mobileflow://oauth/callback" + search + hash;
+      window.location.replace(target);
+    } catch (e) {
+      // ignore, manual button will be available
+    }
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background font-mono text-foreground p-8">
-      <div className="text-center max-w-sm">
-        <div className="mb-6">
-          <div className="inline-block w-8 h-8 border-2 border-foreground border-t-transparent rounded-full animate-spin" />
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontFamily: "monospace",
+      background: "#0a0608",
+      color: "#fff",
+      padding: 24,
+      textAlign: "center"
+    }}>
+      <div>
+        <p style={{ fontSize: 18, marginBottom: 12 }}>Returning to Mobileflow…</p>
+
+        {/* Debug info so you can see what Webflow actually sent to this page */}
+        <div style={{ fontSize: 12, opacity: 0.7, marginBottom: 24, wordBreak: "break-all" }}>
+          Received: {typeof window !== "undefined" ? window.location.search || "(no query)" : "(server)"}
         </div>
-        <p className="text-lg mb-2 tracking-tight">Returning to Mobileflow…</p>
-        <p className="text-sm text-muted-foreground mb-6">
-          If the app doesn’t open automatically,{" "}
-          <a
-            href="mobileflow://oauth/callback"
-            className="underline hover:text-foreground transition-colors"
-          >
-            tap here
-          </a>
-          .
-        </p>
-        <p className="text-[10px] text-muted-foreground/60">
-          jeremycollins.net • mobileflow callback
+
+        <button
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              const search = window.location.search || "";
+              const hash = window.location.hash || "";
+              window.location.replace("mobileflow://oauth/callback" + search + hash);
+            }
+          }}
+          style={{
+            background: "#fff",
+            color: "#000",
+            border: "none",
+            padding: "12px 20px",
+            borderRadius: 6,
+            fontSize: 16,
+            cursor: "pointer"
+          }}
+        >
+          Return to Mobileflow app
+        </button>
+
+        <p style={{ fontSize: 11, opacity: 0.5, marginTop: 20 }}>
+          If the app doesn’t open, tap the button above.
         </p>
       </div>
 
-      {/* Immediate redirect to custom scheme, forwarding all query params (code, state, etc.) from Webflow */}
-      <Script id="mobileflow-callback-redirect" strategy="beforeInteractive">
-        {`
-          (function() {
-            try {
-              const search = window.location.search || "";
-              const hash = window.location.hash || "";
-              const target = "mobileflow://oauth/callback" + search + hash;
-              window.location.replace(target);
-            } catch (e) {
-              // Fallback: do nothing, the manual link is available
-            }
-          })();
-        `}
-      </Script>
+      {/* Very early inline script — runs before React if possible */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              try {
+                var search = window.location.search || "";
+                var hash = window.location.hash || "";
+                var target = "mobileflow://oauth/callback" + search + hash;
+                window.location.replace(target);
+              } catch (e) {}
+            })();
+          `
+        }}
+      />
     </div>
   );
 }
