@@ -19,6 +19,21 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - Codable privacy policy page.
 - Source-controlled Markdown resume rendered at `/resume`.
 - Generated static PDF resume available at `/resume/jeremy-collins-resume.pdf`.
+- Mobileflow OAuth helpers:
+  - `GET /mobileflow-callback` — HTTPS redirect registered with Webflow; server 302 + HTML fallback hop to `mobileflow://oauth/callback`
+  - `POST /mobileflow-token` — server-side code→token proxy (keeps `client_secret` off device; prefers `www` host to avoid apex 308 on POST)
+
+### Mobileflow token proxy env (Vercel)
+
+Set these on the JeremyCollins.net Vercel project before OAuth will complete:
+
+| Variable | Purpose |
+| --- | --- |
+| `WEBFLOW_CLIENT_ID` | Public Webflow App client id (must match MobileflowRN) |
+| `WEBFLOW_CLIENT_SECRET` | Webflow App secret (server only) |
+| `WEBFLOW_REDIRECT_URI` | Optional; defaults to `https://jeremycollins.net/mobileflow-callback` |
+
+The Webflow App dashboard redirect URI must be exactly `https://jeremycollins.net/mobileflow-callback`.
 
 ## Resume
 
