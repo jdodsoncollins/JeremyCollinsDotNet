@@ -19,9 +19,25 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - Codable privacy policy page.
 - Source-controlled Markdown resume rendered at `/resume`.
 - Generated static PDF resume available at `/resume/jeremy-collins-resume.pdf`.
-- Mobileflow OAuth helpers:
+- OAuth helpers:
+  - `GET /oauth` — no-store callback page for X OAuth 2.0 PKCE headless flows; displays the one-time callback URL for the waiting local CLI without exchanging or persisting tokens.
   - `GET /mobileflow-callback` — HTTPS redirect registered with Webflow; server 302 + HTML fallback hop to `mobileflow://oauth/callback`
   - `POST /mobileflow-token` — server-side code→token proxy (keeps `client_secret` off device; prefers `www` host to avoid apex 308 on POST)
+
+### X OAuth callback
+
+Register this exact callback URL in the X Developer app:
+
+`https://jeremycollins.net/oauth`
+
+For local xurl setup, configure the app with that redirect URI and run:
+
+```bash
+xurl auth apps add JollinsOnline --client-id YOUR_CLIENT_ID --client-secret YOUR_CLIENT_SECRET --redirect-uri https://jeremycollins.net/oauth
+xurl auth oauth2 --app JollinsOnline --headless
+```
+
+After approving X authorization, copy the callback URL shown at `/oauth` and paste it into the waiting xurl command. The site does not log, exchange, or store the authorization code or tokens.
 
 ### Mobileflow token proxy env (Vercel)
 
