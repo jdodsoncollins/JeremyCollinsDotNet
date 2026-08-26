@@ -1021,13 +1021,15 @@
 
 :root[data-era="1990s"] .era-logo {
   color: #000000;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.6rem;
+  height: 2.6rem;
 }
 
 :root[data-era="1990s"] .era-logo-mark {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: visible;
+  image-rendering: auto;
 }
 
 :root[data-era="1990s"] .theme-switcher-option[data-active="true"] {
