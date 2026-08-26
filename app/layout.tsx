@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Mono, Orbitron } from "next/font/google";
+import { IBM_Plex_Sans, Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex",
+});
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-space-mono",
-});
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -111,16 +111,13 @@ export default function RootLayout({
       lang="en"
       data-era="1980s"
       suppressHydrationWarning
-      className={`${spaceMono.variable} ${orbitron.variable} bg-background`}
+      className={`${ibmPlexSans.variable} ${spaceMono.variable} bg-background`}
     >
-      <body className="font-mono antialiased">
+      <body className="font-sans antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {children}
-        {/* HACF-inspired overlay effects */}
         <div className="hacf-scanlines" aria-hidden="true" />
         <div className="hacf-grain" aria-hidden="true" />
-        <div className="hacf-sweep-line" aria-hidden="true" />
-        <div className="hacf-sweep-line-2" aria-hidden="true" />
         <Analytics />
       </body>
     </html>

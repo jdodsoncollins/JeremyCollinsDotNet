@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["var(--font-space-mono)", "monospace"],
-        display: ["var(--font-orbitron)", "sans-serif"],
+        sans: ["var(--font-ibm-plex)", "system-ui", "sans-serif"],
+        mono: ["var(--font-space-mono)", "ui-monospace", "monospace"],
+        display: ["var(--font-ibm-plex)", "system-ui", "sans-serif"],
       },
       colors: {
         background: "var(--color-background)",

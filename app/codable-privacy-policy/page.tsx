@@ -27,14 +27,10 @@ export default function CodablePrivacyPolicy() {
         <div className="max-w-4xl mx-auto px-6">
           {/* Page header */}
           <div className="mb-12">
-            <span className="text-neon-cyan font-mono text-sm tracking-wider">
-              {"// LEGAL"}
-            </span>
-            <h1 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-2">
-              <span className="text-foreground">Codable</span>{" "}
-              <span className="text-neon-green">Privacy Policy</span>
+            <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-2">
+              Codable Privacy Policy
             </h1>
-            <p className="text-muted-foreground font-mono text-sm">
+            <p className="text-muted-foreground text-sm">
               Effective date: June 1, 2026
             </p>
           </div>

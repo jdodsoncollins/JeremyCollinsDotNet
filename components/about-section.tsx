@@ -11,27 +11,14 @@ export function AboutSection() {
     <section id="about" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
       <div className="max-w-4xl mx-auto px-6">
 
-        {/* Section label */}
-        <div className="mb-10 hacf-streak">
-          <span className="font-mono text-xs text-neon-cyan tracking-[0.25em] uppercase">
-            About
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
-            <span
-              className="hacf-flare"
-              style={{
-                WebkitTextStroke: "1px #ff6688",
-                color: "transparent",
-              }}
-            >
-              Currently
-            </span>
+        <div className="mb-10">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
+            Currently
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Bio */}
-          <div className="space-y-4 font-mono text-sm text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
             <p>
               I like working on products where knowing the business makes the
               engineering better.
@@ -54,7 +41,7 @@ export function AboutSection() {
 
           {/* Timeline */}
           <div>
-            <p className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-6">
+            <p className="text-xs text-muted-foreground mb-6">
               Experience
             </p>
             <ol className="space-y-5">
@@ -67,13 +54,13 @@ export function AboutSection() {
                     )}
                   </div>
                   <div className="pb-2">
-                    <p className="font-mono text-[10px] text-muted-foreground/50 tracking-wider uppercase mb-0.5">
+                    <p className="text-[11px] text-muted-foreground mb-0.5">
                       {role.period}
                     </p>
-                    <p className="font-display text-sm font-bold text-foreground">
+                    <p className="text-sm font-semibold text-foreground">
                       {role.company}
                     </p>
-                    <p className="font-mono text-xs text-neon-cyan mt-0.5">
+                    <p className="text-xs text-muted-foreground mt-0.5">
                       {role.title}
                     </p>
                   </div>

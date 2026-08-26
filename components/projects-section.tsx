@@ -58,21 +58,9 @@ export function ProjectsSection() {
     <section id="projects" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
       <div className="max-w-4xl mx-auto px-6">
 
-        {/* Section label */}
-        <div className="mb-10 hacf-streak">
-          <span className="font-mono text-xs text-neon-magenta tracking-[0.25em] uppercase">
-            Projects
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">
-            <span
-              className="hacf-flare"
-              style={{
-                WebkitTextStroke: "1px #ff0066",
-                color: "transparent",
-              }}
-            >
-              On the side
-            </span>
+        <div className="mb-10">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
+            On the side
           </h2>
         </div>
 
@@ -92,16 +80,16 @@ export function ProjectsSection() {
                 />
               </div>
               <div>
-                <h3 className="font-display text-2xl font-bold text-foreground tracking-wide">
+                <h3 className="text-2xl font-bold text-foreground tracking-tight">
                   Codable
                 </h3>
-                <p className="font-mono text-xs text-primary mt-1 tracking-wide">
-                  iOS App / Safari Web Developer Tools
+                <p className="text-xs text-muted-foreground mt-1">
+                  iOS app / Safari web developer tools
                 </p>
               </div>
             </div>
 
-            <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-xl mb-6">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mb-6">
               Safari-native web developer tools for iOS. Inspect HTML, styles,
               network requests, and console output. Run a JavaScript scratchpad,
               test responsive viewports, and generate code with Apple
@@ -110,22 +98,21 @@ export function ProjectsSection() {
 
             {/* Feature list */}
             <div className="mb-8">
-              <p className="font-mono text-xs text-neon-cyan tracking-[0.2em] mb-3 uppercase">
+              <p className="text-xs text-muted-foreground mb-3">
                 Features
               </p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc pl-4">
                 {[
                   "Element inspector with DOM tree",
                   "Console with JS execution",
                   "Network request monitor",
                   "Resizable viewport tester",
                   "JavaScript scratchpad",
-                  "AI Code generation (Apple Intelligence)",
+                  "AI code generation (Apple Intelligence)",
                   "View pre-rendered page source",
                   "Edit CSS live on any node",
                 ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 font-mono text-xs text-muted-foreground">
-                    <span className="text-primary mt-0.5 flex-shrink-0">+</span>
+                  <li key={f} className="text-sm text-muted-foreground">
                     {f}
                   </li>
                 ))}
@@ -137,18 +124,15 @@ export function ProjectsSection() {
               href="https://apps.apple.com/us/app/codable/id1324741659"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-5 py-2.5 border border-primary text-primary font-mono text-xs tracking-[0.15em] uppercase hover:bg-primary/10 transition-all neon-btn-glow-green derez-btn-outline"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-              </svg>
-              View on App Store
+              View on the App Store
             </a>
           </div>
 
           {/* Screenshots */}
           <div className="p-6 md:p-8">
-            <p className="font-mono text-xs text-neon-magenta tracking-[0.2em] uppercase mb-5">
+            <p className="text-xs text-muted-foreground mb-5">
               Screenshots
             </p>
             <div className="flex flex-wrap gap-3">
@@ -160,7 +144,7 @@ export function ProjectsSection() {
                   aria-label={`Expand screenshot: ${shot.label}`}
                 >
                   {/* Phone frame ratio ~9:19.5 */}
-                  <div className="relative aspect-[9/19.5] overflow-hidden border border-border/50 group-hover:border-neon-cyan transition-all duration-200 group-hover:scale-105">
+                  <div className="relative aspect-[9/19.5] overflow-hidden border border-border/50 group-hover:border-foreground/40 transition-colors">
                     <Image
                       src={shot.src}
                       alt={shot.alt}
@@ -168,14 +152,8 @@ export function ProjectsSection() {
                       className="object-cover object-top"
                       sizes="112px"
                     />
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-neon-cyan/0 group-hover:bg-neon-cyan/10 transition-all flex items-center justify-center">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity font-mono text-xs text-neon-cyan tracking-wider">
-                        [+]
-                      </span>
-                    </div>
                   </div>
-                  <p className="mt-1.5 text-center font-mono text-[10px] text-muted-foreground/60 tracking-wide group-hover:text-neon-cyan transition-colors">
+                  <p className="mt-1.5 text-center text-[11px] text-muted-foreground group-hover:text-foreground transition-colors">
                     {shot.label}
                   </p>
                 </button>
@@ -199,11 +177,11 @@ export function ProjectsSection() {
           <div className="relative max-w-xs w-full no-scanlines" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setExpandedImage(null)}
-              className="absolute -top-10 right-0 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider"
+              className="absolute -top-10 right-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              [ESC] CLOSE
+              Close
             </button>
-            <div className="border border-primary/40 overflow-hidden box-glow">
+            <div className="border border-border overflow-hidden">
               <Image
                 src={expandedImage}
                 alt="Expanded screenshot"

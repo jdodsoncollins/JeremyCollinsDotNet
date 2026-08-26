@@ -10,19 +10,19 @@ export default function NotFound() {
       <div className="relative min-h-screen flex flex-col">
         <Header />
         <main className="flex flex-1 items-center justify-center px-6 py-32">
-          <section className="w-full max-w-2xl border border-border/70 bg-card/80 p-8 shadow-2xl backdrop-blur-sm md:p-12">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">
+          <section className="w-full max-w-2xl border border-border bg-card p-8 md:p-12">
+            <p className="text-sm text-muted-foreground">
               404
             </p>
-            <h1 className="mt-4 font-display text-4xl font-black leading-tight text-foreground md:text-6xl">
+            <h1 className="mt-3 font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl">
               Nothing here
             </h1>
-            <p className="mt-5 max-w-xl font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
               This page moved, or it never shipped. Everything else is still up.
             </p>
             <Link
               href="/"
-              className="mt-8 inline-flex items-center gap-2 border border-primary px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="mt-8 inline-flex items-center px-4 py-2 border border-border text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               Back home
             </Link>
