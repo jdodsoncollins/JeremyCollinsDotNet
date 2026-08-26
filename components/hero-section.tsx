@@ -1,7 +1,10 @@
+import { ModernDesktopIcons } from "@/components/circuit-background";
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
-      <div className="max-w-4xl mx-auto px-6 py-8 md:py-20 w-full">
+      <ModernDesktopIcons />
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-8 md:py-20 w-full">
         <h1 className="font-display font-bold leading-[0.92] mb-10 text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground">
           Jeremy
           <span className="block">Collins</span>

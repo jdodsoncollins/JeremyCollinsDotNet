@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Space_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Pixelify_Sans, Space_Mono, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -13,6 +13,18 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-space-mono",
+});
+
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-vt323",
+});
+
+const pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-pixel",
 });
 
 export const metadata: Metadata = {
@@ -124,7 +136,7 @@ export default function RootLayout({
       lang="en"
       data-era="1980s"
       suppressHydrationWarning
-      className={`${ibmPlexSans.variable} ${spaceMono.variable} bg-background`}
+      className={`${ibmPlexSans.variable} ${spaceMono.variable} ${vt323.variable} ${pixelify.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

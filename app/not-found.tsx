@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <CircuitBackground />
-      <div className="relative min-h-screen flex flex-col">
+      <div className="relative z-10 min-h-screen flex flex-col">
         <Header />
         <main className="flex flex-1 items-center justify-center px-6 py-32">
           <section className="w-full max-w-2xl border border-border bg-card p-8 md:p-12">

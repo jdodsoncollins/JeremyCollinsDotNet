@@ -6,11 +6,11 @@ const THEMES = ["1980s", "1990s", "2000s", "modern"] as const;
 const STORAGE_KEY = "jeremycollins-theme-era";
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
-  "1980s": "CRT scanlines and a red phosphor. Your pick sticks; otherwise it randomizes on load.",
-  "1990s": "Beige, bevels, and a font that refuses to antialias. Your pick sticks; otherwise it randomizes on load.",
-  "2000s": "Aqua gloss, like a PowerBook that still boots. Your pick sticks; otherwise it randomizes on load.",
+  "1980s": "Pixel type, scanlines, red phosphor. Your pick sticks; otherwise it randomizes on load.",
+  "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks; otherwise it randomizes on load.",
+  "2000s": "Bliss sky, Luna blue, Aqua gel. Your pick sticks; otherwise it randomizes on load.",
   modern:
-    "After all that ornament: hairlines and flat color. Your pick sticks; otherwise it randomizes on load.",
+    "A little Windows 11, a little macOS. Your pick sticks; otherwise it randomizes on load.",
 };
 
 type EraTheme = (typeof THEMES)[number];

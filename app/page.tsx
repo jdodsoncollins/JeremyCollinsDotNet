@@ -21,7 +21,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <CircuitBackground />
-      <div className="relative">
+      <div className="relative z-10">
         <Header />
         <main>
           <HeroSection />
