@@ -1,3 +1,5 @@
+import { HeroCtas } from "@/components/hero-ctas";
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
@@ -7,7 +9,7 @@ export function HeroSection() {
           <span className="block">Collins</span>
         </h1>
 
-        <div className="hero-ctas">
+        <HeroCtas>
           <div className="hero-cta-primary">
             <a
               href="#projects"
@@ -74,7 +76,7 @@ export function HeroSection() {
               <span className="hero-cta-short">LinkedIn</span>
             </a>
           </div>
-        </div>
+        </HeroCtas>
       </div>
     </section>
   );
