@@ -715,6 +715,73 @@
   margin-bottom: 2rem;
 }
 
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hero-art {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-art-img {
+  display: none;
+  width: auto;
+  height: 14rem;
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"] .hero-art-1980s,
+:root[data-era="1990s"] .hero-art-1990s,
+:root[data-era="2000s"] .hero-art-2000s,
+:root[data-era="modern"] .hero-art-modern {
+  display: block;
+}
+
+:root[data-era="modern"] .hero-art-img {
+  image-rendering: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem 3rem;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-copy {
+    flex: 1 1 22rem;
+  }
+
+  .hero-art {
+    flex: 1 1 24rem;
+    padding-top: 0.15rem;
+  }
+
+  .hero-art-img {
+    height: min(32rem, 62vh);
+  }
+}
+
 :root[data-era="1980s"] .era-logo-1980s,
 :root[data-era="1990s"] .era-logo-1990s,
 :root[data-era="2000s"] .era-logo-2000s,

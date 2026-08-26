@@ -1,15 +1,23 @@
 import { HeroCtas } from "@/components/hero-ctas";
 
+const HERO_ART = [
+  { era: "1980s", src: "/hero/hero-1980s.png", width: 737, height: 700 },
+  { era: "1990s", src: "/hero/hero-1990s.png", width: 756, height: 658 },
+  { era: "2000s", src: "/hero/hero-2000s.png", width: 629, height: 625 },
+  { era: "modern", src: "/hero/hero-modern.png", width: 588, height: 619 },
+] as const;
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-8 md:py-20 w-full">
-        <h1 className="font-display font-bold leading-[0.92] mb-10 text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground">
-          Jeremy
-          <span className="block">Collins</span>
-        </h1>
+      <div className="hero-inner relative z-10">
+        <div className="hero-copy">
+          <h1 className="font-display font-bold leading-[0.92] mb-10 text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground">
+            Jeremy
+            <span className="block">Collins</span>
+          </h1>
 
-        <HeroCtas>
+          <HeroCtas>
           <div className="hero-cta-primary">
             <a
               href="#projects"
@@ -76,7 +84,21 @@ export function HeroSection() {
               <span className="hero-cta-short">LinkedIn</span>
             </a>
           </div>
-        </HeroCtas>
+          </HeroCtas>
+        </div>
+        <div className="hero-art" aria-hidden="true">
+          {HERO_ART.map((art) => (
+            <img
+              key={art.era}
+              className={`hero-art-img hero-art-${art.era}`}
+              src={art.src}
+              width={art.width}
+              height={art.height}
+              alt=""
+              decoding="async"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
