@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const THEMES = ["1980s", "1990s", "2000s", "modern"] as const;
 const STORAGE_KEY = "jeremycollins-theme-era";
@@ -13,6 +13,8 @@ function isEraTheme(value: string | undefined): value is EraTheme {
 
 export function ThemeSwitcher() {
   const [theme, setTheme] = useState<EraTheme>("1980s");
+  const [infoOpen, setInfoOpen] = useState(false);
+  const infoWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const currentTheme = document.documentElement.dataset.era;
@@ -20,6 +22,32 @@ export function ThemeSwitcher() {
       setTheme(currentTheme);
     }
   }, []);
+
+  useEffect(() => {
+    if (!infoOpen) {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setInfoOpen(false);
+      }
+    };
+
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Node && !infoWrapRef.current?.contains(target)) {
+        setInfoOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [infoOpen]);
 
   const updateTheme = (nextTheme: EraTheme) => {
     setTheme(nextTheme);
@@ -45,14 +73,26 @@ export function ThemeSwitcher() {
           </button>
         ))}
       </div>
-      <div className="theme-info-wrap">
-        <button type="button" className="theme-info" aria-label="Why theme eras?">
+      <div className="theme-info-wrap" ref={infoWrapRef}>
+        <button
+          type="button"
+          className="theme-info"
+          aria-label="Why theme eras?"
+          aria-expanded={infoOpen}
+          aria-controls="theme-era-tooltip"
+          onClick={() => setInfoOpen((open) => !open)}
+        >
           i
         </button>
-        <div className="theme-tooltip" role="tooltip">
-          This is a theme switcher to emulate styles of the decades. The theme you choose will persist,
-          otherwise it is randomized. I like computing history, and this is a small personal one-pager.
-          Might as well make it fun.
+        <div
+          id="theme-era-tooltip"
+          className="theme-tooltip"
+          role="tooltip"
+          data-open={infoOpen}
+        >
+          Themes from different decades of computing. Your pick sticks; otherwise it
+          randomizes on load. I like computing history, and this is a small personal
+          one-pager. Might as well make it fun.
         </div>
       </div>
     </div>

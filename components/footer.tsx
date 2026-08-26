@@ -19,7 +19,7 @@ export function Footer() {
             <span className="text-foreground">Jeremy Collins</span>
           </div>
           <p className="text-xs text-muted-foreground/60 font-mono">
-            Built with Next.js + Tailwind CSS
+            A small personal one-pager. Might as well make it fun.
           </p>
         </div>
       </div>

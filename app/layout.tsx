@@ -18,20 +18,18 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jeremycollins.net"),
   title: {
-    default: "Jeremy Collins | Product Engineer",
+    default: "Jeremy Collins",
     template: "%s | Jeremy Collins",
   },
   description:
-    "Jeremy Collins is a product engineer with a full-stack background, focused on web products, agentic tooling, automation, and independent iOS software.",
+    "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
   keywords: [
     "Jeremy Collins",
-    "product engineer",
     "software engineer",
-    "web developer",
-    "agentic tooling",
-    "automation",
+    "Webflow",
     "Codable",
     "iOS developer tools",
+    "Safari",
   ],
   authors: [{ name: "Jeremy Collins" }],
   creator: "Jeremy Collins",
@@ -55,9 +53,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Jeremy Collins | Product Engineer",
+    title: "Jeremy Collins",
     description:
-      "Product engineer focused on web products, agentic tooling, automation, and independent iOS software.",
+      "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
     url: "/",
     siteName: "JeremyCollins.net",
     type: "website",
@@ -73,9 +71,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Jeremy Collins | Product Engineer",
+    title: "Jeremy Collins",
     description:
-      "Product engineer focused on web products, agentic tooling, automation, and independent iOS software.",
+      "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
     images: ["/logo.png"],
   },
 };

@@ -23,7 +23,7 @@ export default function CodablePrivacyPolicy() {
       <CircuitBackground />
       <div className="relative z-10">
         <Header />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 md:pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6">
           {/* Page header */}
           <div className="mb-12">
@@ -190,11 +190,10 @@ export default function CodablePrivacyPolicy() {
               {/* Contact */}
               <section className="border border-border bg-card/30 p-6 mt-8">
                 <h2 className="font-display text-xl text-foreground mb-4">
-                  Contact Us
+                  Contact
                 </h2>
                 <p className="text-sm leading-relaxed">
-                  If you have any questions about this Privacy Policy, please
-                  contact{" "}
+                  Questions about this policy:{" "}
                   <a
                     href="mailto:jeremy@jeremycollins.net"
                     className="text-neon-green hover:underline"

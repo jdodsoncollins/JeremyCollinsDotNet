@@ -7,7 +7,7 @@ import { parseResume, readResumeMarkdown, type ResumeBlock } from "@/lib/resume"
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Jeremy Collins resume: product engineer and builder focused on customer-facing product engineering, growth, experimentation, analytics, and agentic coding workflows.",
+    "Resume for Jeremy Collins, software engineer at Webflow. Growth engineering, billing, experiments, and Codable, an iOS Safari developer tool.",
   alternates: {
     canonical: "/resume",
   },

@@ -6,24 +6,30 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60 transition-all duration-300">
       <nav
-        className="max-w-5xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4"
+        className="max-w-5xl mx-auto px-6 py-3 md:py-4 flex flex-wrap items-center gap-x-4 gap-y-3"
         aria-label="Primary navigation"
       >
         <Link
           href="/"
-          className="hover:opacity-80 transition-opacity"
+          className="shrink-0 hover:opacity-80 transition-opacity"
           aria-label="Jeremy Collins home"
         >
           <EraLogo />
         </Link>
         <ThemeSwitcher />
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="ml-auto flex items-center gap-3 sm:gap-4 md:gap-6">
           <a
             href="/#projects"
             className="text-sm text-muted-foreground hover:text-neon-cyan transition-colors tracking-wide"
           >
             Projects
           </a>
+          <Link
+            href="/resume"
+            className="text-sm text-muted-foreground hover:text-neon-cyan transition-colors tracking-wide"
+          >
+            Resume
+          </Link>
           <a
             href="https://github.com/jdodsoncollins"
             target="_blank"

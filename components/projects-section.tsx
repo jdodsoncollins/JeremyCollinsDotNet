@@ -55,7 +55,7 @@ export function ProjectsSection() {
   }, [expandedImage]);
 
   return (
-    <section id="projects" className="py-20 border-t border-border/50">
+    <section id="projects" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Section label */}
@@ -71,7 +71,7 @@ export function ProjectsSection() {
                 color: "transparent",
               }}
             >
-              Featured Work
+              On the side
             </span>
           </h2>
         </div>
@@ -82,11 +82,14 @@ export function ProjectsSection() {
           {/* Card header */}
           <div className="p-6 md:p-8 border-b border-border/40">
             <div className="flex items-start gap-5 mb-6">
-              <div
-                className="codable-icon w-14 h-14 rounded-xl border border-primary/40 flex-shrink-0 flex items-center justify-center bg-background"
-                aria-hidden="true"
-              >
-                <span className="font-display font-black text-xl text-primary leading-none">C</span>
+              <div className="codable-icon w-14 h-14 rounded-xl border border-primary/40 flex-shrink-0 overflow-hidden bg-black">
+                <Image
+                  src="/codable/codable-icon.png"
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold text-foreground tracking-wide">
@@ -99,11 +102,10 @@ export function ProjectsSection() {
             </div>
 
             <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-xl mb-6">
-              Safari-native web developer tools and element inspector for iOS.
-              Inspect HTML, styles, network requests, and console output. Run
-              a JavaScript scratchpad, test responsive viewports, and generate
-              code with Apple Intelligence. Codable has no monetization or
-              tracking.
+              Safari-native web developer tools for iOS. Inspect HTML, styles,
+              network requests, and console output. Run a JavaScript scratchpad,
+              test responsive viewports, and generate code with Apple
+              Intelligence. No monetization or tracking.
             </p>
 
             {/* Feature list */}

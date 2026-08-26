@@ -15,17 +15,16 @@ export default function NotFound() {
               404
             </p>
             <h1 className="mt-4 font-display text-4xl font-black leading-tight text-foreground md:text-6xl">
-              Page Not Found
+              Nothing here
             </h1>
             <p className="mt-5 max-w-xl font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
-              This route does not exist, moved, or never shipped. The rest of
-              the site is still available.
+              This page moved, or it never shipped. Everything else is still up.
             </p>
             <Link
               href="/"
               className="mt-8 inline-flex items-center gap-2 border border-primary px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
             >
-              Return Home
+              Back home
             </Link>
           </section>
         </main>

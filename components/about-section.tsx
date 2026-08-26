@@ -1,14 +1,14 @@
 export function AboutSection() {
   const roles = [
-    { period: "2023 - present", company: "Webflow", title: "Sr. Software Engineer" },
+    { period: "2022 - present", company: "Webflow", title: "Sr. Software Engineer" },
     { period: "2022", company: "MasterClass", title: "Software Engineer" },
-    { period: "2019 - 2022", company: "HitRecord", title: "Software Engineer" },
+    { period: "2019 - 2022", company: "HitRecord", title: "Senior Developer" },
     { period: "2018", company: "Plink", title: "Software Engineer" },
     { period: "2015 - 2018", company: "Event Farm", title: "Front-End Engineer" },
   ];
 
   return (
-    <section id="about" className="py-20 border-t border-border/50">
+    <section id="about" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Section label */}
@@ -24,7 +24,7 @@ export function AboutSection() {
                 color: "transparent",
               }}
             >
-              Who I am
+              Currently
             </span>
           </h2>
         </div>
@@ -33,27 +33,22 @@ export function AboutSection() {
           {/* Bio */}
           <div className="space-y-4 font-mono text-sm text-muted-foreground leading-relaxed">
             <p>
-              I&apos;m a product engineer with a full-stack background. I like
-              working on products where understanding the business and market
-              makes the engineering work better.
+              I like working on products where knowing the business makes the
+              engineering better.
             </p>
             <p>
-              My current focus is using agentic tooling and automation to build
-              larger, more complex systems with less manual overhead. I care
-              about the craft, but I also care about changing the way the work
-              gets done.
+              These days I spend a lot of time with agents and automation, so I
+              can take on bigger systems without doing every step by hand.
             </p>
             <p>
-              I follow industry shifts closely and try a lot of new products,
-              tools, and workflows. The web still matters to me as an open
+              I try a lot of new tools. The web still matters to me as an open
               platform with portable standards and room for independent
               software.
             </p>
             <p>
               Outside of work I build iOS apps. Codable brings web developer
               tools to mobile Safari. It has no monetization or tracking. I
-              published it because I think these tools should exist on mobile
-              devices.
+              published it because I think these tools should exist on a phone.
             </p>
           </div>
 

@@ -732,7 +732,8 @@
 }
 
 .theme-info-wrap:hover .theme-tooltip,
-.theme-info-wrap:focus-within .theme-tooltip {
+.theme-info-wrap:focus-within .theme-tooltip,
+.theme-tooltip[data-open="true"] {
   opacity: 1;
   transform: translate(-50%, 0);
 }
@@ -1304,7 +1305,7 @@
 .resumePage {
   width: min(100%, 58rem);
   margin: 0 auto;
-  padding: 8rem 1.5rem 5rem;
+  padding: 9rem 1.5rem 5rem;
   color: #2f3338;
 }
 
@@ -1593,7 +1594,26 @@
   }
 
   .theme-info-wrap:hover .theme-tooltip,
-  .theme-info-wrap:focus-within .theme-tooltip {
+  .theme-info-wrap:focus-within .theme-tooltip,
+  .theme-tooltip[data-open="true"] {
     transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .cursor-blink,
+  .circuit-trace,
+  .hacf-sweep-line,
+  .hacf-sweep-line-2 {
+    animation: none;
+  }
+
+  .hacf-sweep-line,
+  .hacf-sweep-line-2 {
+    display: none;
   }
 }

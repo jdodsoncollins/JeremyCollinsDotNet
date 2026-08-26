@@ -11,17 +11,17 @@ const personJsonLd = {
   name: "Jeremy Collins",
   url: "https://jeremycollins.net",
   email: "mailto:jeremy@jeremycollins.net",
-  jobTitle: "Product Engineer",
+  jobTitle: "Software Engineer",
   sameAs: [
     "https://github.com/jdodsoncollins",
     "https://linkedin.com/in/jeremycollinsnet",
   ],
   knowsAbout: [
-    "Product engineering",
     "Web development",
-    "Agentic tooling",
-    "Automation",
+    "Growth engineering",
     "iOS developer tools",
+    "Safari",
+    "Automation",
   ],
 };
 
