@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Jeremy Collins",
   },
   description:
-    "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
+    "Software engineer at Webflow in Los Angeles. Makes Codable, Safari-native web developer tools for iOS.",
   keywords: [
     "Jeremy Collins",
     "software engineer",
@@ -31,12 +31,9 @@ export const metadata: Metadata = {
     "iOS developer tools",
     "Safari",
   ],
-  authors: [{ name: "Jeremy Collins" }],
+  authors: [{ name: "Jeremy Collins", url: "https://jeremycollins.net" }],
   creator: "Jeremy Collins",
   publisher: "Jeremy Collins",
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -55,25 +52,28 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jeremy Collins",
     description:
-      "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
-    url: "/",
+      "Software engineer at Webflow in Los Angeles. Makes Codable, Safari developer tools for iOS.",
+    url: "https://jeremycollins.net",
     siteName: "JeremyCollins.net",
-    type: "website",
+    type: "profile",
     locale: "en_US",
+    firstName: "Jeremy",
+    lastName: "Collins",
     images: [
       {
         url: "/logo.png",
         width: 600,
         height: 600,
-        alt: "Jeremy Collins logo",
+        alt: "Jeremy Collins",
       },
     ],
   },
   twitter: {
     card: "summary",
     title: "Jeremy Collins",
+    creator: "jdodsoncollins",
     description:
-      "Software engineer at Webflow. I also make Codable, Safari developer tools for iOS.",
+      "Software engineer at Webflow in Los Angeles. Makes Codable, Safari developer tools for iOS.",
     images: ["/logo.png"],
   },
 };
@@ -98,6 +98,19 @@ const themeInitScript = `
   } catch {
     document.documentElement.dataset.era = "1980s";
   }
+
+  try {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        for (const reg of regs) reg.unregister();
+      });
+    }
+    if (window.caches) {
+      caches.keys().then((keys) => {
+        for (const key of keys) caches.delete(key);
+      });
+    }
+  } catch {}
 })();
 `;
 

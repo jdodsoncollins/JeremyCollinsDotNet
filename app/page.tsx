@@ -1,28 +1,16 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CircuitBackground } from "@/components/circuit-background";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { homeJsonLd } from "@/lib/json-ld";
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jeremy Collins",
-  url: "https://jeremycollins.net",
-  email: "mailto:jeremy@jeremycollins.net",
-  jobTitle: "Software Engineer",
-  sameAs: [
-    "https://github.com/jdodsoncollins",
-    "https://linkedin.com/in/jeremycollinsnet",
-  ],
-  knowsAbout: [
-    "Web development",
-    "Growth engineering",
-    "iOS developer tools",
-    "Safari",
-    "Automation",
-  ],
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {
@@ -30,7 +18,7 @@ export default function Home() {
     <div className="relative min-h-screen overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <CircuitBackground />
       <div className="relative">

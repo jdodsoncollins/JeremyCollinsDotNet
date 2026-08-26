@@ -8,3 +8,6 @@ node_modules/
 out/
 .vercel
 .DS_Store
+*.tsbuildinfo
+/site
+/docker

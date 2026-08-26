@@ -1,0 +1,23 @@
+# Jeremy Collins
+
+> Software engineer at Webflow in Los Angeles. Makes Codable, Safari-native web developer tools for iOS.
+
+## About
+
+Jeremy Collins is a senior software engineer at Webflow. His recent work is growth engineering: billing, usage metering, paywalls, and customer-facing product. Outside of work he makes Codable, a free iOS app that brings web developer tools to mobile Safari, with no ads, tracking, or paywall.
+
+## Pages
+
+- [Home](https://jeremycollins.net/): bio, experience, and Codable
+- [Resume](https://jeremycollins.net/resume): full resume
+- [Resume PDF](https://jeremycollins.net/resume/jeremy-collins-resume.pdf)
+- [Codable privacy policy](https://jeremycollins.net/codable-privacy-policy)
+
+## Codable
+
+- [Codable on the App Store](https://apps.apple.com/us/app/codable/id1324741659): Safari-native inspector, console, network monitor, scratchpad, and viewport tester for iOS
+
+## Profiles
+
+- [GitHub](https://github.com/jdodsoncollins)
+- [LinkedIn](https://linkedin.com/in/jeremycollinsnet)

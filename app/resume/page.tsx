@@ -3,13 +3,21 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { parseResume, readResumeMarkdown, type ResumeBlock } from "@/lib/resume";
+import { resumeJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Resume for Jeremy Collins, software engineer at Webflow. Growth engineering, billing, experiments, and Codable, an iOS Safari developer tool.",
+    "Resume for Jeremy Collins, senior software engineer at Webflow in Los Angeles. Growth engineering, billing, experiments, and Codable for iOS Safari.",
   alternates: {
     canonical: "/resume",
+  },
+  openGraph: {
+    title: "Jeremy Collins resume",
+    description:
+      "Senior software engineer at Webflow. Growth engineering, billing, and Codable.",
+    url: "/resume",
+    type: "profile",
   },
 };
 
@@ -68,6 +76,10 @@ export default function ResumePage() {
 
   return (
     <div className="resumeShell min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resumeJsonLd) }}
+      />
       <Header />
       <main className="resumePage" data-resume-pdf>
         <article className="resumeDocument" aria-labelledby="resume-title">

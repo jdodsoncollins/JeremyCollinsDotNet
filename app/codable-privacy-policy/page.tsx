@@ -2,16 +2,19 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CircuitBackground } from "@/components/circuit-background";
 import type { Metadata } from "next";
+import { privacyJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "Codable Privacy Policy",
-  description: "Privacy policy for Codable, Jeremy Collins' iOS Safari web developer tools app.",
+  description:
+    "Privacy policy for Codable, Jeremy Collins' free iOS Safari web developer tools app. No ads, analytics, or tracking.",
   alternates: {
     canonical: "/codable-privacy-policy",
   },
   openGraph: {
     title: "Codable Privacy Policy",
-    description: "Privacy policy for Codable, an iOS Safari web developer tools app.",
+    description:
+      "Privacy policy for Codable, a free iOS Safari web developer tools app with no tracking.",
     url: "/codable-privacy-policy",
     type: "article",
   },
@@ -20,6 +23,10 @@ export const metadata: Metadata = {
 export default function CodablePrivacyPolicy() {
   return (
     <div className="relative min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacyJsonLd) }}
+      />
       <CircuitBackground />
       <div className="relative z-10">
         <Header />
