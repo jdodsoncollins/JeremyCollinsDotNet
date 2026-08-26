@@ -112,11 +112,11 @@ export function EraLogo() {
           fill="none"
           stroke="#f4fbff"
           strokeLinecap="round"
-          transform="rotate(-28 20 23)"
+          transform="rotate(-28 20 20)"
         >
           <circle
             cx="20"
-            cy="23"
+            cy="20"
             r="10.2"
             strokeWidth="3.05"
             pathLength="64"
@@ -124,16 +124,16 @@ export function EraLogo() {
           />
           <circle
             cx="20"
-            cy="23"
+            cy="20"
             r="5.7"
             strokeWidth="2.75"
             pathLength="36"
             strokeDasharray="28.5 7.5"
           />
         </g>
-        <ellipse cx="20" cy="10" rx="10.5" ry="3.4" fill="rgba(255,255,255,0.62)" />
+        <ellipse cx="20" cy="9.2" rx="10" ry="2.8" fill="rgba(255,255,255,0.55)" />
         <path
-          d="M10 8.2h20"
+          d="M11 7.6h18"
           fill="none"
           stroke="#ffffff"
           strokeWidth="1.1"
