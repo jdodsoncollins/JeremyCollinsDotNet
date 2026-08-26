@@ -616,7 +616,6 @@
   padding: 3px;
   border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
   background: color-mix(in srgb, var(--background) 72%, black);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 .theme-switcher-option {
@@ -634,7 +633,6 @@
 .theme-switcher-option[data-active="true"] {
   color: var(--primary-foreground);
   background: var(--primary);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--primary) 35%, transparent);
 }
 
 .theme-info-wrap {
@@ -745,7 +743,7 @@
 }
 
 :root[data-era="1980s"] h1 {
-  text-shadow: 4px 4px 0 #3a0810;
+  text-shadow: 2px 2px 0 #2a0810;
 }
 
 :root[data-era="1980s"] header:not(.resumeHeader) a {
@@ -772,16 +770,16 @@
 
 :root[data-era="1980s"] .circuit-bg {
   background-image:
-    linear-gradient(rgba(255, 34, 68, 0.18) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 34, 68, 0.18) 2px, transparent 2px);
-  background-size: 8px 8px;
+    linear-gradient(rgba(255, 34, 68, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.1) 1px, transparent 1px);
+  background-size: 12px 12px;
 }
 
 :root[data-era="1980s"] .hacf-scanlines {
   background: repeating-linear-gradient(
     0deg,
-    transparent 0 2px,
-    rgba(0, 0, 0, 0.32) 2px 3px
+    transparent 0 3px,
+    rgba(0, 0, 0, 0.14) 3px 4px
   );
 }
 
@@ -810,12 +808,11 @@
 /* 1990s: pixel-art texture, beOS-like bevels, classic web color */
 :root[data-era="1990s"] body {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.06) 50% 62.5%, transparent 62.5%),
-    repeating-linear-gradient(90deg, #dcd8cf 0 1px, #f3f0e8 1px 2px, #c9c4ba 2px 3px, #e2ded4 3px 6px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.04) 50% 62.5%, transparent 62.5%),
     var(--background);
-  background-size: 16px 16px, 6px 6px, auto;
+  background-size: 16px 16px, auto;
   font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
-  font-weight: 600;
+  font-weight: 400;
   -webkit-font-smoothing: auto;
   text-rendering: geometricPrecision;
 }
@@ -1171,23 +1168,23 @@
 :root[data-era="2000s"] a[class*="bg-primary"] {
   color: #ffffff;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.14) 44%, transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 36%, transparent 40%),
     linear-gradient(180deg, #c6f3a4 0%, #5cb31a 46%, #3c8d0d 47%, #4ea312 100%);
   border: 1px solid #2a6a08;
   border-radius: 12px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 2px 4px rgba(0, 0, 0, 0.22);
 }
 
 :root[data-era="2000s"] .derez-btn,
 :root[data-era="2000s"] a[class*="border"],
 :root[data-era="2000s"] button[class*="border"] {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.16) 44%, transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.08) 36%, transparent 40%),
     linear-gradient(180deg, #d6f3ff 0%, #5eb4ea 48%, #1f78c4 49%, #3d96d8 100%);
   border: 1px solid #1a5fa8;
   color: #083258;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 40, 80, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 40, 80, 0.18);
 }
 
 :root[data-era="2000s"] .derez-btn-outline {
@@ -1236,11 +1233,9 @@
 /* Modern: Windows 11 mica + macOS desktop */
 :root[data-era="modern"] body {
   background:
-    radial-gradient(ellipse at 16% 10%, rgba(76, 194, 255, 0.38), transparent 22rem),
-    radial-gradient(ellipse at 84% 6%, rgba(10, 132, 255, 0.3), transparent 26rem),
-    radial-gradient(ellipse at 72% 92%, rgba(191, 90, 242, 0.16), transparent 20rem),
-    radial-gradient(ellipse at 8% 78%, rgba(0, 120, 212, 0.16), transparent 18rem),
-    linear-gradient(180deg, #10263f 0%, #1a1d24 44%, #12151c 100%);
+    radial-gradient(ellipse at 14% 8%, rgba(76, 194, 255, 0.22), transparent 22rem),
+    radial-gradient(ellipse at 86% 10%, rgba(10, 132, 255, 0.16), transparent 24rem),
+    linear-gradient(180deg, #151a22 0%, #1a1d24 48%, #13161c 100%);
   font-family: "Segoe UI Variable", "Segoe UI", "SF Pro Display", "Avenir Next", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -1260,7 +1255,11 @@
 :root[data-era="modern"] .font-display,
 :root[data-era="modern"] .font-sans {
   font-family: "Segoe UI Variable", "Segoe UI", "SF Pro Display", "Avenir Next", system-ui, sans-serif;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
+}
+
+:root[data-era="modern"] h1 {
+  letter-spacing: -0.02em;
 }
 
 :root[data-era="modern"] .font-mono {
@@ -1279,7 +1278,7 @@
   width: 100%;
   height: 100%;
   color: #9ec9ff;
-  opacity: 0.88;
+  opacity: 0.5;
 }
 
 @media (max-width: 1099px) {

@@ -20,7 +20,7 @@ export function HeroSection() {
           </a>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 mb-16">
+        <div className="flex flex-wrap items-center gap-3">
           <a
             href="mailto:jeremy@jeremycollins.net"
             className="inline-flex items-center gap-2 px-4 py-2 border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
@@ -43,10 +43,6 @@ export function HeroSection() {
           >
             LinkedIn
           </a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         </div>
       </div>
     </section>

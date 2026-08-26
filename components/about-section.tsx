@@ -69,11 +69,6 @@ export function AboutSection() {
             </ol>
           </div>
         </div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-4 mt-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-        </div>
       </div>
     </section>
   );
