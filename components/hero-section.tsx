@@ -2,7 +2,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
       <div className="max-w-4xl mx-auto px-6 py-8 md:py-20 w-full">
-        <h1 className="font-display font-black leading-none mb-6">
+        <h1 className="font-display font-black leading-none mb-10">
           <span className="block text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight hacf-flare">
             JEREMY
           </span>
@@ -10,10 +10,6 @@ export function HeroSection() {
             COLLINS
           </span>
         </h1>
-
-        <p className="font-mono text-sm md:text-base text-neon-cyan tracking-[0.08em] mb-10">
-          Software engineer at Webflow.
-        </p>
 
         <div className="flex flex-wrap items-center gap-4 mb-8">
           <a
