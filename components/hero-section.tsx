@@ -1,10 +1,10 @@
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
-  { era: "1980s", src: "/hero/hero-1980s.png", width: 737, height: 700 },
-  { era: "1990s", src: "/hero/hero-1990s.png", width: 756, height: 658 },
-  { era: "2000s", src: "/hero/hero-2000s.png", width: 629, height: 625 },
-  { era: "modern", src: "/hero/hero-modern.png", width: 588, height: 619 },
+  { era: "1980s", still: "/hero/hero-1980s.png", live: "/hero/hero-1980s-live.png", width: 737, height: 700 },
+  { era: "1990s", still: "/hero/hero-1990s.png", live: "/hero/hero-1990s-live.png", width: 951, height: 826 },
+  { era: "2000s", still: "/hero/hero-2000s.png", live: "/hero/hero-2000s-live.png", width: 629, height: 625 },
+  { era: "modern", still: "/hero/hero-modern.png", live: "/hero/hero-modern-live.png", width: 783, height: 828 },
 ] as const;
 
 export function HeroSection() {
@@ -88,15 +88,25 @@ export function HeroSection() {
         </div>
         <div className="hero-art" aria-hidden="true">
           {HERO_ART.map((art) => (
-            <img
-              key={art.era}
-              className={`hero-art-img hero-art-${art.era}`}
-              src={art.src}
-              width={art.width}
-              height={art.height}
-              alt=""
-              decoding="async"
-            />
+            <div key={art.era} className={`hero-art-shot hero-art-${art.era}`}>
+              <img
+                className="hero-art-still"
+                src={art.still}
+                width={art.width}
+                height={art.height}
+                alt=""
+                decoding="async"
+              />
+              <div className="hero-art-live">
+                <img
+                  src={art.live}
+                  width={art.width * 6}
+                  height={art.height}
+                  alt=""
+                  decoding="async"
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
