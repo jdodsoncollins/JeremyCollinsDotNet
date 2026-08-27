@@ -811,6 +811,28 @@
   transition: opacity 180ms ease;
 }
 
+.hero-art-shot.is-live .hero-art-still {
+  opacity: 0;
+}
+
+.hero-art-shot.is-live .hero-art-live {
+  opacity: 1;
+}
+
+.hero-art-shot.is-live .hero-art-live img {
+  animation: hero-live-sheet 0.86s steps(6) infinite;
+}
+
+:root[data-era="2000s"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-still {
+  opacity: 0;
+}
+
+:root[data-era="2000s"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live {
+  opacity: 1;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .hero-art-shot:hover .hero-art-still {
     opacity: 0;
@@ -824,6 +846,11 @@
     animation: hero-live-sheet 0.86s steps(6) infinite;
   }
 
+  :root[data-era="2000s"] .hero-art-shot:hover .hero-art-still,
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+    opacity: 0;
+  }
+
   :root[data-era="2000s"] .hero-art-shot:hover .hero-art-live,
   :root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
     opacity: 1;
@@ -831,20 +858,25 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-art-shot:hover .hero-art-still {
+  .hero-art-shot:hover .hero-art-still,
+  .hero-art-shot.is-live .hero-art-still {
     opacity: 1;
   }
 
   :root[data-era="2000s"] .hero-art-shot:hover .hero-art-still,
-  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+  :root[data-era="2000s"] .hero-art-shot.is-live .hero-art-still,
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still,
+  :root[data-era="modern"] .hero-art-shot.is-live .hero-art-still {
     opacity: 0.82;
   }
 
-  .hero-art-shot:hover .hero-art-live {
+  .hero-art-shot:hover .hero-art-live,
+  .hero-art-shot.is-live .hero-art-live {
     opacity: 0;
   }
 
-  .hero-art-shot:hover .hero-art-live img {
+  .hero-art-shot:hover .hero-art-live img,
+  .hero-art-shot.is-live .hero-art-live img {
     animation: none;
   }
 }

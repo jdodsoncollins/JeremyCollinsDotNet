@@ -1,3 +1,4 @@
+import { HeroArt } from "@/components/hero-art";
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
@@ -86,7 +87,7 @@ export function HeroSection() {
           </div>
           </HeroCtas>
         </div>
-        <div className="hero-art" aria-hidden="true">
+        <HeroArt>
           {HERO_ART.map((art) => (
             <div key={art.era} className={`hero-art-shot hero-art-${art.era}`}>
               <img
@@ -108,7 +109,7 @@ export function HeroSection() {
               </div>
             </div>
           ))}
-        </div>
+        </HeroArt>
       </div>
     </section>
   );
