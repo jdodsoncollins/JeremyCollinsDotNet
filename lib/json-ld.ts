@@ -3,7 +3,7 @@ const SITE = "https://jeremycollins.net";
 export const personId = `${SITE}/#person`;
 export const websiteId = `${SITE}/#website`;
 export const codableId = `${SITE}/#codable`;
-export const taktId = `${SITE}/#takt`;
+export const taktungId = `${SITE}/#taktung`;
 
 export const personJsonLd = {
   "@type": "Person",
@@ -114,10 +114,10 @@ export const privacyJsonLd = {
   isPartOf: { "@id": websiteId },
 };
 
-export const taktJsonLd = {
+export const taktungJsonLd = {
   "@type": "SoftwareApplication",
-  "@id": taktId,
-  name: "Takt",
+  "@id": taktungId,
+  name: "Taktung",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "iOS",
   description:
@@ -130,12 +130,12 @@ export const taktJsonLd = {
   author: { "@id": personId },
 };
 
-export const taktPrivacyJsonLd = {
+export const taktungPrivacyJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${SITE}/takt-privacy-policy#page`,
-  url: `${SITE}/takt-privacy-policy`,
-  name: "Takt Privacy Policy",
-  about: { "@id": taktId },
+  "@id": `${SITE}/taktung-privacy-policy#page`,
+  url: `${SITE}/taktung-privacy-policy`,
+  name: "Taktung Privacy Policy",
+  about: { "@id": taktungId },
   isPartOf: { "@id": websiteId },
 };

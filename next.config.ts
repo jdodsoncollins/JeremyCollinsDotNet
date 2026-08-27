@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/takt-privacy-policy", destination: "/taktung-privacy-policy", permanent: true },
       { source: "/about", destination: "/", permanent: true },
       { source: "/blog", destination: "/", permanent: true },
       { source: "/projects", destination: "/", permanent: true },
