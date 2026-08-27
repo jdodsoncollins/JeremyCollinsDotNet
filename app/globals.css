@@ -717,9 +717,10 @@
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: max-content auto;
+  justify-content: start;
   align-items: start;
-  column-gap: 0.75rem;
+  column-gap: 0.55rem;
   row-gap: 1.35rem;
   width: 100%;
   max-width: 72rem;
@@ -747,7 +748,7 @@
   grid-column: 2;
   grid-row: 1;
   align-self: start;
-  justify-self: end;
+  justify-self: start;
   user-select: none;
 }
 
@@ -796,6 +797,12 @@
   image-rendering: auto;
 }
 
+:root[data-era="2000s"] .hero-art-still,
+:root[data-era="modern"] .hero-art-still {
+  opacity: 0.82;
+  transition: opacity 180ms ease;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .hero-art-shot:hover .hero-art-still {
     opacity: 0;
@@ -808,11 +815,21 @@
   .hero-art-shot:hover .hero-art-live img {
     animation: hero-live-sheet 0.86s steps(6) infinite;
   }
+
+  :root[data-era="2000s"] .hero-art-shot:hover .hero-art-live,
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-art-shot:hover .hero-art-still {
     opacity: 1;
+  }
+
+  :root[data-era="2000s"] .hero-art-shot:hover .hero-art-still,
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+    opacity: 0.82;
   }
 
   .hero-art-shot:hover .hero-art-live {
