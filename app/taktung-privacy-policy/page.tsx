@@ -51,6 +51,12 @@ export default function TaktungPrivacyPolicy() {
               </p>
 
               <p className="leading-relaxed">
+                Taktung is an independent app. It is not affiliated with,
+                endorsed by, sponsored by, or otherwise connected to Vercel,
+                Inc. in any way. Vercel is a trademark of its owner.
+              </p>
+
+              <p className="leading-relaxed">
                 Taktung is provided as-is, without monetization, advertising,
                 analytics, tracking, Taktung account creation, or paid services.
                 The app does not sell data, share user data, or use third-party
