@@ -797,6 +797,14 @@
   image-rendering: auto;
 }
 
+:root[data-era="2000s"] .hero-art-2000s {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.22));
+}
+
+:root[data-era="modern"] .hero-art-modern {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.24));
+}
+
 :root[data-era="2000s"] .hero-art-still,
 :root[data-era="modern"] .hero-art-still {
   opacity: 0.82;
