@@ -3,6 +3,7 @@ const SITE = "https://jeremycollins.net";
 export const personId = `${SITE}/#person`;
 export const websiteId = `${SITE}/#website`;
 export const codableId = `${SITE}/#codable`;
+export const taktId = `${SITE}/#takt`;
 
 export const personJsonLd = {
   "@type": "Person",
@@ -110,5 +111,31 @@ export const privacyJsonLd = {
   url: `${SITE}/codable-privacy-policy`,
   name: "Codable Privacy Policy",
   about: { "@id": codableId },
+  isPartOf: { "@id": websiteId },
+};
+
+export const taktJsonLd = {
+  "@type": "SoftwareApplication",
+  "@id": taktId,
+  name: "Takt",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "iOS",
+  description:
+    "Vercel operations on your phone. Site health, deploys, and confirmed promote or rollback. No ads or tracking.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: { "@id": personId },
+};
+
+export const taktPrivacyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE}/takt-privacy-policy#page`,
+  url: `${SITE}/takt-privacy-policy`,
+  name: "Takt Privacy Policy",
+  about: { "@id": taktId },
   isPartOf: { "@id": websiteId },
 };

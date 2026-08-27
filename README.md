@@ -17,6 +17,7 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - Theme switcher for `1980s`, `1990s`, `2000s`, and `modern` visual treatments.
 - Codable project screenshots with expandable lightbox behavior.
 - Codable privacy policy page.
+- Takt privacy policy page.
 - Source-controlled Markdown resume rendered at `/resume`.
 - Generated static PDF resume available at `/resume/jeremy-collins-resume.pdf`.
 - OAuth helpers:
