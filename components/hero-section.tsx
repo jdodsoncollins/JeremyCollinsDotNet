@@ -1,4 +1,5 @@
 import { HeroArt } from "@/components/hero-art";
+import { HeroBackdrop } from "@/components/hero-backdrop";
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
@@ -10,7 +11,8 @@ const HERO_ART = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
+    <section className="hero-section relative min-h-screen flex items-start md:items-center pt-32 md:pt-20">
+      <HeroBackdrop />
       <div className="hero-inner relative z-10">
         <div className="hero-copy">
           <h1 className="font-display font-bold leading-[0.92] mb-10 text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground">

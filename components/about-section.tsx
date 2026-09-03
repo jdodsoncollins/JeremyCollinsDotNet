@@ -33,9 +33,8 @@ export function AboutSection() {
               software.
             </p>
             <p>
-              Outside of work I build iOS apps. Codable brings web developer
-              tools to mobile Safari. It has no monetization or tracking. I
-              published it because I think these tools should exist on a phone.
+              Outside of work, I hike, parent, read a lot, and build other apps
+              and sites.
             </p>
           </div>
 

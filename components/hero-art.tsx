@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const HOLD_MS = 70;
-const SCROLL_IDLE_MS = 180;
+const SCROLL_IDLE_MS = 720;
 
 export function HeroArt({ children }: { children: React.ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -27,13 +27,14 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
     };
 
     const sync = () => {
-      const next =
-        !motion.matches && (scrolling || touching) ? visibleShot() : null;
+      const live = !motion.matches && (scrolling || touching);
+      const next = live ? visibleShot() : null;
       if (liveShot && liveShot !== next) {
         liveShot.classList.remove("is-live");
       }
       liveShot = next;
       liveShot?.classList.add("is-live");
+      root.closest(".hero-section")?.classList.toggle("is-live", live);
     };
 
     const stopHold = () => {
@@ -115,6 +116,7 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       stopHold();
       if (idleTimer != null) window.clearTimeout(idleTimer);
       liveShot?.classList.remove("is-live");
+      root.closest(".hero-section")?.classList.remove("is-live");
       observer.disconnect();
       window.removeEventListener("scroll", onScroll, scrollOpts);
       window.removeEventListener("scrollend", onScrollEnd, scrollOpts);
