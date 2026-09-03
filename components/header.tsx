@@ -11,13 +11,13 @@ export function Header() {
       >
         <Link
           href="/"
-          className="shrink-0 hover:opacity-80 transition-opacity"
+          className="header-home shrink-0 hover:opacity-80 transition-opacity"
           aria-label="Jeremy Collins home"
         >
           <EraLogo />
         </Link>
         <ThemeSwitcher />
-        <div className="ml-auto flex items-center gap-3 sm:gap-4 md:gap-6">
+        <div className="header-links ml-auto flex items-center gap-3 sm:gap-4 md:gap-6">
           <a
             href="/#projects"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"

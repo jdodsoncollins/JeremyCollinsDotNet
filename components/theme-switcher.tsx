@@ -21,8 +21,9 @@ function isEraTheme(value: string | undefined): value is EraTheme {
 
 export function ThemeSwitcher() {
   const [theme, setTheme] = useState<EraTheme>("1980s");
+  const [panelOpen, setPanelOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
-  const infoWrapRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const currentTheme = document.documentElement.dataset.era;
@@ -32,20 +33,22 @@ export function ThemeSwitcher() {
   }, []);
 
   useEffect(() => {
-    if (!infoOpen) {
+    if (!panelOpen && !infoOpen) {
       return;
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setInfoOpen(false);
+        setPanelOpen(false);
       }
     };
 
     const onPointerDown = (event: PointerEvent) => {
       const target = event.target;
-      if (target instanceof Node && !infoWrapRef.current?.contains(target)) {
+      if (target instanceof Node && !wrapRef.current?.contains(target)) {
         setInfoOpen(false);
+        setPanelOpen(false);
       }
     };
 
@@ -55,7 +58,7 @@ export function ThemeSwitcher() {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("pointerdown", onPointerDown);
     };
-  }, [infoOpen]);
+  }, [panelOpen, infoOpen]);
 
   const updateTheme = (nextTheme: EraTheme) => {
     setTheme(nextTheme);
@@ -64,41 +67,64 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <div className="theme-switcher-wrap" aria-label="Site theme controls">
-      <div className="theme-switcher" role="radiogroup" aria-label="Theme era">
-        {THEMES.map((era) => (
+    <div ref={wrapRef} className="theme-switcher-wrap" aria-label="Site theme controls">
+      <button
+        type="button"
+        className="theme-disclosure"
+        aria-expanded={panelOpen}
+        aria-controls="theme-era-panel"
+        aria-label="Theme"
+        onClick={() => {
+          setPanelOpen((open) => !open);
+          setInfoOpen(false);
+        }}
+      >
+        <span className="theme-disclosure-label">Theme</span>
+        <span className="theme-disclosure-chevron" aria-hidden="true">
+          ›
+        </span>
+      </button>
+      <div
+        id="theme-era-panel"
+        className="theme-panel"
+        data-open={panelOpen}
+        hidden={!panelOpen}
+      >
+        <div className="theme-switcher" role="radiogroup" aria-label="Theme era">
+          {THEMES.map((era) => (
+            <button
+              key={era}
+              type="button"
+              role="radio"
+              aria-checked={theme === era}
+              aria-label={`${era} theme`}
+              className="theme-switcher-option"
+              data-active={theme === era}
+              onClick={() => updateTheme(era)}
+            >
+              {era.replace("19", "").replace("20", "")}
+            </button>
+          ))}
+        </div>
+        <div className="theme-info-wrap">
           <button
-            key={era}
             type="button"
-            role="radio"
-            aria-checked={theme === era}
-            aria-label={`${era} theme`}
-            className="theme-switcher-option"
-            data-active={theme === era}
-            onClick={() => updateTheme(era)}
+            className="theme-info"
+            aria-label="Why theme eras?"
+            aria-expanded={infoOpen}
+            aria-controls="theme-era-tooltip"
+            onClick={() => setInfoOpen((open) => !open)}
           >
-            {era.replace("19", "").replace("20", "")}
+            i
           </button>
-        ))}
-      </div>
-      <div className="theme-info-wrap" ref={infoWrapRef}>
-        <button
-          type="button"
-          className="theme-info"
-          aria-label="Why theme eras?"
-          aria-expanded={infoOpen}
-          aria-controls="theme-era-tooltip"
-          onClick={() => setInfoOpen((open) => !open)}
-        >
-          i
-        </button>
-        <div
-          id="theme-era-tooltip"
-          className="theme-tooltip"
-          role="tooltip"
-          data-open={infoOpen}
-        >
-          {ERA_NOTES[theme]} I like computing history. Might as well make it fun.
+          <div
+            id="theme-era-tooltip"
+            className="theme-tooltip"
+            role="tooltip"
+            data-open={infoOpen}
+          >
+            {ERA_NOTES[theme]} I like computing history. Might as well make it fun.
+          </div>
         </div>
       </div>
     </div>
