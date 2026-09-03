@@ -10,7 +10,7 @@ const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
   "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks; otherwise it randomizes on load.",
   "2000s": "Bliss sky, Luna blue, Aqua gel. Your pick sticks; otherwise it randomizes on load.",
   modern:
-    "God rays, billboard trees, a glade at dusk. Your pick sticks; otherwise it randomizes on load.",
+    "A glade at dusk scene for fun, followed by some cool SAAS glass elements down below. Your pick sticks; otherwise it randomizes on load.",
 };
 
 type EraTheme = (typeof THEMES)[number];
