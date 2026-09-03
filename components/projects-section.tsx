@@ -13,6 +13,7 @@ type SideProject = {
   name: string;
   subtitle: string;
   description: string;
+  note?: string;
   icon: string;
   href: string;
   hrefLabel: string;
@@ -76,9 +77,10 @@ const PROJECTS: SideProject[] = [
   },
   {
     name: "Codeatrophy",
-    subtitle: "Web app / interactive tutorial",
+    subtitle: "React Native / iOS, Android, and web",
     description:
       "Codeatrophy is a reference to coding atrophy, our shared concern that using AI will lead us to refreshing less on the basics. This app is designed to be an interactive tutorial on web dev fundamentals.",
+    note: "Built with React Native for iOS, Android, and web. iOS and Android apps coming soon.",
     icon: "/codeatrophy/codeatrophy-icon.png",
     href: "https://codeatrophy.vercel.app/",
     hrefLabel: "Open Codeatrophy",
@@ -151,6 +153,11 @@ function ProjectCard({
         <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mb-6">
           {project.description}
         </p>
+        {project.note ? (
+          <p className="text-xs text-muted-foreground leading-relaxed max-w-xl mb-6 -mt-3">
+            {project.note}
+          </p>
+        ) : null}
 
         <div className="mb-8">
           <p className="text-xs text-muted-foreground mb-3">Features</p>
