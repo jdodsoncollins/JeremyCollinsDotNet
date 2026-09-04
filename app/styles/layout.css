@@ -25,14 +25,18 @@
 }
 
 .theme-disclosure-chevron {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.95rem;
   line-height: 1;
+  letter-spacing: 0;
+  transform: translate(0.08em, 0.05em);
   transition: transform 160ms ease;
 }
 
 .theme-disclosure[aria-expanded="true"] .theme-disclosure-chevron {
-  transform: rotate(90deg);
+  transform: translate(0.08em, 0.05em) rotate(90deg);
 }
 
 .header-links {
