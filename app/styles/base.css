@@ -1,0 +1,557 @@
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-circuit: var(--circuit);
+  --color-glow: var(--glow);
+  --color-neon: var(--neon);
+  --color-neon-green: var(--neon-green);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-magenta: var(--neon-magenta);
+  --font-sans: var(--font-ibm-plex), system-ui, sans-serif;
+  --font-display: var(--font-ibm-plex), system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  /* HACF Dark Theme - Red/Magenta Primary */
+  --background: #0a0608;
+  --foreground: #e8e0e2;
+  --card: #120a0c;
+  --card-foreground: #e8e0e2;
+  --popover: #120a0c;
+  --popover-foreground: #e8e0e2;
+  --primary: #ff2244;
+  --primary-foreground: #0a0608;
+  --secondary: #1a1218;
+  --secondary-foreground: #e8e0e2;
+  --muted: #16101a;
+  --muted-foreground: #a08890;
+  --accent: #ff0066;
+  --accent-foreground: #ffffff;
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+  --border: #3a2028;
+  --input: #1a1218;
+  --ring: #ff2244;
+  --chart-1: #ff2244;
+  --chart-2: #ff0066;
+  --chart-3: #ff6688;
+  --chart-4: #cc0044;
+  --chart-5: #ff3366;
+  --sidebar: #0f080a;
+  --sidebar-foreground: #e8e0e2;
+  --sidebar-primary: #ff2244;
+  --sidebar-primary-foreground: #0a0608;
+  --sidebar-accent: #1a1218;
+  --sidebar-accent-foreground: #e8e0e2;
+  --sidebar-border: #3a2028;
+  --sidebar-ring: #ff2244;
+  /* HACF-inspired colors */
+  --circuit: #ff2244;
+  --glow: #ff6688;
+  --neon: #ff0066;
+  --neon-green: #ff2244;
+  --neon-cyan: #ff6688;
+  --neon-magenta: #ff0066;
+}
+
+:root[data-era="1990s"] {
+  --radius: 0;
+  --background: #d8d4cc;
+  --foreground: #050505;
+  --card: #e6e2d8;
+  --card-foreground: #050505;
+  --popover: #ffffe1;
+  --popover-foreground: #050505;
+  --primary: #000080;
+  --primary-foreground: #ffffff;
+  --secondary: #c0c0c0;
+  --secondary-foreground: #050505;
+  --muted: #e9e6dd;
+  --muted-foreground: #111111;
+  --accent: #800080;
+  --accent-foreground: #ffffff;
+  --destructive: #800000;
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #ffffff;
+  --ring: #000080;
+  --chart-1: #000080;
+  --chart-2: #008080;
+  --chart-3: #800080;
+  --chart-4: #808000;
+  --chart-5: #800000;
+  --sidebar: #d4d0c8;
+  --sidebar-foreground: #050505;
+  --sidebar-primary: #000080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d9d9d9;
+  --sidebar-accent-foreground: #050505;
+  --sidebar-border: #808080;
+  --sidebar-ring: #000080;
+  --circuit: #808080;
+  --glow: #000080;
+  --neon: #000080;
+  --neon-green: #008080;
+  --neon-cyan: #000080;
+  --neon-magenta: #800080;
+}
+
+:root[data-era="modern"] {
+  --radius: 0.75rem;
+  --background: #1a1d24;
+  --foreground: #f3f5f8;
+  --card: #232831;
+  --card-foreground: #f3f5f8;
+  --popover: #2a303a;
+  --popover-foreground: #f3f5f8;
+  --primary: #0078d4;
+  --primary-foreground: #ffffff;
+  --secondary: #2b313c;
+  --secondary-foreground: #e8edf5;
+  --muted: #22262e;
+  --muted-foreground: #9aa3b2;
+  --accent: #0a84ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ff453a;
+  --destructive-foreground: #ffffff;
+  --border: #3a4150;
+  --input: #22262e;
+  --ring: #0a84ff;
+  --chart-1: #0078d4;
+  --chart-2: #0a84ff;
+  --chart-3: #30d158;
+  --chart-4: #ff9f0a;
+  --chart-5: #ff453a;
+  --sidebar: #1f232c;
+  --sidebar-foreground: #f3f5f8;
+  --sidebar-primary: #0078d4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2b313c;
+  --sidebar-accent-foreground: #e8edf5;
+  --sidebar-border: #3a4150;
+  --sidebar-ring: #0a84ff;
+  --circuit: #4cc2ff;
+  --glow: #0a84ff;
+  --neon: #0078d4;
+  --neon-green: #30d158;
+  --neon-cyan: #4cc2ff;
+  --neon-magenta: #bf5af2;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Circuit board pattern - HACF red */
+.circuit-bg {
+  background-image:
+    linear-gradient(rgba(255, 34, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 34, 68, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.02) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+/* Scan lines effect */
+.scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glow-primary {
+  text-shadow: none;
+}
+
+.glow-accent,
+.glow-blue {
+  text-shadow: none;
+}
+
+.box-glow,
+.box-glow-accent {
+  box-shadow: none;
+}
+
+/* Animated circuit line */
+@keyframes circuit-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.circuit-line {
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  background-size: 200% 100%;
+  animation: circuit-flow 3s linear infinite;
+}
+
+/* Y2K style borders */
+.y2k-border {
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.y2k-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.y2k-border::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+/* Circuit trace pulse */
+@keyframes circuit-pulse {
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.25; }
+}
+
+.circuit-trace {
+  animation: circuit-pulse 4s ease-in-out infinite;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Glitch text effect */
+@keyframes glitch {
+  0% { clip-path: inset(0 0 100% 0); }
+  10% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 0); }
+  20% { clip-path: inset(40% 0 40% 0); transform: translate(2px, 0); }
+  30% { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 0); }
+  40% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
+.font-display {
+  font-family: var(--font-ibm-plex), system-ui, sans-serif;
+}
+
+.neon-glow-subtle,
+.glow-primary,
+.glow-accent,
+.glow-blue {
+  text-shadow: none;
+}
+
+/* Derezzed button effect - pixelated edges */
+.derez-btn {
+  position: relative;
+}
+
+.derez-btn::before,
+.derez-btn-outline::before {
+  display: none;
+}
+
+.derez-btn-outline {
+  position: relative;
+  background: transparent;
+}
+
+.derez-btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--background);
+  clip-path: polygon(
+    0 3px,
+    3px 3px,
+    3px 0,
+    calc(100% - 3px) 0,
+    calc(100% - 3px) 3px,
+    100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 3px) 100%,
+    3px 100%,
+    3px calc(100% - 3px),
+    0 calc(100% - 3px)
+  );
+  z-index: -1;
+}
+
+/* Subtle button glow effects - HACF red */
+.neon-btn-glow,
+.neon-btn-glow-green,
+.neon-btn-glow-cyan,
+.neon-btn-glow-magenta,
+.box-glow,
+.box-glow-accent {
+  box-shadow: none;
+}
+
+/* Subtle glow for section labels */
+.section-label-glow {
+  text-shadow: 0 0 10px currentColor;
+  opacity: 0.3;
+}
+
+/* HACF-inspired CRT scan lines overlay */
+.hacf-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 20;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* Secondary scan lines with red tint */
+.hacf-scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 4px,
+    rgba(255, 34, 68, 0.015) 4px,
+    rgba(255, 34, 68, 0.015) 8px
+  );
+  pointer-events: none;
+}
+
+/* Container for images that should be above scan lines */
+.no-scanlines {
+  position: relative;
+  z-index: 30;
+}
+
+/* HACF-inspired subtle grain/noise texture */
+.hacf-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 19;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* HACF-inspired horizontal light streak - red */
+.hacf-streak {
+  position: relative;
+}
+
+.hacf-streak::before {
+  content: '';
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.08) 15%,
+    rgba(255, 34, 68, 0.25) 50%,
+    rgba(255, 34, 68, 0.08) 85%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Additional horizontal flare line */
+.hacf-streak::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: 50%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.03) 20%,
+    rgba(255, 34, 68, 0.08) 50%,
+    rgba(255, 34, 68, 0.03) 80%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+/* Light flare on section headers - HACF red, positioned below text */
+.hacf-flare {
+  position: relative;
+  display: inline-block;
+}
+
+.hacf-flare::after {
+  content: '';
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -8px;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 34, 68, 0.15) 0%,
+    rgba(255, 34, 68, 0.05) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  filter: blur(6px);
+}
+
+/* Animated scan line sweep (subtle) */
+@keyframes hacf-sweep {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.hacf-sweep-line {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.15) 20%,
+    rgba(255, 102, 136, 0.4) 50%,
+    rgba(255, 34, 68, 0.15) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 18;
+  animation: hacf-sweep 6s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 34, 68, 0.3), 0 0 40px rgba(255, 34, 68, 0.15);
+}
+
+/* Second sweep line with offset timing */
+.hacf-sweep-line-2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 34, 68, 0.1) 30%,
+    rgba(255, 34, 68, 0.2) 50%,
+    rgba(255, 34, 68, 0.1) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 17;
+  animation: hacf-sweep 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Glitch effect on hover for images */
+.hacf-glitch-hover {
+  position: relative;
+}
+
+.hacf-glitch-hover:hover {
+  filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='glitch'%3E%3CfeOffset in='SourceGraphic' dx='2' dy='0' result='r'/%3E%3CfeOffset in='SourceGraphic' dx='-2' dy='0' result='b'/%3E%3CfeColorMatrix in='r' type='matrix' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3CfeColorMatrix in='b' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0'/%3E%3CfeBlend in2='r' mode='screen'/%3E%3C/filter%3E%3C/svg%3E#glitch");
+}
