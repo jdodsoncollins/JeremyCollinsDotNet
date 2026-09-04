@@ -6,11 +6,11 @@ const THEMES = ["1980s", "1990s", "2000s", "modern"] as const;
 const STORAGE_KEY = "jeremycollins-theme-era";
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
-  "1980s": "Pixel type, scanlines, red phosphor. Your pick sticks; otherwise it randomizes on load.",
-  "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks; otherwise it randomizes on load.",
-  "2000s": "Bliss sky, Luna blue, Aqua gel. Your pick sticks; otherwise it randomizes on load.",
+  "1980s": "Pixel type, scanlines, red phosphor. Your pick sticks",
+  "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks",
+  "2000s": "Bliss sky, Luna blue, Aqua gel. Your pick sticks",
   modern:
-    "A glade at dusk scene for fun, followed by some cool SAAS glass elements down below. Your pick sticks; otherwise it randomizes on load.",
+    "A glade at dusk scene for fun, followed by some cool SAAS glass elements down below. Your pick sticks",
 };
 
 type EraTheme = (typeof THEMES)[number];
@@ -123,7 +123,7 @@ export function ThemeSwitcher() {
             role="tooltip"
             data-open={infoOpen}
           >
-            {ERA_NOTES[theme]} I like computing history. Might as well make it fun.
+            {ERA_NOTES[theme]}
           </div>
         </div>
       </div>
