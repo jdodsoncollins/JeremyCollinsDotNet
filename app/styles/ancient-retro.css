@@ -1,0 +1,325 @@
+:root[data-era="1980s"] .era-logo-1980s,
+:root[data-era="1990s"] .era-logo-1990s,
+:root[data-era="modern"] .era-logo-modern {
+  display: block;
+}
+
+:root[data-era="1980s"] body,
+:root[data-era="1980s"] body *,
+:root[data-era="1980s"] .font-sans,
+:root[data-era="1980s"] .font-mono,
+:root[data-era="1980s"] .antialiased,
+:root[data-era="1980s"] header,
+:root[data-era="1980s"] header a,
+:root[data-era="1980s"] header button,
+:root[data-era="1980s"] nav,
+:root[data-era="1980s"] p,
+:root[data-era="1980s"] li,
+:root[data-era="1980s"] a,
+:root[data-era="1980s"] button {
+  font-family: var(--font-vt323), var(--font-space-mono), ui-monospace, monospace !important;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never !important;
+  font-variant-ligatures: none;
+}
+
+:root[data-era="1980s"] body {
+  font-size: 1.16rem;
+}
+
+:root[data-era="1980s"] .font-display,
+:root[data-era="1980s"] h1,
+:root[data-era="1980s"] h2,
+:root[data-era="1980s"] h3 {
+  font-family: var(--font-pixel), var(--font-vt323), monospace !important;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: none !important;
+  font-smooth: never !important;
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"] h1 {
+  text-shadow: 2px 2px 0 #2a0810;
+}
+
+:root[data-era="1980s"] header:not(.resumeHeader) a {
+  font-size: 1.05rem;
+}
+
+:root[data-era="1980s"] .theme-switcher-option,
+:root[data-era="1980s"] .theme-info,
+:root[data-era="1980s"] .theme-tooltip,
+:root[data-era="1980s"] .theme-disclosure {
+  font-family: var(--font-vt323), monospace !important;
+  letter-spacing: 0.08em;
+}
+
+:root[data-era="1980s"] .era-logo {
+  color: var(--foreground);
+  filter: none;
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"] .era-logo-mark {
+  image-rendering: pixelated;
+  shape-rendering: crispEdges;
+}
+
+:root[data-era="1980s"] .circuit-bg {
+  background-image:
+    linear-gradient(rgba(255, 34, 68, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 34, 68, 0.1) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+:root[data-era="1980s"] .hacf-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 3px,
+    rgba(0, 0, 0, 0.14) 3px 4px
+  );
+}
+
+:root[data-era="1980s"] a[class*="bg-primary"],
+:root[data-era="1980s"] a[class*="border"] {
+  border-radius: 0;
+  font-family: var(--font-vt323), monospace !important;
+  letter-spacing: 0.1em;
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"] a[class*="bg-primary"] {
+  box-shadow:
+    3px 0 0 0 #5a0a18,
+    0 3px 0 0 #5a0a18,
+    3px 3px 0 0 #5a0a18;
+}
+
+:root[data-era="1980s"] a[class*="border"] {
+  box-shadow:
+    2px 0 0 0 #3a2028,
+    0 2px 0 0 #3a2028,
+    2px 2px 0 0 #3a2028;
+}
+
+/* 1990s: pixel-art texture, beOS-like bevels, classic web color */
+:root[data-era="1990s"] body {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.04) 50% 62.5%, transparent 62.5%),
+    var(--background);
+  background-size: 16px 16px, auto;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: auto;
+  text-rendering: geometricPrecision;
+}
+
+:root[data-era="1990s"] header:not(.resumeHeader) {
+  color: #050505;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #eee9dc 0%, #d9d3c7 52%, #c7c1b5 100%) !important;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 0 2px #ffffff, inset 0 -2px #7d7a73, 0 2px #34322e, 0 4px #f4d13a;
+}
+
+:root[data-era="1990s"] body,
+:root[data-era="1990s"] body *,
+:root[data-era="1990s"] .font-sans,
+:root[data-era="1990s"] .font-display,
+:root[data-era="1990s"] .font-mono,
+:root[data-era="1990s"] .antialiased,
+:root[data-era="1990s"] header,
+:root[data-era="1990s"] header a,
+:root[data-era="1990s"] header button,
+:root[data-era="1990s"] nav,
+:root[data-era="1990s"] h1,
+:root[data-era="1990s"] h2,
+:root[data-era="1990s"] h3,
+:root[data-era="1990s"] p,
+:root[data-era="1990s"] li,
+:root[data-era="1990s"] a,
+:root[data-era="1990s"] button {
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace !important;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never !important;
+}
+
+:root[data-era="1990s"] .font-display,
+:root[data-era="1990s"] .font-mono,
+:root[data-era="1990s"] h1,
+:root[data-era="1990s"] h2 {
+  font-weight: 700;
+}
+
+:root[data-era="1990s"] .circuit-bg {
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.35;
+}
+
+:root[data-era="1990s"] .hacf-scanlines,
+:root[data-era="1990s"] .hacf-grain,
+:root[data-era="1990s"] .hacf-sweep-line,
+:root[data-era="1990s"] .hacf-sweep-line-2,
+:root[data-era="modern"] .hacf-scanlines,
+:root[data-era="modern"] .hacf-sweep-line,
+:root[data-era="modern"] .hacf-sweep-line-2 {
+  display: none;
+}
+
+:root[data-era="1990s"] section,
+:root[data-era="1990s"] article,
+:root[data-era="1990s"] footer {
+  border-color: #808080 !important;
+}
+
+:root[data-era="1990s"] article,
+:root[data-era="1990s"] footer,
+:root[data-era="1990s"] .theme-switcher,
+:root[data-era="1990s"] .theme-disclosure,
+:root[data-era="1990s"] .theme-info,
+:root[data-era="1990s"] .theme-tooltip {
+  background:
+    radial-gradient(circle at 0 0, rgba(244, 209, 58, 0.18), transparent 6rem),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 12px),
+    linear-gradient(180deg, #eee9dc 0%, #ddd7cb 42%, #ccc6ba 100%);
+  border-color: #202020 !important;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 3px 3px 0 #050505;
+}
+
+:root[data-era="1990s"] article {
+  position: relative;
+  border-width: 2px;
+  border-radius: 2px;
+}
+
+:root[data-era="1990s"] article::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background:
+    linear-gradient(90deg, #f4d13a 0 50%, #000080 50% 100%),
+    #f4d13a;
+  border: 2px solid #202020;
+  box-shadow: inset 2px 2px #fff6a8, inset -2px -2px #8c7618, 2px 2px 0 #050505;
+  pointer-events: none;
+}
+
+:root[data-era="1990s"] .hacf-streak::before,
+:root[data-era="1990s"] .hacf-streak::after,
+:root[data-era="1990s"] .hacf-flare::after {
+  display: none;
+}
+
+:root[data-era="1990s"] .hacf-flare {
+  color: var(--foreground) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+:root[data-era="1990s"] [class*="text-muted-foreground"] {
+  color: #111111 !important;
+}
+
+:root[data-era="1990s"] [class*="text-neon-cyan"],
+:root[data-era="1990s"] [class~="text-primary"] {
+  color: #000080 !important;
+}
+
+:root[data-era="1990s"] [class*="text-primary-foreground"] {
+  color: #ffffff !important;
+}
+
+:root[data-era="1990s"] [class*="text-neon-magenta"] {
+  color: #800080 !important;
+}
+
+:root[data-era="1990s"] .neon-glow-subtle,
+:root[data-era="1990s"] .glow-primary,
+:root[data-era="1990s"] .glow-accent,
+:root[data-era="1990s"] .glow-blue {
+  text-shadow: none;
+}
+
+:root[data-era="1990s"] .derez-btn,
+:root[data-era="1990s"] .derez-btn-outline,
+:root[data-era="1990s"] .theme-switcher-option,
+:root[data-era="1990s"] .theme-disclosure,
+:root[data-era="1990s"] a[class*="border"],
+:root[data-era="1990s"] button[class*="border"] {
+  clip-path: none;
+  border-radius: 2px;
+  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-weight: 700;
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
+}
+
+:root[data-era="1990s"] .derez-btn {
+  color: #ffffff !important;
+  background: #000080 !important;
+  border: 2px solid #000000 !important;
+  text-shadow: 1px 0 0 #000000;
+}
+
+:root[data-era="1990s"] .derez-btn:hover {
+  color: #ffffff !important;
+  background: #1084d0 !important;
+}
+
+:root[data-era="1990s"] .derez-btn-outline,
+:root[data-era="1990s"] a[class*="border"],
+:root[data-era="1990s"] button[class*="border"] {
+  background: #e4decf;
+}
+
+:root[data-era="1990s"] .rounded-xl,
+:root[data-era="1990s"] .rounded-full {
+  border-radius: 2px;
+}
+
+:root[data-era="1990s"] .derez-btn::before,
+:root[data-era="1990s"] .derez-btn-outline::before {
+  display: none;
+}
+
+:root[data-era="1990s"] .neon-btn-glow,
+:root[data-era="1990s"] .neon-btn-glow-green,
+:root[data-era="1990s"] .neon-btn-glow-cyan,
+:root[data-era="1990s"] .neon-btn-glow-magenta,
+:root[data-era="1990s"] .box-glow,
+:root[data-era="1990s"] .box-glow-accent,
+:root[data-era="1990s"] .codable-icon {
+  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
+}
+
+:root[data-era="1990s"] .era-logo {
+  color: #000000;
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+:root[data-era="1990s"] .era-logo-mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: visible;
+  image-rendering: auto;
+}
+
+:root[data-era="1990s"] .theme-switcher-option[data-active="true"] {
+  color: #ffffff;
+  background: #000080;
+  box-shadow: inset 1px 1px #2b4fd4, inset -1px -1px #000040, 1px 1px 0 #050505;
+}
+
+:root[data-era="1990s"] .cursor-blink {
+  background: #000000;
+}
