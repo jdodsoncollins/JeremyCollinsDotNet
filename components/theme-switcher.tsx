@@ -86,7 +86,16 @@ export function ThemeSwitcher() {
       >
         <span className="theme-disclosure-label">Theme</span>
         <span className="theme-disclosure-chevron" aria-hidden="true">
-          ›
+          <svg viewBox="0 0 16 16" focusable="false">
+            <path
+              d="M6 3.2 11.2 8 6 12.8"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="square"
+              strokeLinejoin="miter"
+            />
+          </svg>
         </span>
       </button>
       <div

@@ -3,3 +3,39 @@
 @import "./styles/layout.css";
 @import "./styles/ancient-retro.css";
 @import "./styles/eras.css";
+
+.theme-disclosure {
+  position: relative;
+}
+
+.theme-disclosure-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  letter-spacing: 0;
+  line-height: 0;
+  transform: none;
+}
+
+.theme-disclosure-chevron svg {
+  display: block;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+.theme-disclosure[aria-expanded="true"] .theme-disclosure-chevron {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 720px) {
+  .theme-disclosure {
+    box-sizing: border-box;
+    width: 1.75rem;
+    height: 1.75rem;
+    min-width: 1.75rem;
+    padding: 0;
+    gap: 0;
+  }
+}
