@@ -89,59 +89,6 @@ export function EraLogo() {
         </g>
       </svg>
 
-      <svg className="era-logo-mark era-logo-2000s" viewBox="0 0 40 40" role="img">
-        <defs>
-          <linearGradient id="era-logo-aqua-shell" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#e7f7ff" />
-            <stop offset="0.42" stopColor="#6ec8f8" />
-            <stop offset="0.48" stopColor="#1a86e0" />
-            <stop offset="1" stopColor="#0b4aa8" />
-          </linearGradient>
-        </defs>
-        <rect
-          x="4"
-          y="4"
-          width="32"
-          height="32"
-          rx="8"
-          fill="url(#era-logo-aqua-shell)"
-          stroke="#083f8c"
-          strokeWidth="1.2"
-        />
-        <g
-          fill="none"
-          stroke="#f4fbff"
-          strokeLinecap="round"
-          transform="rotate(-28 20 20)"
-        >
-          <circle
-            cx="20"
-            cy="20"
-            r="10.2"
-            strokeWidth="3.05"
-            pathLength="64"
-            strokeDasharray="51 13"
-          />
-          <circle
-            cx="20"
-            cy="20"
-            r="5.7"
-            strokeWidth="2.75"
-            pathLength="36"
-            strokeDasharray="28.5 7.5"
-          />
-        </g>
-        <ellipse cx="20" cy="9.2" rx="10" ry="2.8" fill="rgba(255,255,255,0.55)" />
-        <path
-          d="M11 7.6h18"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="1.1"
-          strokeLinecap="round"
-          opacity="0.7"
-        />
-      </svg>
-
       <img className="era-logo-mark era-logo-modern" src="/inv-logo.png" alt="" />
     </span>
   );

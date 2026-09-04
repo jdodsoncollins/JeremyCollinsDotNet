@@ -2,13 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const THEMES = ["1980s", "1990s", "2000s", "modern"] as const;
+const THEMES = ["1980s", "1990s", "modern"] as const;
 const STORAGE_KEY = "jeremycollins-theme-era";
+
+const ERA_LABELS: Record<(typeof THEMES)[number], string> = {
+  "1980s": "Ancient",
+  "1990s": "Retro",
+  modern: "Modern",
+};
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
   "1980s": "Pixel type, scanlines, red phosphor. Your pick sticks",
   "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks",
-  "2000s": "Bliss sky, Luna blue, Aqua gel. Your pick sticks",
   modern:
     "A glade at dusk scene for fun, followed by some cool SAAS glass elements down below. Your pick sticks",
 };
@@ -97,12 +102,12 @@ export function ThemeSwitcher() {
               type="button"
               role="radio"
               aria-checked={theme === era}
-              aria-label={`${era} theme`}
+              aria-label={`${ERA_LABELS[era]} theme`}
               className="theme-switcher-option"
               data-active={theme === era}
               onClick={() => updateTheme(era)}
             >
-              {era.replace("19", "").replace("20", "")}
+              {ERA_LABELS[era]}
             </button>
           ))}
         </div>
