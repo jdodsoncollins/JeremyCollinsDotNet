@@ -14,7 +14,7 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 ## Functionality
 
 - Home page with hero, about, project, and footer sections.
-- Theme switcher for `1980s`, `1990s`, `2000s`, and `modern` visual treatments.
+- Theme switcher for `Ancient` (1980s), `Retro` (1990s), and `Modern` visual treatments.
 - Codable project screenshots with expandable lightbox behavior.
 - Codable privacy policy page.
 - Taktung privacy policy page.
