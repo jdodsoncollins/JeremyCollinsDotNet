@@ -1,0 +1,737 @@
+/* Header era switcher */
+.header-home {
+  order: 0;
+}
+
+.theme-switcher-wrap {
+  display: contents;
+}
+
+.theme-disclosure {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  background: color-mix(in srgb, var(--background) 72%, black);
+  color: var(--muted-foreground);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.theme-disclosure-chevron {
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.theme-disclosure[aria-expanded="true"] .theme-disclosure-chevron {
+  transform: rotate(90deg);
+}
+
+.header-links {
+  order: 2;
+}
+
+.theme-panel {
+  order: 3;
+  display: none;
+  flex-basis: 100%;
+  width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-panel[data-open="true"] {
+  display: flex;
+}
+
+.theme-switcher {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  background: color-mix(in srgb, var(--background) 72%, black);
+}
+
+.theme-switcher-option {
+  min-width: 3rem;
+  padding: 0.3rem 0.45rem;
+  color: var(--muted-foreground);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.theme-switcher-option[data-active="true"] {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.theme-info-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.theme-info {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  color: var(--primary);
+  background: var(--background);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.theme-tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  width: min(16rem, 70vw);
+  padding: 0.75rem;
+  color: var(--popover-foreground);
+  background: var(--popover);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 80;
+}
+
+.theme-info-wrap:hover .theme-tooltip,
+.theme-info-wrap:focus-within .theme-tooltip,
+.theme-tooltip[data-open="true"] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.codable-icon {
+  box-shadow: 0 0 16px rgba(255, 34, 68, 0.2);
+}
+
+.era-logo {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+}
+
+.era-logo-mark {
+  display: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  overflow: visible;
+  object-fit: contain;
+}
+
+.hero-cta-icon,
+.hero-cta-short {
+  display: none;
+}
+
+.hero-cta-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-cta-primary {
+  margin-bottom: 2rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: max-content auto;
+  justify-content: start;
+  align-items: start;
+  column-gap: 0.55rem;
+  row-gap: 1.35rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero-copy {
+  display: contents;
+}
+
+.hero-copy h1 {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.hero-ctas {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.hero-art {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  user-select: none;
+}
+
+.hero-art-shot {
+  display: none;
+  position: relative;
+  width: fit-content;
+}
+
+:root[data-era="1980s"] .hero-art-1980s,
+:root[data-era="1990s"] .hero-art-1990s,
+:root[data-era="modern"] .hero-art-modern {
+  display: block;
+}
+
+.hero-art-still {
+  display: block;
+  width: auto;
+  height: 5.5rem;
+  max-width: 6.5rem;
+  object-fit: contain;
+  object-position: top right;
+  image-rendering: pixelated;
+}
+
+.hero-art-live {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-art-live img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  max-height: 100%;
+  image-rendering: pixelated;
+}
+
+:root[data-era="modern"] .hero-art-still,
+:root[data-era="modern"] .hero-art-live img {
+  image-rendering: auto;
+}
+
+:root[data-era="modern"] .hero-art-modern {
+  isolation: isolate;
+  filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.45));
+}
+
+:root[data-era="modern"] .hero-art-modern .hero-art-still,
+:root[data-era="modern"] .hero-art-modern .hero-art-live img {
+  filter: brightness(1.18) contrast(0.9) saturate(0.82);
+}
+
+:root[data-era="modern"] .hero-art-modern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 80% at 78% -8%, rgba(255, 240, 210, 0.55), transparent 58%),
+    linear-gradient(
+      118deg,
+      transparent 8%,
+      rgba(255, 236, 200, 0.05) 22%,
+      rgba(255, 246, 224, 0.2) 34%,
+      transparent 48%,
+      rgba(255, 248, 230, 0.14) 58%,
+      transparent 70%,
+      rgba(255, 236, 200, 0.08) 80%,
+      transparent 92%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  -webkit-mask-image: url("/hero/hero-modern.png");
+  mask-image: url("/hero/hero-modern.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center top;
+  mask-position: center top;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern::after,
+:root[data-era="modern"] .hero-section:hover .hero-art-modern::after {
+  animation: hero-char-rays 9s ease-in-out infinite;
+}
+:root[data-era="modern"] .hero-art-still {
+  opacity: 1;
+}
+
+.hero-art-shot.is-live .hero-art-still {
+  opacity: 0;
+}
+
+.hero-art-shot.is-live .hero-art-live {
+  opacity: 1;
+}
+
+.hero-art-shot.is-live .hero-art-live img {
+  animation: hero-live-sheet 0.86s steps(6, jump-none) infinite;
+}
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-still {
+  opacity: 0;
+}
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-art-shot:hover .hero-art-still {
+    opacity: 0;
+  }
+
+  .hero-art-shot:hover .hero-art-live {
+    opacity: 1;
+  }
+
+  .hero-art-shot:hover .hero-art-live img {
+    animation: hero-live-sheet 0.86s steps(6, jump-none) infinite;
+  }
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+    opacity: 0;
+  }
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art-shot:hover .hero-art-still,
+  .hero-art-shot.is-live .hero-art-still {
+    opacity: 1;
+  }
+  :root[data-era="modern"] .hero-art-shot:hover .hero-art-still,
+  :root[data-era="modern"] .hero-art-shot.is-live .hero-art-still {
+    opacity: 1;
+  }
+
+  .hero-art-shot:hover .hero-art-live,
+  .hero-art-shot.is-live .hero-art-live {
+    opacity: 0;
+  }
+
+  .hero-art-shot:hover .hero-art-live img,
+  .hero-art-shot.is-live .hero-art-live img {
+    animation: none;
+  }
+}
+
+@keyframes hero-live-sheet {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /* 6-frame strip: stop on the last frame, not past it.
+       steps(n) + translateX(-100%) flashes an empty frame on loop. */
+    transform: translateX(calc(-100% * 5 / 6));
+  }
+}
+
+/* Modern-only HD-2D forest plate. Background-image is scoped to
+   [data-era="modern"] so other themes never fetch the assets. */
+.hero-backdrop {
+  display: none;
+}
+
+:root[data-era="modern"] .hero-backdrop {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+:root[data-era="modern"] .hero-backdrop-photo {
+  position: absolute;
+  inset: 0;
+  background-image: url("/hero/hero-modern-forest.jpg");
+  background-size: cover;
+  background-position: 55% 72%;
+  background-repeat: no-repeat;
+  transform: scale(1.42);
+  transform-origin: 52% 78%;
+}
+
+@media (min-width: 768px) {
+  :root[data-era="modern"] .hero-backdrop-photo {
+    background-image: url("/hero/hero-modern-forest-wide.jpg");
+    background-position: 60% 68%;
+    transform: scale(1.32);
+    transform-origin: 58% 72%;
+  }
+}
+
+:root[data-era="modern"] .hero-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7.5rem;
+  background: linear-gradient(to bottom, rgba(22, 26, 34, 0.88), transparent);
+  z-index: 3;
+}
+
+:root[data-era="modern"] .hero-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--background) 38%, transparent) 58%,
+    var(--background) 100%
+  );
+  z-index: 3;
+}
+
+:root[data-era="modern"] .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(16, 18, 24, 0.52) 0%, rgba(16, 18, 24, 0.16) 30%, transparent 54%),
+    radial-gradient(ellipse 70% 46% at 68% 58%, rgba(255, 214, 150, 0.1), transparent 62%);
+}
+
+.hero-backdrop-rays {
+  position: absolute;
+  inset: -30% -10% -10%;
+  background: linear-gradient(
+    118deg,
+    transparent 6%,
+    rgba(255, 228, 176, 0.04) 18%,
+    rgba(255, 244, 214, 0.1) 28%,
+    transparent 38%,
+    rgba(255, 244, 214, 0.08) 50%,
+    transparent 62%,
+    rgba(255, 228, 176, 0.05) 74%,
+    transparent 86%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  filter: blur(18px);
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+}
+
+.hero-backdrop-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 228, 196, 0.28), rgba(160, 176, 210, 0.05) 58%, transparent 72%);
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-cloud-a {
+  width: 42vw;
+  height: 16vw;
+  top: 6%;
+  left: -8%;
+}
+
+.hero-cloud-b {
+  width: 34vw;
+  height: 12vw;
+  top: 12%;
+  right: -6%;
+}
+
+.hero-cloud-c {
+  width: 28vw;
+  height: 10vw;
+  top: 4%;
+  left: 38%;
+}
+
+.hero-backdrop-leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero-leaf {
+  position: absolute;
+  top: -8%;
+  background: linear-gradient(135deg, #e2a24a 0%, #c46a28 55%, #8a4318 100%);
+  border-radius: 0 70% 0 70%;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(12deg);
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-backdrop-rays,
+:root[data-era="modern"] .hero-section:hover .hero-backdrop-rays {
+  animation: hero-rays-drift 9s ease-in-out infinite;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-cloud-a,
+:root[data-era="modern"] .hero-section:hover .hero-cloud-a {
+  animation: hero-cloud-a 18s linear infinite;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-cloud-b,
+:root[data-era="modern"] .hero-section:hover .hero-cloud-b {
+  animation: hero-cloud-b 22s linear infinite;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-cloud-c,
+:root[data-era="modern"] .hero-section:hover .hero-cloud-c {
+  animation: hero-cloud-c 16s linear infinite;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-leaf,
+:root[data-era="modern"] .hero-section:hover .hero-leaf {
+  animation-name: hero-leaf-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hero-rays-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translate3d(2.4%, -1.2%, 0) rotate(1.4deg);
+    opacity: 0.58;
+  }
+}
+
+@keyframes hero-char-rays {
+  0%,
+  100% {
+    opacity: 0.58;
+  }
+  50% {
+    opacity: 0.82;
+  }
+}
+
+@keyframes hero-cloud-a {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(18vw, 6px, 0);
+  }
+}
+
+@keyframes hero-cloud-b {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-16vw, 8px, 0);
+  }
+}
+
+@keyframes hero-cloud-c {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(12vw, -6px, 0);
+  }
+}
+
+@keyframes hero-leaf-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(8deg);
+  }
+  8% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--leaf-drift, 24px), 112vh, 0) rotate(var(--leaf-spin, 140deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-era="modern"] .hero-section.is-live .hero-backdrop-rays,
+  :root[data-era="modern"] .hero-section:hover .hero-backdrop-rays,
+  :root[data-era="modern"] .hero-section.is-live .hero-cloud-a,
+  :root[data-era="modern"] .hero-section:hover .hero-cloud-a,
+  :root[data-era="modern"] .hero-section.is-live .hero-cloud-b,
+  :root[data-era="modern"] .hero-section:hover .hero-cloud-b,
+  :root[data-era="modern"] .hero-section.is-live .hero-cloud-c,
+  :root[data-era="modern"] .hero-section:hover .hero-cloud-c,
+  :root[data-era="modern"] .hero-section.is-live .hero-leaf,
+  :root[data-era="modern"] .hero-section:hover .hero-leaf,
+  :root[data-era="modern"] .hero-section.is-live .hero-art-modern::after,
+  :root[data-era="modern"] .hero-section:hover .hero-art-modern::after {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: max-content max-content;
+    justify-content: start;
+    column-gap: 2.75rem;
+    row-gap: 0;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-copy h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .hero-art {
+    grid-row: 1 / span 2;
+    padding-top: 0.2rem;
+    justify-self: start;
+  }
+
+  .hero-art-still {
+    height: 18.75rem;
+    max-width: 22rem;
+  }
+}
+
+:root[data-era="modern"] .hero-art-still {
+  height: 9.75rem;
+  max-width: 11.5rem;
+}
+
+@media (min-width: 768px) {
+  :root[data-era="modern"] .hero-art-still {
+    height: 13.5rem;
+    max-width: 16rem;
+  }
+
+  :root[data-era="modern"] .hero-art {
+    align-self: end;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root[data-era="modern"] .hero-art-still {
+    height: 14.25rem;
+    max-width: 17rem;
+  }
+}
+
+/* Portrait / tall: name in the sky, figure sitting on the grass. */
+@media (max-aspect-ratio: 1/1) {
+  :root[data-era="modern"] .hero-section {
+    align-items: stretch;
+  }
+
+  :root[data-era="modern"] .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    min-height: calc(100svh - 5rem);
+    align-content: stretch;
+  }
+
+  :root[data-era="modern"] .hero-copy h1,
+  :root[data-era="modern"] .hero-ctas,
+  :root[data-era="modern"] .hero-art {
+    grid-column: 1;
+  }
+
+  :root[data-era="modern"] .hero-copy h1 {
+    grid-row: 1;
+  }
+
+  :root[data-era="modern"] .hero-ctas {
+    grid-row: 2;
+  }
+
+  :root[data-era="modern"] .hero-art {
+    grid-row: 3;
+    justify-self: center;
+    align-self: end;
+    padding-top: 0;
+    padding-bottom: 16vh;
+  }
+
+  :root[data-era="modern"] .hero-art-still {
+    height: 10.25rem;
+    max-width: 12.25rem;
+  }
+
+  :root[data-era="modern"] .hero-backdrop-photo {
+    transform: scale(1.55);
+    transform-origin: 48% 84%;
+    background-position: 50% 80%;
+  }
+}
+
+/* Small + short windows: keep the mound under the figure, don't span into the CTAs. */
+@media (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="modern"] .hero-backdrop-photo {
+    background-position: 58% 70%;
+    transform: scale(1.5) translateY(-16%);
+    transform-origin: 56% 72%;
+  }
+
+  :root[data-era="modern"] .hero-art {
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: 0;
+  }
+
+  :root[data-era="modern"] .hero-art-still {
+    height: 10.5rem;
+    max-width: 12.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="modern"] .hero-art-still {
+    height: 11.25rem;
+    max-width: 13.5rem;
+  }
+}
