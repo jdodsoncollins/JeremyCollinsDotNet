@@ -14,7 +14,7 @@ export const personJsonLd = {
   email: "mailto:jeremy@jeremycollins.net",
   jobTitle: "Senior Software Engineer",
   description:
-    "Software engineer at Webflow in Los Angeles. Makes Codable, Safari-native web developer tools for iOS.",
+    "Software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Los Angeles",
@@ -40,6 +40,7 @@ export const personJsonLd = {
     "Usage-based billing",
     "iOS developer tools",
     "Safari",
+    "Vercel",
     "TypeScript",
     "React",
     "Next.js",
@@ -52,7 +53,7 @@ export const websiteJsonLd = {
   name: "JeremyCollins.net",
   url: SITE,
   description:
-    "Personal site for Jeremy Collins: software engineer at Webflow and maker of Codable.",
+    "Personal site for Jeremy Collins: software engineer at Webflow and maker of Codable and Taktung.",
   inLanguage: "en-US",
   publisher: { "@id": personId },
 };
@@ -75,12 +76,31 @@ export const codableJsonLd = {
   author: { "@id": personId },
 };
 
+export const taktungJsonLd = {
+  "@type": "SoftwareApplication",
+  "@id": taktungId,
+  name: "Taktung",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "iOS",
+  url: "https://apps.apple.com/us/app/taktung/id6805738660",
+  downloadUrl: "https://apps.apple.com/us/app/taktung/id6805738660",
+  description:
+    "Vercel deploy and incident ops on your phone. Site health, deploys, and confirmed promote or rollback. No ads or tracking.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: { "@id": personId },
+};
+
 export const homeJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     personJsonLd,
     websiteJsonLd,
     codableJsonLd,
+    taktungJsonLd,
     {
       "@type": "ProfilePage",
       "@id": `${SITE}/#profile`,
@@ -112,22 +132,6 @@ export const privacyJsonLd = {
   name: "Codable Privacy Policy",
   about: { "@id": codableId },
   isPartOf: { "@id": websiteId },
-};
-
-export const taktungJsonLd = {
-  "@type": "SoftwareApplication",
-  "@id": taktungId,
-  name: "Taktung",
-  applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS",
-  description:
-    "Vercel operations on your phone. Site health, deploys, and confirmed promote or rollback. No ads or tracking.",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  author: { "@id": personId },
 };
 
 export const taktungPrivacyJsonLd = {
