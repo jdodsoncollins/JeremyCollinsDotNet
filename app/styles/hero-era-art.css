@@ -28,8 +28,8 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.png?v=jc3");
-  mask-image: url("/hero/hero-modern.png?v=jc3");
+  -webkit-mask-image: url("/hero/hero-modern.png?v=gap1");
+  mask-image: url("/hero/hero-modern.png?v=gap1");
 }
 
 /* Stills stay up. Live strips jump frames. */
@@ -132,7 +132,121 @@
   :root[data-era="1990s"][data-scroll-live] .hero-art-cat,
   :root[data-era="1990s"] .hero-section.is-live .hero-art-cat,
   :root[data-era="modern"][data-scroll-live] .hero-art-cat,
-  :root[data-era="modern"] .hero-section.is-live .hero-art-cat {
+  :root[data-era="modern"] .hero-section.is-live .hero-art-cat,
+  .hero-critter {
     animation: none;
   }
+}
+
+/* Background fauna — 1990s critters, modern birds. Hidden on 1980s. */
+.hero-fauna {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+:root[data-era="1990s"] .hero-fauna-1990s,
+:root[data-era="modern"] .hero-fauna-modern {
+  display: block;
+}
+
+.hero-critter {
+  position: absolute;
+  height: auto;
+  user-select: none;
+}
+
+.hero-critter-squirrel {
+  left: 8%;
+  bottom: 36%;
+  width: clamp(2.1rem, 7vw, 3.4rem);
+}
+
+.hero-critter-rabbit-a {
+  left: 36%;
+  bottom: 31%;
+  width: clamp(1.8rem, 6vw, 2.8rem);
+}
+
+.hero-critter-rabbit-b {
+  left: 58%;
+  bottom: 42%;
+  width: clamp(1.6rem, 5.4vw, 2.6rem);
+  opacity: 0.9;
+}
+
+.hero-critter-bird-a {
+  left: 52%;
+  top: 18%;
+  width: clamp(1.7rem, 5.5vw, 2.8rem);
+}
+
+.hero-critter-bird-b {
+  left: 14%;
+  top: 38%;
+  width: clamp(1.5rem, 5vw, 2.4rem);
+}
+
+.hero-critter-bird-c {
+  left: 72%;
+  top: 24%;
+  width: clamp(1.4rem, 4.6vw, 2.2rem);
+  opacity: 0.78;
+}
+
+:root[data-era="1990s"] .hero-critter-squirrel {
+  animation: fauna-squirrel 1.8s steps(4, jump-none) infinite;
+}
+
+:root[data-era="1990s"] .hero-critter-rabbit-a {
+  animation: fauna-hop 2.2s steps(4, jump-none) infinite;
+}
+
+:root[data-era="1990s"] .hero-critter-rabbit-b {
+  animation: fauna-sniff 1.6s steps(3, jump-none) infinite;
+}
+
+:root[data-era="modern"] .hero-critter-bird-a {
+  animation: fauna-fly 7s ease-in-out infinite;
+}
+
+:root[data-era="modern"] .hero-critter-bird-b {
+  animation: fauna-perch 3.4s ease-in-out infinite;
+}
+
+:root[data-era="modern"] .hero-critter-bird-c {
+  animation: fauna-glide 11s ease-in-out infinite alternate;
+}
+
+@keyframes fauna-squirrel {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -4px, 0); }
+}
+
+@keyframes fauna-hop {
+  0%, 62%, 100% { transform: translate3d(0, 0, 0); }
+  72% { transform: translate3d(2px, -8px, 0); }
+  82% { transform: translate3d(5px, 0, 0); }
+}
+
+@keyframes fauna-sniff {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(5px, 0, 0); }
+}
+
+@keyframes fauna-fly {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(22px, -12px, 0); }
+}
+
+@keyframes fauna-perch {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  40% { transform: translate3d(0, -3px, 0); }
+}
+
+@keyframes fauna-glide {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-28px, 8px, 0); }
 }

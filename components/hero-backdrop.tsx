@@ -43,6 +43,16 @@ export function HeroBackdrop() {
           />
         ))}
       </div>
+      <div className="hero-fauna hero-fauna-1990s">
+        <img className="hero-critter hero-critter-squirrel" src="/hero/fauna-1990s-squirrel.svg?v=f1" alt="" decoding="async" />
+        <img className="hero-critter hero-critter-rabbit-a" src="/hero/fauna-1990s-rabbit-a.svg?v=f1" alt="" decoding="async" />
+        <img className="hero-critter hero-critter-rabbit-b" src="/hero/fauna-1990s-rabbit-b.svg?v=f1" alt="" decoding="async" />
+      </div>
+      <div className="hero-fauna hero-fauna-modern">
+        <img className="hero-critter hero-critter-bird-a" src="/hero/fauna-modern-bird-a.svg?v=f1" alt="" decoding="async" />
+        <img className="hero-critter hero-critter-bird-b" src="/hero/fauna-modern-bird-b.svg?v=f1" alt="" decoding="async" />
+        <img className="hero-critter hero-critter-bird-c" src="/hero/fauna-modern-bird-c.svg?v=f1" alt="" decoding="async" />
+      </div>
     </div>
   );
 }
