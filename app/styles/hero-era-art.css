@@ -13,11 +13,11 @@
 
 @media (min-width: 768px) {
   :root[data-era="1980s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1980s-hill-wide.svg?v=def2") !important;
+    background-image: url("/hero/hero-1980s-hill.svg?v=def2") !important;
   }
 
   :root[data-era="1990s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1990s-hill-wide.svg?v=paint2") !important;
+    background-image: url("/hero/hero-1990s-hill.svg?v=paint2") !important;
   }
 }
 
