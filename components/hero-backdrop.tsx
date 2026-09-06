@@ -16,25 +16,25 @@ export function HeroBackdrop() {
       <div className="hero-backdrop-photo">
         <img
           className="hero-backdrop-1980s-plate hero-backdrop-1980s-phone"
-          src="/hero/hero-1980s-hill.png?v=px2"
-          width={360}
-          height={520}
+          src="/hero/hero-1980s-hill.png?v=land1"
+          width={200}
+          height={400}
           alt=""
           decoding="async"
         />
         <img
           className="hero-backdrop-1980s-plate hero-backdrop-1980s-md"
-          src="/hero/hero-1980s-hill-md.png?v=px2"
-          width={520}
-          height={480}
+          src="/hero/hero-1980s-hill-md.png?v=land1"
+          width={340}
+          height={440}
           alt=""
           decoding="async"
         />
         <img
           className="hero-backdrop-1980s-plate hero-backdrop-1980s-wide"
-          src="/hero/hero-1980s-hill-wide.png?v=px2"
-          width={960}
-          height={360}
+          src="/hero/hero-1980s-hill-wide.png?v=land1"
+          width={520}
+          height={280}
           alt=""
           decoding="async"
         />

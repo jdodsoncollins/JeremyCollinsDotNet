@@ -343,8 +343,8 @@
 
 :root[data-era="1980s"] .hero-backdrop-1980s-phone {
   display: block;
-  width: calc(360 * var(--hero-px));
-  height: calc(520 * var(--hero-px));
+  width: calc(200 * var(--hero-px));
+  height: calc(400 * var(--hero-px));
 }
 
 @media (min-width: 600px) and (max-aspect-ratio: 1/1) {
@@ -354,8 +354,8 @@
 
   :root[data-era="1980s"] .hero-backdrop-1980s-md {
     display: block;
-    width: calc(520 * var(--hero-px));
-    height: calc(480 * var(--hero-px));
+    width: calc(340 * var(--hero-px));
+    height: calc(440 * var(--hero-px));
   }
 }
 
@@ -367,7 +367,7 @@
 
   :root[data-era="1980s"] .hero-backdrop-1980s-wide {
     display: block;
-    width: calc(960 * var(--hero-px));
-    height: calc(360 * var(--hero-px));
+    width: calc(520 * var(--hero-px));
+    height: calc(280 * var(--hero-px));
   }
 }
