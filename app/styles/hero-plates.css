@@ -65,7 +65,7 @@
 }
 
 :root[data-era="1990s"] .hero-backdrop::before {
-  background: linear-gradient(to bottom, rgba(216, 212, 204, 0.62), transparent);
+  background: linear-gradient(to bottom, rgba(216, 212, 204, 0.42), transparent);
 }
 
 :root[data-era="1980s"] .hero-backdrop::after,
@@ -97,20 +97,34 @@
 }
 
 :root[data-era="1990s"] .hero-section::before {
-  background: linear-gradient(90deg, rgba(216, 212, 204, 0.78) 0%, rgba(216, 212, 204, 0.28) 32%, transparent 58%);
+  background: linear-gradient(90deg, rgba(216, 212, 204, 0.55) 0%, rgba(216, 212, 204, 0.18) 32%, transparent 58%);
 }
 
 :root[data-era="1980s"] .hero-backdrop-clouds,
 :root[data-era="1980s"] .hero-backdrop-rays,
 :root[data-era="1980s"] .hero-backdrop-leaves,
+:root[data-era="1980s"] .hero-cloud-shadow,
+:root[data-era="1980s"] .hero-canopy,
+:root[data-era="1980s"] .hero-silhouette,
 :root[data-era="1990s"] .hero-backdrop-clouds,
 :root[data-era="1990s"] .hero-backdrop-rays,
-:root[data-era="1990s"] .hero-backdrop-leaves {
+:root[data-era="1990s"] .hero-backdrop-leaves,
+:root[data-era="1990s"] .hero-cloud-shadow,
+:root[data-era="1990s"] .hero-canopy,
+:root[data-era="1990s"] .hero-silhouette {
   display: none;
 }
 
+/* Ancient Jeremy: red-phosphor terminal, same figure. */
 :root[data-era="1980s"] .hero-art-1980s {
-  filter: drop-shadow(2px 2px 0 #2a0810);
+  filter:
+    grayscale(1)
+    contrast(1.3)
+    brightness(0.94)
+    sepia(1)
+    hue-rotate(-48deg)
+    saturate(8.4)
+    drop-shadow(2px 2px 0 #2a0810);
 }
 
 :root[data-era="1990s"] .hero-art-1990s {
@@ -231,8 +245,10 @@
   }
 }
 
-/* Modern: one slow cloud shadow across the hill. */
-.hero-cloud-shadow {
+/* Modern weather + idle. */
+.hero-cloud-shadow,
+.hero-canopy,
+.hero-silhouette {
   display: none;
 }
 
@@ -252,24 +268,123 @@
   transform: translate3d(0, 18%, 0);
 }
 
+:root[data-era="modern"] .hero-canopy {
+  display: block;
+  position: absolute;
+  top: -8%;
+  right: -6%;
+  width: 62%;
+  height: 48%;
+  background: radial-gradient(ellipse at 70% 40%, rgba(28, 46, 22, 0.18), transparent 70%);
+  filter: blur(22px);
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: 80% 30%;
+}
+
+:root[data-era="modern"] .hero-silhouette {
+  display: block;
+  position: absolute;
+  top: 16%;
+  left: -8%;
+  width: 22px;
+  height: 10px;
+  background: #1a140e;
+  clip-path: polygon(0 55%, 22% 40%, 40% 48%, 62% 18%, 78% 42%, 100% 50%, 78% 62%, 52% 58%, 28% 70%, 8% 62%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
 :root[data-era="modern"] .hero-section.is-live .hero-cloud-shadow,
 :root[data-era="modern"] .hero-section:hover .hero-cloud-shadow {
   animation: hero-cloud-shadow 28s linear infinite;
 }
 
-@keyframes hero-cloud-shadow {
-  from {
-    transform: translate3d(0, 18%, 0);
-  }
+:root[data-era="modern"] .hero-section.is-live .hero-canopy,
+:root[data-era="modern"] .hero-section:hover .hero-canopy {
+  animation: hero-canopy-breathe 16s ease-in-out infinite;
+}
 
-  to {
-    transform: translate3d(160vw, 22%, 0);
-  }
+:root[data-era="modern"] .hero-section.is-live .hero-silhouette,
+:root[data-era="modern"] .hero-section:hover .hero-silhouette {
+  animation: hero-silhouette-cross 26s linear infinite;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-puff,
+:root[data-era="modern"] .hero-section:hover .hero-puff {
+  animation-name: hero-puff-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 214, 168, 0.7), rgba(196, 168, 110, 0.15) 62%, transparent 74%);
+  filter: blur(0.6px);
+  opacity: 0;
+}
+
+:root[data-era="modern"] .hero-art-modern {
+  transform-origin: 50% 88%;
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern,
+:root[data-era="modern"] .hero-section:hover .hero-art-modern {
+  animation: hero-modern-idle 3.8s ease-in-out infinite;
+}
+
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+  opacity: 1;
+}
+
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
+  opacity: 0;
+}
+
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
+  animation: none;
+}
+
+@keyframes hero-cloud-shadow {
+  from { transform: translate3d(0, 18%, 0); }
+  to { transform: translate3d(160vw, 22%, 0); }
+}
+
+@keyframes hero-canopy-breathe {
+  0%, 100% { transform: scale(1) translate3d(0, 0, 0); opacity: 0.85; }
+  50% { transform: scale(1.045) translate3d(-1.2%, 0.8%, 0); opacity: 1; }
+}
+
+@keyframes hero-silhouette-cross {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  6% { opacity: 0.45; }
+  88% { opacity: 0.4; }
+  100% { transform: translate3d(118vw, 7vh, 0); opacity: 0; }
+}
+
+@keyframes hero-puff-drift {
+  0% { opacity: 0; transform: translate3d(0, 8vh, 0) scale(0.6); }
+  12% { opacity: 0.55; }
+  100% { opacity: 0; transform: translate3d(var(--leaf-drift, 90px), 64vh, 0) scale(1.15); }
+}
+
+@keyframes hero-modern-idle {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -3px, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root[data-era="modern"] .hero-section.is-live .hero-cloud-shadow,
-  :root[data-era="modern"] .hero-section:hover .hero-cloud-shadow {
+  :root[data-era="modern"] .hero-section:hover .hero-cloud-shadow,
+  :root[data-era="modern"] .hero-section.is-live .hero-canopy,
+  :root[data-era="modern"] .hero-section:hover .hero-canopy,
+  :root[data-era="modern"] .hero-section.is-live .hero-silhouette,
+  :root[data-era="modern"] .hero-section:hover .hero-silhouette,
+  :root[data-era="modern"] .hero-section.is-live .hero-puff,
+  :root[data-era="modern"] .hero-section:hover .hero-puff,
+  :root[data-era="modern"] .hero-section.is-live .hero-art-modern,
+  :root[data-era="modern"] .hero-section:hover .hero-art-modern {
     animation: none;
   }
 }
