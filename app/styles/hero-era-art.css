@@ -28,8 +28,14 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.png?v=gap1");
-  mask-image: url("/hero/hero-modern.png?v=gap1");
+  -webkit-mask-image: url("/hero/hero-modern.png?v=gap4");
+  mask-image: url("/hero/hero-modern.png?v=gap4");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: top right;
+  mask-position: top right;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* Stills stay up. Live strips jump frames. */
@@ -134,7 +140,8 @@
   :root[data-era="modern"][data-scroll-live] .hero-art-cat,
   :root[data-era="modern"] .hero-section.is-live .hero-art-cat,
   .hero-critter,
-  .hero-bird {
+  .hero-bird,
+  .hero-bird img {
     animation: none;
   }
 }
@@ -181,39 +188,62 @@
 .hero-bird {
   position: absolute;
   left: 0;
-  background-image: url("/hero/fauna-modern-birds.svg?v=f2");
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
   pointer-events: none;
+  filter: blur(2.4px) saturate(0.42) brightness(1.28) contrast(0.82);
+}
+
+.hero-bird img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-bird-up {
+  animation: bird-frame-a 0.32s infinite;
+}
+
+.hero-bird-down {
+  animation: bird-frame-b 0.32s infinite;
 }
 
 .hero-bird-1 {
   top: 13%;
-  width: 1.2rem;
-  height: 0.75rem;
-  opacity: 0.52;
-  filter: blur(0.6px) saturate(0.48) brightness(1.22) contrast(0.88);
-  animation: fauna-flap 0.3s steps(2) infinite, fauna-cross-1 24s linear infinite;
+  width: 1.35rem;
+  height: 0.85rem;
+  opacity: 0.58;
+  animation: fauna-cross-1 24s linear infinite;
 }
 
 .hero-bird-2 {
   top: 21%;
-  width: 0.92rem;
-  height: 0.58rem;
-  opacity: 0.4;
-  filter: blur(0.9px) saturate(0.4) brightness(1.28) contrast(0.85);
-  animation: fauna-flap 0.26s steps(2) infinite, fauna-cross-2 32s linear infinite;
-  animation-delay: 0s, -10s;
+  width: 1.05rem;
+  height: 0.66rem;
+  opacity: 0.44;
+  filter: blur(3.2px) saturate(0.38) brightness(1.32) contrast(0.8);
+  animation: fauna-cross-2 32s linear infinite;
+  animation-delay: -10s;
 }
 
 .hero-bird-3 {
   top: 9%;
-  width: 0.7rem;
-  height: 0.44rem;
-  opacity: 0.34;
-  filter: blur(1.15px) saturate(0.35) brightness(1.35) contrast(0.82);
-  animation: fauna-flap 0.34s steps(2) infinite, fauna-cross-3 40s linear infinite;
-  animation-delay: 0s, -22s;
+  width: 0.82rem;
+  height: 0.52rem;
+  opacity: 0.36;
+  filter: blur(3.8px) saturate(0.32) brightness(1.38) contrast(0.78);
+  animation: fauna-cross-3 40s linear infinite;
+  animation-delay: -22s;
+}
+
+@keyframes bird-frame-a {
+  0%, 49.9% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes bird-frame-b {
+  0%, 49.9% { opacity: 0; }
+  50%, 100% { opacity: 1; }
 }
 
 :root[data-era="1990s"] .hero-critter-squirrel {
@@ -242,11 +272,6 @@
 @keyframes fauna-sniff {
   0%, 100% { transform: translate3d(0, 0, 0); }
   50% { transform: translate3d(5px, 0, 0); }
-}
-
-@keyframes fauna-flap {
-  from { background-position: 0 0; }
-  to { background-position: -200% 0; }
 }
 
 @keyframes fauna-cross-1 {

@@ -49,9 +49,18 @@ export function HeroBackdrop() {
         <img className="hero-critter hero-critter-rabbit-b" src="/hero/fauna-1990s-rabbit-b.svg?v=f1" alt="" decoding="async" />
       </div>
       <div className="hero-fauna hero-fauna-modern">
-        <span className="hero-bird hero-bird-1" />
-        <span className="hero-bird hero-bird-2" />
-        <span className="hero-bird hero-bird-3" />
+        <span className="hero-bird hero-bird-1">
+          <img className="hero-bird-up" src="/hero/fauna-modern-bird-up.png?v=f2" alt="" decoding="async" />
+          <img className="hero-bird-down" src="/hero/fauna-modern-bird-down.png?v=f2" alt="" decoding="async" />
+        </span>
+        <span className="hero-bird hero-bird-2">
+          <img className="hero-bird-up" src="/hero/fauna-modern-bird-up.png?v=f2" alt="" decoding="async" />
+          <img className="hero-bird-down" src="/hero/fauna-modern-bird-down.png?v=f2" alt="" decoding="async" />
+        </span>
+        <span className="hero-bird hero-bird-3">
+          <img className="hero-bird-up" src="/hero/fauna-modern-bird-up.png?v=f2" alt="" decoding="async" />
+          <img className="hero-bird-down" src="/hero/fauna-modern-bird-down.png?v=f2" alt="" decoding="async" />
+        </span>
       </div>
     </div>
   );

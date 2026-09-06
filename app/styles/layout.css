@@ -250,6 +250,7 @@
 }
 
 :root[data-era="modern"] .hero-art-modern .hero-art-still,
+:root[data-era="modern"] .hero-art-modern .hero-art-cat,
 :root[data-era="modern"] .hero-art-modern .hero-art-live img {
   filter: brightness(1.18) contrast(0.9) saturate(0.82);
 }
@@ -274,14 +275,14 @@
     );
   mix-blend-mode: screen;
   opacity: 0.7;
-  -webkit-mask-image: url("/hero/hero-modern.png?v=gap1");
-  mask-image: url("/hero/hero-modern.png?v=gap1");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  -webkit-mask-image: url("/hero/hero-modern.png?v=gap4");
+  mask-image: url("/hero/hero-modern.png?v=gap4");
+  -webkit-mask-size: contain;
+  mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-position: center top;
-  mask-position: center top;
+  -webkit-mask-position: top right;
+  mask-position: top right;
 }
 
 :root[data-era="modern"] .hero-section.is-live .hero-art-modern::after,
