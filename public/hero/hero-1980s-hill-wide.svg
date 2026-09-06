@@ -1,28 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
-  <rect width="480" height="240" fill="#2a0810"/>
-  <rect y="0" width="480" height="16" fill="#3c1028"/>
-  <rect y="16" width="480" height="14" fill="#5a1838"/>
-  <rect y="30" width="480" height="14" fill="#7a2048"/>
-  <rect y="44" width="480" height="14" fill="#9a2850"/>
-  <rect y="58" width="480" height="14" fill="#b44848"/>
-  <rect y="72" width="480" height="14" fill="#c86838"/>
-  <rect y="86" width="480" height="14" fill="#e08830"/>
-  <rect y="100" width="480" height="16" fill="#f0a838"/>
-  <rect y="116" width="480" height="18" fill="#f8c050"/>
-  <ellipse cx="80" cy="164" rx="100" ry="20" fill="#2c5820"/>
-  <ellipse cx="220" cy="166" rx="130" ry="22" fill="#3c7c28"/>
-  <ellipse cx="400" cy="160" rx="90" ry="20" fill="#2c5820"/>
-  <path d="M0 148 Q120 126 240 136 T480 146 L480 240 L0 240 Z" fill="#3c7c28"/>
-  <path d="M0 170 Q140 156 260 164 T480 174 L480 240 L0 240 Z" fill="#2c5820"/>
-  <ellipse cx="250" cy="174" rx="44" ry="12" fill="#245018"/>
-  <path d="M0 198 L480 198 L480 240 L0 240 Z" fill="#1a3010"/>
-  <path d="M0 216 L480 216 L480 240 L0 240 Z" fill="#140810"/>
-  <rect x="352" y="126" width="6" height="30" fill="#5c3c18"/>
-  <rect x="398" y="114" width="8" height="42" fill="#5c3c18"/>
-  <polygon points="355,82 338,128 372,128" fill="#1c4818"/>
-  <polygon points="355,96 342,134 368,134" fill="#2c6820"/>
-  <polygon points="355,108 344,140 366,140" fill="#3c7c28"/>
-  <polygon points="402,64 378,120 426,120" fill="#1c4818"/>
-  <polygon points="402,80 384,128 420,128" fill="#2c6820"/>
-  <polygon points="402,96 386,138 418,138" fill="#3c7c28"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 400 240" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+  <rect x="-40" width="400" height="18" fill="#3c1028"/>
+  <rect x="-40" y="18" width="400" height="16" fill="#5a1838"/>
+  <rect x="-40" y="34" width="400" height="16" fill="#7a2048"/>
+  <rect x="-40" y="50" width="400" height="14" fill="#9a2850"/>
+  <rect x="-40" y="64" width="400" height="14" fill="#b44848"/>
+  <rect x="-40" y="78" width="400" height="14" fill="#c86838"/>
+  <rect x="-40" y="92" width="400" height="14" fill="#e08830"/>
+  <rect x="-40" y="106" width="400" height="16" fill="#f0a838"/>
+  <rect x="-40" y="122" width="400" height="18" fill="#f8c050"/>
+  <g fill="#d87840" opacity="0.55">
+    <rect x="20" y="24" width="24" height="4"/><rect x="80" y="40" width="36" height="4"/>
+    <rect x="160" y="28" width="28" height="4"/><rect x="230" y="48" width="40" height="4"/>
+  </g>
+  <path d="M-40 150 Q80 128 160 138 T360 148 L360 240 L-40 240 Z" fill="#3c7c28"/>
+  <path d="M-40 172 Q90 158 170 166 T360 176 L360 240 L-40 240 Z" fill="#2c5820"/>
+  <ellipse cx="168" cy="176" rx="42" ry="14" fill="#245018"/>
+  <path d="M-40 200 L360 200 L360 240 L-40 240 Z" fill="#1a3010"/>
+  <path d="M-40 218 L360 218 L360 240 L-40 240 Z" fill="#140810"/>
+  <rect x="18" y="138" width="5" height="22" fill="#5c3c18"/>
+  <polygon points="20.5,104 8,140 33,140" fill="#1c4818"/>
+  <polygon points="20.5,116 11,144 30,144" fill="#2c6820"/>
+  <rect x="226" y="128" width="6" height="28" fill="#5c3c18"/>
+  <polygon points="229,86 215,128 243,128" fill="#1c4818"/>
+  <polygon points="229,98 218,132 240,132" fill="#2c6820"/>
+  <rect x="268" y="118" width="7" height="38" fill="#5c3c18"/>
+  <polygon points="271.5,70 252,122 291,122" fill="#1c4818"/>
+  <polygon points="271.5,84 256,128 287,128" fill="#2c6820"/>
+  <polygon points="271.5,98 258,136 285,136" fill="#3c7c28"/>
 </svg>
