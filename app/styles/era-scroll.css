@@ -10,7 +10,8 @@
 }
 
 :root[data-era="1980s"] .hero-backdrop-photo,
-:root[data-era="1980s"] .hero-art {
+:root[data-era="1980s"] .hero-art,
+:root[data-era="1990s"] .hero-backdrop-photo {
   image-rendering: pixelated;
 }
 

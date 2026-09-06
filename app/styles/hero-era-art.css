@@ -7,8 +7,10 @@
 }
 
 :root[data-era="1990s"] .hero-backdrop-photo {
-  background-image: url("/hero/hero-1990s-hill.svg?v=cc1") !important;
-  image-rendering: auto !important;
+  background-image: url("/hero/hero-1990s-hill.svg?v=px1") !important;
+  image-rendering: pixelated !important;
+  image-rendering: -moz-crisp-edges !important;
+  image-rendering: crisp-edges !important;
 }
 
 :root[data-era="1990s"] .hero-art-still,
@@ -23,7 +25,7 @@
   }
 
   :root[data-era="1990s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1990s-hill-wide.svg?v=cc1") !important;
+    background-image: url("/hero/hero-1990s-hill-wide.svg?v=px1") !important;
   }
 }
 

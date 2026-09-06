@@ -19,6 +19,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 :root[data-era="1980s"] .hero-backdrop-photo {
@@ -29,7 +31,7 @@
 }
 
 :root[data-era="1990s"] .hero-backdrop-photo {
-  background-image: url("/hero/hero-1990s-hill.svg?v=snes3");
+  background-image: url("/hero/hero-1990s-hill.svg?v=px1");
   background-position: 50% 78%;
   transform: scale(1.42);
   transform-origin: 50% 84%;
@@ -44,7 +46,7 @@
   }
 
   :root[data-era="1990s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1990s-hill-wide.svg?v=snes3");
+    background-image: url("/hero/hero-1990s-hill-wide.svg?v=px1");
     background-position: 60% 68%;
     transform: scale(1.28);
     transform-origin: 62% 72%;
