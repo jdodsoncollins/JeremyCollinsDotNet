@@ -275,8 +275,8 @@
     );
   mix-blend-mode: screen;
   opacity: 0.7;
-  -webkit-mask-image: url("/hero/hero-modern-d-mask.png?v=d1");
-  mask-image: url("/hero/hero-modern-d-mask.png?v=d1");
+  -webkit-mask-image: url("/hero/hero-modern-d-mask.png?v=kneel0906");
+  mask-image: url("/hero/hero-modern-d-mask.png?v=kneel0906");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;

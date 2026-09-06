@@ -58,13 +58,13 @@ const nextConfig: NextConfig = {
       {
         source: "/hero/:path*",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "Cache-Control", value: "no-store, max-age=0, must-revalidate" },
         ],
       },
       {
         source: "/",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "Cache-Control", value: "no-store, max-age=0, must-revalidate" },
         ],
       },
     ];

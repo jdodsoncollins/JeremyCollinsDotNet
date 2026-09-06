@@ -9,6 +9,7 @@ import { EraScroll } from "@/components/era-scroll";
 import { homeJsonLd } from "@/lib/json-ld";
 
 export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   alternates: {
