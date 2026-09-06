@@ -4,7 +4,7 @@ import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=cat1", live: "/hero/hero-1980s-live.png?v=era1", cat: "/hero/hero-1980s-cat.svg?v=cat1", width: 280, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=cat1", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cat1", width: 320, height: 280 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc2", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cc2", width: 320, height: 280 },
   { era: "modern", still: "/hero/hero-modern.svg?v=cat1", live: "/hero/hero-modern-live.png?v=jc3", cat: "/hero/hero-modern-cat.svg?v=cat1", width: 300, height: 360 },
 ] as const;
 
