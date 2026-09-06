@@ -75,6 +75,7 @@
   object-fit: contain;
   object-position: top right;
   pointer-events: none;
+  z-index: 2;
 }
 
 :root[data-era="1980s"] .hero-art-cat {
@@ -83,7 +84,7 @@
 }
 
 :root[data-era="1990s"] .hero-art-cat {
-  transform-origin: 73% 97%;
+  transform-origin: 81% 96%;
 }
 
 :root[data-era="modern"] .hero-art-cat {
@@ -120,9 +121,9 @@
 }
 
 @keyframes hero-cat-modern {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  35% { transform: translate3d(1px, -3px, 0) rotate(-2deg); }
-  70% { transform: translate3d(-1px, -1px, 0) rotate(1.5deg); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  35% { transform: translate3d(2px, -5px, 0); }
+  70% { transform: translate3d(-1px, -2px, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
