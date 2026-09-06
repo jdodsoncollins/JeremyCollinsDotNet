@@ -28,8 +28,8 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.png?v=gap4");
-  mask-image: url("/hero/hero-modern.png?v=gap4");
+  -webkit-mask-image: url("/hero/hero-modern.png?v=gap5");
+  mask-image: url("/hero/hero-modern.png?v=gap5");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-position: top right;
@@ -94,7 +94,7 @@
 }
 
 :root[data-era="modern"] .hero-art-cat {
-  transform-origin: 81% 99%;
+  transform-origin: 80% 99%;
 }
 
 :root[data-era="modern"] .hero-art-modern .hero-art-cat {
