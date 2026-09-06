@@ -8,6 +8,8 @@ import { ProjectsSection } from "@/components/projects-section";
 import { EraScroll } from "@/components/era-scroll";
 import { homeJsonLd } from "@/lib/json-ld";
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
