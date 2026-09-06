@@ -1,59 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 200 120" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 400 240" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
   <defs>
-    <pattern id="skyW" width="4" height="4" patternUnits="userSpaceOnUse">
+    <pattern id="skyDitherW" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="4" fill="#ead6a4"/>
       <rect width="1" height="1" fill="#f4e8c4"/>
       <rect x="2" y="2" width="1" height="1" fill="#f4e8c4"/>
     </pattern>
     <pattern id="grassW" width="8" height="8" patternUnits="userSpaceOnUse">
       <rect width="8" height="8" fill="#5a9840"/>
-      <rect x="1" y="2" width="2" height="3" fill="#7ab050"/>
-      <rect x="5" y="4" width="2" height="3" fill="#3e782c"/>
+      <rect x="1" y="2" width="1" height="2" fill="#7ab050"/>
+      <rect x="4" y="5" width="1" height="2" fill="#3e782c"/>
       <rect x="6" y="1" width="1" height="1" fill="#c8b060"/>
     </pattern>
-    <pattern id="dirtW" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect width="8" height="8" fill="#b89058"/>
-      <rect width="3" height="3" fill="#c4a068"/>
-      <rect x="4" y="3" width="3" height="3" fill="#a07840"/>
-      <rect x="6" y="1" width="2" height="2" fill="#8a6030"/>
+    <pattern id="dirtW" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#b89058"/>
+      <rect width="2" height="2" fill="#c8a468"/>
+      <rect x="2" y="2" width="2" height="2" fill="#a07840"/>
+      <rect x="3" y="0" width="1" height="1" fill="#8a6030"/>
+      <rect x="1" y="3" width="1" height="1" fill="#d8c878"/>
     </pattern>
   </defs>
-  <rect x="-20" width="200" height="120" fill="#ead6a4"/>
-  <rect x="-20" width="200" height="48" fill="url(#skyW)"/>
-  <rect x="-20" y="46" width="200" height="12" fill="#6aa44c"/>
-  <rect x="-20" y="56" width="200" height="28" fill="url(#grassW)"/>
-  <rect x="-20" y="80" width="200" height="40" fill="#4e8838"/>
+  <rect x="-40" width="400" height="240" fill="#ead6a4"/>
+  <rect x="-40" width="400" height="96" fill="url(#skyDitherW)"/>
+  <path d="M-40 118 L40 112 L80 116 L160 114 L240 112 L360 110 L360 240 L-40 240 Z" fill="#6aa44c"/>
+  <path d="M-40 138 L48 130 L144 128 L240 126 L360 128 L360 240 L-40 240 Z" fill="url(#grassW)"/>
+  <path d="M-40 168 L56 160 L168 158 L280 156 L360 160 L360 240 L-40 240 Z" fill="#4e8838"/>
   <g fill="url(#dirtW)">
-    <rect x="68" y="70" width="8" height="4"/>
-    <rect x="60" y="74" width="20" height="4"/>
-    <rect x="56" y="78" width="8" height="4"/>
-    <rect x="64" y="78" width="28" height="4"/>
-    <rect x="52" y="82" width="44" height="4"/>
-    <rect x="48" y="86" width="12" height="4"/>
-    <rect x="64" y="86" width="36" height="4"/>
-    <rect x="52" y="90" width="40" height="4"/>
-    <rect x="56" y="94" width="8" height="4"/>
-    <rect x="68" y="94" width="24" height="4"/>
-    <rect x="64" y="98" width="20" height="4"/>
-    <rect x="72" y="102" width="8" height="4"/>
+    <rect x="156" y="158" width="32" height="2"/>
+    <rect x="146" y="160" width="52" height="2"/>
+    <rect x="138" y="162" width="68" height="2"/>
+    <rect x="132" y="164" width="80" height="2"/>
+    <rect x="128" y="166" width="88" height="2"/>
+    <rect x="124" y="168" width="96" height="2"/>
+    <rect x="122" y="170" width="100" height="2"/>
+    <rect x="120" y="172" width="104" height="2"/>
+    <rect x="120" y="174" width="104" height="2"/>
+    <rect x="122" y="176" width="100" height="2"/>
+    <rect x="124" y="178" width="96" height="2"/>
+    <rect x="128" y="180" width="88" height="2"/>
+    <rect x="132" y="182" width="80" height="2"/>
+    <rect x="138" y="184" width="68" height="2"/>
+    <rect x="146" y="186" width="52" height="2"/>
+    <rect x="156" y="188" width="32" height="2"/>
   </g>
-  <g fill="#4e8838">
-    <rect x="64" y="78" width="4" height="4"/>
-    <rect x="84" y="82" width="4" height="4"/>
-    <rect x="56" y="90" width="4" height="4"/>
-    <rect x="88" y="94" width="4" height="4"/>
+  <g fill="#8a6030">
+    <rect x="150" y="164" width="2" height="2"/>
+    <rect x="196" y="168" width="2" height="2"/>
+    <rect x="136" y="174" width="2" height="2"/>
+    <rect x="210" y="176" width="2" height="2"/>
+    <rect x="168" y="182" width="2" height="2"/>
   </g>
-  <g fill="#6b4420">
-    <rect x="10" y="64" width="4" height="14"/>
-    <rect x="118" y="62" width="4" height="16"/>
-    <rect x="156" y="64" width="4" height="14"/>
+  <g fill="#d8c878">
+    <rect x="164" y="166" width="2" height="2"/>
+    <rect x="184" y="172" width="2" height="2"/>
+    <rect x="148" y="178" width="2" height="2"/>
+    <rect x="200" y="180" width="2" height="2"/>
   </g>
-  <g fill="#2f6a2c">
-    <rect x="4" y="52" width="16" height="14"/>
-    <rect x="8" y="46" width="10" height="8"/>
-    <rect x="112" y="46" width="18" height="18"/>
-    <rect x="150" y="50" width="16" height="16"/>
-  </g>
-  <rect x="-20" y="104" width="200" height="8" fill="#d4c8b0"/>
-  <rect x="-20" y="112" width="200" height="8" fill="#c8bca4"/>
+  <rect x="-40" y="200" width="400" height="20" fill="#d4c8b0"/>
+  <rect x="236" y="128" width="6" height="28" fill="#6b4420"/>
+  <rect x="224" y="96" width="30" height="36" fill="#2c6828"/>
+  <rect x="8" y="108" width="24" height="28" fill="#2f6a2c"/>
 </svg>
