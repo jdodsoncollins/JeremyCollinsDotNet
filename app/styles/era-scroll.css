@@ -105,18 +105,18 @@
   z-index: 2;
   opacity: 0.7;
   background-image:
-    radial-gradient(1px 1px at 12% 18%, #8a3844 50%, transparent 51%),
-    radial-gradient(1px 1px at 28% 9%, #5a2430 50%, transparent 51%),
-    radial-gradient(2px 2px at 47% 22%, #8a3844 50%, transparent 51%),
-    radial-gradient(1px 1px at 63% 14%, #5a2430 50%, transparent 51%),
-    radial-gradient(1px 1px at 81% 11%, #8a3844 50%, transparent 51%),
-    radial-gradient(2px 2px at 91% 27%, #5a2430 50%, transparent 51%),
-    radial-gradient(1px 1px at 8% 36%, #8a3844 50%, transparent 51%),
-    radial-gradient(1px 1px at 72% 31%, #5a2430 50%, transparent 51%),
-    radial-gradient(1px 1px at 36% 8%, #8a3844 50%, transparent 51%),
-    radial-gradient(2px 2px at 54% 16%, #5a2430 50%, transparent 51%),
-    radial-gradient(1px 1px at 16% 28%, #6a3038 50%, transparent 51%),
-    radial-gradient(1px 1px at 88% 8%, #8a3844 50%, transparent 51%);
+    radial-gradient(1px 1px at 12% 18%, #388a44 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 9%, #245a30 50%, transparent 51%),
+    radial-gradient(2px 2px at 47% 22%, #388a44 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 14%, #245a30 50%, transparent 51%),
+    radial-gradient(1px 1px at 81% 11%, #388a44 50%, transparent 51%),
+    radial-gradient(2px 2px at 91% 27%, #245a30 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 36%, #388a44 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 31%, #245a30 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 8%, #388a44 50%, transparent 51%),
+    radial-gradient(2px 2px at 54% 16%, #245a30 50%, transparent 51%),
+    radial-gradient(1px 1px at 16% 28%, #306a38 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 8%, #388a44 50%, transparent 51%);
   image-rendering: pixelated;
 }
 

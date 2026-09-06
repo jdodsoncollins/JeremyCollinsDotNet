@@ -1,7 +1,7 @@
 /* Overrides so new era plates win without rewriting hero-plates.css. */
 
 :root[data-era="1980s"] .hero-backdrop-photo {
-  background-image: url("/hero/hero-1980s-hill.svg?v=phos2") !important;
+  background-image: url("/hero/hero-1980s-hill.svg?v=a2g1") !important;
   filter: none !important;
   image-rendering: pixelated !important;
 }
@@ -21,7 +21,7 @@
 
 @media (min-width: 768px) {
   :root[data-era="1980s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1980s-hill-wide.svg?v=phos2") !important;
+    background-image: url("/hero/hero-1980s-hill-wide.svg?v=a2g1") !important;
   }
 
   :root[data-era="1990s"] .hero-backdrop-photo {

@@ -41,7 +41,9 @@
 }
 
 :root[data-era="1980s"] h1 {
-  text-shadow: 2px 2px 0 #2a0810;
+  text-shadow:
+    0 0 8px rgba(57, 255, 20, 0.45),
+    2px 2px 0 #031403;
 }
 
 :root[data-era="1980s"] header:not(.resumeHeader) a {
@@ -69,8 +71,8 @@
 
 :root[data-era="1980s"] .circuit-bg {
   background-image:
-    linear-gradient(rgba(255, 34, 68, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 34, 68, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px);
   background-size: 12px 12px;
 }
 
@@ -92,16 +94,80 @@
 
 :root[data-era="1980s"] a[class*="bg-primary"] {
   box-shadow:
-    3px 0 0 0 #5a0a18,
-    0 3px 0 0 #5a0a18,
-    3px 3px 0 0 #5a0a18;
+    3px 0 0 0 #0a5a18,
+    0 3px 0 0 #0a5a18,
+    3px 3px 0 0 #0a5a18;
 }
 
 :root[data-era="1980s"] a[class*="border"] {
   box-shadow:
-    2px 0 0 0 #3a2028,
-    0 2px 0 0 #3a2028,
-    2px 2px 0 0 #3a2028;
+    2px 0 0 0 #203a20,
+    0 2px 0 0 #203a20,
+    2px 2px 0 0 #203a20;
+}
+
+:root[data-era="1980s"] .hacf-scanlines::before {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 4px,
+    rgba(57, 255, 20, 0.015) 4px,
+    rgba(57, 255, 20, 0.015) 8px
+  );
+}
+
+:root[data-era="1980s"] .hacf-streak::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(57, 255, 20, 0.08) 15%,
+    rgba(57, 255, 20, 0.25) 50%,
+    rgba(57, 255, 20, 0.08) 85%,
+    transparent 100%
+  );
+}
+
+:root[data-era="1980s"] .hacf-streak::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(57, 255, 20, 0.03) 20%,
+    rgba(57, 255, 20, 0.08) 50%,
+    rgba(57, 255, 20, 0.03) 80%,
+    transparent 100%
+  );
+}
+
+:root[data-era="1980s"] .hacf-flare::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(57, 255, 20, 0.15) 0%,
+    rgba(57, 255, 20, 0.05) 50%,
+    transparent 80%
+  );
+}
+
+:root[data-era="1980s"] .hacf-sweep-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(57, 255, 20, 0.15) 20%,
+    rgba(156, 255, 74, 0.4) 50%,
+    rgba(57, 255, 20, 0.15) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.3), 0 0 40px rgba(57, 255, 20, 0.15);
+}
+
+:root[data-era="1980s"] .hacf-sweep-line-2 {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(57, 255, 20, 0.1) 30%,
+    rgba(57, 255, 20, 0.2) 50%,
+    rgba(57, 255, 20, 0.1) 70%,
+    transparent 100%
+  );
 }
 
 /* 1990s: pixel-art texture, beOS-like bevels, classic web color */

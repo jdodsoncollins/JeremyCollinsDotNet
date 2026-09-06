@@ -24,7 +24,7 @@
 }
 
 :root[data-era="1980s"] .hero-backdrop-photo {
-  background-image: url("/hero/hero-1980s-hill.svg?v=crt2");
+  background-image: url("/hero/hero-1980s-hill.svg?v=a2g1");
   background-position: 50% 78%;
   transform: scale(1.42);
   transform-origin: 50% 82%;
@@ -39,7 +39,7 @@
 
 @media (min-width: 768px) {
   :root[data-era="1980s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1980s-hill-wide.svg?v=crt2");
+    background-image: url("/hero/hero-1980s-hill-wide.svg?v=a2g1");
     background-position: 58% 70%;
     transform: scale(1.28);
     transform-origin: 62% 74%;
@@ -63,7 +63,7 @@
 }
 
 :root[data-era="1980s"] .hero-backdrop::before {
-  background: linear-gradient(to bottom, rgba(10, 6, 8, 0.92), transparent);
+  background: linear-gradient(to bottom, rgba(3, 20, 3, 0.92), transparent);
 }
 
 :root[data-era="1990s"] .hero-backdrop::before {
@@ -95,7 +95,7 @@
 }
 
 :root[data-era="1980s"] .hero-section::before {
-  background: linear-gradient(90deg, rgba(10, 6, 8, 0.66) 0%, rgba(10, 6, 8, 0.2) 30%, transparent 56%);
+  background: linear-gradient(90deg, rgba(3, 20, 3, 0.66) 0%, rgba(3, 20, 3, 0.2) 30%, transparent 56%);
 }
 
 :root[data-era="1990s"] .hero-section::before {
@@ -118,22 +118,16 @@
 }
 
 :root[data-era="1980s"] .hero-section {
-  background: #080204;
+  background: #031403;
 }
 
 :root[data-era="1980s"] .hero-backdrop-photo {
-  filter:
-    grayscale(1)
-    contrast(1.15)
-    brightness(0.72)
-    sepia(0.45)
-    hue-rotate(-18deg)
-    saturate(0.55);
+  filter: none;
 }
 
 :root[data-era="1980s"] .hero-art-1980s {
   image-rendering: pixelated;
-  filter: drop-shadow(1px 1px 0 #140608);
+  filter: drop-shadow(1px 1px 0 #061408);
 }
 
 :root[data-era="1990s"] .hero-art-1990s {

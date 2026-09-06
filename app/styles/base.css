@@ -91,6 +91,48 @@
   --neon-magenta: #ff0066;
 }
 
+:root[data-era="1980s"] {
+  --radius: 0;
+  --background: #031403;
+  --foreground: #c8f5a0;
+  --card: #071a07;
+  --card-foreground: #c8f5a0;
+  --popover: #071a07;
+  --popover-foreground: #c8f5a0;
+  --primary: #39ff14;
+  --primary-foreground: #031403;
+  --secondary: #0c220c;
+  --secondary-foreground: #c8f5a0;
+  --muted: #0a1a0a;
+  --muted-foreground: #7aaa68;
+  --accent: #9cff4a;
+  --accent-foreground: #031403;
+  --destructive: #33cc33;
+  --destructive-foreground: #031403;
+  --border: #1a4a1a;
+  --input: #0c220c;
+  --ring: #39ff14;
+  --chart-1: #39ff14;
+  --chart-2: #9cff4a;
+  --chart-3: #7cff7c;
+  --chart-4: #1a8a1a;
+  --chart-5: #5cff3a;
+  --sidebar: #051605;
+  --sidebar-foreground: #c8f5a0;
+  --sidebar-primary: #39ff14;
+  --sidebar-primary-foreground: #031403;
+  --sidebar-accent: #0c220c;
+  --sidebar-accent-foreground: #c8f5a0;
+  --sidebar-border: #1a4a1a;
+  --sidebar-ring: #39ff14;
+  --circuit: #39ff14;
+  --glow: #9cff4a;
+  --neon: #5cff3a;
+  --neon-green: #39ff14;
+  --neon-cyan: #7cff7c;
+  --neon-magenta: #9cff4a;
+}
+
 :root[data-era="1990s"] {
   --radius: 0;
   --background: #d8d4cc;
