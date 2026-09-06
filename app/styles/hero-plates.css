@@ -127,7 +127,7 @@
 
 :root[data-era="1980s"] .hero-art-1980s {
   image-rendering: pixelated;
-  filter: drop-shadow(1px 1px 0 #061408);
+  filter: none;
 }
 
 :root[data-era="1990s"] .hero-art-1990s {

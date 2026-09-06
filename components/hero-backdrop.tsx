@@ -13,7 +13,32 @@ const LEAVES = [
 export function HeroBackdrop() {
   return (
     <div className="hero-backdrop" aria-hidden="true">
-      <div className="hero-backdrop-photo" />
+      <div className="hero-backdrop-photo">
+        <img
+          className="hero-backdrop-1980s-plate hero-backdrop-1980s-phone"
+          src="/hero/hero-1980s-hill.png?v=px2"
+          width={360}
+          height={520}
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-backdrop-1980s-plate hero-backdrop-1980s-md"
+          src="/hero/hero-1980s-hill-md.png?v=px2"
+          width={520}
+          height={480}
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-backdrop-1980s-plate hero-backdrop-1980s-wide"
+          src="/hero/hero-1980s-hill-wide.png?v=px2"
+          width={960}
+          height={360}
+          alt=""
+          decoding="async"
+        />
+      </div>
       <div className="hero-plate-frames" />
       <div className="hero-crt-stars" />
       <div className="hero-paint-shift" />
