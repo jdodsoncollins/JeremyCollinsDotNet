@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Pixelify_Sans, Space_Mono, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -29,17 +30,20 @@ const pixelify = Pixelify_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jeremycollins.net"),
+  applicationName: "JeremyCollins.net",
   title: {
-    default: "Jeremy Collins",
+    default: "Jeremy Collins | Software Engineer at Webflow",
     template: "%s | Jeremy Collins",
   },
   description:
-    "Software engineer at Webflow in Los Angeles. Makes Codable, Safari-native web developer tools for iOS.",
+    "Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He makes Codable, Safari-native web developer tools for iOS, and Taktung, Vercel deploy ops on iPhone.",
   keywords: [
     "Jeremy Collins",
     "software engineer",
     "Webflow",
+    "growth engineering",
     "Codable",
+    "Taktung",
     "iOS developer tools",
     "Safari",
   ],
@@ -62,9 +66,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Jeremy Collins",
+    title: "Jeremy Collins | Software Engineer at Webflow",
     description:
-      "Software engineer at Webflow in Los Angeles. Makes Codable, Safari developer tools for iOS.",
+      "Senior software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
     url: "https://jeremycollins.net",
     siteName: "JeremyCollins.net",
     type: "profile",
@@ -82,11 +86,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Jeremy Collins",
-    creator: "jdodsoncollins",
+    title: "Jeremy Collins | Software Engineer at Webflow",
+    creator: "jollins",
+    site: "jollins",
     description:
-      "Software engineer at Webflow in Los Angeles. Makes Codable, Safari developer tools for iOS.",
+      "Senior software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
     images: ["/logo.png"],
+  },
+  category: "technology",
+  alternates: {
+    types: {
+      "text/plain": "https://jeremycollins.net/llms.txt",
+    },
+  },
+  other: {
+    "llms-txt": "https://jeremycollins.net/llms.txt",
   },
 };
 
@@ -142,6 +156,7 @@ export default function RootLayout({
         <div className="hacf-scanlines" aria-hidden="true" />
         <div className="hacf-grain" aria-hidden="true" />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,0 +1,31 @@
+# Jeremy Collins
+
+Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
+
+Outside of work he makes independent software for iOS and the web. No ads, tracking, or paywall.
+
+## Codable
+
+Codable is a free iOS app with Safari-native web developer tools. Inspect HTML, styles, network requests, and console output. Also includes a scratchpad and viewport tester. Available on the App Store: https://apps.apple.com/us/app/codable/id1324741659
+
+Privacy policy: https://jeremycollins.net/codable-privacy-policy
+
+## Taktung
+
+Taktung is a free iOS app for Vercel deploy and incident ops. See site health and the latest deploy, then promote or roll back after you confirm. A Vercel token stays on the phone. Not affiliated with Vercel. Available on the App Store: https://apps.apple.com/us/app/taktung/id6805738660
+
+Privacy policy: https://jeremycollins.net/taktung-privacy-policy
+
+## Codeatrophy
+
+Codeatrophy is a set of interactive tutorials on web development fundamentals (algorithms, system design, CS), built with React Native for iOS, Android, and web: https://codeatrophy.vercel.app/
+
+## Site
+
+- Home: https://jeremycollins.net/
+- Resume: https://jeremycollins.net/resume
+- Resume PDF: https://jeremycollins.net/resume/jeremy-collins-resume.pdf
+- GitHub: https://github.com/jdodsoncollins
+- LinkedIn: https://linkedin.com/in/jeremycollinsnet
+- X: https://x.com/jollins
+- Email: jeremy@jeremycollins.net

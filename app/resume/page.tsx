@@ -8,7 +8,7 @@ import { resumeJsonLd } from "@/lib/json-ld";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Resume for Jeremy Collins, senior software engineer at Webflow in Los Angeles. Growth engineering, billing, experiments, and Codable for iOS Safari.",
+    "Resume for Jeremy Collins, senior software engineer at Webflow in Los Angeles. Growth engineering, billing, experiments, Codable, and Taktung for iOS.",
   alternates: {
     canonical: "/resume",
   },

@@ -1,7 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CircuitBackground } from "@/components/circuit-background";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

@@ -2,9 +2,18 @@
 
 > Software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.
 
+Optional: [full summary](https://jeremycollins.net/llms-full.txt)
+
 ## About
 
 Jeremy Collins is a senior software engineer at Webflow. His recent work is growth engineering: billing, usage metering, paywalls, and customer-facing product. Outside of work he makes Codable, a free iOS app that brings web developer tools to mobile Safari, and Taktung, a free iOS app for Vercel deploy and incident ops. No ads, tracking, or paywall.
+
+## FAQ
+
+- Who is Jeremy Collins? A senior software engineer at Webflow in Los Angeles. He works on growth engineering and ships Codable and Taktung for iOS.
+- What is Codable? A free iOS app with Safari-native web developer tools: inspector, console, network monitor, scratchpad, and viewport tester. No ads or tracking.
+- What is Taktung? A free iOS app for Vercel deploy and incident ops. Site health, deploys, confirmed promote or rollback. Token stays on the phone. Not affiliated with Vercel.
+- Where does Jeremy Collins work? Webflow.
 
 ## Pages
 
@@ -18,8 +27,10 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 
 - [Codable on the App Store](https://apps.apple.com/us/app/codable/id1324741659): Safari-native inspector, console, network monitor, scratchpad, and viewport tester for iOS
 - [Taktung on the App Store](https://apps.apple.com/us/app/taktung/id6805738660): Vercel deploy and incident ops on iPhone. Site health, deploys, confirmed promote or rollback
+- [Codeatrophy](https://codeatrophy.vercel.app/): interactive tutorials on web development fundamentals
 
 ## Profiles
 
 - [GitHub](https://github.com/jdodsoncollins)
 - [LinkedIn](https://linkedin.com/in/jeremycollinsnet)
+- [X](https://x.com/jollins)

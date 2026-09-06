@@ -8,7 +8,7 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - React 19
 - Tailwind CSS 4
 - TypeScript
-- Vercel Analytics
+- Vercel Analytics and Speed Insights
 - Playwright for resume PDF export
 
 ## Functionality
