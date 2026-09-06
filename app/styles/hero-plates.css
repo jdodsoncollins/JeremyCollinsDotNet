@@ -115,16 +115,9 @@
   display: none;
 }
 
-/* Ancient Jeremy: red-phosphor terminal, same figure. */
+/* Ancient Jeremy is authored as red phosphor — no extra hue stack. */
 :root[data-era="1980s"] .hero-art-1980s {
-  filter:
-    grayscale(1)
-    contrast(1.3)
-    brightness(0.94)
-    sepia(1)
-    hue-rotate(-48deg)
-    saturate(8.4)
-    drop-shadow(2px 2px 0 #2a0810);
+  filter: drop-shadow(2px 2px 0 #2a0810);
 }
 
 :root[data-era="1990s"] .hero-art-1990s {
@@ -245,7 +238,7 @@
   }
 }
 
-/* Modern weather + idle. */
+/* Modern weather + idle. Stills stay up — live sheets are unregistered. */
 .hero-cloud-shadow,
 .hero-canopy,
 .hero-silhouette {
@@ -331,16 +324,28 @@
   animation: hero-modern-idle 3.8s ease-in-out infinite;
 }
 
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-still,
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-still,
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-still,
 :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
   opacity: 1;
 }
 
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live,
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live,
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-live,
 :root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
   opacity: 0;
 }
 
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img,
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img,
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
 :root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
   animation: none;
