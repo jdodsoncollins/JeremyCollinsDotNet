@@ -3,9 +3,9 @@ import { HeroBackdrop } from "@/components/hero-backdrop";
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
-  { era: "1980s", still: "/hero/hero-1980s.svg?v=jc2", live: "/hero/hero-1980s-live.png?v=jc2", width: 280, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=jc2", live: "/hero/hero-1990s-live.png?v=jc2", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern.svg?v=jc2", live: "/hero/hero-modern-live.png?v=jc2", width: 300, height: 360 },
+  { era: "1980s", still: "/hero/hero-1980s.svg?v=era1", live: "/hero/hero-1980s-live.png?v=era1", width: 280, height: 268 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=era1", live: "/hero/hero-1990s-live.png?v=era1", width: 320, height: 280 },
+  { era: "modern", still: "/hero/hero-modern.svg?v=jc3", live: "/hero/hero-modern-live.png?v=jc3", cat: "/hero/hero-modern-cat.svg?v=jc3", width: 300, height: 360 },
 ] as const;
 
 export function HeroSection() {
@@ -99,6 +99,16 @@ export function HeroSection() {
                 alt=""
                 decoding="async"
               />
+              {"cat" in art ? (
+                <img
+                  className="hero-art-cat"
+                  src={art.cat}
+                  width={art.width}
+                  height={art.height}
+                  alt=""
+                  decoding="async"
+                />
+              ) : null}
               <div className="hero-art-live">
                 <img
                   src={art.live}

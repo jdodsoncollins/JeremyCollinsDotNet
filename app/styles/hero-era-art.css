@@ -27,22 +27,73 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.svg?v=jc2");
-  mask-image: url("/hero/hero-modern.svg?v=jc2");
+  -webkit-mask-image: url("/hero/hero-modern.png?v=jc3");
+  mask-image: url("/hero/hero-modern.png?v=jc3");
 }
 
-/* Cat-wag live strips. Jeremy is locked; only the cat moves. */
+/* Keep era stills up. Live strips jump frames; cat motion is its own layer. */
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-still,
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-still,
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-still,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
+  opacity: 1;
+}
+
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live,
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live,
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
+  opacity: 0;
+}
+
 :root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img {
-  animation-duration: 1.5s;
-}
-
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img,
 :root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img {
-  animation-duration: 0.72s;
-}
-
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img,
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
 :root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
-  animation-duration: 0.55s;
+  animation: none;
+}
+
+.hero-art-cat {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
+  pointer-events: none;
+  transform-origin: 78% 82%;
+}
+
+:root[data-era="modern"] .hero-art-modern .hero-art-cat {
+  filter: brightness(1.18) contrast(0.9) saturate(0.82);
+}
+
+:root[data-era="modern"][data-scroll-live] .hero-art-cat,
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-cat,
+:root[data-era="modern"] .hero-section.is-live .hero-art-cat {
+  animation: hero-cat-wag 0.55s ease-in-out infinite;
+}
+
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
+  animation: none;
+}
+
+@keyframes hero-cat-wag {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(-6deg) translate(1px, -2px); }
+  75% { transform: rotate(6deg) translate(-1px, -1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-era="modern"][data-scroll-live] .hero-art-cat,
+  :root[data-era="modern"] .hero-art-shot.is-live .hero-art-cat,
+  :root[data-era="modern"] .hero-section.is-live .hero-art-cat {
+    animation: none;
+  }
 }
