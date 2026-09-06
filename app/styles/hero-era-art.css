@@ -12,7 +12,8 @@
 }
 
 :root[data-era="1990s"] .hero-art-still,
-:root[data-era="1990s"] .hero-art-live img {
+:root[data-era="1990s"] .hero-art-live img,
+:root[data-era="1990s"] .hero-art-cat {
   image-rendering: auto;
 }
 
@@ -31,7 +32,7 @@
   mask-image: url("/hero/hero-modern.png?v=jc3");
 }
 
-/* Keep era stills up. Live strips jump frames; cat motion is its own layer. */
+/* Stills stay up. Live strips jump frames. */
 :root[data-era="1980s"] .hero-art-shot.is-live .hero-art-still,
 :root[data-era="1980s"] .hero-art-shot:hover .hero-art-still,
 :root[data-era="1990s"] .hero-art-shot.is-live .hero-art-still,
@@ -59,6 +60,13 @@
   animation: none;
 }
 
+/* Kill the hold-frame bounce on Jeremy. Motion is the cat layer only. */
+:root[data-era="1980s"][data-scroll-live] .hero-art-1980s .hero-art-still,
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-still,
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
+  animation: none !important;
+}
+
 .hero-art-cat {
   position: absolute;
   inset: 0;
@@ -67,32 +75,62 @@
   object-fit: contain;
   object-position: top right;
   pointer-events: none;
-  transform-origin: 78% 82%;
+}
+
+:root[data-era="1980s"] .hero-art-cat {
+  image-rendering: pixelated;
+  transform-origin: 16% 84%;
+}
+
+:root[data-era="1990s"] .hero-art-cat {
+  transform-origin: 82% 96%;
+}
+
+:root[data-era="modern"] .hero-art-cat {
+  transform-origin: 80% 97%;
 }
 
 :root[data-era="modern"] .hero-art-modern .hero-art-cat {
   filter: brightness(1.18) contrast(0.9) saturate(0.82);
 }
 
+:root[data-era="1980s"][data-scroll-live] .hero-art-cat,
+:root[data-era="1980s"] .hero-section.is-live .hero-art-cat {
+  animation: hero-cat-1980s 0.5s steps(2, jump-none) infinite;
+}
+
+:root[data-era="1990s"][data-scroll-live] .hero-art-cat,
+:root[data-era="1990s"] .hero-section.is-live .hero-art-cat {
+  animation: hero-cat-1990s 0.4s steps(6, jump-none) infinite;
+}
+
 :root[data-era="modern"][data-scroll-live] .hero-art-cat,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-cat,
 :root[data-era="modern"] .hero-section.is-live .hero-art-cat {
-  animation: hero-cat-wag 0.55s ease-in-out infinite;
+  animation: hero-cat-modern 0.55s ease-in-out infinite;
 }
 
-:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
-  animation: none;
+@keyframes hero-cat-1980s {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -4px, 0); }
 }
 
-@keyframes hero-cat-wag {
-  0%, 100% { transform: rotate(0deg) translate(0, 0); }
-  25% { transform: rotate(-6deg) translate(1px, -2px); }
-  75% { transform: rotate(6deg) translate(-1px, -1px); }
+@keyframes hero-cat-1990s {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -3px, 0); }
+}
+
+@keyframes hero-cat-modern {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  35% { transform: translate3d(1px, -3px, 0) rotate(-2deg); }
+  70% { transform: translate3d(-1px, -1px, 0) rotate(1.5deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  :root[data-era="1980s"][data-scroll-live] .hero-art-cat,
+  :root[data-era="1980s"] .hero-section.is-live .hero-art-cat,
+  :root[data-era="1990s"][data-scroll-live] .hero-art-cat,
+  :root[data-era="1990s"] .hero-section.is-live .hero-art-cat,
   :root[data-era="modern"][data-scroll-live] .hero-art-cat,
-  :root[data-era="modern"] .hero-art-shot.is-live .hero-art-cat,
   :root[data-era="modern"] .hero-section.is-live .hero-art-cat {
     animation: none;
   }
