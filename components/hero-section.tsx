@@ -3,9 +3,9 @@ import { HeroBackdrop } from "@/components/hero-backdrop";
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
-  { era: "1980s", still: "/hero/hero-1980s.svg?v=phos1", live: "/hero/hero-1980s-live.png", width: 280, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc1", live: "/hero/hero-1990s-live.png", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern.svg?v=arc2", live: "/hero/hero-modern-live.png", width: 300, height: 360 },
+  { era: "1980s", still: "/hero/hero-1980s.svg?v=jc2", live: "/hero/hero-1980s-live.png?v=jc2", width: 280, height: 268 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=jc2", live: "/hero/hero-1990s-live.png?v=jc2", width: 320, height: 280 },
+  { era: "modern", still: "/hero/hero-modern.svg?v=jc2", live: "/hero/hero-modern-live.png?v=jc2", width: 300, height: 360 },
 ] as const;
 
 export function HeroSection() {

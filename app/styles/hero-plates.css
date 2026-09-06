@@ -338,33 +338,6 @@
   animation: hero-modern-idle 3.8s ease-in-out infinite;
 }
 
-:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-still,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-still,
-:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-still,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-still,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-still,
-:root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
-  opacity: 1;
-}
-
-:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live,
-:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
-  opacity: 0;
-}
-
-:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img,
-:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
-  animation: none;
-}
-
 @keyframes hero-cloud-shadow {
   from { transform: translate3d(0, 18%, 0); }
   to { transform: translate3d(160vw, 22%, 0); }

@@ -27,6 +27,22 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.svg?v=arc2");
-  mask-image: url("/hero/hero-modern.svg?v=arc2");
+  -webkit-mask-image: url("/hero/hero-modern.svg?v=jc2");
+  mask-image: url("/hero/hero-modern.svg?v=jc2");
+}
+
+/* Cat-wag live strips. Jeremy is locked; only the cat moves. */
+:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img {
+  animation-duration: 1.5s;
+}
+
+:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img {
+  animation-duration: 0.72s;
+}
+
+:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
+:root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
+  animation-duration: 0.55s;
 }
