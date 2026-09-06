@@ -4,8 +4,8 @@ import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=phos1", live: "/hero/hero-1980s-live.png", width: 280, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.png", live: "/hero/hero-1990s-live.png", width: 951, height: 826 },
-  { era: "modern", still: "/hero/hero-modern.png", live: "/hero/hero-modern-live.png", width: 783, height: 828 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc1", live: "/hero/hero-1990s-live.png", width: 320, height: 280 },
+  { era: "modern", still: "/hero/hero-modern.svg?v=arc2", live: "/hero/hero-modern-live.png", width: 300, height: 360 },
 ] as const;
 
 export function HeroSection() {
