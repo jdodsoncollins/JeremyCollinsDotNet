@@ -175,7 +175,7 @@ function ProjectCard({
   const phone = project.screenshotFrame === "phone";
 
   return (
-    <article className="border border-border/60 bg-card/20">
+    <article className="era-reveal border border-border/60 bg-card/20">
       <div className="p-6 md:p-8 border-b border-border/40">
         <div className="flex items-start gap-5 mb-6">
           <div className="codable-icon w-14 h-14 rounded-xl border border-primary/40 flex-shrink-0 overflow-hidden bg-black">
