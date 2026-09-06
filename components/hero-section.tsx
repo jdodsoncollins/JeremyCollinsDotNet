@@ -3,9 +3,9 @@ import { HeroBackdrop } from "@/components/hero-backdrop";
 import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
-  { era: "1980s", still: "/hero/hero-1980s.png", live: "/hero/hero-1980s-live.png", width: 737, height: 700 },
-  { era: "1990s", still: "/hero/hero-1990s.png", live: "/hero/hero-1990s-live.png", width: 951, height: 826 },
-  { era: "modern", still: "/hero/hero-modern.png", live: "/hero/hero-modern-live.png", width: 783, height: 828 },
+  { era: "1980s", still: "/hero/hero-1980s.svg", live: "/hero/hero-1980s-live.png", width: 740, height: 700 },
+  { era: "1990s", still: "/hero/hero-1990s.svg", live: "/hero/hero-1990s-live.png", width: 780, height: 700 },
+  { era: "modern", still: "/hero/hero-modern.svg", live: "/hero/hero-modern-live.png", width: 560, height: 588 },
 ] as const;
 
 export function HeroSection() {
@@ -24,7 +24,7 @@ export function HeroSection() {
             <a
               href="#projects"
               aria-label="View projects"
-              className="hero-cta hero-cta-projects inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hero-cta hero-cta-projects inline-flex items-items gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
             >
               <span className="hero-cta-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
