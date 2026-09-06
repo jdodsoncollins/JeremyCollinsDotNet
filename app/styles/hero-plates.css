@@ -1,0 +1,275 @@
+/* Ancient + Retro hero plates. Modern forest rules stay in layout.css.
+   Figure sit-spot breakpoints copy the Modern values so Jeremy lands
+   on the mound the same way at each viewport. */
+
+:root[data-era="1980s"] .hero-backdrop,
+:root[data-era="1990s"] .hero-backdrop {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+:root[data-era="1980s"] .hero-backdrop-photo,
+:root[data-era="1990s"] .hero-backdrop-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"] .hero-backdrop-photo {
+  background-image: url("/hero/hero-1980s-hill.svg");
+  background-position: 50% 78%;
+  transform: scale(1.42);
+  transform-origin: 50% 82%;
+}
+
+:root[data-era="1990s"] .hero-backdrop-photo {
+  background-image: url("/hero/hero-1990s-hill.svg");
+  background-position: 50% 78%;
+  transform: scale(1.42);
+  transform-origin: 50% 84%;
+}
+
+@media (min-width: 768px) {
+  :root[data-era="1980s"] .hero-backdrop-photo {
+    background-image: url("/hero/hero-1980s-hill-wide.svg");
+    background-position: 58% 70%;
+    transform: scale(1.28);
+    transform-origin: 62% 74%;
+  }
+
+  :root[data-era="1990s"] .hero-backdrop-photo {
+    background-image: url("/hero/hero-1990s-hill-wide.svg");
+    background-position: 60% 68%;
+    transform: scale(1.28);
+    transform-origin: 62% 72%;
+  }
+}
+
+:root[data-era="1980s"] .hero-backdrop::before,
+:root[data-era="1990s"] .hero-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7.5rem;
+  z-index: 3;
+}
+
+:root[data-era="1980s"] .hero-backdrop::before {
+  background: linear-gradient(to bottom, rgba(10, 6, 8, 0.92), transparent);
+}
+
+:root[data-era="1990s"] .hero-backdrop::before {
+  background: linear-gradient(to bottom, rgba(216, 212, 204, 0.62), transparent);
+}
+
+:root[data-era="1980s"] .hero-backdrop::after,
+:root[data-era="1990s"] .hero-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  z-index: 3;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--background) 38%, transparent) 58%,
+    var(--background) 100%
+  );
+}
+
+:root[data-era="1980s"] .hero-section::before,
+:root[data-era="1990s"] .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+:root[data-era="1980s"] .hero-section::before {
+  background: linear-gradient(90deg, rgba(10, 6, 8, 0.66) 0%, rgba(10, 6, 8, 0.2) 30%, transparent 56%);
+}
+
+:root[data-era="1990s"] .hero-section::before {
+  background: linear-gradient(90deg, rgba(216, 212, 204, 0.78) 0%, rgba(216, 212, 204, 0.28) 32%, transparent 58%);
+}
+
+:root[data-era="1980s"] .hero-backdrop-clouds,
+:root[data-era="1980s"] .hero-backdrop-rays,
+:root[data-era="1980s"] .hero-backdrop-leaves,
+:root[data-era="1990s"] .hero-backdrop-clouds,
+:root[data-era="1990s"] .hero-backdrop-rays,
+:root[data-era="1990s"] .hero-backdrop-leaves {
+  display: none;
+}
+
+:root[data-era="1980s"] .hero-art-1980s {
+  filter: drop-shadow(2px 2px 0 #2a0810);
+}
+
+:root[data-era="1990s"] .hero-art-1990s {
+  filter: drop-shadow(2px 2px 0 #404040);
+}
+
+:root[data-era="1980s"] .hero-art-still,
+:root[data-era="1990s"] .hero-art-still {
+  height: 9.75rem;
+  max-width: 11.5rem;
+}
+
+@media (min-width: 768px) {
+  :root[data-era="1980s"] .hero-art-still,
+  :root[data-era="1990s"] .hero-art-still {
+    height: 13.5rem;
+    max-width: 16rem;
+  }
+
+  :root[data-era="1980s"] .hero-art,
+  :root[data-era="1990s"] .hero-art {
+    align-self: end;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root[data-era="1980s"] .hero-art-still,
+  :root[data-era="1990s"] .hero-art-still {
+    height: 14.25rem;
+    max-width: 17rem;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  :root[data-era="1980s"] .hero-section,
+  :root[data-era="1990s"] .hero-section {
+    align-items: stretch;
+  }
+
+  :root[data-era="1980s"] .hero-inner,
+  :root[data-era="1990s"] .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    min-height: calc(100svh - 5rem);
+    align-content: stretch;
+  }
+
+  :root[data-era="1980s"] .hero-copy h1,
+  :root[data-era="1980s"] .hero-ctas,
+  :root[data-era="1980s"] .hero-art,
+  :root[data-era="1990s"] .hero-copy h1,
+  :root[data-era="1990s"] .hero-ctas,
+  :root[data-era="1990s"] .hero-art {
+    grid-column: 1;
+  }
+
+  :root[data-era="1980s"] .hero-copy h1,
+  :root[data-era="1990s"] .hero-copy h1 {
+    grid-row: 1;
+  }
+
+  :root[data-era="1980s"] .hero-ctas,
+  :root[data-era="1990s"] .hero-ctas {
+    grid-row: 2;
+  }
+
+  :root[data-era="1980s"] .hero-art,
+  :root[data-era="1990s"] .hero-art {
+    grid-row: 3;
+    justify-self: center;
+    align-self: end;
+    padding-top: 0;
+    padding-bottom: 16vh;
+  }
+
+  :root[data-era="1980s"] .hero-art-still,
+  :root[data-era="1990s"] .hero-art-still {
+    height: 10.25rem;
+    max-width: 12.25rem;
+  }
+
+  :root[data-era="1980s"] .hero-backdrop-photo,
+  :root[data-era="1990s"] .hero-backdrop-photo {
+    transform: scale(1.55);
+    transform-origin: 48% 84%;
+    background-position: 50% 80%;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="1980s"] .hero-backdrop-photo,
+  :root[data-era="1990s"] .hero-backdrop-photo {
+    background-position: 58% 70%;
+    transform: scale(1.5) translateY(-16%);
+    transform-origin: 56% 72%;
+  }
+
+  :root[data-era="1980s"] .hero-art,
+  :root[data-era="1990s"] .hero-art {
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: 0;
+  }
+
+  :root[data-era="1980s"] .hero-art-still,
+  :root[data-era="1990s"] .hero-art-still {
+    height: 10.5rem;
+    max-width: 12.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="1980s"] .hero-art-still,
+  :root[data-era="1990s"] .hero-art-still {
+    height: 11.25rem;
+    max-width: 13.5rem;
+  }
+}
+
+/* Modern: one slow cloud shadow across the hill. */
+.hero-cloud-shadow {
+  display: none;
+}
+
+:root[data-era="modern"] .hero-cloud-shadow {
+  display: block;
+  position: absolute;
+  top: 28%;
+  left: -40%;
+  width: 58vw;
+  height: 42vh;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(12, 16, 24, 0.22), transparent 68%);
+  filter: blur(28px);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0, 18%, 0);
+}
+
+:root[data-era="modern"] .hero-section.is-live .hero-cloud-shadow,
+:root[data-era="modern"] .hero-section:hover .hero-cloud-shadow {
+  animation: hero-cloud-shadow 28s linear infinite;
+}
+
+@keyframes hero-cloud-shadow {
+  from {
+    transform: translate3d(0, 18%, 0);
+  }
+
+  to {
+    transform: translate3d(160vw, 22%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-era="modern"] .hero-section.is-live .hero-cloud-shadow,
+  :root[data-era="modern"] .hero-section:hover .hero-cloud-shadow {
+    animation: none;
+  }
+}

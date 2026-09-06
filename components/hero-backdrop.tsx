@@ -14,6 +14,7 @@ export function HeroBackdrop() {
   return (
     <div className="hero-backdrop" aria-hidden="true">
       <div className="hero-backdrop-photo" />
+      <div className="hero-cloud-shadow" />
       <div className="hero-backdrop-clouds">
         <span className="hero-cloud hero-cloud-a" />
         <span className="hero-cloud hero-cloud-b" />
