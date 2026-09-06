@@ -42,7 +42,6 @@
   50% { transform: translate3d(0, -2px, 0); }
 }
 
-/* Section reveals: same frame budget as the camera. */
 .era-reveal {
   opacity: 0;
   transform: translate3d(0, 16px, 0);
@@ -91,10 +90,9 @@
   }
 }
 
-/* Extra era frames while scrolling. Stars / paint jitter stand in for
-   new sprite sheets so registration never drifts. */
 .hero-crt-stars,
-.hero-paint-shift {
+.hero-paint-shift,
+.hero-plate-frames {
   display: none;
   pointer-events: none;
 }
@@ -104,21 +102,44 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  opacity: 0.55;
+  opacity: 0.7;
   background-image:
-    radial-gradient(1px 1px at 12% 18%, #6a3038 50%, transparent 51%),
-    radial-gradient(1px 1px at 28% 9%, #4a2028 50%, transparent 51%),
-    radial-gradient(2px 2px at 47% 22%, #6a3038 50%, transparent 51%),
-    radial-gradient(1px 1px at 63% 14%, #4a2028 50%, transparent 51%),
-    radial-gradient(1px 1px at 81% 11%, #6a3038 50%, transparent 51%),
-    radial-gradient(2px 2px at 91% 27%, #4a2028 50%, transparent 51%),
-    radial-gradient(1px 1px at 8% 36%, #6a3038 50%, transparent 51%),
-    radial-gradient(1px 1px at 72% 31%, #4a2028 50%, transparent 51%);
+    radial-gradient(1px 1px at 12% 18%, #8a3844 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 9%, #5a2430 50%, transparent 51%),
+    radial-gradient(2px 2px at 47% 22%, #8a3844 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 14%, #5a2430 50%, transparent 51%),
+    radial-gradient(1px 1px at 81% 11%, #8a3844 50%, transparent 51%),
+    radial-gradient(2px 2px at 91% 27%, #5a2430 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 36%, #8a3844 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 31%, #5a2430 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 8%, #8a3844 50%, transparent 51%),
+    radial-gradient(2px 2px at 54% 16%, #5a2430 50%, transparent 51%),
+    radial-gradient(1px 1px at 16% 28%, #6a3038 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 8%, #8a3844 50%, transparent 51%);
   image-rendering: pixelated;
 }
 
 :root[data-era="1980s"][data-scroll-live] .hero-crt-stars {
   animation: era-stars-4fps 0.5s steps(2, jump-none) infinite;
+}
+
+:root[data-era="1980s"] .hero-plate-frames {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("/hero/hero-1980s-hill-frames.svg?v=def2");
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  background-position: 50% 0%;
+  image-rendering: pixelated;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+:root[data-era="1980s"][data-scroll-live] .hero-plate-frames {
+  opacity: 0.28;
+  animation: era-frames-4fps 0.5s steps(2, jump-none) infinite;
 }
 
 :root[data-era="1990s"] .hero-paint-shift {
@@ -127,8 +148,13 @@
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(ellipse at 30% 70%, rgba(184, 144, 88, 0.08), transparent 42%),
-    radial-gradient(ellipse at 70% 40%, rgba(255, 248, 230, 0.06), transparent 46%);
+    radial-gradient(ellipse at 30% 70%, rgba(184, 144, 88, 0.10), transparent 42%),
+    radial-gradient(ellipse at 70% 40%, rgba(255, 248, 230, 0.08), transparent 46%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 3px,
+      rgba(80, 56, 24, 0.03) 3px 4px
+    );
   mix-blend-mode: soft-light;
 }
 
@@ -140,9 +166,17 @@
   animation: era-plate-4fps 0.5s steps(2, jump-none) infinite;
 }
 
+:root[data-era="1990s"][data-scroll-live] .hero-backdrop-photo {
+  animation: era-plate-15fps 0.4s steps(6, jump-none) infinite;
+}
+
+:root[data-era="modern"][data-scroll-live] .hero-backdrop-photo {
+  animation: era-plate-30fps 0.33s linear infinite;
+}
+
 @keyframes era-stars-4fps {
-  from { opacity: 0.35; }
-  to { opacity: 0.8; }
+  from { opacity: 0.4; }
+  to { opacity: 0.95; }
 }
 
 @keyframes era-paint-15fps {
@@ -152,13 +186,31 @@
 
 @keyframes era-plate-4fps {
   from { filter: brightness(1); }
-  to { filter: brightness(1.08); }
+  to { filter: brightness(1.1); }
+}
+
+@keyframes era-plate-15fps {
+  0%, 100% { filter: saturate(1) brightness(1); }
+  50% { filter: saturate(1.06) brightness(1.03); }
+}
+
+@keyframes era-plate-30fps {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.025); }
+}
+
+@keyframes era-frames-4fps {
+  from { background-position: 50% 0%; }
+  to { background-position: 50% 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root[data-era="1980s"][data-scroll-live] .hero-crt-stars,
   :root[data-era="1990s"][data-scroll-live] .hero-paint-shift,
-  :root[data-era="1980s"][data-scroll-live] .hero-backdrop-photo {
+  :root[data-era="1980s"][data-scroll-live] .hero-backdrop-photo,
+  :root[data-era="1990s"][data-scroll-live] .hero-backdrop-photo,
+  :root[data-era="modern"][data-scroll-live] .hero-backdrop-photo,
+  :root[data-era="1980s"][data-scroll-live] .hero-plate-frames {
     animation: none;
   }
 }
