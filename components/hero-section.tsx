@@ -5,7 +5,7 @@ import { HeroCtas } from "@/components/hero-ctas";
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=gap3", live: "/hero/hero-1980s-live.png?v=era1", cat: "/hero/hero-1980s-cat.svg?v=gap3", width: 340, height: 268 },
   { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cc3", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern.svg?v=gap5", live: "/hero/hero-modern-live.png?v=jc3", cat: "/hero/hero-modern-cat.svg?v=gap5", width: 340, height: 360 },
+  { era: "modern", still: "/hero/hero-modern-one.svg?v=one1", live: "/hero/hero-modern-live.png?v=jc3", cat: "/hero/hero-modern-cat-one.svg?v=one1", width: 340, height: 360 },
 ] as const;
 
 export function HeroSection() {
@@ -109,6 +109,7 @@ export function HeroSection() {
                   decoding="async"
                 />
               ) : null}
+              {art.era === "modern" ? null : (
               <div className="hero-art-live">
                 <img
                   src={art.live}
@@ -118,6 +119,7 @@ export function HeroSection() {
                   decoding="async"
                 />
               </div>
+              )}
             </div>
           ))}
         </HeroArt>

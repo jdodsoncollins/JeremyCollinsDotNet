@@ -320,7 +320,7 @@
 
 :root[data-era="modern"] .hero-section.is-live .hero-art-modern,
 :root[data-era="modern"] .hero-section:hover .hero-art-modern {
-  animation: hero-modern-idle 3.8s ease-in-out infinite;
+  animation: none;
 }
 
 @keyframes hero-cloud-shadow {

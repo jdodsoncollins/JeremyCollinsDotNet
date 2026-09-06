@@ -28,14 +28,16 @@
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
-  -webkit-mask-image: url("/hero/hero-modern.png?v=gap5");
-  mask-image: url("/hero/hero-modern.png?v=gap5");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-position: top right;
-  mask-position: top right;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  display: none;
+}
+
+:root[data-era="modern"] .hero-art-live {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+:root[data-era="modern"] .hero-art-still {
+  opacity: 1 !important;
 }
 
 /* Stills stay up. Live strips jump frames. */

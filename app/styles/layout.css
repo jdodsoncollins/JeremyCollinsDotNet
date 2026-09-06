@@ -305,10 +305,11 @@
   animation: hero-live-sheet 0.86s steps(6, jump-none) infinite;
 }
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-still {
-  opacity: 0;
+  opacity: 1;
 }
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-live {
-  opacity: 1;
+  display: none;
+  opacity: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -324,10 +325,11 @@
     animation: hero-live-sheet 0.86s steps(6, jump-none) infinite;
   }
   :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
-    opacity: 0;
+    opacity: 1;
   }
   :root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
-    opacity: 1;
+    display: none;
+    opacity: 0;
   }
 }
 
