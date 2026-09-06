@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+  <rect width="320" height="240" fill="#2a0810"/>
+  <rect y="0" width="320" height="18" fill="#3c1028"/>
+  <rect y="18" width="320" height="16" fill="#5a1838"/>
+  <rect y="34" width="320" height="16" fill="#7a2048"/>
+  <rect y="50" width="320" height="14" fill="#9a2850"/>
+  <rect y="64" width="320" height="14" fill="#b44848"/>
+  <rect y="78" width="320" height="14" fill="#c86838"/>
+  <rect y="92" width="320" height="14" fill="#e08830"/>
+  <rect y="106" width="320" height="16" fill="#f0a838"/>
+  <rect y="122" width="320" height="18" fill="#f8c050"/>
+  <ellipse cx="70" cy="168" rx="90" ry="22" fill="#2c5820"/>
+  <ellipse cx="180" cy="170" rx="120" ry="24" fill="#3c7c28"/>
+  <ellipse cx="280" cy="166" rx="70" ry="20" fill="#2c5820"/>
+  <path d="M0 150 Q80 128 160 138 T320 148 L320 240 L0 240 Z" fill="#3c7c28"/>
+  <path d="M0 172 Q90 158 170 166 T320 176 L320 240 L0 240 Z" fill="#2c5820"/>
+  <ellipse cx="168" cy="176" rx="38" ry="12" fill="#245018"/>
+  <path d="M0 200 L320 200 L320 240 L0 240 Z" fill="#1a3010"/>
+  <path d="M0 218 L320 218 L320 240 L0 240 Z" fill="#140810"/>
+  <rect x="226" y="128" width="6" height="28" fill="#5c3c18"/>
+  <rect x="268" y="118" width="7" height="38" fill="#5c3c18"/>
+  <polygon points="229,86 215,128 243,128" fill="#1c4818"/>
+  <polygon points="229,98 218,132 240,132" fill="#2c6820"/>
+  <polygon points="229,110 220,138 238,138" fill="#3c7c28"/>
+  <polygon points="271.5,70 252,122 291,122" fill="#1c4818"/>
+  <polygon points="271.5,84 256,128 287,128" fill="#2c6820"/>
+  <polygon points="271.5,98 258,136 285,136" fill="#3c7c28"/>
+</svg>
