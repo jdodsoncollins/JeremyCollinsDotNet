@@ -133,7 +133,8 @@
   :root[data-era="1990s"] .hero-section.is-live .hero-art-cat,
   :root[data-era="modern"][data-scroll-live] .hero-art-cat,
   :root[data-era="modern"] .hero-section.is-live .hero-art-cat,
-  .hero-critter {
+  .hero-critter,
+  .hero-bird {
     animation: none;
   }
 }
@@ -177,23 +178,42 @@
   opacity: 0.9;
 }
 
-.hero-critter-bird-a {
-  left: 52%;
-  top: 18%;
-  width: clamp(1.7rem, 5.5vw, 2.8rem);
+.hero-bird {
+  position: absolute;
+  left: 0;
+  background-image: url("/hero/fauna-modern-birds.svg?v=f2");
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  pointer-events: none;
 }
 
-.hero-critter-bird-b {
-  left: 14%;
-  top: 38%;
-  width: clamp(1.5rem, 5vw, 2.4rem);
+.hero-bird-1 {
+  top: 13%;
+  width: 1.2rem;
+  height: 0.75rem;
+  opacity: 0.52;
+  filter: blur(0.6px) saturate(0.48) brightness(1.22) contrast(0.88);
+  animation: fauna-flap 0.3s steps(2) infinite, fauna-cross-1 24s linear infinite;
 }
 
-.hero-critter-bird-c {
-  left: 72%;
-  top: 24%;
-  width: clamp(1.4rem, 4.6vw, 2.2rem);
-  opacity: 0.78;
+.hero-bird-2 {
+  top: 21%;
+  width: 0.92rem;
+  height: 0.58rem;
+  opacity: 0.4;
+  filter: blur(0.9px) saturate(0.4) brightness(1.28) contrast(0.85);
+  animation: fauna-flap 0.26s steps(2) infinite, fauna-cross-2 32s linear infinite;
+  animation-delay: 0s, -10s;
+}
+
+.hero-bird-3 {
+  top: 9%;
+  width: 0.7rem;
+  height: 0.44rem;
+  opacity: 0.34;
+  filter: blur(1.15px) saturate(0.35) brightness(1.35) contrast(0.82);
+  animation: fauna-flap 0.34s steps(2) infinite, fauna-cross-3 40s linear infinite;
+  animation-delay: 0s, -22s;
 }
 
 :root[data-era="1990s"] .hero-critter-squirrel {
@@ -206,18 +226,6 @@
 
 :root[data-era="1990s"] .hero-critter-rabbit-b {
   animation: fauna-sniff 1.6s steps(3, jump-none) infinite;
-}
-
-:root[data-era="modern"] .hero-critter-bird-a {
-  animation: fauna-fly 7s ease-in-out infinite;
-}
-
-:root[data-era="modern"] .hero-critter-bird-b {
-  animation: fauna-perch 3.4s ease-in-out infinite;
-}
-
-:root[data-era="modern"] .hero-critter-bird-c {
-  animation: fauna-glide 11s ease-in-out infinite alternate;
 }
 
 @keyframes fauna-squirrel {
@@ -236,17 +244,22 @@
   50% { transform: translate3d(5px, 0, 0); }
 }
 
-@keyframes fauna-fly {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(22px, -12px, 0); }
+@keyframes fauna-flap {
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
 }
 
-@keyframes fauna-perch {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  40% { transform: translate3d(0, -3px, 0); }
+@keyframes fauna-cross-1 {
+  0% { transform: translate3d(110vw, 0, 0); }
+  100% { transform: translate3d(-16vw, 16px, 0); }
 }
 
-@keyframes fauna-glide {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-28px, 8px, 0); }
+@keyframes fauna-cross-2 {
+  0% { transform: translate3d(118vw, 0, 0); }
+  100% { transform: translate3d(-20vw, -10px, 0); }
+}
+
+@keyframes fauna-cross-3 {
+  0% { transform: translate3d(105vw, 0, 0); }
+  100% { transform: translate3d(-14vw, 8px, 0); }
 }
