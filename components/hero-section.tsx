@@ -5,7 +5,7 @@ import { HeroCtas } from "@/components/hero-ctas";
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=gap3", live: "/hero/hero-1980s-live.png?v=era1", cat: "/hero/hero-1980s-cat.svg?v=gap3", width: 340, height: 268 },
   { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cc3", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern-one.svg?v=a1", live: "/hero/hero-modern-live.png?v=a1", cat: "/hero/hero-modern-cat-one.svg?v=a1", width: 431, height: 420 },
+  { era: "modern", still: "/hero/hero-modern-sit.svg?v=sit1", live: "/hero/hero-modern-sit-live.png?v=sit1", cat: "/hero/hero-modern-sit-cat.svg?v=sit1", width: 431, height: 420 },
 ] as const;
 
 export function HeroSection() {
