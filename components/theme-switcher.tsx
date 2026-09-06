@@ -7,13 +7,13 @@ const STORAGE_KEY = "jeremycollins-theme-era";
 
 const ERA_LABELS: Record<(typeof THEMES)[number], string> = {
   "1980s": "1980s",
-  "1990s": "Retro",
+  "1990s": "1990s",
   modern: "Modern",
 };
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
   "1980s": "Red-phosphor CRT. Four values, scanlines, no full-color landscape. Your pick sticks.",
-  "1990s": "Beige, bevels, and a monospace font that refuses to antialias. Your pick sticks.",
+  "1990s": "Beige, bevels, and a font that refuses to antialias. Your pick sticks.",
   modern:
     "A glade at dusk for fun, then quieter SaaS glass below. Your pick sticks.",
 };
