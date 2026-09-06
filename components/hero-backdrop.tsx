@@ -19,7 +19,6 @@ export function HeroBackdrop() {
       <div className="hero-paint-shift" />
       <div className="hero-canopy" />
       <div className="hero-cloud-shadow" />
-      <div className="hero-silhouette" />
       <div className="hero-backdrop-clouds">
         <span className="hero-cloud hero-cloud-a" />
         <span className="hero-cloud hero-cloud-b" />

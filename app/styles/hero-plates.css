@@ -290,17 +290,7 @@
 }
 
 :root[data-era="modern"] .hero-silhouette {
-  display: block;
-  position: absolute;
-  top: 16%;
-  left: -8%;
-  width: 22px;
-  height: 10px;
-  background: #1a140e;
-  clip-path: polygon(0 55%, 22% 40%, 40% 48%, 62% 18%, 78% 42%, 100% 50%, 78% 62%, 52% 58%, 28% 70%, 8% 62%);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
 
 :root[data-era="modern"] .hero-section.is-live .hero-cloud-shadow,
@@ -311,11 +301,6 @@
 :root[data-era="modern"] .hero-section.is-live .hero-canopy,
 :root[data-era="modern"] .hero-section:hover .hero-canopy {
   animation: hero-canopy-breathe 16s ease-in-out infinite;
-}
-
-:root[data-era="modern"] .hero-section.is-live .hero-silhouette,
-:root[data-era="modern"] .hero-section:hover .hero-silhouette {
-  animation: hero-silhouette-cross 26s linear infinite;
 }
 
 :root[data-era="modern"] .hero-section.is-live .hero-puff,
