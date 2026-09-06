@@ -90,3 +90,75 @@
     transition: none;
   }
 }
+
+/* Extra era frames while scrolling. Stars / paint jitter stand in for
+   new sprite sheets so registration never drifts. */
+.hero-crt-stars,
+.hero-paint-shift {
+  display: none;
+  pointer-events: none;
+}
+
+:root[data-era="1980s"] .hero-crt-stars {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #6a3038 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 9%, #4a2028 50%, transparent 51%),
+    radial-gradient(2px 2px at 47% 22%, #6a3038 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 14%, #4a2028 50%, transparent 51%),
+    radial-gradient(1px 1px at 81% 11%, #6a3038 50%, transparent 51%),
+    radial-gradient(2px 2px at 91% 27%, #4a2028 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 36%, #6a3038 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 31%, #4a2028 50%, transparent 51%);
+  image-rendering: pixelated;
+}
+
+:root[data-era="1980s"][data-scroll-live] .hero-crt-stars {
+  animation: era-stars-4fps 0.5s steps(2, jump-none) infinite;
+}
+
+:root[data-era="1990s"] .hero-paint-shift {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(184, 144, 88, 0.08), transparent 42%),
+    radial-gradient(ellipse at 70% 40%, rgba(255, 248, 230, 0.06), transparent 46%);
+  mix-blend-mode: soft-light;
+}
+
+:root[data-era="1990s"][data-scroll-live] .hero-paint-shift {
+  animation: era-paint-15fps 0.4s steps(6, jump-none) infinite;
+}
+
+:root[data-era="1980s"][data-scroll-live] .hero-backdrop-photo {
+  animation: era-plate-4fps 0.5s steps(2, jump-none) infinite;
+}
+
+@keyframes era-stars-4fps {
+  from { opacity: 0.35; }
+  to { opacity: 0.8; }
+}
+
+@keyframes era-paint-15fps {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.85; }
+  50% { transform: translate3d(1px, -1px, 0); opacity: 1; }
+}
+
+@keyframes era-plate-4fps {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-era="1980s"][data-scroll-live] .hero-crt-stars,
+  :root[data-era="1990s"][data-scroll-live] .hero-paint-shift,
+  :root[data-era="1980s"][data-scroll-live] .hero-backdrop-photo {
+    animation: none;
+  }
+}
