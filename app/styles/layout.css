@@ -252,7 +252,7 @@
 :root[data-era="modern"] .hero-art-modern .hero-art-still,
 :root[data-era="modern"] .hero-art-modern .hero-art-cat,
 :root[data-era="modern"] .hero-art-modern .hero-art-live img {
-  filter: brightness(1.18) contrast(0.9) saturate(0.82);
+  filter: none;
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
@@ -275,8 +275,8 @@
     );
   mix-blend-mode: screen;
   opacity: 0.7;
-  -webkit-mask-image: url("/hero/hero-modern-sit-mask.png?v=sit1");
-  mask-image: url("/hero/hero-modern-sit-mask.png?v=sit1");
+  -webkit-mask-image: url("/hero/hero-modern-d-mask.png?v=d1");
+  mask-image: url("/hero/hero-modern-d-mask.png?v=d1");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;

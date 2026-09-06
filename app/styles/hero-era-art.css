@@ -96,11 +96,11 @@
 }
 
 :root[data-era="modern"] .hero-art-cat {
-  transform-origin: 84% 90%;
+  transform-origin: 84% 99%;
 }
 
 :root[data-era="modern"] .hero-art-modern .hero-art-cat {
-  filter: brightness(1.18) contrast(0.9) saturate(0.82);
+  filter: none;
 }
 
 :root[data-era="1980s"][data-scroll-live] .hero-art-cat,
