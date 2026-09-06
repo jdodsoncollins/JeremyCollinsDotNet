@@ -9,7 +9,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6 era-reveal">
 
         <div className="mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
@@ -38,7 +38,6 @@ export function AboutSection() {
             </p>
           </div>
 
-          {/* Timeline */}
           <div>
             <p className="text-xs text-muted-foreground mb-6">
               Experience

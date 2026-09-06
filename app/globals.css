@@ -4,6 +4,7 @@
 @import "./styles/hero-plates.css";
 @import "./styles/ancient-retro.css";
 @import "./styles/eras.css";
+@import "./styles/era-scroll.css";
 
 .theme-disclosure {
   position: relative;

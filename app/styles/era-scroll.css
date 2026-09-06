@@ -1,0 +1,92 @@
+/* Era-framed scroll. JS commits --era-parallax at 4 / 15 / 30 fps.
+   translate is used so existing transform: scale() on plates stays intact. */
+
+.hero-backdrop-photo {
+  translate: 0 var(--era-parallax, 0px);
+}
+
+.hero-art {
+  translate: 0 calc(var(--era-parallax, 0px) * 0.42);
+}
+
+:root[data-era="1980s"] .hero-backdrop-photo,
+:root[data-era="1980s"] .hero-art {
+  image-rendering: pixelated;
+}
+
+/* Hold-frame bob while the page is actually scrolling. Stills stay up. */
+:root[data-era="1980s"][data-scroll-live] .hero-art-1980s .hero-art-still {
+  animation: era-bob-4fps 0.5s steps(2, jump-none) infinite;
+}
+
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-still {
+  animation: era-bob-15fps 0.4s steps(6, jump-none) infinite;
+}
+
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
+  animation: era-bob-30fps 0.33s linear infinite;
+}
+
+@keyframes era-bob-4fps {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -4px, 0); }
+}
+
+@keyframes era-bob-15fps {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -3px, 0); }
+}
+
+@keyframes era-bob-30fps {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -2px, 0); }
+}
+
+/* Section reveals: same frame budget as the camera. */
+.era-reveal {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+.era-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+:root[data-era="1980s"] .era-reveal {
+  transition:
+    opacity 0.5s steps(2, jump-end),
+    transform 0.5s steps(2, jump-end);
+}
+
+:root[data-era="1990s"] .era-reveal {
+  transition:
+    opacity 0.46s steps(7, jump-end),
+    transform 0.46s steps(7, jump-end);
+}
+
+:root[data-era="modern"] .era-reveal {
+  transition:
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-backdrop-photo,
+  .hero-art {
+    translate: none;
+  }
+
+  :root[data-era="1980s"][data-scroll-live] .hero-art-1980s .hero-art-still,
+  :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-still,
+  :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
+    animation: none;
+  }
+
+  .era-reveal,
+  .era-reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

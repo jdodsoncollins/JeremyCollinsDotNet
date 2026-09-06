@@ -5,6 +5,7 @@ import { CircuitBackground } from "@/components/circuit-background";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { EraScroll } from "@/components/era-scroll";
 import { homeJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
+      <EraScroll />
       <CircuitBackground />
       <div className="relative z-10">
         <Header />
