@@ -24,7 +24,7 @@ export function HeroSection() {
             <a
               href="#projects"
               aria-label="View projects"
-              className="hero-cta hero-cta-projects inline-flex items-items gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hero-cta hero-cta-projects inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
             >
               <span className="hero-cta-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
