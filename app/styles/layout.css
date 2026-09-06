@@ -275,8 +275,8 @@
     );
   mix-blend-mode: screen;
   opacity: 0.7;
-  -webkit-mask-image: url("/hero/hero-modern.png?v=gap5");
-  mask-image: url("/hero/hero-modern.png?v=gap5");
+  -webkit-mask-image: url("/hero/hero-modern.png?v=a1");
+  mask-image: url("/hero/hero-modern.png?v=a1");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
