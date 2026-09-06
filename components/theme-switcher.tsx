@@ -12,10 +12,9 @@ const ERA_LABELS: Record<(typeof THEMES)[number], string> = {
 };
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
-  "1980s": "Red-phosphor CRT. Four values, scanlines, no full-color landscape. Your pick sticks.",
-  "1990s": "Beige, bevels, and a font that refuses to antialias. Your pick sticks.",
-  modern:
-    "A glade at dusk for fun, then quieter SaaS glass below. Your pick sticks.",
+  "1980s": "Red-phosphor CRT. Four values, scanlines, no full-color landscape.",
+  "1990s": "Beige, bevels, and a font that refuses to antialias.",
+  modern: "A glade at dusk for fun, then quieter SaaS glass below.",
 };
 
 type EraTheme = (typeof THEMES)[number];
@@ -25,7 +24,7 @@ function isEraTheme(value: string | undefined): value is EraTheme {
 }
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState<EraTheme>("1980s");
+  const [theme, setTheme] = useState<EraTheme>("modern");
   const [panelOpen, setPanelOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);

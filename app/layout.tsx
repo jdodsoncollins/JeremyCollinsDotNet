@@ -102,13 +102,11 @@ const themeInitScript = `
     const key = "jeremycollins-theme-era";
     const themes = ["1980s", "1990s", "modern"];
     const saved = window.localStorage.getItem(key);
-    const theme = themes.includes(saved || "")
-      ? saved
-      : themes[Math.floor(Math.random() * themes.length)];
+    const theme = themes.includes(saved || "") ? saved : "modern";
 
-    document.documentElement.dataset.era = theme || "1980s";
+    document.documentElement.dataset.era = theme || "modern";
   } catch {
-    document.documentElement.dataset.era = "1980s";
+    document.documentElement.dataset.era = "modern";
   }
 
   try {
@@ -134,7 +132,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-era="1980s"
+      data-era="modern"
       suppressHydrationWarning
       className={`${ibmPlexSans.variable} ${spaceMono.variable} ${vt323.variable} ${pixelify.variable} bg-background`}
     >
