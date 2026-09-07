@@ -265,21 +265,6 @@
   border-radius: 2px;
 }
 
-:root[data-era="1990s"] article::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  background:
-    linear-gradient(90deg, #f4d13a 0 50%, #000080 50% 100%),
-    #f4d13a;
-  border: 2px solid #202020;
-  box-shadow: inset 2px 2px #fff6a8, inset -2px -2px #8c7618, 2px 2px 0 #050505;
-  pointer-events: none;
-}
-
 :root[data-era="1990s"] .hacf-streak::before,
 :root[data-era="1990s"] .hacf-streak::after,
 :root[data-era="1990s"] .hacf-flare::after {
