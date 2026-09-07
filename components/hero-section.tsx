@@ -4,8 +4,8 @@ import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=px2", live: "/hero/hero-1980s-live.png?v=px2", cat: "/hero/hero-1980s-cat.svg?v=px2", width: 340, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cc3", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern-d.svg?v=kneel0906", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat.svg?v=kneel0906", width: 600, height: 560 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat-body.svg?v=wag1", catTail: "/hero/hero-1990s-cat-tail.svg?v=wag1", width: 320, height: 280 },
+  { era: "modern", still: "/hero/hero-modern-d.svg?v=kneel0906", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat-body.svg?v=wag1", catTail: "/hero/hero-modern-d-cat-tail.svg?v=wag1", width: 600, height: 560 },
 ] as const;
 
 export function HeroSection() {
@@ -101,8 +101,18 @@ export function HeroSection() {
               />
               {"cat" in art ? (
                 <img
-                  className="hero-art-cat"
+                  className="hero-art-cat hero-art-cat-body"
                   src={art.cat}
+                  width={art.width}
+                  height={art.height}
+                  alt=""
+                  decoding="async"
+                />
+              ) : null}
+              {"catTail" in art ? (
+                <img
+                  className="hero-art-cat hero-art-cat-tail"
+                  src={art.catTail}
                   width={art.width}
                   height={art.height}
                   alt=""
