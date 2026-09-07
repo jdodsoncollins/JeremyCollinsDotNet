@@ -4,8 +4,8 @@ import { HeroCtas } from "@/components/hero-ctas";
 
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=px2", live: "/hero/hero-1980s-live.png?v=px2", cat: "/hero/hero-1980s-cat.svg?v=px2", width: 340, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat-body.svg?v=wag1", catTail: "/hero/hero-1990s-cat-tail.svg?v=wag1", width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern-d.svg?v=kneel0906", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat-body.svg?v=wag1", catTail: "/hero/hero-modern-d-cat-tail.svg?v=wag1", width: 600, height: 560 },
+  { era: "1990s", still: "/hero/hero-1990s.svg?v=cc3", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=cc3", catLive: "/hero/hero-1990s-cat-live.png?v=wag2", catFrames: 4, width: 320, height: 280 },
+  { era: "modern", still: "/hero/hero-modern-d.svg?v=kneel0906", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat.svg?v=kneel0906", catLive: "/hero/hero-modern-d-cat-live.png?v=wag2", catFrames: 6, width: 600, height: 560 },
 ] as const;
 
 export function HeroSection() {
@@ -101,7 +101,7 @@ export function HeroSection() {
               />
               {"cat" in art ? (
                 <img
-                  className="hero-art-cat hero-art-cat-body"
+                  className="hero-art-cat"
                   src={art.cat}
                   width={art.width}
                   height={art.height}
@@ -109,15 +109,16 @@ export function HeroSection() {
                   decoding="async"
                 />
               ) : null}
-              {"catTail" in art ? (
-                <img
-                  className="hero-art-cat hero-art-cat-tail"
-                  src={art.catTail}
-                  width={art.width}
-                  height={art.height}
-                  alt=""
-                  decoding="async"
-                />
+              {"catLive" in art ? (
+                <div className="hero-art-cat-live">
+                  <img
+                    src={art.catLive}
+                    width={art.width * art.catFrames}
+                    height={art.height}
+                    alt=""
+                    decoding="async"
+                  />
+                </div>
               ) : null}
               {art.era === "modern" ? null : (
               <div className="hero-art-live">
