@@ -38,6 +38,30 @@ export function HeroBackdrop() {
           alt=""
           decoding="async"
         />
+        <img
+          className="hero-backdrop-1990s-plate hero-backdrop-1990s-phone"
+          src="/hero/hero-1990s-hill.png?v=pxm1"
+          width={760}
+          height={1650}
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-backdrop-1990s-plate hero-backdrop-1990s-md"
+          src="/hero/hero-1990s-hill-md.png?v=pxm1"
+          width={1400}
+          height={1800}
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-backdrop-1990s-plate hero-backdrop-1990s-wide"
+          src="/hero/hero-1990s-hill-wide.png?v=pxm1"
+          width={1680}
+          height={1100}
+          alt=""
+          decoding="async"
+        />
       </div>
       <div className="hero-plate-frames" />
       <div className="hero-crt-stars" />

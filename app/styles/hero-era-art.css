@@ -9,22 +9,18 @@
 }
 
 :root[data-era="1990s"] .hero-backdrop-photo {
-  background-image: url("/hero/hero-1990s-hill.svg?v=px1") !important;
+  background-image: none !important;
   image-rendering: pixelated !important;
   image-rendering: -moz-crisp-edges !important;
   image-rendering: crisp-edges !important;
+  transform: none !important;
+  overflow: hidden;
 }
 
 :root[data-era="1990s"] .hero-art-still,
 :root[data-era="1990s"] .hero-art-live img,
 :root[data-era="1990s"] .hero-art-cat {
   image-rendering: auto;
-}
-
-@media (min-width: 768px) {
-  :root[data-era="1990s"] .hero-backdrop-photo {
-    background-image: url("/hero/hero-1990s-hill-wide.svg?v=px1") !important;
-  }
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
@@ -298,9 +294,17 @@
   --hero-px: calc(9.75rem / 67);
 }
 
+:root[data-era="1990s"] {
+  --hero-px: calc(9.75rem / 280);
+}
+
 @media (min-width: 768px) {
   :root[data-era="1980s"] {
     --hero-px: calc(13.5rem / 67);
+  }
+
+  :root[data-era="1990s"] {
+    --hero-px: calc(13.5rem / 280);
   }
 }
 
@@ -308,11 +312,19 @@
   :root[data-era="1980s"] {
     --hero-px: calc(14.25rem / 67);
   }
+
+  :root[data-era="1990s"] {
+    --hero-px: calc(14.25rem / 280);
+  }
 }
 
 @media (max-aspect-ratio: 1/1) {
   :root[data-era="1980s"] {
     --hero-px: calc(10.25rem / 67);
+  }
+
+  :root[data-era="1990s"] {
+    --hero-px: calc(10.25rem / 280);
   }
 }
 
@@ -320,11 +332,19 @@
   :root[data-era="1980s"] {
     --hero-px: calc(10.5rem / 67);
   }
+
+  :root[data-era="1990s"] {
+    --hero-px: calc(10.5rem / 280);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
   :root[data-era="1980s"] {
     --hero-px: calc(11.25rem / 67);
+  }
+
+  :root[data-era="1990s"] {
+    --hero-px: calc(11.25rem / 280);
   }
 }
 
@@ -369,5 +389,49 @@
     display: block;
     width: calc(520 * var(--hero-px));
     height: calc(280 * var(--hero-px));
+  }
+}
+
+.hero-backdrop-1990s-plate {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  max-width: none;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  transform: translateX(-50%);
+}
+
+:root[data-era="1990s"] .hero-backdrop-1990s-phone {
+  display: block;
+  width: calc(760 * var(--hero-px));
+  height: calc(1650 * var(--hero-px));
+}
+
+@media (min-width: 600px) and (max-aspect-ratio: 1/1) {
+  :root[data-era="1990s"] .hero-backdrop-1990s-phone {
+    display: none;
+  }
+
+  :root[data-era="1990s"] .hero-backdrop-1990s-md {
+    display: block;
+    width: calc(1400 * var(--hero-px));
+    height: calc(1800 * var(--hero-px));
+  }
+}
+
+@media (min-width: 768px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="1990s"] .hero-backdrop-1990s-phone,
+  :root[data-era="1990s"] .hero-backdrop-1990s-md {
+    display: none;
+  }
+
+  :root[data-era="1990s"] .hero-backdrop-1990s-wide {
+    display: block;
+    width: calc(1680 * var(--hero-px));
+    height: calc(1100 * var(--hero-px));
   }
 }
