@@ -1,5 +1,5 @@
 /* Overrides so new era plates win without rewriting hero-plates.css. */
-/* Cache: cat sprite strip, no stacked frames */
+/* Cache: full-cat frames only, no tail fragments */
 
 :root[data-era="1980s"] .hero-backdrop-photo {
   background-image: none !important;
@@ -148,7 +148,7 @@
 :root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live img,
 :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live img,
 :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live img {
-  animation: cat-sheet-6 0.72s steps(6, jump-none) infinite;
+  animation: cat-sheet-4 0.64s steps(4, jump-none) infinite;
 }
 
 @keyframes hero-cat-1980s {
@@ -159,11 +159,6 @@
 @keyframes cat-sheet-4 {
   from { transform: translateX(0); }
   to { transform: translateX(-75%); }
-}
-
-@keyframes cat-sheet-6 {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% * 5 / 6)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
