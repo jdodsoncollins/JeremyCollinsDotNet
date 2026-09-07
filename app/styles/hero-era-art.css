@@ -1,5 +1,5 @@
 /* Overrides so new era plates win without rewriting hero-plates.css. */
-/* Cache: locked-body tail wag, original stills */
+/* Cache: locked-body tail wag v=lock2 */
 
 :root[data-era="1980s"] .hero-backdrop-photo {
   background-image: none !important;
