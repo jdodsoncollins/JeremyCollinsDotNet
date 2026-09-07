@@ -40,7 +40,7 @@ export function HeroBackdrop() {
         />
         <img
           className="hero-backdrop-1990s-plate hero-backdrop-1990s-phone"
-          src="/hero/hero-1990s-hill.png?v=pxm1"
+          src="/hero/hero-1990s-hill.png?v=pxm2"
           width={760}
           height={1650}
           alt=""
@@ -48,7 +48,7 @@ export function HeroBackdrop() {
         />
         <img
           className="hero-backdrop-1990s-plate hero-backdrop-1990s-md"
-          src="/hero/hero-1990s-hill-md.png?v=pxm1"
+          src="/hero/hero-1990s-hill-md.png?v=pxm2"
           width={1400}
           height={1800}
           alt=""
@@ -56,7 +56,7 @@ export function HeroBackdrop() {
         />
         <img
           className="hero-backdrop-1990s-plate hero-backdrop-1990s-wide"
-          src="/hero/hero-1990s-hill-wide.png?v=pxm1"
+          src="/hero/hero-1990s-hill-wide.png?v=pxm2"
           width={1680}
           height={1100}
           alt=""
