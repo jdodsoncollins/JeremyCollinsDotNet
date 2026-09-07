@@ -20,7 +20,7 @@
 :root[data-era="1990s"] .hero-art-still,
 :root[data-era="1990s"] .hero-art-live img,
 :root[data-era="1990s"] .hero-art-cat,
-:root[data-era="1990s"] .hero-art-cat-live img {
+:root[data-era="1990s"] .hero-art-cat-frame {
   image-rendering: pixelated;
 }
 
@@ -86,18 +86,21 @@
 .hero-art-cat-live {
   position: absolute;
   inset: 0;
-  overflow: hidden;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
-.hero-art-cat-live img {
-  display: block;
+.hero-art-cat-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: none;
-  max-height: 100%;
+  object-fit: contain;
+  object-position: top right;
+  opacity: 0;
+  pointer-events: none;
 }
 
 :root[data-era="1980s"] .hero-art-cat {
@@ -106,7 +109,7 @@
 }
 
 :root[data-era="modern"] .hero-art-modern .hero-art-cat,
-:root[data-era="modern"] .hero-art-modern .hero-art-cat-live img {
+:root[data-era="modern"] .hero-art-modern .hero-art-cat-frame {
   filter: none;
 }
 
@@ -120,6 +123,7 @@
 :root[data-era="modern"][data-scroll-live] .hero-art-modern > .hero-art-cat,
 :root[data-era="modern"] .hero-section.is-live .hero-art-modern > .hero-art-cat {
   opacity: 0;
+  visibility: hidden;
 }
 
 :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live,
@@ -127,40 +131,61 @@
 :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live,
 :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live {
   opacity: 1;
+  visibility: visible;
 }
 
-:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img,
-:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img {
-  animation: cat-sheet-4 0.56s steps(4, jump-none) infinite;
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame,
+:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame {
+  animation: cat-hold-4 0.56s infinite;
 }
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame:nth-child(1),
+:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame:nth-child(1) { animation-delay: 0s; }
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame:nth-child(2),
+:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame:nth-child(2) { animation-delay: -0.14s; }
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame:nth-child(3),
+:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame:nth-child(3) { animation-delay: -0.28s; }
+:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame:nth-child(4),
+:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame:nth-child(4) { animation-delay: -0.42s; }
 
-:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live img,
-:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live img {
-  animation: cat-sheet-6 0.72s steps(6, jump-none) infinite;
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame,
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame {
+  animation: cat-hold-6 0.72s infinite;
 }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(1),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(1) { animation-delay: 0s; }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(2),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(2) { animation-delay: -0.12s; }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(3),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(3) { animation-delay: -0.24s; }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(4),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(4) { animation-delay: -0.36s; }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(5),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(5) { animation-delay: -0.48s; }
+:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame:nth-child(6),
+:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame:nth-child(6) { animation-delay: -0.60s; }
 
 @keyframes hero-cat-1980s {
   from { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(0, -4px, 0); }
 }
 
-@keyframes cat-sheet-4 {
-  from { transform: translateX(0); }
-  to { transform: translateX(-75%); }
+@keyframes cat-hold-4 {
+  0%, 25% { opacity: 1; }
+  25.01%, 100% { opacity: 0; }
 }
 
-@keyframes cat-sheet-6 {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% * 5 / 6)); }
+@keyframes cat-hold-6 {
+  0%, 16.66% { opacity: 1; }
+  16.67%, 100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root[data-era="1980s"][data-scroll-live] .hero-art-cat,
   :root[data-era="1980s"] .hero-section.is-live .hero-art-cat,
-  :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img,
-  :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img,
-  :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live img,
-  :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live img,
+  :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-frame,
+  :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-frame,
+  :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-frame,
+  :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-frame,
   .hero-critter,
   .hero-bird,
   .hero-bird img {
@@ -172,6 +197,7 @@
   :root[data-era="modern"][data-scroll-live] .hero-art-modern > .hero-art-cat,
   :root[data-era="modern"] .hero-section.is-live .hero-art-modern > .hero-art-cat {
     opacity: 1;
+    visibility: visible;
   }
 
   :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live,
@@ -179,6 +205,7 @@
   :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live,
   :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
