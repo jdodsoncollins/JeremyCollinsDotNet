@@ -5,7 +5,7 @@ import { HeroCtas } from "@/components/hero-ctas";
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=px2", live: "/hero/hero-1980s-live.png?v=px2", cat: "/hero/hero-1980s-cat.svg?v=px2", width: 340, height: 268 },
   { era: "1990s", still: "/hero/hero-1990s.svg?v=bit16", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=bit16", frames: ["/hero/hero-1990s-cat-f0.png?v=swish1", "/hero/hero-1990s-cat-f1.png?v=swish1", "/hero/hero-1990s-cat-f2.png?v=swish1", "/hero/hero-1990s-cat-f3.png?v=swish1"], width: 320, height: 280 },
-  { era: "modern", still: "/hero/hero-modern-d.svg?v=hands1", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat.svg?v=cut2", frames: ["/hero/hero-modern-d-cat-f0.png?v=swish1", "/hero/hero-modern-d-cat-f1.png?v=swish1", "/hero/hero-modern-d-cat-f2.png?v=swish1", "/hero/hero-modern-d-cat-f3.png?v=swish1", "/hero/hero-modern-d-cat-f4.png?v=swish1", "/hero/hero-modern-d-cat-f5.png?v=swish1"], width: 600, height: 560 },
+  { era: "modern", still: "/hero/hero-modern-d.svg?v=hands2", live: "/hero/hero-modern-d-live.png?v=kneel0906", cat: "/hero/hero-modern-d-cat.svg?v=cut2", frames: ["/hero/hero-modern-d-cat-f0.png?v=swish1", "/hero/hero-modern-d-cat-f1.png?v=swish1", "/hero/hero-modern-d-cat-f2.png?v=swish1", "/hero/hero-modern-d-cat-f3.png?v=swish1", "/hero/hero-modern-d-cat-f4.png?v=swish1", "/hero/hero-modern-d-cat-f5.png?v=swish1"], width: 600, height: 560 },
 ] as const;
 
 export function HeroSection() {
