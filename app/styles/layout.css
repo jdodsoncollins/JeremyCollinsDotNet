@@ -251,7 +251,7 @@
 
 :root[data-era="modern"] .hero-art-modern .hero-art-still,
 :root[data-era="modern"] .hero-art-modern .hero-art-cat,
-:root[data-era="modern"] .hero-art-modern .hero-art-cat-frame,
+:root[data-era="modern"] .hero-art-modern .hero-art-cat-live img,
 :root[data-era="modern"] .hero-art-modern .hero-art-live img {
   filter: none;
 }
