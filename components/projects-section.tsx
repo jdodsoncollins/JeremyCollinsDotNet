@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 type Shot = {
   src: string;
@@ -265,11 +266,21 @@ function ProjectCard({
 
 export function ProjectsSection() {
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!expandedImage) {
       return;
     }
+
+    const root = document.documentElement;
+    const previousOverflow = document.body.style.overflow;
+    root.setAttribute("data-lightbox", "");
+    document.body.style.overflow = "hidden";
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -278,7 +289,11 @@ export function ProjectsSection() {
     };
 
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      root.removeAttribute("data-lightbox");
+      document.body.style.overflow = previousOverflow;
+    };
   }, [expandedImage]);
 
   const expandedIsPhone = PROJECTS.some(
@@ -286,6 +301,37 @@ export function ProjectsSection() {
       project.screenshotFrame === "phone" &&
       project.screenshots.some((shot) => shot.src === expandedImage),
   );
+
+  const lightbox =
+    expandedImage ? (
+      <div
+        className="fixed inset-0 z-[400] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
+        onClick={() => setExpandedImage(null)}
+      >
+        <div
+          className={`relative w-full ${
+            expandedIsPhone ? "max-w-xs" : "max-w-3xl"
+          }`}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button
+            onClick={() => setExpandedImage(null)}
+            className="absolute -top-10 right-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Close
+          </button>
+          <div className="border border-border overflow-hidden">
+            <Image
+              src={expandedImage}
+              alt="Expanded screenshot"
+              width={expandedIsPhone ? 400 : 1280}
+              height={expandedIsPhone ? 867 : 720}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    ) : null;
 
   return (
     <section
@@ -310,35 +356,7 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      {expandedImage ? (
-        <div
-          className="fixed inset-0 z-[300] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={() => setExpandedImage(null)}
-        >
-          <div
-            className={`relative w-full no-scanlines ${
-              expandedIsPhone ? "max-w-xs" : "max-w-3xl"
-            }`}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              onClick={() => setExpandedImage(null)}
-              className="absolute -top-10 right-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Close
-            </button>
-            <div className="border border-border overflow-hidden">
-              <Image
-                src={expandedImage}
-                alt="Expanded screenshot"
-                width={expandedIsPhone ? 400 : 1280}
-                height={expandedIsPhone ? 867 : 720}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {mounted && lightbox ? createPortal(lightbox, document.body) : null}
     </section>
   );
 }

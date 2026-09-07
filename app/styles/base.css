@@ -451,6 +451,11 @@
   z-index: 30;
 }
 
+html[data-lightbox] .hacf-scanlines,
+html[data-lightbox] .hacf-grain {
+  display: none;
+}
+
 /* HACF-inspired subtle grain/noise texture */
 .hacf-grain {
   position: fixed;
