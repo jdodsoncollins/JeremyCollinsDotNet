@@ -1,5 +1,5 @@
 /* Overrides so new era plates win without rewriting hero-plates.css. */
-/* Cache: locked-body tail wag v=lock2 */
+/* Cache: full-cat frames only, no tail fragments v=full2 */
 
 :root[data-era="1980s"] .hero-backdrop-photo {
   background-image: none !important;
@@ -142,7 +142,7 @@
 :root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live img,
 :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img,
 :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img {
-  animation: cat-sheet-4 0.88s steps(4, jump-none) infinite;
+  animation: cat-sheet-4 0.56s steps(4, jump-none) infinite;
 }
 
 :root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live img,
