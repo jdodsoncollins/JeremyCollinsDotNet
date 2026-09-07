@@ -1,4 +1,5 @@
 /* Overrides so new era plates win without rewriting hero-plates.css. */
+/* Cache: hands2 reaching pose */
 
 :root[data-era="1980s"] .hero-backdrop-photo {
   background-image: none !important;
