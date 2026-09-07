@@ -435,3 +435,61 @@
     height: calc(1100 * var(--hero-px));
   }
 }
+
+/* Modern forest: drop transform:scale (iOS rasterizes then blurs) and
+   paint with an <img> crop instead, same sit-spot as the old cover+scale. */
+:root[data-era="modern"] .hero-backdrop-photo {
+  background-image: none !important;
+  transform: none !important;
+  overflow: hidden;
+  filter: none;
+}
+
+.hero-backdrop-modern-plate {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 140%;
+  height: 140%;
+  max-width: none;
+  pointer-events: none;
+  object-fit: cover;
+  image-rendering: auto;
+  transform: translateX(-50%);
+}
+
+:root[data-era="modern"] .hero-backdrop-modern-phone {
+  display: block;
+  object-position: 50% 80%;
+}
+
+@media (min-width: 768px) {
+  :root[data-era="modern"] .hero-backdrop-modern-phone {
+    display: none;
+  }
+
+  :root[data-era="modern"] .hero-backdrop-modern-wide {
+    display: block;
+    width: 132%;
+    height: 132%;
+    object-position: 60% 68%;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  :root[data-era="modern"] .hero-backdrop-modern-phone {
+    width: 148%;
+    height: 148%;
+    object-position: 50% 82%;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 900px) and (min-aspect-ratio: 1/1) {
+  :root[data-era="modern"] .hero-backdrop-modern-wide,
+  :root[data-era="modern"] .hero-backdrop-modern-phone {
+    width: 145%;
+    height: 145%;
+    object-position: 58% 70%;
+  }
+}

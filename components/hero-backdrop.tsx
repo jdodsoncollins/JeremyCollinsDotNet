@@ -62,6 +62,22 @@ export function HeroBackdrop() {
           alt=""
           decoding="async"
         />
+        <img
+          className="hero-backdrop-modern-plate hero-backdrop-modern-phone"
+          src="/hero/hero-modern-forest.jpg?v=hq1"
+          width={1600}
+          height={1200}
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-backdrop-modern-plate hero-backdrop-modern-wide"
+          src="/hero/hero-modern-forest-wide.jpg?v=hq1"
+          width={1920}
+          height={1080}
+          alt=""
+          decoding="async"
+        />
       </div>
       <div className="hero-plate-frames" />
       <div className="hero-crt-stars" />
