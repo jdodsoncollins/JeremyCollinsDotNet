@@ -19,8 +19,9 @@
 
 :root[data-era="1990s"] .hero-art-still,
 :root[data-era="1990s"] .hero-art-live img,
-:root[data-era="1990s"] .hero-art-cat {
-  image-rendering: auto;
+:root[data-era="1990s"] .hero-art-cat,
+:root[data-era="1990s"] .hero-art-cat-live img {
+  image-rendering: pixelated;
 }
 
 :root[data-era="modern"] .hero-art-modern::after {
