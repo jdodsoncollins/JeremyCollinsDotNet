@@ -81,7 +81,7 @@ const PROJECTS: SideProject[] = [
     subtitle: "iOS app / Vercel deploy and incident ops",
     description:
       "Taktung (German: putting work on a beat) puts Vercel production on your phone. Pick a site and see health, the latest deploy, and whether something failed. Redeploy, promote, or roll back only after you confirm. A Vercel personal access token stays in iOS Secure Store; the phone calls api.vercel.com directly. No ads or tracking. Not affiliated with Vercel.",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/d3/fb/91d3fb80-b01d-552e-052b-faa397c80255/AppIcon-pulse-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/e6/e7/43e6e72c-3878-d449-d062-f1a8a0f75625/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     href: "https://apps.apple.com/us/app/taktung/id6805738660",
     hrefLabel: "View on the App Store",
     features: [
@@ -97,27 +97,32 @@ const PROJECTS: SideProject[] = [
     screenshotFrame: "phone",
     screenshots: [
       {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/19/10/331910d3-4287-a5f3-eb38-b6fce5fea7e6/3-01-home.png/1290x2796bb.jpg",
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/54/ee/1b/54ee1b8c-25fc-611d-a893-16e77fc5a24a/01-home.png/1290x2796bb.jpg",
         alt: "Taktung: site briefing with health, latest production deploy, and Check for issues",
         label: "Home",
       },
       {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/8b/e5/e98be52e-d091-b9eb-c92d-e2b507bb68c8/1-02-deploys.png/1290x2796bb.jpg",
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6e/23/3e/6e233e7f-1d17-f916-6886-3be67bfa53bc/02-deploys.png/1290x2796bb.jpg",
         alt: "Taktung: production deploys with READY status, activity age, and build screenshots",
         label: "Deploys",
       },
       {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e3/67/98/e367980b-1c35-a2ea-e094-c28413b5d5d2/2-06-sites.png/1290x2796bb.jpg",
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/da/a3/3ddaa3b2-4fd7-89d0-978c-6a3b74fe66d8/03-activity.png/1290x2796bb.jpg",
+        alt: "Taktung: activity feed of production deploys marked READY",
+        label: "Activity",
+      },
+      {
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/f5/9c/92f59c1c-1085-99c9-311b-4f23966b044f/06-sites.png/1290x2796bb.jpg",
         alt: "Taktung: site picker with production health for each Vercel project",
         label: "Sites",
       },
       {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/66/ab/56/66ab56a4-d000-e02c-5e3d-a0dafdeff4de/5-04-search.png/1290x2796bb.jpg",
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/9a/7f/a79a7f2e-42fb-6ba6-79fa-d575519e77d8/04-search.png/1290x2796bb.jpg",
         alt: "Taktung: search with Apple Intelligence across deploys, domains, and logs",
         label: "Search",
       },
       {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/5f/63/f75f63ab-00e6-1bb6-a2ba-111b1728d5f9/4-05-settings.png/1290x2796bb.jpg",
+        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/b5/2d/93b52d9d-ac5e-8ece-8e33-a0529659bf5c/05-settings.png/1290x2796bb.jpg",
         alt: "Taktung: settings with Vercel personal access token stored on device",
         label: "Settings",
       },
