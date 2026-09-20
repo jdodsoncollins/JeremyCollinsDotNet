@@ -22,7 +22,7 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - Generated static PDF resume available at `/resume/jeremy-collins-resume.pdf`.
 - OAuth helpers:
   - `GET /oauth` — no-store callback page for X OAuth 2.0 PKCE headless flows; displays the one-time callback URL for the waiting local CLI without exchanging or persisting tokens.
-  - `GET /mobileflow-callback` — HTTPS redirect registered with Webflow; server 302 + HTML fallback hop to `mobileflow://oauth/callback`
+  - `GET /mobileflow-callback` — HTTPS redirect registered with Webflow; empty 302 hop to `mobileflow://oauth/callback`
   - `POST /mobileflow-token` — server-side code→token proxy (keeps `client_secret` off device; prefers `www` host to avoid apex 308 on POST)
 
 ### X OAuth callback
@@ -48,9 +48,11 @@ Set these on the JeremyCollins.net Vercel project before OAuth will complete:
 | --- | --- |
 | `WEBFLOW_CLIENT_ID` | Public Webflow App client id (must match MobileflowRN) |
 | `WEBFLOW_CLIENT_SECRET` | Webflow App secret (server only) |
-| `WEBFLOW_REDIRECT_URI` | Optional; defaults to `https://jeremycollins.net/mobileflow-callback` |
+| `WEBFLOW_REDIRECT_URI` | Optional; defaults to `https://www.jeremycollins.net/mobileflow-callback` |
 
-The Webflow App dashboard redirect URI must be exactly `https://jeremycollins.net/mobileflow-callback`.
+Register this redirect URI in the Webflow App dashboard (www, not apex — Vercel 308s apex to www and in-app Safari reloads):
+
+`https://www.jeremycollins.net/mobileflow-callback`
 
 ## Resume
 

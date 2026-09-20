@@ -16,7 +16,8 @@ import { NextRequest, NextResponse } from 'next/server';
  */
 
 const WEBFLOW_TOKEN_URL = 'https://api.webflow.com/oauth/access_token';
-const DEFAULT_REDIRECT = 'https://jeremycollins.net/mobileflow-callback';
+const DEFAULT_REDIRECT = 'https://www.jeremycollins.net/mobileflow-callback';
+const APEX_REDIRECT = 'https://jeremycollins.net/mobileflow-callback';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -106,7 +107,7 @@ export async function POST(request: NextRequest) {
     const allowed = new Set([
       configuredRedirect,
       DEFAULT_REDIRECT,
-      'https://www.jeremycollins.net/mobileflow-callback',
+      APEX_REDIRECT,
     ]);
     if (!allowed.has(redirectUri)) {
       return NextResponse.json(
@@ -114,9 +115,9 @@ export async function POST(request: NextRequest) {
         { status: 400, headers },
       );
     }
-    // Always send the apex redirect registered with Webflow (must match authorize URL).
+    // Must match the redirect_uri used on the authorize request.
     upstreamBody.code = body.code;
-    upstreamBody.redirect_uri = DEFAULT_REDIRECT;
+    upstreamBody.redirect_uri = redirectUri;
     if (body.code_verifier) {
       upstreamBody.code_verifier = body.code_verifier;
     }
