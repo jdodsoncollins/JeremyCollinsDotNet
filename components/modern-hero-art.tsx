@@ -3,10 +3,13 @@
 import { useEffect, useRef } from "react";
 
 const SHEETS = {
-  idle: "/hero/hero-modern-v2-idle.webp",
-  petting: "/hero/hero-modern-v2-petting.webp",
+  idle: "/hero/hero-modern-v3-idle.webp",
+  petting: "/hero/hero-modern-v3-petting.webp",
 };
-const IDLE_FRAMES = [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1];
+const FRAME_COUNT = 16;
+const COLUMNS = 4;
+const ROWS = 4;
+const FRAME_MS = { idle: 200, petting: 100 };
 
 export function ModernHeroArt() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -29,9 +32,9 @@ export function ModernHeroArt() {
     let mode: keyof typeof SHEETS = "idle";
 
     const draw = () => {
-      const frame = mode === "idle" ? IDLE_FRAMES[step] : step;
+      const frame = step;
       sprite.style.backgroundImage = `url("${SHEETS[mode]}")`;
-      sprite.style.backgroundPosition = `${(frame % 4) * 100 / 3}% ${Math.floor(frame / 4) * 100}%`;
+      sprite.style.backgroundPosition = `${(frame % COLUMNS) * 100 / (COLUMNS - 1)}% ${Math.floor(frame / COLUMNS) * 100 / (ROWS - 1)}%`;
       root.dataset.animation = mode;
     };
     const stop = () => {
@@ -49,14 +52,13 @@ export function ModernHeroArt() {
         step = 0;
       } else {
         step += 1;
-        const count = mode === "idle" ? IDLE_FRAMES.length : 8;
-        if (step >= count) {
+        if (step >= FRAME_COUNT) {
           step = 0;
           if (mode === "petting" && !interacting) mode = "idle";
         }
       }
       draw();
-      timer = window.setTimeout(tick, mode === "idle" ? 300 : 200);
+      timer = window.setTimeout(tick, FRAME_MS[mode]);
     };
     const sync = () => {
       stop();
@@ -71,7 +73,7 @@ export function ModernHeroArt() {
       }
       root.dataset.ready = "true";
       draw();
-      timer = window.setTimeout(tick, mode === "idle" ? 300 : 200);
+      timer = window.setTimeout(tick, FRAME_MS[mode]);
     };
     const onScroll = () => {
       if (!active()) return;
@@ -135,7 +137,7 @@ export function ModernHeroArt() {
 
   return (
     <div ref={rootRef} className="hero-art-shot hero-art-modern modern-hero" aria-hidden="true">
-      <img className="hero-art-still modern-hero-poster" src="/hero/hero-modern-v2-still.webp" width={600} height={560} alt="" decoding="async" />
+      <img className="hero-art-still modern-hero-poster" src="/hero/hero-modern-v3-still.webp" width={600} height={560} alt="" decoding="async" />
       <div ref={spriteRef} className="modern-hero-sprite" />
     </div>
   );
