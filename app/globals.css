@@ -6,6 +6,7 @@
 @import "./styles/ancient-retro.css";
 @import "./styles/eras.css";
 @import "./styles/era-scroll.css";
+@import "./styles/modern-hero-animation.css";
 
 .theme-disclosure {
   position: relative;

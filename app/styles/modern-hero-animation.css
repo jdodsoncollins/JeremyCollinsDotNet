@@ -1,0 +1,27 @@
+/* Both figures share a fixed 600 x 560 cell, preserving their contact and baseline. */
+.modern-hero-sprite {
+  position: absolute;
+  inset: 0;
+  background-size: 400% 200%;
+  background-repeat: no-repeat;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modern-hero[data-ready] .modern-hero-poster {
+  visibility: hidden;
+}
+
+.modern-hero[data-ready] .modern-hero-sprite {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-hero[data-ready] .modern-hero-poster {
+    visibility: visible;
+  }
+
+  .modern-hero[data-ready] .modern-hero-sprite {
+    visibility: hidden;
+  }
+}
