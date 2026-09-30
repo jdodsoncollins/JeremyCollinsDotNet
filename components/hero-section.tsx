@@ -1,11 +1,11 @@
 import { HeroArt } from "@/components/hero-art";
 import { HeroBackdrop } from "@/components/hero-backdrop";
 import { HeroCtas } from "@/components/hero-ctas";
+import { RetroHeroArt } from "@/components/retro-hero-art";
 import { ModernHeroArt } from "@/components/modern-hero-art";
 
 const HERO_ART = [
   { era: "1980s", still: "/hero/hero-1980s.svg?v=px2", live: "/hero/hero-1980s-live.png?v=px2", cat: "/hero/hero-1980s-cat.svg?v=px2", width: 340, height: 268 },
-  { era: "1990s", still: "/hero/hero-1990s.svg?v=bit16", live: "/hero/hero-1990s-live.png?v=era1", cat: "/hero/hero-1990s-cat.svg?v=full2", catLive: "/hero/hero-1990s-cat-live.png?v=full2", catFrames: 4, width: 320, height: 280 },
 ] as const;
 
 export function HeroSection() {
@@ -109,17 +109,6 @@ export function HeroSection() {
                   decoding="async"
                 />
               ) : null}
-              {"catLive" in art ? (
-                <div className="hero-art-cat-live">
-                  <img
-                    src={art.catLive}
-                    width={art.width * art.catFrames}
-                    height={art.height}
-                    alt=""
-                    decoding="async"
-                  />
-                </div>
-              ) : null}
               <div className="hero-art-live">
                 <img
                   src={art.live}
@@ -131,6 +120,7 @@ export function HeroSection() {
               </div>
             </div>
           ))}
+          <RetroHeroArt />
           <ModernHeroArt />
         </HeroArt>
       </div>

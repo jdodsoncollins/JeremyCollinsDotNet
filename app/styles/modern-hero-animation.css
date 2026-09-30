@@ -8,20 +8,26 @@
   pointer-events: none;
 }
 
-.modern-hero[data-ready] .modern-hero-poster {
+.animated-hero[data-ready] .modern-hero-poster {
   visibility: hidden;
 }
 
-.modern-hero[data-ready] .modern-hero-sprite {
+.animated-hero[data-ready] .modern-hero-sprite {
   visibility: visible;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .modern-hero[data-ready] .modern-hero-poster {
+  .animated-hero[data-ready] .modern-hero-poster {
     visibility: visible;
   }
 
-  .modern-hero[data-ready] .modern-hero-sprite {
+  .animated-hero[data-ready] .modern-hero-sprite {
     visibility: hidden;
   }
+}
+
+/* 1990s: six native pixel poses, deliberately stepped with nearest-neighbour rendering. */
+.retro-hero .modern-hero-sprite {
+  background-size: 300% 200%;
+  image-rendering: pixelated;
 }
