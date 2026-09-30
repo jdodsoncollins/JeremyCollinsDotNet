@@ -1,9 +1,9 @@
-/* Sixteen registered 600 x 560 cells. Grounded regions and boundary poses match. */
+/* Paint complete registered cells on a single surface, including on mobile Safari. */
 .modern-hero-sprite {
   position: absolute;
   inset: 0;
-  background-size: 400% 400%;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
   visibility: hidden;
   pointer-events: none;
 }
@@ -28,6 +28,5 @@
 
 /* 1990s: six native pixel poses, deliberately stepped with nearest-neighbour rendering. */
 .retro-hero .modern-hero-sprite {
-  background-size: 300% 200%;
   image-rendering: pixelated;
 }

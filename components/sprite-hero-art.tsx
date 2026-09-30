@@ -16,12 +16,18 @@ export type HeroSpriteConfig = {
 
 export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
   const rootRef = useRef<HTMLDivElement>(null);
-  const spriteRef = useRef<HTMLDivElement>(null);
+  const spriteRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const root = rootRef.current;
     const sprite = spriteRef.current;
     if (!root || !sprite) return;
+    const context = sprite.getContext("2d");
+    if (!context) return;
+    context.imageSmoothingEnabled = config.era !== "1990s";
+    // Retain decoded sheets and paint whole cells on one surface. In particular,
+    // Safari must not swap/re-rasterize a CSS background while scrolling.
+    const sheets = { idle: new Image(), petting: new Image() };
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let ready = false;
@@ -33,11 +39,15 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let timer = 0;
     let step = 0;
     let mode: keyof typeof config.sheets = "idle";
+    let pendingInteraction = false;
 
     const draw = () => {
       const frame = step;
-      sprite.style.backgroundImage = `url("${config.sheets[mode]}")`;
-      sprite.style.backgroundPosition = `${(frame % config.columns) * 100 / (config.columns - 1)}% ${Math.floor(frame / config.columns) * 100 / (config.rows - 1)}%`;
+      context.clearRect(0, 0, config.width, config.height);
+      context.drawImage(sheets[mode],
+        (frame % config.columns) * config.width,
+        Math.floor(frame / config.columns) * config.height,
+        config.width, config.height, 0, 0, config.width, config.height);
       root.dataset.animation = mode;
     };
     const stop = () => {
@@ -50,9 +60,10 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       if (!active()) return;
       const interacting = touching || performance.now() - lastScroll < 720;
       // Complete a petting cycle before settling back to idle.
-      if (mode === "idle" && interacting) {
+      if (mode === "idle" && (interacting || pendingInteraction) && (step === 0 || step === config.frameCount - 1)) {
         mode = "petting";
         step = 0;
+        pendingInteraction = false;
       } else {
         step += 1;
         if (step >= config.frameCount) {
@@ -71,6 +82,7 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
           step = 0;
           delete root.dataset.ready;
           touching = false;
+          pendingInteraction = false;
         }
         return;
       }
@@ -82,16 +94,24 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       if (!active()) return;
       lastScroll = performance.now();
       if (mode === "idle") {
-        stop();
-        tick();
+        pendingInteraction = true;
+        if (step === 0 || step === config.frameCount - 1) {
+          stop();
+          tick();
+        }
       }
     };
     const onPointerDown = (event: PointerEvent) => {
       if (event.pointerType !== "touch" || !active()) return;
       pointerId = event.pointerId;
       touching = true;
-      stop();
-      tick();
+      if (mode === "idle") {
+        pendingInteraction = true;
+        if (step === 0 || step === config.frameCount - 1) {
+          stop();
+          tick();
+        }
+      }
     };
     const onPointerEnd = (event: PointerEvent) => {
       if (event.pointerId !== pointerId) return;
@@ -106,9 +126,9 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     const eraObserver = new MutationObserver(sync);
     eraObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-era"] });
 
-    const preload = Object.values(config.sheets).map((src) => {
-      const image = new Image();
-      image.src = src;
+    const preload = (Object.keys(sheets) as Array<keyof typeof sheets>).map((key) => {
+      const image = sheets[key];
+      image.src = config.sheets[key];
       return image.decode();
     });
     Promise.all(preload).then(() => {
@@ -141,7 +161,7 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
   return (
     <div ref={rootRef} className={`hero-art-shot hero-art-${config.era} animated-hero ${config.era === "modern" ? "modern-hero" : "retro-hero"}`} aria-hidden="true">
       <img className="hero-art-still modern-hero-poster" src={config.poster} width={config.width} height={config.height} alt="" decoding="async" />
-      <div ref={spriteRef} className="modern-hero-sprite" />
+      <canvas ref={spriteRef} className="modern-hero-sprite" width={config.width} height={config.height} />
     </div>
   );
 }
