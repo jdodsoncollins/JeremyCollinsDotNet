@@ -22,8 +22,7 @@ Personal site for Jeremy Collins, focused on product engineering, independent so
 - Generated static PDF resume available at `/resume/jeremy-collins-resume.pdf`.
 - OAuth helpers:
   - `GET /oauth` — no-store callback page for X OAuth 2.0 PKCE headless flows; displays the one-time callback URL for the waiting local CLI without exchanging or persisting tokens.
-  - `GET /mobileflow-callback` — HTTPS redirect registered with Webflow; empty 302 hop to `mobileflow://oauth/callback`
-  - `POST /mobileflow-token` — server-side code→token proxy (keeps `client_secret` off device; prefers `www` host to avoid apex 308 on POST)
+  - `/mobileflow-callback` and `/mobileflow-token` — retired, return `410 Gone`. Update Webflume to use its Webflow Cloud authentication service.
 
 ### X OAuth callback
 
@@ -40,19 +39,9 @@ xurl auth oauth2 --app JollinsOnline --headless
 
 After approving X authorization, copy the callback URL shown at `/oauth` and paste it into the waiting xurl command. The site does not log, exchange, or store the authorization code or tokens.
 
-### Mobileflow token proxy env (Vercel)
+### Retired Webflume authentication
 
-Set these on the JeremyCollins.net Vercel project before OAuth will complete:
-
-| Variable | Purpose |
-| --- | --- |
-| `WEBFLOW_CLIENT_ID` | Public Webflow App client id (must match MobileflowRN) |
-| `WEBFLOW_CLIENT_SECRET` | Webflow App secret (server only) |
-| `WEBFLOW_REDIRECT_URI` | Optional; defaults to `https://www.jeremycollins.net/mobileflow-callback` |
-
-Register this redirect URI in the Webflow App dashboard (www, not apex — Vercel 308s apex to www and in-app Safari reloads):
-
-`https://www.jeremycollins.net/mobileflow-callback`
+Webflume authentication moved to `https://webflume-auth.webflow.io`. This site no longer redirects app authorization responses or exchanges Webflow tokens. Remove the obsolete `WEBFLOW_CLIENT_ID`, `WEBFLOW_CLIENT_SECRET`, and `WEBFLOW_REDIRECT_URI` variables from this Vercel project; future deployments must not restore the old handlers. The unrelated `/oauth` CLI callback remains available.
 
 ## Resume
 
