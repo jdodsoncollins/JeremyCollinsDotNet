@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
-import { CatTracks } from "@/components/home-doodles";
 import styles from "@/app/home.module.css";
 
 const projects = [
@@ -13,13 +12,12 @@ const projects = [
 export function ProjectsSection() {
   return (
     <section id="projects" className={styles.projects} aria-labelledby="apps-title">
-      <div className={styles.sectionHeading}>
+      <div className={styles.sectionHeading} data-home-reveal>
         <div><h2 id="apps-title">Side projects</h2></div>
-        <CatTracks />
       </div>
       <div className={styles.projectList}>
         {projects.map(({ app, kind, title, description, features, shots }) => (
-          <article key={app.name} className={styles.project + " " + (kind === "codable" ? styles.codable : styles.taktung)}>
+          <article key={app.name} className={styles.project + " " + (kind === "codable" ? styles.codable : styles.taktung)} data-home-reveal>
             <div className={styles.projectCopy}>
               <div className={styles.appBrand}><Image src={app.icon} width={50} height={50} alt="" /><h3><Link href={app.detailHref}>{app.name}</Link></h3></div>
               <h4>{title}</h4>

@@ -3,7 +3,6 @@ import { HeroBackdrop } from "@/components/hero-backdrop";
 import { RetroHeroArt } from "@/components/retro-hero-art";
 import { ModernHeroArt } from "@/components/modern-hero-art";
 import { AppArrow } from "@/components/app-icons";
-import { PageTabs } from "@/components/home-doodles";
 import styles from "@/app/home.module.css";
 
 export function HeroSection() {
@@ -34,7 +33,6 @@ export function HeroSection() {
           </HeroArt>
         </div>
       </div>
-      <PageTabs />
     </section>
   );
 }

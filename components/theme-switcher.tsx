@@ -28,6 +28,8 @@ export function ThemeSwitcher() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const disclosureRef = useRef<HTMLButtonElement>(null);
+  const groupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const currentTheme = document.documentElement.dataset.era;
@@ -45,6 +47,7 @@ export function ThemeSwitcher() {
       if (event.key === "Escape") {
         setInfoOpen(false);
         setPanelOpen(false);
+        disclosureRef.current?.focus();
       }
     };
 
@@ -73,6 +76,7 @@ export function ThemeSwitcher() {
   return (
     <div ref={wrapRef} className="theme-switcher-wrap" aria-label="Site theme controls">
       <button
+        ref={disclosureRef}
         type="button"
         className="theme-disclosure"
         aria-expanded={panelOpen}
@@ -103,13 +107,29 @@ export function ThemeSwitcher() {
         data-open={panelOpen}
         hidden={!panelOpen}
       >
-        <div className="theme-switcher" role="radiogroup" aria-label="Theme era">
+        <div
+          ref={groupRef}
+          className="theme-switcher"
+          role="radiogroup"
+          aria-label="Theme era"
+          onKeyDown={event => {
+            const previous = event.key === "ArrowLeft" || event.key === "ArrowUp";
+            const next = event.key === "ArrowRight" || event.key === "ArrowDown";
+            if (!previous && !next && event.key !== "Home" && event.key !== "End") return;
+            event.preventDefault();
+            const current = THEMES.indexOf(theme);
+            const index = event.key === "Home" ? 0 : event.key === "End" ? THEMES.length - 1 : (current + (next ? 1 : -1) + THEMES.length) % THEMES.length;
+            updateTheme(THEMES[index]);
+            groupRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]')[index]?.focus();
+          }}
+        >
           {THEMES.map((era) => (
             <button
               key={era}
               type="button"
               role="radio"
               aria-checked={theme === era}
+              tabIndex={theme === era ? 0 : -1}
               aria-label={`${ERA_LABELS[era]} theme`}
               className="theme-switcher-option"
               data-active={theme === era}

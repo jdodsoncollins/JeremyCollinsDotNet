@@ -13,7 +13,7 @@ const roles = [
 export function AboutSection() {
   return (
     <section id="about" className={styles.about} aria-labelledby="about-title">
-      <div className={styles.aboutCopy}>
+      <div className={styles.aboutCopy} data-home-reveal>
         <h2 id="about-title">About me</h2>
         <p>I like working on products where knowing the business makes the engineering better.</p>
         <p>These days I spend a lot of time with agents and automation, so I can take on bigger systems without doing every step by hand.</p>
@@ -21,7 +21,7 @@ export function AboutSection() {
         <p>Outside of work, I hike, parent, read a lot, and build other apps and sites.</p>
         <Link href="/resume" className={styles.resumeLink}>View my resume <AppArrow /></Link>
       </div>
-      <div className={styles.experience}>
+      <div className={styles.experience} data-home-reveal>
         <h3 className={styles.experienceTitle}>Experience</h3>
         <ol>{roles.map(role => <li key={role.company}><div><h3>{role.company}</h3><p>{role.title}</p></div><span>{role.period}</span></li>)}</ol>
       </div>
