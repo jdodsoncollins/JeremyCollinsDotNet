@@ -34,14 +34,15 @@ export default function PaperAndGrainSupport() {
                 Paper &amp; Grain support
               </h1>
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                Fold, cut, draw, and turn a sheet in your hands. There is no
-                timer or losing state. Follow a lesson or explore Free fold at
-                your own pace.
+                Fold a sheet, cut it, draw on it, or turn it over. Follow a
+                lesson or explore Free Fold at your own pace. There is no
+                timer, and you cannot lose.
               </p>
               <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                Free for iPhone and iPad with iOS or iPadOS 26 or later, with
-                layouts and folding interactions designed for iPhone Duo.
-                No account, ads, subscriptions, or in-app purchases.
+                Paper &amp; Grain is free for iPhone and iPad running iOS or
+                iPadOS 26 or later. Its layouts and folding interactions are
+                designed for iPhone Duo. There are no accounts, ads,
+                subscriptions, or in-app purchases.
               </p>
             </div>
 
@@ -53,16 +54,16 @@ export default function PaperAndGrainSupport() {
                   </h2>
                   <div className="space-y-4 text-sm leading-relaxed">
                     <p>
-                      Choose the suggested lesson on the main menu, starting
-                      with First Fold. The lesson pages and Guidebook explain
-                      one movement at a time. You can revisit any of the eight
-                      included lessons or choose Free fold to work on your own
+                      Start with First Fold, the suggested lesson on the main
+                      menu. The lesson pages and Guidebook take you through one
+                      movement at a time. You can revisit any of the eight
+                      included lessons or choose Free Fold to work on your own
                       paper.
                     </p>
                     <p>
-                      Drag the controls card upward to read more of a lesson,
-                      or downward to give the paper more room. Guidebook help
-                      remains available while you work.
+                      Drag the controls card up to read more of a lesson, or
+                      down to give the paper more room. You can open the
+                      Guidebook while you work.
                     </p>
                   </div>
                 </section>
@@ -73,27 +74,28 @@ export default function PaperAndGrainSupport() {
                   </h2>
                   <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
                     <li>
-                      Place two fingers on the wood: pinch to zoom, slide them
-                      together to change the perspective, or twist to rotate.
-                      You can turn the view all the way around to the underside.
+                      Place two fingers on the wood. Pinch to zoom, slide both
+                      fingers in the same direction to change the perspective,
+                      or twist to rotate. You can rotate all the way around to
+                      see the underside.
                     </li>
                     <li>
                       Drag one finger on the wood to position the paper across
                       the fold guide.
                     </li>
                     <li>
-                      Pinch on the paper to fold or unfold. Let a movement
+                      Pinch on the paper to fold or unfold. Let the fold
                       settle before starting the next crease.
                     </li>
                     <li>
-                      In Position, pull an original sheet corner inward to curl
-                      it, then release to settle a fold. Move back toward the
-                      starting corner to set the curl aside.
+                      In Position, pull one of the original sheet corners inward
+                      to curl it, then release to settle a fold. To cancel the
+                      curl, move back toward the corner where you started.
                     </li>
                     <li>
-                      On a supported Duo, position the paper across the center
-                      guide before using the device fold. Hardware folding
-                      requires iOS 27.1 or later; touch gestures remain available.
+                      On a supported Duo, line up the paper with the center
+                      guide before folding the device. Device folding requires
+                      iOS 27.1 or later. Touch gestures are also available.
                     </li>
                   </ul>
                 </section>
@@ -105,9 +107,8 @@ export default function PaperAndGrainSupport() {
                   <p className="text-sm leading-relaxed">
                     Choose Center &amp; top view if the paper moves off screen
                     or becomes difficult to see. It centers the paper and
-                    restores a view from above without undoing your folds. Undo
-                    and Redo are available when you want to change the paper
-                    itself.
+                    restores a view from above without undoing your folds. Use
+                    Undo and Redo to change the paper itself.
                   </p>
                 </section>
 
@@ -117,20 +118,20 @@ export default function PaperAndGrainSupport() {
                   </h2>
                   <div className="space-y-4 text-sm leading-relaxed">
                     <p>
-                      Completed edits save locally on your device. Open Gallery
+                      The app saves completed edits on your device. Open Gallery
                       to return to a saved paper. If a save fails, keep the
-                      current paper open and use the offered save retry. If an
+                      current paper open and retry the save. If an
                       earlier save can be recovered, the app offers Open earlier
                       save.
                     </p>
                     <p>
-                      Sharing prepares an image preview before opening the
-                      system share sheet. Choose Share image to select where
-                      it goes. Cancelling leaves your paper unchanged.
+                      Sharing starts with an image preview. Choose Share image
+                      to open the system share sheet and select a destination.
+                      Cancelling leaves your paper unchanged.
                     </p>
                     <p>
-                      The workshop and bundled lessons work offline. There is
-                      no app-managed cloud sync; exported images and system
+                      The workshop and bundled lessons work offline. The app
+                      does not provide cloud sync. Exported images and system
                       backups are separate from your local gallery.
                     </p>
                   </div>
