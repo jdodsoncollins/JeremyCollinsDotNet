@@ -37,42 +37,70 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let pointerId: number | null = null;
     let lastScroll = -Infinity;
     let timer = 0;
+    let frameStart = 0;
     let step = 0;
     let mode: keyof typeof config.sheets = "idle";
     let pendingInteraction = false;
 
-    const draw = () => {
-      const frame = step;
-      context.clearRect(0, 0, config.width, config.height);
-      context.drawImage(sheets[mode],
+    const smooth = config.era === "modern";
+    // Mix premultiplied pixels on a scratch canvas. Source-over blending two
+    // transparent poses would make their silhouettes pulse in opacity.
+    const blend = document.createElement("canvas");
+    blend.width = config.width;
+    blend.height = config.height;
+    const blendContext = blend.getContext("2d");
+    const interacting = () => touching || performance.now() - lastScroll < 720;
+    const nextPose = () => {
+      if (mode === "idle" && (interacting() || pendingInteraction) && step === config.frameCount - 1) {
+        return { mode: "petting" as const, step: 0 };
+      }
+      const next = (step + 1) % config.frameCount;
+      return { mode: mode === "petting" && next === 0 && !interacting() ? "idle" as const : mode, step: next };
+    };
+    const paint = (target: CanvasRenderingContext2D, poseMode: keyof typeof sheets, frame: number) => {
+      target.drawImage(sheets[poseMode],
         (frame % config.columns) * config.width,
         Math.floor(frame / config.columns) * config.height,
         config.width, config.height, 0, 0, config.width, config.height);
+    };
+    const draw = (fraction = 0) => {
+      context.clearRect(0, 0, config.width, config.height);
+      if (smooth && blendContext) {
+        const next = nextPose();
+        blendContext.clearRect(0, 0, config.width, config.height);
+        blendContext.globalCompositeOperation = "source-over";
+        blendContext.globalAlpha = 1 - fraction;
+        paint(blendContext, mode, step);
+        blendContext.globalCompositeOperation = "lighter";
+        blendContext.globalAlpha = fraction;
+        paint(blendContext, next.mode, next.step);
+        blendContext.globalAlpha = 1;
+        blendContext.globalCompositeOperation = "source-over";
+        context.drawImage(blend, 0, 0);
+      } else {
+        paint(context, mode, step);
+      }
       root.dataset.animation = mode;
     };
     const stop = () => {
-      window.clearTimeout(timer);
+      window.cancelAnimationFrame(timer);
       timer = 0;
     };
     const active = () => visible && document.documentElement.dataset.era === config.era && !document.hidden && !motion.matches && ready;
-    const tick = () => {
+    const tick = (now: number) => {
       timer = 0;
       if (!active()) return;
-      const interacting = touching || performance.now() - lastScroll < 720;
-      // Complete a petting cycle before settling back to idle.
-      if (mode === "idle" && (interacting || pendingInteraction) && (step === 0 || step === config.frameCount - 1)) {
-        mode = "petting";
-        step = 0;
-        pendingInteraction = false;
-      } else {
-        step += 1;
-        if (step >= config.frameCount) {
-          step = 0;
-          if (mode === "petting" && !interacting) mode = "idle";
-        }
+      // Use elapsed time, not chained timeouts, so rendering work and scrolling
+      // cannot accumulate drift. Resuming visibility establishes a fresh clock.
+      while (now - frameStart >= config.frameMs[mode]) {
+        frameStart += config.frameMs[mode];
+        const next = nextPose();
+        if (next.mode !== mode) pendingInteraction = false;
+        mode = next.mode;
+        step = next.step;
       }
-      draw();
-      timer = window.setTimeout(tick, config.frameMs[mode]);
+      draw(smooth ? (now - frameStart) / config.frameMs[mode] : 0);
+      timer = window.requestAnimationFrame(tick);
     };
     const sync = () => {
       stop();
@@ -88,17 +116,14 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       }
       root.dataset.ready = "true";
       draw();
-      timer = window.setTimeout(tick, config.frameMs[mode]);
+      frameStart = performance.now();
+      timer = window.requestAnimationFrame(tick);
     };
     const onScroll = () => {
       if (!active()) return;
       lastScroll = performance.now();
       if (mode === "idle") {
         pendingInteraction = true;
-        if (step === 0 || step === config.frameCount - 1) {
-          stop();
-          tick();
-        }
       }
     };
     const onPointerDown = (event: PointerEvent) => {
@@ -107,10 +132,6 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       touching = true;
       if (mode === "idle") {
         pendingInteraction = true;
-        if (step === 0 || step === config.frameCount - 1) {
-          stop();
-          tick();
-        }
       }
     };
     const onPointerEnd = (event: PointerEvent) => {

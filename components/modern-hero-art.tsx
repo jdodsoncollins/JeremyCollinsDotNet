@@ -2,11 +2,11 @@ import { SpriteHeroArt, type HeroSpriteConfig } from "@/components/sprite-hero-a
 
 const CONFIG: HeroSpriteConfig = {
   era: "modern",
-  sheets: { idle: "/hero/hero-modern-v3-idle.webp", petting: "/hero/hero-modern-v3-petting.webp" },
-  poster: "/hero/hero-modern-v3-still.webp",
+  sheets: { idle: "/hero/hero-modern-v4-idle.webp", petting: "/hero/hero-modern-v4-petting.webp" },
+  poster: "/hero/hero-modern-v4-still.webp",
   width: 600, height: 560,
-  frameCount: 16, columns: 4, rows: 4,
-  frameMs: { idle: 200, petting: 100 },
+  frameCount: 64, columns: 8, rows: 8,
+  frameMs: { idle: 50, petting: 25 },
 };
 
 export function ModernHeroArt() {

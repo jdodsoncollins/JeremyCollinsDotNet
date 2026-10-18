@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { APP_PRODUCTS } from "@/lib/app-products";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -18,157 +20,16 @@ type SideProject = {
   icon: string;
   href: string;
   hrefLabel: string;
+  detailHref?: string;
   features: string[];
   screenshotFrame: "phone" | "web";
   screenshots: Shot[];
 };
 
 const PROJECTS: SideProject[] = [
-  {
-    name: "Codable",
-    subtitle: "iOS app / Safari web developer tools",
-    description:
-      "Safari-native web developer tools for iOS. Inspect HTML, styles, network requests, and console output. Run a JavaScript scratchpad, test responsive viewports, and generate code with Apple Intelligence. No monetization or tracking.",
-    icon: "/codable/codable-icon.png",
-    href: "https://apps.apple.com/us/app/codable/id1324741659",
-    hrefLabel: "View on the App Store",
-    features: [
-      "Element inspector with DOM tree",
-      "Console with JS execution",
-      "Network request monitor",
-      "Resizable viewport tester",
-      "JavaScript scratchpad",
-      "AI code generation (Apple Intelligence)",
-      "View pre-rendered page source",
-      "Edit CSS live on any node",
-    ],
-    screenshotFrame: "phone",
-    screenshots: [
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vwBoDeA6eaVZaQMV31VdaJpyxSLUbD.png",
-        alt: "Codable: Extension intro screen showing Safari-native web developer tools",
-        label: "Extension",
-      },
-      {
-        src: "/codable/IMG_0187.PNG",
-        alt: "Codable: Elements panel inspecting a selected Safari page paragraph",
-        label: "Elements",
-      },
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IT5OAZP3SDmVkAMRytVlHJnA2xYyoz.png",
-        alt: "Codable: Console panel showing JavaScript log output from a live page",
-        label: "Console",
-      },
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eQvswFWMeXE7PuAi41Pqzw9osBqBki.png",
-        alt: "Codable: Resize mode showing responsive viewport at iPhone Pro dimensions",
-        label: "Resize",
-      },
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IjtKYzN3A0zPrLA4Ovqmrwr501TTB7.png",
-        alt: "Codable: AI Code generation panel with prompt input and generated JavaScript",
-        label: "AI Code",
-      },
-      {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-C6qUg0GcQ7PtGVKfyDnsZyA8raicBy.png",
-        alt: "Codable: Scratchpad with syntax-highlighted JavaScript and live output",
-        label: "Scratchpad",
-      },
-    ],
-  },
-  {
-    name: "Taktung",
-    subtitle: "iOS app / Vercel deploy and incident ops",
-    description:
-      "Taktung (German: putting work on a beat) puts Vercel production on your phone. Pick a site and see health, the latest deploy, and whether something failed. Redeploy, promote, or roll back only after you confirm. A Vercel personal access token stays in iOS Secure Store; the phone calls api.vercel.com directly. No ads or tracking. Not affiliated with Vercel.",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/e6/e7/43e6e72c-3878-d449-d062-f1a8a0f75625/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-    href: "https://apps.apple.com/us/app/taktung/id6805738660",
-    hrefLabel: "View on the App Store",
-    features: [
-      "Site briefing and Check for issues",
-      "Deploys, build logs, and compare",
-      "Confirmed redeploy, promote, or rollback",
-      "Env drift by name and target",
-      "Domain, DNS, and SSL signals",
-      "Firewall and flag metadata",
-      "Filter production logs",
-      "Apple Intelligence search",
-    ],
-    screenshotFrame: "phone",
-    screenshots: [
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/54/ee/1b/54ee1b8c-25fc-611d-a893-16e77fc5a24a/01-home.png/1290x2796bb.jpg",
-        alt: "Taktung: site briefing with health, latest production deploy, and Check for issues",
-        label: "Home",
-      },
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6e/23/3e/6e233e7f-1d17-f916-6886-3be67bfa53bc/02-deploys.png/1290x2796bb.jpg",
-        alt: "Taktung: production deploys with READY status, activity age, and build screenshots",
-        label: "Deploys",
-      },
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/da/a3/3ddaa3b2-4fd7-89d0-978c-6a3b74fe66d8/03-activity.png/1290x2796bb.jpg",
-        alt: "Taktung: activity feed of production deploys marked READY",
-        label: "Activity",
-      },
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/f5/9c/92f59c1c-1085-99c9-311b-4f23966b044f/06-sites.png/1290x2796bb.jpg",
-        alt: "Taktung: site picker with production health for each Vercel project",
-        label: "Sites",
-      },
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/9a/7f/a79a7f2e-42fb-6ba6-79fa-d575519e77d8/04-search.png/1290x2796bb.jpg",
-        alt: "Taktung: search with Apple Intelligence across deploys, domains, and logs",
-        label: "Search",
-      },
-      {
-        src: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/b5/2d/93b52d9d-ac5e-8ece-8e33-a0529659bf5c/05-settings.png/1290x2796bb.jpg",
-        alt: "Taktung: settings with Vercel personal access token stored on device",
-        label: "Settings",
-      },
-    ],
-  },
-  {
-    name: "Codeatrophy",
-    subtitle: "React Native / iOS, Android, and web",
-    description:
-      "Codeatrophy is a reference to coding atrophy, our shared concern that using AI will lead us to refreshing less on the basics. This app is designed to be an interactive tutorial on web dev fundamentals.",
-    note: "Built with React Native for iOS, Android, and web. iOS and Android apps coming soon.",
-    icon: "/codeatrophy/codeatrophy-icon.png",
-    href: "https://codeatrophy.vercel.app/",
-    hrefLabel: "Open Codeatrophy",
-    features: [
-      "Guided path from basics toward interview-shaped problems",
-      "Algorithms, system design, AI, and CS tracks",
-      "Searchable lesson library",
-      "Nested tags",
-      "Private notes on device",
-      "Runnable examples in lessons",
-    ],
-    screenshotFrame: "web",
-    screenshots: [
-      {
-        src: "/codeatrophy/screenshot-home.jpg",
-        alt: "Codeatrophy: library path of lessons from Kernel through Graph",
-        label: "Path",
-      },
-      {
-        src: "/codeatrophy/screenshot-lesson.jpg",
-        alt: "Codeatrophy: Big-O lesson with snapshot, interview notes, and a runnable example",
-        label: "Lesson",
-      },
-      {
-        src: "/codeatrophy/screenshot-tags.jpg",
-        alt: "Codeatrophy: nested tag tree for algorithms, CS, interviews, and system design",
-        label: "Tags",
-      },
-      {
-        src: "/codeatrophy/screenshot-search.jpg",
-        alt: "Codeatrophy: search results for hash across lessons and tags",
-        label: "Find",
-      },
-    ],
-  },
+  { ...APP_PRODUCTS.codable, screenshotFrame: "phone" },
+  { ...APP_PRODUCTS.taktung, screenshotFrame: "phone" },
+
 ];
 
 function ProjectCard({
@@ -195,7 +56,9 @@ function ProjectCard({
           </div>
           <div>
             <h3 className="text-2xl font-bold text-foreground tracking-tight">
-              {project.name}
+              {project.detailHref ? (
+                <Link href={project.detailHref} className="hover:text-primary transition-colors">{project.name}</Link>
+              ) : project.name}
             </h3>
             <p className="text-xs text-muted-foreground mt-1">
               {project.subtitle}
@@ -223,14 +86,21 @@ function ProjectCard({
           </ul>
         </div>
 
-        <a
-          href={project.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
-        >
-          {project.hrefLabel}
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
+          >
+            {project.hrefLabel}
+          </a>
+          {project.detailHref ? (
+            <Link href={project.detailHref} aria-label={`Read more about ${project.name}`} className="inline-flex items-center gap-2 px-4 py-2 border border-border text-sm text-foreground hover:border-primary hover:text-primary transition-colors">
+              Read more <span aria-hidden="true">↗</span>
+            </Link>
+          ) : null}
+        </div>
       </div>
 
       <div className="p-6 md:p-8">
