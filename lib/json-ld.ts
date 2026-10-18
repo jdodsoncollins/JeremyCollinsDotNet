@@ -212,3 +212,19 @@ export const taktungPrivacyJsonLd = {
   about: { "@id": taktungId },
   isPartOf: { "@id": websiteId },
 };
+
+export const tabforgePrivacyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE}/tabforge-privacy-policy#page`,
+  url: `${SITE}/tabforge-privacy-policy`,
+  name: "TabForge Privacy Policy",
+  about: {
+    "@type": "SoftwareApplication",
+    name: "TabForge: Code Keyboard",
+    operatingSystem: "iOS, iPadOS",
+    applicationCategory: "DeveloperApplication",
+    url: "https://github.com/jdodsoncollins/TabForge",
+  },
+  isPartOf: { "@id": websiteId },
+};
