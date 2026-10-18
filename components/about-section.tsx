@@ -1,72 +1,29 @@
+import Link from "next/link";
+import { AppArrow } from "@/components/app-icons";
+import styles from "@/app/home.module.css";
+
+const roles = [
+  { period: "2022 — present", company: "Webflow", title: "Sr. Software Engineer" },
+  { period: "2022", company: "MasterClass", title: "Software Engineer" },
+  { period: "2019 — 2022", company: "HitRecord", title: "Senior Developer" },
+  { period: "2018", company: "Plink", title: "Software Engineer" },
+  { period: "2015 — 2018", company: "Event Farm", title: "Front-End Engineer" },
+];
+
 export function AboutSection() {
-  const roles = [
-    { period: "2022 - present", company: "Webflow", title: "Sr. Software Engineer" },
-    { period: "2022", company: "MasterClass", title: "Software Engineer" },
-    { period: "2019 - 2022", company: "HitRecord", title: "Senior Developer" },
-    { period: "2018", company: "Plink", title: "Software Engineer" },
-    { period: "2015 - 2018", company: "Event Farm", title: "Front-End Engineer" },
-  ];
-
   return (
-    <section id="about" className="py-20 border-t border-border/50 scroll-mt-32 md:scroll-mt-24">
-      <div className="max-w-4xl mx-auto px-6 era-reveal">
-
-        <div className="mb-10">
-          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-            About me
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-            <p>
-              I like working on products where knowing the business makes the
-              engineering better.
-            </p>
-            <p>
-              These days I spend a lot of time with agents and automation, so I
-              can take on bigger systems without doing every step by hand.
-            </p>
-            <p>
-              I try a lot of new tools. The web still matters to me as an open
-              platform with portable standards and room for independent
-              software.
-            </p>
-            <p>
-              Outside of work, I hike, parent, read a lot, and build other apps
-              and sites.
-            </p>
-          </div>
-
-          <div>
-            <p className="text-xs text-muted-foreground mb-6">
-              Experience
-            </p>
-            <ol className="space-y-5">
-              {roles.map((role, i) => (
-                <li key={i} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-1" />
-                    {i < roles.length - 1 && (
-                      <span className="flex-1 w-px bg-border/50 mt-2" />
-                    )}
-                  </div>
-                  <div className="pb-2">
-                    <p className="text-[11px] text-muted-foreground mb-0.5">
-                      {role.period}
-                    </p>
-                    <p className="text-sm font-semibold text-foreground">
-                      {role.company}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {role.title}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
+    <section id="about" className={styles.about} aria-labelledby="about-title">
+      <div className={styles.aboutCopy}>
+        <h2 id="about-title">About me</h2>
+        <p>I like working on products where knowing the business makes the engineering better.</p>
+        <p>These days I spend a lot of time with agents and automation, so I can take on bigger systems without doing every step by hand.</p>
+        <p>I try a lot of new tools. The web still matters to me as an open platform with portable standards and room for independent software.</p>
+        <p>Outside of work, I hike, parent, read a lot, and build other apps and sites.</p>
+        <Link href="/resume" className={styles.resumeLink}>View my resume <AppArrow /></Link>
+      </div>
+      <div className={styles.experience}>
+        <h3 className={styles.experienceTitle}>Experience</h3>
+        <ol>{roles.map(role => <li key={role.company}><div><h3>{role.company}</h3><p>{role.title}</p></div><span>{role.period}</span></li>)}</ol>
       </div>
     </section>
   );

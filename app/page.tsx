@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { CircuitBackground } from "@/components/circuit-background";
+import { HomeHeader, HomeFooter } from "@/components/home-navigation";
+import styles from "@/app/home.module.css";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
@@ -19,21 +18,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className={styles.page}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <EraScroll />
-      <CircuitBackground />
-      <div className="relative z-10">
-        <Header />
+      <div className={styles.content}>
+        <HomeHeader />
         <main>
           <HeroSection />
-          <AboutSection />
           <ProjectsSection />
+          <AboutSection />
         </main>
-        <Footer />
+        <HomeFooter />
       </div>
     </div>
   );

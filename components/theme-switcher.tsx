@@ -14,7 +14,7 @@ const ERA_LABELS: Record<(typeof THEMES)[number], string> = {
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
   "1980s": "Green-phosphor CRT. Apple II scanlines, four values, no full-color landscape.",
   "1990s": "Beige, bevels, and a font that refuses to antialias.",
-  modern: "A glade at dusk for fun, then quieter SaaS glass below.",
+  modern: "A forest at dusk, warm paper, and a distinct palette for each app.",
 };
 
 type EraTheme = (typeof THEMES)[number];
