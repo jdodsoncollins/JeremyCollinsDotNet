@@ -7,6 +7,7 @@ const CONFIG: HeroSpriteConfig = {
   width: 600, height: 560,
   frameCount: 16, columns: 4, rows: 4,
   frameMs: { idle: 200, petting: 100 },
+  stabilizeBodies: true,
 };
 
 export function ModernHeroArt() {

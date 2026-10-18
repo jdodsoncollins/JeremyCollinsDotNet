@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createStableHeroRenderer } from "@/lib/stable-hero-frames";
 
 export type HeroSpriteConfig = {
   era: "modern" | "1990s";
@@ -12,6 +13,7 @@ export type HeroSpriteConfig = {
   columns: number;
   rows: number;
   frameMs: { idle: number; petting: number };
+  stabilizeBodies?: boolean;
 };
 
 export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
@@ -40,14 +42,19 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let step = 0;
     let mode: keyof typeof config.sheets = "idle";
     let pendingInteraction = false;
+    let drawStableFrame: ReturnType<typeof createStableHeroRenderer> | undefined;
 
     const draw = () => {
       const frame = step;
-      context.clearRect(0, 0, config.width, config.height);
-      context.drawImage(sheets[mode],
-        (frame % config.columns) * config.width,
-        Math.floor(frame / config.columns) * config.height,
-        config.width, config.height, 0, 0, config.width, config.height);
+      if (drawStableFrame) {
+        drawStableFrame(mode, frame);
+      } else {
+        context.clearRect(0, 0, config.width, config.height);
+        context.drawImage(sheets[mode],
+          (frame % config.columns) * config.width,
+          Math.floor(frame / config.columns) * config.height,
+          config.width, config.height, 0, 0, config.width, config.height);
+      }
       root.dataset.animation = mode;
     };
     const stop = () => {
@@ -133,6 +140,7 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     });
     Promise.all(preload).then(() => {
       if (disposed) return;
+      if (config.stabilizeBodies) drawStableFrame = createStableHeroRenderer(context, sheets);
       ready = true;
       sync();
     }).catch(() => { /* The poster remains visible if a sheet cannot load. */ });
