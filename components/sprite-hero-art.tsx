@@ -35,95 +35,54 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let ready = false;
     let disposed = false;
     let visible = false;
-    let touching = false;
-    let pointerId: number | null = null;
-    let lastScroll = -Infinity;
     let timer = 0;
+    let lastFrameAt = 0;
     let step = 0;
-    let mode: keyof typeof config.sheets = "idle";
-    let pendingInteraction = false;
     let drawStableFrame: ReturnType<typeof createStableHeroRenderer> | undefined;
 
     const draw = () => {
       const frame = step;
       if (drawStableFrame) {
-        drawStableFrame(mode, frame);
+        drawStableFrame("petting", frame);
       } else {
         context.clearRect(0, 0, config.width, config.height);
-        context.drawImage(sheets[mode],
+        context.drawImage(sheets.petting,
           (frame % config.columns) * config.width,
           Math.floor(frame / config.columns) * config.height,
           config.width, config.height, 0, 0, config.width, config.height);
       }
-      root.dataset.animation = mode;
+      root.dataset.animation = "petting";
     };
     const stop = () => {
-      window.clearTimeout(timer);
+      window.cancelAnimationFrame(timer);
       timer = 0;
     };
     const active = () => visible && document.documentElement.dataset.era === config.era && !document.hidden && !motion.matches && ready;
-    const tick = () => {
+    const tick = (now: number) => {
       timer = 0;
       if (!active()) return;
-      const interacting = touching || performance.now() - lastScroll < 720;
-      // Complete a petting cycle before settling back to idle.
-      if (mode === "idle" && (interacting || pendingInteraction) && (step === 0 || step === config.frameCount - 1)) {
-        mode = "petting";
-        step = 0;
-        pendingInteraction = false;
-      } else {
-        step += 1;
-        if (step >= config.frameCount) {
-          step = 0;
-          if (mode === "petting" && !interacting) mode = "idle";
-        }
+      const elapsed = now - lastFrameAt;
+      if (elapsed >= config.frameMs.petting) {
+        step = (step + 1) % config.frameCount;
+        lastFrameAt = now - elapsed % config.frameMs.petting;
+        draw();
       }
-      draw();
-      timer = window.setTimeout(tick, config.frameMs[mode]);
+      timer = window.requestAnimationFrame(tick);
     };
     const sync = () => {
       stop();
       if (!active()) {
         if (motion.matches) {
-          mode = "idle";
           step = 0;
           delete root.dataset.ready;
-          touching = false;
-          pendingInteraction = false;
+          delete root.dataset.animation;
         }
         return;
       }
       root.dataset.ready = "true";
       draw();
-      timer = window.setTimeout(tick, config.frameMs[mode]);
-    };
-    const onScroll = () => {
-      if (!active()) return;
-      lastScroll = performance.now();
-      if (mode === "idle") {
-        pendingInteraction = true;
-        if (step === 0 || step === config.frameCount - 1) {
-          stop();
-          tick();
-        }
-      }
-    };
-    const onPointerDown = (event: PointerEvent) => {
-      if (event.pointerType !== "touch" || !active()) return;
-      pointerId = event.pointerId;
-      touching = true;
-      if (mode === "idle") {
-        pendingInteraction = true;
-        if (step === 0 || step === config.frameCount - 1) {
-          stop();
-          tick();
-        }
-      }
-    };
-    const onPointerEnd = (event: PointerEvent) => {
-      if (event.pointerId !== pointerId) return;
-      pointerId = null;
-      touching = false;
+      lastFrameAt = performance.now();
+      timer = window.requestAnimationFrame(tick);
     };
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
@@ -145,24 +104,16 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       sync();
     }).catch(() => { /* The poster remains visible if a sheet cannot load. */ });
 
-    window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("visibilitychange", sync);
     motion.addEventListener("change", sync);
-    root.addEventListener("pointerdown", onPointerDown, { passive: true });
-    window.addEventListener("pointerup", onPointerEnd);
-    window.addEventListener("pointercancel", onPointerEnd);
 
     return () => {
       disposed = true;
       stop();
       observer.disconnect();
       eraObserver.disconnect();
-      window.removeEventListener("scroll", onScroll);
       document.removeEventListener("visibilitychange", sync);
       motion.removeEventListener("change", sync);
-      root.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("pointerup", onPointerEnd);
-      window.removeEventListener("pointercancel", onPointerEnd);
     };
   }, [config]);
 

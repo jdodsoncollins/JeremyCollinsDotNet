@@ -3,15 +3,18 @@
 // Heads, clothing, legs, paws, and tails always come from the same source cell.
 const WIDTH = 600;
 const HEIGHT = 560;
-const ARM = { x: 363, y: 268, width: 165, height: 92 };
+const ARM = { x: 340, y: 235, width: 200, height: 145 };
 
-// Cuff offsets measured in the original 16 petting cells. Keeping the socket
+// Retrace the coherent lowering poses for the return stroke. The raised-hand
+// poses change the wrist abruptly; no new poses or in-between frames are used.
+const PETTING_FRAMES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1] as const;
+
+// Cuff offsets measured in the selected original petting cells. Keeping the socket
 // fixed avoids moving the elbow when the authored forearm changes its angle.
 const CUFF_OFFSETS = [
   [0, 0], [-2, 0], [0, -3.5], [-1, -2.5],
   [-1, -3.5], [0, -5.5], [1, -8.5], [0, -7.5],
-  [-2, -4], [-6, 0], [-2, -6], [5, 0.5],
-  [0, -2.5], [-8, 9], [-7, 12.5], [0, 0],
+  [-2, -4],
 ] as const;
 
 function surface(width: number, height: number) {
@@ -24,7 +27,7 @@ function surface(width: number, height: number) {
 }
 
 /** Isolate the original skin pixels without including the cat or the sleeve. */
-export function armPixelMask(data: Uint8ClampedArray, width: number, height: number) {
+export function armPixelMask(data: Uint8ClampedArray, width: number, height: number, outline = 1) {
   const core = new Uint8Array(width * height);
   for (let i = 0; i < core.length; i++) {
     const p = i * 4;
@@ -51,17 +54,57 @@ export function armPixelMask(data: Uint8ClampedArray, width: number, height: num
     if (group.length > largest.length) largest = group;
   }
 
-  // Include the existing shaded outline and antialiasing, rather than cutting
-  // away dark skin at the fingertips. This never creates or recolors pixels.
+  // Preserve the painted skin shadows and one edge pixel. A wide dilation also
+  // captures the cat's fur where the hand touches it, leaving floating scraps.
   const mask = new Uint8Array(core.length);
   for (const i of largest) {
     const x = i % width, y = Math.floor(i / width);
-    for (let dy = -5; dy <= 5; dy++) {
-      for (let dx = -5; dx <= 5; dx++) {
-        if (dx * dx + dy * dy > 25) continue;
+    const radius = Math.max(outline, 5);
+    for (let dy = -radius; dy <= radius; dy++) {
+      for (let dx = -radius; dx <= radius; dx++) {
+        const distance = dx * dx + dy * dy;
+        if (distance > radius * radius) continue;
         const px = x + dx, py = y + dy;
-        if (px >= 0 && px < width && py >= 0 && py < height) mask[py * width + px] = 1;
+        if (px < 0 || px >= width || py < 0 || py >= height) continue;
+        const p = (py * width + px) * 4;
+        const red = data[p], green = data[p + 1], blue = data[p + 2];
+        const skinShadow = red > 70 && green > 35 && red > green * 1.2 && green > blue * 1.25;
+        if (distance <= outline * outline || skinShadow) mask[py * width + px] = 1;
       }
+    }
+  }
+
+  // Preserve enclosed painted creases, including shadows below the threshold.
+  const outside = new Uint8Array(mask.length);
+  const queue: number[] = [];
+  for (let i = 0; i < mask.length; i++) {
+    const x = i % width, y = Math.floor(i / width);
+    if (!mask[i] && (x === 0 || x === width - 1 || y === 0 || y === height - 1)) {
+      outside[i] = 1;
+      queue.push(i);
+    }
+  }
+  for (let head = 0; head < queue.length; head++) {
+    const i = queue[head], x = i % width, y = Math.floor(i / width);
+    for (const neighbor of [x > 0 ? i - 1 : -1, x + 1 < width ? i + 1 : -1, y > 0 ? i - width : -1, y + 1 < height ? i + width : -1]) {
+      if (neighbor >= 0 && !mask[neighbor] && !outside[neighbor]) {
+        outside[neighbor] = 1;
+        queue.push(neighbor);
+      }
+    }
+  }
+  for (let i = 0; i < mask.length; i++) if (!outside[i]) mask[i] = 1;
+  if (outline === 1) {
+    // Remove thin fur wisps connected to the painted fingertips at contact.
+    // A one-pixel opening preserves the fingers and removes those stray lines.
+    const interior = new Uint8Array(mask.length);
+    for (let y = 1; y < height - 1; y++) for (let x = 1; x < width - 1; x++) {
+      const i = y * width + x;
+      if (mask[i] && mask[i - 1] && mask[i + 1] && mask[i - width] && mask[i + width]) interior[i] = 1;
+    }
+    mask.fill(0);
+    for (let i = width + 1; i < mask.length - width - 1; i++) if (interior[i]) {
+      for (const neighbor of [i, i - 1, i + 1, i - width, i + width]) mask[neighbor] = 1;
     }
   }
   return mask;
@@ -76,7 +119,7 @@ export function createStableHeroRenderer(
   const body = surface(WIDTH, HEIGHT);
   body.context.drawImage(reference.canvas, 0, 0);
 
-  const arms = Array.from({ length: 16 }, (_, frame) => {
+  const arms = Array.from({ length: 9 }, (_, frame) => {
     const arm = surface(ARM.width, ARM.height);
     arm.context.drawImage(sheets.petting,
       frame % 4 * WIDTH + ARM.x, Math.floor(frame / 4) * HEIGHT + ARM.y,
@@ -90,10 +133,38 @@ export function createStableHeroRenderer(
       // Remove just the reference hand. The remainder of the original image,
       // including both body silhouettes and the cat's ears, stays untouched.
       const fixed = body.context.getImageData(ARM.x, ARM.y, ARM.width, ARM.height);
-      for (let i = 0; i < mask.length; i++) if (mask[i]) fixed.data[i * 4 + 3] = 0;
+      const removal = armPixelMask(fixed.data, ARM.width, ARM.height, 5);
+      for (let i = 0; i < removal.length; i++) if (removal[i]) fixed.data[i * 4 + 3] = 0;
       body.context.putImageData(fixed, ARM.x, ARM.y);
     }
     return arm.canvas;
+  });
+
+  // The cat stays on one silhouette and occludes the stroking fingertips.
+  // Paint it only once so the edge alpha does not accumulate between poses.
+  const cat = { x: 409, y: 330, width: WIDTH - 409, height: HEIGHT - 330 };
+  body.context.clearRect(cat.x, cat.y, cat.width, cat.height);
+
+  const socket = surface(30, 45);
+  socket.context.drawImage(reference.canvas, 365, 275, 30, 45, 0, 0, 30, 45);
+  const socketPixels = socket.context.getImageData(0, 0, 30, 45);
+  for (let y = 0; y < 45; y++) for (let x = 17; x < 30; x++) {
+    socketPixels.data[(y * 30 + x) * 4 + 3] *= (30 - x) / 13;
+  }
+  socket.context.putImageData(socketPixels, 0, 0);
+  const cuff = new Path2D("M340 235 H391 L381 280 L370 316 L340 330 Z");
+  const poses = arms.map((arm, frame) => {
+    const pose = surface(WIDTH, HEIGHT);
+    pose.context.drawImage(body.canvas, 0, 0);
+    pose.context.drawImage(socket.canvas, 365, 275);
+    const [dx, dy] = CUFF_OFFSETS[frame];
+    pose.context.drawImage(arm, ARM.x + dx, ARM.y + dy);
+    pose.context.save();
+    pose.context.clip(cuff);
+    pose.context.drawImage(reference.canvas, 0, 0);
+    pose.context.restore();
+    pose.context.drawImage(reference.canvas, cat.x, cat.y, cat.width, cat.height, cat.x, cat.y, cat.width, cat.height);
+    return pose.canvas;
   });
 
   // A single blink per loop, from the original closed-eye cell. Registering it
@@ -108,13 +179,7 @@ export function createStableHeroRenderer(
     if (mode === "idle") {
       target.drawImage(reference.canvas, 0, 0);
     } else {
-      target.drawImage(body.canvas, 0, 0);
-      // Keep a small socket under the moving skin so changing cuff shadows
-      // cannot open a transparent gap between the forearm and fixed sleeve.
-      target.drawImage(reference.canvas, 365, 280, 25, 35, 365, 280, 25, 35);
-      const [dx, dy] = CUFF_OFFSETS[frame];
-      target.drawImage(arms[frame], ARM.x + dx, ARM.y + dy);
-      target.drawImage(reference.canvas, 358, 273, 16, 43, 358, 273, 16, 43);
+      target.drawImage(poses[PETTING_FRAMES[frame]], 0, 0);
     }
     if (frame === (mode === "idle" ? 13 : 7)) {
       target.save();

@@ -6,7 +6,7 @@ const CONFIG: HeroSpriteConfig = {
   poster: "/hero/hero-modern-v3-still.webp",
   width: 600, height: 560,
   frameCount: 16, columns: 4, rows: 4,
-  frameMs: { idle: 200, petting: 100 },
+  frameMs: { idle: 200, petting: 140 },
   stabilizeBodies: true,
 };
 
