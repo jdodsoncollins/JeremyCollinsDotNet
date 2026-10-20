@@ -5,6 +5,12 @@
   min-height: 100svh;
 }
 
+.page, .page *, .page::before, .page::after, .page *::before, .page *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
 .page.taktung, .page.paperAndGrain {
   --document-heading-font: Georgia, "Times New Roman", serif;
 }

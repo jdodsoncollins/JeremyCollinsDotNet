@@ -40,7 +40,7 @@ export function AppDocument({
     : `mailto:jeremy@jeremycollins.net?subject=${encodeURIComponent(`${app.name} support`)}`;
 
   return (
-    <div className={`${shared.page} ${appearance.page} ${styles.page} ${styles[appKey] ?? ""}`}>
+    <div className={`${shared.page} ${appearance.page} ${styles.page} ${styles[appKey] ?? ""}`} data-app-document={appKey}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <a className={shared.skipLink} href="#main-content">Skip to content</a>
       <nav className={`${shared.navigation} ${styles.navigation}`} aria-label={`${app.name} navigation`}>

@@ -23,10 +23,15 @@ export function AppScreenshotGallery({ shots, appName, variant = "gallery", prio
       setEdges(previous => previous.start === start && previous.end === end && previous.index === index ? previous : { start, end, index });
     };
     const resize = new ResizeObserver(update);
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onMotionChange = () => {
+      if (motion.matches) element.scrollTo({ left: element.scrollLeft, behavior: "instant" });
+    };
     resize.observe(element);
     element.addEventListener("scroll", update, { passive: true });
+    motion.addEventListener("change", onMotionChange);
     update();
-    return () => { resize.disconnect(); element.removeEventListener("scroll", update); };
+    return () => { resize.disconnect(); element.removeEventListener("scroll", update); motion.removeEventListener("change", onMotionChange); };
   }, [shots.length]);
 
   function move(direction: number) {

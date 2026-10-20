@@ -210,6 +210,50 @@
 .taktungDownload .primaryButton { margin-top: 28px; }
 .taktungDownload .downloadNote { display: block; max-width: 420px; font-size: 14px; line-height: 1.8; margin-top: 22px; }
 
+/* Real product evidence stays visible; a finite accent explains each surface. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-app-page="codable"] .blueprint { position: relative; }
+  [data-app-page="codable"] .blueprint::before,
+  [data-app-page="codable"] .blueprint::after { content: ""; position: absolute; inset: 12px; z-index: 2; pointer-events: none; opacity: 0; }
+  [data-app-page="codable"] .blueprint::before { background: linear-gradient(90deg, transparent 15%, #ffffff18 48%, #ffffffb0 50%, transparent 53%) no-repeat; background-size: 32% 100%; background-position: -50% 0; }
+  [data-app-page="codable"] .blueprint::after { border: 1px solid #ffffffa6; clip-path: inset(0 100% 0 0); }
+  [data-app-page="codable"] .blueprint[data-motion-active="true"]::before { animation: codable-inspection-sweep 1050ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="codable"] .blueprint[data-motion-active="true"]::after { animation: codable-inspection-outline 1050ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="codable"] .explorerPanel[data-tool-transition="true"] .explorerImage { animation: codable-tool-focus 260ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="codable"] .explorerPanel[data-tool-transition="true"] .explorerDescription h3 { animation: codable-tool-heading 260ms ease-out; }
+
+  [data-app-page="taktung"] .taktungHeroArtwork[data-motion-active="true"] .screenshot { animation: taktung-status-align 760ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="taktung"] .evidenceGrid :is(.compareCard, .fieldCard) { position: relative; }
+  [data-app-page="taktung"] .evidenceGrid :is(.compareCard, .fieldCard)::after { content: ""; position: absolute; inset: 0; border-top: 1px solid var(--accent); pointer-events: none; transform: scaleX(0); transform-origin: left; opacity: 0; }
+  [data-app-page="taktung"] .evidenceGrid[data-motion-active="true"] :is(.compareCard, .fieldCard)::after { animation: taktung-evidence-trace 1000ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="taktung"] .evidenceGrid[data-motion-active="true"] .fieldCard::after { animation-delay: 100ms; }
+  [data-app-page="taktung"] .evidenceGrid[data-motion-active="true"] .comparePreview .screenshot { --evidence-origin: -6px; animation: taktung-evidence-align 620ms cubic-bezier(.16, 1, .3, 1); }
+  [data-app-page="taktung"] .evidenceGrid[data-motion-active="true"] .fieldPreview .screenshot { --evidence-origin: 6px; animation: taktung-evidence-align 620ms 100ms cubic-bezier(.16, 1, .3, 1); }
+
+  @keyframes codable-inspection-sweep {
+    0% { background-position: -50% 0; opacity: 0; }
+    12% { opacity: 1; }
+    76% { background-position: 150% 0; opacity: 1; }
+    100% { background-position: 150% 0; opacity: 0; }
+  }
+  @keyframes codable-inspection-outline {
+    0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+    14% { opacity: .8; }
+    70% { clip-path: inset(0); opacity: .8; }
+    100% { clip-path: inset(0); opacity: 0; }
+  }
+  @keyframes codable-tool-focus { from { transform: translateX(4px); } to { transform: translateX(0); } }
+  @keyframes codable-tool-heading { from { color: #afcfff; } to { color: #fff; } }
+  @keyframes taktung-status-align { from { transform: translateX(4px) rotate(.5deg); } to { transform: translateX(0) rotate(0); } }
+  @keyframes taktung-evidence-align { from { transform: translateX(var(--evidence-origin)); } to { transform: translateX(0); } }
+  @keyframes taktung-evidence-trace {
+    0% { transform: scaleX(0); opacity: 0; }
+    18% { opacity: .9; }
+    72% { transform: scaleX(1); opacity: .9; }
+    100% { transform: scaleX(1); opacity: 0; }
+  }
+}
+
 @media (max-width: 1100px) {
   .navigation, .codableHero, .taktungHero, .section, .privacySection, .supportSection, .footer { padding-inline: 32px; }
   .codableHero { gap: 36px; }

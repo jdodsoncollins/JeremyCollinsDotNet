@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppArrow } from "@/components/app-icons";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { AppMotion } from "@/components/app-motion";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { tabforgeJsonLd } from "@/lib/json-ld";
 import shared from "@/app/app-pages.module.css";
@@ -30,7 +31,8 @@ function DownloadLink() {
 
 export default function TabForgePage() {
   return (
-    <div className={`${shared.page} ${styles.page}`}>
+    <div className={`${shared.page} ${styles.page}`} data-app-page="tabforge">
+      <AppMotion app="tabforge" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", ...tabforgeJsonLd }).replace(/</g, "\\u003c") }} />
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
       <div className={styles.header} role="banner">
@@ -49,7 +51,7 @@ export default function TabForgePage() {
             <p className={styles.requirements}>Open source · iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.freeNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
           </div>
-          <div className={styles.heroImages} data-duo-hero>
+          <div className={styles.heroImages} data-duo-hero data-app-motion="keyboard-settle" data-motion-replay>
             <AppScreenshot shot={app.duoScreenshots[0]} priority sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px" />
           </div>
         </section>
@@ -64,7 +66,7 @@ export default function TabForgePage() {
           <div className={styles.sectionIntro}><h2 id="editing-title">Indentation<br />and editing</h2><p>Indent a line, move the cursor, or insert a saved snippet. The gear menu opens settings and code tools in the app you’re typing in.</p></div>
           <div className={styles.editingGrid}>
             <div className={styles.editingImage}><AppScreenshot shot={app.screenshots[1]} /></div>
-            <div className={styles.tools}>
+            <div className={styles.tools} data-app-motion="typing-tools" data-motion-replay>
               <div><div className={styles.keyGroup} aria-hidden="true"><kbd>{"{"}</kbd><kbd>{"}"}</kbd><kbd>[</kbd><kbd>]</kbd><kbd>&lt;</kbd><kbd>&gt;</kbd></div><h3>Punctuation within reach</h3><p>Type brackets, braces, parentheses, and the full set of ASCII punctuation without switching away from the letter keys.</p></div>
               <div><div className={styles.keyGroup} aria-hidden="true"><kbd>⇥</kbd><kbd>⇤</kbd><kbd>←</kbd><kbd>→</kbd></div><h3>Indent and navigate</h3><p>Choose your indentation style. Use indent, outdent, automatic newline indentation, and arrows to keep the next edit close.</p></div>
               <div><div className={styles.snippet} aria-hidden="true"><span>{"git status"}</span><span>{"=>"}</span><span>{"console.log()"}</span></div><h3>Save the things you repeat</h3><p>Keep commands, operators, and repeated text as custom snippets. Language suggestions cover Swift, Python, JavaScript, TypeScript, Shell, and JSON.</p></div>

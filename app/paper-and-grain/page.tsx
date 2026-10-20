@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppArrow } from "@/components/app-icons";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { AppMotion } from "@/components/app-motion";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { paperAndGrainJsonLd } from "@/lib/json-ld";
 import shared from "@/app/app-pages.module.css";
@@ -30,7 +31,8 @@ function DownloadLink() {
 
 export default function PaperAndGrainPage() {
   return (
-    <div className={`${shared.page} ${styles.page}`}>
+    <div className={`${shared.page} ${styles.page}`} data-app-page="paper-and-grain">
+      <AppMotion app="paper-and-grain" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", ...paperAndGrainJsonLd }).replace(/</g, "\\u003c") }} />
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
       <div className={styles.header} role="banner">
@@ -49,14 +51,14 @@ export default function PaperAndGrainPage() {
             <p className={styles.requirements}>iOS &amp; iPadOS {app.minimumOS} or later.<br />Duo folding requires iOS 27.1 or later.</p>
             <p className={styles.note}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
           </div>
-          <div className={styles.heroArt} data-duo-hero><AppScreenshot shot={app.duoScreenshots[0]} priority sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px" /></div>
+          <div className={styles.heroArt} data-duo-hero data-app-motion="paper-settle" data-motion-replay><AppScreenshot shot={app.duoScreenshots[0]} priority sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px" /></div>
         </section>
 
         <dl className={styles.facts}><div><dt>Eight lessons</dt><dd>A fold at a time</dd></div><div><dt>Free Fold</dt><dd>Your own blank sheet</dd></div><div><dt>No timer</dt><dd>Work at your pace</dd></div></dl>
 
         <section id="workshop" className={styles.workshop} aria-labelledby="workshop-title">
           <div className={styles.sectionHeading}><h2 id="workshop-title">A sheet of paper<br />Three ways to play</h2><p>Warm wood, softly textured paper, and simple tools. Turn the sheet in 3D to see what’s happening beneath a fold.</p></div>
-          <ol className={styles.process}>
+          <ol className={styles.process} data-app-motion="paper-tools" data-motion-replay>
             <li><h3>Fold</h3><p>Line up the paper with the center guide, then close your iPhone Duo to make a crease. You can also pinch a crease or pull a corner with touch controls.</p></li>
             <li><h3>Cut</h3><p>Try a paper-cut shape. Fold the sheet, make a cut, and unfold it to see the result.</p></li>
             <li><h3>Draw</h3><p>Add light pencil lines to your paper. Undo and Redo give you room to try another idea.</p></li>

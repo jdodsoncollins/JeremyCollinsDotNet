@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppToolExplorer } from "@/components/app-tool-explorer";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { AppMotion } from "@/components/app-motion";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
 
 export default function CodablePage() {
   return (
-    <div className={`${styles.page} ${styles.codable}`}>
+    <div className={`${styles.page} ${styles.codable}`} data-app-page="codable">
+      <AppMotion app="codable" />
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
       <nav className={styles.navigation} aria-label="Codable navigation">
         <Link href="/codable" className={styles.brand}><Image src={app.icon} width={34} height={34} alt="" /><span>Codable</span></Link>
@@ -42,7 +44,7 @@ export default function CodablePage() {
             <p className={styles.monetizationNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
             <p className={styles.heroFootnote}>A Safari extension and a standalone app.<br />No desktop connection required.</p>
           </div>
-          <div className={styles.blueprint}>
+          <div className={styles.blueprint} data-app-motion="inspect" data-motion-replay>
             <AppScreenshotGallery shots={[app.screenshots[0], app.screenshots[1]]} appName="Codable" variant="hero" priorityFirst />
             <p className={styles.blueprintCaption}>The page, its structure, and a live JavaScript console.</p>
           </div>

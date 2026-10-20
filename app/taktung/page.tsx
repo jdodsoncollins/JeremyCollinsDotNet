@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { AppMotion } from "@/components/app-motion";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow, AppIcon } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export default function TaktungPage() {
   return (
-    <div className={`${styles.page} ${styles.taktung}`}>
+    <div className={`${styles.page} ${styles.taktung}`} data-app-page="taktung">
+      <AppMotion app="taktung" />
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
       <nav className={styles.navigation} aria-label="Taktung navigation">
         <Link href="/taktung" className={styles.brand}><Image src={app.icon} width={34} height={34} alt="" /><span>Taktung</span></Link>
@@ -34,12 +36,12 @@ export default function TaktungPage() {
             <p className={styles.monetizationNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
             <p className={styles.downloadNote}>Requires a Vercel account.</p>
           </div>
-          <div className={styles.taktungHeroArtwork}><AppScreenshot shot={app.screenshots[0]} priority /><p>Production status, the latest commit,<br />and your next check in one view.</p></div>
+          <div className={styles.taktungHeroArtwork} data-app-motion="status" data-motion-replay><AppScreenshot shot={app.screenshots[0]} priority /><p>Production status, the latest commit,<br />and your next check in one view.</p></div>
         </section>
         <div className={styles.taktungFeatureStrip} aria-label="Taktung features"><span>Production status</span><span>Build &amp; runtime logs</span><span>Visual comparisons</span><span>Local Field Log</span></div>
         <section id="compare" className={styles.section} aria-labelledby="taktung-compare">
           <div className={styles.sectionHeading}><h2 id="taktung-compare">Review the deployment</h2><p>See what changed on the page.<br />Keep the evidence for your next check.</p></div>
-          <div className={styles.evidenceGrid}>
+          <div className={styles.evidenceGrid} data-app-motion="evidence" data-motion-replay>
             <article className={styles.compareCard}><div className={styles.cardCopy}><h3>Compare before and after</h3><p>Inspect real page captures with a reveal slider or side-by-side view. Save a baseline to compare against the next deployment.</p></div><div className={styles.comparePreview}><AppScreenshot shot={app.screenshots[1]} /></div></article>
             <article className={styles.fieldCard}><div className={styles.cardCopy}><h3>Keep a local Field Log</h3><p>Find your checks, saved comparisons, and personal notes in a searchable record. Export them as text when you need to.</p></div><div className={styles.fieldPreview}><AppScreenshot shot={app.screenshots[4]} /></div></article>
           </div>

@@ -10,6 +10,7 @@
     "lint": "next lint",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/portfolio.browser.mjs",
+    "test:motion": "node tests/app-motion.browser.mjs",
     "resume:pdf": "node scripts/export-resume-pdf.js",
     "resume:sync": "node scripts/sync-resume-pdf.js",
     "resume:build": "pnpm build"
