@@ -5,7 +5,7 @@ import {
 
 const CONFIG: HeroSpriteConfig = {
   era: "1990s",
-  sheets: { petting: "/hero/hero-1990s-v2-interaction.webp" },
+  sheets: { petting: "/hero/hero-1990s-v3-interaction.webp" },
   poster: "/hero/hero-1990s-v2-still.webp",
   width: 320,
   height: 280,

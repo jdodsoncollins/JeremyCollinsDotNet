@@ -164,10 +164,82 @@ try {
       `${era} repeats after scrolling stops`,
     );
     if (era === "1990s") {
-      assert.ok(
-        sheets.some((url) => /hero-1990s-v2-interaction\.webp/.test(url)),
-        "Retro animation sheet never loaded",
+      const retroSheet = sheets.find((url) =>
+        /hero-1990s-v\d+-interaction\.webp/.test(url),
       );
+      assert.ok(retroSheet, "Retro animation sheet never loaded");
+      const artwork = await page.evaluate(async (source) => {
+        const image = new Image();
+        image.src = source;
+        await image.decode();
+        const canvas = document.createElement("canvas");
+        canvas.width = 320;
+        canvas.height = 280;
+        const context = canvas.getContext("2d");
+        const fragments = [];
+        for (let frame = 0; frame < 6; frame++) {
+          context.clearRect(0, 0, 320, 280);
+          context.drawImage(
+            image,
+            (frame % 3) * 320,
+            Math.floor(frame / 3) * 280,
+            320,
+            280,
+            0,
+            0,
+            320,
+            280,
+          );
+          const pixels = context.getImageData(0, 0, 320, 280).data;
+          const visited = new Uint8Array(320 * 280);
+          for (let start = 0; start < visited.length; start++) {
+            if (visited[start] || pixels[start * 4 + 3] < 16) continue;
+            const component = [start];
+            visited[start] = 1;
+            let left = start % 320;
+            for (let head = 0; head < component.length; head++) {
+              const index = component[head];
+              const x = index % 320;
+              const y = Math.floor(index / 320);
+              left = Math.min(left, x);
+              for (let dy = -1; dy <= 1; dy++) {
+                for (let dx = -1; dx <= 1; dx++) {
+                  const nx = x + dx;
+                  const ny = y + dy;
+                  if (nx < 0 || nx >= 320 || ny < 0 || ny >= 280) continue;
+                  const neighbor = ny * 320 + nx;
+                  if (!visited[neighbor] && pixels[neighbor * 4 + 3] >= 16) {
+                    visited[neighbor] = 1;
+                    component.push(neighbor);
+                  }
+                }
+              }
+            }
+            if (
+              left >= 210 &&
+              component.length >= 24 &&
+              component.length <= 128
+            ) {
+              fragments.push({ frame, pixels: component.length });
+            }
+          }
+        }
+        return {
+          dimensions: [image.naturalWidth, image.naturalHeight],
+          fragments,
+        };
+      }, retroSheet);
+      assert.deepEqual(
+        artwork.dimensions,
+        [960, 560],
+        "Retro sheet no longer matches its six native cells",
+      );
+      assert.deepEqual(
+        artwork.fragments,
+        [],
+        "Retro cat has detached artwork fragments",
+      );
+      checks += 6;
       assert.ok(
         sheets.every((url) => !/idle\.webp/.test(url)),
         "Retro downloaded an unused idle sheet",
