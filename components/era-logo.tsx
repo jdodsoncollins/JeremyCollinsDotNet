@@ -1,7 +1,11 @@
 export function EraLogo() {
   return (
     <span className="era-logo" aria-hidden="true">
-      <svg className="era-logo-mark era-logo-1980s" viewBox="0 0 40 40" role="img">
+      <svg
+        className="era-logo-mark era-logo-1980s"
+        viewBox="0 0 40 40"
+        role="img"
+      >
         <g fill="currentColor" shapeRendering="crispEdges">
           <rect x="14" y="3" width="12" height="2" />
           <rect x="10" y="5" width="4" height="2" />
@@ -30,9 +34,19 @@ export function EraLogo() {
         </g>
       </svg>
 
-      <svg className="era-logo-mark era-logo-1990s" viewBox="0 0 40 40" role="img">
+      <svg
+        className="era-logo-mark era-logo-1990s"
+        viewBox="0 0 40 40"
+        role="img"
+      >
         <defs>
-          <linearGradient id="era-logo-beos-front" x1="0.15" y1="0" x2="0.9" y2="1">
+          <linearGradient
+            id="era-logo-beos-front"
+            x1="0.15"
+            y1="0"
+            x2="0.9"
+            y2="1"
+          >
             <stop offset="0" stopColor="#ffe56a" />
             <stop offset="0.48" stopColor="#ffcc00" />
             <stop offset="1" stopColor="#d4a200" />
@@ -50,8 +64,14 @@ export function EraLogo() {
           </clipPath>
         </defs>
         <ellipse cx="21" cy="35.6" rx="13" ry="2.4" fill="#000" opacity="0.2" />
-        <path d="M29 12.2 34.6 8 34.6 29.6 29 33.2Z" fill="url(#era-logo-beos-side)" />
-        <path d="M5.2 11.2 10.8 6.8 34.6 8 29 12.2Z" fill="url(#era-logo-beos-top)" />
+        <path
+          d="M29 12.2 34.6 8 34.6 29.6 29 33.2Z"
+          fill="url(#era-logo-beos-side)"
+        />
+        <path
+          d="M5.2 11.2 10.8 6.8 34.6 8 29 12.2Z"
+          fill="url(#era-logo-beos-top)"
+        />
         <rect
           x="5"
           y="11"
@@ -62,7 +82,15 @@ export function EraLogo() {
           stroke="#a37a00"
           strokeWidth="0.6"
         />
-        <rect x="7" y="13" width="12" height="5.5" rx="2.2" fill="#fff" opacity="0.16" />
+        <rect
+          x="7"
+          y="13"
+          width="12"
+          height="5.5"
+          rx="2.2"
+          fill="#fff"
+          opacity="0.16"
+        />
         <g
           clipPath="url(#era-logo-beos-face)"
           fill="none"
@@ -89,7 +117,11 @@ export function EraLogo() {
         </g>
       </svg>
 
-      <img className="era-logo-mark era-logo-modern" src="/inv-logo.png" alt="" />
+      <img
+        className="era-logo-mark era-logo-modern"
+        src="/inv-logo.png"
+        alt=""
+      />
     </span>
   );
 }

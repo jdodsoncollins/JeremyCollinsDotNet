@@ -6,16 +6,16 @@ import { createStableHeroRenderer } from "@/lib/stable-hero-frames";
 
 export type HeroSpriteConfig = {
   era: "modern" | "1990s";
-  sheets: { idle: string; petting: string };
   poster: string;
   width: number;
   height: number;
   frameCount: number;
   columns: number;
-  rows: number;
-  frameMs: { idle: number; petting: number };
-  stabilizeBodies?: boolean;
-};
+  frameMs: number;
+} & (
+  | { stabilizeBodies: true; sheets: { idle: string; petting: string } }
+  | { stabilizeBodies?: false; sheets: { petting: string } }
+);
 
 // Keep decoded originals across era changes and route remounts. In particular,
 // the Modern idle sheet remains the stable renderer's fixed body reference.
@@ -45,10 +45,14 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     context.imageSmoothingEnabled = config.era !== "1990s";
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const hover = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const connection = (navigator as Navigator & {
-      connection?: EventTarget & { saveData?: boolean };
-    }).connection;
-    let sheets: { idle: HTMLImageElement; petting: HTMLImageElement } | undefined;
+    const connection = (
+      navigator as Navigator & {
+        connection?: EventTarget & { saveData?: boolean };
+      }
+    ).connection;
+    let sheets:
+      | { idle?: HTMLImageElement; petting: HTMLImageElement }
+      | undefined;
     let loading = false;
     let failed = false;
     let disposed = false;
@@ -63,22 +67,31 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let hoverFrames = 0;
     let lastScrollY = window.scrollY;
     let scrollOrigin = 0;
-    let drawStableFrame: ReturnType<typeof createStableHeroRenderer> | undefined;
-    // One authored pass, always below five seconds even if a later sheet is slower.
-    const frameMs = Math.min(config.frameMs.petting, 4000 / config.frameCount);
+    let drawStableFrame:
+      | ReturnType<typeof createStableHeroRenderer>
+      | undefined;
+    // Keep one pass below five seconds at the configured frame rate.
+    const frameMs = Math.min(config.frameMs, 4000 / config.frameCount);
     const pixelsPerFrame = 18;
 
     const draw = () => {
       if (!sheets) return;
       const frame = step;
       if (drawStableFrame) {
-        drawStableFrame("petting", frame);
+        drawStableFrame(frame);
       } else {
         context.clearRect(0, 0, config.width, config.height);
-        context.drawImage(sheets.petting,
+        context.drawImage(
+          sheets.petting,
           (frame % config.columns) * config.width,
           Math.floor(frame / config.columns) * config.height,
-          config.width, config.height, 0, 0, config.width, config.height);
+          config.width,
+          config.height,
+          0,
+          0,
+          config.width,
+          config.height,
+        );
       }
       root.dataset.animation = "petting";
       root.dataset.frame = String(step);
@@ -95,7 +108,12 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       idleRequest = 0;
       loadTimer = 0;
     };
-    const eligible = () => visible && document.documentElement.dataset.era === config.era && !document.hidden && !motion.matches && !connection?.saveData;
+    const eligible = () =>
+      visible &&
+      document.documentElement.dataset.era === config.era &&
+      !document.hidden &&
+      !motion.matches &&
+      !connection?.saveData;
     const active = () => eligible() && !!sheets && !failed;
     const tick = () => {
       timer = 0;
@@ -129,14 +147,19 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       loadTimer = 0;
       if (!eligible() || disposed || loading || sheets || failed) return;
       loading = true;
-      Promise.all([loadSheet(config.sheets.idle), loadSheet(config.sheets.petting)]).then(([idle, petting]) => {
-        if (disposed) return;
-        sheets = { idle, petting };
-        sync();
-      }).catch(() => {
-        // Keep the original poster if either source cannot be decoded.
-        failed = true;
-      });
+      Promise.all([
+        config.stabilizeBodies ? loadSheet(config.sheets.idle) : undefined,
+        loadSheet(config.sheets.petting),
+      ])
+        .then(([idle, petting]) => {
+          if (disposed) return;
+          sheets = { idle, petting };
+          sync();
+        })
+        .catch(() => {
+          // Keep the original poster if a required source cannot be decoded.
+          failed = true;
+        });
     };
     const sync = () => {
       stop();
@@ -150,16 +173,25 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       }
       if (!sheets) {
         // Prioritize the poster and document, then use the browser's idle budget.
-        if (document.readyState === "complete" && !loading && !idleRequest && !loadTimer) {
-          if (typeof window.requestIdleCallback === "function") idleRequest = window.requestIdleCallback(load, { timeout: 1200 });
+        if (
+          document.readyState === "complete" &&
+          !loading &&
+          !idleRequest &&
+          !loadTimer
+        ) {
+          if (typeof window.requestIdleCallback === "function")
+            idleRequest = window.requestIdleCallback(load, { timeout: 1200 });
           else loadTimer = window.setTimeout(load, 200);
         }
         return;
       }
       // Preserve the existing registered artwork and original pixel poses.
-      if (config.stabilizeBodies && !drawStableFrame) {
+      if (sheets.idle && !drawStableFrame) {
         try {
-          drawStableFrame = createStableHeroRenderer(context, sheets);
+          drawStableFrame = createStableHeroRenderer(context, {
+            idle: sheets.idle,
+            petting: sheets.petting,
+          });
         } catch {
           failed = true;
           return;
@@ -186,7 +218,11 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       scrollFrame = window.requestAnimationFrame(() => {
         scrollFrame = 0;
         if (!active()) return;
-        const next = ((Math.round((window.scrollY - scrollOrigin) / pixelsPerFrame) % config.frameCount) + config.frameCount) % config.frameCount;
+        const next =
+          ((Math.round((window.scrollY - scrollOrigin) / pixelsPerFrame) %
+            config.frameCount) +
+            config.frameCount) %
+          config.frameCount;
         if (next !== step) {
           step = next;
           draw();
@@ -214,7 +250,10 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     });
     observer.observe(root);
     const eraObserver = new MutationObserver(sync);
-    eraObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-era"] });
+    eraObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-era"],
+    });
 
     document.addEventListener("visibilitychange", sync);
     motion.addEventListener("change", sync);
@@ -245,9 +284,26 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
   }, [config]);
 
   return (
-    <div ref={rootRef} className={`hero-art-shot hero-art-${config.era} animated-hero ${config.era === "modern" ? "modern-hero" : "retro-hero"}`} aria-hidden="true">
-      <EraHeroImage era={config.era} className="hero-art-still modern-hero-poster" src={config.poster} width={config.width} height={config.height} alt="" decoding="async" />
-      <canvas ref={spriteRef} className="modern-hero-sprite" width={config.width} height={config.height} />
+    <div
+      ref={rootRef}
+      className={`hero-art-shot hero-art-${config.era} animated-hero ${config.era === "modern" ? "modern-hero" : "retro-hero"}`}
+      aria-hidden="true"
+    >
+      <EraHeroImage
+        era={config.era}
+        className="hero-art-still modern-hero-poster"
+        src={config.poster}
+        width={config.width}
+        height={config.height}
+        alt=""
+        decoding="async"
+      />
+      <canvas
+        ref={spriteRef}
+        className="modern-hero-sprite"
+        width={config.width}
+        height={config.height}
+      />
     </div>
   );
 }

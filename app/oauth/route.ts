@@ -35,14 +35,14 @@ function page(title: string, body: string): string {
   <style>
     :root { color-scheme: dark; }
     body { margin: 0; min-height: 100vh; display: grid; place-items: center;
-      background: #09090b; color: #f4f4f5; font: 16px/1.55 system-ui, sans-serif; }
+      background: #20362c; color: #f3f1e8; font: 16px/1.55 system-ui, sans-serif; }
     main { width: min(680px, calc(100% - 40px)); }
     h1 { font-size: 1.35rem; }
-    p { color: #a1a1aa; }
+    p { color: #becbbb; }
     code, pre { overflow-wrap: anywhere; white-space: pre-wrap; }
-    pre { padding: 16px; border: 1px solid #3f3f46; border-radius: 8px;
-      background: #18181b; color: #e4e4e7; }
-    .warning { color: #fbbf24; }
+    pre { padding: 16px; border: 1px solid #46604e; border-radius: 8px;
+      background: #172b22; color: #f3f1e8; }
+    .warning { color: #e7b34c; }
   </style>
 </head>
 <body><main>${body}</main></body>
@@ -56,16 +56,21 @@ export async function GET(request: NextRequest) {
   const error = url.searchParams.get("error");
 
   if (error) {
-    const description = url.searchParams.get("error_description") ?? "The provider rejected authorization.";
+    const description =
+      url.searchParams.get("error_description") ??
+      "The provider rejected authorization.";
     return new NextResponse(
       page(
         "OAuth authorization failed",
         `<h1>OAuth authorization failed</h1><p class="warning">${escapeHtml(error)}</p><p>${escapeHtml(description)}</p><p>You can close this tab and retry the authorization flow.</p>`,
       ),
-      { status: 400, headers: {
-        "Cache-Control": "no-store",
-        "Content-Type": "text/html; charset=utf-8",
-      } },
+      {
+        status: 400,
+        headers: {
+          "Cache-Control": "no-store",
+          "Content-Type": "text/html; charset=utf-8",
+        },
+      },
     );
   }
 
@@ -75,10 +80,13 @@ export async function GET(request: NextRequest) {
         "OAuth callback",
         `<h1>OAuth callback endpoint</h1><p>This URL is ready to receive an OAuth callback. Start the provider flow from the local CLI or application.</p>`,
       ),
-      { status: 200, headers: {
-        "Cache-Control": "no-store",
-        "Content-Type": "text/html; charset=utf-8",
-      } },
+      {
+        status: 200,
+        headers: {
+          "Cache-Control": "no-store",
+          "Content-Type": "text/html; charset=utf-8",
+        },
+      },
     );
   }
 
@@ -87,12 +95,15 @@ export async function GET(request: NextRequest) {
   const callbackUrl = url.toString();
   return new NextResponse(
     page(
-      "OAuth authorization complete",
-      `<h1>Authorization complete</h1><p>Copy the callback URL below and paste it into the waiting local OAuth command.</p><p class="warning">This URL contains a one-time authorization code. Treat it as sensitive and do not share it.</p><pre>${escapeHtml(callbackUrl)}</pre><p>You can close this tab after the local command reports success.</p>`,
+      "OAuth callback received",
+      `<h1>Callback received</h1><p>Copy the callback URL below and paste it into the waiting local OAuth command.</p><p class="warning">This URL contains a one-time authorization code. Treat it as sensitive and do not share it.</p><pre>${escapeHtml(callbackUrl)}</pre><p>You can close this tab after the local command reports success.</p>`,
     ),
-    { status: 200, headers: {
+    {
+      status: 200,
+      headers: {
         "Cache-Control": "no-store",
         "Content-Type": "text/html; charset=utf-8",
-      } },
+      },
+    },
   );
 }

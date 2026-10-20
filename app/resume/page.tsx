@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 import styles from "@/app/site-pages.module.css";
-import { parseResume, readResumeMarkdown, type ResumeBlock } from "@/lib/resume";
+import {
+  parseResume,
+  readResumeMarkdown,
+  type ResumeBlock,
+} from "@/lib/resume";
 import { resumeJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
@@ -80,7 +84,12 @@ export default function ResumePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(resumeJsonLd) }}
       />
-      <main id="main-content" tabIndex={-1} className="resumePage" data-resume-pdf>
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="resumePage"
+        data-resume-pdf
+      >
         <article className="resumeDocument" aria-labelledby="resume-title">
           <header className="resumeHeader">
             <div>
@@ -95,10 +104,16 @@ export default function ResumePage() {
             <section key={section.title || "section"} className="resumeSection">
               {section.title && <h2>{section.title}</h2>}
               {section.blocks.map((block, index) => (
-                <BlockView key={`${section.title}-block-${index}`} block={block} />
+                <BlockView
+                  key={`${section.title}-block-${index}`}
+                  block={block}
+                />
               ))}
               {section.entries.map((entry) => (
-                <section key={`${section.title}-${entry.title}`} className="resumeEntry">
+                <section
+                  key={`${section.title}-${entry.title}`}
+                  className="resumeEntry"
+                >
                   <h3>{entry.title}</h3>
                   {entry.blocks.map((block, index) => (
                     <BlockView key={`${entry.title}-${index}`} block={block} />

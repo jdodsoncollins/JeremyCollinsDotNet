@@ -16,12 +16,18 @@ export function EraHeroImage({ era, src, ...props }: EraHeroImageProps) {
     if (!image) return;
 
     const sync = () => {
-      if (document.documentElement.dataset.era === era && image.getAttribute("src") !== src) {
+      if (
+        document.documentElement.dataset.era === era &&
+        image.getAttribute("src") !== src
+      ) {
         image.src = src;
       }
     };
     const observer = new MutationObserver(sync);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-era"] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-era"],
+    });
     sync();
     return () => observer.disconnect();
   }, [era, src]);
@@ -29,7 +35,11 @@ export function EraHeroImage({ era, src, ...props }: EraHeroImageProps) {
   return (
     <>
       <img ref={imageRef} {...props} />
-      {era === "modern" && <noscript><img {...props} src={src} /></noscript>}
+      {era === "modern" && (
+        <noscript>
+          <img {...props} src={src} />
+        </noscript>
+      )}
     </>
   );
 }

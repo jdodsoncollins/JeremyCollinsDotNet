@@ -1,3 +1,5 @@
+import { APP_PRODUCTS } from "@/lib/app-products";
+
 const SITE = "https://jeremycollins.net";
 
 export const personId = `${SITE}/#person`;
@@ -71,9 +73,9 @@ export const codableJsonLd = {
   "@id": codableId,
   name: "Codable",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS 26.4 or later, iPadOS 26.4 or later",
-  url: `${SITE}/codable`,
-  downloadUrl: "https://apps.apple.com/us/app/codable/id1324741659",
+  operatingSystem: `iOS ${APP_PRODUCTS.codable.minimumOS} or later, iPadOS ${APP_PRODUCTS.codable.minimumOS} or later`,
+  url: `${SITE}${APP_PRODUCTS.codable.detailHref}`,
+  downloadUrl: APP_PRODUCTS.codable.href,
   description:
     "Web developer tools for iPhone and iPad: inspect pages in Safari, review console and network activity, run JavaScript in Scratchpad, and test responsive layouts.",
   offers: {
@@ -89,8 +91,8 @@ export const taktungJsonLd = {
   "@id": taktungId,
   name: "Taktung",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS 27 or later, iPadOS 27 or later",
-  url: `${SITE}/taktung`,
+  operatingSystem: `iOS ${APP_PRODUCTS.taktung.minimumOS} or later, iPadOS ${APP_PRODUCTS.taktung.minimumOS} or later`,
+  url: `${SITE}${APP_PRODUCTS.taktung.detailHref}`,
   downloadUrl: "https://apps.apple.com/us/app/taktung/id6805738660",
   description:
     "Check Vercel deployments on iPhone and iPad. Review build logs, compare page captures, keep a local Field Log, and confirm deployment actions. Not affiliated with Vercel.",
@@ -107,9 +109,9 @@ export const tabforgeJsonLd = {
   "@id": tabforgeId,
   name: "TabForge: Code Keyboard",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS 27 or later, iPadOS 27 or later",
-  url: `${SITE}/tabforge`,
-  downloadUrl: "https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795",
+  operatingSystem: `iOS ${APP_PRODUCTS.tabforge.minimumOS} or later, iPadOS ${APP_PRODUCTS.tabforge.minimumOS} or later`,
+  url: `${SITE}${APP_PRODUCTS.tabforge.detailHref}`,
+  downloadUrl: APP_PRODUCTS.tabforge.href,
   description:
     "A free, open-source programming keyboard for iPhone and iPad with coding punctuation, indentation, snippets, and input profiles. No Full Access required.",
   offers: {
@@ -126,11 +128,11 @@ export const paperAndGrainJsonLd = {
   name: "Paper & Grain",
   applicationCategory: "GameApplication",
   genre: "Puzzle",
-  operatingSystem: "iOS 26 or later, iPadOS 26 or later",
-  url: `${SITE}/paper-and-grain`,
-  downloadUrl: "https://apps.apple.com/us/app/paper-grain/id6821361967",
+  operatingSystem: `iOS ${APP_PRODUCTS.paperAndGrain.minimumOS} or later, iPadOS ${APP_PRODUCTS.paperAndGrain.minimumOS} or later`,
+  url: `${SITE}${APP_PRODUCTS.paperAndGrain.detailHref}`,
+  downloadUrl: APP_PRODUCTS.paperAndGrain.href,
   description:
-    "A relaxing origami puzzle game for iPhone and iPad. Learn with eight lessons or explore Free Fold, then save editable creations. No timer or losing.",
+    "Close an iPhone Duo to fold the paper; device folding requires iOS 27.1 or later. A relaxing origami puzzle game for iPhone and iPad. Learn with eight lessons or explore Free Fold, then save editable creations. No timer or losing. Touch controls work without a folding device.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -180,7 +182,7 @@ export const faqJsonLd = {
       name: "What is Paper & Grain?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Paper & Grain is a free origami puzzle game for iPhone and iPad. Learn through eight lessons or try your own shapes in Free Fold, with editable saved creations and no timer or losing.",
+        text: "Paper & Grain is a free origami puzzle game for iPhone and iPad. Close an iPhone Duo to fold the paper; device folding requires iOS 27.1 or later. Learn through eight lessons or try your own shapes in Free Fold, with editable saved creations and no timer or losing. Requires iOS or iPadOS 26 or later. Touch controls work without a folding device.",
       },
     },
     {

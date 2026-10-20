@@ -38,7 +38,7 @@ Source: https://github.com/jdodsoncollins/TabForge
 
 ## Paper & Grain
 
-Paper & Grain is a relaxing origami puzzle game for iPhone and iPad. Eight guided lessons teach creases and shapes. Free Fold starts with a blank sheet for folding, cutting, and pencil lines. View work in 3D, undo and redo, and save editable sheets to the gallery. There is no timer and no losing. All eight lessons and Free Fold are free. Requires iOS or iPadOS 26 or later. Touch controls work without a folding device.
+Paper & Grain is a relaxing origami puzzle game for iPhone and iPad. Close an iPhone Duo to fold the paper; device folding requires iOS 27.1 or later. Eight guided lessons teach creases and shapes. Free Fold starts with a blank sheet for folding, cutting, and pencil lines. View work in 3D, undo and redo, and save editable sheets to the gallery. There is no timer and no losing. All eight lessons and Free Fold are free. Requires iOS or iPadOS 26 or later. Touch controls work without a folding device.
 
 Details: https://jeremycollins.net/paper-and-grain
 

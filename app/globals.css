@@ -45,7 +45,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
+  html {
+    scroll-behavior: auto !important;
+  }
 }
 
-html:has([data-app-document]) { scroll-behavior: auto !important; }
+html:has([data-app-document]) {
+  scroll-behavior: auto !important;
+}

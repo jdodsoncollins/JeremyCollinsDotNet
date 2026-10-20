@@ -28,60 +28,48 @@ export default function CodablePrivacyPolicy() {
     >
       <div>
         <p>
-          Codable is a free mobile application for loading and inspecting
-          web pages and URI-based content. This Privacy Policy explains
-          what the app does, what it does not do, and how network activity
-          is handled when you choose to load a URI.
+          Codable is a free mobile application for loading and inspecting web
+          pages and URI-based content. This Privacy Policy explains what the app
+          does, what it does not do, and how network activity is handled when
+          you choose to load a URI.
         </p>
 
         <p>
           Codable is provided as-is, without monetization, advertising,
-          analytics, tracking, account creation, or paid services. The app
-          does not sell data, share user data, or use third-party tracking
-          systems.
+          analytics, tracking, account creation, or paid services. The app does
+          not sell data, share user data, or use third-party tracking systems.
         </p>
 
         <p>
           No external code is downloaded by Codable itself. No information
-          entered into the app is broadcast or uploaded by Codable to
-          online services, except for network requests made to the URI or
-          URIs that you choose to load.
+          entered into the app is broadcast or uploaded by Codable to online
+          services, except for network requests made to the URI or URIs that you
+          choose to load.
         </p>
 
         {/* Definitions */}
         <section>
-          <h2>
-            Definitions
-          </h2>
+          <h2>Definitions</h2>
 
           <div>
             <div>
-              <h3>
-                Service
-              </h3>
+              <h3>Service</h3>
+              <p>Service means the Codable mobile application.</p>
+            </div>
+
+            <div>
+              <h3>User-Selected URI</h3>
               <p>
-                Service means the Codable mobile application.
+                User-Selected URI means a URL or URI that you enter, select,
+                open, or otherwise choose to load in Codable.
               </p>
             </div>
 
             <div>
-              <h3>
-                User-Selected URI
-              </h3>
+              <h3>Third-Party System</h3>
               <p>
-                User-Selected URI means a URL or URI that you enter,
-                select, open, or otherwise choose to load in Codable.
-              </p>
-            </div>
-
-            <div>
-              <h3>
-                Third-Party System
-              </h3>
-              <p>
-                Third-Party System means a server, host, website, API, or
-                other online system controlled by someone other than
-                Codable.
+                Third-Party System means a server, host, website, API, or other
+                online system controlled by someone other than Codable.
               </p>
             </div>
           </div>
@@ -89,100 +77,85 @@ export default function CodablePrivacyPolicy() {
 
         {/* Information Collection */}
         <section>
-          <h2>
-            Information Collection and Use
-          </h2>
+          <h2>Information Collection and Use</h2>
 
           <div>
             <p>
-              Codable does not collect personal information. The app does
-              not include analytics SDKs, advertising SDKs, tracking
-              pixels, remote configuration systems, or account systems.
+              Codable does not collect personal information. The app does not
+              include analytics SDKs, advertising SDKs, tracking pixels, remote
+              configuration systems, or account systems.
             </p>
 
             <p>
-              Codable is not monetized. It is provided free of charge and
-              does not use user data for advertising, profiling, resale, or
-              cross-app tracking.
+              Codable is not monetized. It is provided free of charge and does
+              not use user data for advertising, profiling, resale, or cross-app
+              tracking.
             </p>
 
             <p>
-              Codable may make network requests when you choose to load a
-              URI. Those requests are sent to the host or hosts associated
-              with the URI you selected. Any information transmitted as a
-              result of loading that URI is between your device and the
-              systems required to load that URI.
+              Codable may make network requests when you choose to load a URI.
+              Those requests are sent to the host or hosts associated with the
+              URI you selected. Any information transmitted as a result of
+              loading that URI is between your device and the systems required
+              to load that URI.
             </p>
 
             <p>
               Codable does not upload, broadcast, retain, or forward the
               information you enter into the app to unrelated third-party
-              systems. If a user-selected URI points to a third-party
-              system, that system may receive the information necessary to
-              handle the request, according to its own behavior and
-              policies.
+              systems. If a user-selected URI points to a third-party system,
+              that system may receive the information necessary to handle the
+              request, according to its own behavior and policies.
             </p>
           </div>
         </section>
 
         {/* External Code */}
         <section>
-          <h2>
-            External Code and Remote Content
-          </h2>
+          <h2>External Code and Remote Content</h2>
 
           <div>
             <p>
               Codable does not download external code to change its own
-              behavior. The installed app contains the app code used to
-              provide the Service.
+              behavior. The installed app contains the app code used to provide
+              the Service.
             </p>
 
             <p>
               Web pages and URI-based resources that you choose to load may
               include scripts, assets, cookies, redirects, or other remote
-              content controlled by the relevant site or service. Codable
-              does not add third-party tracking code to those requests.
+              content controlled by the relevant site or service. Codable does
+              not add third-party tracking code to those requests.
             </p>
           </div>
         </section>
 
         {/* As-Is */}
         <section>
-          <h2>
-            As-Is Availability
-          </h2>
+          <h2>As-Is Availability</h2>
 
           <p>
-            Codable is provided as-is and without any guarantee of
-            availability, compatibility, data recovery, or continued
-            support.
+            Codable is provided as-is and without any guarantee of availability,
+            compatibility, data recovery, or continued support.
           </p>
         </section>
 
         {/* Changes */}
         <section>
-          <h2>
-            Changes to This Privacy Policy
-          </h2>
+          <h2>Changes to This Privacy Policy</h2>
 
           <p>
-            This Privacy Policy may be updated from time to time. Updates
-            will be posted on this page with a revised effective date.
+            This Privacy Policy may be updated from time to time. Updates will
+            be posted on this page with a revised effective date.
           </p>
         </section>
 
         {/* Contact */}
         <section>
-          <h2>
-            Contact
-          </h2>
+          <h2>Contact</h2>
           <p>
             Questions about this policy:{" "}
-            <a
-              href="mailto:jeremy@jeremycollins.net"
-
-            >
+            <a href="mailto:jeremy@jeremycollins.net">
               jeremy@jeremycollins.net
             </a>
           </p>

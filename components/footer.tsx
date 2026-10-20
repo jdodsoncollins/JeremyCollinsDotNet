@@ -11,8 +11,20 @@ export function Footer({ home = false }: { home?: boolean }) {
         <span>© {new Date().getFullYear()} Jeremy Collins</span>
         <a href="mailto:jeremy@jeremycollins.net">jeremy@jeremycollins.net</a>
         <div>
-          <a href="https://github.com/jdodsoncollins" target="_blank" rel="noopener noreferrer">GitHub <AppArrow /></a>
-          <a href="https://linkedin.com/in/jeremycollinsnet" target="_blank" rel="noopener noreferrer">LinkedIn <AppArrow /></a>
+          <a
+            href="https://github.com/jdodsoncollins"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <AppArrow />
+          </a>
+          <a
+            href="https://linkedin.com/in/jeremycollinsnet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn <AppArrow />
+          </a>
         </div>
       </div>
     </footer>

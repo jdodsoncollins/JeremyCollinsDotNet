@@ -1,5 +1,7 @@
 /* Saved eras affect only the interactive portfolio homepage. */
-.era-logo-modern { display: block; }
+.era-logo-modern {
+  display: block;
+}
 
 :root[data-era="1980s"] [data-home-page] .era-logo-1980s,
 :root[data-era="1990s"] [data-home-page] .era-logo-1990s,
@@ -20,7 +22,8 @@
 :root[data-era="1980s"] [data-home-page] li,
 :root[data-era="1980s"] [data-home-page] a,
 :root[data-era="1980s"] [data-home-page] button {
-  font-family: var(--font-vt323), var(--font-space-mono), ui-monospace, monospace !important;
+  font-family:
+    var(--font-vt323), var(--font-space-mono), ui-monospace, monospace !important;
   letter-spacing: 0.04em;
   -webkit-font-smoothing: none !important;
   -moz-osx-font-smoothing: unset;
@@ -70,13 +73,6 @@
 :root[data-era="1980s"] [data-home-page] .era-logo-mark {
   image-rendering: pixelated;
   shape-rendering: crispEdges;
-}
-
-:root[data-era="1980s"] [data-home-page] .circuit-bg {
-  background-image:
-    linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px);
-  background-size: 12px 12px;
 }
 
 :root[data-era="1980s"] [data-home-page] .hacf-scanlines {
@@ -159,7 +155,9 @@
     rgba(57, 255, 20, 0.15) 80%,
     transparent 100%
   );
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.3), 0 0 40px rgba(57, 255, 20, 0.15);
+  box-shadow:
+    0 0 20px rgba(57, 255, 20, 0.3),
+    0 0 40px rgba(57, 255, 20, 0.15);
 }
 
 :root[data-era="1980s"] [data-home-page] .hacf-sweep-line-2 {
@@ -176,10 +174,19 @@
 /* 1990s: pixel-art texture, beOS-like bevels, classic web color */
 :root[data-era="1990s"] [data-home-page] {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0 12.5%, transparent 12.5% 50%, rgba(0, 0, 0, 0.04) 50% 62.5%, transparent 62.5%),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.28) 0 12.5%,
+      transparent 12.5% 50%,
+      rgba(0, 0, 0, 0.04) 50% 62.5%,
+      transparent 62.5%
+    ),
     var(--background);
-  background-size: 16px 16px, auto;
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  background-size:
+    16px 16px,
+    auto;
+  font-family:
+    var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-weight: 400;
   -webkit-font-smoothing: auto;
   text-rendering: geometricPrecision;
@@ -188,10 +195,18 @@
 :root[data-era="1990s"] [data-home-page] header:not(.resumeHeader) {
   color: #050505;
   background:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.24) 0 1px,
+      transparent 1px 4px
+    ),
     linear-gradient(180deg, #eee9dc 0%, #d9d3c7 52%, #c7c1b5 100%) !important;
   border-bottom: 2px solid #000000;
-  box-shadow: inset 0 2px #ffffff, inset 0 -2px #7d7a73, 0 2px #34322e, 0 4px #f4d13a;
+  box-shadow:
+    inset 0 2px #ffffff,
+    inset 0 -2px #7d7a73,
+    0 2px #34322e,
+    0 4px #f4d13a;
 }
 
 :root[data-era="1990s"] [data-home-page],
@@ -211,7 +226,8 @@
 :root[data-era="1990s"] [data-home-page] li,
 :root[data-era="1990s"] [data-home-page] a,
 :root[data-era="1990s"] [data-home-page] button {
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace !important;
+  font-family:
+    var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace !important;
   -webkit-font-smoothing: none !important;
   -moz-osx-font-smoothing: unset;
   font-smooth: never !important;
@@ -222,14 +238,6 @@
 :root[data-era="1990s"] [data-home-page] h1,
 :root[data-era="1990s"] [data-home-page] h2 {
   font-weight: 700;
-}
-
-:root[data-era="1990s"] [data-home-page] .circuit-bg {
-  background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
-  background-size: 16px 16px;
-  opacity: 0.35;
 }
 
 :root[data-era="1990s"] [data-home-page] .hacf-scanlines,
@@ -256,10 +264,17 @@
 :root[data-era="1990s"] [data-home-page] .theme-tooltip {
   background:
     radial-gradient(circle at 0 0, rgba(244, 209, 58, 0.18), transparent 6rem),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 12px),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.18) 0 1px,
+      transparent 1px 12px
+    ),
     linear-gradient(180deg, #eee9dc 0%, #ddd7cb 42%, #ccc6ba 100%);
   border-color: #202020 !important;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 3px 3px 0 #050505;
+  box-shadow:
+    inset 2px 2px #ffffff,
+    inset -2px -2px #5f5b53,
+    3px 3px 0 #050505;
 }
 
 :root[data-era="1990s"] [data-home-page] article {
@@ -312,9 +327,13 @@
 :root[data-era="1990s"] [data-home-page] button[class*="border"] {
   clip-path: none;
   border-radius: 2px;
-  font-family: var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
+  font-family:
+    var(--font-space-mono), "Andale Mono", Monaco, "Courier New", monospace;
   font-weight: 700;
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
+  box-shadow:
+    inset 2px 2px #ffffff,
+    inset -2px -2px #5f5b53,
+    2px 2px 0 #050505;
 }
 
 :root[data-era="1990s"] [data-home-page] .derez-btn {
@@ -352,7 +371,10 @@
 :root[data-era="1990s"] [data-home-page] .box-glow,
 :root[data-era="1990s"] [data-home-page] .box-glow-accent,
 :root[data-era="1990s"] [data-home-page] .codable-icon {
-  box-shadow: inset 2px 2px #ffffff, inset -2px -2px #5f5b53, 2px 2px 0 #050505;
+  box-shadow:
+    inset 2px 2px #ffffff,
+    inset -2px -2px #5f5b53,
+    2px 2px 0 #050505;
 }
 
 :root[data-era="1990s"] [data-home-page] .era-logo {
@@ -368,10 +390,15 @@
   image-rendering: auto;
 }
 
-:root[data-era="1990s"] [data-home-page] .theme-switcher-option[data-active="true"] {
+:root[data-era="1990s"]
+  [data-home-page]
+  .theme-switcher-option[data-active="true"] {
   color: #ffffff;
   background: #000080;
-  box-shadow: inset 1px 1px #2b4fd4, inset -1px -1px #000040, 1px 1px 0 #050505;
+  box-shadow:
+    inset 1px 1px #2b4fd4,
+    inset -1px -1px #000040,
+    1px 1px 0 #050505;
 }
 
 :root[data-era="1990s"] [data-home-page] .cursor-blink {

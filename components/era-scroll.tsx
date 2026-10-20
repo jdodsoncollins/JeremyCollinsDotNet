@@ -30,9 +30,8 @@ export function EraScroll() {
     let raf = 0;
     let lastCommit = 0;
     let lastY = window.scrollY;
-    let lastInput = 0;
     let liveTimer = 0;
-    const reveals = new Set<Element>();
+    let lastParallax: number | undefined;
 
     const clearLive = () => {
       window.clearTimeout(liveTimer);
@@ -44,78 +43,58 @@ export function EraScroll() {
     const commit = (now: number) => {
       const era = eraOf();
       const interval = 1000 / (FPS[era] ?? 30);
-      if (lastCommit !== 0 && now - lastCommit < interval) return false;
+      if (lastCommit !== 0 && now - lastCommit < interval) {
+        raf = window.requestAnimationFrame(commit);
+        return;
+      }
+      raf = 0;
       lastCommit = now;
 
       const y = window.scrollY;
-      const max = Math.max(1, root.scrollHeight - window.innerHeight);
       const raw = Math.min(56, Math.max(0, y * 0.16));
       const parallax = motion.matches ? 0 : snap(raw, STEP[era] ?? 1);
 
-      root.style.setProperty("--era-parallax", `${parallax}px`);
-      root.style.setProperty("--era-scroll", (y / max).toFixed(4));
+      if (parallax !== lastParallax) {
+        root.style.setProperty("--era-parallax", `${parallax}px`);
+        lastParallax = parallax;
+      }
 
       if (!motion.matches && Math.abs(y - lastY) >= (STEP[era] ?? 1) * 0.25) {
         root.dataset.scrollLive = "true";
         clearLive();
       }
       lastY = y;
-      return true;
-    };
-
-    const loop = (now: number) => {
-      commit(now);
-      if (now - lastInput < 900) {
-        raf = window.requestAnimationFrame(loop);
-      } else {
-        raf = 0;
-        delete root.dataset.scrollLive;
-      }
     };
 
     const kick = () => {
-      lastInput = performance.now();
       if (motion.matches) {
+        if (raf) window.cancelAnimationFrame(raf);
+        raf = 0;
+        window.clearTimeout(liveTimer);
         root.style.setProperty("--era-parallax", "0px");
+        lastParallax = 0;
+        lastY = window.scrollY;
         delete root.dataset.scrollLive;
         return;
       }
-      if (!raf) raf = window.requestAnimationFrame(loop);
+      if (!raf) raf = window.requestAnimationFrame(commit);
     };
 
     const onScroll = () => kick();
     const onMotion = () => {
-      if (motion.matches) {
-        root.style.setProperty("--era-parallax", "0px");
-        delete root.dataset.scrollLive;
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          entry.target.classList.toggle("is-in", entry.isIntersecting);
-        }
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
-    );
-
-    const watchReveals = () => {
-      document.querySelectorAll(".era-reveal").forEach((node) => {
-        if (!reveals.has(node)) {
-          observer.observe(node);
-          reveals.add(node);
-        }
-      });
+      lastCommit = 0;
+      kick();
     };
 
     const eraObserver = new MutationObserver(() => {
       lastCommit = 0;
       kick();
     });
-    eraObserver.observe(root, { attributes: true, attributeFilter: ["data-era"] });
+    eraObserver.observe(root, {
+      attributes: true,
+      attributeFilter: ["data-era"],
+    });
 
-    watchReveals();
     kick();
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -125,14 +104,12 @@ export function EraScroll() {
     return () => {
       if (raf) window.cancelAnimationFrame(raf);
       window.clearTimeout(liveTimer);
-      observer.disconnect();
       eraObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       motion.removeEventListener("change", onMotion);
       delete root.dataset.scrollLive;
       root.style.removeProperty("--era-parallax");
-      root.style.removeProperty("--era-scroll");
     };
   }, []);
 

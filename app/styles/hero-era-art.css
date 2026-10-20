@@ -1,6 +1,3 @@
-/* Overrides so new era plates win without rewriting hero-plates.css. */
-/* Cache: full-cat frames only, no tail fragments v=full2 */
-
 :root[data-era="1980s"] .hero-backdrop-photo {
   background-image: none !important;
   filter: none !important;
@@ -19,9 +16,7 @@
 }
 
 :root[data-era="1990s"] .hero-art-still,
-:root[data-era="1990s"] .hero-art-live img,
-:root[data-era="1990s"] .hero-art-cat,
-:root[data-era="1990s"] .hero-art-cat-live img {
+:root[data-era="1990s"] .hero-art-cat {
   image-rendering: pixelated;
 }
 
@@ -29,16 +24,9 @@
   display: none;
 }
 
-:root[data-era="modern"] .hero-art-live {
-  display: none !important;
-  opacity: 0 !important;
-}
-
 :root[data-era="modern"] .hero-art-still {
   opacity: 1 !important;
 }
-
-/* Stills stay up. Live strips jump frames. */
 :root[data-era="1980s"] .hero-art-shot.is-live .hero-art-still,
 :root[data-era="1980s"] .hero-art-shot:hover .hero-art-still,
 :root[data-era="1990s"] .hero-art-shot.is-live .hero-art-still,
@@ -46,24 +34,6 @@
 :root[data-era="modern"] .hero-art-shot.is-live .hero-art-still,
 :root[data-era="modern"] .hero-art-shot:hover .hero-art-still {
   opacity: 1;
-}
-
-:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live,
-:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live,
-:root[data-era="modern"] .hero-art-shot:hover .hero-art-live {
-  opacity: 0;
-}
-
-:root[data-era="1980s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1980s"] .hero-art-shot:hover .hero-art-live img,
-:root[data-era="1990s"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="1990s"] .hero-art-shot:hover .hero-art-live img,
-:root[data-era="modern"] .hero-art-shot.is-live .hero-art-live img,
-:root[data-era="modern"] .hero-art-shot:hover .hero-art-live img {
-  animation: none;
 }
 
 /* Kill the hold-frame bounce on Jeremy. Motion is the cat layer only. */
@@ -84,36 +54,22 @@
   z-index: 2;
 }
 
-.hero-art-cat-live {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.hero-art-cat-live img {
-  display: block;
-  height: 100%;
-  width: auto;
-  max-width: none;
-  max-height: 100%;
-}
-
 :root[data-era="1980s"] .hero-art-cat {
   image-rendering: pixelated;
   transform-origin: 18% 92%;
 }
 
-:root[data-era="modern"] .hero-art-modern .hero-art-cat,
-:root[data-era="modern"] .hero-art-modern .hero-art-cat-live img {
+:root[data-era="modern"] .hero-art-modern .hero-art-cat {
   filter: none;
 }
 
-:root[data-era="1980s"][data-scroll-live] .hero-art-1980s[data-cat-visible] .hero-art-cat,
-:root[data-era="1980s"] .hero-section.is-live .hero-art-1980s[data-cat-visible] .hero-art-cat {
+:root[data-era="1980s"][data-scroll-live]
+  .hero-art-1980s[data-cat-visible]
+  .hero-art-cat,
+:root[data-era="1980s"]
+  .hero-section.is-live
+  .hero-art-1980s[data-cat-visible]
+  .hero-art-cat {
   animation: hero-cat-1980s 0.5s steps(2, jump-none) infinite;
 }
 
@@ -121,8 +77,6 @@
 :root[data-era="1980s"] .hero-art-1980s[data-cat-playback] .hero-art-cat {
   animation: hero-cat-1980s 0.5s steps(2, jump-none) 1;
 }
-
-/* One full cat at a time. Still is gone so it cannot ghost under the strip. */
 :root[data-era="1990s"] .hero-art-1990s.is-live > .hero-art-cat,
 :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s > .hero-art-cat,
 :root[data-era="1990s"][data-scroll-live] .hero-art-1990s > .hero-art-cat,
@@ -134,51 +88,24 @@
   visibility: hidden !important;
 }
 
-:root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live,
-:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live,
-:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live,
-:root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live,
-:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live,
-:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live {
-  opacity: 1;
-  visibility: visible;
-}
-
-:root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live img,
-:root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img,
-:root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img {
-  animation: cat-sheet-4 0.56s steps(4, jump-none) infinite;
-}
-
-:root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live img,
-:root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live img,
-:root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live img {
-  animation: cat-sheet-4 0.64s steps(4, jump-none) infinite;
-}
-
 @keyframes hero-cat-1980s {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(0, -4px, 0); }
-}
-
-@keyframes cat-sheet-4 {
-  from { transform: translateX(0); }
-  to { transform: translateX(-75%); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -4px, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root[data-era="1980s"] .hero-art-1980s[data-cat-playback] .hero-art-cat,
-  :root[data-era="1980s"][data-scroll-live] .hero-art-1980s[data-cat-visible] .hero-art-cat,
-  :root[data-era="1980s"] .hero-section.is-live .hero-art-1980s[data-cat-visible] .hero-art-cat,
-  :root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live img,
-  :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img,
-  :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img,
-  :root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live img,
-  :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live img,
-  :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live img,
-  .hero-critter,
-  .hero-bird,
-  .hero-bird img {
+  :root[data-era="1980s"][data-scroll-live]
+    .hero-art-1980s[data-cat-visible]
+    .hero-art-cat,
+  :root[data-era="1980s"]
+    .hero-section.is-live
+    .hero-art-1980s[data-cat-visible]
+    .hero-art-cat {
     animation: none;
   }
 
@@ -186,165 +113,15 @@
   :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s > .hero-art-cat,
   :root[data-era="1990s"][data-scroll-live] .hero-art-1990s > .hero-art-cat,
   :root[data-era="modern"] .hero-art-modern.is-live > .hero-art-cat,
-  :root[data-era="modern"] .hero-section.is-live .hero-art-modern > .hero-art-cat,
+  :root[data-era="modern"]
+    .hero-section.is-live
+    .hero-art-modern
+    > .hero-art-cat,
   :root[data-era="modern"][data-scroll-live] .hero-art-modern > .hero-art-cat {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
-
-  :root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live,
-  :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live,
-  :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live,
-  :root[data-era="modern"] .hero-art-modern.is-live .hero-art-cat-live,
-  :root[data-era="modern"] .hero-section.is-live .hero-art-modern .hero-art-cat-live,
-  :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-cat-live {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* Background fauna — 1990s critters, modern birds. Hidden on 1980s. */
-.hero-fauna {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-:root[data-era="1990s"] .hero-fauna-1990s,
-:root[data-era="modern"] .hero-fauna-modern {
-  display: block;
-}
-
-.hero-critter {
-  position: absolute;
-  height: auto;
-  user-select: none;
-}
-
-.hero-critter-squirrel {
-  left: 8%;
-  bottom: 36%;
-  width: clamp(2.1rem, 7vw, 3.4rem);
-}
-
-.hero-critter-rabbit-a {
-  left: 36%;
-  bottom: 31%;
-  width: clamp(1.8rem, 6vw, 2.8rem);
-}
-
-.hero-critter-rabbit-b {
-  left: 58%;
-  bottom: 42%;
-  width: clamp(1.6rem, 5.4vw, 2.6rem);
-  opacity: 0.9;
-}
-
-.hero-bird {
-  position: absolute;
-  left: 0;
-  pointer-events: none;
-  filter: blur(2.4px) saturate(0.42) brightness(1.28) contrast(0.82);
-}
-
-.hero-bird img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.hero-bird-up {
-  animation: bird-frame-a 0.32s infinite;
-}
-
-.hero-bird-down {
-  animation: bird-frame-b 0.32s infinite;
-}
-
-.hero-bird-1 {
-  top: 13%;
-  width: 1.35rem;
-  height: 0.85rem;
-  opacity: 0.58;
-  animation: fauna-cross-1 24s linear infinite;
-}
-
-.hero-bird-2 {
-  top: 21%;
-  width: 1.05rem;
-  height: 0.66rem;
-  opacity: 0.44;
-  filter: blur(3.2px) saturate(0.38) brightness(1.32) contrast(0.8);
-  animation: fauna-cross-2 32s linear infinite;
-  animation-delay: -10s;
-}
-
-.hero-bird-3 {
-  top: 9%;
-  width: 0.82rem;
-  height: 0.52rem;
-  opacity: 0.36;
-  filter: blur(3.8px) saturate(0.32) brightness(1.38) contrast(0.78);
-  animation: fauna-cross-3 40s linear infinite;
-  animation-delay: -22s;
-}
-
-@keyframes bird-frame-a {
-  0%, 49.9% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
-@keyframes bird-frame-b {
-  0%, 49.9% { opacity: 0; }
-  50%, 100% { opacity: 1; }
-}
-
-:root[data-era="1990s"] .hero-critter-squirrel {
-  animation: fauna-squirrel 1.8s steps(4, jump-none) infinite;
-}
-
-:root[data-era="1990s"] .hero-critter-rabbit-a {
-  animation: fauna-hop 2.2s steps(4, jump-none) infinite;
-}
-
-:root[data-era="1990s"] .hero-critter-rabbit-b {
-  animation: fauna-sniff 1.6s steps(3, jump-none) infinite;
-}
-
-@keyframes fauna-squirrel {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -4px, 0); }
-}
-
-@keyframes fauna-hop {
-  0%, 62%, 100% { transform: translate3d(0, 0, 0); }
-  72% { transform: translate3d(2px, -8px, 0); }
-  82% { transform: translate3d(5px, 0, 0); }
-}
-
-@keyframes fauna-sniff {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(5px, 0, 0); }
-}
-
-@keyframes fauna-cross-1 {
-  0% { transform: translate3d(110vw, 0, 0); }
-  100% { transform: translate3d(-16vw, 16px, 0); }
-}
-
-@keyframes fauna-cross-2 {
-  0% { transform: translate3d(118vw, 0, 0); }
-  100% { transform: translate3d(-20vw, -10px, 0); }
-}
-
-@keyframes fauna-cross-3 {
-  0% { transform: translate3d(105vw, 0, 0); }
-  100% { transform: translate3d(-14vw, 8px, 0); }
 }
 
 /* 1980s hill texels track Jeremy's 4px art cell (still is 268px = 67 cells).

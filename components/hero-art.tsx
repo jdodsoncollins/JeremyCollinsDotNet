@@ -14,7 +14,8 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const hover = window.matchMedia("(hover: hover) and (pointer: fine)");
     const phosphorShot = root.querySelector<HTMLElement>(".hero-art-1980s");
-    const phosphorCat = phosphorShot?.querySelector<HTMLImageElement>(".hero-art-cat");
+    const phosphorCat =
+      phosphorShot?.querySelector<HTMLImageElement>(".hero-art-cat");
     let visible = false;
     let catIntroPlayed = false;
     let scrolling = false;
@@ -28,12 +29,17 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       return root.querySelector<HTMLElement>(`.hero-art-${CSS.escape(era)}`);
     };
 
-    const catEligible = () => visible && !document.hidden && !motion.matches &&
+    const catEligible = () =>
+      visible &&
+      !document.hidden &&
+      !motion.matches &&
       document.documentElement.dataset.era === "1980s" &&
-      phosphorCat?.complete && phosphorCat.naturalWidth > 0;
+      phosphorCat?.complete &&
+      phosphorCat.naturalWidth > 0;
 
     const playCat = (playback: "intro" | "hover") => {
-      if (!phosphorShot || !catEligible() || phosphorShot.dataset.catPlayback) return;
+      if (!phosphorShot || !catEligible() || phosphorShot.dataset.catPlayback)
+        return;
       phosphorShot.dataset.catPlayback = playback;
     };
 

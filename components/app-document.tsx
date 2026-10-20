@@ -35,15 +35,29 @@ export function AppDocument({
   const app = APP_PRODUCTS[appKey];
   const appearance = appearances[appKey];
   const privacyHref = `${app.detailHref}/privacy`;
-  const supportHref = appKey === "paperAndGrain"
-    ? "/paper-and-grain/support"
-    : `mailto:jeremy@jeremycollins.net?subject=${encodeURIComponent(`${app.name} support`)}`;
+  const supportHref =
+    appKey === "paperAndGrain"
+      ? "/paper-and-grain/support"
+      : `mailto:jeremy@jeremycollins.net?subject=${encodeURIComponent(`${app.name} support`)}`;
 
   return (
-    <div className={`${shared.page} ${appearance.page} ${styles.page} ${styles[appKey] ?? ""}`} data-app-document={appKey}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <a className={shared.skipLink} href="#main-content">Skip to content</a>
-      <nav className={`${shared.navigation} ${styles.navigation}`} aria-label={`${app.name} navigation`}>
+    <div
+      className={`${shared.page} ${appearance.page} ${styles.page} ${styles[appKey] ?? ""}`}
+      data-app-document={appKey}
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <a className={shared.skipLink} href="#main-content">
+        Skip to content
+      </a>
+      <nav
+        className={`${shared.navigation} ${styles.navigation}`}
+        aria-label={`${app.name} navigation`}
+      >
         <Link href={app.detailHref} className={appearance.brand}>
           <Image src={app.icon} width={36} height={36} alt="" />
           <span>{app.name}</span>
@@ -56,8 +70,12 @@ export function AppDocument({
       <main id="main-content" tabIndex={-1} className={styles.main}>
         <header className={styles.documentHeader}>
           <h1 className={styles.title}>{title}</h1>
-          <p className={styles.effectiveDate}>Effective date: {effectiveDate}</p>
-          {headerContent ? <div className={styles.headerContent}>{headerContent}</div> : null}
+          <p className={styles.effectiveDate}>
+            Effective date: {effectiveDate}
+          </p>
+          {headerContent ? (
+            <div className={styles.headerContent}>{headerContent}</div>
+          ) : null}
         </header>
         <article className={styles.content}>{children}</article>
       </main>
@@ -66,7 +84,9 @@ export function AppDocument({
         <nav aria-label={`${app.name} information`}>
           <Link href={app.detailHref}>{app.name}</Link>
           <a href={supportHref}>Support</a>
-          <Link href={privacyHref} aria-current="page">Privacy</Link>
+          <Link href={privacyHref} aria-current="page">
+            Privacy
+          </Link>
         </nav>
       </footer>
     </div>

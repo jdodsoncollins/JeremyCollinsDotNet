@@ -29,46 +29,32 @@
 }
 
 @keyframes era-bob-4fps {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(0, -4px, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -4px, 0);
+  }
 }
 
 @keyframes era-bob-15fps {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -3px, 0); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
 }
 
 @keyframes era-bob-30fps {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -2px, 0); }
-}
-
-.era-reveal {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0);
-}
-
-.era-reveal.is-in {
-  opacity: 1;
-  transform: none;
-}
-
-:root[data-era="1980s"] .era-reveal {
-  transition:
-    opacity 0.5s steps(2, jump-end),
-    transform 0.5s steps(2, jump-end);
-}
-
-:root[data-era="1990s"] .era-reveal {
-  transition:
-    opacity 0.46s steps(7, jump-end),
-    transform 0.46s steps(7, jump-end);
-}
-
-:root[data-era="modern"] .era-reveal {
-  transition:
-    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -2px, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,13 +67,6 @@
   :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-still,
   :root[data-era="modern"][data-scroll-live] .hero-art-modern .hero-art-still {
     animation: none;
-  }
-
-  .era-reveal,
-  .era-reveal.is-in {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
 
@@ -129,8 +108,16 @@
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(ellipse at 30% 70%, rgba(184, 144, 88, 0.10), transparent 42%),
-    radial-gradient(ellipse at 70% 40%, rgba(255, 248, 230, 0.08), transparent 46%),
+    radial-gradient(
+      ellipse at 30% 70%,
+      rgba(184, 144, 88, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 70% 40%,
+      rgba(255, 248, 230, 0.08),
+      transparent 46%
+    ),
     repeating-linear-gradient(
       0deg,
       transparent 0 3px,
@@ -156,28 +143,53 @@
 }
 
 @keyframes era-stars-4fps {
-  from { opacity: 0.4; }
-  to { opacity: 0.95; }
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.95;
+  }
 }
 
 @keyframes era-paint-15fps {
-  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.85; }
-  50% { transform: translate3d(1px, -1px, 0); opacity: 1; }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(1px, -1px, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes era-plate-4fps {
-  from { filter: brightness(1); }
-  to { filter: brightness(1.1); }
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.1);
+  }
 }
 
 @keyframes era-plate-15fps {
-  0%, 100% { filter: saturate(1) brightness(1); }
-  50% { filter: saturate(1.06) brightness(1.03); }
+  0%,
+  100% {
+    filter: saturate(1) brightness(1);
+  }
+  50% {
+    filter: saturate(1.06) brightness(1.03);
+  }
 }
 
 @keyframes era-plate-30fps {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.025); }
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.025);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,7 +10,13 @@ export function Header({ home = false }: { home?: boolean }) {
   return (
     <header className={styles.header}>
       <nav aria-label="Primary navigation">
-        <Link href="/" className={styles.brand} aria-label="Jeremy Collins home"><EraLogo /></Link>
+        <Link
+          href="/"
+          className={styles.brand}
+          aria-label="Jeremy Collins home"
+        >
+          <EraLogo />
+        </Link>
         <div className={styles.navLinks}>
           <a href={home ? "#projects" : "/#projects"}>Projects</a>
           <a href={home ? "#about" : "/#about"}>About</a>

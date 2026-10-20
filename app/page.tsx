@@ -20,7 +20,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className={styles.page} data-home-page>
-      <a href="#main-content" className={styles.skipLink}>Skip to content</a>
+      <a href="#main-content" className={styles.skipLink}>
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}

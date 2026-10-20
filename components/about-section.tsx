@@ -3,7 +3,11 @@ import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/home.module.css";
 
 const roles = [
-  { period: "2022 — present", company: "Webflow", title: "Sr. Software Engineer" },
+  {
+    period: "2022 — present",
+    company: "Webflow",
+    title: "Sr. Software Engineer",
+  },
   { period: "2022", company: "MasterClass", title: "Software Engineer" },
   { period: "2019 — 2022", company: "HitRecord", title: "Senior Developer" },
   { period: "2018", company: "Plink", title: "Software Engineer" },
@@ -15,15 +19,39 @@ export function AboutSection() {
     <section id="about" className={styles.about} aria-labelledby="about-title">
       <div className={styles.aboutCopy} data-home-reveal>
         <h2 id="about-title">About me</h2>
-        <p>I like working on products where knowing the business makes the engineering better.</p>
-        <p>These days I spend a lot of time with agents and automation, so I can take on bigger systems without doing every step by hand.</p>
-        <p>I try a lot of new tools. The web still matters to me as an open platform with portable standards and room for independent software.</p>
-        <p>Outside of work, I hike, parent, read a lot, and build other apps and sites.</p>
-        <Link href="/resume" className={styles.resumeLink}>View my resume <AppArrow /></Link>
+        <p>
+          I like working on products where knowing the business makes the
+          engineering better.
+        </p>
+        <p>
+          These days I spend a lot of time with agents and automation, so I can
+          take on bigger systems without doing every step by hand.
+        </p>
+        <p>
+          I try a lot of new tools. The web still matters to me as an open
+          platform with portable standards and room for independent software.
+        </p>
+        <p>
+          Outside of work, I hike, parent, read a lot, and build other apps and
+          sites.
+        </p>
+        <Link href="/resume" className={styles.resumeLink}>
+          View my resume <AppArrow />
+        </Link>
       </div>
       <div className={styles.experience} data-home-reveal>
         <h3 className={styles.experienceTitle}>Experience</h3>
-        <ol>{roles.map(role => <li key={role.company}><div><h3>{role.company}</h3><p>{role.title}</p></div><span>{role.period}</span></li>)}</ol>
+        <ol>
+          {roles.map((role) => (
+            <li key={role.company}>
+              <div>
+                <h3>{role.company}</h3>
+                <p>{role.title}</p>
+              </div>
+              <span>{role.period}</span>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

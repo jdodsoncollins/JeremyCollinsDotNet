@@ -14,8 +14,13 @@ export default function NotFound() {
     <SiteShell>
       <main id="main-content" tabIndex={-1} className={styles.message}>
         <h1>Nothing here</h1>
-        <p>This page moved, or it never shipped. Everything else is still up.</p>
-        <Link href="/" className={styles.homeLink}>Back home <AppArrow direction="right" /></Link>
+        <p>
+          This page could not be found. Check the address or return to the
+          homepage.
+        </p>
+        <Link href="/" className={styles.homeLink}>
+          Back home <AppArrow direction="right" />
+        </Link>
       </main>
     </SiteShell>
   );

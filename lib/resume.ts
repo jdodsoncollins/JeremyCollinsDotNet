@@ -67,7 +67,11 @@ export function parseResumeBlocks(markdown: string): ResumeBlock[] {
     while (index < lines.length) {
       const current = lines[index];
       const currentTrimmed = current.trim();
-      if (!currentTrimmed || /^#{1,3}\s+/.test(currentTrimmed) || currentTrimmed.startsWith("- ")) {
+      if (
+        !currentTrimmed ||
+        /^#{1,3}\s+/.test(currentTrimmed) ||
+        currentTrimmed.startsWith("- ")
+      ) {
         break;
       }
       paragraphLines.push(current.replace(/\s+$/, ""));
@@ -82,7 +86,8 @@ export function parseResumeBlocks(markdown: string): ResumeBlock[] {
 export function parseResume(markdown: string): ParsedResume {
   const blocks = parseResumeBlocks(markdown);
   const first = blocks[0];
-  const title = first?.type === "heading" && first.level === 1 ? first.text : "Resume";
+  const title =
+    first?.type === "heading" && first.level === 1 ? first.text : "Resume";
   const intro: ResumeBlock[] = [];
   const sections: ResumeSection[] = [];
   let currentSection: ResumeSection | null = null;

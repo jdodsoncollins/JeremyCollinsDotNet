@@ -12,7 +12,8 @@ const ERA_LABELS: Record<(typeof THEMES)[number], string> = {
 };
 
 const ERA_NOTES: Record<(typeof THEMES)[number], string> = {
-  "1980s": "Green-phosphor CRT. Apple II scanlines, four values, no full-color landscape.",
+  "1980s":
+    "Green-phosphor CRT. Apple II scanlines, four values, no full-color landscape.",
   "1990s": "Beige, bevels, and a font that refuses to antialias.",
   modern: "A forest at dusk, warm paper, and a distinct palette for each app.",
 };
@@ -70,11 +71,20 @@ export function ThemeSwitcher() {
   const updateTheme = (nextTheme: EraTheme) => {
     setTheme(nextTheme);
     document.documentElement.dataset.era = nextTheme;
-    try { window.localStorage.setItem(STORAGE_KEY, nextTheme); } catch { /* The selected era still works when storage is unavailable. */ }
+    try {
+      window.localStorage.setItem(STORAGE_KEY, nextTheme);
+    } catch {
+      /* The selected era still works when storage is unavailable. */
+    }
   };
 
   return (
-    <div ref={wrapRef} className="theme-switcher-wrap" role="group" aria-label="Site theme controls">
+    <div
+      ref={wrapRef}
+      className="theme-switcher-wrap"
+      role="group"
+      aria-label="Site theme controls"
+    >
       <button
         ref={disclosureRef}
         type="button"
@@ -112,15 +122,30 @@ export function ThemeSwitcher() {
           className="theme-switcher"
           role="radiogroup"
           aria-label="Theme era"
-          onKeyDown={event => {
-            const previous = event.key === "ArrowLeft" || event.key === "ArrowUp";
-            const next = event.key === "ArrowRight" || event.key === "ArrowDown";
-            if (!previous && !next && event.key !== "Home" && event.key !== "End") return;
+          onKeyDown={(event) => {
+            const previous =
+              event.key === "ArrowLeft" || event.key === "ArrowUp";
+            const next =
+              event.key === "ArrowRight" || event.key === "ArrowDown";
+            if (
+              !previous &&
+              !next &&
+              event.key !== "Home" &&
+              event.key !== "End"
+            )
+              return;
             event.preventDefault();
             const current = THEMES.indexOf(theme);
-            const index = event.key === "Home" ? 0 : event.key === "End" ? THEMES.length - 1 : (current + (next ? 1 : -1) + THEMES.length) % THEMES.length;
+            const index =
+              event.key === "Home"
+                ? 0
+                : event.key === "End"
+                  ? THEMES.length - 1
+                  : (current + (next ? 1 : -1) + THEMES.length) % THEMES.length;
             updateTheme(THEMES[index]);
-            groupRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]')[index]?.focus();
+            groupRef.current
+              ?.querySelectorAll<HTMLButtonElement>('[role="radio"]')
+              [index]?.focus();
           }}
         >
           {THEMES.map((era) => (
