@@ -137,3 +137,22 @@ pnpm resume:build
 If resume styles or rendering code changed but the Markdown did not, run `pnpm resume:pdf` to force a fresh PDF. Inspect the generated PDF and commit it with the source change.
 
 Set `RESUME_SKIP_AUTO_PDF=1` to skip the automatic postbuild PDF sync in constrained environments.
+
+
+## Website analytics
+
+Simple Analytics uses its official async script through Next.js Script. No Google
+Analytics integration or consent UI is included. Vercel Analytics and Speed
+Insights remain enabled independently.
+
+Automatic collection is disabled; `components/simple-website-analytics.tsx` sends
+one view per navigation to explicit public paths in `lib/simple-analytics.mjs`.
+Callback/token and unknown routes are excluded. Query strings and fragments are
+never passed as paths; referrer and UTM metrics are disabled to avoid sharing URL
+identifiers. This means campaign/referral attribution is not available in this
+minimal integration. No extra automated-events script, account credentials,
+proxying, or hostname override is installed. Shared Vercel preview domains are
+not counted by Simple Analytics unless separately configured in its dashboard.
+
+Official docs: https://docs.simpleanalytics.com/install-simple-analytics-with-next
+and https://docs.simpleanalytics.com/trigger-custom-page-views .
