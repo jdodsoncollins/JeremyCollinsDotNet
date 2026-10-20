@@ -138,40 +138,21 @@ If resume styles or rendering code changed but the Markdown did not, run `pnpm r
 
 Set `RESUME_SKIP_AUTO_PDF=1` to skip the automatic postbuild PDF sync in constrained environments.
 
-## Optional Google Analytics (GA4)
 
-Set the public build-time variable `NEXT_PUBLIC_GA_MEASUREMENT_ID` to the GA4
-web stream's `G-…` measurement ID. Without a valid ID, no Google tag or consent
-prompt is mounted. This is a public identifier, not an API secret.
+## Website analytics
 
-Before enabling it in production, disable **Enhanced measurement** on the GA4
-web stream (including browser-history page views, form interactions, outbound
-clicks, and site search). The site deliberately sends only manual sanitized
-page views; automatic collection could otherwise duplicate events or collect
-URL parameters. Keep Google Signals, user-provided data collection, and
-advertising features off. Do not put credentials or identifying information in
-measurement configuration.
+Simple Analytics uses its official async script through Next.js Script. No Google
+Analytics integration or consent UI is included. Vercel Analytics and Speed
+Insights remain enabled independently.
 
-The implementation uses basic opt-in consent: Google's script is not requested
-until a visitor accepts. Declining sends nothing to Google Analytics. The
-preference control is available on reviewed public pages, and withdrawal clears
-GA cookies and reloads the document only after verifying the declined choice was
-saved. If storage fails, collection stays disabled in the current tab without a
-reload, and a visible warning explains the persistence limitation. Vercel Analytics and Speed Insights remain
-separate and unchanged. `/privacy` explains website measurement without changing
-native-app privacy claims.
+Automatic collection is disabled; `components/simple-website-analytics.tsx` sends
+one view per navigation to explicit public paths in `lib/simple-analytics.mjs`.
+Callback/token and unknown routes are excluded. Query strings and fragments are
+never passed as paths; referrer and UTM metrics are disabled to avoid sharing URL
+identifiers. This means campaign/referral attribution is not available in this
+minimal integration. No extra automated-events script, account credentials,
+proxying, or hostname override is installed. Shared Vercel preview domains are
+not counted by Simple Analytics unless separately configured in its dashboard.
 
-`lib/website-analytics.mjs` contains the explicit public path allowlist. Unknown,
-OAuth, and token routes are excluded. Page locations use only a fixed canonical
-origin and reviewed path; no raw query strings, fragments, referrer paths, or dynamic
-page titles are sent. `analyticsAcquisition` maps known referring services to fixed
-public origins, and accepts only exact UTM source/medium/campaign enums. All three
-UTM fields must match; unsupported campaigns are not campaign-attributed. Unknown
-referrers are omitted. No UTM term/content/ID is collected. This trades complete
-attribution for protection against identifiers in URLs. Review and extend the
-explicit lists when creating new campaigns; do not enable automatic collection.
-
-Before release, verify in a browser that there are zero Google requests before
-consent or after decline, one page_view on each allowed navigation after accept,
-no automatic duplicates, and no tracking on callback routes. Use a test property
-or intercept Google requests in browser tests; don't pollute production reports.
+Official docs: https://docs.simpleanalytics.com/install-simple-analytics-with-next
+and https://docs.simpleanalytics.com/trigger-custom-page-views .

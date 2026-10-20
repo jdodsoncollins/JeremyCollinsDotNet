@@ -5,7 +5,7 @@ import {
   Space_Mono,
   VT323,
 } from "next/font/google";
-import { WebsiteAnalytics } from "@/components/website-analytics";
+import { SimpleWebsiteAnalytics } from "@/components/simple-website-analytics";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -161,7 +161,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {children}
-        <WebsiteAnalytics />
+        <SimpleWebsiteAnalytics />
         <Analytics />
         <SpeedInsights />
       </body>
