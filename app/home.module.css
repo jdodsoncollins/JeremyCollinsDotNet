@@ -113,6 +113,7 @@
 .appBrand h3 a { display: inline-flex; align-items: center; min-height: 44px; }
 .page .project h4 { --home-tracking: -.025em; color: var(--card-ink); font-size: clamp(23px, 2.5vw, 33px); line-height: 1.22; font-weight: 400; margin-top: 28px; max-width: 350px; }
 .projectDescription { color: var(--card-muted); font-size: 15px; line-height: 1.8; margin-top: 18px !important; max-width: 370px; }
+.duoNote { color: var(--card-ink); font-size: 14px; line-height: 1.6; margin-top: 16px !important; }
 .features { list-style: none; padding: 0; margin: 24px 0 28px; width: 100%; display: grid; color: var(--card-muted); font-size: 14px; }
 .features li { padding-block: 9px; border-top: 1px solid var(--card-line); }
 .page .freeNote { color: var(--card-ink); max-width: 360px; font-size: 14px; line-height: 1.75; margin-bottom: 24px; }

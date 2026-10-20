@@ -15,14 +15,15 @@
 .hero h1 em { display: block; font-weight: 400; color: var(--accent); }
 .page .lead { max-width: 390px; margin-top: 30px; font-size: 21px; color: var(--ink); line-height: 1.55; --tracking: -.02em; }
 .page .intro { font-size: 15px; line-height: 1.85; max-width: 380px; margin-top: 18px; }
+.page .duoNote { margin-top: 20px; color: var(--ink); font-size: 14px; font-weight: 500; }
 .download { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 54px; padding: 14px 22px; background: var(--ink); color: var(--paper) !important; font-size: 13px; border-radius: 2px; }
 .download:hover { background: var(--accent); transform: translateY(-2px); }
 .hero .download { margin-top: 30px; }
 .page .note, .page .requirements { margin-top: 14px; font-size: 14px; }
-.heroArt { padding: 24px 32px; background: #e4dac3; border: 1px solid #d1c4a8; }
-.heroArt figure { max-width: 330px; margin-inline: auto; }
-.heroArt figcaption, .lessonImages figcaption { display: none; }
-.heroArt img, .lessonImages img { border: 1px solid #c9baa0; }
+.heroArt { min-width: 0; }
+.heroArt figure { width: 100%; margin: 0; }
+.lessonImages figcaption { display: none; }
+.lessonImages img { border: 1px solid #c9baa0; }
 .facts { margin: 0; padding: 26px max(64px, calc((100vw - 1192px) / 2)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-block: 1px solid var(--line); background: #e8e0cc; }
 .facts > div { text-align: center; }
 .facts dt { --typeface: Georgia, "Times New Roman", serif; --tracking: -.025em; font-size: 29px; }
@@ -82,7 +83,6 @@
   .header, .hero, .workshop, .lessons, .screenshots, .downloadSection, .footer, .support { padding-inline: 40px; }
   .hero { gap: 48px; }
   .hero h1 { font-size: clamp(68px, 8vw, 90px); }
-  .heroArt { padding: 20px; }
   .facts, .freeFold { padding-inline: 40px; }
   .lessons { gap: 44px; }
   .navigation { gap: 18px; }
@@ -99,7 +99,6 @@
   .hero h1 { font-size: clamp(58px, 9vw, 76px); }
   .page .lead { font-size: 18px; }
   .page .intro { font-size: 16px; }
-  .heroArt { padding: 14px; }
   .facts dt { font-size: 25px; }
   .facts dd { font-size: 12px; }
   .workshop, .screenshots { padding-block: 72px; }
@@ -131,8 +130,6 @@
   .page .lead { font-size: 20px; margin-top: 24px; }
   .page .intro { font-size: 16px; margin-top: 18px; }
   .hero .download { margin-top: 24px; }
-  .heroArt { padding: 8px; }
-  .heroArt figure { width: 100%; max-width: 360px; }
   .facts { padding: 24px; gap: 18px; }
   .facts dt { font-size: 21px; line-height: 1.1; }
   .facts dd { font-size: 12px; line-height: 1.6; margin-top: 8px; }

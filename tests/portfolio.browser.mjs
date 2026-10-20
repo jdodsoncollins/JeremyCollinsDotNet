@@ -31,6 +31,16 @@ try {
       }
       checks += 1;
     }
+    for (const id of ["app-tabforge", "app-paper"]) {
+      const project = page.locator(`#${id}`);
+      await project.scrollIntoViewIfNeeded();
+      assert.equal(await project.getByText("Best on iPhone Duo.", { exact: true }).count(), 1);
+      const image = project.locator('figure[data-device="iPhone Duo"] img');
+      await image.scrollIntoViewIfNeeded();
+      await image.evaluate(image => image.decode());
+      assert.ok(await image.evaluate(image => image.naturalWidth > 0));
+      checks += 1;
+    }
     assert.deepEqual(errors, []);
     await context.close();
   }
@@ -82,6 +92,28 @@ try {
     assert.equal((await page.goto(new URL(route, baseURL).href)).status(), 200, route);
     assert.equal(await page.locator("h1").count(), 1, route);
     checks += 1;
+  }
+  for (const width of [320, 390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    for (const route of ["/tabforge", "/paper-and-grain"]) {
+      await page.goto(new URL(route, baseURL).href);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), width, `${route} overflows at ${width}`);
+      await page.locator('[data-duo-hero] img').evaluate(image => image.decode());
+      assert.equal(await page.getByText("Best on iPhone Duo.", { exact: true }).count(), 1);
+      const gallery = page.locator('[data-app-gallery="duo"]');
+      assert.equal(await gallery.locator('figure[data-device="iPhone Duo"]').count(), 3);
+      await gallery.getByRole("button", { name: "Next screenshots", exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('[data-app-gallery="duo"]')?.textContent.includes("2 of 3"));
+      const rail = gallery.getByRole("region");
+      await rail.focus();
+      await page.keyboard.press("ArrowRight");
+      await page.waitForFunction(() => document.querySelector('[data-app-gallery="duo"]')?.textContent.includes("3 of 3"));
+      await gallery.locator('figure[data-device="iPhone Duo"] img').nth(2).evaluate(image => image.decode());
+      assert.equal(await page.locator('[data-app-gallery="gallery"] figure').count(), route === "/tabforge" ? 6 : 4);
+      checks += 1;
+    }
+    await context.close();
   }
   console.log(`Portfolio browser checks passed: ${checks}`);
 } finally {

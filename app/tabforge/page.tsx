@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: app.description,
     url: "/tabforge",
     type: "website",
-    images: [{ url: app.screenshots[0].src, alt: app.screenshots[0].alt }],
+    images: [{ url: app.duoScreenshots[0].src, width: app.duoScreenshots[0].width, height: app.duoScreenshots[0].height, alt: app.duoScreenshots[0].alt }],
   },
 };
 
@@ -44,12 +44,13 @@ export default function TabForgePage() {
             <h1 id="tabforge-title">A code keyboard<br />for iPhone<br />and iPad</h1>
             <p className={styles.lead}>Braces, brackets, and Tab. Right beside the letter keys.</p>
             <p className={styles.intro}>Write code, scripts, and terminal commands with punctuation and editing controls close at hand.</p>
+            <p className={styles.duoNote}>Best on iPhone Duo.</p>
             <DownloadLink />
             <p className={styles.requirements}>Open source · iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.freeNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
           </div>
-          <div className={styles.heroImages}>
-            <AppScreenshotGallery shots={[app.screenshots[0], app.screenshots[2]]} appName="TabForge" variant="hero" priorityFirst />
+          <div className={styles.heroImages} data-duo-hero>
+            <AppScreenshot shot={app.duoScreenshots[0]} priority sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px" />
           </div>
         </section>
 
@@ -85,7 +86,15 @@ export default function TabForgePage() {
           </div>
         </section>
 
-        <section id="screenshots" className={styles.screenshots} aria-labelledby="screenshots-title"><div className={styles.sectionIntro}><h2 id="screenshots-title">A closer look<br />at TabForge</h2><p>Programming keys, editing controls, keyboard themes, and layouts for your screen.</p></div><AppScreenshotGallery shots={app.screenshots} appName="TabForge" /></section>
+        <section id="screenshots" className={styles.screenshots} aria-labelledby="screenshots-title">
+          <div className={styles.sectionIntro}><h2 id="screenshots-title">A closer look<br />at TabForge</h2><p>Programming keys, editing controls, keyboard themes, and layouts for your screen.</p></div>
+          <div className={shared.duoGalleryBlock}>
+            <h3 className={shared.galleryDeviceHeading}>iPhone Duo</h3>
+            <AppScreenshotGallery shots={app.duoScreenshots} appName="TabForge" variant="duo" label="TabForge iPhone Duo screenshots" />
+          </div>
+          <h3 className={shared.galleryDeviceHeading}>iPhone</h3>
+          <AppScreenshotGallery shots={app.screenshots} appName="TabForge" label="TabForge iPhone screenshots" />
+        </section>
 
         <section className={styles.openSource} aria-labelledby="source-title">
           <div><h2 id="source-title">Your keystrokes<br />stay yours</h2><p>The keyboard does not log or transmit what you type. No Full Access is requested. No ads, analytics, or accounts.</p><Link href="/tabforge-privacy-policy" className={styles.textLink}>Read the privacy policy <AppArrow /></Link></div>

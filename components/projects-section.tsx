@@ -3,6 +3,7 @@ import Link from "next/link";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { AppScreenshot } from "@/components/app-screenshot";
 import styles from "@/app/home.module.css";
 
 const projects = [
@@ -28,6 +29,7 @@ export function ProjectsSection() {
               <div className={styles.appBrand}><Image src={app.icon} width={50} height={50} alt="" /><h3><Link href={app.detailHref}>{app.name}</Link></h3></div>
               <h4>{title}</h4>
               <p className={styles.projectDescription}>{description}</p>
+              {"duoScreenshots" in app && <p className={styles.duoNote}>Best on iPhone Duo.</p>}
               <ul className={styles.features}>{features.map(feature => <li key={feature}>{feature}</li>)}</ul>
               <p className={styles.freeNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
               <div className={styles.projectActions}>
@@ -36,7 +38,9 @@ export function ProjectsSection() {
               </div>
             </div>
             <div className={styles.projectArt}>
-              <AppScreenshotGallery shots={shots.map(index => app.screenshots[index])} appName={app.name} label={`${app.name} preview screenshots`} variant="hero" />
+              {"duoScreenshots" in app
+                ? <AppScreenshot shot={app.duoScreenshots[0]} sizes="(max-width: 760px) calc(100vw - 104px), (max-width: 1360px) 43vw, 560px" />
+                : <AppScreenshotGallery shots={shots.map(index => app.screenshots[index])} appName={app.name} label={`${app.name} preview screenshots`} variant="hero" />}
             </div>
           </article>
         ))}

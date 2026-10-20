@@ -1,4 +1,5 @@
 import media from "@/lib/app-store-media.json";
+import duoMedia from "@/lib/duo-media.json";
 
 const codableLabels = ["Elements", "Console", "Responsive design", "Page source", "Network", "Resources", "Scratchpad", "Safari extension"];
 const taktungLabels = ["Production", "Visual comparison", "Status widgets", "Activity widgets", "Field Log", "Appearance", "Production inspection", "Project tools"];
@@ -39,6 +40,7 @@ export const APP_PRODUCTS = {
     href: media.tabforge.appStore,
     hrefLabel: "View in App Store",
     detailHref: "/tabforge",
+    duoScreenshots: duoMedia.tabforge.screenshots,
     features: ["Programming punctuation within reach", "Tab, two-space, and four-space indentation", "Cursor arrows and supported terminal controls", "Saved snippets and language suggestions", "Light, dark, and code color palettes", "Phone, landscape, and iPad layouts", "Syntax-highlighted companion playground", "MIT licensed; no keystroke logging or transmission"],
     screenshots: media.tabforge.screenshots.map((shot, i) => ({ src: shot.src, width: shot.width, height: shot.height, label: tabforgeLabels[i], alt: `TabForge App Store screenshot: ${tabforgeLabels[i]}` })),
   },
@@ -51,6 +53,7 @@ export const APP_PRODUCTS = {
     href: media.paperAndGrain.appStore,
     hrefLabel: "View in App Store",
     detailHref: "/paper-and-grain",
+    duoScreenshots: duoMedia.paperAndGrain.screenshots,
     features: ["Eight guided origami lessons", "Free Fold with a blank sheet", "Paper that bends and settles as you fold", "Cut shapes and add pencil lines", "Step-by-step diagrams and Guidebook", "Zoom, turn, and inspect your work in 3D", "Save editable sheets; undo and redo", "Free to play, with no timer or losing"],
     screenshots: media.paperAndGrain.screenshots.map((shot, i) => ({ src: shot.src, width: shot.width, height: shot.height, label: paperLabels[i], alt: `Paper & Grain App Store screenshot: ${paperLabels[i]}` })),
   },

@@ -1,0 +1,74 @@
+{
+  "tabforge": {
+    "sourceRepository": "jdodsoncollins/TabForge",
+    "sourceRevision": "5f598c1007cf34ddec7daae571b33d1ddf24b657",
+    "screenshots": [
+      {
+        "src": "/apps/tabforge-duo-open.webp?v=221cb255f2",
+        "width": 1200,
+        "height": 862,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 open",
+        "alt": "TabForge programming keyboard and Swift Playground on an open iPhone Duo.",
+        "sourcePath": "docs/images/keyboard-duo-open.webp",
+        "sha256": "221cb255f289d31ea10991267a01dbd978564eb4370a31a61d28218e07b31a75"
+      },
+      {
+        "src": "/apps/tabforge-duo-tabletop.webp?v=498caca3ac",
+        "width": 1112,
+        "height": 1458,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 tabletop",
+        "alt": "TabForge code editor and programming keys on an iPhone Duo in tabletop mode.",
+        "sourcePath": "docs/images/keyboard-duo-tabletop.webp",
+        "sha256": "498caca3ac1777ca85520d518f5a4ec34296f96a2b0e46524d053dc929a52fc8"
+      },
+      {
+        "src": "/apps/tabforge-duo-closed.webp?v=7b2608c695",
+        "width": 990,
+        "height": 1368,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 closed",
+        "alt": "TabForge programming keyboard on the outer display of a closed iPhone Duo.",
+        "sourcePath": "docs/images/keyboard-duo-closed.webp",
+        "sha256": "7b2608c69539539e4eb6d75c83ddc3e7dd726b0a1f4fc294ef6e0818f75f66ba"
+      }
+    ]
+  },
+  "paperAndGrain": {
+    "sourceRepository": "jdodsoncollins/Origami",
+    "sourceRevision": "cae187e2eaba104e6f972fc25090275a7748cd11",
+    "screenshots": [
+      {
+        "src": "/apps/paper-duo-workshop.png?v=1cf5a6af1f",
+        "width": 3015,
+        "height": 2169,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 paper workshop",
+        "alt": "Paper & Grain on an open iPhone Duo, with paper folding across the center guide and tools beside the workspace.",
+        "sourcePath": "marketing/framed/duo/01-make-time-for-paper-device.png",
+        "sha256": "1cf5a6af1f4fcb5d2bf5b7971eaed53f428ac8805845cdbc7b755884de632720"
+      },
+      {
+        "src": "/apps/paper-duo-guidebook.png?v=d280748fc7",
+        "width": 3015,
+        "height": 2169,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 Guidebook",
+        "alt": "Paper & Grain Guidebook and folding diagrams on the inner display of an iPhone Duo.",
+        "sourcePath": "marketing/framed/duo/03-help-when-you-want-it-device.png",
+        "sha256": "d280748fc74dabaae605e72bc40ab5919b39d0806b4843086bd0824da694721c"
+      },
+      {
+        "src": "/apps/paper-duo-library.png?v=7ff93aa580",
+        "width": 3015,
+        "height": 2169,
+        "device": "iPhone Duo",
+        "label": "iPhone Duo \u2014 lessons and Free Fold",
+        "alt": "Paper & Grain lesson library and Free Fold on an open iPhone Duo.",
+        "sourcePath": "marketing/framed/duo/04-follow-your-curiosity-device.png",
+        "sha256": "7ff93aa580f0a607f8749436e35665479c8629f705e224ef3f9742126f8356d7"
+      }
+    ]
+  }
+}

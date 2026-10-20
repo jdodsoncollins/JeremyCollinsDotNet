@@ -67,6 +67,11 @@ The PDF should be committed so `/resume/jeremy-collins-resume.pdf` is available 
 
 ### Design tooling
 
+TabForge and Paper & Grain feature genuine iPhone Duo captures on their product
+pages and the homepage. `lib/duo-media.json` records their source revisions,
+dimensions, and asset hashes separately from the conventional iPhone App Store
+media in `lib/app-store-media.json`.
+
 Impeccable 4.7.0 is installed for Codex in `.agents/skills/impeccable`.
 Its engine is downloaded on first use and is excluded from Git. To refresh the
 project installation, run `npx impeccable@4.7.0 install -y --providers=codex --scope=project --no-hooks`.

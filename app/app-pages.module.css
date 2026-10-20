@@ -63,6 +63,11 @@
 .screenshot a:hover { opacity: .92; }
 .screenshot img { display: block; width: 100%; height: auto; }
 .screenshot figcaption { margin-top: 14px; font-size: 12px; color: var(--muted); }
+.screenshot[data-device="iPhone Duo"] { width: 100%; max-width: none; }
+.screenshot[data-device="iPhone Duo"] img { border: 0; }
+.screenshot[data-device="iPhone Duo"] figcaption { display: block; margin-top: 16px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.duoGalleryBlock { margin-bottom: 48px; }
+.page .galleryDeviceHeading { font-size: 22px; line-height: 1.3; margin-bottom: 24px; }
 .footer.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding-block: 32px; gap: 28px; border-top: 1px solid var(--line) !important; background: var(--paper) !important; box-shadow: none !important; backdrop-filter: none !important; font-size: 14px; color: var(--muted); }
 .footer .footerIdentity { display: flex; flex-direction: column; align-items: start; gap: 8px; }
 .footerIdentity > div, .footer > nav { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
@@ -139,6 +144,16 @@
 .heroGallery .screenshot a { border: 0; }
 .heroGallery .screenshot figcaption { display: none; }
 .heroGallery .galleryToolbar button { display: inline-flex; justify-content: center; align-items: center; width: auto; min-width: 44px; height: auto; min-height: 44px; gap: 8px; padding: 10px; font-size: 12px; }
+.duoGallery .galleryRail { grid-auto-columns: calc(100% - 48px); gap: 24px; align-items: start; }
+.duoGallery .galleryItem { padding: 24px; background: color-mix(in srgb, var(--paper) 88%, var(--ink)); }
+.duoGallery .shotIndex { display: none; }
+.duoGallery .screenshot a { border: 0; position: relative; aspect-ratio: 4 / 3; }
+.duoGallery .screenshot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.duoGallery .galleryToolbar button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: auto; min-width: 44px; height: auto; min-height: 44px; padding: 10px; font-size: 12px; }
+@media (max-width: 620px) {
+  .duoGallery .galleryRail { grid-auto-columns: calc(100% - 20px); gap: 16px; }
+  .duoGallery .galleryItem { padding: 12px; }
+}
 
 /* Taktung: charcoal, warm bronze, and the quiet precision of a field journal. */
 .taktung .brand { font-weight: 500; }

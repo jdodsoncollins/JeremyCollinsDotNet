@@ -14,15 +14,16 @@
 .heroCopy h1 { --tracking: -.065em; font-size: clamp(56px, 5.8vw, 80px); line-height: 1.03; font-weight: 600; }
 .page .lead { max-width: 370px; margin-top: 28px; font-size: 22px; line-height: 1.45; color: var(--ink); --tracking: -.025em; }
 .page .intro { max-width: 380px; margin-top: 18px; font-size: 15px; line-height: 1.8; }
+.page .duoNote { margin-top: 20px; color: var(--ink); font-size: 14px; font-weight: 500; }
 .download { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 54px; padding: 14px 22px; color: #fff !important; background: var(--accent); font-size: 13px; }
 .download:hover { background: #303f21; transform: translateY(-2px); }
 .hero .download { margin-top: 28px; }
 .page .freeNote { max-width: 380px; margin-top: 16px; font-size: 14px; line-height: 1.75; }
 .page .requirements { margin-top: 15px; font-size: 14px; }
-.heroImages { --hero-stagger: 68px; --hero-gap: 18px; padding: 20px 0; }
+.heroImages { min-width: 0; }
 .heroImages figure, .layoutImages figure, .editingImage figure { margin: 0; }
-.heroImages figcaption, .layoutImages figcaption, .editingImage figcaption { display: none; }
-.heroImages img, .editingImage img, .layoutImages img { border: 1px solid #d1d2c4; }
+.layoutImages figcaption, .editingImage figcaption { display: none; }
+.editingImage img, .layoutImages img { border: 1px solid #d1d2c4; }
 .quickFacts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 24px max(64px, calc((100vw - 1232px) / 2)); background: #e0e4d5; border-block: 1px solid #c2c9b6; gap: 32px; }
 .quickFacts > div + div { border-left: 1px solid #b7c1a8; padding-left: 32px; }
 .quickFacts dt { font-size: 14px; color: var(--muted); }
@@ -73,7 +74,6 @@
   .header, .hero, .editing, .profiles, .screenshots, .openSource, .footer { padding-inline: 40px; }
   .hero { gap: 32px; }
   .heroCopy h1 { font-size: clamp(52px, 6vw, 68px); }
-  .heroImages { --hero-gap: 12px; }
   .quickFacts, .layouts, .finalDownload { padding-inline: 40px; }
   .editingGrid, .layouts, .profiles, .openSource { gap: 44px; }
   .editingImage { padding-inline: 28px; }
@@ -89,7 +89,7 @@
   .heroCopy h1 { max-width: 560px; }
   .page .lead { max-width: 430px; }
   .page .intro { max-width: 470px; }
-  .heroImages { --hero-gap: 20px; --hero-stagger: 44px; width: 100%; max-width: 520px; margin-inline: auto; padding-block: 0; }
+  .heroImages { width: 100%; }
   .quickFacts { gap: 20px; }
   .quickFacts > div + div { padding-left: 20px; }
   .quickFacts dd { font-size: 14px; }

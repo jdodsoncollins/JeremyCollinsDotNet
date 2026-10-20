@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: app.description,
     url: "/paper-and-grain",
     type: "website",
-    images: [{ url: app.screenshots[0].src, alt: app.screenshots[0].alt }],
+    images: [{ url: app.duoScreenshots[0].src, width: app.duoScreenshots[0].width, height: app.duoScreenshots[0].height, alt: app.duoScreenshots[0].alt }],
   },
 };
 
@@ -44,11 +44,12 @@ export default function PaperAndGrainPage() {
             <h1 id="paper-title">Fold, cut,<br /><em>and draw</em></h1>
             <p className={styles.lead}>A quiet paper workshop<br />for iPhone and iPad.</p>
             <p className={styles.intro}>Begin with a sheet. Try a crease, follow a lesson, or make a shape of your own. There’s no timer and no losing.</p>
+            <p className={styles.duoNote}>Best on iPhone Duo.</p>
             <DownloadLink />
             <p className={styles.requirements}>iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.note}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
           </div>
-          <div className={styles.heroArt}><AppScreenshot shot={app.screenshots[0]} priority /></div>
+          <div className={styles.heroArt} data-duo-hero><AppScreenshot shot={app.duoScreenshots[0]} priority sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px" /></div>
         </section>
 
         <dl className={styles.facts}><div><dt>Eight lessons</dt><dd>A fold at a time</dd></div><div><dt>Free Fold</dt><dd>Your own blank sheet</dd></div><div><dt>No timer</dt><dd>Work at your pace</dd></div></dl>
@@ -69,7 +70,15 @@ export default function PaperAndGrainPage() {
 
         <section className={styles.freeFold} aria-labelledby="free-fold-title"><div className={styles.freeFoldInner}><h2 id="free-fold-title">Or start with<br />a blank sheet</h2><div><p>Free Fold leaves the next move to you. Fold and unfold, turn the paper over, cut a new shape, or add a few pencil lines.</p><p>Save editable sheets in your gallery and come back to them later. Undo a crease, try a different direction, and keep exploring.</p></div></div></section>
 
-        <section id="screenshots" className={styles.screenshots} aria-labelledby="screenshots-title"><div className={styles.sectionHeading}><h2 id="screenshots-title">Inside the<br />paper workshop</h2><p>Explore the workspace, follow a guided lesson, and keep the Guidebook close at hand.</p></div><AppScreenshotGallery shots={app.screenshots} appName="Paper & Grain" /></section>
+        <section id="screenshots" className={styles.screenshots} aria-labelledby="screenshots-title">
+          <div className={styles.sectionHeading}><h2 id="screenshots-title">Inside the<br />paper workshop</h2><p>Explore the workspace, follow a guided lesson, and keep the Guidebook close at hand.</p></div>
+          <div className={shared.duoGalleryBlock}>
+            <h3 className={shared.galleryDeviceHeading}>iPhone Duo</h3>
+            <AppScreenshotGallery shots={app.duoScreenshots} appName="Paper & Grain" variant="duo" label="Paper & Grain iPhone Duo screenshots" />
+          </div>
+          <h3 className={shared.galleryDeviceHeading}>iPhone</h3>
+          <AppScreenshotGallery shots={app.screenshots} appName="Paper & Grain" label="Paper & Grain iPhone screenshots" />
+        </section>
 
         <section className={styles.downloadSection} aria-labelledby="download-title"><div className={styles.downloadInner}><div><div className={styles.downloadTitle}><Image src={app.icon} width={60} height={60} alt="" /><h2 id="download-title">Paper &amp; Grain<br />for iPhone and iPad</h2></div><p>All eight lessons and Free Fold are included.<br />Pick a sheet and see what you can make.</p></div><div className={styles.downloadActions}><DownloadLink /><p>Free · iOS &amp; iPadOS {app.minimumOS} or later</p></div></div><p className={styles.compatibility}>Touch controls work without a folding device. Optional folding along the device seam on a supported iPhone Duo requires iOS 27.1 or later.</p></section>
       </main>
