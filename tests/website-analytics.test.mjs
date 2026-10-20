@@ -28,3 +28,14 @@ test('acquisition keeps only predefined public labels and known referrer origins
   }
   assert.equal(analyticsAcquisition('', 'https://www.google.com/search?q=private').campaign_medium, 'organic');
 });
+
+test('consent persistence requires successful write and matching readback before reload', async () => {
+  const { persistAnalyticsConsent } = await import('../lib/website-analytics.mjs');
+  let value = 'accepted';
+  const good = { setItem(_key, next) { value = next; }, getItem() { return value; } };
+  assert.equal(persistAnalyticsConsent(good, 'consent', 'declined'), true);
+  assert.equal(value, 'declined');
+  assert.equal(persistAnalyticsConsent({ setItem() { throw new Error('blocked'); }, getItem() { return 'accepted'; } }, 'consent', 'declined'), false);
+  assert.equal(persistAnalyticsConsent({ setItem() {}, getItem() { return 'accepted'; } }, 'consent', 'declined'), false);
+  assert.equal(persistAnalyticsConsent({ setItem() {}, getItem() { throw new Error('blocked'); } }, 'consent', 'declined'), false);
+});
