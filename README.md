@@ -155,7 +155,9 @@ measurement configuration.
 The implementation uses basic opt-in consent: Google's script is not requested
 until a visitor accepts. Declining sends nothing to Google Analytics. The
 preference control is available on reviewed public pages, and withdrawal clears
-GA cookies and reloads the document. Vercel Analytics and Speed Insights remain
+GA cookies and reloads the document only after verifying the declined choice was
+saved. If storage fails, collection stays disabled in the current tab without a
+reload, and a visible warning explains the persistence limitation. Vercel Analytics and Speed Insights remain
 separate and unchanged. `/privacy` explains website measurement without changing
 native-app privacy claims.
 
