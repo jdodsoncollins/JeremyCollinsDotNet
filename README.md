@@ -65,6 +65,20 @@ The PDF should be committed so `/resume/jeremy-collins-resume.pdf` is available 
 
 ## Development
 
+### Design tooling
+
+Impeccable 4.7.0 is installed for Codex in `.agents/skills/impeccable`.
+Its engine is downloaded on first use and is excluded from Git. To refresh the
+project installation, run `npx impeccable@4.7.0 install -y --providers=codex --scope=project --no-hooks`.
+
+Use `/impeccable audit` and `/impeccable critique` before making design changes.
+`/impeccable delight` is the command for a joy pass. The source detector can also
+be run directly:
+
+```bash
+.agents/skills/impeccable/scripts/impeccable detect --json app components
+```
+
 Install dependencies:
 
 ```bash
@@ -88,6 +102,16 @@ Run tests:
 ```bash
 pnpm test
 ```
+
+With a production server running (`pnpm build && pnpm start`), check responsive
+themes, finite hero animation, reduced motion, data saving, and key routes:
+
+```bash
+pnpm test:browser
+```
+
+Set `BASE_URL` to test a deployment and `CHROMIUM_PATH` if Chromium is installed
+outside the usual Linux path. Otherwise Playwright uses its installed Chromium.
 
 Force-export the resume PDF from an existing production build:
 

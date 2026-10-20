@@ -13,6 +13,7 @@ export function HeroSection() {
       <div className={styles.heroInner}>
         <div className={styles.heroCopy}>
           <h1 id="home-title" className={styles.heroTitle}>Jeremy<br /><span>Collins</span></h1>
+          <p className={styles.heroIntro}>Software engineer at Webflow.<br />Maker of independent apps.</p>
           <div className={styles.heroActions}>
             <a className={styles.heroButton} href="#projects">View projects <AppArrow direction="right" /></a>
             <div className={styles.heroSecondary}>

@@ -2,8 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const HOLD_MS = 70;
-const SCROLL_IDLE_MS = 720;
+const SCROLL_IDLE_MS = 140;
 
 export function HeroArt({ children }: { children: React.ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -13,10 +12,13 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
     if (!root) return;
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const hover = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const phosphorShot = root.querySelector<HTMLElement>(".hero-art-1980s");
+    const phosphorCat = phosphorShot?.querySelector<HTMLImageElement>(".hero-art-cat");
+    let visible = false;
+    let catIntroPlayed = false;
     let scrolling = false;
-    let touching = false;
-    let pointerId: number | null = null;
-    let holdTimer: number | null = null;
+    let lastScrollY = window.scrollY;
     let idleTimer: number | null = null;
     let liveShot: HTMLElement | null = null;
 
@@ -26,8 +28,21 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       return root.querySelector<HTMLElement>(`.hero-art-${CSS.escape(era)}`);
     };
 
+    const catEligible = () => visible && !document.hidden && !motion.matches &&
+      document.documentElement.dataset.era === "1980s" &&
+      phosphorCat?.complete && phosphorCat.naturalWidth > 0;
+
+    const playCat = (playback: "intro" | "hover") => {
+      if (!phosphorShot || !catEligible() || phosphorShot.dataset.catPlayback) return;
+      phosphorShot.dataset.catPlayback = playback;
+    };
+
+    const stopCat = () => {
+      if (phosphorShot) delete phosphorShot.dataset.catPlayback;
+    };
+
     const sync = () => {
-      const live = !motion.matches && (scrolling || touching);
+      const live = visible && !motion.matches && !document.hidden && scrolling;
       const next = live ? visibleShot() : null;
       if (liveShot && liveShot !== next) {
         liveShot.classList.remove("is-live");
@@ -35,16 +50,22 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       liveShot = next;
       liveShot?.classList.add("is-live");
       root.closest(".hero-section")?.classList.toggle("is-live", live);
-    };
-
-    const stopHold = () => {
-      if (holdTimer != null) {
-        window.clearTimeout(holdTimer);
-        holdTimer = null;
+      if (!catEligible()) {
+        stopCat();
+        if (phosphorShot) delete phosphorShot.dataset.catVisible;
+      } else {
+        if (phosphorShot) phosphorShot.dataset.catVisible = "true";
+        if (!catIntroPlayed) {
+          catIntroPlayed = true;
+          playCat("intro");
+        }
       }
     };
 
     const onScroll = () => {
+      const y = window.scrollY;
+      if (y === lastScrollY) return;
+      lastScrollY = y;
       if (motion.matches) return;
       scrolling = true;
       sync();
@@ -65,36 +86,27 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       sync();
     };
 
-    const onPointerDown = (event: PointerEvent) => {
-      if (event.pointerType !== "touch") return;
-      if (motion.matches) return;
-      const target = (event.target as HTMLElement | null)?.closest(".hero-art-shot");
-      if (!(target instanceof HTMLElement) || !root.contains(target)) return;
-
-      pointerId = event.pointerId;
-      holdTimer = window.setTimeout(() => {
-        holdTimer = null;
-        touching = true;
-        sync();
-      }, HOLD_MS);
-    };
-
-    const onPointerEnd = (event: PointerEvent) => {
-      if (pointerId == null || event.pointerId !== pointerId) return;
-      pointerId = null;
-      stopHold();
-      touching = false;
-      sync();
-    };
-
     const onMotionChange = () => {
-      if (motion.matches) {
-        scrolling = false;
-        touching = false;
-        stopHold();
-      }
-      sync();
+      onScrollEnd();
     };
+
+    const onCatEnter = () => {
+      if (hover.matches && catIntroPlayed) playCat("hover");
+    };
+
+    const onCatLeave = () => {
+      if (phosphorShot?.dataset.catPlayback === "hover") stopCat();
+    };
+
+    const onCatAnimationEnd = (event: AnimationEvent) => {
+      if (event.animationName === "hero-cat-1980s") stopCat();
+    };
+
+    const visibility = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      sync();
+    });
+    visibility.observe(root);
 
     const observer = new MutationObserver(sync);
     observer.observe(document.documentElement, {
@@ -102,28 +114,35 @@ export function HeroArt({ children }: { children: React.ReactNode }) {
       attributeFilter: ["data-era"],
     });
 
-    const scrollOpts: AddEventListenerOptions = { passive: true, capture: true };
-    const pointerOpts: AddEventListenerOptions = { passive: true };
+    const scrollOpts: AddEventListenerOptions = { passive: true };
 
     window.addEventListener("scroll", onScroll, scrollOpts);
     window.addEventListener("scrollend", onScrollEnd, scrollOpts);
     motion.addEventListener("change", onMotionChange);
-    root.addEventListener("pointerdown", onPointerDown, pointerOpts);
-    window.addEventListener("pointerup", onPointerEnd, pointerOpts);
-    window.addEventListener("pointercancel", onPointerEnd, pointerOpts);
+    document.addEventListener("visibilitychange", onMotionChange);
+    window.addEventListener("blur", onScrollEnd);
+    phosphorShot?.addEventListener("pointerenter", onCatEnter);
+    phosphorShot?.addEventListener("pointerleave", onCatLeave);
+    phosphorCat?.addEventListener("load", sync);
+    phosphorCat?.addEventListener("animationend", onCatAnimationEnd);
 
     return () => {
-      stopHold();
       if (idleTimer != null) window.clearTimeout(idleTimer);
       liveShot?.classList.remove("is-live");
       root.closest(".hero-section")?.classList.remove("is-live");
+      stopCat();
+      if (phosphorShot) delete phosphorShot.dataset.catVisible;
       observer.disconnect();
+      visibility.disconnect();
       window.removeEventListener("scroll", onScroll, scrollOpts);
       window.removeEventListener("scrollend", onScrollEnd, scrollOpts);
       motion.removeEventListener("change", onMotionChange);
-      root.removeEventListener("pointerdown", onPointerDown, pointerOpts);
-      window.removeEventListener("pointerup", onPointerEnd, pointerOpts);
-      window.removeEventListener("pointercancel", onPointerEnd, pointerOpts);
+      document.removeEventListener("visibilitychange", onMotionChange);
+      window.removeEventListener("blur", onScrollEnd);
+      phosphorShot?.removeEventListener("pointerenter", onCatEnter);
+      phosphorShot?.removeEventListener("pointerleave", onCatLeave);
+      phosphorCat?.removeEventListener("load", sync);
+      phosphorCat?.removeEventListener("animationend", onCatAnimationEnd);
     };
   }, []);
 

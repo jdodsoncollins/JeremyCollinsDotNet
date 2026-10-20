@@ -102,7 +102,8 @@
 .theme-tooltip {
   position: absolute;
   top: calc(100% + 0.5rem);
-  left: 50%;
+  left: auto;
+  right: 0;
   width: min(16rem, 70vw);
   padding: 0.75rem;
   color: var(--popover-foreground);
@@ -114,7 +115,7 @@
   line-height: 1.45;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -4px);
+  transform: translate(0, -4px);
   transition: opacity 160ms ease, transform 160ms ease;
   z-index: 80;
 }
@@ -123,7 +124,7 @@
 .theme-info-wrap:focus-within .theme-tooltip,
 .theme-tooltip[data-open="true"] {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translate(0, 0);
 }
 
 .codable-icon {

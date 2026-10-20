@@ -74,7 +74,7 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <div ref={wrapRef} className="theme-switcher-wrap" aria-label="Site theme controls">
+    <div ref={wrapRef} className="theme-switcher-wrap" role="group" aria-label="Site theme controls">
       <button
         ref={disclosureRef}
         type="button"
@@ -144,6 +144,7 @@ export function ThemeSwitcher() {
             type="button"
             className="theme-info"
             aria-label="Why theme eras?"
+            aria-describedby="theme-era-tooltip"
             aria-expanded={infoOpen}
             aria-controls="theme-era-tooltip"
             onClick={() => setInfoOpen((open) => !open)}

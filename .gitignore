@@ -11,3 +11,5 @@ out/
 *.tsbuildinfo
 /site
 /docker
+.agents/skills/impeccable/scripts/bin/
+.impeccable/live/

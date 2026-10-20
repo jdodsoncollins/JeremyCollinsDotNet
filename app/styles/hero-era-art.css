@@ -112,9 +112,14 @@
   filter: none;
 }
 
-:root[data-era="1980s"][data-scroll-live] .hero-art-cat,
-:root[data-era="1980s"] .hero-section.is-live .hero-art-cat {
+:root[data-era="1980s"][data-scroll-live] .hero-art-1980s[data-cat-visible] .hero-art-cat,
+:root[data-era="1980s"] .hero-section.is-live .hero-art-1980s[data-cat-visible] .hero-art-cat {
   animation: hero-cat-1980s 0.5s steps(2, jump-none) infinite;
+}
+
+/* A single phosphor-cat greeting; holding the pointer never repeats it. */
+:root[data-era="1980s"] .hero-art-1980s[data-cat-playback] .hero-art-cat {
+  animation: hero-cat-1980s 0.5s steps(2, jump-none) 1;
 }
 
 /* One full cat at a time. Still is gone so it cannot ghost under the strip. */
@@ -162,8 +167,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :root[data-era="1980s"][data-scroll-live] .hero-art-cat,
-  :root[data-era="1980s"] .hero-section.is-live .hero-art-cat,
+  :root[data-era="1980s"] .hero-art-1980s[data-cat-playback] .hero-art-cat,
+  :root[data-era="1980s"][data-scroll-live] .hero-art-1980s[data-cat-visible] .hero-art-cat,
+  :root[data-era="1980s"] .hero-section.is-live .hero-art-1980s[data-cat-visible] .hero-art-cat,
   :root[data-era="1990s"] .hero-art-1990s.is-live .hero-art-cat-live img,
   :root[data-era="1990s"] .hero-section.is-live .hero-art-1990s .hero-art-cat-live img,
   :root[data-era="1990s"][data-scroll-live] .hero-art-1990s .hero-art-cat-live img,

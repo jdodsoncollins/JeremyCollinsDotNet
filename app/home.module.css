@@ -32,6 +32,7 @@
 .page :is(.heroCopy, .heroInner, .projectCopy, .appBrand, .aboutCopy, .experience, .navLinks, .heroSecondary) { min-width: 0; }
 .page :is(h1, h2, h3, h4, p, figure) { margin: 0; }
 .page a { color: inherit; text-decoration: none; }
+.page ::selection { color: var(--paper); background: var(--ochre); }
 .page svg { display: block; flex-shrink: 0; }
 .page :is(a, button):focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 .page .skipLink { position: absolute; z-index: 100; left: 16px; top: 10px; padding: 12px 18px; color: #20362c; background: #f3f1e8; transform: translateY(-160%); font-size: 14px; }
@@ -55,7 +56,7 @@
 :global(:root[data-era="1990s"]) .page .brand :global(.era-logo-1990s) { display: block; }
 .navLinks { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-left: auto; order: 1; font-size: 14px; }
 .navLinks a { display: inline-flex; align-items: center; min-height: 44px; }
-.header :global(.theme-disclosure) { order: 2; gap: 8px; width: auto; min-width: 84px; min-height: 44px; height: auto; padding: 10px 12px; background: #203b3090 !important; color: #f3f1e8 !important; border: 1px solid #f3f1e840 !important; font-size: 13px; }
+.header :global(.theme-disclosure) { order: 2; gap: 6px; width: auto; min-width: 76px; min-height: 44px; height: auto; padding: 8px 10px; background: transparent !important; color: #f3f1e8 !important; border: 1px solid #f3f1e825 !important; font-size: 11px; }
 .header :global(.theme-disclosure-label) { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; }
 .header :global(.theme-panel) { order: 3; justify-content: flex-end; }
 .header :global(.theme-switcher) { background: #203b30 !important; border-color: #f3f1e855 !important; }
@@ -72,10 +73,11 @@
 .heroInner { position: relative; z-index: 2; width: 100%; max-width: 1360px; margin-inline: auto; padding: 150px 56px 110px; display: grid; grid-template-columns: 1fr 1.05fr; gap: 16px; align-items: center; }
 .heroCopy { position: relative; z-index: 2; }
 .page .heroTitle { --home-tracking: -.04em; color: #f3f1e8; font-size: clamp(78px, 8.5vw, 122px); line-height: .98; font-weight: 500; }
-.heroTitle > span { --home-type: var(--sans); --home-tracking: -.04em; position: relative; display: inline-block; max-width: 100%; font-style: normal; font-weight: 500; }
-.heroActions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 45px; }
+.heroTitle > span { --home-type: Georgia, "Times New Roman", serif; --home-tracking: -.04em; position: relative; display: inline-block; max-width: 100%; font-style: italic; font-weight: 400; }
+.heroIntro { max-width: 32ch; color: #e0e7d9; font-size: 18px; line-height: 1.65; margin-top: 28px !important; }
+.heroActions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 30px; }
 .heroSecondary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 23px; }
-.heroButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; padding: 15px 20px; background: var(--ochre); color: #243c2f !important; border: 1px solid #14281d; border-radius: 2px; font-size: 12px; font-weight: 500; }
+.heroButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 48px; padding: 15px 20px; background: var(--ochre); color: #243c2f !important; border: 1px solid #14281d; border-radius: 2px; font-size: 14px; font-weight: 500; }
 .heroButton:hover { background: #f5cc79; opacity: 1 !important; }
 :global(:root[data-era="modern"]) .page :is(.heroButton, .projectActions a, .resumeLink, .footerBottom a) svg { transition: transform 180ms ease-out; }
 :global(:root[data-era="modern"]) .page :is(.heroButton, .readMore):is(:hover, :focus-visible) svg { transform: translateX(3px); }
@@ -87,7 +89,7 @@
 .heroTextLink { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; gap: 13px; font-size: 14px; }
 .artwork { align-self: end; width: 100%; min-width: 0; padding-top: 28px; }
 .artwork :global(img:not([src])) { visibility: hidden; }
-.artwork :global(.hero-art) { position: relative !important; display: block !important; inset: auto !important; width: 100% !important; height: auto !important; max-width: none !important; margin: 0 !important; transform: none !important; filter: none !important; }
+.artwork :global(.hero-art) { position: relative !important; display: block !important; inset: auto !important; width: 100% !important; height: auto !important; max-width: none !important; margin: 0 !important; padding: 0 !important; transform: none !important; filter: none !important; }
 .artwork :global(.hero-art-modern) { position: relative !important; inset: auto !important; width: 100% !important; height: auto !important; aspect-ratio: 600 / 560; margin: 0 !important; padding: 0 !important; transform: none !important; animation: none !important; }
 .artwork :global(.hero-art-modern .hero-art-still) { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; object-fit: contain; object-position: center; transform: none !important; filter: none !important; }
 .artwork :global(.hero-art-modern canvas) { max-width: none !important; max-height: none !important; }
@@ -108,6 +110,7 @@
 .appBrand { display: flex; gap: 15px; align-items: center; }
 .appBrand img { border-radius: 11px; }
 .appBrand h3 { --home-tracking: -.04em; color: var(--card-ink); font-size: 37px; line-height: 1.2; font-weight: 500; }
+.appBrand h3 a { display: inline-flex; align-items: center; min-height: 44px; }
 .page .project h4 { --home-tracking: -.025em; color: var(--card-ink); font-size: clamp(23px, 2.5vw, 33px); line-height: 1.22; font-weight: 400; margin-top: 28px; max-width: 350px; }
 .projectDescription { color: var(--card-muted); font-size: 15px; line-height: 1.8; margin-top: 18px !important; max-width: 370px; }
 .features { list-style: none; padding: 0; margin: 24px 0 28px; width: 100%; display: grid; color: var(--card-muted); font-size: 14px; }
@@ -175,11 +178,12 @@
 .footerBottom a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; gap: 8px; }
 .footerBottom svg { width: 12px; }
 
-:global(:root:not([data-era="modern"])) .page { --paper: var(--background); --ink: var(--foreground); --muted: var(--muted-foreground); --line: var(--border); }
+:global(:root:not([data-era="modern"])) .page { --paper: var(--background); --ink: var(--foreground); --muted: var(--muted-foreground); --line: var(--border); --ochre: var(--primary); }
 :global(:root:not([data-era="modern"])) .page .hero { color: var(--foreground); background: var(--background); }
 :global(:root:not([data-era="modern"])) .hero::after { display: none; }
 :global(:root:not([data-era="modern"])) .heroTitle { color: var(--foreground); }
 :global(:root:not([data-era="modern"])) .heroTitle > span { font: inherit !important; letter-spacing: inherit !important; }
+:global(:root:not([data-era="modern"])) .heroIntro { color: var(--foreground); }
 :global(:root:not([data-era="modern"])) .artwork { min-height: 330px; display: flex; align-items: flex-end; }
 :global(:root:not([data-era="modern"])) .artwork :global(.hero-art) { min-height: 300px; }
 :global(:root:not([data-era="modern"])) .page.page .header.header { color: var(--foreground); background: var(--background) !important; border-bottom: 1px solid var(--border) !important; }
@@ -238,11 +242,13 @@
   .header :global(.theme-panel) { order: 4; }
   .navLinks { order: 3; flex-basis: 100%; justify-content: space-between; margin-left: 0; gap: 8px 14px; font-size: 14px; }
   .heroInner { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 24px 24px 56px; }
-  .page .hero { min-height: 830px; align-items: flex-start; }
+  .page .hero { min-height: 0; align-items: flex-start; }
   .heroCopy { max-width: 100%; }
-  .page .heroTitle { font-size: 96px; line-height: .98; margin-top: 0; }
-  .heroActions { gap: 24px; margin-top: 39px; }
-  .artwork { width: min(100%, 380px); justify-self: center; padding: 0; margin-top: -32px; margin-left: 16px; }
+  .page .heroTitle { font-size: clamp(64px, 20vw, 80px); line-height: .98; margin-top: 0; }
+  .heroIntro { font-size: 16px; line-height: 1.6; margin-top: 20px !important; }
+  .heroActions { gap: 10px 24px; margin-top: 24px; }
+  .artwork { width: min(72%, 270px); justify-self: center; padding: 0; margin-top: 4px; margin-left: 16px; }
+  .heroInner { padding-bottom: 24px; }
   .hero::after { background: linear-gradient(0deg, #20362c 0%, #20362c66 22%, #182f273d 45%, #182f27a8); }
   .projects, .about, .footer { padding-inline: 24px; }
   .page .projects { padding-block: 65px 70px; }
@@ -282,18 +288,18 @@
   :global(:root[data-era="1980s"]) .page .heroTitle { font-size: clamp(32px, 10.8vw, 64px); }
   :global(:root[data-era="1990s"]) .page .heroTitle { font-size: clamp(48px, 14vw, 84px); }
   :global(:root[data-era="1990s"]) .heroCopy { padding: 24px; }
-  :global(:root[data-era="1990s"]) .heroInner { min-height: 900px; padding-bottom: 280px; }
+  :global(:root[data-era="1990s"]) .heroInner { min-height: 0; padding-bottom: 260px; }
   :global(:root[data-era="1990s"]) .artwork { right: 12%; bottom: 60px; width: 210px; }
 }
 @media (max-width: 420px) {
   .header nav { column-gap: 12px; }
   .brand { font-size: 12px; gap: 9px; }
   .navLinks { gap: 8px 12px; font-size: 14px; }
-  .page .heroTitle { font-size: clamp(68px, 22.3vw, 87px); }
-  .artwork { margin-top: -16px; margin-left: 0; }
+  .page .heroTitle { font-size: clamp(64px, 20vw, 80px); }
+  .artwork { margin-top: 0; margin-left: 0; }
   .heroInner { padding-top: 24px; }
   .heroTextLink { font-size: 14px; gap: 8px; }
-  .heroActions { gap: 20px; }
+  .heroActions { gap: 8px 20px; }
   .heroButton { gap: 20px; padding-inline: 17px; }
   .projectCopy { padding-inline: 23px; }
   :global(:root[data-era="modern"]) .projectCopy { padding-inline: 23px; }

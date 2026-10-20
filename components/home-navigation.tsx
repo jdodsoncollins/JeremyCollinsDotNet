@@ -5,7 +5,7 @@ import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/home.module.css";
 
 export function HomeHeader() {
-  return <header className={styles.header}><nav aria-label="Primary navigation"><Link href="/" className={styles.brand} aria-label="Jeremy Collins home"><EraLogo /></Link><div className={styles.navLinks}><a href="#projects">Projects</a><Link href="/resume">Resume</Link><a href="https://github.com/jdodsoncollins" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:jeremy@jeremycollins.net">Contact</a></div><ThemeSwitcher /></nav></header>;
+  return <header className={styles.header}><nav aria-label="Primary navigation"><Link href="/" className={styles.brand} aria-label="Jeremy Collins home"><EraLogo /></Link><div className={styles.navLinks}><a href="#projects">Projects</a><a href="#about">About</a><Link href="/resume">Resume</Link><a href="mailto:jeremy@jeremycollins.net">Contact</a></div><ThemeSwitcher /></nav></header>;
 }
 
 export function HomeFooter() {
