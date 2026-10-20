@@ -36,6 +36,8 @@ export default function Home() {
         </main>
         <HomeFooter />
       </div>
+      <div className="hacf-scanlines" aria-hidden="true" />
+      <div className="hacf-grain" aria-hidden="true" />
     </div>
   );
 }

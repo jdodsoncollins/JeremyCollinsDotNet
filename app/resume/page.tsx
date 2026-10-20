@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { SiteShell } from "@/components/site-shell";
+import styles from "@/app/site-pages.module.css";
 import { parseResume, readResumeMarkdown, type ResumeBlock } from "@/lib/resume";
 import { resumeJsonLd } from "@/lib/json-ld";
 
@@ -75,15 +75,13 @@ export default function ResumePage() {
   const resume = parseResume(readResumeMarkdown());
 
   return (
-    <div className="resumeShell min-h-screen">
+    <SiteShell className={`resumeShell ${styles.resume}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(resumeJsonLd) }}
       />
-      <Header />
-      <main className="resumePage" data-resume-pdf>
+      <main id="main-content" tabIndex={-1} className="resumePage" data-resume-pdf>
         <article className="resumeDocument" aria-labelledby="resume-title">
-          <div className="resumeKicker">Resume</div>
           <header className="resumeHeader">
             <div>
               <h1 id="resume-title">{resume.title}</h1>
@@ -115,7 +113,6 @@ export default function ResumePage() {
           </footer>
         </article>
       </main>
-      <Footer />
-    </div>
+    </SiteShell>
   );
 }

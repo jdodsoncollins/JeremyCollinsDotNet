@@ -47,51 +47,52 @@
   --font-display: var(--font-ibm-plex), system-ui, sans-serif;
 }
 
-:root {
-  --radius: 0.5rem;
-  /* HACF Dark Theme - Red/Magenta Primary */
-  --background: #0a0608;
-  --foreground: #e8e0e2;
-  --card: #120a0c;
-  --card-foreground: #e8e0e2;
-  --popover: #120a0c;
-  --popover-foreground: #e8e0e2;
-  --primary: #ff2244;
-  --primary-foreground: #0a0608;
-  --secondary: #1a1218;
-  --secondary-foreground: #e8e0e2;
-  --muted: #16101a;
-  --muted-foreground: #a08890;
-  --accent: #ff0066;
-  --accent-foreground: #ffffff;
-  --destructive: #ff3333;
-  --destructive-foreground: #ffffff;
-  --border: #3a2028;
-  --input: #1a1218;
-  --ring: #ff2244;
-  --chart-1: #ff2244;
-  --chart-2: #ff0066;
-  --chart-3: #ff6688;
-  --chart-4: #cc0044;
-  --chart-5: #ff3366;
-  --sidebar: #0f080a;
-  --sidebar-foreground: #e8e0e2;
-  --sidebar-primary: #ff2244;
-  --sidebar-primary-foreground: #0a0608;
-  --sidebar-accent: #1a1218;
-  --sidebar-accent-foreground: #e8e0e2;
-  --sidebar-border: #3a2028;
-  --sidebar-ring: #ff2244;
-  /* HACF-inspired colors */
-  --circuit: #ff2244;
-  --glow: #ff6688;
-  --neon: #ff0066;
-  --neon-green: #ff2244;
-  --neon-cyan: #ff6688;
-  --neon-magenta: #ff0066;
+:root,
+:root[data-era="modern"] {
+  --radius: 0.25rem;
+  /* Forest, warm paper, and ochre form the default site palette. */
+  --background: #20362c;
+  --foreground: #f3f1e8;
+  --card: #2a4236;
+  --card-foreground: #f3f1e8;
+  --popover: #2a4236;
+  --popover-foreground: #f3f1e8;
+  --primary: #e7b34c;
+  --primary-foreground: #20362c;
+  --secondary: #2b382e;
+  --secondary-foreground: #f3f1e8;
+  --muted: #263d31;
+  --muted-foreground: #becbbb;
+  --accent: #d8a57b;
+  --accent-foreground: #172b20;
+  --destructive: #8e4936;
+  --destructive-foreground: #f3f1e8;
+  --border: #46604e;
+  --input: #2a4236;
+  --ring: #e7b34c;
+  --chart-1: #e7b34c;
+  --chart-2: #c6593e;
+  --chart-3: #a3b398;
+  --chart-4: #d8a57b;
+  --chart-5: #6f8a71;
+  --sidebar: #172b22;
+  --sidebar-foreground: #f3f1e8;
+  --sidebar-primary: #e7b34c;
+  --sidebar-primary-foreground: #20362c;
+  --sidebar-accent: #2b382e;
+  --sidebar-accent-foreground: #f3f1e8;
+  --sidebar-border: #46604e;
+  --sidebar-ring: #e7b34c;
+  /* Compatibility names for the homepage's era effects. */
+  --circuit: #46604e;
+  --glow: #d8a57b;
+  --neon: #e7b34c;
+  --neon-green: #becbbb;
+  --neon-cyan: #d8a57b;
+  --neon-magenta: #c6593e;
 }
 
-:root[data-era="1980s"] {
+:root[data-era="1980s"] [data-home-page] {
   --radius: 0;
   --background: #031403;
   --foreground: #c8f5a0;
@@ -133,7 +134,7 @@
   --neon-magenta: #9cff4a;
 }
 
-:root[data-era="1990s"] {
+:root[data-era="1990s"] [data-home-page] {
   --radius: 0;
   --background: #d8d4cc;
   --foreground: #050505;
@@ -175,48 +176,6 @@
   --neon-magenta: #800080;
 }
 
-:root[data-era="modern"] {
-  --radius: 0.75rem;
-  --background: #1a1d24;
-  --foreground: #f3f5f8;
-  --card: #232831;
-  --card-foreground: #f3f5f8;
-  --popover: #2a303a;
-  --popover-foreground: #f3f5f8;
-  --primary: #0078d4;
-  --primary-foreground: #ffffff;
-  --secondary: #2b313c;
-  --secondary-foreground: #e8edf5;
-  --muted: #22262e;
-  --muted-foreground: #9aa3b2;
-  --accent: #0a84ff;
-  --accent-foreground: #ffffff;
-  --destructive: #ff453a;
-  --destructive-foreground: #ffffff;
-  --border: #3a4150;
-  --input: #22262e;
-  --ring: #0a84ff;
-  --chart-1: #0078d4;
-  --chart-2: #0a84ff;
-  --chart-3: #30d158;
-  --chart-4: #ff9f0a;
-  --chart-5: #ff453a;
-  --sidebar: #1f232c;
-  --sidebar-foreground: #f3f5f8;
-  --sidebar-primary: #0078d4;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2b313c;
-  --sidebar-accent-foreground: #e8edf5;
-  --sidebar-border: #3a4150;
-  --sidebar-ring: #0a84ff;
-  --circuit: #4cc2ff;
-  --glow: #0a84ff;
-  --neon: #0078d4;
-  --neon-green: #30d158;
-  --neon-cyan: #4cc2ff;
-  --neon-magenta: #bf5af2;
-}
-
 @layer base {
   * {
     @apply border-border;
@@ -230,7 +189,7 @@
 }
 
 /* Circuit board pattern - HACF red */
-.circuit-bg {
+[data-home-page] .circuit-bg {
   background-image:
     linear-gradient(rgba(255, 34, 68, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 34, 68, 0.04) 1px, transparent 1px),
@@ -241,7 +200,7 @@
 }
 
 /* Scan lines effect */
-.scanlines::before {
+[data-home-page] .scanlines::before {
   content: '';
   position: absolute;
   top: 0;
@@ -259,17 +218,17 @@
   z-index: 10;
 }
 
-.glow-primary {
+[data-home-page] .glow-primary {
   text-shadow: none;
 }
 
-.glow-accent,
-.glow-blue {
+[data-home-page] .glow-accent,
+[data-home-page] .glow-blue {
   text-shadow: none;
 }
 
-.box-glow,
-.box-glow-accent {
+[data-home-page] .box-glow,
+[data-home-page] .box-glow-accent {
   box-shadow: none;
 }
 
@@ -283,19 +242,19 @@
   }
 }
 
-.circuit-line {
+[data-home-page] .circuit-line {
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
   background-size: 200% 100%;
   animation: circuit-flow 3s linear infinite;
 }
 
 /* Y2K style borders */
-.y2k-border {
+[data-home-page] .y2k-border {
   border: 1px solid var(--border);
   position: relative;
 }
 
-.y2k-border::before {
+[data-home-page] .y2k-border::before {
   content: '';
   position: absolute;
   top: -1px;
@@ -305,7 +264,7 @@
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
-.y2k-border::after {
+[data-home-page] .y2k-border::after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -321,7 +280,7 @@
   50% { opacity: 0.25; }
 }
 
-.circuit-trace {
+[data-home-page] .circuit-trace {
   animation: circuit-pulse 4s ease-in-out infinite;
 }
 
@@ -331,7 +290,7 @@
   50% { opacity: 0; }
 }
 
-.cursor-blink {
+[data-home-page] .cursor-blink {
   animation: blink 1s step-end infinite;
 }
 
@@ -349,29 +308,29 @@
   font-family: var(--font-ibm-plex), system-ui, sans-serif;
 }
 
-.neon-glow-subtle,
-.glow-primary,
-.glow-accent,
-.glow-blue {
+[data-home-page] .neon-glow-subtle,
+[data-home-page] .glow-primary,
+[data-home-page] .glow-accent,
+[data-home-page] .glow-blue {
   text-shadow: none;
 }
 
 /* Derezzed button effect - pixelated edges */
-.derez-btn {
+[data-home-page] .derez-btn {
   position: relative;
 }
 
-.derez-btn::before,
-.derez-btn-outline::before {
+[data-home-page] .derez-btn::before,
+[data-home-page] .derez-btn-outline::before {
   display: none;
 }
 
-.derez-btn-outline {
+[data-home-page] .derez-btn-outline {
   position: relative;
   background: transparent;
 }
 
-.derez-btn-outline::before {
+[data-home-page] .derez-btn-outline::before {
   content: '';
   position: absolute;
   inset: 1px;
@@ -394,23 +353,23 @@
 }
 
 /* Subtle button glow effects - HACF red */
-.neon-btn-glow,
-.neon-btn-glow-green,
-.neon-btn-glow-cyan,
-.neon-btn-glow-magenta,
-.box-glow,
-.box-glow-accent {
+[data-home-page] .neon-btn-glow,
+[data-home-page] .neon-btn-glow-green,
+[data-home-page] .neon-btn-glow-cyan,
+[data-home-page] .neon-btn-glow-magenta,
+[data-home-page] .box-glow,
+[data-home-page] .box-glow-accent {
   box-shadow: none;
 }
 
 /* Subtle glow for section labels */
-.section-label-glow {
+[data-home-page] .section-label-glow {
   text-shadow: 0 0 10px currentColor;
   opacity: 0.3;
 }
 
 /* HACF-inspired CRT scan lines overlay */
-.hacf-scanlines {
+[data-home-page] .hacf-scanlines {
   position: fixed;
   top: 0;
   left: 0;
@@ -428,7 +387,7 @@
 }
 
 /* Secondary scan lines with red tint */
-.hacf-scanlines::before {
+[data-home-page] .hacf-scanlines::before {
   content: '';
   position: absolute;
   top: 0;
@@ -446,18 +405,18 @@
 }
 
 /* Container for images that should be above scan lines */
-.no-scanlines {
+[data-home-page] .no-scanlines {
   position: relative;
   z-index: 30;
 }
 
-html[data-lightbox] .hacf-scanlines,
-html[data-lightbox] .hacf-grain {
+html[data-lightbox] [data-home-page] .hacf-scanlines,
+html[data-lightbox] [data-home-page] .hacf-grain {
   display: none;
 }
 
 /* HACF-inspired subtle grain/noise texture */
-.hacf-grain {
+[data-home-page] .hacf-grain {
   position: fixed;
   top: 0;
   left: 0;
@@ -470,11 +429,11 @@ html[data-lightbox] .hacf-grain {
 }
 
 /* HACF-inspired horizontal light streak - red */
-.hacf-streak {
+[data-home-page] .hacf-streak {
   position: relative;
 }
 
-.hacf-streak::before {
+[data-home-page] .hacf-streak::before {
   content: '';
   position: absolute;
   left: -30%;
@@ -494,7 +453,7 @@ html[data-lightbox] .hacf-grain {
 }
 
 /* Additional horizontal flare line */
-.hacf-streak::after {
+[data-home-page] .hacf-streak::after {
   content: '';
   position: absolute;
   left: -20%;
@@ -515,12 +474,12 @@ html[data-lightbox] .hacf-grain {
 }
 
 /* Light flare on section headers - HACF red, positioned below text */
-.hacf-flare {
+[data-home-page] .hacf-flare {
   position: relative;
   display: inline-block;
 }
 
-.hacf-flare::after {
+[data-home-page] .hacf-flare::after {
   content: '';
   position: absolute;
   left: -15%;
@@ -555,7 +514,7 @@ html[data-lightbox] .hacf-grain {
   }
 }
 
-.hacf-sweep-line {
+[data-home-page] .hacf-sweep-line {
   position: fixed;
   left: 0;
   right: 0;
@@ -575,7 +534,7 @@ html[data-lightbox] .hacf-grain {
 }
 
 /* Second sweep line with offset timing */
-.hacf-sweep-line-2 {
+[data-home-page] .hacf-sweep-line-2 {
   position: fixed;
   left: 0;
   right: 0;
@@ -595,10 +554,10 @@ html[data-lightbox] .hacf-grain {
 }
 
 /* Glitch effect on hover for images */
-.hacf-glitch-hover {
+[data-home-page] .hacf-glitch-hover {
   position: relative;
 }
 
-.hacf-glitch-hover:hover {
+[data-home-page] .hacf-glitch-hover:hover {
   filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='glitch'%3E%3CfeOffset in='SourceGraphic' dx='2' dy='0' result='r'/%3E%3CfeOffset in='SourceGraphic' dx='-2' dy='0' result='b'/%3E%3CfeColorMatrix in='r' type='matrix' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3CfeColorMatrix in='b' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0'/%3E%3CfeBlend in2='r' mode='screen'/%3E%3C/filter%3E%3C/svg%3E#glitch");
 }

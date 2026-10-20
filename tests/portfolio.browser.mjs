@@ -16,6 +16,7 @@ try {
     page.on("pageerror", error => errors.push(error.message));
     assert.equal((await page.goto(baseURL)).status(), 200);
     await page.evaluate(() => document.fonts.ready);
+    const eraFonts = new Set();
     for (const era of ["modern", "1980s", "1990s"]) {
       await page.getByRole("button", { name: "Theme", exact: true }).click();
       await page.getByRole("radio", { name: `${era === "modern" ? "Modern" : era} theme`, exact: true }).click();
@@ -23,6 +24,7 @@ try {
       await page.keyboard.press("Escape");
       assert.equal(await page.getByRole("button", { name: "Theme", exact: true }).getAttribute("aria-expanded"), "false");
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), width, `Page overflow: ${era}/${width}`);
+      eraFonts.add(await page.locator("h1").evaluate(node => getComputedStyle(node).fontFamily));
       const linkHeights = await page.locator('#projects article h3 a').evaluateAll(links => links.map(link => link.getBoundingClientRect().height));
       assert.ok(linkHeights.every(height => height >= 44), `Small app title target: ${era}/${width}`);
       if (era === "modern" && width <= 390) {
@@ -31,6 +33,7 @@ try {
       }
       checks += 1;
     }
+    assert.equal(eraFonts.size, 3, "Homepage eras should retain distinct typography");
     for (const id of ["app-tabforge", "app-paper"]) {
       const project = page.locator(`#${id}`);
       await project.scrollIntoViewIfNeeded();
@@ -93,9 +96,15 @@ try {
     assert.equal(await page.locator("h1").count(), 1, route);
     checks += 1;
   }
+  const appAppearances = new Map();
   for (const [app, title] of [["codable", "Codable"], ["taktung", "Taktung"], ["tabforge", "TabForge"], ["paper-and-grain", "Paper & Grain"]]) {
     const path = `/${app}/privacy`;
     await page.goto(new URL(`/${app}`, baseURL).href);
+    appAppearances.set(app, await page.locator("main").evaluate(main => ({
+      background: getComputedStyle(main.parentElement).backgroundColor,
+      font: getComputedStyle(main.querySelector("p")).fontFamily,
+      headingFont: getComputedStyle(main.querySelector("h1")).fontFamily,
+    })));
     await page.locator(`footer a[href="${path}"]`).click();
     await page.waitForURL(new URL(path, baseURL).href);
     assert.equal(new URL(page.url()).pathname, path);
@@ -121,6 +130,53 @@ try {
   assert.doesNotMatch(sitemap, /-privacy-policy/);
   for (const app of ["codable", "taktung", "tabforge", "paper-and-grain"]) {
     assert.ok(sitemap.includes(`https://jeremycollins.net/${app}/privacy`));
+  }
+  for (const { width, era } of [{ width: 320, era: "1980s" }, { width: 390, era: "modern" }, { width: 1440, era: "1990s" }]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });
+    await context.addInitScript(era => localStorage.setItem("jeremycollins-theme-era", era), era);
+    const page = await context.newPage();
+    for (const [app, expected] of appAppearances) {
+      await page.goto(new URL(`/${app}/privacy`, baseURL).href);
+      const appearance = await page.locator("article").evaluate(article => ({
+        background: getComputedStyle(article.closest("main").parentElement).backgroundColor,
+        font: getComputedStyle(article.querySelector("p")).fontFamily,
+        headingFont: getComputedStyle(document.querySelector("h1")).fontFamily,
+        articleBackground: getComputedStyle(article).backgroundColor,
+        backdrop: getComputedStyle(article).backdropFilter,
+        shadow: getComputedStyle(article).boxShadow,
+        bodySize: parseFloat(getComputedStyle(article.querySelector("p")).fontSize),
+      }));
+      assert.equal(appearance.background, expected.background, `${app}: privacy palette differs from its app`);
+      assert.equal(appearance.font, expected.font, `${app}: body typography differs from its app`);
+      assert.equal(appearance.headingFont, expected.headingFont, `${app}: heading typography differs from its app`);
+      assert.equal(appearance.articleBackground, "rgba(0, 0, 0, 0)", `${app}: legacy panel remains`);
+      assert.equal(appearance.backdrop, "none");
+      assert.equal(appearance.shadow, "none");
+      assert.ok(appearance.bodySize >= 16, `${app}: policy text too small`);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), width, `${app}/privacy overflow: ${era}/${width}`);
+      assert.equal(await page.locator(".hacf-scanlines, .hacf-grain").count(), 0);
+      await page.getByRole("link", { name: `Back to ${app === "paper-and-grain" ? "Paper & Grain" : app === "tabforge" ? "TabForge" : app === "taktung" ? "Taktung" : "Codable"}`, exact: true }).click();
+      await page.waitForURL(new URL(`/${app}`, baseURL).href);
+      checks += 1;
+    }
+    for (const route of ["/resume", "/this-page-does-not-exist"]) {
+      assert.equal((await page.goto(new URL(route, baseURL).href)).status(), route === "/resume" ? 200 : 404);
+      const shell = page.locator("[data-site-page]");
+      assert.equal(await shell.evaluate(node => getComputedStyle(node).backgroundColor), "rgb(32, 54, 44)");
+      assert.equal(await shell.locator("header").first().evaluate(node => getComputedStyle(node).position), "static");
+      assert.equal(await page.getByRole("link", { name: "Projects", exact: true }).getAttribute("href"), "/#projects");
+      assert.equal(await page.getByRole("link", { name: "About", exact: true }).getAttribute("href"), "/#about");
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), width, `${route} overflow: ${era}/${width}`);
+      assert.equal(await page.locator(".hacf-scanlines, .hacf-grain").count(), 0);
+      if (route === "/resume") {
+        await page.emulateMedia({ media: "print" });
+        assert.equal(await shell.locator("header").first().isVisible(), false);
+        assert.equal(await page.locator("[data-resume-pdf]").isVisible(), true);
+        await page.emulateMedia({ media: "screen" });
+      }
+      checks += 1;
+    }
+    await context.close();
   }
   for (const width of [320, 390, 1440]) {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });

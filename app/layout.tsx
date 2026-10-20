@@ -107,7 +107,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0608",
+  themeColor: "#20362c",
   width: "device-width",
   initialScale: 1,
 };
@@ -155,8 +155,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {children}
-        <div className="hacf-scanlines" aria-hidden="true" />
-        <div className="hacf-grain" aria-hidden="true" />
         <Analytics />
         <SpeedInsights />
       </body>
