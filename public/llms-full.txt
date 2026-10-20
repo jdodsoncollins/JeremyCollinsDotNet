@@ -12,7 +12,7 @@ Details: https://jeremycollins.net/codable
 
 App Store: https://apps.apple.com/us/app/codable/id1324741659
 
-Privacy policy: https://jeremycollins.net/codable-privacy-policy
+Privacy policy: https://jeremycollins.net/codable/privacy
 
 ## Taktung
 
@@ -22,7 +22,7 @@ Details: https://jeremycollins.net/taktung
 
 App Store: https://apps.apple.com/us/app/taktung/id6805738660
 
-Privacy policy: https://jeremycollins.net/taktung-privacy-policy
+Privacy policy: https://jeremycollins.net/taktung/privacy
 
 ## TabForge
 
@@ -32,7 +32,7 @@ Details: https://jeremycollins.net/tabforge
 
 App Store: https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795
 
-Privacy policy: https://jeremycollins.net/tabforge-privacy-policy
+Privacy policy: https://jeremycollins.net/tabforge/privacy
 
 Source: https://github.com/jdodsoncollins/TabForge
 
@@ -46,7 +46,7 @@ App Store: https://apps.apple.com/us/app/paper-grain/id6821361967
 
 Support: https://jeremycollins.net/paper-and-grain/support
 
-Privacy policy: https://jeremycollins.net/paper-and-grain-privacy-policy
+Privacy policy: https://jeremycollins.net/paper-and-grain/privacy
 
 ## Site
 

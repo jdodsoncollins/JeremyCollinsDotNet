@@ -27,10 +27,10 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 - [TabForge](https://jeremycollins.net/tabforge): programming keyboard for iPhone and iPad
 - [Paper & Grain](https://jeremycollins.net/paper-and-grain): origami lessons and Free Fold
 - [Paper & Grain support](https://jeremycollins.net/paper-and-grain/support): gestures, saved work, and troubleshooting
-- [Codable privacy policy](https://jeremycollins.net/codable-privacy-policy)
-- [Taktung privacy policy](https://jeremycollins.net/taktung-privacy-policy)
-- [TabForge privacy policy](https://jeremycollins.net/tabforge-privacy-policy)
-- [Paper & Grain privacy policy](https://jeremycollins.net/paper-and-grain-privacy-policy)
+- [Codable privacy policy](https://jeremycollins.net/codable/privacy)
+- [Taktung privacy policy](https://jeremycollins.net/taktung/privacy)
+- [TabForge privacy policy](https://jeremycollins.net/tabforge/privacy)
+- [Paper & Grain privacy policy](https://jeremycollins.net/paper-and-grain/privacy)
 
 ## Apps
 

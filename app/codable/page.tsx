@@ -60,7 +60,7 @@ export default function CodablePage() {
         <section id="download" className={styles.codableDownload} aria-labelledby="codable-download"><div><h2 id="codable-download">Get Codable</h2><p>Safari developer tools for iPhone and iPad.<br />Free to use. Ready on your device.</p></div><a className={styles.primaryButton} href={app.href} target="_blank" rel="noopener noreferrer">View in App Store <span aria-hidden="true"><AppArrow /></span></a></section>
         <p className={styles.compatibility}>Apple Intelligence features are optional and require a supported device.</p>
       </main>
-      <footer className={styles.footer}><div className={styles.footerIdentity}><Link href="/">Made by Jeremy Collins</Link><div><Link href="/codable-privacy-policy">Privacy</Link><a href="mailto:jeremy@jeremycollins.net?subject=Codable%20support">Support</a></div></div><nav aria-label="More apps"><Link href="/tabforge">TabForge</Link><Link href="/taktung">Taktung</Link><Link href="/paper-and-grain">Paper &amp; Grain</Link></nav></footer>
+      <footer className={styles.footer}><div className={styles.footerIdentity}><Link href="/">Made by Jeremy Collins</Link><div><Link href="/codable/privacy">Privacy</Link><a href="mailto:jeremy@jeremycollins.net?subject=Codable%20support">Support</a></div></div><nav aria-label="More apps"><Link href="/tabforge">TabForge</Link><Link href="/taktung">Taktung</Link><Link href="/paper-and-grain">Paper &amp; Grain</Link></nav></footer>
     </div>
   );
 }

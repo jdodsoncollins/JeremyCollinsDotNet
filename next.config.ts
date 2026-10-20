@@ -16,7 +16,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/takt-privacy-policy", destination: "/taktung-privacy-policy", permanent: true },
+      { source: "/codable-privacy-policy", destination: "/codable/privacy", permanent: true },
+      { source: "/taktung-privacy-policy", destination: "/taktung/privacy", permanent: true },
+      { source: "/takt-privacy-policy", destination: "/taktung/privacy", permanent: true },
+      { source: "/tabforge-privacy-policy", destination: "/tabforge/privacy", permanent: true },
+      { source: "/paper-and-grain-privacy-policy", destination: "/paper-and-grain/privacy", permanent: true },
       { source: "/about", destination: "/", permanent: true },
       { source: "/blog", destination: "/", permanent: true },
       { source: "/projects", destination: "/", permanent: true },

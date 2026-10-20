@@ -3,17 +3,18 @@ import Link from "next/link";
 import { CircuitBackground } from "@/components/circuit-background";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { paperAndGrainPrivacyJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "Paper & Grain Privacy Policy",
   description:
     "How Paper & Grain handles local paper creations, optional image sharing, and support requests. The app has no ads, analytics, accounts, or tracking.",
-  alternates: { canonical: "/paper-and-grain-privacy-policy" },
+  alternates: { canonical: "/paper-and-grain/privacy" },
   openGraph: {
     title: "Paper & Grain Privacy Policy",
     description:
       "Privacy policy for Jeremy Collins' free paper-folding game for iPhone and iPad.",
-    url: "/paper-and-grain-privacy-policy",
+    url: "/paper-and-grain/privacy",
     type: "article",
   },
 };
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function PaperAndGrainPrivacyPolicy() {
   return (
     <div className="relative min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(paperAndGrainPrivacyJsonLd) }} />
       <CircuitBackground />
       <div className="relative z-10">
         <Header />

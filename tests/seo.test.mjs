@@ -72,8 +72,8 @@ test("robots.txt allows answer-engine crawlers and hides oauth helpers", () => {
   assert.match(robots, /\/mobileflow-token/);
 });
 
-test("Taktung privacy policy exists as a sibling of the Codable policy", () => {
-  const page = fs.readFileSync("app/taktung-privacy-policy/page.tsx", "utf8");
+test("Taktung privacy policy is published under the app with legacy redirects", () => {
+  const page = fs.readFileSync("app/taktung/privacy/page.tsx", "utf8");
   const sitemap = fs.readFileSync("app/sitemap.ts", "utf8");
   const schema = fs.readFileSync("lib/json-ld.ts", "utf8");
   const llms = fs.readFileSync("public/llms.txt", "utf8");
@@ -81,13 +81,14 @@ test("Taktung privacy policy exists as a sibling of the Codable policy", () => {
 
   assert.match(page, /Taktung Privacy Policy/);
   assert.match(page, /taktungPrivacyJsonLd/);
-  assert.match(page, /canonical: "\/taktung-privacy-policy"/);
-  assert.match(sitemap, /taktung-privacy-policy/);
-  assert.doesNotMatch(sitemap, /takt-privacy-policy/);
+  assert.match(page, /canonical: "\/taktung\/privacy"/);
+  assert.match(sitemap, /taktung\/privacy/);
+  assert.doesNotMatch(sitemap, /-privacy-policy/);
   assert.match(schema, /taktungPrivacyJsonLd/);
-  assert.match(llms, /https:\/\/jeremycollins\.net\/taktung-privacy-policy/);
+  assert.match(llms, /https:\/\/jeremycollins\.net\/taktung\/privacy/);
   assert.match(redirects, /\/takt-privacy-policy/);
   assert.match(redirects, /\/taktung-privacy-policy/);
+  assert.match(redirects, /destination: "\/taktung\/privacy"/);
 });
 
 test("old Gatsby service worker is replaced with an unregistering stub", () => {

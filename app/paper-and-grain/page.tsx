@@ -82,7 +82,7 @@ export default function PaperAndGrainPage() {
 
         <section className={styles.downloadSection} aria-labelledby="download-title"><div className={styles.downloadInner}><div><div className={styles.downloadTitle}><Image src={app.icon} width={60} height={60} alt="" /><h2 id="download-title">Paper &amp; Grain<br />for iPhone and iPad</h2></div><p>All eight lessons and Free Fold are included.<br />Pick a sheet and see what you can make.</p></div><div className={styles.downloadActions}><DownloadLink /><p>Free · iOS &amp; iPadOS {app.minimumOS} or later</p></div></div><p className={styles.compatibility}>Touch controls work without a folding device. Optional folding along the device seam on a supported iPhone Duo requires iOS 27.1 or later.</p></section>
       </main>
-      <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/tabforge">TabForge</Link></nav><div><Link href="/paper-and-grain/support">Support</Link><Link href="/paper-and-grain-privacy-policy">Privacy</Link></div></footer>
+      <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/tabforge">TabForge</Link></nav><div><Link href="/paper-and-grain/support">Support</Link><Link href="/paper-and-grain/privacy">Privacy</Link></div></footer>
     </div>
   );
 }

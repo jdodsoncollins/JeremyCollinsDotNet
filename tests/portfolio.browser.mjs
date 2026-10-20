@@ -88,10 +88,39 @@ try {
   }
 
   const page = await browser.newPage();
-  for (const route of ["/tabforge", "/paper-and-grain", "/codable", "/taktung", "/resume", "/tabforge-privacy-policy", "/paper-and-grain/support"]) {
+  for (const route of ["/tabforge", "/paper-and-grain", "/codable", "/taktung", "/resume", "/paper-and-grain/support"]) {
     assert.equal((await page.goto(new URL(route, baseURL).href)).status(), 200, route);
     assert.equal(await page.locator("h1").count(), 1, route);
     checks += 1;
+  }
+  for (const [app, title] of [["codable", "Codable"], ["taktung", "Taktung"], ["tabforge", "TabForge"], ["paper-and-grain", "Paper & Grain"]]) {
+    const path = `/${app}/privacy`;
+    await page.goto(new URL(`/${app}`, baseURL).href);
+    await page.locator(`footer a[href="${path}"]`).click();
+    await page.waitForURL(new URL(path, baseURL).href);
+    assert.equal(new URL(page.url()).pathname, path);
+    assert.equal((await page.locator("h1").textContent()).trim(), `${title} Privacy Policy`);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), `https://jeremycollins.net${path}`);
+    assert.equal(await page.locator('meta[property="og:url"]').getAttribute("content"), `https://jeremycollins.net${path}`);
+    const schema = await page.locator('script[type="application/ld+json"]').allTextContents();
+    assert.ok(schema.some(json => JSON.parse(json).url === `https://jeremycollins.net${path}`), `${app} privacy schema URL`);
+    const legacyPaths = [`/${app}-privacy-policy`, ...(app === "taktung" ? ["/takt-privacy-policy"] : [])];
+    for (const legacyPath of legacyPaths) {
+      for (const method of ["GET", "HEAD"]) {
+        const response = await page.request.fetch(new URL(`${legacyPath}?from=legacy`, baseURL).href, { method, maxRedirects: 0 });
+        assert.equal(response.status(), 308, `${method} ${legacyPath}`);
+        const destination = new URL(response.headers().location, baseURL);
+        assert.equal(destination.pathname, path, `${legacyPath} should redirect directly`);
+        assert.equal(destination.search, "?from=legacy");
+      }
+    }
+    assert.equal((await page.request.get(new URL(path, baseURL).href, { maxRedirects: 0 })).status(), 200);
+    checks += 1;
+  }
+  const sitemap = await (await page.request.get(new URL("/sitemap.xml", baseURL).href)).text();
+  assert.doesNotMatch(sitemap, /-privacy-policy/);
+  for (const app of ["codable", "taktung", "tabforge", "paper-and-grain"]) {
+    assert.ok(sitemap.includes(`https://jeremycollins.net/${app}/privacy`));
   }
   for (const width of [320, 390, 1440]) {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });

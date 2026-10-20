@@ -239,8 +239,8 @@ export const resumeJsonLd = {
 export const privacyJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${SITE}/codable-privacy-policy#page`,
-  url: `${SITE}/codable-privacy-policy`,
+  "@id": `${SITE}/codable/privacy#page`,
+  url: `${SITE}/codable/privacy`,
   name: "Codable Privacy Policy",
   about: { "@id": codableId },
   isPartOf: { "@id": websiteId },
@@ -249,8 +249,8 @@ export const privacyJsonLd = {
 export const taktungPrivacyJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${SITE}/taktung-privacy-policy#page`,
-  url: `${SITE}/taktung-privacy-policy`,
+  "@id": `${SITE}/taktung/privacy#page`,
+  url: `${SITE}/taktung/privacy`,
   name: "Taktung Privacy Policy",
   about: { "@id": taktungId },
   isPartOf: { "@id": websiteId },
@@ -259,8 +259,8 @@ export const taktungPrivacyJsonLd = {
 export const tabforgePrivacyJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${SITE}/tabforge-privacy-policy#page`,
-  url: `${SITE}/tabforge-privacy-policy`,
+  "@id": `${SITE}/tabforge/privacy#page`,
+  url: `${SITE}/tabforge/privacy`,
   name: "TabForge Privacy Policy",
   about: { "@id": tabforgeId },
   isPartOf: { "@id": websiteId },
@@ -269,8 +269,8 @@ export const tabforgePrivacyJsonLd = {
 export const paperAndGrainPrivacyJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${SITE}/paper-and-grain-privacy-policy#page`,
-  url: `${SITE}/paper-and-grain-privacy-policy`,
+  "@id": `${SITE}/paper-and-grain/privacy#page`,
+  url: `${SITE}/paper-and-grain/privacy`,
   name: "Paper & Grain Privacy Policy",
   about: { "@id": paperAndGrainId },
   isPartOf: { "@id": websiteId },

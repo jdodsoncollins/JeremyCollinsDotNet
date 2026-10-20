@@ -97,14 +97,14 @@ export default function TabForgePage() {
         </section>
 
         <section className={styles.openSource} aria-labelledby="source-title">
-          <div><h2 id="source-title">Your keystrokes<br />stay yours</h2><p>The keyboard does not log or transmit what you type. No Full Access is requested. No ads, analytics, or accounts.</p><Link href="/tabforge-privacy-policy" className={styles.textLink}>Read the privacy policy <AppArrow /></Link></div>
+          <div><h2 id="source-title">Your keystrokes<br />stay yours</h2><p>The keyboard does not log or transmit what you type. No Full Access is requested. No ads, analytics, or accounts.</p><Link href="/tabforge/privacy" className={styles.textLink}>Read the privacy policy <AppArrow /></Link></div>
           <div className={styles.sourceNotes}><h3>Open source, under the MIT license</h3><p>Find the source, licensing, and privacy details in the companion app.</p><a className={styles.textLink} href="https://github.com/jdodsoncollins/TabForge" target="_blank" rel="noopener noreferrer">Browse the source on GitHub <AppArrow /></a><h3>A place to work on a draft</h3><p>The companion playground includes syntax highlighting, line numbers, undo, and sharing. It edits text; it does not run code. Its settings and draft are separate from the installed keyboard.</p></div>
         </section>
 
         <section className={styles.finalDownload} aria-labelledby="download-title"><Image src={app.icon} width={64} height={64} alt="" /><div><h2 id="download-title">Get TabForge</h2><p>For iPhone and iPad · iOS &amp; iPadOS {app.minimumOS} or later</p></div><DownloadLink /></section>
         <p className={styles.compatibility}>iOS uses its system keyboard in secure and phone fields. Some apps decline third-party keyboards. Duo-specific layouts require iOS 27.1 or later.</p>
       </main>
-      <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/paper-and-grain">Paper &amp; Grain</Link></nav><div><Link href="/tabforge-privacy-policy">Privacy</Link><a href="mailto:jeremy@jeremycollins.net?subject=TabForge%20support">Support</a></div></footer>
+      <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/paper-and-grain">Paper &amp; Grain</Link></nav><div><Link href="/tabforge/privacy">Privacy</Link><a href="mailto:jeremy@jeremycollins.net?subject=TabForge%20support">Support</a></div></footer>
     </div>
   );
 }

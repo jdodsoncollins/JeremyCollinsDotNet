@@ -7,11 +7,11 @@ import { tabforgePrivacyJsonLd } from "@/lib/json-ld";
 export const metadata: Metadata = {
   title: "TabForge Privacy Policy",
   description: "Privacy policy for TabForge: Code Keyboard. Learn about keyboard-local settings and snippets, no Full Access request, separate playground drafts, and on-device voice recognition.",
-  alternates: { canonical: "/tabforge-privacy-policy" },
+  alternates: { canonical: "/tabforge/privacy" },
   openGraph: {
     title: "TabForge Privacy Policy",
     description: "How TabForge handles typing context, local storage, keyboard permissions, and on-device voice recognition.",
-    url: "/tabforge-privacy-policy",
+    url: "/tabforge/privacy",
     type: "article",
   },
 };
