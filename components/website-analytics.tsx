@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { analyticsLocation, analyticsAcquisition, validMeasurementId } from "@/lib/website-analytics.mjs";
+import { analyticsLocation, analyticsAcquisition, persistAnalyticsConsent, validMeasurementId } from "@/lib/website-analytics.mjs";
 import styles from "./website-analytics.module.css";
 
 const storageKey = "jeremycollins-website-analytics";
@@ -22,6 +22,7 @@ export function WebsiteAnalytics() {
   const [consent, setConsent] = useState<Consent>(null);
   const [ready, setReady] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [storageWarning, setStorageWarning] = useState(false);
   const initialized = useRef(false);
   const acquisition = useRef(analyticsAcquisition("", ""));
   const lastPage = useRef<string | null>(null);
@@ -78,7 +79,9 @@ export function WebsiteAnalytics() {
   }, [consent, enabled, location, pathname, ready]);
 
   function choose(next: Exclude<Consent, null>) {
-    try { localStorage.setItem(storageKey, next); } catch { /* Session-only consent. */ }
+    let saved = false;
+    try { saved = persistAnalyticsConsent(window.localStorage, storageKey, next); } catch { /* Storage getter may also be blocked. */ }
+    setStorageWarning(!saved);
     setSettingsOpen(false);
     if (next === "declined" && initialized.current) {
       // Disable collection synchronously, clear first-party GA cookies, then unload the tag.
@@ -90,7 +93,8 @@ export function WebsiteAnalytics() {
           document.cookie = `${name}=; Max-Age=0; path=/;${domain ? ` domain=${domain};` : ""}`;
         }
       }
-      window.location.reload();
+      // Never reload into stale accepted consent when storage writes fail.
+      if (saved) window.location.reload();
     }
     setConsent(next);
   }
@@ -109,6 +113,7 @@ export function WebsiteAnalytics() {
           </div>
         </div>
       ) : <button type="button" className={styles.settings} onClick={() => setSettingsOpen(true)}>Analytics preferences</button>}
+      {storageWarning && <p className={styles.panel} role="status">Your browser could not save this choice. It applies only to this tab until the page reloads. If you declined, analytics is stopped now, but may resume after reload if an older accepted choice is stored. Enable browser storage and decline again to save your preference.</p>}
     </aside>
   );
 }
