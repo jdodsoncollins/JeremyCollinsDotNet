@@ -9,7 +9,7 @@ import * as helpers from '../lib/website-analytics.mjs';
 function harness({ initialConsent = null, failingStorage = false } = {}) {
   const state = [], refs = [], previousDeps = [];
   let stateIndex = 0, refIndex = 0, effectIndex = 0, pending = [], tree;
-  let stored = initialConsent, reloads = 0, scripts = 0;
+  let stored = initialConsent, reloads = 0, scripts = 0, pathname = "/";
   const storage = { getItem: () => stored, setItem: (_key, value) => {
     if (failingStorage) throw new Error('Storage denied');
     stored = value;
@@ -27,7 +27,7 @@ function harness({ initialConsent = null, failingStorage = false } = {}) {
   vm.runInNewContext(compiled, { exports, window, document, localStorage: storage, process: { env: { NEXT_PUBLIC_GA_MEASUREMENT_ID: 'G-TEST123' } }, require(name) {
     if (name === 'react') return react;
     if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx };
-    if (name === 'next/navigation') return { usePathname: () => '/' };
+    if (name === 'next/navigation') return { usePathname: () => pathname };
     if (name === 'next/link') return { default: 'a' };
     if (name === '@/lib/website-analytics.mjs') return helpers;
     if (name.endsWith('.css')) return { default: {} };
@@ -41,7 +41,7 @@ function harness({ initialConsent = null, failingStorage = false } = {}) {
     for (const child of Array.isArray(children) ? children.flat(Infinity) : [children]) { const match = find(child, label); if (match) return match; }
     return null;
   }
-  return { window, render, click(label) { const button = find(tree, label); assert.ok(button, label); button.props.onClick(); }, get scripts() { return scripts; }, get reloads() { return reloads; }, get stored() { return stored; } };
+  return { window, render, navigate(path) { pathname = path; render(); }, click(label) { const button = find(tree, label); assert.ok(button, label); button.props.onClick(); }, get scripts() { return scripts; }, get reloads() { return reloads; }, get stored() { return stored; } };
 }
 
 test('component loads nothing before opt-in or after a first-visit decline', () => {
@@ -64,4 +64,17 @@ test('successful withdrawal persists declined state before reload', () => {
   h.click('Analytics preferences'); h.render(); h.click('Decline analytics');
   assert.equal(h.reloads, 1); assert.equal(h.stored, 'declined');
   assert.equal(h.window['ga-disable-G-TEST123'], true);
+});
+
+
+test('manual views are sanitized and deduplicated; excluded SPA routes disable loaded tags', () => {
+  const h = harness({ initialConsent: 'accepted' }); h.render(); h.render(); h.render();
+  const views = () => h.window.dataLayer.filter((entry) => entry[0] === 'event' && entry[1] === 'page_view');
+  assert.equal(views().length, 1);
+  h.navigate('/privacy'); assert.equal(views().length, 2);
+  assert.equal(views()[1][2].page_location, 'https://www.jeremycollins.net/privacy');
+  assert.ok(!JSON.stringify(h.window.dataLayer).includes('private'));
+  h.navigate('/oauth'); assert.equal(views().length, 2);
+  assert.equal(h.window['ga-disable-G-TEST123'], true);
+  assert.equal(h.scripts, 1);
 });
