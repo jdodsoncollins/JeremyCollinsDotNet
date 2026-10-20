@@ -48,7 +48,7 @@ export const APP_PRODUCTS = {
     name: "Paper & Grain",
     minimumOS: "26",
     subtitle: "iPhone & iPad / Origami puzzles and Free Fold",
-    description: "A quiet place to make something from a sheet of paper. Follow eight short origami lessons, or fold, cut, and draw your own ideas in Free Fold. Warm wood, softly textured paper, and no timer to hurry you along.",
+    description: "Close your iPhone Duo to fold the paper. Use the device as a physical folding control, follow eight origami lessons, or fold, cut, and draw in Free Fold. Touch controls also work on iPhone and iPad.",
     icon: media.paperAndGrain.icon.src,
     href: media.paperAndGrain.appStore,
     hrefLabel: "View in App Store",
