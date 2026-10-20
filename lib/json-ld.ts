@@ -4,7 +4,8 @@ export const personId = `${SITE}/#person`;
 export const websiteId = `${SITE}/#website`;
 export const codableId = `${SITE}/#codable`;
 export const taktungId = `${SITE}/#taktung`;
-export const codeatrophyId = `${SITE}/#codeatrophy`;
+export const tabforgeId = `${SITE}/#tabforge`;
+export const paperAndGrainId = `${SITE}/#paper-and-grain`;
 export const faqId = `${SITE}/#faq`;
 
 export const personJsonLd = {
@@ -18,7 +19,7 @@ export const personJsonLd = {
   email: "mailto:jeremy@jeremycollins.net",
   jobTitle: "Senior Software Engineer",
   description:
-    "Software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
+    "Software engineer at Webflow in Los Angeles. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
   knowsLanguage: "en",
   address: {
     "@type": "PostalAddress",
@@ -59,7 +60,7 @@ export const websiteJsonLd = {
   name: "JeremyCollins.net",
   url: SITE,
   description:
-    "Personal site for Jeremy Collins: software engineer at Webflow and maker of Codable and Taktung.",
+    "Personal site for Jeremy Collins: software engineer at Webflow and maker of Codable, Taktung, TabForge, and Paper & Grain.",
   inLanguage: "en-US",
   publisher: { "@id": personId },
   about: { "@id": personId },
@@ -70,11 +71,11 @@ export const codableJsonLd = {
   "@id": codableId,
   name: "Codable",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS",
-  url: "https://apps.apple.com/us/app/codable/id1324741659",
+  operatingSystem: "iOS 26.4 or later, iPadOS 26.4 or later",
+  url: `${SITE}/codable`,
   downloadUrl: "https://apps.apple.com/us/app/codable/id1324741659",
   description:
-    "Safari-native web developer tools for iOS. Inspect HTML, styles, network requests, and console output. No monetization or tracking.",
+    "Web developer tools for iPhone and iPad: inspect pages in Safari, review console and network activity, run JavaScript in Scratchpad, and test responsive layouts.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -88,11 +89,11 @@ export const taktungJsonLd = {
   "@id": taktungId,
   name: "Taktung",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "iOS",
-  url: "https://apps.apple.com/us/app/taktung/id6805738660",
+  operatingSystem: "iOS 27 or later, iPadOS 27 or later",
+  url: `${SITE}/taktung`,
   downloadUrl: "https://apps.apple.com/us/app/taktung/id6805738660",
   description:
-    "Vercel deploy and incident ops on your phone. Site health, deploys, and confirmed promote or rollback. No ads or tracking.",
+    "Check Vercel deployments on iPhone and iPad. Review build logs, compare page captures, keep a local Field Log, and confirm deployment actions. Not affiliated with Vercel.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -101,15 +102,40 @@ export const taktungJsonLd = {
   author: { "@id": personId },
 };
 
-export const codeatrophyJsonLd = {
+export const tabforgeJsonLd = {
   "@type": "SoftwareApplication",
-  "@id": codeatrophyId,
-  name: "Codeatrophy",
-  applicationCategory: "EducationalApplication",
-  operatingSystem: "Web",
-  url: "https://codeatrophy.vercel.app/",
+  "@id": tabforgeId,
+  name: "TabForge: Code Keyboard",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "iOS 27 or later, iPadOS 27 or later",
+  url: `${SITE}/tabforge`,
+  downloadUrl: "https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795",
   description:
-    "Interactive tutorials on web development fundamentals: algorithms, system design, and CS, built with React Native for iOS, Android, and web.",
+    "A free, open-source programming keyboard for iPhone and iPad with coding punctuation, indentation, snippets, and input profiles. No Full Access required.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: { "@id": personId },
+};
+
+export const paperAndGrainJsonLd = {
+  "@type": "SoftwareApplication",
+  "@id": paperAndGrainId,
+  name: "Paper & Grain",
+  applicationCategory: "GameApplication",
+  genre: "Puzzle",
+  operatingSystem: "iOS 26 or later, iPadOS 26 or later",
+  url: `${SITE}/paper-and-grain`,
+  downloadUrl: "https://apps.apple.com/us/app/paper-grain/id6821361967",
+  description:
+    "A relaxing origami puzzle game for iPhone and iPad. Learn with eight lessons or explore Free Fold, then save editable creations. No timer or losing.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
   author: { "@id": personId },
 };
 
@@ -122,7 +148,7 @@ export const faqJsonLd = {
       name: "Who is Jeremy Collins?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He works on growth engineering, billing, and usage metering, and makes Codable and Taktung for iOS.",
+        text: "Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He works on growth engineering, billing, and usage metering, and makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
       },
     },
     {
@@ -143,6 +169,22 @@ export const faqJsonLd = {
     },
     {
       "@type": "Question",
+      name: "What is TabForge?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "TabForge is a free, open-source programming keyboard for iPhone and iPad. It includes coding punctuation, indentation, snippets, and input profiles, without requesting Full Access.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Paper & Grain?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Paper & Grain is a free origami puzzle game for iPhone and iPad. Learn through eight lessons or try your own shapes in Free Fold, with editable saved creations and no timer or losing.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Where does Jeremy Collins work?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -159,7 +201,8 @@ export const homeJsonLd = {
     websiteJsonLd,
     codableJsonLd,
     taktungJsonLd,
-    codeatrophyJsonLd,
+    tabforgeJsonLd,
+    paperAndGrainJsonLd,
     faqJsonLd,
     {
       "@type": "ProfilePage",
@@ -219,12 +262,16 @@ export const tabforgePrivacyJsonLd = {
   "@id": `${SITE}/tabforge-privacy-policy#page`,
   url: `${SITE}/tabforge-privacy-policy`,
   name: "TabForge Privacy Policy",
-  about: {
-    "@type": "SoftwareApplication",
-    name: "TabForge: Code Keyboard",
-    operatingSystem: "iOS, iPadOS",
-    applicationCategory: "DeveloperApplication",
-    url: "https://github.com/jdodsoncollins/TabForge",
-  },
+  about: { "@id": tabforgeId },
+  isPartOf: { "@id": websiteId },
+};
+
+export const paperAndGrainPrivacyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE}/paper-and-grain-privacy-policy#page`,
+  url: `${SITE}/paper-and-grain-privacy-policy`,
+  name: "Paper & Grain Privacy Policy",
+  about: { "@id": paperAndGrainId },
   isPartOf: { "@id": websiteId },
 };

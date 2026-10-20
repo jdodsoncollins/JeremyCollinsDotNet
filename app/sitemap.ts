@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...["codable", "taktung"].map((app) => ({
+    ...["codable", "taktung", "tabforge", "paper-and-grain"].map((app) => ({
       url: `${baseUrl}/${app}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
@@ -33,6 +33,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/paper-and-grain-privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/paper-and-grain/support`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/resume`,

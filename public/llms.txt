@@ -1,18 +1,20 @@
 # Jeremy Collins
 
-> Software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.
+> Software engineer at Webflow in Los Angeles. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.
 
 Optional: [full summary](https://jeremycollins.net/llms-full.txt)
 
 ## About
 
-Jeremy Collins is a senior software engineer at Webflow. His recent work is growth engineering: billing, usage metering, paywalls, and customer-facing product. Outside of work he makes Codable, a free iOS app that brings web developer tools to mobile Safari, and Taktung, a free iOS app for Vercel deploy and incident ops. No ads, tracking, or paywall.
+Jeremy Collins is a senior software engineer at Webflow. His recent work is growth engineering: billing, usage metering, paywalls, and customer-facing product. His independent apps include Codable for web development, Taktung for Vercel deployments, TabForge for typing code, and Paper & Grain for origami.
 
 ## FAQ
 
-- Who is Jeremy Collins? A senior software engineer at Webflow in Los Angeles. He works on growth engineering and ships Codable and Taktung for iOS.
+- Who is Jeremy Collins? A senior software engineer at Webflow in Los Angeles. He works on growth engineering and makes apps for iPhone and iPad.
 - What is Codable? A free iOS app with Safari-native web developer tools: inspector, console, network monitor, scratchpad, and viewport tester. No ads or tracking.
 - What is Taktung? A free iOS app for Vercel deploy and incident ops. Site health, deploys, confirmed promote or rollback. Token stays on the phone. Not affiliated with Vercel.
+- What is TabForge? A free, open-source programming keyboard for iPhone and iPad with coding punctuation, indentation, snippets, and input profiles. No Full Access required.
+- What is Paper & Grain? A free origami puzzle game for iPhone and iPad with eight lessons, Free Fold, and saved editable creations. No timer or losing.
 - Where does Jeremy Collins work? Webflow.
 
 ## Pages
@@ -20,14 +22,22 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 - [Home](https://jeremycollins.net/): bio, experience, and side projects
 - [Resume](https://jeremycollins.net/resume): full resume
 - [Resume PDF](https://jeremycollins.net/resume/jeremy-collins-resume.pdf)
+- [Codable](https://jeremycollins.net/codable): Safari developer tools, responsive testing, and JavaScript Scratchpad
+- [Taktung](https://jeremycollins.net/taktung): Vercel deployment status, logs, comparisons, and Field Log
+- [TabForge](https://jeremycollins.net/tabforge): programming keyboard for iPhone and iPad
+- [Paper & Grain](https://jeremycollins.net/paper-and-grain): origami lessons and Free Fold
+- [Paper & Grain support](https://jeremycollins.net/paper-and-grain/support): gestures, saved work, and troubleshooting
 - [Codable privacy policy](https://jeremycollins.net/codable-privacy-policy)
 - [Taktung privacy policy](https://jeremycollins.net/taktung-privacy-policy)
+- [TabForge privacy policy](https://jeremycollins.net/tabforge-privacy-policy)
+- [Paper & Grain privacy policy](https://jeremycollins.net/paper-and-grain-privacy-policy)
 
 ## Apps
 
 - [Codable on the App Store](https://apps.apple.com/us/app/codable/id1324741659): Safari-native inspector, console, network monitor, scratchpad, and viewport tester for iOS
 - [Taktung on the App Store](https://apps.apple.com/us/app/taktung/id6805738660): Vercel deploy and incident ops on iPhone. Site health, deploys, confirmed promote or rollback
-- [Codeatrophy](https://codeatrophy.vercel.app/): interactive tutorials on web development fundamentals
+- [TabForge on the App Store](https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795): free, open-source programming keyboard with punctuation, indentation, snippets, and input profiles
+- [Paper & Grain on the App Store](https://apps.apple.com/us/app/paper-grain/id6821361967): free origami puzzle game with eight lessons and Free Fold
 
 ## Profiles
 

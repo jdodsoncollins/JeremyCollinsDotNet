@@ -1,81 +1,205 @@
 {
   "codable": {
-    "appStore": "https://apps.apple.com/us/app/id1324741659",
-    "checkedAt": "2026-10-17",
+    "appStore": "https://apps.apple.com/us/app/codable/id1324741659",
+    "checkedAt": "2026-10-20",
     "icon": {
-      "src": "/apps/codable-icon.webp",
-      "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5d/31/c6/5d31c6ba-6990-d6e7-c1e6-4edc3f79666b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.webp"
+      "src": "/apps/codable-icon.webp?v=ac4c455e16",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/c6/2c/78c62cfe-c41a-cbe5-dcc7-0c8646c54065/Placeholder.mill/512x512bb.webp",
+      "width": 512,
+      "height": 512
     },
     "screenshots": [
       {
-        "src": "/apps/codable-1.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/a3/b3/e2a3b34e-c379-cf4c-9964-881a0966b11e/01-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-1.webp?v=361354a5ca",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/a3/b3/e2a3b34e-c379-cf4c-9964-881a0966b11e/01-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-2.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/cc/f1/d8ccf1f3-c487-8524-fd94-0aaf00b7e4a9/02-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-2.webp?v=5de31a6709",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/cc/f1/d8ccf1f3-c487-8524-fd94-0aaf00b7e4a9/02-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-3.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/34/90/7d3490b8-abe2-23c4-85f0-a153599ba529/03-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-3.webp?v=5c0a8fab61",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/34/90/7d3490b8-abe2-23c4-85f0-a153599ba529/03-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-4.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/f2/b6/b6f2b62f-ae2b-35cb-e6f1-4a54b5d9b73c/04-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-4.webp?v=c7a1c82b6a",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/f2/b6/b6f2b62f-ae2b-35cb-e6f1-4a54b5d9b73c/04-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-5.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/11/56/a11156b6-b8f1-d3c3-0032-a8cb88b1c7de/05-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-5.webp?v=3cffcc7346",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/11/56/a11156b6-b8f1-d3c3-0032-a8cb88b1c7de/05-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-6.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/d5/81/afd581cd-a336-c45c-852f-109a7f104bd8/06-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-6.webp?v=a9c2b2cba7",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/d5/81/afd581cd-a336-c45c-852f-109a7f104bd8/06-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-7.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b9/35/60/b9356067-c25e-b5e9-250d-792f18bb8779/07-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-7.webp?v=1ffa449578",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b9/35/60/b9356067-c25e-b5e9-250d-792f18bb8779/07-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/codable-8.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/34/97/81349768-e516-93cb-20a3-dfffba2cf7d5/08-hero.png/1200x2668bb.webp"
+        "src": "/apps/codable-8.webp?v=8a9c42558f",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/34/97/81349768-e516-93cb-20a3-dfffba2cf7d5/08-hero.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       }
     ]
   },
   "taktung": {
-    "appStore": "https://apps.apple.com/us/app/id6805738660",
-    "checkedAt": "2026-10-17",
+    "appStore": "https://apps.apple.com/us/app/taktung-deployment-status/id6805738660",
+    "checkedAt": "2026-10-20",
     "icon": {
-      "src": "/apps/taktung-icon.webp",
-      "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/08/e4/fc/08e4fcbb-7887-e8b6-a205-8ec597da938b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.webp"
+      "src": "/apps/taktung-icon.webp?v=9fd624a861",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2e/ce/66/2ece660f-e395-0d5b-377e-cf4bfa9b3af3/Placeholder.mill/512x512bb.webp",
+      "width": 512,
+      "height": 512
     },
     "screenshots": [
       {
-        "src": "/apps/taktung-1.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b9/79/3f/b9793f2f-3fce-e075-d463-99df05b79a92/01.png/1200x2668bb.webp"
+        "src": "/apps/taktung-1.webp?v=435e133e12",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a8/64/4f/a8644f71-792f-0593-38d5-fd490575db77/01.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-2.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/3d/73/1c3d738e-c16a-5ba8-54e2-cd8179df4da0/02.png/1200x2668bb.webp"
+        "src": "/apps/taktung-2.webp?v=7d509dc9c9",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/74/3b/73743b1d-7eb6-e99a-dbc4-bd19fbc6d42c/02.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-3.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/ef/a1/15efa17e-3ec2-d2f6-4638-cf007b9851c3/03.png/1200x2668bb.webp"
+        "src": "/apps/taktung-3.webp?v=a7cc7083a0",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/f4/a3/51f4a3f5-6c80-5638-4acd-21b4c7d3f81b/03.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-4.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/b3/59/dfb359e4-0448-7a2e-95e0-e57e660bde85/04.png/1200x2668bb.webp"
+        "src": "/apps/taktung-4.webp?v=7683001903",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/89/67/d68967a1-a881-ead6-250e-ac76544c47f9/04.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-5.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/e4/a4/3fe4a46d-df35-1d54-eb0e-e870460295b4/05.png/1200x2668bb.webp"
+        "src": "/apps/taktung-5.webp?v=75fb48b871",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/b2/d3/e6b2d3e8-efc8-b664-1499-8339ffd116ac/05.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-6.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/8d/7d/398d7dfd-f9f5-d1aa-abbf-98d5b1a086d5/06.png/1200x2668bb.webp"
+        "src": "/apps/taktung-6.webp?v=3056b7efdd",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b5/14/fe/b514fe6e-f483-f88b-07b5-ecc4ff674673/06.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       },
       {
-        "src": "/apps/taktung-7.webp",
-        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/48/90/4f48900e-6290-e649-e760-191f057c5109/07.png/1200x2668bb.webp"
+        "src": "/apps/taktung-7.webp?v=d92e300c3d",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/2e/6e/1d2e6e5c-4bc5-f855-7721-1a58843fce09/07.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/taktung-8.webp?v=fda3da8aab",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/74/d1/ae/74d1aeb4-293f-40ad-1763-81fe6a9904ea/08.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      }
+    ]
+  },
+  "tabforge": {
+    "appStore": "https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795",
+    "checkedAt": "2026-10-20",
+    "icon": {
+      "src": "/apps/tabforge-icon.webp?v=6021240071",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/87/fc/0987fc7d-8a75-1655-0ff5-fd7d8cf19b8c/Placeholder.mill/512x512bb.webp",
+      "width": 512,
+      "height": 512
+    },
+    "screenshots": [
+      {
+        "src": "/apps/tabforge-1.webp?v=d0d9ce402f",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9c/fe/8d/9cfe8dc5-173d-80e3-4e68-35e36773f26a/01.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/tabforge-2.webp?v=56d1ef678c",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/d2/0c/8dd20ca6-7be2-fe77-671d-3f175f0bdc13/02.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/tabforge-3.webp?v=19cba50f78",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/cd/da/6ccddaf2-4f51-8841-fda0-17f0dc4cdc97/03.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/tabforge-4.webp?v=a156969747",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/64/59/31/6459317e-7b71-f3c6-f2a3-d769e07ced88/04.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/tabforge-5.webp?v=e8414b9d47",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f2/7f/ff/f27fff31-91ad-88c0-7f04-2c7fa52f8ef7/05.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/tabforge-6.webp?v=d48ffeba31",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0f/43/6d/0f436dfc-9f3b-efe5-d38e-92cfacb04ec8/06.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      }
+    ]
+  },
+  "paperAndGrain": {
+    "appStore": "https://apps.apple.com/us/app/paper-grain/id6821361967",
+    "checkedAt": "2026-10-20",
+    "icon": {
+      "src": "/apps/paper-icon.webp?v=9f30e58ed9",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/61/d6/12/61d612af-fc7d-73d0-b4e6-5cb05508ce33/Placeholder.mill/512x512bb.webp",
+      "width": 512,
+      "height": 512
+    },
+    "screenshots": [
+      {
+        "src": "/apps/paper-1.webp?v=11b1f09152",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/5b/53/fc5b53b4-9f02-7657-4722-7a35b6f3869a/01-make-time-for-paper.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/paper-2.webp?v=78d5b45ec5",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/a1/ab/f7a1ab0f-db41-21ad-0a0a-805da3a89d8c/02-a-gentle-beginning.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/paper-3.webp?v=373ae2fb3c",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/a4/2d/1ba42d70-8581-c8f5-a0b8-6200368f91f1/03-help-when-you-want-it.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
+      },
+      {
+        "src": "/apps/paper-4.webp?v=ea894aa139",
+        "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/4f/b8/5b4fb865-4e25-ad15-2dbf-46a90ef106dd/04-follow-your-curiosity.png/1206x2622bb.webp",
+        "width": 1206,
+        "height": 2622
       }
     ]
   }

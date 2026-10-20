@@ -1,168 +1,78 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { CircuitBackground } from "@/components/circuit-background";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { AppArrow } from "@/components/app-icons";
+import { AppScreenshot } from "@/components/app-screenshot";
+import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
+import { APP_PRODUCTS } from "@/lib/app-products";
+import { paperAndGrainJsonLd } from "@/lib/json-ld";
+import shared from "@/app/app-pages.module.css";
+import styles from "@/app/paper-and-grain.module.css";
+
+const app = APP_PRODUCTS.paperAndGrain;
 
 export const metadata: Metadata = {
-  title: "Paper & Grain Support",
-  description:
-    "Get started with Paper & Grain, a free, relaxing paper-folding game for iPhone and iPad. Gesture help, saved-paper recovery, compatibility, and support.",
+  title: "Paper & Grain — Fold, cut, and draw on iPhone & iPad",
+  description: app.description,
   alternates: { canonical: "/paper-and-grain" },
   openGraph: {
-    title: "Paper & Grain Support",
-    description:
-      "A quiet workshop for folding, cutting, and drawing on paper. Help for Jeremy Collins' free iPhone and iPad game.",
+    title: "Paper & Grain — Fold, cut, and draw",
+    description: app.description,
     url: "/paper-and-grain",
     type: "website",
+    images: [{ url: app.screenshots[0].src, alt: app.screenshots[0].alt }],
   },
 };
 
-export default function PaperAndGrainSupport() {
+function DownloadLink() {
+  return <a className={styles.download} href={app.href} target="_blank" rel="noopener noreferrer">View in App Store <AppArrow /></a>;
+}
+
+export default function PaperAndGrainPage() {
   return (
-    <div className="relative min-h-screen">
-      <CircuitBackground />
-      <div className="relative z-10">
-        <Header />
-        <main className="pt-32 md:pt-24 pb-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="mb-12">
-              <p className="font-mono text-neon-cyan text-sm mb-3">
-                A quiet workshop in paper
-              </p>
-              <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                Paper &amp; Grain support
-              </h1>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                Fold a sheet, cut it, draw on it, or turn it over. Follow a
-                lesson or explore Free Fold at your own pace. There is no
-                timer, and you cannot lose.
-              </p>
-              <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                Paper &amp; Grain is free for iPhone and iPad running iOS or
-                iPadOS 26 or later. Its layouts and folding interactions are
-                designed for iPhone Duo. There are no accounts, ads,
-                subscriptions, or in-app purchases.
-              </p>
-            </div>
-
-            <article className="prose prose-invert max-w-none overflow-hidden">
-              <div className="space-y-10 text-muted-foreground p-8 md:p-10 lg:p-12">
-                <section className="border-l-2 border-neon-green pl-6">
-                  <h2 className="font-display text-xl text-foreground mb-4">
-                    Where to begin
-                  </h2>
-                  <div className="space-y-4 text-sm leading-relaxed">
-                    <p>
-                      Start with First Fold, the suggested lesson on the main
-                      menu. The lesson pages and Guidebook take you through one
-                      movement at a time. You can revisit any of the eight
-                      included lessons or choose Free Fold to work on your own
-                      paper.
-                    </p>
-                    <p>
-                      Drag the controls card up to read more of a lesson, or
-                      down to give the paper more room. You can open the
-                      Guidebook while you work.
-                    </p>
-                  </div>
-                </section>
-
-                <section className="border-l-2 border-neon-magenta pl-6">
-                  <h2 className="font-display text-xl text-foreground mb-4">
-                    Move the view and fold the paper
-                  </h2>
-                  <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
-                    <li>
-                      Place two fingers on the wood. Pinch to zoom, slide both
-                      fingers in the same direction to change the perspective,
-                      or twist to rotate. You can rotate all the way around to
-                      see the underside.
-                    </li>
-                    <li>
-                      Drag one finger on the wood to position the paper across
-                      the fold guide.
-                    </li>
-                    <li>
-                      Pinch on the paper to fold or unfold. Let the fold
-                      settle before starting the next crease.
-                    </li>
-                    <li>
-                      In Position, pull one of the original sheet corners inward
-                      to curl it, then release to settle a fold. To cancel the
-                      curl, move back toward the corner where you started.
-                    </li>
-                    <li>
-                      On a supported Duo, line up the paper with the center
-                      guide before folding the device. Device folding requires
-                      iOS 27.1 or later. Touch gestures are also available.
-                    </li>
-                  </ul>
-                </section>
-
-                <section className="border-l-2 border-neon-cyan pl-6">
-                  <h2 className="font-display text-xl text-foreground mb-4">
-                    Bring the paper back into view
-                  </h2>
-                  <p className="text-sm leading-relaxed">
-                    Choose Center &amp; top view if the paper moves off screen
-                    or becomes difficult to see. It centers the paper and
-                    restores a view from above without undoing your folds. Use
-                    Undo and Redo to change the paper itself.
-                  </p>
-                </section>
-
-                <section className="border-l-2 border-neon-green pl-6">
-                  <h2 className="font-display text-xl text-foreground mb-4">
-                    Saved papers and sharing
-                  </h2>
-                  <div className="space-y-4 text-sm leading-relaxed">
-                    <p>
-                      The app saves completed edits on your device. Open Gallery
-                      to return to a saved paper. If a save fails, keep the
-                      current paper open and retry the save. If an
-                      earlier save can be recovered, the app offers Open earlier
-                      save.
-                    </p>
-                    <p>
-                      Sharing starts with an image preview. Choose Share image
-                      to open the system share sheet and select a destination.
-                      Cancelling leaves your paper unchanged.
-                    </p>
-                    <p>
-                      The workshop and bundled lessons work offline. The app
-                      does not provide cloud sync. Exported images and system
-                      backups are separate from your local gallery.
-                    </p>
-                  </div>
-                </section>
-
-                <section className="border border-border bg-card/30 p-6">
-                  <h2 className="font-display text-xl text-foreground mb-4">
-                    Contact Jeremy
-                  </h2>
-                  <div className="space-y-4 text-sm leading-relaxed">
-                    <p>
-                      <a href="mailto:jeremy@jeremycollins.net?subject=Paper%20%26%20Grain%20support" className="text-neon-green hover:underline break-words">
-                        Email jeremy@jeremycollins.net
-                      </a>{" "}
-                      with your app version, device model, iOS or iPadOS version,
-                      and the steps that led to the issue. A screenshot or short
-                      recording can help explain a gesture problem.
-                    </p>
-                    <p>
-                      <Link href="/paper-and-grain-privacy-policy" className="text-neon-green hover:underline">
-                        Read the Paper &amp; Grain privacy policy
-                      </Link>.
-                    </p>
-                  </div>
-                </section>
-              </div>
-            </article>
-          </div>
-        </main>
-        <Footer />
+    <div className={`${shared.page} ${styles.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", ...paperAndGrainJsonLd }).replace(/</g, "\\u003c") }} />
+      <a className={styles.skipLink} href="#main-content">Skip to content</a>
+      <div className={styles.header} role="banner">
+        <Link href="/paper-and-grain" className={styles.brand}><Image src={app.icon} width={36} height={36} alt="" />Paper &amp; Grain</Link>
+        <nav className={styles.navigation} aria-label="Paper & Grain navigation"><a href="#workshop">The workshop</a><a href="#lessons">Lessons</a><Link href="/paper-and-grain/support">Help</Link></nav>
+        <Link href="/" className={styles.maker}>Jeremy Collins <AppArrow /></Link>
       </div>
+      <main id="main-content">
+        <section className={styles.hero} aria-labelledby="paper-title">
+          <div>
+            <h1 id="paper-title">Fold, cut,<br /><em>and draw</em></h1>
+            <p className={styles.lead}>A quiet paper workshop<br />for iPhone and iPad.</p>
+            <p className={styles.intro}>Begin with a sheet. Try a crease, follow a lesson, or make a shape of your own. There’s no timer and no losing.</p>
+            <DownloadLink />
+            <p className={styles.note}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
+          </div>
+          <div className={styles.heroArt}><AppScreenshot shot={app.screenshots[0]} priority /></div>
+        </section>
+
+        <dl className={styles.facts}><div><dt>Eight lessons</dt><dd>A fold at a time</dd></div><div><dt>Free Fold</dt><dd>Your own blank sheet</dd></div><div><dt>No timer</dt><dd>Work at your pace</dd></div></dl>
+
+        <section id="workshop" className={styles.workshop} aria-labelledby="workshop-title">
+          <div className={styles.sectionHeading}><h2 id="workshop-title">A sheet of paper<br />Three ways to play</h2><p>Warm wood, softly textured paper, and simple tools. Turn the sheet in 3D to see what’s happening beneath a fold.</p></div>
+          <ol className={styles.process}>
+            <li><h3>Fold</h3><p>Pinch a crease or pull a corner. Watch the paper curl as you move, then let the fold settle flat.</p></li>
+            <li><h3>Cut</h3><p>Try a paper-cut shape. Fold the sheet, make a cut, and unfold it to see the result.</p></li>
+            <li><h3>Draw</h3><p>Add light pencil lines to your paper. Undo and Redo give you room to try another idea.</p></li>
+          </ol>
+        </section>
+
+        <section id="lessons" className={styles.lessons} aria-labelledby="lessons-title">
+          <div className={styles.lessonCopy}><h2 id="lessons-title">Begin with<br />a single crease</h2><p>Eight guided lessons move from a first fold to simple kites, folded letters, paper-cut shapes, and square-base studies.</p><p>Follow each step and its diagram. Bring the controls card up when you want to read, or move it down to give your paper more room.</p><h3>A guide beside your work</h3><p>Open the Guidebook whenever you need a reminder. Clear diagrams explain the next movement while your paper stays close at hand.</p><div className={styles.supportLink}><Link className={styles.textLink} href="/paper-and-grain/support">Gesture help and getting started <AppArrow /></Link></div></div>
+          <div className={styles.lessonImages}><AppScreenshot shot={app.screenshots[1]} /><AppScreenshot shot={app.screenshots[2]} /></div>
+        </section>
+
+        <section className={styles.freeFold} aria-labelledby="free-fold-title"><div className={styles.freeFoldInner}><h2 id="free-fold-title">Or start with<br />a blank sheet</h2><div><p>Free Fold leaves the next move to you. Fold and unfold, turn the paper over, cut a new shape, or add a few pencil lines.</p><p>Save editable sheets in your gallery and come back to them later. Undo a crease, try a different direction, and keep exploring.</p></div></div></section>
+
+        <section id="screenshots" className={styles.screenshots} aria-labelledby="screenshots-title"><div className={styles.sectionHeading}><h2 id="screenshots-title">Inside the<br />paper workshop</h2><p>Explore the workspace, follow a guided lesson, and keep the Guidebook close at hand.</p></div><AppScreenshotGallery shots={app.screenshots} appName="Paper & Grain" /></section>
+
+        <section className={styles.downloadSection} aria-labelledby="download-title"><div className={styles.downloadInner}><div><div className={styles.downloadTitle}><Image src={app.icon} width={60} height={60} alt="" /><h2 id="download-title">Paper &amp; Grain<br />for iPhone and iPad</h2></div><p>All eight lessons and Free Fold are included.<br />Pick a sheet and see what you can make.</p></div><div className={styles.downloadActions}><DownloadLink /><p>Free · iOS &amp; iPadOS 26 or later</p></div></div><p className={styles.compatibility}>Touch controls work without a folding device. Optional folding along the device seam on a supported iPhone Duo requires iOS 27.1 or later.</p></section>
+      </main>
+      <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/tabforge">TabForge</Link></nav><div><Link href="/paper-and-grain/support">Support</Link><Link href="/paper-and-grain-privacy-policy">Privacy</Link></div></footer>
     </div>
   );
 }

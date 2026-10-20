@@ -91,7 +91,7 @@
 .page .projects { background: var(--paper) !important; padding-block: 100px 104px; border: 0 !important; }
 .sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 44px; }
 .sectionHeading h2 { --home-tracking: -.055em; color: var(--ink); font-size: clamp(48px, 5vw, 70px); font-weight: 500; line-height: 1.05; }
-.projectList { display: grid; gap: 64px; }
+.projectList { display: grid; gap: 56px; }
 .project { --card-paper: #2a4236; --card-ink: #f3f1e8; --card-muted: #c1ccbe; --card-line: #486151; display: grid; grid-template-columns: .95fr 1.05fr; color: var(--card-ink); border: 1px solid var(--card-line); min-width: 0; overflow: hidden; }
 .projectCopy { padding: 34px 44px 42px; display: flex; flex-direction: column; align-items: flex-start; }
 .appBrand { display: flex; gap: 15px; align-items: center; }
@@ -99,9 +99,9 @@
 .appBrand h3 { --home-tracking: -.04em; color: var(--card-ink); font-size: 37px; line-height: 1.2; font-weight: 500; }
 .page .project h4 { --home-tracking: -.025em; color: var(--card-ink); font-size: clamp(23px, 2.5vw, 33px); line-height: 1.22; font-weight: 400; margin-top: 28px; max-width: 350px; }
 .projectDescription { color: var(--card-muted); font-size: 15px; line-height: 1.8; margin-top: 18px !important; max-width: 370px; }
-.features { list-style: none; padding: 0; margin: 28px 0 32px; display: grid; gap: 9px; color: var(--card-muted); font-size: 12px; }
-.features li { display: flex; gap: 10px; align-items: center; }
-.features li > span { width: 4px; height: 4px; border: 1px solid currentColor; border-radius: 50%; }
+.features { list-style: none; padding: 0; margin: 28px 0 32px; width: 100%; display: grid; color: var(--card-muted); font-size: 12px; }
+.features li { padding-block: 9px; border-top: 1px solid var(--card-line); }
+.page .freeNote { color: var(--card-ink); max-width: 330px; font-size: 12px; line-height: 1.75; margin-bottom: 24px; }
 .projectActions { display: flex; align-items: center; flex-wrap: wrap; gap: 23px; margin-top: auto; font-size: 12px; }
 .projectActions a { display: inline-flex; align-items: center; min-height: 44px; gap: 11px; }
 .projectActions .readMore { padding: 12px 16px; color: #fff; background: #075df5; border-radius: 2px; gap: 22px; }
@@ -123,6 +123,34 @@
 .codable .appBrand { padding-top: 5px; }
 .screens a:hover { opacity: 1; }
 .screens a:hover img { outline: 2px solid currentColor; outline-offset: 5px; }
+
+/* The app sections carry their own materials into the forest palette. */
+:global(:root[data-era="modern"]) .project { border-width: 0; }
+:global(:root[data-era="modern"]) .projectCopy { padding: 42px 44px; }
+:global(:root[data-era="modern"]) .projectArt { padding: 34px 32px 26px; }
+:global(:root[data-era="modern"]) .appBrand h3 { font-size: 34px; }
+:global(:root[data-era="modern"]) .project h4 { font-size: clamp(29px, 2.8vw, 40px); line-height: 1.14; max-width: 370px; margin-top: 38px; }
+:global(:root[data-era="modern"]) .projectDescription { font-size: 14px; line-height: 1.8; }
+:global(:root[data-era="modern"]) .projectActions .readMore { background: var(--card-accent); color: var(--card-button-ink); border-radius: 2px; }
+:global(:root[data-era="modern"]) .screens img { transition: translate 220ms ease-out; }
+:global(:root[data-era="modern"]) .screens a:is(:hover, :focus-visible) img { translate: 0 -3px; }
+
+.tabforge { --card-paper: #eeeee5; --card-ink: #293329; --card-muted: #58604f; --card-line: #c8cebb; --card-accent: #445d32; --card-button-ink: #fff; }
+:global(:root[data-era="modern"]) .tabforge .appBrand h3 { --home-type: var(--mono); --home-tracking: -.055em; font-size: 30px; }
+.tabforge .projectArt { background: #dfe3d4; color: #4e5f43; }
+:global(:root[data-era="modern"]) .tabforge h4 { --home-type: Georgia, "Times New Roman", serif; --home-tracking: -.035em; font-size: clamp(34px, 3.3vw, 46px); }
+.paper { --card-paper: #efe7d7; --card-ink: #403628; --card-muted: #675b48; --card-line: #cfc2ac; --card-accent: #85533d; --card-button-ink: #fffaf1; }
+.paper .projectArt { background: #baa586; color: #362c20; }
+.paper .projectArt { grid-column: 1; grid-row: 1; }
+.paper .projectCopy { grid-column: 2; grid-row: 1; }
+:global(:root[data-era="modern"]) .paper :is(.appBrand h3, h4) { --home-type: Georgia, "Times New Roman", serif; --home-tracking: -.035em; font-weight: 400; }
+:global(:root[data-era="modern"]) .paper h4 { font-size: clamp(35px, 3.4vw, 48px); }
+:global(:root[data-era="modern"]) .codable { --card-paper: #eaf1fb; --card-ink: #142d49; --card-muted: #445b74; --card-line: #c2d0e0; --card-accent: #0759df; --card-button-ink: #fff; }
+:global(:root[data-era="modern"]) .codable .projectArt { background: #1256b5; color: #e6efff; }
+:global(:root[data-era="modern"]) .codable :is(.appBrand h3, h4) { font-weight: 600; }
+:global(:root[data-era="modern"]) .taktung { --card-paper: #191f1d; --card-ink: #f2efe6; --card-muted: #bec4b8; --card-line: #414a40; --card-accent: #dfb48c; --card-button-ink: #1d261c; }
+:global(:root[data-era="modern"]) .taktung :is(.appBrand h3, h4) { --home-type: Georgia, "Times New Roman", serif; --home-tracking: -.025em; font-weight: 400; }
+:global(:root[data-era="modern"]) .taktung .projectArt { background: #303b32; }
 
 .page .about { padding-block: 0 110px; display: grid; grid-template-columns: 1fr 1fr; gap: 110px; background: var(--paper) !important; border: 0 !important; }
 .aboutCopy { padding-top: 20px; }
@@ -168,6 +196,7 @@
 :global(:root[data-era="1980s"]) .projectDescription,
 :global(:root[data-era="1980s"]) .aboutCopy > p { font-size: 20px; line-height: 1.55; }
 :global(:root[data-era="1980s"]) .features,
+:global(:root[data-era="1980s"]) .page .freeNote,
 :global(:root[data-era="1980s"]) .projectActions,
 :global(:root[data-era="1980s"]) .heroTextLink,
 :global(:root[data-era="1980s"]) .heroButton { font-size: 17px; }
@@ -214,9 +243,13 @@
   .sectionHeading { margin-bottom: 28px; gap: 12px; }
   .sectionHeading h2 { font-size: clamp(34px, 10vw, 50px); }
   .project { grid-template-columns: 1fr; }
-  .taktung .projectArt, .taktung .projectCopy { grid-column: auto; grid-row: auto; }
+  .taktung .projectArt, .taktung .projectCopy, .paper .projectArt, .paper .projectCopy { grid-column: auto; grid-row: auto; }
   .projectList { gap: 28px; }
   .projectCopy { padding: 25px 28px 32px; }
+  :global(:root[data-era="modern"]) .projectCopy { padding: 28px; }
+  :global(:root[data-era="modern"]) .project h4 { margin-top: 28px; font-size: 34px; }
+  :global(:root[data-era="modern"]) .paper h4 { font-size: 38px; }
+  :global(:root[data-era="modern"]) .projectArt { padding: 24px 28px; }
   .page .project h4 { font-size: 28px; margin-top: 25px; }
   .projectDescription { max-width: 440px; font-size: 13px; }
   .features { margin-block: 22px 27px; }
@@ -251,6 +284,9 @@
   .heroActions { gap: 20px; }
   .heroButton { gap: 20px; padding-inline: 17px; }
   .projectCopy { padding-inline: 23px; }
+  :global(:root[data-era="modern"]) .projectCopy { padding-inline: 23px; }
+  :global(:root[data-era="modern"]) .appBrand h3 { font-size: 29px; }
+  :global(:root[data-era="modern"]) .tabforge .appBrand h3 { font-size: 25px; }
   .projectArt { padding-inline: 20px; }
   .projectActions { gap: 15px; font-size: 10px; }
   .projectActions a { gap: 8px; }

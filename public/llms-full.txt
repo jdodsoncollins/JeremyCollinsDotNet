@@ -2,23 +2,51 @@
 
 Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
 
-Outside of work he makes independent software for iOS and the web. No ads, tracking, or paywall.
+Outside of work he makes independent apps for iPhone and iPad: Codable, Taktung, TabForge, and Paper & Grain.
 
 ## Codable
 
-Codable is a free iOS app with Safari-native web developer tools. Inspect HTML, styles, network requests, and console output. Also includes a scratchpad and viewport tester. Available on the App Store: https://apps.apple.com/us/app/codable/id1324741659
+Codable is a free web developer toolkit for iPhone and iPad. Its Safari extension inspects elements, the DOM, styles, source, console output, resources, and network activity. Resize tests responsive layouts. Scratchpad edits and runs JavaScript. Optional Apple Intelligence tools require a supported device. Requires iOS or iPadOS 26.4 or later.
+
+Details: https://jeremycollins.net/codable
+
+App Store: https://apps.apple.com/us/app/codable/id1324741659
 
 Privacy policy: https://jeremycollins.net/codable-privacy-policy
 
 ## Taktung
 
-Taktung is a free iOS app for Vercel deploy and incident ops. See site health and the latest deploy, then promote or roll back after you confirm. A Vercel token stays on the phone. Not affiliated with Vercel. Available on the App Store: https://apps.apple.com/us/app/taktung/id6805738660
+Taktung is a free app for checking Vercel deployments on iPhone and iPad. Review production status, build logs, visual comparisons, Home Screen widgets, and a local Field Log. Redeploy, promote, and rollback actions require confirmation. A Vercel personal access token stays in the device Keychain; the app calls Vercel directly. History and baselines remain on the device. Requires iOS or iPadOS 27 or later and a Vercel account. Not affiliated with or endorsed by Vercel.
+
+Details: https://jeremycollins.net/taktung
+
+App Store: https://apps.apple.com/us/app/taktung/id6805738660
 
 Privacy policy: https://jeremycollins.net/taktung-privacy-policy
 
-## Codeatrophy
+## TabForge
 
-Codeatrophy is a set of interactive tutorials on web development fundamentals (algorithms, system design, CS), built with React Native for iOS, Android, and web: https://codeatrophy.vercel.app/
+TabForge is a free, MIT-licensed programming keyboard for iPhone and iPad. Coding punctuation, indentation, cursor controls, saved snippets, and input profiles are available from the keyboard. Configure it from its gear menu without Full Access. Terminal and remote behavior depends on the host app; a keyboard extension cannot send arbitrary hardware-key events. The companion playground edits highlighted text but does not run code. Optional voice input requires on-device English recognition in the companion app. The keyboard does not log or transmit keystrokes. No ads, analytics, or accounts. Requires iOS or iPadOS 27 or later.
+
+Details: https://jeremycollins.net/tabforge
+
+App Store: https://apps.apple.com/us/app/tabforge-code-keyboard/id6824056795
+
+Privacy policy: https://jeremycollins.net/tabforge-privacy-policy
+
+Source: https://github.com/jdodsoncollins/TabForge
+
+## Paper & Grain
+
+Paper & Grain is a relaxing origami puzzle game for iPhone and iPad. Eight guided lessons teach creases and shapes. Free Fold starts with a blank sheet for folding, cutting, and pencil lines. View work in 3D, undo and redo, and save editable sheets to the gallery. There is no timer and no losing. All eight lessons and Free Fold are free. Requires iOS or iPadOS 26 or later. Touch controls work without a folding device.
+
+Details: https://jeremycollins.net/paper-and-grain
+
+App Store: https://apps.apple.com/us/app/paper-grain/id6821361967
+
+Support: https://jeremycollins.net/paper-and-grain/support
+
+Privacy policy: https://jeremycollins.net/paper-and-grain-privacy-policy
 
 ## Site
 

@@ -21,7 +21,7 @@ test("llms-full.txt exists for answer engines", () => {
   assert.match(text, /jeremy@jeremycollins\.net/);
 });
 
-test("home JSON-LD describes the person, site, and Codable", () => {
+test("home JSON-LD describes the person, site, and launched apps", () => {
   const schema = fs.readFileSync("lib/json-ld.ts", "utf8");
   const home = fs.readFileSync("app/page.tsx", "utf8");
 
@@ -32,7 +32,11 @@ test("home JSON-LD describes the person, site, and Codable", () => {
   assert.match(schema, /WebSite/);
   assert.match(schema, /FAQPage/);
   assert.match(schema, /Who is Jeremy Collins/);
-  assert.match(schema, /Codeatrophy/);
+  assert.match(schema, /Codable/);
+  assert.match(schema, /Taktung/);
+  assert.match(schema, /TabForge/);
+  assert.match(schema, /Paper & Grain/);
+  assert.doesNotMatch(schema, /Codeatrophy/);
   assert.match(home, /homeJsonLd/);
 });
 

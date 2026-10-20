@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Jeremy Collins",
   },
   description:
-    "Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He makes Codable, Safari-native web developer tools for iOS, and Taktung, Vercel deploy ops on iPhone.",
+    "Jeremy Collins is a senior software engineer at Webflow in Los Angeles and the maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
   keywords: [
     "Jeremy Collins",
     "software engineer",
@@ -44,6 +44,8 @@ export const metadata: Metadata = {
     "growth engineering",
     "Codable",
     "Taktung",
+    "TabForge",
+    "Paper & Grain",
     "iOS developer tools",
     "Safari",
   ],
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jeremy Collins | Software Engineer at Webflow",
     description:
-      "Senior software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
+      "Software engineer at Webflow. Maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
     url: "https://jeremycollins.net",
     siteName: "JeremyCollins.net",
     type: "profile",
@@ -90,7 +92,7 @@ export const metadata: Metadata = {
     creator: "jollins",
     site: "jollins",
     description:
-      "Senior software engineer at Webflow in Los Angeles. Makes Codable and Taktung for iOS.",
+      "Software engineer at Webflow. Maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
     images: ["/logo.png"],
   },
   category: "technology",

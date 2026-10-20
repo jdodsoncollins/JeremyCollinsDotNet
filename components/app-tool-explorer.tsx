@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
 
-type Tool = { name: string; title: string; description: string; src: string; alt: string };
+type Tool = { name: string; title: string; description: string; src: string; alt: string; width?: number; height?: number };
 
 export function AppToolExplorer({ tools }: { tools: Tool[] }) {
   const [selected, setSelected] = useState(0);
@@ -35,8 +35,8 @@ export function AppToolExplorer({ tools }: { tools: Tool[] }) {
         ))}
       </div>
       <div className={styles.explorerPanel} id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${selected}`} tabIndex={0}>
-        <div className={styles.explorerDescription}><span className={styles.eyebrow}>IN THE APP</span><h3>{tool.title}</h3><p>{tool.description}</p><a href={tool.src} target="_blank" rel="noopener noreferrer">View full screenshot <span aria-hidden="true"><AppArrow /></span></a></div>
-        <div className={styles.explorerImage}><Image key={tool.src} src={tool.src} width={1200} height={2668} sizes="(max-width: 700px) 65vw, 280px" alt={tool.alt} /></div>
+        <div className={styles.explorerDescription}><h3>{tool.title}</h3><p>{tool.description}</p><a href={tool.src} target="_blank" rel="noopener noreferrer">View full screenshot <span aria-hidden="true"><AppArrow /></span></a></div>
+        <div className={styles.explorerImage}><Image key={tool.src} src={tool.src} width={tool.width ?? 1206} height={tool.height ?? 2622} sizes="(max-width: 700px) 65vw, 280px" alt={tool.alt} /></div>
       </div>
     </div>
   );

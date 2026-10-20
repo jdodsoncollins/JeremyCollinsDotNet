@@ -5,7 +5,7 @@ import { AppScreenshot } from "@/components/app-screenshot";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
 
-type Shot = { src: string; alt: string; label: string };
+type Shot = { src: string; alt: string; label: string; width?: number; height?: number };
 
 export function AppScreenshotGallery({ shots, appName }: { shots: Shot[]; appName: string }) {
   const rail = useRef<HTMLDivElement>(null);
