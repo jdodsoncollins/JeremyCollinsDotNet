@@ -2,12 +2,12 @@
 .header, .hero, .workshop, .lessons, .screenshots, .downloadSection, .footer, .support { width: min(100%, 1320px); margin-inline: auto; padding-inline: 64px; }
 .skipLink { position: absolute; left: 24px; top: -100px; z-index: 20; padding: 12px 20px; color: var(--paper) !important; background: var(--ink); }
 .skipLink:focus { top: 16px; }
-.header { min-height: 98px; display: flex; align-items: center; gap: 32px; border-bottom: 1px solid var(--line); }
-.brand { display: flex; align-items: center; gap: 12px; --typeface: Georgia, "Times New Roman", serif; --tracking: -.045em; font-size: 27px; }
+.header { min-height: 98px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; min-height: 44px; gap: 12px; --typeface: Georgia, "Times New Roman", serif; --tracking: -.045em; font-size: 27px; }
 .brand img { border-radius: 9px; }
-.navigation { display: flex; gap: 26px; margin-left: auto; font-size: 12px; }
-.navigation a, .maker { display: inline-flex; align-items: center; min-height: 44px; }
-.maker { display: inline-flex; align-items: center; gap: 12px; margin-left: 20px; font-size: 12px; }
+.navigation { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-left: auto; font-size: 14px; }
+.navigation a, .maker { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
+.maker { display: inline-flex; align-items: center; gap: 12px; margin-left: 20px; font-size: 14px; }
 .maker svg, .download svg, .textLink svg { width: 16px; height: 16px; }
 .header a:hover, .footer a:hover { color: var(--accent); }
 .hero { display: grid; grid-template-columns: 1fr .9fr; gap: 88px; align-items: center; padding-block: 60px 72px; }
@@ -18,7 +18,7 @@
 .download { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 54px; padding: 14px 22px; background: var(--ink); color: var(--paper) !important; font-size: 13px; border-radius: 2px; }
 .download:hover { background: var(--accent); transform: translateY(-2px); }
 .hero .download { margin-top: 30px; }
-.page .note { margin-top: 14px; font-size: 11px; }
+.page .note, .page .requirements { margin-top: 14px; font-size: 14px; }
 .heroArt { padding: 24px 32px; background: #e4dac3; border: 1px solid #d1c4a8; }
 .heroArt figure { max-width: 330px; margin-inline: auto; }
 .heroArt figcaption, .lessonImages figcaption { display: none; }
@@ -26,7 +26,7 @@
 .facts { margin: 0; padding: 26px max(64px, calc((100vw - 1192px) / 2)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-block: 1px solid var(--line); background: #e8e0cc; }
 .facts > div { text-align: center; }
 .facts dt { --typeface: Georgia, "Times New Roman", serif; --tracking: -.025em; font-size: 29px; }
-.facts dd { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.facts dd { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
 .workshop { padding-block: 96px; }
 .sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 64px; margin-bottom: 48px; }
 .page h2 { --typeface: Georgia, "Times New Roman", serif; --tracking: -.045em; font-weight: 400; font-size: clamp(40px, 4.5vw, 60px); line-height: 1.05; }
@@ -36,17 +36,16 @@
 .process > li::before { content: "0" counter(process); display: block; color: var(--accent); font-size: 12px; margin-bottom: 28px; }
 .process h3 { --typeface: Georgia, "Times New Roman", serif; --tracking: -.035em; font-weight: 400; font-size: 33px; }
 .process p { margin-top: 16px; font-size: 14px; line-height: 1.9; }
-.lessons { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; background: #dfd1b2; padding-block: 64px; }
+.lessons { --muted: #5a5746; --accent: #85432f; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; color: var(--ink); background: #dfd1b2; padding-block: 64px; }
 .lessonCopy { padding-left: 4px; }
 .lessonCopy > p { max-width: 400px; font-size: 15px; line-height: 1.85; margin-top: 24px; }
 .lessonCopy h3 { --typeface: Georgia, "Times New Roman", serif; --tracking: -.025em; font-weight: 400; font-size: 26px; margin-top: 36px; }
 .lessonCopy .supportLink { margin-top: 22px; }
-.textLink { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; font-size: 13px; border-bottom: 1px solid currentColor; }
+.textLink { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; font-size: 14px; border-bottom: 1px solid currentColor; }
 .textLink:hover { color: var(--accent); }
-.lessonImages { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.lessonImages { --hero-stagger: 60px; --hero-gap: 18px; }
 .lessonImages figure { margin: 0; }
-.lessonImages figure:last-child { margin-top: 60px; }
-.freeFold { background: #414537; --ink: #f8f0dd; --muted: #d3cfbd; --accent: #edb393; --line: #777c65; padding: 64px max(64px, calc((100vw - 1192px) / 2)); }
+.freeFold { color: var(--ink); background: #414537; --ink: #f8f0dd; --muted: #d3cfbd; --accent: #edb393; --line: #777c65; padding: 64px max(64px, calc((100vw - 1192px) / 2)); }
 .freeFoldInner { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; }
 .freeFold h2 { max-width: 470px; }
 .freeFold p { font-size: 16px; line-height: 1.9; }
@@ -55,14 +54,14 @@
 .screenshots .sectionHeading { margin-bottom: 40px; }
 .downloadSection { padding-top: 0; padding-bottom: 80px; }
 .downloadInner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; border-top: 1px solid var(--line); padding-top: 56px; }
-.downloadTitle { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
+.downloadTitle { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-bottom: 22px; }
 .downloadTitle img { border-radius: 13px; }
 .downloadTitle h2 { font-size: clamp(36px, 4vw, 52px); }
 .downloadInner p { font-size: 14px; line-height: 1.85; max-width: 470px; }
 .downloadActions { display: flex; align-items: center; flex-direction: column; gap: 12px; }
-.downloadActions p { font-size: 11px; }
-.downloadSection .compatibility { margin-top: 28px; font-size: 10px; line-height: 1.85; }
-.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding-block: 24px; gap: 16px 24px; border-top: 1px solid var(--line); background: var(--paper) !important; box-shadow: none !important; backdrop-filter: none !important; color: var(--muted); font-size: 11px; }
+.downloadActions p { font-size: 12px; }
+.downloadSection .compatibility { margin-top: 28px; font-size: 12px; line-height: 1.85; }
+.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding-block: 24px; gap: 16px 24px; border-top: 1px solid var(--line); background: var(--paper) !important; box-shadow: none !important; backdrop-filter: none !important; color: var(--muted); font-size: 14px; }
 .footer nav, .footer > div { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer a { display: inline-flex; min-height: 44px; align-items: center; }
 .support { max-width: 980px; padding-block: 64px 96px; }
@@ -93,15 +92,16 @@
 }
 @media (max-width: 780px) {
   .header { min-height: 82px; }
-  .navigation { display: none; }
-  .maker { margin-left: auto; }
+  .header { gap: 8px 20px; }
+  .navigation { order: 3; flex-basis: 100%; justify-content: space-between; gap: 4px 16px; padding-top: 4px; border-top: 1px solid var(--line); margin-left: 0; }
+  .maker { margin-left: auto; font-size: 12px; }
   .hero { gap: 28px; }
   .hero h1 { font-size: clamp(58px, 9vw, 76px); }
   .page .lead { font-size: 18px; }
-  .page .intro { font-size: 13px; }
+  .page .intro { font-size: 16px; }
   .heroArt { padding: 14px; }
   .facts dt { font-size: 25px; }
-  .facts dd { font-size: 11px; }
+  .facts dd { font-size: 12px; }
   .workshop, .screenshots { padding-block: 72px; }
   .sectionHeading { gap: 30px; }
   .sectionHeading > p { max-width: 260px; font-size: 13px; }
@@ -111,7 +111,7 @@
   .lessons { grid-template-columns: 1fr; gap: 36px; }
   .lessonCopy { padding: 0; }
   .lessonCopy > p { max-width: 550px; }
-  .lessonImages { max-width: 540px; margin-inline: auto; gap: 24px; }
+  .lessonImages { --hero-gap: 24px; width: 100%; max-width: 540px; margin-inline: auto; }
   .freeFoldInner { gap: 40px; }
   .freeFold p { font-size: 14px; }
   .downloadInner { gap: 30px; }
@@ -124,54 +124,51 @@
   .header { min-height: 76px; gap: 14px; }
   .brand { font-size: 22px; gap: 9px; }
   .brand img { width: 29px; height: 29px; border-radius: 7px; }
-  .maker { font-size: 10px; gap: 7px; }
+  .maker { font-size: 12px; gap: 7px; }
   .maker svg { width: 13px; }
   .hero { grid-template-columns: 1fr; padding-block: 36px 40px; gap: 36px; }
   .hero h1 { font-size: clamp(70px, 17vw, 92px); max-width: 420px; }
   .page .lead { font-size: 20px; margin-top: 24px; }
-  .page .intro { font-size: 14px; margin-top: 18px; }
+  .page .intro { font-size: 16px; margin-top: 18px; }
   .hero .download { margin-top: 24px; }
-  .heroArt { padding: 24px; }
-  .heroArt figure { width: min(100%, 260px); }
+  .heroArt { padding: 8px; }
+  .heroArt figure { width: 100%; max-width: 360px; }
   .facts { padding: 24px; gap: 18px; }
   .facts dt { font-size: 21px; line-height: 1.1; }
-  .facts dd { font-size: 10px; line-height: 1.6; margin-top: 8px; }
+  .facts dd { font-size: 12px; line-height: 1.6; margin-top: 8px; }
   .page h2 { font-size: 42px; }
   .workshop, .screenshots { padding-block: 60px; }
   .sectionHeading { display: block; margin-bottom: 32px; }
-  .sectionHeading > p { max-width: 370px; margin-top: 24px; font-size: 14px; }
+  .sectionHeading > p { max-width: 370px; margin-top: 24px; font-size: 16px; }
   .process { grid-template-columns: 1fr; gap: 28px; }
   .process > li { position: relative; padding: 20px 0 0 40px; }
   .process > li::before { position: absolute; top: 27px; left: 0; }
   .process h3 { font-size: 32px; }
-  .process p { margin-top: 12px; font-size: 14px; }
+  .process p { margin-top: 12px; font-size: 16px; }
   .lessons { padding-block: 48px; gap: 32px; }
-  .lessonCopy > p { font-size: 14px; margin-top: 22px; }
+  .lessonCopy > p { font-size: 16px; margin-top: 22px; }
   .lessonCopy h3 { font-size: 27px; margin-top: 30px; }
-  .lessonImages { gap: 14px; }
-  .lessonImages figure:last-child { margin-top: 40px; }
   .freeFold { padding: 48px 24px; }
   .freeFoldInner { grid-template-columns: 1fr; gap: 26px; }
-  .freeFold p { font-size: 15px; }
-  .freeFold p + p { margin-top: 20px; }
+  .freeFold p { font-size: 16px; }
+  .freeFold p + p { font-size: 16px; margin-top: 20px; }
   .downloadSection { padding-bottom: 56px; }
   .downloadInner { grid-template-columns: 1fr; gap: 26px; padding-top: 40px; }
   .downloadTitle { align-items: flex-start; }
   .downloadTitle h2 { font-size: clamp(34px, 9vw, 42px); }
   .downloadActions { align-items: flex-start; }
-  .downloadInner p { font-size: 14px; }
-  .downloadActions p { font-size: 11px; }
+  .downloadInner p { font-size: 16px; }
+  .downloadActions p { font-size: 12px; }
   .footer { align-items: flex-start; flex-direction: column; padding-block: 20px; gap: 0; }
   .footer nav, .footer > div { gap: 22px; }
   .support { padding-block: 40px 60px; }
   .support h1 { font-size: 48px; }
-  .supportIntro > p { font-size: 15px; }
+  .supportIntro > p { font-size: 16px; }
   .supportSections { gap: 32px; margin-top: 40px; }
   .supportSections h2 { font-size: 31px; }
-  .supportSections p, .supportSections li { font-size: 14px; }
+  .supportSections p, .supportSections li { font-size: 16px; }
 }
 @media (max-width: 360px) {
-  .maker { font-size: 9px; }
   .brand { font-size: 20px; }
   .brand img { width: 26px; height: 26px; }
   .header { gap: 10px; }

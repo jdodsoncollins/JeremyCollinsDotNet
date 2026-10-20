@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { EraHeroImage } from "@/components/era-hero-image";
 import { createStableHeroRenderer } from "@/lib/stable-hero-frames";
 
 export type HeroSpriteConfig = {
@@ -16,6 +17,21 @@ export type HeroSpriteConfig = {
   stabilizeBodies?: boolean;
 };
 
+// Keep decoded originals across era changes and route remounts. In particular,
+// the Modern idle sheet remains the stable renderer's fixed body reference.
+const decodedSheets = new Map<string, Promise<HTMLImageElement>>();
+
+function loadSheet(source: string) {
+  const cached = decodedSheets.get(source);
+  if (cached) return cached;
+  const image = new Image();
+  image.src = source;
+  const decoded = image.decode().then(() => image);
+  decodedSheets.set(source, decoded);
+  void decoded.catch(() => decodedSheets.delete(source));
+  return decoded;
+}
+
 export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const spriteRef = useRef<HTMLCanvasElement>(null);
@@ -27,12 +43,10 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     const context = sprite.getContext("2d");
     if (!context) return;
     context.imageSmoothingEnabled = config.era !== "1990s";
-    // Retain decoded sheets and paint whole cells on one surface. In particular,
-    // Safari must not swap/re-rasterize a CSS background while scrolling.
-    const sheets = { idle: new Image(), petting: new Image() };
-
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let ready = false;
+    let sheets: { idle: HTMLImageElement; petting: HTMLImageElement } | undefined;
+    let loading = false;
+    let failed = false;
     let disposed = false;
     let visible = false;
     let timer = 0;
@@ -41,6 +55,7 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     let drawStableFrame: ReturnType<typeof createStableHeroRenderer> | undefined;
 
     const draw = () => {
+      if (!sheets) return;
       const frame = step;
       if (drawStableFrame) {
         drawStableFrame("petting", frame);
@@ -57,7 +72,8 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       window.cancelAnimationFrame(timer);
       timer = 0;
     };
-    const active = () => visible && document.documentElement.dataset.era === config.era && !document.hidden && !motion.matches && ready;
+    const eligible = () => visible && document.documentElement.dataset.era === config.era && !document.hidden && !motion.matches;
+    const active = () => eligible() && !!sheets && !failed;
     const tick = (now: number) => {
       timer = 0;
       if (!active()) return;
@@ -71,13 +87,35 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     };
     const sync = () => {
       stop();
-      if (!active()) {
-        if (motion.matches) {
-          step = 0;
-          delete root.dataset.ready;
-          delete root.dataset.animation;
+      if (!eligible() || failed) {
+        if (motion.matches) step = 0;
+        delete root.dataset.ready;
+        delete root.dataset.animation;
+        return;
+      }
+      if (!sheets) {
+        if (!loading) {
+          loading = true;
+          Promise.all([loadSheet(config.sheets.idle), loadSheet(config.sheets.petting)]).then(([idle, petting]) => {
+            if (disposed) return;
+            sheets = { idle, petting };
+            sync();
+          }).catch(() => {
+            // Keep the original poster if either source cannot be decoded.
+            failed = true;
+          });
         }
         return;
+      }
+      // Prepare registered poses only while this art can actually animate.
+      // Painting and timing below remain the same as the original player.
+      if (config.stabilizeBodies && !drawStableFrame) {
+        try {
+          drawStableFrame = createStableHeroRenderer(context, sheets);
+        } catch {
+          failed = true;
+          return;
+        }
       }
       root.dataset.ready = "true";
       draw();
@@ -92,18 +130,6 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
     const eraObserver = new MutationObserver(sync);
     eraObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-era"] });
 
-    const preload = (Object.keys(sheets) as Array<keyof typeof sheets>).map((key) => {
-      const image = sheets[key];
-      image.src = config.sheets[key];
-      return image.decode();
-    });
-    Promise.all(preload).then(() => {
-      if (disposed) return;
-      if (config.stabilizeBodies) drawStableFrame = createStableHeroRenderer(context, sheets);
-      ready = true;
-      sync();
-    }).catch(() => { /* The poster remains visible if a sheet cannot load. */ });
-
     document.addEventListener("visibilitychange", sync);
     motion.addEventListener("change", sync);
 
@@ -114,12 +140,14 @@ export function SpriteHeroArt({ config }: { config: HeroSpriteConfig }) {
       eraObserver.disconnect();
       document.removeEventListener("visibilitychange", sync);
       motion.removeEventListener("change", sync);
+      delete root.dataset.ready;
+      delete root.dataset.animation;
     };
   }, [config]);
 
   return (
     <div ref={rootRef} className={`hero-art-shot hero-art-${config.era} animated-hero ${config.era === "modern" ? "modern-hero" : "retro-hero"}`} aria-hidden="true">
-      <img className="hero-art-still modern-hero-poster" src={config.poster} width={config.width} height={config.height} alt="" decoding="async" />
+      <EraHeroImage era={config.era} className="hero-art-still modern-hero-poster" src={config.poster} width={config.width} height={config.height} alt="" decoding="async" />
       <canvas ref={spriteRef} className="modern-hero-sprite" width={config.width} height={config.height} />
     </div>
   );

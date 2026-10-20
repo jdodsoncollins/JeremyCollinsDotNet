@@ -8,6 +8,7 @@ const paperLabels = ["Folding workspace", "Guided lessons", "Guidebook", "Free F
 export const APP_PRODUCTS = {
   codable: {
     name: "Codable",
+    minimumOS: "26.4",
     subtitle: "iPhone & iPad / Safari web developer tools",
     description: "Inspect a page where it runs. Explore the DOM, edit styles, run JavaScript, and follow network requests right in Safari. Test a responsive layout in Resize, or try an idea in Scratchpad on your iPhone or iPad.",
     icon: media.codable.icon.src,
@@ -19,6 +20,7 @@ export const APP_PRODUCTS = {
   },
   taktung: {
     name: "Taktung",
+    minimumOS: "27",
     subtitle: "iPhone & iPad / Vercel deployment status",
     description: "Check what is live, compare the change, and follow a build from your iPhone or iPad. Taktung brings Vercel production status, logs, Home Screen widgets, and a local Field Log together, with a confirmation before redeploy, promote, or rollback actions.",
     icon: media.taktung.icon.src,
@@ -30,6 +32,7 @@ export const APP_PRODUCTS = {
   },
   tabforge: {
     name: "TabForge",
+    minimumOS: "27",
     subtitle: "iPhone & iPad / Programming keyboard",
     description: "Keep braces, brackets, Tab, and your saved snippets beside the letter keys. TabForge is an open-source programming keyboard with indentation, cursor controls, and layouts that leave room for your work. No Full Access required.",
     icon: media.tabforge.icon.src,
@@ -41,6 +44,7 @@ export const APP_PRODUCTS = {
   },
   paperAndGrain: {
     name: "Paper & Grain",
+    minimumOS: "26",
     subtitle: "iPhone & iPad / Origami puzzles and Free Fold",
     description: "A quiet place to make something from a sheet of paper. Follow eight short origami lessons, or fold, cut, and draw your own ideas in Free Fold. Warm wood, softly textured paper, and no timer to hurry you along.",
     icon: media.paperAndGrain.icon.src,

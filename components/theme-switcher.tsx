@@ -70,7 +70,7 @@ export function ThemeSwitcher() {
   const updateTheme = (nextTheme: EraTheme) => {
     setTheme(nextTheme);
     document.documentElement.dataset.era = nextTheme;
-    window.localStorage.setItem(STORAGE_KEY, nextTheme);
+    try { window.localStorage.setItem(STORAGE_KEY, nextTheme); } catch { /* The selected era still works when storage is unavailable. */ }
   };
 
   return (

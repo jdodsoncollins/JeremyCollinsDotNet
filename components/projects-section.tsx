@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
+import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import styles from "@/app/home.module.css";
 
 const projects = [
-  { app: APP_PRODUCTS.tabforge, kind: "tabforge", title: "A code keyboard for iPhone and iPad", description: "Braces, brackets, Tab, and terminal controls within reach. Indent a line, insert a snippet, and keep writing in the app you’re already using.", features: ["Code & terminal layouts", "Indentation & snippets", "No Full Access required"], shots: [0, 3] },
-  { app: APP_PRODUCTS.paperAndGrain, kind: "paper", title: "Fold, cut, and draw on paper", description: "A quiet paper workshop with eight guided lessons and room to explore. Turn your sheet, try a crease, or make something of your own. There’s no timer.", features: ["Eight guided lessons", "Free Fold & saved papers", "Undo, redo & try again"], shots: [0, 2] },
-  { app: APP_PRODUCTS.codable, kind: "codable", title: "Inspect the web in Safari", description: "Explore the DOM, edit CSS, and run JavaScript in the live page. Follow requests and test responsive layouts, right on your iPhone or iPad.", features: ["Elements & live styles", "JavaScript console", "Network & responsive testing"], shots: [0, 1] },
-  { app: APP_PRODUCTS.taktung, kind: "taktung", title: "Inspect your Vercel deployments", description: "See what’s live, read build logs, and compare real page captures. Keep deployment evidence in a local Field Log, with status widgets on your Home Screen.", features: ["Production status & logs", "Visual comparisons", "Home Screen widgets"], shots: [0, 2] },
+  { app: APP_PRODUCTS.tabforge, kind: "tabforge", category: "Code keyboard", title: "A code keyboard for iPhone and iPad", description: "Braces, brackets, Tab, and terminal controls beside the letter keys. Keep writing in the app you’re already using, without Full Access.", features: ["Indentation & snippets", "Code & terminal layouts"], shots: [0, 3] },
+  { app: APP_PRODUCTS.paperAndGrain, kind: "paper", category: "Paper folding", title: "Fold, cut, and draw on paper", description: "Follow eight guided lessons or explore a blank sheet in Free Fold. Turn your paper, try a crease, and save what you make. There’s no timer.", features: ["Guided lessons & Free Fold", "Undo, redo & saved papers"], shots: [0, 2] },
+  { app: APP_PRODUCTS.codable, kind: "codable", category: "Safari tools", title: "Inspect the web in Safari", description: "Explore the live page’s DOM and styles, run JavaScript, and follow network requests. Web developer tools for your iPhone and iPad.", features: ["Elements, console & network", "Responsive viewport testing"], shots: [0, 1] },
+  { app: APP_PRODUCTS.taktung, kind: "taktung", category: "Vercel deployments", title: "Inspect your Vercel deployments", description: "See what’s live, read build logs, and compare real page captures. Save deployment evidence in a local Field Log.", features: ["Production checks & comparisons", "Home Screen status widgets"], shots: [0, 2] },
 ] as const;
 
 export function ProjectsSection() {
@@ -17,9 +18,12 @@ export function ProjectsSection() {
       <div className={styles.sectionHeading} data-home-reveal>
         <div><h2 id="apps-title">Side projects</h2></div>
       </div>
+      <nav className={styles.appIndex} aria-label="Jump to an app">
+        {projects.map(({ app, kind, category }) => <a key={kind} href={`#app-${kind}`}><span>{app.name}</span><span>{category}</span><AppArrow direction="right" /></a>)}
+      </nav>
       <div className={styles.projectList}>
         {projects.map(({ app, kind, title, description, features, shots }) => (
-          <article key={app.name} className={`${styles.project} ${styles[kind]}`} data-home-reveal>
+          <article id={`app-${kind}`} key={app.name} className={`${styles.project} ${styles[kind]}`} data-home-reveal>
             <div className={styles.projectCopy}>
               <div className={styles.appBrand}><Image src={app.icon} width={50} height={50} alt="" /><h3><Link href={app.detailHref}>{app.name}</Link></h3></div>
               <h4>{title}</h4>
@@ -32,12 +36,7 @@ export function ProjectsSection() {
               </div>
             </div>
             <div className={styles.projectArt}>
-              <div className={styles.screens}>
-                {shots.map((index, i) => {
-                  const shot = app.screenshots[index];
-                  return <a key={shot.src} href={shot.src} target="_blank" rel="noopener noreferrer" className={i === 1 ? styles.secondScreen : undefined} aria-label={"View " + app.name + " " + shot.label + " screenshot"}><Image src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} sizes="(max-width: 600px) 38vw, (max-width: 1000px) 30vw, 235px" /><span>{shot.label}</span></a>;
-                })}
-              </div>
+              <AppScreenshotGallery shots={shots.map(index => app.screenshots[index])} appName={app.name} label={`${app.name} preview screenshots`} variant="hero" />
             </div>
           </article>
         ))}

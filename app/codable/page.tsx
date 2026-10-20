@@ -38,14 +38,12 @@ export default function CodablePage() {
             <h1 className={styles.codableTitle} id="codable-title">Safari<br />developer<br /><span>tools</span></h1>
             <p className={styles.lead}>Inspect HTML, edit CSS, and run JavaScript.<br className={styles.desktopBreak} /> Right in Safari, on iPhone and iPad.</p>
             <a className={styles.primaryButton} href={app.href} target="_blank" rel="noopener noreferrer">View in App Store <span aria-hidden="true"><AppArrow /></span></a>
+            <p className={styles.requirements}>iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.monetizationNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
             <p className={styles.heroFootnote}>A Safari extension and a standalone app.<br />No desktop connection required.</p>
           </div>
           <div className={styles.blueprint}>
-            <div className={styles.blueprintScreens}>
-              <div className={styles.heroPrimaryShot}><AppScreenshot shot={app.screenshots[0]} priority /></div>
-              <div className={styles.heroSecondaryShot}><AppScreenshot shot={app.screenshots[1]} priority /></div>
-            </div>
+            <AppScreenshotGallery shots={[app.screenshots[0], app.screenshots[1]]} appName="Codable" variant="hero" priorityFirst />
             <p className={styles.blueprintCaption}>The page, its structure, and a live JavaScript console.</p>
           </div>
         </section>

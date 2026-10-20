@@ -2,6 +2,7 @@ import { HeroArt } from "@/components/hero-art";
 import { HeroBackdrop } from "@/components/hero-backdrop";
 import { RetroHeroArt } from "@/components/retro-hero-art";
 import { ModernHeroArt } from "@/components/modern-hero-art";
+import { EraHeroImage } from "@/components/era-hero-image";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/home.module.css";
 
@@ -24,9 +25,8 @@ export function HeroSection() {
         <div className={styles.artwork}>
           <HeroArt>
             <div className="hero-art-shot hero-art-1980s">
-              <img className="hero-art-still" src="/hero/hero-1980s.svg?v=px2" width={340} height={268} alt="" decoding="async" />
-              <img className="hero-art-cat" src="/hero/hero-1980s-cat.svg?v=px2" width={340} height={268} alt="" decoding="async" />
-              <div className="hero-art-live"><img src="/hero/hero-1980s-live.png?v=px2" width={2040} height={268} alt="" decoding="async" /></div>
+              <EraHeroImage era="1980s" className="hero-art-still" src="/hero/hero-1980s.svg?v=px2" width={340} height={268} alt="" decoding="async" />
+              <EraHeroImage era="1980s" className="hero-art-cat" src="/hero/hero-1980s-cat.svg?v=px2" width={340} height={268} alt="" decoding="async" />
             </div>
             <RetroHeroArt />
             <ModernHeroArt />

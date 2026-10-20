@@ -30,6 +30,7 @@ export default function TaktungPage() {
             <h1 className={styles.taktungTitle} id="taktung-title">Vercel<br />deployments<em>on iPhone<br />and iPad</em></h1>
             <p className={styles.taktungLead}>Check what’s live, compare page captures, and read your build logs. Follow a deployment from its latest commit to the details that need your attention.</p>
             <a className={styles.primaryButton} href={app.href} target="_blank" rel="noopener noreferrer">View in App Store <span aria-hidden="true"><AppArrow /></span></a>
+            <p className={styles.requirements}>iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.monetizationNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
             <p className={styles.downloadNote}>Requires a Vercel account.</p>
           </div>
@@ -50,7 +51,7 @@ export default function TaktungPage() {
         </section>
         <section id="widgets" className={styles.widgetSection} aria-labelledby="taktung-widgets">
           <div className={styles.widgetCopy}><h2 id="taktung-widgets">Deployment widgets<br /><em>for your<br />Home Screen</em></h2><p>Keep recent deployment status and activity in view. Follow all your projects or focus on a single site, in small, medium, and large widgets.</p><a href="#screenshots" className={styles.textLink}>See the app screenshots <span aria-hidden="true"><AppArrow /></span></a></div>
-          <div className={styles.widgetArtwork}><AppScreenshot shot={app.screenshots[2]} /><AppScreenshot shot={app.screenshots[3]} /></div>
+          <div className={styles.widgetArtwork}><AppScreenshotGallery shots={[app.screenshots[2], app.screenshots[3]]} appName="Taktung" variant="hero" label="Taktung Home Screen widgets" /></div>
         </section>
         <section id="screenshots" className={styles.section} aria-labelledby="taktung-screenshots"><div className={styles.sectionHeading}><h2 id="taktung-screenshots">Explore Taktung</h2><p>Production, page comparisons, widgets,<br />Field Log, and project tools.</p></div><AppScreenshotGallery shots={app.screenshots} appName="Taktung" /></section>
         <section className={styles.privacySection} aria-labelledby="taktung-privacy">

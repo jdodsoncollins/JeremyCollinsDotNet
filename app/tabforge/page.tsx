@@ -45,12 +45,11 @@ export default function TabForgePage() {
             <p className={styles.lead}>Braces, brackets, and Tab. Right beside the letter keys.</p>
             <p className={styles.intro}>Write code, scripts, and terminal commands with punctuation and editing controls close at hand.</p>
             <DownloadLink />
+            <p className={styles.requirements}>Open source · iOS &amp; iPadOS {app.minimumOS} or later</p>
             <p className={styles.freeNote}>Free to use. No ads, tracking, subscriptions, or in-app purchases.</p>
-            <p className={styles.requirements}>Open source · iOS &amp; iPadOS 27 or later</p>
           </div>
           <div className={styles.heroImages}>
-            <div className={styles.mainShot}><AppScreenshot shot={app.screenshots[0]} priority /></div>
-            <div className={styles.secondShot}><AppScreenshot shot={app.screenshots[2]} priority /></div>
+            <AppScreenshotGallery shots={[app.screenshots[0], app.screenshots[2]]} appName="TabForge" variant="hero" priorityFirst />
           </div>
         </section>
 
@@ -74,7 +73,7 @@ export default function TabForgePage() {
 
         <section id="layouts" className={styles.layouts} aria-labelledby="layouts-title">
           <div className={styles.layoutCopy}><h2 id="layouts-title">Keyboard<br />layouts</h2><p>Phone layouts keep familiar letter keys. Compact landscape layouts leave more room for the app above. Larger iPad layouts bring more controls into view.</p><p>Choose key size and keyboard height, follow the system’s light or dark appearance, or pick a code palette.</p><a className={styles.textLink} href="#screenshots">See the layouts and themes <AppArrow /></a></div>
-          <div className={styles.layoutImages}><AppScreenshot shot={app.screenshots[4]} /><AppScreenshot shot={app.screenshots[3]} /></div>
+          <div className={styles.layoutImages}><AppScreenshotGallery shots={[app.screenshots[4], app.screenshots[3]]} appName="TabForge" variant="hero" label="TabForge keyboard layouts and themes" /></div>
         </section>
 
         <section className={styles.profiles} aria-labelledby="profiles-title">
@@ -93,7 +92,7 @@ export default function TabForgePage() {
           <div className={styles.sourceNotes}><h3>Open source, under the MIT license</h3><p>Find the source, licensing, and privacy details in the companion app.</p><a className={styles.textLink} href="https://github.com/jdodsoncollins/TabForge" target="_blank" rel="noopener noreferrer">Browse the source on GitHub <AppArrow /></a><h3>A place to work on a draft</h3><p>The companion playground includes syntax highlighting, line numbers, undo, and sharing. It edits text; it does not run code. Its settings and draft are separate from the installed keyboard.</p></div>
         </section>
 
-        <section className={styles.finalDownload} aria-labelledby="download-title"><Image src={app.icon} width={64} height={64} alt="" /><div><h2 id="download-title">Get TabForge</h2><p>For iPhone and iPad · iOS 27 or later</p></div><DownloadLink /></section>
+        <section className={styles.finalDownload} aria-labelledby="download-title"><Image src={app.icon} width={64} height={64} alt="" /><div><h2 id="download-title">Get TabForge</h2><p>For iPhone and iPad · iOS &amp; iPadOS {app.minimumOS} or later</p></div><DownloadLink /></section>
         <p className={styles.compatibility}>iOS uses its system keyboard in secure and phone fields. Some apps decline third-party keyboards. Duo-specific layouts require iOS 27.1 or later.</p>
       </main>
       <footer className={styles.footer}><Link href="/">Made by Jeremy Collins</Link><nav aria-label="Other apps"><Link href="/codable">Codable</Link><Link href="/taktung">Taktung</Link><Link href="/paper-and-grain">Paper &amp; Grain</Link></nav><div><Link href="/tabforge-privacy-policy">Privacy</Link><a href="mailto:jeremy@jeremycollins.net?subject=TabForge%20support">Support</a></div></footer>

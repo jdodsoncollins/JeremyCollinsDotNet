@@ -92,8 +92,7 @@
 }
 
 .hero-crt-stars,
-.hero-paint-shift,
-.hero-plate-frames {
+.hero-paint-shift {
   display: none;
   pointer-events: none;
 }
@@ -122,25 +121,6 @@
 
 :root[data-era="1980s"][data-scroll-live] .hero-crt-stars {
   animation: era-stars-4fps 0.5s steps(2, jump-none) infinite;
-}
-
-:root[data-era="1980s"] .hero-plate-frames {
-  display: block;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image: url("/hero/hero-1980s-hill-frames.svg?v=def2");
-  background-repeat: no-repeat;
-  background-size: 100% 200%;
-  background-position: 50% 0%;
-  image-rendering: pixelated;
-  opacity: 0;
-  mix-blend-mode: screen;
-}
-
-:root[data-era="1980s"][data-scroll-live] .hero-plate-frames {
-  opacity: 0.28;
-  animation: era-frames-4fps 0.5s steps(2, jump-none) infinite;
 }
 
 :root[data-era="1990s"] .hero-paint-shift {
@@ -200,18 +180,12 @@
   50% { filter: brightness(1.025); }
 }
 
-@keyframes era-frames-4fps {
-  from { background-position: 50% 0%; }
-  to { background-position: 50% 100%; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   :root[data-era="1980s"][data-scroll-live] .hero-crt-stars,
   :root[data-era="1990s"][data-scroll-live] .hero-paint-shift,
   :root[data-era="1980s"][data-scroll-live] .hero-backdrop-photo,
   :root[data-era="1990s"][data-scroll-live] .hero-backdrop-photo,
-  :root[data-era="modern"][data-scroll-live] .hero-backdrop-photo,
-  :root[data-era="1980s"][data-scroll-live] .hero-plate-frames {
+  :root[data-era="modern"][data-scroll-live] .hero-backdrop-photo {
     animation: none;
   }
 }
