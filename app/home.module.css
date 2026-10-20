@@ -73,8 +73,6 @@
 .heroInner { position: relative; z-index: 2; width: 100%; max-width: 1360px; margin-inline: auto; padding: 150px 56px 110px; display: grid; grid-template-columns: 1fr 1.05fr; gap: 16px; align-items: center; }
 .heroCopy { position: relative; z-index: 2; }
 .page .heroTitle { --home-tracking: -.04em; color: #f3f1e8; font-size: clamp(78px, 8.5vw, 122px); line-height: .98; font-weight: 500; }
-.heroTitle > span { --home-type: Georgia, "Times New Roman", serif; --home-tracking: -.04em; position: relative; display: inline-block; max-width: 100%; font-style: italic; font-weight: 400; }
-.heroIntro { max-width: 32ch; color: #e0e7d9; font-size: 18px; line-height: 1.65; margin-top: 28px !important; }
 .heroActions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 30px; }
 .heroSecondary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 23px; }
 .heroButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 48px; padding: 15px 20px; background: var(--ochre); color: #243c2f !important; border: 1px solid #14281d; border-radius: 2px; font-size: 14px; font-weight: 500; }
@@ -183,8 +181,6 @@
 :global(:root:not([data-era="modern"])) .page .hero { color: var(--foreground); background: var(--background); }
 :global(:root:not([data-era="modern"])) .hero::after { display: none; }
 :global(:root:not([data-era="modern"])) .heroTitle { color: var(--foreground); }
-:global(:root:not([data-era="modern"])) .heroTitle > span { font: inherit !important; letter-spacing: inherit !important; }
-:global(:root:not([data-era="modern"])) .heroIntro { color: var(--foreground); }
 :global(:root:not([data-era="modern"])) .artwork { min-height: 330px; display: flex; align-items: flex-end; }
 :global(:root:not([data-era="modern"])) .artwork :global(.hero-art) { min-height: 300px; }
 :global(:root:not([data-era="modern"])) .page.page .header.header { color: var(--foreground); background: var(--background) !important; border-bottom: 1px solid var(--border) !important; }
@@ -246,7 +242,6 @@
   .page .hero { min-height: 0; align-items: flex-start; }
   .heroCopy { max-width: 100%; }
   .page .heroTitle { font-size: clamp(64px, 20vw, 80px); line-height: .98; margin-top: 0; }
-  .heroIntro { font-size: 16px; line-height: 1.6; margin-top: 20px !important; }
   .heroActions { gap: 10px 24px; margin-top: 24px; }
   .artwork { width: min(72%, 270px); justify-self: center; padding: 0; margin-top: 4px; margin-left: 16px; }
   .heroInner { padding-bottom: 24px; }
