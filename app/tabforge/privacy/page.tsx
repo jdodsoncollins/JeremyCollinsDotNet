@@ -21,7 +21,7 @@ export default function TabForgePrivacyPolicy() {
     <AppDocument
       app="tabforge"
       title="TabForge Privacy Policy"
-      effectiveDate="October 18, 2026"
+      effectiveDate="October 21, 2026"
       jsonLd={tabforgePrivacyJsonLd}
     >
       <div>
@@ -33,8 +33,9 @@ export default function TabForgePrivacyPolicy() {
         </p>
         <p>
           TabForge&apos;s app and keyboard contain no analytics, advertising,
-          account system, application networking service, or automatic
-          diagnostic uploader. The keyboard does not transmit keystrokes,
+          account system, TabForge-operated networking service, or automatic
+          diagnostic uploader. The optional companion Tip Jar uses Apple&apos;s
+          StoreKit service as described below. The keyboard does not transmit keystrokes,
           surrounding text, snippets, swipe gestures, or spelling requests to a
           TabForge server. The code is available for inspection under the
           repository&apos;s{" "}
@@ -66,10 +67,11 @@ export default function TabForgePrivacyPolicy() {
               not build a keystroke history or save the host document.
             </p>
             <p>
-              The optional, experimental swipe recognizer uses an included
-              coding vocabulary. Gesture traces and alternatives are temporary;
-              they are not uploaded or used to train a model. Swipe recognition
-              is off by default.
+              The optional, experimental swipe recognizer uses fixed, bundled
+              English and programming vocabularies. TabForge does not download
+              words or learn from typing. Gesture traces and alternatives are
+              temporary; they are not uploaded or used to train a model. Swipe
+              recognition is off by default.
             </p>
             <p>
               Optional English prose correction uses Apple&apos;s UITextChecker
@@ -210,6 +212,46 @@ export default function TabForgePrivacyPolicy() {
               your system settings, rather than TabForge&apos;s on-device voice
               implementation. Review Apple&apos;s disclosures before invoking
               those features with sensitive material.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Optional Tips through Apple</h2>
+          <div>
+            <p>
+              The companion app&apos;s Tip Jar uses Apple&apos;s StoreKit service
+              to load products and process optional, one-time tips. Tips do not
+              unlock features or start a subscription. All app and keyboard
+              features remain free to use. The keyboard extension has no
+              purchase flow and shares no settings, snippets, or typing context
+              with the companion app.
+            </p>
+            <p>
+              Apple presents the purchase confirmation and handles payment
+              information through its own network, account, and payment
+              infrastructure. TabForge receives product and transaction results
+              locally to display prices, handle cancellation or pending
+              approval, verify completed tips, and finish transactions. It holds
+              a bounded set of recent transaction identifiers in memory to avoid
+              duplicate acknowledgements. It does not keep receipts, a tip
+              total, or a purchase history in app preferences or files.
+            </p>
+            <p>
+              TabForge does not send typing, snippets, playground text, or speech
+              to StoreKit. It has no purchase backend, transaction upload,
+              analytics service, or TabForge account. Apple maintains its own
+              transaction records; not keeping app records does not remove
+              Apple&apos;s records. Apple&apos;s handling of account, payment,
+              and purchase information is described in{' '}
+              <a
+                href="https://www.apple.com/legal/privacy/data/en/app-store/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                App Store &amp; Privacy
+              </a>
+              .
             </p>
           </div>
         </section>
