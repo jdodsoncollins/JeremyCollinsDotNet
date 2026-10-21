@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jeremycollins.net"),
   applicationName: "JeremyCollins.net",
   title: {
-    default: "Jeremy Collins | Software Engineer at Webflow",
+    default: "Jeremy Collins",
     template: "%s | Jeremy Collins",
   },
   description:
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Jeremy Collins | Software Engineer at Webflow",
+    title: "Jeremy Collins",
     description:
       "Software engineer at Webflow. Maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
     url: "https://jeremycollins.net",
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Jeremy Collins | Software Engineer at Webflow",
+    title: "Jeremy Collins",
     creator: "jollins",
     site: "jollins",
     description:
