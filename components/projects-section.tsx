@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
-import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { HomeLandscape } from "@/components/home-landscape";
 import { AppOverview } from "@/components/app-overview";
 import styles from "@/app/home.module.css";
@@ -16,7 +15,6 @@ const projects = [
     description:
       "Braces, brackets, Tab, and terminal controls beside the letter keys. Keep writing in the app you’re already using, without Full Access.",
     features: ["Indentation & snippets", "Code & terminal layouts"],
-    shots: [0, 3],
   },
   {
     app: APP_PRODUCTS.paperAndGrain,
@@ -26,7 +24,6 @@ const projects = [
     description:
       "Your iPhone Duo is a physical control for paper folding. Close it to crease the paper, then cut, draw, and explore eight lessons or Free Fold.",
     features: ["Guided lessons & Free Fold", "Undo, redo & saved papers"],
-    shots: [0, 2],
   },
   {
     app: APP_PRODUCTS.codable,
@@ -36,7 +33,6 @@ const projects = [
     description:
       "Explore the live page’s DOM and styles, run JavaScript, and follow network requests. Web developer tools for your iPhone and iPad.",
     features: ["Elements, console & network", "Responsive viewport testing"],
-    shots: [0, 1],
   },
   {
     app: APP_PRODUCTS.taktung,
@@ -46,7 +42,6 @@ const projects = [
     description:
       "See what’s live, read build logs, and compare real page captures. Save deployment evidence in a local Field Log.",
     features: ["Production checks & comparisons", "Home Screen status widgets"],
-    shots: [0, 2],
   },
 ] as const;
 
@@ -73,7 +68,7 @@ export function ProjectsSection() {
         ))}
       </nav>
       <div className={styles.projectList}>
-        {projects.map(({ app, kind, title, description, features, shots }) => (
+        {projects.map(({ app, kind, title, description, features }) => (
           <article
             id={`app-${kind}`}
             key={app.name}
@@ -121,18 +116,10 @@ export function ProjectsSection() {
                 aria-hidden="true"
               />
               <div className={styles.projectVisual} data-home-artwork>
-                {kind === "tabforge" ? (
-                  <AppOverview app="tabforge" square />
-                ) : kind === "paper" ? (
-                  <AppOverview app="paper-and-grain" square />
-                ) : (
-                  <AppScreenshotGallery
-                    shots={shots.map((index) => app.screenshots[index])}
-                    appName={app.name}
-                    label={`${app.name} preview screenshots`}
-                    variant="hero"
-                  />
-                )}
+                <AppOverview
+                  app={kind === "paper" ? "paper-and-grain" : kind}
+                  square
+                />
               </div>
             </div>
           </article>

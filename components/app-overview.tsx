@@ -24,6 +24,26 @@ const overviews = {
     line: "#cec4ad",
     caption: "18 seconds: pull a corner on iPhone, open and close iPhone Duo to fold the paper, and draw on iPad. Touch markers and close-ups follow the gestures.",
   },
+  codable: {
+    name: "Codable",
+    wide: "/apps/codable-overview.mp4",
+    square: "/apps/codable-overview-square.mp4",
+    poster: "/apps/codable-overview-poster.webp",
+    squarePoster: "/apps/codable-overview-square-poster.webp",
+    paper: "#edf6ff",
+    line: "#b9d8ff",
+    caption: "22 seconds: pick a page element in Safari, inspect its node tree, resize the viewport, change scale and pixel ratio, then use Console and Network on iPhone, iPhone Duo, and iPad.",
+  },
+  taktung: {
+    name: "Taktung",
+    wide: "/apps/taktung-overview.mp4",
+    square: "/apps/taktung-overview-square.mp4",
+    poster: "/apps/taktung-overview-poster.webp",
+    squarePoster: "/apps/taktung-overview-square-poster.webp",
+    paper: "#f5f6f8",
+    line: "#d7dfe1",
+    caption: "18 seconds: check production and build evidence on iPhone, open iPhone Duo to compare page captures, and keep a local Field Log on iPad. Touch markers follow the interactions.",
+  },
 } as const;
 
 export function AppOverview({ app, square = false }: {

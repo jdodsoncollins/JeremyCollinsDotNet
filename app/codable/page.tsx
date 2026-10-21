@@ -5,6 +5,7 @@ import { AppScreenshot } from "@/components/app-screenshot";
 import { AppToolExplorer } from "@/components/app-tool-explorer";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
+import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
@@ -67,6 +68,7 @@ export default function CodablePage() {
           <span>Codable</span>
         </Link>
         <div className={styles.navLinks}>
+          <a href="#overview">Overview</a>
           <a href="#tools">Tools</a>
           <a href="#resize">Resize</a>
           <a href="#screenshots">Screenshots</a>
@@ -131,6 +133,16 @@ export default function CodablePage() {
               The page, its structure, and a live JavaScript console.
             </p>
           </div>
+        </section>
+        <section
+          id="overview"
+          className={styles.section}
+          aria-labelledby="codable-overview-title"
+        >
+          <div className={styles.sectionHeading}>
+            <h2 id="codable-overview-title">See the tools in action</h2>
+          </div>
+          <AppOverview app="codable" />
         </section>
         <div className={styles.capabilities} aria-label="Codable tools">
           <p>Inspect elements</p>

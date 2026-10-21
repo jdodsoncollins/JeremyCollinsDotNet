@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
+import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow, AppIcon } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
@@ -35,6 +36,7 @@ export default function TaktungPage() {
           <span>Taktung</span>
         </Link>
         <div className={styles.navLinks}>
+          <a href="#overview">Overview</a>
           <a href="#compare">Comparisons</a>
           <a href="#widgets">Widgets</a>
           <a href="#screenshots">Screenshots</a>
@@ -95,6 +97,16 @@ export default function TaktungPage() {
               and your next check in one view.
             </p>
           </div>
+        </section>
+        <section
+          id="overview"
+          className={styles.section}
+          aria-labelledby="taktung-overview-title"
+        >
+          <div className={styles.sectionHeading}>
+            <h2 id="taktung-overview-title">Follow the deployment</h2>
+          </div>
+          <AppOverview app="taktung" />
         </section>
         <div
           className={styles.taktungFeatureStrip}
