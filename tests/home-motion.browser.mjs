@@ -109,12 +109,25 @@ async function assertOpaqueCopy(page, panel) {
       return original;
     }),
   );
+  const bounds = await panel.boundingBox();
+  assert.ok(bounds, "App copy has no rendered bounds");
+  // Element screenshots round outward and can include forest above the card.
+  // Compare an integer clip inside the panel to exclude those outside pixels.
+  const x = Math.ceil(bounds.x) + 1;
+  const y = Math.ceil(bounds.y) + 1;
+  const clip = {
+    x,
+    y,
+    width: Math.floor(bounds.x + bounds.width) - x - 1,
+    height: Math.floor(bounds.y + bounds.height) - y - 1,
+  };
+  assert.ok(clip.width > 0 && clip.height > 0, "App copy has no interior");
   try {
-    const painted = await panel.screenshot({ animations: "disabled" });
+    const painted = await page.screenshot({ clip, animations: "disabled" });
     await scenes.evaluateAll((elements) => {
       for (const element of elements) element.style.visibility = "hidden";
     });
-    const hidden = await panel.screenshot({ animations: "disabled" });
+    const hidden = await page.screenshot({ clip, animations: "disabled" });
     assert.ok(
       painted.equals(hidden),
       `Forest paints over opaque app copy (${browserName}/${page.viewportSize().width})`,
@@ -305,13 +318,13 @@ try {
       ),
       "",
     );
-    const paired = page.locator("#app-codable");
-    await scrollTo(paired.locator("[data-home-artwork]"));
-    await assertProjectScroll(paired);
-    await playing(paired, "project");
-    await idle(paired);
+    const overview = page.locator("#app-codable");
+    await scrollTo(overview.locator("[data-home-artwork]"));
+    await assertProjectScroll(overview);
+    await playing(overview, "project");
+    await idle(overview);
     assert.deepEqual(
-      await paired
+      await overview
         .locator("[data-home-artwork] figure")
         .evaluateAll((figures) =>
           figures.map((figure) => ({
@@ -320,13 +333,10 @@ try {
             willChange: figure.style.willChange,
           })),
         ),
-      [
-        { transform: "", opacity: "", willChange: "" },
-        { transform: "", opacity: "", willChange: "" },
-      ],
-      "Paired artwork leaves transforms after settling",
+      [{ transform: "", opacity: "", willChange: "" }],
+      "Overview artwork leaves transforms after settling",
     );
-    await assertOpaqueCopy(page, paired.locator("h4").locator(".."));
+    await assertOpaqueCopy(page, overview.locator("h4").locator(".."));
     assert.deepEqual(
       await stableText(page),
       copy,

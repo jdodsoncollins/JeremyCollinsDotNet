@@ -128,6 +128,7 @@ export function ProjectsSection() {
                 <AppOverview
                   app={kind === "paper" ? "paper-and-grain" : kind}
                   square
+                  preview
                 />
               </div>
             </div>

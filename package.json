@@ -12,6 +12,7 @@
     "test:browser": "node tests/portfolio.browser.mjs",
     "test:motion": "node tests/app-motion.browser.mjs",
     "test:home-motion": "node tests/home-motion.browser.mjs",
+    "test:videos": "node tests/home-videos.browser.mjs",
     "resume:pdf": "node scripts/export-resume-pdf.js",
     "resume:sync": "node scripts/sync-resume-pdf.js",
     "resume:build": "pnpm build"
