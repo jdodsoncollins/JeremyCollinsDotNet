@@ -3,8 +3,3 @@ packages:
 
 allowBuilds:
   sharp: true
-
-# Patch transitive CSS/source-map advisories without changing application dependencies.
-overrides:
-  "postcss@<8.5.28": 8.5.28
-  "source-map-js@<1.2.2": 1.2.2
