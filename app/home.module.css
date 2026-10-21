@@ -846,6 +846,17 @@
   font-weight: 400;
   line-height: 1.2;
 }
+.experience h3 a {
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+.experience h3 a:is(:hover, :focus-visible) {
+  opacity: 1;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
 :global(:root[data-era="1980s"]) .experience h3 a {
   font-family: inherit !important;
   letter-spacing: inherit;
