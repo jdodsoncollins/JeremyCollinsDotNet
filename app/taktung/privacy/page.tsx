@@ -23,7 +23,7 @@ export default function TaktungPrivacyPolicy() {
     <AppDocument
       app="taktung"
       title="Taktung Privacy Policy"
-      effectiveDate="August 27, 2026"
+      effectiveDate="October 21, 2026"
       jsonLd={taktungPrivacyJsonLd}
     >
       <div>
@@ -31,7 +31,7 @@ export default function TaktungPrivacyPolicy() {
           Taktung is a mobile application for operating Vercel sites from your
           phone. This Privacy Policy explains what the app does, what it does
           not do, and how network activity is handled when you connect to
-          Vercel.
+          Vercel or use the optional Tip Jar.
         </p>
 
         <p>
@@ -41,8 +41,9 @@ export default function TaktungPrivacyPolicy() {
         </p>
 
         <p>
-          Taktung is provided as-is, without monetization, advertising,
-          analytics, tracking, Taktung account creation, or paid services. The
+          Taktung is provided as-is, without advertising, analytics SDKs,
+          tracking, Taktung account creation, or paid feature unlocks. Optional
+          tips support its development. The
           app does not sell data, share user data, or use third-party tracking
           systems.
         </p>
@@ -95,15 +96,16 @@ export default function TaktungPrivacyPolicy() {
             </p>
 
             <p>
-              Taktung is not monetized. It is provided free of charge and does
-              not use user data for advertising, profiling, resale, or cross-app
-              tracking.
+              Taktung is free to use. You can choose to send an optional,
+              repeatable tip through Apple In-App Purchase. Tips do not unlock
+              features or start a subscription. Taktung does not use user data
+              for advertising, profiling, resale, or cross-app tracking.
             </p>
 
             <p>
-              Taktung may make network requests when you sign in or when you
-              choose an operation in the app. Those requests are sent directly
-              from your device to Vercel. Any information transmitted as a
+              When you connect to Vercel or choose a Vercel operation in the
+              app, requests are sent directly from your device to Vercel.
+              Any information transmitted as a
               result is between your device and Vercel, according to
               Vercel&apos;s own behavior and policies.
             </p>
@@ -115,6 +117,30 @@ export default function TaktungPrivacyPolicy() {
               the UI, cache, and activity history. Taktung does not upload,
               broadcast, retain, or forward that information to unrelated
               third-party systems.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Optional Tips</h2>
+
+          <div>
+            <p>
+              Apple handles payment and App Store account information. Taktung
+              receives StoreKit product information and transaction results on
+              your device to verify and finish a tip.
+            </p>
+            <p>
+              Taktung does not operate a purchase server, upload transactions,
+              link tips to your Vercel account, or save a purchase history or
+              tip total. A bounded set of transaction identifiers is kept only
+              in memory while the app is running to prevent duplicate handling.
+            </p>
+            <p>
+              Apple retains its own purchase records under{" "}
+              <a href="https://www.apple.com/legal/privacy/data/en/app-store/">
+                App Store &amp; Privacy
+              </a>.
             </p>
           </div>
         </section>
