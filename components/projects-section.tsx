@@ -3,9 +3,8 @@ import Link from "next/link";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
-import { AppScreenshot } from "@/components/app-screenshot";
 import { HomeLandscape } from "@/components/home-landscape";
-import { TabForgeOverview } from "@/components/tabforge-overview";
+import { AppOverview } from "@/components/app-overview";
 import styles from "@/app/home.module.css";
 
 const projects = [
@@ -123,12 +122,9 @@ export function ProjectsSection() {
               />
               <div className={styles.projectVisual} data-home-artwork>
                 {kind === "tabforge" ? (
-                  <TabForgeOverview square />
-                ) : "duoScreenshots" in app ? (
-                  <AppScreenshot
-                    shot={app.duoScreenshots[0]}
-                    sizes="(max-width: 760px) calc(100vw - 104px), (max-width: 1360px) 43vw, 560px"
-                  />
+                  <AppOverview app="tabforge" square />
+                ) : kind === "paper" ? (
+                  <AppOverview app="paper-and-grain" square />
                 ) : (
                   <AppScreenshotGallery
                     shots={shots.map((index) => app.screenshots[index])}

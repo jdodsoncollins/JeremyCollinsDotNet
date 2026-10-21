@@ -87,19 +87,13 @@ try {
         await project.getByText("Best on iPhone Duo.", { exact: true }).count(),
         1,
       );
-      if (id === "app-tabforge") {
-        const video = project.getByLabel("TabForge app overview", { exact: true });
-        await video.scrollIntoViewIfNeeded();
-        assert.ok(await video.evaluate((video) => video.paused), "Reduced motion must not autoplay the overview");
-        await video.evaluate((video) => video.play());
-        assert.equal(await video.evaluate((video) => video.duration), 15);
-        await video.evaluate((video) => video.pause());
-      } else {
-        const image = project.locator('figure[data-device="iPhone Duo"] img');
-        await image.scrollIntoViewIfNeeded();
-        await image.evaluate((image) => image.decode());
-        assert.ok(await image.evaluate((image) => image.naturalWidth > 0));
-      }
+      const appName = id === "app-tabforge" ? "TabForge" : "Paper & Grain";
+      const video = project.getByLabel(`${appName} app overview`, { exact: true });
+      await video.scrollIntoViewIfNeeded();
+      assert.ok(await video.evaluate((video) => video.paused), "Reduced motion must not autoplay the overview");
+      await video.evaluate((video) => video.play());
+      assert.equal(await video.evaluate((video) => video.duration), id === "app-tabforge" ? 15 : 18);
+      await video.evaluate((video) => video.pause());
       checks += 1;
     }
     assert.deepEqual(errors, []);

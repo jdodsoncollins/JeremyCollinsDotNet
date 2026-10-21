@@ -5,6 +5,7 @@ import { AppArrow } from "@/components/app-icons";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
+import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { paperAndGrainJsonLd } from "@/lib/json-ld";
 import shared from "@/app/app-pages.module.css";
@@ -122,6 +123,17 @@ export default function PaperAndGrainPage() {
               sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px"
             />
           </div>
+        </section>
+
+        <section
+          id="overview"
+          className={styles.overview}
+          aria-labelledby="overview-title"
+        >
+          <div className={styles.sectionHeading}>
+            <h2 id="overview-title">See the paper come to life</h2>
+          </div>
+          <AppOverview app="paper-and-grain" />
         </section>
 
         <dl className={styles.facts}>

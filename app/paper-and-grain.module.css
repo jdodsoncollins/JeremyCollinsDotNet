@@ -8,6 +8,7 @@
 }
 .header,
 .hero,
+.overview,
 .workshop,
 .lessons,
 .screenshots,
@@ -143,6 +144,12 @@
 .page .requirements {
   margin-top: 14px;
   font-size: 14px;
+}
+.overview {
+  padding-block: 16px 72px;
+}
+.overview .sectionHeading {
+  margin-bottom: 28px;
 }
 .heroArt {
   min-width: 0;
@@ -433,6 +440,7 @@
 @media (max-width: 1100px) {
   .header,
   .hero,
+  .overview,
   .workshop,
   .lessons,
   .screenshots,
@@ -564,6 +572,7 @@
 @media (max-width: 580px) {
   .header,
   .hero,
+  .overview,
   .workshop,
   .lessons,
   .screenshots,

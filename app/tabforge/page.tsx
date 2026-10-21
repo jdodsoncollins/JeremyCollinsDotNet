@@ -5,7 +5,7 @@ import { AppArrow } from "@/components/app-icons";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
-import { TabForgeOverview } from "@/components/tabforge-overview";
+import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { tabforgeJsonLd } from "@/lib/json-ld";
 import shared from "@/app/app-pages.module.css";
@@ -125,7 +125,7 @@ export default function TabForgePage() {
           <div className={styles.sectionIntro}>
             <h2 id="overview-title">See TabForge in action</h2>
           </div>
-          <TabForgeOverview />
+          <AppOverview app="tabforge" />
         </section>
 
         <dl className={styles.quickFacts}>
