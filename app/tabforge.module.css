@@ -8,6 +8,7 @@
 }
 .header,
 .hero,
+.overview,
 .editing,
 .profiles,
 .screenshots,
@@ -143,6 +144,12 @@
 }
 .heroImages {
   min-width: 0;
+}
+.overview {
+  padding-block: 16px 72px;
+}
+.overview .sectionIntro {
+  margin-bottom: 28px;
 }
 .heroImages figure,
 .layoutImages figure,
@@ -417,6 +424,7 @@
 @media (max-width: 1100px) {
   .header,
   .hero,
+  .overview,
   .editing,
   .profiles,
   .screenshots,
@@ -560,6 +568,7 @@
 @media (max-width: 540px) {
   .header,
   .hero,
+  .overview,
   .editing,
   .profiles,
   .screenshots,

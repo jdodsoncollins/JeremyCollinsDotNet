@@ -5,6 +5,7 @@ import { AppArrow } from "@/components/app-icons";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppScreenshot } from "@/components/app-screenshot";
 import { HomeLandscape } from "@/components/home-landscape";
+import { TabForgeOverview } from "@/components/tabforge-overview";
 import styles from "@/app/home.module.css";
 
 const projects = [
@@ -121,7 +122,9 @@ export function ProjectsSection() {
                 aria-hidden="true"
               />
               <div className={styles.projectVisual} data-home-artwork>
-                {"duoScreenshots" in app ? (
+                {kind === "tabforge" ? (
+                  <TabForgeOverview square />
+                ) : "duoScreenshots" in app ? (
                   <AppScreenshot
                     shot={app.duoScreenshots[0]}
                     sizes="(max-width: 760px) calc(100vw - 104px), (max-width: 1360px) 43vw, 560px"

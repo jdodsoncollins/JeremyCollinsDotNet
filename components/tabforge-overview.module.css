@@ -1,0 +1,22 @@
+.overview {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+.player {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f7f7ef;
+  border: 1px solid #c6cabb;
+}
+.player:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 5px;
+}
+.caption {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
