@@ -57,6 +57,7 @@ export function ProjectsSection() {
       className={styles.projects}
       aria-labelledby="apps-title"
     >
+      <HomeLandscape placement="middle" />
       <div className={styles.sectionHeading}>
         <div>
           <h2 id="apps-title">Side projects</h2>
@@ -72,7 +73,6 @@ export function ProjectsSection() {
         ))}
       </nav>
       <div className={styles.projectList}>
-        <HomeLandscape placement="middle" />
         {projects.map(({ app, kind, title, description, features, shots }) => (
           <article
             id={`app-${kind}`}

@@ -1,16 +1,24 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
-import { chromium } from "playwright";
+import { chromium, webkit } from "playwright";
 
 // Run against a separately started server, or set BASE_URL to a deployment.
 const baseURL = process.env.BASE_URL ?? "http://127.0.0.1:3000";
 const executablePath =
   process.env.CHROMIUM_PATH ??
   (existsSync("/usr/bin/chromium") ? "/usr/bin/chromium" : undefined);
-const browser = await chromium.launch({
-  executablePath,
-  args: ["--no-sandbox", "--disable-dev-shm-usage"],
-});
+const browserName = process.env.BROWSER ?? "chromium";
+assert.ok(
+  ["chromium", "webkit"].includes(browserName),
+  "BROWSER must be chromium or webkit",
+);
+const browser =
+  browserName === "webkit"
+    ? await webkit.launch({ executablePath: process.env.WEBKIT_PATH })
+    : await chromium.launch({
+        executablePath,
+        args: ["--no-sandbox", "--disable-dev-shm-usage"],
+      });
 let checks = 0;
 
 async function pageIn(options = {}, saveData = false) {
@@ -71,6 +79,58 @@ async function assertProjectScroll(project) {
     { article: 0, art: 0 },
     "Scrolling artwork into view scrolls inside the project",
   );
+}
+
+async function assertOpaqueCopy(page, panel) {
+  await scrollTo(panel);
+  await page.mouse.move(0, 0);
+  await page.waitForFunction(
+    () => !document.querySelector("[data-home-playing]"),
+    undefined,
+    { timeout: 3000 },
+  );
+  await panel.evaluate(async (element) => {
+    await document.fonts.ready;
+    await Promise.allSettled(
+      [...element.querySelectorAll("img")].map((image) => image.decode()),
+    );
+  });
+  const scenes = page.locator("[data-home-scene]");
+  const visibility = await scenes.evaluateAll((elements) =>
+    elements.map((element) => element.style.visibility),
+  );
+  const icons = panel.locator("img, svg");
+  // Chromium may resample icon edges after compositing. Keep their space while
+  // comparing every text and panel-background pixel exactly.
+  const iconVisibility = await icons.evaluateAll((elements) =>
+    elements.map((element) => {
+      const original = element.style.visibility;
+      element.style.visibility = "hidden";
+      return original;
+    }),
+  );
+  try {
+    const painted = await panel.screenshot({ animations: "disabled" });
+    await scenes.evaluateAll((elements) => {
+      for (const element of elements) element.style.visibility = "hidden";
+    });
+    const hidden = await panel.screenshot({ animations: "disabled" });
+    assert.ok(
+      painted.equals(hidden),
+      `Forest paints over opaque app copy (${browserName}/${page.viewportSize().width})`,
+    );
+  } finally {
+    await scenes.evaluateAll((elements, visibility) => {
+      elements.forEach((element, index) => {
+        element.style.visibility = visibility[index];
+      });
+    }, visibility);
+    await icons.evaluateAll((elements, visibility) => {
+      elements.forEach((element, index) => {
+        element.style.visibility = visibility[index];
+      });
+    }, iconVisibility);
+  }
 }
 
 async function replay(page, project) {
@@ -266,6 +326,7 @@ try {
       ],
       "Paired artwork leaves transforms after settling",
     );
+    await assertOpaqueCopy(page, paired.locator("h4").locator(".."));
     assert.deepEqual(
       await stableText(page),
       copy,
@@ -275,7 +336,7 @@ try {
       await page.evaluate(() => document.documentElement.scrollWidth),
       width,
     );
-    checks += 4;
+    checks += 5;
 
     if (width === 1440) {
       await scrollTo(first.locator("[data-home-artwork]"));
@@ -420,7 +481,9 @@ try {
     }
   }
   await other.context.close();
-  console.log(`Homepage motion: ${checks} browser checks passed.`);
+  console.log(
+    `Homepage motion (${browserName}): ${checks} browser checks passed.`,
+  );
 } finally {
   await browser.close();
 }

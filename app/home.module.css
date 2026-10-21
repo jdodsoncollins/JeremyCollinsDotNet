@@ -1445,8 +1445,8 @@
   );
 }
 .forestMiddle {
+  z-index: -1;
   top: calc(50% - 540px);
-  inset-inline: -56px;
   height: 1080px;
 }
 .forestMiddle .forestImage {
@@ -1523,11 +1523,6 @@
 :global(:root[data-era="modern"]) .experience li[data-home-playing]::before {
   background: var(--ochre);
 }
-@media (max-width: 1050px) {
-  .forestMiddle {
-    inset-inline: -32px;
-  }
-}
 @media (max-width: 760px) {
   .forestImage {
     background-image:
@@ -1545,7 +1540,6 @@
     padding-bottom: 72px;
   }
   .forestMiddle {
-    inset-inline: -24px;
     height: 1120px;
   }
   .forestFloor {

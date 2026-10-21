@@ -126,7 +126,7 @@ export function HomeMotion() {
               { xPercent: -28, opacity: 0 },
               {
                 xPercent: 0,
-                opacity: entrance.focal ? 0.85 : 0.6,
+                opacity: entrance.focal ? 0.3 : 0.2,
                 duration: duration * 0.42,
                 ease: "power2.out",
               },
@@ -174,7 +174,7 @@ export function HomeMotion() {
                 { xPercent: -34, opacity: 0 },
                 {
                   xPercent: 0,
-                  opacity: 0.95,
+                  opacity: 0.3,
                   duration: 0.28,
                   ease: "power2.out",
                 },
