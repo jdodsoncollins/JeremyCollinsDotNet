@@ -47,8 +47,9 @@ export default function PaperAndGrainSupport() {
           <p>
             Paper &amp; Grain is free for iPhone and iPad running iOS or iPadOS
             26 or later. Its layouts and folding interactions are designed for
-            iPhone Duo. There are no accounts, ads, subscriptions, or in-app
-            purchases.
+            iPhone Duo. Every lesson and Free Fold are free. The optional Tip
+            Jar supports the app without unlocking features. There are no
+            accounts, ads, or subscriptions.
           </p>
         </div>
         <div className={styles.supportSections}>

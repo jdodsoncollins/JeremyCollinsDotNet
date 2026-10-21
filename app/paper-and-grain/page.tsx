@@ -108,7 +108,8 @@ export default function PaperAndGrainPage() {
               Duo folding requires iOS 27.1 or later.
             </p>
             <p className={styles.note}>
-              Free to use. No ads, tracking, subscriptions, or in-app purchases.
+              Every lesson and Free Fold are free. Optional tips support the app.
+              No ads, tracking, or subscriptions.
             </p>
           </div>
           <div

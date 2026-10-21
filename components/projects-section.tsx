@@ -93,8 +93,17 @@ export function ProjectsSection() {
                 ))}
               </ul>
               <p className={styles.freeNote}>
-                Free to use. No ads, tracking, subscriptions, or in-app
-                purchases.
+                {kind === "paper" ? (
+                  <>
+                    Every lesson and Free Fold are free. Optional tips support
+                    the app. No ads, tracking, or subscriptions.
+                  </>
+                ) : (
+                  <>
+                    Free to use. No ads, tracking, subscriptions, or in-app
+                    purchases.
+                  </>
+                )}
               </p>
               <div className={styles.projectActions}>
                 <Link

@@ -6,7 +6,7 @@ import { paperAndGrainPrivacyJsonLd } from "@/lib/json-ld";
 export const metadata: Metadata = {
   title: "Paper & Grain Privacy Policy",
   description:
-    "How Paper & Grain handles local paper creations, optional image sharing, and support requests. The app has no ads, analytics, accounts, or tracking.",
+    "How Paper & Grain handles local paper creations, optional tips through Apple, image sharing, and support requests. The app has no ads, analytics, accounts, or tracking.",
   alternates: { canonical: "/paper-and-grain/privacy" },
   openGraph: {
     title: "Paper & Grain Privacy Policy",
@@ -22,7 +22,7 @@ export default function PaperAndGrainPrivacyPolicy() {
     <AppDocument
       app="paperAndGrain"
       title="Paper &amp; Grain Privacy Policy"
-      effectiveDate="October 18, 2026"
+      effectiveDate="October 21, 2026"
       jsonLd={paperAndGrainPrivacyJsonLd}
       headerContent={
         <p>
@@ -37,10 +37,11 @@ export default function PaperAndGrainPrivacyPolicy() {
           creations and other information.
         </p>
         <p>
-          The app has no accounts, advertising, subscriptions, or in-app
-          purchases. It contains no advertising or analytics SDKs. It does not
-          track you across apps or websites, sell your information, or send your
-          creations to a developer-operated server.
+          The app has no accounts, advertising, or subscriptions. Its optional
+          Tip Jar uses Apple&apos;s StoreKit service. It contains no advertising
+          or analytics SDKs. It does not track you across apps or websites, sell
+          your information, or send your creations to a developer-operated
+          server.
         </p>
 
         <section>
@@ -67,6 +68,43 @@ export default function PaperAndGrainPrivacyPolicy() {
         </section>
 
         <section>
+          <h2>Optional tips through Apple</h2>
+          <div>
+            <p>
+              Tip Jar offers five optional, one-time tips through Apple&apos;s
+              StoreKit service. You can tip more than once. Tips do not unlock
+              features or start a subscription. Every lesson and Free Fold
+              remain free.
+            </p>
+            <p>
+              Apple presents the purchase confirmation and handles payment
+              through its own network, account, and payment services. Paper
+              &amp; Grain receives product and transaction results on your
+              device to display localized prices, handle cancellation or pending
+              approval, verify completed tips, and finish transactions.
+            </p>
+            <p>
+              The app keeps a limited set of recent transaction identifiers in
+              memory to avoid handling the same purchase twice. It does not
+              save receipts, a tip total, or a purchase history in app
+              preferences or files. It has no purchase backend and does not
+              upload transaction details to the developer or an analytics
+              service.
+            </p>
+            <p>
+              Your papers, drawings, and lesson progress are not sent to
+              StoreKit. Apple maintains its own transaction records.
+              Apple&apos;s handling of account, payment, and purchase
+              information is described in{" "}
+              <a href="https://www.apple.com/legal/privacy/data/en/app-store/">
+                App Store &amp; Privacy
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section>
           <h2>Sharing your paper</h2>
           <div>
             <p>
@@ -83,6 +121,16 @@ export default function PaperAndGrainPrivacyPolicy() {
               papers.
             </p>
           </div>
+        </section>
+
+        <section>
+          <h2>External links</h2>
+          <p>
+            Opening Support, Privacy policy, or Other Apps is your choice.
+            These links open a website or the App Store, which processes
+            requests under its own policy. Paper &amp; Grain does not attach
+            your papers or drawings to these links.
+          </p>
         </section>
 
         <section>
@@ -123,10 +171,10 @@ export default function PaperAndGrainPrivacyPolicy() {
           <h2>This website</h2>
           <p>
             This policy describes the installed app. The website hosting this
-            page uses Vercel Web Analytics and Speed Insights to understand
-            website visits and performance. The Paper &amp; Grain app does not
-            include these services. Opening a web page sends a request to the
-            website&apos;s hosting service.
+            page uses Simple Analytics, Vercel Web Analytics, and Speed Insights
+            to understand website visits and performance. The Paper &amp; Grain
+            app does not include these services. Opening a web page sends a
+            request to the website&apos;s hosting service.
           </p>
         </section>
 
