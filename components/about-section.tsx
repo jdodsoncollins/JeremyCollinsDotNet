@@ -7,6 +7,7 @@ const roles = [
     period: "2022 — present",
     company: "Webflow",
     title: "Sr. Software Engineer",
+    href: "https://webflow.com",
   },
   {
     period: "2022",
