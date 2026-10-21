@@ -34,6 +34,7 @@ export function AppScreenshot({
           height={shot.height ?? 2622}
           sizes={sizes}
           priority={priority}
+          fetchPriority={priority ? "high" : undefined}
         />
       </a>
       <figcaption>{shot.label}</figcaption>

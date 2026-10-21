@@ -9,6 +9,7 @@ import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
+import design from "@/app/codable.module.css";
 
 const app = APP_PRODUCTS.codable;
 const tools = [
@@ -57,7 +58,10 @@ export const metadata: Metadata = {
 
 export default function CodablePage() {
   return (
-    <div className={`${styles.page} ${styles.codable}`} data-app-page="codable">
+    <div
+      className={`${styles.page} ${styles.codable} ${design.page}`}
+      data-app-page="codable"
+    >
       <AppMotion app="codable" />
       <a className={styles.skipLink} href="#main-content">
         Skip to content
@@ -81,20 +85,15 @@ export default function CodablePage() {
         </Link>
       </nav>
       <main id="main-content">
-        <section className={styles.codableHero} aria-labelledby="codable-title">
-          <div className={styles.codableHeroCopy}>
-            <h1 className={styles.codableTitle} id="codable-title">
-              Safari
-              <br />
-              developer
-              <br />
-              <span>tools</span>
-            </h1>
-            <p className={styles.lead}>
-              Inspect HTML, edit CSS, and run JavaScript.
-              <br className={styles.desktopBreak} /> Right in Safari, on iPhone
-              and iPad.
+        <header className={design.intro}>
+          <div>
+            <h1 id="codable-title">Safari developer tools</h1>
+            <p className={design.lead}>
+              Inspect HTML, edit CSS, and run JavaScript. Right in Safari, on
+              iPhone and iPad.
             </p>
+          </div>
+          <div className={design.install}>
             <a
               className={styles.primaryButton}
               href={app.href}
@@ -106,95 +105,85 @@ export default function CodablePage() {
                 <AppArrow />
               </span>
             </a>
-            <p className={styles.requirements}>
+            <p className={design.requirements}>
               iOS &amp; iPadOS {app.minimumOS} or later
             </p>
-            <p className={styles.monetizationNote}>
-              Free to use. No ads, tracking, subscriptions, or in-app purchases.
-            </p>
-            <p className={styles.heroFootnote}>
-              A Safari extension and a standalone app.
-              <br />
-              No desktop connection required.
+            <p className={design.terms}>
+              Free to use. Optional tips support the app. No ads, tracking, or
+              subscriptions.
             </p>
           </div>
+        </header>
+        <section
+          id="tools"
+          className={design.toolsSection}
+          aria-labelledby="codable-tools"
+        >
+          <div className={design.toolsIntro}>
+            <h2 id="codable-tools">Inspect, test, and debug</h2>
+          </div>
           <div
-            className={styles.blueprint}
+            className={`${styles.blueprint} ${design.workbench}`}
             data-app-motion="inspect"
             data-motion-replay
           >
-            <AppScreenshotGallery
-              shots={[app.screenshots[0], app.screenshots[1]]}
-              appName="Codable"
-              variant="hero"
-              priorityFirst
-            />
-            <p className={styles.blueprintCaption}>
+            <AppToolExplorer tools={tools} />
+            <p className={design.inspectionCaption}>
               The page, its structure, and a live JavaScript console.
             </p>
           </div>
-        </section>
-        <section
-          id="overview"
-          className={styles.section}
-          aria-labelledby="codable-overview-title"
-        >
-          <div className={styles.sectionHeading}>
-            <h2 id="codable-overview-title">See the tools in action</h2>
+          <div className={design.toolNotes}>
+            <div>
+              <p>
+                Open the tools on the page you’re working on. Follow an element,
+                try a style, or find out why a request failed.
+              </p>
+              <p>
+                A Safari extension and a standalone app. No desktop connection
+                required.
+              </p>
+            </div>
+            <ul aria-label="Codable capabilities">
+              <li>Inspect elements</li>
+              <li>Edit live styles</li>
+              <li>Run JavaScript</li>
+              <li>Test responsive layouts</li>
+            </ul>
           </div>
-          <AppOverview app="codable" />
         </section>
-        <div className={styles.capabilities} aria-label="Codable tools">
-          <p>Inspect elements</p>
-          <p>Edit live styles</p>
-          <p>Run JavaScript</p>
-          <p>Test responsive layouts</p>
+        <div className={design.fieldStudies}>
+          <section
+            id="overview"
+            className={design.overview}
+            aria-labelledby="codable-overview-title"
+          >
+            <h2 id="codable-overview-title">See the tools in action</h2>
+            <AppOverview app="codable" />
+          </section>
+          <section
+            id="resize"
+            className={design.resize}
+            aria-labelledby="resize-title"
+          >
+            <div className={design.resizeCopy}>
+              <h2 id="resize-title">Test your responsive layouts</h2>
+              <p>
+                Open a page in Resize and change its width, height, or scale.
+                Use a device preset, or drag the viewport to find where the
+                layout needs attention.
+              </p>
+            </div>
+            <div className={design.resizeArtwork}>
+              <AppScreenshot shot={app.screenshots[2]} />
+            </div>
+          </section>
         </div>
         <section
-          id="tools"
-          className={styles.section}
-          aria-labelledby="codable-tools"
-        >
-          <div className={styles.sectionHeading}>
-            <h2 id="codable-tools">
-              Inspect, test,
-              <br />
-              and debug
-            </h2>
-            <p>
-              Open the tools on the page you’re working on. Follow an element,
-              try a style, or find out why a request failed.
-            </p>
-          </div>
-          <AppToolExplorer tools={tools} />
-        </section>
-        <section
-          id="resize"
-          className={styles.resizeSection}
-          aria-labelledby="resize-title"
-        >
-          <div className={styles.resizeArtwork}>
-            <AppScreenshot shot={app.screenshots[2]} />
-          </div>
-          <div className={styles.resizeCopy}>
-            <h2 id="resize-title">
-              Test your
-              <br />
-              <span>responsive layouts</span>
-            </h2>
-            <p>
-              Open a page in Resize and change its width, height, or scale. Use
-              a device preset, or drag the viewport to find where the layout
-              needs attention.
-            </p>
-          </div>
-        </section>
-        <section
           id="screenshots"
-          className={styles.section}
+          className={design.screenshots}
           aria-labelledby="codable-screenshots"
         >
-          <div className={styles.sectionHeading}>
+          <div className={design.galleryHeading}>
             <h2 id="codable-screenshots">Explore Codable</h2>
             <p>
               See every tool in the current app, including the source inspector
@@ -205,7 +194,7 @@ export default function CodablePage() {
         </section>
         <section
           id="download"
-          className={styles.codableDownload}
+          className={design.download}
           aria-labelledby="codable-download"
         >
           <div>

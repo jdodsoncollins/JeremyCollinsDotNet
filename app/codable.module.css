@@ -1,0 +1,370 @@
+.page {
+  --typeface: var(--font-ibm-plex), system-ui, sans-serif;
+  --tracking: normal;
+  text-underline-offset: 0.2em;
+  scrollbar-color: var(--accent) var(--paper);
+}
+.page ::selection {
+  background: var(--accent);
+  color: #fff;
+}
+.page h1,
+.page h2,
+.page h3 {
+  --typeface: var(--font-ibm-plex), system-ui, sans-serif;
+  --tracking: -0.03em;
+  font-style: normal;
+  text-wrap: balance;
+}
+.intro,
+.toolsSection,
+.fieldStudies,
+.screenshots,
+.download {
+  width: min(100%, 1360px);
+  margin-inline: auto;
+  padding-inline: 56px;
+}
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: end;
+  gap: 64px;
+  padding-block: 48px 40px;
+}
+.page .intro h1 {
+  max-width: 16ch;
+  color: var(--accent);
+  font-size: clamp(3rem, 5.6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.02;
+}
+.page .lead {
+  max-width: 48ch;
+  margin-top: 24px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.install {
+  padding-bottom: 4px;
+}
+.page .requirements {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.page .terms {
+  margin-top: 12px;
+  max-width: 32ch;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.toolsSection {
+  padding-bottom: 72px;
+}
+.toolsIntro {
+  margin-bottom: 24px;
+}
+.page .toolsIntro h2 {
+  max-width: none;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.16;
+}
+.page .workbench {
+  padding: 0;
+  background: var(--accent);
+}
+.workbench > div {
+  display: block;
+  border: 0;
+}
+.workbench [role="tablist"] {
+  display: flex;
+  padding: 0;
+  border-bottom: 1px solid #ffffff70;
+}
+.workbench [role="tab"] {
+  --tracking: normal;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 16px;
+  color: #fff;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+}
+.workbench [role="tab"] + [role="tab"] {
+  border-left: 1px solid #ffffff70;
+}
+.workbench [role="tab"] span {
+  display: none;
+}
+.workbench [role="tab"][aria-selected="true"] {
+  color: var(--accent);
+  background: #fff;
+}
+.workbench [role="tab"]:hover:not([aria-selected="true"]) {
+  background: #064bd0;
+}
+.workbench [role="tab"]:focus-visible {
+  outline-color: var(--ink);
+  outline-offset: -6px;
+}
+.workbench [role="tabpanel"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  min-height: 580px;
+  padding: 48px 64px;
+  gap: 72px;
+  background: transparent;
+}
+.workbench [role="tabpanel"] > div:first-child {
+  max-width: 430px;
+}
+.page .workbench h3 {
+  max-width: 16ch;
+  color: #fff;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1.14;
+}
+.page .workbench [role="tabpanel"] p {
+  max-width: 58ch;
+  margin-top: 24px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.workbench [role="tabpanel"] a {
+  color: #fff;
+  border-color: #ffffff90;
+  font-size: 14px;
+}
+.workbench [role="tabpanel"] img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 480px;
+  object-fit: contain;
+}
+.page .inspectionCaption {
+  padding: 18px 32px;
+  border-top: 1px solid #ffffff70;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.toolNotes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  padding-top: 28px;
+}
+.page .toolNotes p {
+  max-width: 62ch;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.toolNotes p + p {
+  margin-top: 16px;
+}
+.toolNotes ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.fieldStudies {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 64px;
+  padding-block: 64px 88px;
+  border-top: 1px solid var(--line);
+}
+.page .fieldStudies h2 {
+  max-width: 18ch;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.16;
+}
+.overview > h2 {
+  margin-bottom: 28px;
+}
+.resize {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.page .resize p {
+  max-width: 55ch;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.resizeArtwork {
+  width: min(100%, 230px);
+  margin: 28px auto 0;
+}
+.resizeArtwork figcaption {
+  display: none;
+}
+.screenshots {
+  padding-block: 72px 88px;
+  border-top: 1px solid var(--line);
+}
+.galleryHeading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 36px;
+}
+.page .galleryHeading h2 {
+  font-size: 40px;
+  line-height: 1.12;
+}
+.galleryHeading p {
+  max-width: 54ch;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 40px;
+  border-top: 1px solid var(--line);
+}
+.page .download h2 {
+  font-size: 32px;
+  line-height: 1.15;
+}
+.page .download p {
+  margin-top: 12px;
+  font-size: 16px;
+}
+@media (max-width: 1000px) {
+  .intro,
+  .toolsSection,
+  .fieldStudies,
+  .screenshots,
+  .download {
+    padding-inline: 36px;
+  }
+  .intro {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 40px;
+  }
+  .workbench [role="tabpanel"] {
+    padding: 40px;
+    gap: 40px;
+  }
+  .fieldStudies {
+    gap: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .intro,
+  .toolsSection,
+  .fieldStudies,
+  .screenshots,
+  .download {
+    padding-inline: 24px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 32px 44px;
+  }
+  .page .intro h1 {
+    max-width: 13ch;
+    font-size: clamp(42px, 10.8vw, 64px);
+  }
+  .page .lead {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .page .terms {
+    max-width: 45ch;
+  }
+  .toolsIntro,
+  .toolNotes,
+  .fieldStudies {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .page .toolsIntro h2 {
+    max-width: none;
+    font-size: 28px;
+  }
+  .toolsSection {
+    padding-bottom: 48px;
+  }
+  .workbench [role="tablist"] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .workbench [role="tab"] {
+    min-height: 54px;
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #ffffff70;
+  }
+  .workbench [role="tabpanel"] {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 32px;
+    padding: 28px 24px;
+  }
+  .page .workbench h3 {
+    font-size: 30px;
+  }
+  .workbench [role="tabpanel"] img {
+    width: min(230px, 100%);
+    height: auto;
+  }
+  .workbench [role="tabpanel"] > div:last-child {
+    order: -1;
+  }
+  .page .workbench [role="tabpanel"] p {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+  .page .inspectionCaption {
+    padding: 18px 24px;
+  }
+  .fieldStudies {
+    gap: 48px;
+    padding-block: 48px;
+  }
+  .galleryHeading {
+    display: block;
+  }
+  .page .galleryHeading h2 {
+    font-size: 34px;
+  }
+  .galleryHeading p {
+    margin-top: 20px;
+  }
+  .screenshots {
+    padding-block: 48px;
+  }
+  .download {
+    flex-wrap: wrap;
+    padding-block: 32px;
+  }
+}

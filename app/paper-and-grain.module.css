@@ -6,9 +6,12 @@
   --line: #cec4ad;
   --body-font: var(--font-ibm-plex), system-ui, sans-serif;
 }
+.page ::selection {
+  color: var(--paper);
+  background: var(--accent);
+}
 .header,
 .hero,
-.overview,
 .workshop,
 .lessons,
 .screenshots,
@@ -46,7 +49,7 @@
   min-height: 44px;
   gap: 12px;
   --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.045em;
+  --tracking: -0.035em;
   font-size: 27px;
 }
 .brand img {
@@ -67,8 +70,6 @@
   min-height: 44px;
 }
 .maker {
-  display: inline-flex;
-  align-items: center;
   gap: 12px;
   margin-left: 20px;
   font-size: 14px;
@@ -84,43 +85,42 @@
   color: var(--accent);
 }
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 88px;
-  align-items: center;
-  padding-block: 60px 72px;
+  padding-top: 64px;
+  padding-bottom: 112px;
 }
-.hero h1 {
+.heroCopy {
+  text-align: center;
+}
+.page .hero h1 {
   --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.055em;
+  --tracking: -0.035em;
+  max-width: 1100px;
+  margin-inline: auto;
+  font-size: clamp(64px, 7.5vw, 96px);
+  line-height: 1.06;
   font-weight: 400;
-  font-size: clamp(72px, 7.8vw, 108px);
-  line-height: 0.98;
-}
-.hero h1 em {
-  display: block;
-  font-weight: 400;
-  color: var(--accent);
+  text-wrap: balance;
 }
 .page .lead {
-  max-width: 390px;
-  margin-top: 30px;
-  font-size: 21px;
+  max-width: 620px;
+  margin: 22px auto 0;
   color: var(--ink);
-  line-height: 1.55;
-  --tracking: -0.02em;
-}
-.page .intro {
-  font-size: 15px;
-  line-height: 1.85;
-  max-width: 380px;
-  margin-top: 18px;
+  font-size: 24px;
+  line-height: 1.45;
 }
 .page .duoNote {
-  margin-top: 20px;
-  color: var(--ink);
+  margin-top: 10px;
+  color: var(--accent);
   font-size: 14px;
   font-weight: 500;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 28px;
 }
 .download {
   display: inline-flex;
@@ -129,202 +129,274 @@
   gap: 30px;
   min-height: 54px;
   padding: 14px 22px;
-  background: var(--ink);
   color: var(--paper) !important;
-  font-size: 13px;
+  background: var(--ink);
   border-radius: 2px;
+  font-size: 14px;
 }
 .download:hover {
   background: var(--accent);
 }
-.hero .download {
-  margin-top: 30px;
-}
-.page .note,
 .page .requirements {
-  margin-top: 14px;
   font-size: 14px;
-}
-.overview {
-  padding-block: 16px 72px;
-}
-.overview .sectionHeading {
-  margin-bottom: 28px;
+  line-height: 1.65;
+  text-align: left;
 }
 .heroArt {
+  max-width: 920px;
+  margin: 52px auto 0;
   min-width: 0;
 }
 .heroArt figure {
   width: 100%;
   margin: 0;
 }
-.lessonImages figcaption {
-  display: none;
-}
-.lessonImages img {
-  border: 1px solid #c9baa0;
-}
-.facts {
-  margin: 0;
-  padding: 26px max(64px, calc((100vw - 1192px) / 2));
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  border-block: 1px solid var(--line);
-  background: #e8e0cc;
-}
-.facts > div {
+.heroArt figcaption {
   text-align: center;
 }
-.facts dt {
-  --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.025em;
-  font-size: 29px;
+.heroArt a:hover {
+  opacity: 1;
 }
-.facts dd {
-  margin: 5px 0 0;
-  color: var(--muted);
-  font-size: 14px;
+.heroDetails {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 72px;
+  max-width: 1020px;
+  margin: 40px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.page .intro {
+  max-width: 60ch;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.75;
+}
+.page .note {
+  max-width: 43ch;
+  font-size: 16px;
+  line-height: 1.75;
 }
 .workshop {
-  padding-block: 96px;
+  padding-block: 88px 104px;
+  border-top: 1px solid var(--line);
 }
 .sectionHeading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 64px;
-  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 88px;
+  align-items: end;
+  margin-bottom: 56px;
 }
 .page h2 {
   --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.045em;
+  --tracking: -0.03em;
+  font-size: clamp(40px, 4.4vw, 56px);
+  line-height: 1.08;
   font-weight: 400;
-  font-size: clamp(40px, 4.5vw, 60px);
-  line-height: 1.05;
+  text-wrap: balance;
+}
+.sectionHeading h2 {
+  max-width: 520px;
 }
 .sectionHeading > p {
-  max-width: 350px;
-  font-size: 15px;
-  line-height: 1.85;
+  max-width: 48ch;
+  font-size: 18px;
+  line-height: 1.75;
+}
+.workbench {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 88px;
+  align-items: start;
 }
 .process {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 .process > li {
-  border-top: 1px solid var(--line);
   padding-top: 24px;
+  border-top: 1px solid var(--line);
 }
 .process h3 {
   --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.035em;
+  --tracking: -0.025em;
+  font-size: 34px;
+  line-height: 1.2;
   font-weight: 400;
-  font-size: 33px;
 }
-.process p {
-  margin-top: 16px;
-  font-size: 14px;
-  line-height: 1.9;
+.page .process p {
+  max-width: 52ch;
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.75;
 }
-.lessons {
-  --muted: #5a5746;
-  --accent: #85432f;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: center;
-  color: var(--ink);
-  background: #dfd1b2;
-  padding-block: 64px;
+.overview {
+  position: sticky;
+  top: 32px;
+  min-width: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
 }
-.lessonCopy {
-  padding-left: 4px;
-}
-.lessonCopy > p {
-  max-width: 400px;
-  font-size: 15px;
-  line-height: 1.85;
-  margin-top: 24px;
-}
-.lessonCopy h3 {
+.page .overview h3 {
   --typeface: Georgia, "Times New Roman", serif;
   --tracking: -0.025em;
+  margin-bottom: 24px;
+  font-size: 30px;
+  line-height: 1.2;
   font-weight: 400;
-  font-size: 26px;
-  margin-top: 36px;
 }
-.lessonCopy .supportLink {
+.overview figcaption {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.lessons {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  align-items: start;
+  gap: 80px;
+  padding-block: 96px 112px;
+  border-top: 1px solid var(--line);
+}
+.lessonHeading {
+  position: sticky;
+  top: 40px;
+}
+.lessonHeading h2 {
+  max-width: 360px;
+}
+.page .facts {
+  display: grid;
+  gap: 24px;
+  margin: 44px 0 0;
+  padding: 0;
+}
+.facts > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  gap: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.facts dt {
+  font-size: 16px;
+  font-weight: 500;
+}
+.facts dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.lessonLedger {
+  display: grid;
+  gap: 64px;
+}
+.lessonEntry {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+.lessonEntry figure {
+  margin: 0;
+  max-width: 252px;
+}
+.lessonEntry figure img {
+  border: 1px solid var(--line);
+}
+.lessonEntry figure figcaption {
+  font-size: 14px;
+}
+.lessonNotes h3 {
+  --typeface: Georgia, "Times New Roman", serif;
+  --tracking: -0.025em;
+  font-size: 32px;
+  line-height: 1.14;
+  font-weight: 400;
+}
+.lessonNotes p {
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.page .lessonNotes p + p,
+.page .lessonNotes h3 + p {
   margin-top: 22px;
+}
+.lessonNotes .textLink {
+  margin-top: 24px;
 }
 .textLink {
   display: inline-flex;
   align-items: center;
   gap: 18px;
   min-height: 44px;
-  font-size: 14px;
+  padding-bottom: 6px;
   border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  line-height: 1.6;
 }
 .textLink:hover {
   color: var(--accent);
 }
-.lessonImages {
-  --hero-stagger: 60px;
-  --hero-gap: 18px;
-}
-.lessonImages figure {
-  margin: 0;
-}
 .freeFold {
-  color: var(--ink);
-  background: #414537;
   --ink: #f8f0dd;
   --muted: #d3cfbd;
   --accent: #edb393;
   --line: #777c65;
-  padding: 64px max(64px, calc((100vw - 1192px) / 2));
+  padding: 96px max(64px, calc((100vw - 1192px) / 2));
+  color: var(--ink);
+  background: #414537;
 }
 .freeFoldInner {
+  max-width: 960px;
+  margin-inline: auto;
+}
+.page .freeFold h2 {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+  font-size: clamp(48px, 5.3vw, 72px);
+}
+.freeFoldInner > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 88px;
-}
-.freeFold h2 {
-  max-width: 470px;
+  gap: 56px;
+  margin-top: 44px;
 }
 .freeFold p {
-  font-size: 16px;
-  line-height: 1.9;
-}
-.freeFold p + p {
-  font-size: 14px;
-  margin-top: 24px;
+  max-width: 48ch;
+  font-size: 18px;
+  line-height: 1.8;
 }
 .screenshots {
   padding-block: 96px;
 }
+.page [data-app-gallery="duo"] figcaption {
+  color: var(--ink);
+}
 .screenshots .sectionHeading {
+  grid-template-columns: 1.1fr 1fr;
   margin-bottom: 40px;
 }
 .downloadSection {
-  padding-top: 0;
   padding-bottom: 80px;
 }
 .downloadInner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
-  align-items: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  padding-top: 48px;
   border-top: 1px solid var(--line);
-  padding-top: 56px;
 }
 .downloadTitle {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 22px;
   margin-bottom: 22px;
@@ -333,34 +405,36 @@
   border-radius: 13px;
 }
 .downloadTitle h2 {
-  font-size: clamp(36px, 4vw, 52px);
+  font-size: clamp(30px, 3vw, 40px);
 }
 .downloadInner p {
-  font-size: 14px;
-  line-height: 1.85;
-  max-width: 470px;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.75;
 }
 .downloadActions {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 12px;
+  flex-shrink: 0;
 }
 .downloadActions p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .downloadSection .compatibility {
+  max-width: 90ch;
   margin-top: 28px;
-  font-size: 12px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.75;
 }
 .footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-block: 24px;
   gap: 16px 24px;
+  padding-block: 24px;
   border-top: 1px solid var(--line);
   background: var(--paper) !important;
   box-shadow: none !important;
@@ -371,13 +445,13 @@
 .footer nav,
 .footer > div {
   display: flex;
-  gap: 24px;
   flex-wrap: wrap;
+  gap: 24px;
 }
 .footer a {
   display: inline-flex;
-  min-height: 44px;
   align-items: center;
+  min-height: 44px;
 }
 .support {
   max-width: 980px;
@@ -385,7 +459,7 @@
 }
 .support h1 {
   --typeface: Georgia, "Times New Roman", serif;
-  --tracking: -0.045em;
+  --tracking: -0.04em;
   font-size: clamp(46px, 6vw, 72px);
   line-height: 1.05;
   font-weight: 400;
@@ -440,7 +514,6 @@
 @media (max-width: 1100px) {
   .header,
   .hero,
-  .overview,
   .workshop,
   .lessons,
   .screenshots,
@@ -449,18 +522,17 @@
   .support {
     padding-inline: 40px;
   }
-  .hero {
-    gap: 48px;
+  .heroDetails,
+  .sectionHeading,
+  .workbench,
+  .lessons {
+    gap: 44px;
   }
-  .hero h1 {
-    font-size: clamp(68px, 8vw, 90px);
-  }
-  .facts,
   .freeFold {
     padding-inline: 40px;
   }
-  .lessons {
-    gap: 44px;
+  .lessonEntry {
+    gap: 24px;
   }
   .navigation {
     gap: 18px;
@@ -468,19 +540,11 @@
   .maker {
     margin-left: 0;
   }
-  .sectionHeading {
-    gap: 40px;
-  }
-  .process {
-    gap: 30px;
-  }
 }
 @media (max-width: 780px) {
   .header {
-    min-height: 82px;
-  }
-  .header {
     gap: 8px 20px;
+    min-height: 82px;
   }
   .navigation {
     order: 3;
@@ -493,86 +557,87 @@
   }
   .maker {
     margin-left: auto;
-    font-size: 12px;
+    font-size: 14px;
   }
   .hero {
-    gap: 28px;
+    padding-block: 48px 72px;
   }
-  .hero h1 {
-    font-size: clamp(58px, 9vw, 76px);
-  }
-  .page .lead {
-    font-size: 18px;
+  .heroDetails {
+    gap: 32px;
   }
   .page .intro {
     font-size: 16px;
   }
-  .facts dt {
-    font-size: 25px;
+  .sectionHeading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 36px;
   }
-  .facts dd {
-    font-size: 12px;
+  .sectionHeading > p {
+    max-width: 60ch;
+    font-size: 16px;
   }
   .workshop,
+  .lessons,
   .screenshots {
     padding-block: 72px;
   }
-  .sectionHeading {
-    gap: 30px;
-  }
-  .sectionHeading > p {
-    max-width: 260px;
-    font-size: 13px;
-  }
-  .process {
-    gap: 24px;
-  }
-  .process h3 {
-    font-size: 30px;
-  }
-  .process p {
-    font-size: 13px;
-  }
+  .workbench,
   .lessons {
     grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .lessonCopy {
-    padding: 0;
-  }
-  .lessonCopy > p {
-    max-width: 550px;
-  }
-  .lessonImages {
-    --hero-gap: 24px;
-    width: 100%;
-    max-width: 540px;
-    margin-inline: auto;
-  }
-  .freeFoldInner {
     gap: 40px;
   }
+  .process {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .overview,
+  .lessonHeading {
+    position: static;
+  }
+  .lessonHeading h2 {
+    max-width: 600px;
+  }
+  .page .facts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .facts > div {
+    display: block;
+  }
+  .facts dd {
+    margin-top: 6px;
+  }
+  .lessonEntry {
+    grid-template-columns: minmax(180px, 0.8fr) 1.2fr;
+    gap: 36px;
+  }
+  .freeFold {
+    padding-block: 72px;
+  }
+  .freeFoldInner > div {
+    gap: 32px;
+    margin-top: 32px;
+  }
   .freeFold p {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .screenshots .sectionHeading {
+    grid-template-columns: 1fr;
   }
   .downloadInner {
-    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
   }
-  .downloadTitle {
-    gap: 16px;
-  }
-  .downloadTitle img {
-    width: 46px;
-    height: 46px;
-  }
-  .downloadTitle h2 {
-    font-size: 39px;
+  .downloadActions {
+    align-items: flex-start;
   }
 }
 @media (max-width: 580px) {
   .header,
   .hero,
-  .overview,
   .workshop,
   .lessons,
   .screenshots,
@@ -602,53 +667,49 @@
     width: 13px;
   }
   .hero {
-    grid-template-columns: 1fr;
-    padding-block: 36px 40px;
-    gap: 36px;
+    padding-block: 40px 64px;
   }
-  .hero h1 {
-    font-size: clamp(70px, 17vw, 92px);
-    max-width: 420px;
+  .page .hero h1 {
+    font-size: clamp(60px, 15.5vw, 76px);
+    line-height: 1.02;
   }
   .page .lead {
-    font-size: 20px;
+    max-width: 290px;
+    margin-top: 24px;
+    font-size: 22px;
+  }
+  .heroActions {
+    flex-direction: column;
+    gap: 16px;
     margin-top: 24px;
   }
-  .page .intro {
+  .page .requirements {
+    text-align: center;
+  }
+  .heroArt {
+    margin-top: 36px;
+  }
+  .heroDetails {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+  .page .intro,
+  .page .note {
+    max-width: 65ch;
     font-size: 16px;
-    margin-top: 18px;
-  }
-  .hero .download {
-    margin-top: 24px;
-  }
-  .facts {
-    padding: 24px;
-    gap: 18px;
-  }
-  .facts dt {
-    font-size: 21px;
-    line-height: 1.1;
-  }
-  .facts dd {
-    font-size: 12px;
-    line-height: 1.6;
-    margin-top: 8px;
   }
   .page h2 {
-    font-size: 42px;
+    font-size: 40px;
   }
   .workshop,
+  .lessons,
   .screenshots {
-    padding-block: 60px;
+    padding-block: 56px;
   }
-  .sectionHeading {
-    display: block;
-    margin-bottom: 32px;
-  }
-  .sectionHeading > p {
-    max-width: 370px;
-    margin-top: 24px;
-    font-size: 16px;
+  .workbench {
+    gap: 40px;
   }
   .process {
     grid-template-columns: 1fr;
@@ -660,64 +721,69 @@
   .process h3 {
     font-size: 32px;
   }
-  .process p {
-    margin-top: 12px;
-    font-size: 16px;
+  .page .process p {
+    margin-top: 16px;
   }
-  .lessons {
-    padding-block: 48px;
-    gap: 32px;
+  .page .overview h3 {
+    font-size: 28px;
   }
-  .lessonCopy > p {
-    font-size: 16px;
-    margin-top: 22px;
+  .page .facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .lessonCopy h3 {
-    font-size: 27px;
-    margin-top: 30px;
+  .facts > div {
+    display: grid;
+  }
+  .facts dd {
+    margin: 0;
+  }
+  .lessonLedger {
+    gap: 40px;
+  }
+  .lessonEntry {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .lessonEntry figure {
+    max-width: 252px;
+    width: 80%;
+    margin-inline: auto;
+  }
+  .lessonNotes h3 {
+    font-size: 32px;
   }
   .freeFold {
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
-  .freeFoldInner {
+  .page .freeFold h2 {
+    font-size: 48px;
+  }
+  .freeFoldInner > div {
     grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .freeFold p {
-    font-size: 16px;
-  }
-  .freeFold p + p {
-    font-size: 16px;
-    margin-top: 20px;
+    gap: 24px;
   }
   .downloadSection {
     padding-bottom: 56px;
   }
   .downloadInner {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    padding-top: 40px;
+    padding-top: 36px;
   }
   .downloadTitle {
-    align-items: flex-start;
+    gap: 16px;
+  }
+  .downloadTitle img {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
   }
   .downloadTitle h2 {
-    font-size: clamp(34px, 9vw, 42px);
-  }
-  .downloadActions {
-    align-items: flex-start;
-  }
-  .downloadInner p {
-    font-size: 16px;
-  }
-  .downloadActions p {
-    font-size: 12px;
+    font-size: 30px;
   }
   .footer {
     align-items: flex-start;
     flex-direction: column;
-    padding-block: 20px;
     gap: 0;
+    padding-block: 20px;
   }
   .footer nav,
   .footer > div {
@@ -755,12 +821,6 @@
   .header {
     gap: 10px;
   }
-  .facts {
-    gap: 12px;
-  }
-  .facts dt {
-    font-size: 19px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .page a {
@@ -771,18 +831,16 @@
   }
 }
 
-/* The genuine workshop image eases flat, then the tool names trace their action. */
+/* The sheet settles flat; each tool traces its own fold, cut, or pencil stroke. */
 @media (prefers-reduced-motion: no-preference) {
   [data-app-page="paper-and-grain"] .heroArt[data-motion-active="true"] figure {
     transform-origin: 50% 64%;
     animation: paperSettle 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-
   [data-app-page="paper-and-grain"] .process h3 {
     position: relative;
     width: fit-content;
   }
-
   [data-app-page="paper-and-grain"] .process h3::after {
     content: "";
     position: absolute;
@@ -794,14 +852,12 @@
     opacity: 0;
     pointer-events: none;
   }
-
   [data-app-page="paper-and-grain"]
     .process[data-motion-active="true"]
     > li:first-child
     h3::after {
     animation: foldTrace 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-
   [data-app-page="paper-and-grain"]
     .process[data-motion-active="true"]
     > li:nth-child(2)
@@ -814,7 +870,6 @@
     );
     animation: cutTrace 520ms ease-out 180ms both;
   }
-
   [data-app-page="paper-and-grain"]
     .process[data-motion-active="true"]
     > li:nth-child(3)
@@ -822,11 +877,9 @@
     transform-origin: left center;
     animation: drawTrace 520ms ease-out 360ms both;
   }
-
   [data-app-page="paper-and-grain"] .download:active {
     transform: translateY(1px);
   }
-
   @keyframes paperSettle {
     from {
       transform: perspective(1100px) rotateY(-4deg) rotateX(2deg);
@@ -835,7 +888,6 @@
       transform: perspective(1100px) rotateY(0) rotateX(0);
     }
   }
-
   @keyframes foldTrace {
     0% {
       opacity: 0;
@@ -850,7 +902,6 @@
       transform: scaleX(1);
     }
   }
-
   @keyframes cutTrace {
     0% {
       opacity: 0;
@@ -865,7 +916,6 @@
       clip-path: inset(0 0 0 0);
     }
   }
-
   @keyframes drawTrace {
     0% {
       opacity: 0;

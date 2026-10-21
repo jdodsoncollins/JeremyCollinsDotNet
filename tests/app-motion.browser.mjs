@@ -278,12 +278,14 @@ try {
         0,
       );
     else {
-      assert.ok(
-        await page.evaluate(() =>
+      // CSS animation events arrive on a rendering frame after the key updates.
+      await page.waitForFunction(
+        () =>
           window.motionStarts.some((event) =>
             event.name.includes("codable-tool"),
           ),
-        ),
+        undefined,
+        { timeout: 3000 },
       );
       await page.waitForFunction(
         () => !document.querySelector('[data-tool-transition="true"]'),

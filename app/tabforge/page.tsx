@@ -67,310 +67,296 @@ export default function TabForgePage() {
           <Image src={app.icon} width={36} height={36} alt="" />
           TabForge
         </Link>
+        <Link href="/" className={styles.maker}>
+          Jeremy Collins <AppArrow />
+        </Link>
+      </div>
+      <main id="main-content" className={styles.manual}>
         <nav className={styles.navigation} aria-label="TabForge navigation">
           <a href="#overview">Overview</a>
           <a href="#editing">Editing</a>
           <a href="#layouts">Layouts</a>
           <a href="#screenshots">Screenshots</a>
         </nav>
-        <Link href="/" className={styles.maker}>
-          Jeremy Collins <AppArrow />
-        </Link>
-      </div>
-      <main id="main-content">
-        <section className={styles.hero} aria-labelledby="tabforge-title">
-          <div className={styles.heroCopy}>
+        <div className={styles.manualContent}>
+          <section className={styles.hero} aria-labelledby="tabforge-title">
             <h1 id="tabforge-title">
-              A code keyboard
-              <br />
-              for iPhone
-              <br />
-              and iPad
+              A code keyboard <span>for iPhone and iPad</span>
             </h1>
-            <p className={styles.lead}>
-              Braces, brackets, and Tab. Right beside the letter keys.
-            </p>
-            <p className={styles.intro}>
-              Write code, scripts, and terminal commands with punctuation and
-              editing controls beside the letter keys.
-            </p>
-            <p className={styles.duoNote}>Best on iPhone Duo.</p>
-            <DownloadLink />
-            <p className={styles.requirements}>
-              Open source · iOS &amp; iPadOS {app.minimumOS} or later
-            </p>
-            <p className={styles.freeNote}>
-              Free to use. No ads, tracking, subscriptions, or in-app purchases.
-            </p>
-          </div>
-          <div
-            className={styles.heroImages}
-            data-duo-hero
-            data-app-motion="keyboard-settle"
-            data-motion-replay
-          >
-            <AppScreenshot
-              shot={app.duoScreenshots[0]}
-              priority
-              sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px"
-            />
-          </div>
-        </section>
-
-        <section
-          id="overview"
-          className={styles.overview}
-          aria-labelledby="overview-title"
-        >
-          <div className={styles.sectionIntro}>
-            <h2 id="overview-title">See TabForge in action</h2>
-          </div>
-          <AppOverview app="tabforge" />
-        </section>
-
-        <dl className={styles.quickFacts}>
-          <div>
-            <dt>Programming keys</dt>
-            <dd>Full ASCII punctuation</dd>
-          </div>
-          <div>
-            <dt>Indentation</dt>
-            <dd>Tab, two spaces, or four</dd>
-          </div>
-          <div>
-            <dt>Privacy</dt>
-            <dd>No Full Access requested</dd>
-          </div>
-        </dl>
-
-        <section
-          id="editing"
-          className={styles.editing}
-          aria-labelledby="editing-title"
-        >
-          <div className={styles.sectionIntro}>
-            <h2 id="editing-title">
-              Indentation
-              <br />
-              and editing
-            </h2>
-            <p>
-              Indent a line, move the cursor, or insert a saved snippet. The
-              gear menu opens settings and code tools in the app you’re typing
-              in.
-            </p>
-          </div>
-          <div className={styles.editingGrid}>
-            <div className={styles.editingImage}>
-              <AppScreenshot shot={app.screenshots[1]} />
+            <div className={styles.heroCopy}>
+              <p className={styles.lead}>
+                Braces, brackets, and Tab. Right beside the letter keys.
+              </p>
+              <p className={styles.intro}>
+                Write code, scripts, and terminal commands with punctuation and
+                editing controls beside the letter keys.
+              </p>
+              <p className={styles.duoNote}>Best on iPhone Duo.</p>
+              <DownloadLink />
+              <p className={styles.requirements}>
+                Open source · iOS &amp; iPadOS {app.minimumOS} or later
+              </p>
+              <p className={styles.freeNote}>
+                Free to use. No ads, tracking, subscriptions, or in-app
+                purchases.
+              </p>
             </div>
             <div
-              className={styles.tools}
-              data-app-motion="typing-tools"
+              className={styles.heroImages}
+              data-duo-hero
+              data-app-motion="keyboard-settle"
               data-motion-replay
             >
-              <div>
-                <div className={styles.keyGroup} aria-hidden="true">
-                  <kbd>{"{"}</kbd>
-                  <kbd>{"}"}</kbd>
-                  <kbd>[</kbd>
-                  <kbd>]</kbd>
-                  <kbd>&lt;</kbd>
-                  <kbd>&gt;</kbd>
-                </div>
-                <h3>Punctuation within reach</h3>
-                <p>
-                  Type brackets, braces, parentheses, and the full set of ASCII
-                  punctuation without switching away from the letter keys.
-                </p>
+              <AppScreenshot
+                shot={app.duoScreenshots[0]}
+                priority
+                sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 46vw, 650px"
+              />
+            </div>
+          </section>
+
+          <section
+            id="overview"
+            className={styles.overview}
+            aria-labelledby="overview-title"
+          >
+            <div className={styles.sectionIntro}>
+              <h2 id="overview-title">See TabForge in action</h2>
+            </div>
+            <AppOverview app="tabforge" />
+          </section>
+
+          <dl className={styles.quickFacts}>
+            <div>
+              <dt>Programming keys</dt>
+              <dd>Full ASCII punctuation</dd>
+            </div>
+            <div>
+              <dt>Indentation</dt>
+              <dd>Tab, two spaces, or four</dd>
+            </div>
+            <div>
+              <dt>Privacy</dt>
+              <dd>No Full Access requested</dd>
+            </div>
+          </dl>
+
+          <section
+            id="editing"
+            className={styles.editing}
+            aria-labelledby="editing-title"
+          >
+            <div className={styles.sectionIntro}>
+              <h2 id="editing-title">Indentation and editing</h2>
+              <p>
+                Indent a line, move the cursor, or insert a saved snippet. The
+                gear menu opens settings and code tools in the app you’re typing
+                in.
+              </p>
+            </div>
+            <div className={styles.editingGrid}>
+              <div className={styles.editingImage}>
+                <AppScreenshot shot={app.screenshots[1]} />
               </div>
-              <div>
-                <div className={styles.keyGroup} aria-hidden="true">
-                  <kbd>⇥</kbd>
-                  <kbd>⇤</kbd>
-                  <kbd>←</kbd>
-                  <kbd>→</kbd>
+              <div
+                className={styles.tools}
+                data-app-motion="typing-tools"
+                data-motion-replay
+              >
+                <div>
+                  <div className={styles.keyGroup} aria-hidden="true">
+                    <kbd>{"{"}</kbd>
+                    <kbd>{"}"}</kbd>
+                    <kbd>[</kbd>
+                    <kbd>]</kbd>
+                    <kbd>&lt;</kbd>
+                    <kbd>&gt;</kbd>
+                  </div>
+                  <h3>Punctuation within reach</h3>
+                  <p>
+                    Type brackets, braces, parentheses, and the full set of
+                    ASCII punctuation without switching away from the letter
+                    keys.
+                  </p>
                 </div>
-                <h3>Indent and navigate</h3>
-                <p>
-                  Choose your indentation style. Indent, outdent, use automatic
-                  newline indentation, and move the cursor with arrows.
-                </p>
-              </div>
-              <div>
-                <div className={styles.snippet} aria-hidden="true">
-                  <span>{"git status"}</span>
-                  <span>{"=>"}</span>
-                  <span>{"console.log()"}</span>
+                <div>
+                  <div className={styles.keyGroup} aria-hidden="true">
+                    <kbd>⇥</kbd>
+                    <kbd>⇤</kbd>
+                    <kbd>←</kbd>
+                    <kbd>→</kbd>
+                  </div>
+                  <h3>Indent and navigate</h3>
+                  <p>
+                    Choose your indentation style. Indent, outdent, use
+                    automatic newline indentation, and move the cursor with
+                    arrows.
+                  </p>
                 </div>
-                <h3>Save the things you repeat</h3>
-                <p>
-                  Keep commands, operators, and repeated text as custom
-                  snippets. Language suggestions cover Swift, Python,
-                  JavaScript, TypeScript, Shell, and JSON.
-                </p>
+                <div>
+                  <div className={styles.snippet} aria-hidden="true">
+                    <span>{"git status"}</span>
+                    <span>{"=>"}</span>
+                    <span>{"console.log()"}</span>
+                  </div>
+                  <h3>Save the things you repeat</h3>
+                  <p>
+                    Keep commands, operators, and repeated text as custom
+                    snippets. Language suggestions cover Swift, Python,
+                    JavaScript, TypeScript, Shell, and JSON.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section
-          id="layouts"
-          className={styles.layouts}
-          aria-labelledby="layouts-title"
-        >
-          <div className={styles.layoutCopy}>
-            <h2 id="layouts-title">
-              Keyboard
-              <br />
-              layouts
-            </h2>
-            <p>
-              Phone layouts keep familiar letter keys. Compact landscape layouts
-              leave more room for the app above. Larger iPad layouts bring more
-              controls into view.
-            </p>
-            <p>
-              Choose key size and keyboard height, follow the system’s light or
-              dark appearance, or pick a code palette.
-            </p>
-            <a className={styles.textLink} href="#screenshots">
-              See the layouts and themes <AppArrow />
-            </a>
-          </div>
-          <div className={styles.layoutImages}>
+          <section
+            id="layouts"
+            className={styles.layouts}
+            aria-labelledby="layouts-title"
+          >
+            <div className={styles.layoutCopy}>
+              <h2 id="layouts-title">Keyboard layouts</h2>
+              <p>
+                Phone layouts keep familiar letter keys. Compact landscape
+                layouts leave more room for the app above. Larger iPad layouts
+                bring more controls into view.
+              </p>
+              <p>
+                Choose key size and keyboard height, follow the system’s light
+                or dark appearance, or pick a code palette.
+              </p>
+              <a className={styles.textLink} href="#screenshots">
+                See the layouts and themes <AppArrow />
+              </a>
+            </div>
+            <div className={styles.layoutImages}>
+              <AppScreenshotGallery
+                shots={[app.screenshots[4], app.screenshots[3]]}
+                appName="TabForge"
+                variant="hero"
+                label="TabForge keyboard layouts and themes"
+              />
+            </div>
+          </section>
+
+          <section className={styles.profiles} aria-labelledby="profiles-title">
+            <div>
+              <h2 id="profiles-title">Input profiles</h2>
+              <p>
+                Input profiles adapt the keyboard to your task. The host app
+                still determines which text and controls it accepts.
+              </p>
+            </div>
+            <div className={styles.profileList}>
+              <details open>
+                <summary>Code editor</summary>
+                <p>
+                  Pair brackets and use indentation controls while you write.
+                  Line edits need enough context from the app to verify the
+                  change.
+                </p>
+              </details>
+              <details>
+                <summary>Terminal · ANSI</summary>
+                <p>
+                  Use Escape, arrows, and modifier controls from the keyboard.
+                  Terminal behavior depends on your client and the control text
+                  it supports.
+                </p>
+              </details>
+              <details>
+                <summary>Remote desktop</summary>
+                <p>
+                  Use literal input for a remote session. A keyboard extension
+                  inserts text; it cannot send arbitrary hardware key events.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section
+            id="screenshots"
+            className={styles.screenshots}
+            aria-labelledby="screenshots-title"
+          >
+            <div className={styles.sectionIntro}>
+              <h2 id="screenshots-title">A closer look at TabForge</h2>
+              <p>
+                Programming keys, editing controls, keyboard themes, and layouts
+                for your screen.
+              </p>
+            </div>
+            <div className={shared.duoGalleryBlock}>
+              <h3 className={shared.galleryDeviceHeading}>iPhone Duo</h3>
+              <AppScreenshotGallery
+                shots={app.duoScreenshots}
+                appName="TabForge"
+                variant="duo"
+                label="TabForge iPhone Duo screenshots"
+              />
+            </div>
+            <h3 className={shared.galleryDeviceHeading}>iPhone</h3>
             <AppScreenshotGallery
-              shots={[app.screenshots[4], app.screenshots[3]]}
+              shots={app.screenshots}
               appName="TabForge"
-              variant="hero"
-              label="TabForge keyboard layouts and themes"
+              label="TabForge iPhone screenshots"
             />
-          </div>
-        </section>
+          </section>
 
-        <section className={styles.profiles} aria-labelledby="profiles-title">
-          <div>
-            <h2 id="profiles-title">Input profiles</h2>
-            <p>
-              Input profiles adapt the keyboard to your task. The host app still
-              determines which text and controls it accepts.
-            </p>
-          </div>
-          <div className={styles.profileList}>
-            <details open>
-              <summary>Code editor</summary>
+          <section className={styles.openSource} aria-labelledby="source-title">
+            <div>
+              <h2 id="source-title">Your keystrokes stay yours</h2>
               <p>
-                Pair brackets and use indentation controls while you write. Line
-                edits need enough context from the app to verify the change.
+                The keyboard does not log or transmit what you type. No Full
+                Access is requested. No ads, analytics, or accounts.
               </p>
-            </details>
-            <details>
-              <summary>Terminal · ANSI</summary>
+              <Link href="/tabforge/privacy" className={styles.textLink}>
+                Read the privacy policy <AppArrow />
+              </Link>
+            </div>
+            <div className={styles.sourceNotes}>
+              <h3>Open source, under the MIT license</h3>
               <p>
-                Use Escape, arrows, and modifier controls from the keyboard.
-                Terminal behavior depends on your client and the control text it
-                supports.
+                Find the source, licensing, and privacy details in the companion
+                app.
               </p>
-            </details>
-            <details>
-              <summary>Remote desktop</summary>
+              <a
+                className={styles.textLink}
+                href="https://github.com/jdodsoncollins/TabForge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Browse the source on GitHub <AppArrow />
+              </a>
+              <h3>Companion text editor</h3>
               <p>
-                Use literal input for a remote session. A keyboard extension
-                inserts text; it cannot send arbitrary hardware key events.
+                The companion playground includes syntax highlighting, line
+                numbers, undo, and sharing. It edits text; it does not run code.
+                Its settings and draft are separate from the installed keyboard.
               </p>
-            </details>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <section
-          id="screenshots"
-          className={styles.screenshots}
-          aria-labelledby="screenshots-title"
-        >
-          <div className={styles.sectionIntro}>
-            <h2 id="screenshots-title">
-              A closer look
-              <br />
-              at TabForge
-            </h2>
-            <p>
-              Programming keys, editing controls, keyboard themes, and layouts
-              for your screen.
-            </p>
-          </div>
-          <div className={shared.duoGalleryBlock}>
-            <h3 className={shared.galleryDeviceHeading}>iPhone Duo</h3>
-            <AppScreenshotGallery
-              shots={app.duoScreenshots}
-              appName="TabForge"
-              variant="duo"
-              label="TabForge iPhone Duo screenshots"
-            />
-          </div>
-          <h3 className={shared.galleryDeviceHeading}>iPhone</h3>
-          <AppScreenshotGallery
-            shots={app.screenshots}
-            appName="TabForge"
-            label="TabForge iPhone screenshots"
-          />
-        </section>
-
-        <section className={styles.openSource} aria-labelledby="source-title">
-          <div>
-            <h2 id="source-title">
-              Your keystrokes
-              <br />
-              stay yours
-            </h2>
-            <p>
-              The keyboard does not log or transmit what you type. No Full
-              Access is requested. No ads, analytics, or accounts.
-            </p>
-            <Link href="/tabforge/privacy" className={styles.textLink}>
-              Read the privacy policy <AppArrow />
-            </Link>
-          </div>
-          <div className={styles.sourceNotes}>
-            <h3>Open source, under the MIT license</h3>
-            <p>
-              Find the source, licensing, and privacy details in the companion
-              app.
-            </p>
-            <a
-              className={styles.textLink}
-              href="https://github.com/jdodsoncollins/TabForge"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Browse the source on GitHub <AppArrow />
-            </a>
-            <h3>Companion text editor</h3>
-            <p>
-              The companion playground includes syntax highlighting, line
-              numbers, undo, and sharing. It edits text; it does not run code.
-              Its settings and draft are separate from the installed keyboard.
-            </p>
-          </div>
-        </section>
-
-        <section
-          className={styles.finalDownload}
-          aria-labelledby="download-title"
-        >
-          <Image src={app.icon} width={64} height={64} alt="" />
-          <div>
-            <h2 id="download-title">Get TabForge</h2>
-            <p>
-              For iPhone and iPad · iOS &amp; iPadOS {app.minimumOS} or later
-            </p>
-          </div>
-          <DownloadLink />
-        </section>
-        <p className={styles.compatibility}>
-          iOS uses its system keyboard in secure and phone fields. Some apps
-          decline third-party keyboards. Duo-specific layouts require iOS 27.1
-          or later.
-        </p>
+          <section
+            className={styles.finalDownload}
+            aria-labelledby="download-title"
+          >
+            <Image src={app.icon} width={64} height={64} alt="" />
+            <div>
+              <h2 id="download-title">Get TabForge</h2>
+              <p>
+                For iPhone and iPad · iOS &amp; iPadOS {app.minimumOS} or later
+              </p>
+            </div>
+            <DownloadLink />
+          </section>
+          <p className={styles.compatibility}>
+            iOS uses its system keyboard in secure and phone fields. Some apps
+            decline third-party keyboards. Duo-specific layouts require iOS 27.1
+            or later.
+          </p>
+        </div>
       </main>
       <footer className={styles.footer}>
         <Link href="/">Made by Jeremy Collins</Link>

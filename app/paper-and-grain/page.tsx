@@ -84,33 +84,20 @@ export default function PaperAndGrainPage() {
       </div>
       <main id="main-content">
         <section className={styles.hero} aria-labelledby="paper-title">
-          <div>
-            <h1 id="paper-title">
-              Fold, cut,
-              <br />
-              <em>and draw</em>
-            </h1>
+          <div className={styles.heroCopy}>
+            <h1 id="paper-title">Fold, cut, and draw</h1>
             <p className={styles.lead}>
-              Close your iPhone Duo
-              <br />
-              to fold the paper.
-            </p>
-            <p className={styles.intro}>
-              The device itself is your folding control. Follow a lesson or
-              explore Free Fold, with cutting, drawing, and touch controls for
-              iPhone and iPad. There’s no timer and no losing.
+              Close your iPhone Duo to fold the paper.
             </p>
             <p className={styles.duoNote}>Best on iPhone Duo.</p>
-            <DownloadLink />
-            <p className={styles.requirements}>
-              iOS &amp; iPadOS {app.minimumOS} or later.
-              <br />
-              Duo folding requires iOS 27.1 or later.
-            </p>
-            <p className={styles.note}>
-              Every lesson and Free Fold are free. Optional tips support the app.
-              No ads, tracking, or subscriptions.
-            </p>
+            <div className={styles.heroActions}>
+              <DownloadLink />
+              <p className={styles.requirements}>
+                iOS &amp; iPadOS {app.minimumOS} or later.
+                <br />
+                Duo folding requires iOS 27.1 or later.
+              </p>
+            </div>
           </div>
           <div
             className={styles.heroArt}
@@ -121,36 +108,21 @@ export default function PaperAndGrainPage() {
             <AppScreenshot
               shot={app.duoScreenshots[0]}
               priority
-              sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 45vw, 600px"
+              sizes="(max-width:760px) calc(100vw - 48px), (max-width:1100px) 85vw, 920px"
             />
           </div>
+          <div className={styles.heroDetails}>
+            <p className={styles.intro}>
+              The device itself is your folding control. Follow a lesson or
+              explore Free Fold, with cutting, drawing, and touch controls for
+              iPhone and iPad. There’s no timer and no losing.
+            </p>
+            <p className={styles.note}>
+              Every lesson and Free Fold are free. Optional tips support the
+              app. No ads, tracking, or subscriptions.
+            </p>
+          </div>
         </section>
-
-        <section
-          id="overview"
-          className={styles.overview}
-          aria-labelledby="overview-title"
-        >
-          <div className={styles.sectionHeading}>
-            <h2 id="overview-title">See the paper come to life</h2>
-          </div>
-          <AppOverview app="paper-and-grain" />
-        </section>
-
-        <dl className={styles.facts}>
-          <div>
-            <dt>Eight lessons</dt>
-            <dd>A fold at a time</dd>
-          </div>
-          <div>
-            <dt>Free Fold</dt>
-            <dd>Your own blank sheet</dd>
-          </div>
-          <div>
-            <dt>No timer</dt>
-            <dd>Work at your pace</dd>
-          </div>
-        </dl>
 
         <section
           id="workshop"
@@ -158,44 +130,50 @@ export default function PaperAndGrainPage() {
           aria-labelledby="workshop-title"
         >
           <div className={styles.sectionHeading}>
-            <h2 id="workshop-title">
-              A sheet of paper
-              <br />
-              Three ways to play
-            </h2>
+            <h2 id="workshop-title">A sheet of paper. Three ways to play.</h2>
             <p>
               Warm wood, softly textured paper, and simple tools. Turn the sheet
               in 3D to see what’s happening beneath a fold.
             </p>
           </div>
-          <ul
-            className={styles.process}
-            data-app-motion="paper-tools"
-            data-motion-replay
-          >
-            <li>
-              <h3>Fold</h3>
-              <p>
-                Line up the paper with the center guide, then close your iPhone
-                Duo to make a crease. You can also pinch a crease or pull a
-                corner with touch controls.
-              </p>
-            </li>
-            <li>
-              <h3>Cut</h3>
-              <p>
-                Try a paper-cut shape. Fold the sheet, make a cut, and unfold it
-                to see the result.
-              </p>
-            </li>
-            <li>
-              <h3>Draw</h3>
-              <p>
-                Add light pencil lines to your paper. Use Undo and Redo to
-                revise your drawing.
-              </p>
-            </li>
-          </ul>
+          <div className={styles.workbench}>
+            <ul
+              className={styles.process}
+              data-app-motion="paper-tools"
+              data-motion-replay
+            >
+              <li>
+                <h3>Fold</h3>
+                <p>
+                  Line up the paper with the center guide, then close your
+                  iPhone Duo to make a crease. You can also pinch a crease or
+                  pull a corner with touch controls.
+                </p>
+              </li>
+              <li>
+                <h3>Cut</h3>
+                <p>
+                  Try a paper-cut shape. Fold the sheet, make a cut, and unfold
+                  it to see the result.
+                </p>
+              </li>
+              <li>
+                <h3>Draw</h3>
+                <p>
+                  Add light pencil lines to your paper. Use Undo and Redo to
+                  revise your drawing.
+                </p>
+              </li>
+            </ul>
+            <section
+              id="overview"
+              className={styles.overview}
+              aria-labelledby="overview-title"
+            >
+              <h3 id="overview-title">See the paper come to life</h3>
+              <AppOverview app="paper-and-grain" />
+            </section>
+          </div>
         </section>
 
         <section
@@ -203,46 +181,60 @@ export default function PaperAndGrainPage() {
           className={styles.lessons}
           aria-labelledby="lessons-title"
         >
-          <div className={styles.lessonCopy}>
-            <h2 id="lessons-title">
-              Begin with
-              <br />a single crease
-            </h2>
-            <p>
-              Eight guided lessons move from a first fold to simple kites,
-              folded letters, paper-cut shapes, and square-base studies.
-            </p>
-            <p>
-              Follow each step and its diagram. Bring the controls card up when
-              you want to read, or move it down to give your paper more room.
-            </p>
-            <h3>A guide beside your work</h3>
-            <p>
-              Open the Guidebook whenever you need a reminder. Its diagrams
-              explain the next movement alongside your paper.
-            </p>
-            <div className={styles.supportLink}>
-              <Link className={styles.textLink} href="/paper-and-grain/support">
-                Gesture help and getting started <AppArrow />
-              </Link>
-            </div>
+          <div className={styles.lessonHeading}>
+            <h2 id="lessons-title">Begin with a single crease</h2>
+            <dl className={styles.facts}>
+              <div>
+                <dt>Eight lessons</dt>
+                <dd>A fold at a time</dd>
+              </div>
+              <div>
+                <dt>Free Fold</dt>
+                <dd>Your own blank sheet</dd>
+              </div>
+              <div>
+                <dt>No timer</dt>
+                <dd>Work at your pace</dd>
+              </div>
+            </dl>
           </div>
-          <div className={styles.lessonImages}>
-            <AppScreenshotGallery
-              shots={[app.screenshots[1], app.screenshots[2]]}
-              appName="Paper & Grain"
-              variant="hero"
-              label="Paper & Grain guided lessons and Guidebook"
-            />
+          <div className={styles.lessonLedger}>
+            <article className={styles.lessonEntry}>
+              <AppScreenshot shot={app.screenshots[1]} />
+              <div className={styles.lessonNotes}>
+                <p>
+                  Eight guided lessons move from a first fold to simple kites,
+                  folded letters, paper-cut shapes, and square-base studies.
+                </p>
+                <p>
+                  Follow each step and its diagram. Bring the controls card up
+                  when you want to read, or move it down to give your paper more
+                  room.
+                </p>
+              </div>
+            </article>
+            <article className={styles.lessonEntry}>
+              <AppScreenshot shot={app.screenshots[2]} />
+              <div className={styles.lessonNotes}>
+                <h3>A guide beside your work</h3>
+                <p>
+                  Open the Guidebook whenever you need a reminder. Its diagrams
+                  explain the next movement alongside your paper.
+                </p>
+                <Link
+                  className={styles.textLink}
+                  href="/paper-and-grain/support"
+                >
+                  Gesture help and getting started <AppArrow />
+                </Link>
+              </div>
+            </article>
           </div>
         </section>
 
         <section className={styles.freeFold} aria-labelledby="free-fold-title">
           <div className={styles.freeFoldInner}>
-            <h2 id="free-fold-title">
-              Or start with
-              <br />a blank sheet
-            </h2>
+            <h2 id="free-fold-title">Or start with a blank sheet</h2>
             <div>
               <p>
                 Free Fold leaves the next move to you. Fold and unfold, turn the
@@ -263,11 +255,7 @@ export default function PaperAndGrainPage() {
           aria-labelledby="screenshots-title"
         >
           <div className={styles.sectionHeading}>
-            <h2 id="screenshots-title">
-              Inside the
-              <br />
-              paper workshop
-            </h2>
+            <h2 id="screenshots-title">Inside the paper workshop</h2>
             <p>See the workspace, guided lessons, and Guidebook.</p>
           </div>
           <div className={shared.duoGalleryBlock}>

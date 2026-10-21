@@ -86,9 +86,27 @@ async function enter(video) {
   );
 }
 
-async function offscreen(page) {
+async function offscreen(video) {
+  const page = video.page();
   await page.mouse.move(0, 0);
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  await video.evaluate((element) => {
+    const bounds = element.getBoundingClientRect();
+    const after = window.scrollY + bounds.bottom + 32;
+    const before = window.scrollY + bounds.top - window.innerHeight - 32;
+    const maximum = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({
+      top: after <= maximum ? after : Math.max(0, before),
+      behavior: "instant",
+    });
+  });
+  await page.waitForFunction(
+    (video) => {
+      const bounds = video.getBoundingClientRect();
+      return bounds.bottom <= 0 || bounds.top >= window.innerHeight;
+    },
+    await video.elementHandle(),
+    { timeout: 3000 },
+  );
 }
 
 async function diagnostic(video, action, cause) {
@@ -204,7 +222,7 @@ try {
       );
       await enter(video);
       await advances(video, "first entry");
-      await offscreen(page);
+      await offscreen(video);
       await frozen(video, `${app}/${width} keeps playing offscreen`);
       await enter(video);
       await advances(video, "return from offscreen");
@@ -221,7 +239,7 @@ try {
       }
       await video.evaluate((video) => video.pause());
       await frozen(video, "Manual pause does not hold");
-      await offscreen(page);
+      await offscreen(video);
       await enter(video);
       await frozen(video, "Returning to the overview overrides manual pause");
       await page.evaluate(() =>
@@ -270,7 +288,7 @@ try {
       await video.evaluate((video) => video.play());
       await advances(video);
       await video.evaluate((video) => video.pause());
-      await offscreen(page);
+      await offscreen(video);
       await enter(video);
       await frozen(video, "Motion or data preference resumes a paused clip");
       checks += 2;
@@ -307,7 +325,7 @@ try {
   await enter(blocked);
   await retry.page.waitForTimeout(150);
   await frozen(blocked, "Blocked autoplay unexpectedly played");
-  await offscreen(retry.page);
+  await offscreen(blocked);
   await enter(blocked);
   await advances(blocked);
   await retry.context.close();
@@ -330,7 +348,7 @@ try {
     );
     await enter(video);
     await advances(video);
-    await offscreen(detail.page);
+    await offscreen(video);
     await frozen(video, "Detail player keeps playing offscreen");
     checks += 1;
   }

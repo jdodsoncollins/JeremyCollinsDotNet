@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { getImageProps } from "next/image";
 import styles from "./app-overview.module.css";
 
 const overviews = {
@@ -63,6 +64,13 @@ export function AppOverview({
   const player = useRef<HTMLVideoElement>(null);
   const descriptionId = useId();
   const src = square ? media.square : media.wide;
+  const { props: poster } = getImageProps({
+    src: square ? media.squarePoster : media.poster,
+    alt: "",
+    width: square ? 540 : 960,
+    height: 540,
+    quality: 75,
+  });
 
   useEffect(() => {
     const video = player.current;
@@ -195,7 +203,7 @@ export function AppOverview({
         loop={!preview}
         playsInline
         preload="none"
-        poster={square ? media.squarePoster : media.poster}
+        poster={poster.src}
         aria-label={`${media.name} app overview`}
         aria-describedby={descriptionId}
       >

@@ -6,8 +6,9 @@ import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
 import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
-import { AppArrow, AppIcon } from "@/components/app-icons";
-import styles from "@/app/app-pages.module.css";
+import { AppArrow } from "@/components/app-icons";
+import base from "@/app/app-pages.module.css";
+import styles from "@/app/taktung.module.css";
 
 const app = APP_PRODUCTS.taktung;
 export const metadata: Metadata = {
@@ -25,118 +26,112 @@ export const metadata: Metadata = {
 
 export default function TaktungPage() {
   return (
-    <div className={`${styles.page} ${styles.taktung}`} data-app-page="taktung">
+    <div
+      className={`${base.page} ${base.taktung} ${styles.page}`}
+      data-app-page="taktung"
+    >
       <AppMotion app="taktung" />
-      <a className={styles.skipLink} href="#main-content">
+      <a className={base.skipLink} href="#main-content">
         Skip to content
       </a>
-      <nav className={styles.navigation} aria-label="Taktung navigation">
-        <Link href="/taktung" className={styles.brand}>
+      <nav
+        className={`${base.navigation} ${styles.navigation}`}
+        aria-label="Taktung navigation"
+      >
+        <Link href="/taktung" className={base.brand}>
           <Image src={app.icon} width={34} height={34} alt="" />
           <span>Taktung</span>
         </Link>
-        <div className={styles.navLinks}>
+        <div className={base.navLinks}>
           <a href="#overview">Overview</a>
           <a href="#compare">Comparisons</a>
           <a href="#widgets">Widgets</a>
           <a href="#screenshots">Screenshots</a>
         </div>
-        <Link href="/" className={styles.portfolioLink}>
-          Jeremy Collins{" "}
-          <span aria-hidden="true">
-            <AppArrow />
-          </span>
+        <Link href="/" className={base.portfolioLink}>
+          Jeremy Collins <AppArrow />
         </Link>
       </nav>
       <main id="main-content">
-        <section className={styles.taktungHero} aria-labelledby="taktung-title">
-          <div className={styles.taktungHeroCopy}>
-            <h1 className={styles.taktungTitle} id="taktung-title">
-              Vercel
-              <br />
-              deployments
-              <em>
-                on iPhone
-                <br />
-                and iPad
-              </em>
-            </h1>
-            <p className={styles.taktungLead}>
+        <section className={styles.hero} aria-labelledby="taktung-title">
+          <h1 id="taktung-title">
+            Vercel deployments <span>on iPhone and iPad</span>
+          </h1>
+          <div className={styles.introduction}>
+            <p className={styles.lead}>
               Check what’s live, compare page captures, and read your build
               logs. Follow a deployment from its latest commit to the details
               that need your attention.
             </p>
-            <a
-              className={styles.primaryButton}
-              href={app.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View in App Store{" "}
-              <span aria-hidden="true">
-                <AppArrow />
-              </span>
-            </a>
-            <p className={styles.requirements}>
-              iOS &amp; iPadOS {app.minimumOS} or later
-            </p>
-            <p className={styles.monetizationNote}>
-              Free to use. No ads, tracking, subscriptions, or in-app purchases.
-            </p>
-            <p className={styles.downloadNote}>Requires a Vercel account.</p>
+            <div className={styles.install}>
+              <a
+                className={`${base.primaryButton} ${styles.download}`}
+                href={app.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View in App Store <AppArrow />
+              </a>
+              <p>iOS &amp; iPadOS {app.minimumOS} or later</p>
+              <p>Requires a Vercel account.</p>
+            </div>
           </div>
-          <div
-            className={styles.taktungHeroArtwork}
-            data-app-motion="status"
-            data-motion-replay
-          >
-            <AppScreenshot shot={app.screenshots[0]} priority />
-            <p>
-              Production status, the latest commit,
-              <br />
-              and your next check in one view.
-            </p>
-          </div>
+          <p className={styles.freeNote}>
+            Free to use. Optional tips support the app. No ads, tracking, or
+            subscriptions.
+          </p>
+          <nav className={styles.index} aria-label="Taktung features">
+            <a href="#status">Production status</a>
+            <a href="#logs">Build &amp; runtime logs</a>
+            <a href="#compare">Visual comparisons</a>
+            <a href="#field-log">Local Field Log</a>
+          </nav>
         </section>
         <section
           id="overview"
-          className={styles.section}
+          className={styles.report}
           aria-labelledby="taktung-overview-title"
         >
-          <div className={styles.sectionHeading}>
+          <div className={styles.overview}>
             <h2 id="taktung-overview-title">Follow the deployment</h2>
-          </div>
-          <AppOverview app="taktung" />
-        </section>
-        <div
-          className={styles.taktungFeatureStrip}
-          aria-label="Taktung features"
-        >
-          <span>Production status</span>
-          <span>Build &amp; runtime logs</span>
-          <span>Visual comparisons</span>
-          <span>Local Field Log</span>
-        </div>
-        <section
-          id="compare"
-          className={styles.section}
-          aria-labelledby="taktung-compare"
-        >
-          <div className={styles.sectionHeading}>
-            <h2 id="taktung-compare">Review the deployment</h2>
-            <p>
-              See what changed on the page.
-              <br />
-              Keep the evidence for your next check.
-            </p>
+            <AppOverview app="taktung" />
           </div>
           <div
-            className={styles.evidenceGrid}
+            id="status"
+            className={styles.status}
+            data-app-motion="status"
+            data-motion-replay
+          >
+            <AppScreenshot
+              shot={app.screenshots[0]}
+              priority
+              sizes="(max-width: 700px) 55vw, 230px"
+            />
+            <p>
+              Production status, the latest commit, and your next check in one
+              view.
+            </p>
+          </div>
+        </section>
+        <section
+          id="compare"
+          className={styles.review}
+          aria-labelledby="taktung-compare"
+        >
+          <header className={styles.reviewHeading}>
+            <h2 id="taktung-compare">Review the deployment</h2>
+            <p>
+              See what changed on the page. Keep the evidence for your next
+              check.
+            </p>
+          </header>
+          <div
+            className={styles.evidence}
             data-app-motion="evidence"
             data-motion-replay
           >
-            <article className={styles.compareCard}>
-              <div className={styles.cardCopy}>
+            <article className={styles.comparison}>
+              <div className={styles.evidenceCopy}>
                 <h3>Compare before and after</h3>
                 <p>
                   Inspect real page captures with a reveal slider or
@@ -144,70 +139,55 @@ export default function TaktungPage() {
                   deployment.
                 </p>
               </div>
-              <div className={styles.comparePreview}>
+              <div className={styles.comparisonImage}>
                 <AppScreenshot shot={app.screenshots[1]} />
               </div>
             </article>
-            <article className={styles.fieldCard}>
-              <div className={styles.cardCopy}>
+            <article id="field-log" className={styles.fieldLog}>
+              <div className={styles.fieldImage}>
+                <AppScreenshot shot={app.screenshots[4]} />
+              </div>
+              <div className={styles.evidenceCopy}>
                 <h3>Keep a local Field Log</h3>
                 <p>
                   Find your checks, saved comparisons, and personal notes in a
                   searchable record. Export them as text when you need to.
                 </p>
               </div>
-              <div className={styles.fieldPreview}>
-                <AppScreenshot shot={app.screenshots[4]} />
-              </div>
             </article>
           </div>
-          <div className={styles.workflowNotes}>
-            <div>
-              <span className={styles.noteMark} aria-hidden="true">
-                <AppIcon name="logs" />
-              </span>
+          <div id="logs" className={styles.tools}>
+            <article>
               <h3>Read the logs</h3>
               <p>
                 Search build output and review the runtime logs available for a
                 deployment.
               </p>
-            </div>
-            <div>
-              <span className={styles.noteMark} aria-hidden="true">
-                <AppIcon name="environment" />
-              </span>
+            </article>
+            <article>
               <h3>Inspect the project</h3>
               <p>
                 Review domains, checks, cron jobs, and feature flag names. Check
                 environment names and targets without exposing values.
               </p>
-            </div>
-            <div>
-              <span className={styles.noteMark} aria-hidden="true">
-                <AppIcon name="shortcut" />
-              </span>
+            </article>
+            <article>
               <h3>Use Siri and Shortcuts</h3>
               <p>
                 Use Siri or Shortcuts to check deployment status or project
                 details already loaded in the app.
               </p>
-            </div>
+            </article>
           </div>
         </section>
         <section
           id="widgets"
-          className={styles.widgetSection}
+          className={styles.widgets}
           aria-labelledby="taktung-widgets"
         >
           <div className={styles.widgetCopy}>
             <h2 id="taktung-widgets">
-              Deployment widgets
-              <br />
-              <em>
-                for your
-                <br />
-                Home Screen
-              </em>
+              Deployment widgets for your Home Screen
             </h2>
             <p>
               Keep recent deployment status and activity in view. Follow all
@@ -215,52 +195,32 @@ export default function TaktungPage() {
               large widgets.
             </p>
             <a href="#screenshots" className={styles.textLink}>
-              See the app screenshots{" "}
-              <span aria-hidden="true">
-                <AppArrow />
-              </span>
+              See the app screenshots <AppArrow />
             </a>
           </div>
-          <div className={styles.widgetArtwork}>
-            <AppScreenshotGallery
-              shots={[app.screenshots[2], app.screenshots[3]]}
-              appName="Taktung"
-              variant="hero"
-              label="Taktung Home Screen widgets"
-            />
+          <div className={styles.widgetSheet}>
+            <AppScreenshot shot={app.screenshots[2]} />
+            <AppScreenshot shot={app.screenshots[3]} />
           </div>
         </section>
         <section
           id="screenshots"
-          className={styles.section}
+          className={styles.screenshots}
           aria-labelledby="taktung-screenshots"
         >
-          <div className={styles.sectionHeading}>
+          <header className={styles.galleryHeading}>
             <h2 id="taktung-screenshots">Explore Taktung</h2>
             <p>
-              Production, page comparisons, widgets,
-              <br />
-              Field Log, and project tools.
+              Production, page comparisons, widgets, Field Log, and project
+              tools.
             </p>
-          </div>
+          </header>
           <AppScreenshotGallery shots={app.screenshots} appName="Taktung" />
         </section>
-        <section
-          className={styles.privacySection}
-          aria-labelledby="taktung-privacy"
-        >
-          <div>
-            <h2 id="taktung-privacy">
-              Deployment actions
-              <br />
-              <em>with confirmation</em>
-            </h2>
-          </div>
+        <section className={styles.privacy} aria-labelledby="taktung-privacy">
+          <h2 id="taktung-privacy">Deployment actions with confirmation</h2>
           <div className={styles.privacyDetails}>
             <div>
-              <span aria-hidden="true">
-                <AppIcon name="check" />
-              </span>
               <h3>Review before you act</h3>
               <p>
                 Redeploy, promote, and rollback actions each require your
@@ -268,9 +228,6 @@ export default function TaktungPage() {
               </p>
             </div>
             <div>
-              <span aria-hidden="true">
-                <AppIcon name="key" />
-              </span>
               <h3>Your token stays in the Keychain</h3>
               <p>
                 Taktung connects directly to Vercel. Your credentials stay on
@@ -278,9 +235,6 @@ export default function TaktungPage() {
               </p>
             </div>
             <div>
-              <span aria-hidden="true">
-                <AppIcon name="note" />
-              </span>
               <h3>Your history stays local</h3>
               <p>
                 Notes and saved baselines stay on your device, separated by
@@ -291,7 +245,7 @@ export default function TaktungPage() {
         </section>
         <section
           id="support"
-          className={styles.supportSection}
+          className={styles.support}
           aria-labelledby="taktung-support"
         >
           <h2 id="taktung-support">Taktung support</h2>
@@ -314,31 +268,30 @@ export default function TaktungPage() {
         </section>
         <section
           id="download"
-          className={styles.taktungDownload}
+          className={styles.closing}
           aria-labelledby="taktung-download"
         >
           <Image src={app.icon} width={64} height={64} alt="" />
-          <h2 id="taktung-download">Get Taktung</h2>
-          <p>Vercel deployment tools for iPhone and iPad.</p>
+          <div>
+            <h2 id="taktung-download">Get Taktung</h2>
+            <p>Vercel deployment tools for iPhone and iPad.</p>
+          </div>
           <a
-            className={styles.primaryButton}
+            className={`${base.primaryButton} ${styles.download}`}
             href={app.href}
             target="_blank"
             rel="noopener noreferrer"
           >
-            View in App Store{" "}
-            <span aria-hidden="true">
-              <AppArrow />
-            </span>
+            View in App Store <AppArrow />
           </a>
-          <p className={styles.downloadNote}>
+          <p className={styles.affiliation}>
             Requires a Vercel account. Taktung is not affiliated with or
             endorsed by Vercel.
           </p>
         </section>
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.footerIdentity}>
+      <footer className={`${base.footer} ${styles.footer}`}>
+        <div className={base.footerIdentity}>
           <Link href="/">Made by Jeremy Collins</Link>
           <div>
             <Link href="/taktung/privacy">Privacy</Link>
