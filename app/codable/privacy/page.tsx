@@ -23,7 +23,7 @@ export default function CodablePrivacyPolicy() {
     <AppDocument
       app="codable"
       title="Codable Privacy Policy"
-      effectiveDate="June 1, 2026"
+      effectiveDate="October 21, 2026"
       jsonLd={privacyJsonLd}
     >
       <div>
@@ -35,16 +35,17 @@ export default function CodablePrivacyPolicy() {
         </p>
 
         <p>
-          Codable is provided as-is, without monetization, advertising,
-          analytics, tracking, account creation, or paid services. The app does
-          not sell data, share user data, or use third-party tracking systems.
+          Codable is free to use and is provided as-is, without advertising,
+          analytics, tracking, or account creation. Optional one-time tips through
+          Apple’s App Store support development and unlock no features. The app
+          does not sell data or use third-party tracking systems.
         </p>
 
         <p>
-          No external code is downloaded by Codable itself. No information
-          entered into the app is broadcast or uploaded by Codable to online
-          services, except for network requests made to the URI or URIs that you
-          choose to load.
+          Codable does not download external code to change its own behavior.
+          Inspection and Scratchpad content is not uploaded to a developer
+          service. Network requests go to the sites you choose to load; optional
+          Tip Jar purchases use Apple’s StoreKit services as described below.
         </p>
 
         {/* Definitions */}
@@ -87,9 +88,9 @@ export default function CodablePrivacyPolicy() {
             </p>
 
             <p>
-              Codable is not monetized. It is provided free of charge and does
-              not use user data for advertising, profiling, resale, or cross-app
-              tracking.
+              All Codable features remain free. Tips are optional, repeatable
+              one-time purchases, not subscriptions. Codable does not use user
+              data for advertising, profiling, resale, or cross-app tracking.
             </p>
 
             <p>
@@ -108,6 +109,24 @@ export default function CodablePrivacyPolicy() {
               request, according to its own behavior and policies.
             </p>
           </div>
+        </section>
+
+        <section>
+          <h2>Optional Tip Jar and Apple Payments</h2>
+          <p>
+            Apple handles account and payment information under its own privacy
+            policy. Codable does not receive payment-card details and has no
+            purchase account, developer payment server, or third-party payment
+            SDK. Tips do not unlock features or create a subscription.
+          </p>
+          <p>
+            Codable processes verified StoreKit transaction results on the
+            device. It keeps only a bounded set of transaction identifiers in
+            memory to prevent duplicate processing. It does not save receipts,
+            purchase history, or tip totals, or send transaction information to
+            a developer server or analytics provider. Apple’s transaction records
+            remain under Apple’s control.
+          </p>
         </section>
 
         {/* External Code */}
