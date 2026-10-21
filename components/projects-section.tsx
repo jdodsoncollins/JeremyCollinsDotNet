@@ -4,6 +4,7 @@ import { APP_PRODUCTS } from "@/lib/app-products";
 import { AppArrow } from "@/components/app-icons";
 import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppScreenshot } from "@/components/app-screenshot";
+import { HomeLandscape } from "@/components/home-landscape";
 import styles from "@/app/home.module.css";
 
 const projects = [
@@ -56,7 +57,7 @@ export function ProjectsSection() {
       className={styles.projects}
       aria-labelledby="apps-title"
     >
-      <div className={styles.sectionHeading} data-home-reveal>
+      <div className={styles.sectionHeading}>
         <div>
           <h2 id="apps-title">Side projects</h2>
         </div>
@@ -71,12 +72,13 @@ export function ProjectsSection() {
         ))}
       </nav>
       <div className={styles.projectList}>
+        <HomeLandscape placement="middle" />
         {projects.map(({ app, kind, title, description, features, shots }) => (
           <article
             id={`app-${kind}`}
             key={app.name}
             className={`${styles.project} ${styles[kind]}`}
-            data-home-reveal
+            data-home-project
           >
             <div className={styles.projectCopy}>
               <div className={styles.appBrand}>
@@ -113,19 +115,26 @@ export function ProjectsSection() {
               </div>
             </div>
             <div className={styles.projectArt}>
-              {"duoScreenshots" in app ? (
-                <AppScreenshot
-                  shot={app.duoScreenshots[0]}
-                  sizes="(max-width: 760px) calc(100vw - 104px), (max-width: 1360px) 43vw, 560px"
-                />
-              ) : (
-                <AppScreenshotGallery
-                  shots={shots.map((index) => app.screenshots[index])}
-                  appName={app.name}
-                  label={`${app.name} preview screenshots`}
-                  variant="hero"
-                />
-              )}
+              <div
+                className={styles.projectLight}
+                data-home-light
+                aria-hidden="true"
+              />
+              <div className={styles.projectVisual} data-home-artwork>
+                {"duoScreenshots" in app ? (
+                  <AppScreenshot
+                    shot={app.duoScreenshots[0]}
+                    sizes="(max-width: 760px) calc(100vw - 104px), (max-width: 1360px) 43vw, 560px"
+                  />
+                ) : (
+                  <AppScreenshotGallery
+                    shots={shots.map((index) => app.screenshots[index])}
+                    appName={app.name}
+                    label={`${app.name} preview screenshots`}
+                    variant="hero"
+                  />
+                )}
+              </div>
             </div>
           </article>
         ))}

@@ -16,16 +16,6 @@
   background: var(--paper);
   color: var(--ink);
 }
-:global(:root[data-era="modern"]) .page::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 760px 0 0;
-  pointer-events: none;
-  background: url("/hero/hero-modern-forest-wide.jpg?v=hq1") center top / cover
-    no-repeat;
-  opacity: 0.065;
-}
 :global(:root[data-era="modern"]) .page.page.page,
 :global(:root[data-era="modern"]) .page.page.page * {
   font-family: var(--home-type, var(--sans)) !important;
@@ -40,6 +30,7 @@
 }
 .content {
   position: relative;
+  z-index: 1;
   min-width: 0;
 }
 .page :is(h1, h2, h3, h4) {
@@ -214,6 +205,10 @@
   color: #172b20 !important;
 }
 
+.heroTransition {
+  position: relative;
+  isolation: isolate;
+}
 .page .hero {
   position: relative;
   display: flex;
@@ -231,9 +226,12 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(0deg, #20362c 0%, #20362c9c 15%, transparent 40%),
-    linear-gradient(90deg, #172b22e0 0%, #1b302685 45%, #23372a08 75%);
+  background: linear-gradient(
+    90deg,
+    #172b22e0 0%,
+    #1b302685 45%,
+    #23372a08 75%
+  );
 }
 .hero :global(.hero-backdrop) {
   inset: 0;
@@ -241,6 +239,17 @@
 .hero :global(.hero-backdrop-photo) {
   opacity: 1 !important;
   filter: none !important;
+}
+:global(:root[data-era="modern"]) .page .hero {
+  background: transparent;
+}
+:global(:root[data-era="modern"]) .hero :global(.hero-backdrop)::after {
+  display: none;
+}
+:global(:root[data-era="modern"]) .hero :global(.hero-backdrop),
+:global(:root[data-era="modern"]) .hero::before,
+:global(:root[data-era="modern"]) .hero::after {
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
 }
 .hero :global(.hero-backdrop-modern-plate) {
   width: 100%;
@@ -328,24 +337,6 @@
   svg {
   transform: translate(2px, -2px);
 }
-:global(:root[data-era="modern"]) .page [data-home-reveal] {
-  transition:
-    opacity 360ms ease-out,
-    translate 360ms ease-out;
-}
-:global(:root[data-era="modern"]) .page [data-home-state="pending"] {
-  opacity: 0;
-  translate: 0 6px;
-}
-:global(:root[data-era="modern"]) .page [data-home-state="visible"] {
-  opacity: 1;
-  translate: none;
-}
-:global(:root[data-era="modern"]) .page [data-home-reveal]:focus-within {
-  opacity: 1 !important;
-  translate: none !important;
-  transition: none !important;
-}
 .heroTextLink {
   display: inline-flex;
   min-width: 44px;
@@ -411,11 +402,15 @@
   margin-inline: auto;
 }
 .page .projects {
+  position: relative;
+  isolation: isolate;
   background: var(--paper) !important;
   padding-block: 100px 104px;
   border: 0 !important;
 }
 .sectionHeading {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -430,10 +425,14 @@
   line-height: 1.05;
 }
 .projectList {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 56px;
 }
 .appIndex {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
@@ -467,6 +466,8 @@
   scroll-margin-top: 24px;
 }
 .project {
+  position: relative;
+  z-index: 1;
   --card-paper: #2a4236;
   --card-ink: #f3f1e8;
   --card-muted: #c1ccbe;
@@ -574,12 +575,39 @@
   --line: var(--art-line, #9bad9d);
   --accent: var(--ink);
   min-width: 0;
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
   color: var(--ink);
   background: var(--paper);
+}
+.projectVisual {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+}
+.projectLight {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  inset: -20% -35%;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    118deg,
+    transparent 24%,
+    #e7b34c12 37%,
+    #fff3ce52 48%,
+    #e7b34c1a 60%,
+    transparent 74%
+  );
+}
+:global(:root[data-era="modern"]) .projectLight {
+  display: block;
 }
 .projectArt :global([data-app-gallery]) {
   width: 100%;
@@ -643,6 +671,7 @@
   padding: 42px 44px;
 }
 :global(:root[data-era="modern"]) .projectArt {
+  overflow: clip;
   padding: 34px 32px 26px;
 }
 :global(:root[data-era="modern"]) .appBrand h3 {
@@ -1135,8 +1164,7 @@
   .hero::after {
     background: linear-gradient(
       0deg,
-      #20362c 0%,
-      #20362c66 22%,
+      transparent 30%,
       #182f273d 45%,
       #182f27a8
     );
@@ -1346,9 +1374,187 @@
     gap: 8px;
   }
 }
-@media (max-width: 767px) {
-  :global(:root[data-era="modern"]) .page::before {
-    background-image: url("/hero/hero-modern-forest.jpg?v=hq1");
+/* The hero's landscape continues through three bounded forest clearings. */
+.forestScene {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  inset-inline: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 22%,
+    #000 76%,
+    transparent
+  );
+}
+:global(:root[data-era="modern"]) .forestScene {
+  display: block;
+}
+.forestImage {
+  position: absolute;
+  inset: -76px 0;
+  opacity: 1;
+  background-image:
+    linear-gradient(90deg, #20362ce6, #20362c52 58%, #20362c85),
+    url("/hero/hero-modern-forest-wide.jpg?v=hq1");
+  background-position:
+    center,
+    50% 100%;
+  background-size:
+    cover,
+    auto 240%;
+  background-repeat: no-repeat;
+}
+.forestGlow {
+  position: absolute;
+  inset: -10% -15%;
+  opacity: 0;
+  background: linear-gradient(
+    112deg,
+    transparent 30%,
+    #e7b34c1a 42%,
+    #fff3ce66 52%,
+    #e7b34c1a 61%,
+    transparent 72%
+  );
+}
+.forestOpening {
+  top: 36%;
+  height: 1480px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 24%,
+    #000 68%,
+    transparent
+  );
+}
+.forestOpening::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 24%,
+    #20362ca3 39%,
+    #20362cba 51%,
+    transparent 76%
+  );
+}
+.forestMiddle {
+  top: calc(50% - 540px);
+  inset-inline: -56px;
+  height: 1080px;
+}
+.forestMiddle .forestImage {
+  background-position:
+    center,
+    72% 100%;
+}
+.forestFloor {
+  bottom: 0;
+  height: 1240px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 28%,
+    #000 84%,
+    transparent
+  );
+}
+.forestFloor .forestImage {
+  background-image:
+    linear-gradient(
+      90deg,
+      #20362cf0 4%,
+      #20362cba 45%,
+      #20362ce0 72%,
+      #20362c85
+    ),
+    url("/hero/hero-modern-forest-wide.jpg?v=hq1");
+  background-position:
+    center,
+    72% 100%;
+}
+:global(:root[data-era="modern"]) .appIndex a {
+  position: relative;
+  transition: color 180ms ease-out;
+}
+:global(:root[data-era="modern"]) .appIndex a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: var(--ochre);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+:global(:root[data-era="modern"]) .appIndex a:is(:hover, :focus-visible) {
+  opacity: 1;
+}
+:global(:root[data-era="modern"])
+  .appIndex
+  a:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+:global(:root[data-era="modern"]) .appIndex a svg {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+:global(:root[data-era="modern"]) .appIndex a:is(:hover, :focus-visible) svg {
+  transform: translateX(4px);
+}
+:global(:root[data-era="modern"]) .experience li {
+  position: relative;
+  border-top-color: transparent;
+}
+:global(:root[data-era="modern"]) .experience li::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0 auto;
+  height: 1px;
+  background: var(--line);
+  transform: scaleX(var(--trail-progress, 1));
+  transform-origin: left;
+}
+:global(:root[data-era="modern"]) .experience li[data-home-playing]::before {
+  background: var(--ochre);
+}
+@media (max-width: 1050px) {
+  .forestMiddle {
+    inset-inline: -32px;
+  }
+}
+@media (max-width: 760px) {
+  .forestImage {
+    background-image:
+      linear-gradient(90deg, #20362ce6, #20362c52 58%, #20362c85),
+      url("/hero/hero-modern-forest.jpg?v=hq1");
+    background-size:
+      cover,
+      auto 300%;
+  }
+  .forestOpening {
+    top: 0;
+    height: 1050px;
+  }
+  :global(:root[data-era="modern"]) .heroInner {
+    padding-bottom: 72px;
+  }
+  .forestMiddle {
+    inset-inline: -24px;
+    height: 1120px;
+  }
+  .forestFloor {
+    height: 1480px;
+  }
+  .forestFloor .forestImage {
+    background-image:
+      linear-gradient(90deg, #20362cf2 8%, #20362cd9 72%, #20362cba),
+      url("/hero/hero-modern-forest.jpg?v=hq1");
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1358,8 +1564,13 @@
     animation: none !important;
     transition: none !important;
   }
-  .page [data-home-reveal] {
-    opacity: 1 !important;
-    translate: none !important;
+  .forestImage,
+  .projectVisual {
+    transform: none !important;
+    filter: none !important;
+  }
+  .forestGlow,
+  .projectLight {
+    opacity: 0 !important;
   }
 }

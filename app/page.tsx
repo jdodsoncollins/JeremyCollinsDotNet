@@ -7,6 +7,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { EraScroll } from "@/components/era-scroll";
 import { homeJsonLd } from "@/lib/json-ld";
 import { HomeMotion } from "@/components/home-motion";
+import { HomeLandscape } from "@/components/home-landscape";
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -29,10 +30,14 @@ export default function Home() {
       />
       <EraScroll />
       <HomeMotion />
+      <HomeLandscape placement="floor" />
       <div className={styles.content}>
         <HomeHeader />
         <main id="main-content" tabIndex={-1}>
-          <HeroSection />
+          <div className={styles.heroTransition}>
+            <HomeLandscape placement="projects" />
+            <HeroSection />
+          </div>
           <ProjectsSection />
           <AboutSection />
         </main>
