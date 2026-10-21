@@ -16,8 +16,13 @@ const roles = [
 
 export function AboutSection() {
   return (
-    <section id="about" className={styles.about} aria-labelledby="about-title">
-      <div className={styles.aboutCopy} data-home-reveal>
+    <section
+      id="about"
+      className={styles.about}
+      aria-labelledby="about-title"
+      data-home-about
+    >
+      <div className={styles.aboutCopy}>
         <h2 id="about-title">About me</h2>
         <p>
           I like working on products where knowing the business makes the
@@ -39,11 +44,11 @@ export function AboutSection() {
           View my resume <AppArrow />
         </Link>
       </div>
-      <div className={styles.experience} data-home-reveal>
+      <div className={styles.experience}>
         <h3 className={styles.experienceTitle}>Experience</h3>
         <ol>
           {roles.map((role) => (
-            <li key={role.company}>
+            <li key={role.company} data-home-step>
               <div>
                 <h3>{role.company}</h3>
                 <p>{role.title}</p>
