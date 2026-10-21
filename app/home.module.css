@@ -846,6 +846,10 @@
   font-weight: 400;
   line-height: 1.2;
 }
+:global(:root[data-era="1980s"]) .experience h3 a {
+  font-family: inherit !important;
+  letter-spacing: inherit;
+}
 .experience li p {
   color: var(--muted);
   font-size: 14px;

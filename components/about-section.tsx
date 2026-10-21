@@ -8,10 +8,30 @@ const roles = [
     company: "Webflow",
     title: "Sr. Software Engineer",
   },
-  { period: "2022", company: "MasterClass", title: "Software Engineer" },
-  { period: "2019 — 2022", company: "HitRecord", title: "Senior Developer" },
-  { period: "2018", company: "Plink", title: "Software Engineer" },
-  { period: "2015 — 2018", company: "Event Farm", title: "Front-End Engineer" },
+  {
+    period: "2022",
+    company: "MasterClass",
+    title: "Software Engineer",
+    href: "https://www.masterclass.com",
+  },
+  {
+    period: "2019 — 2022",
+    company: "HitRecord",
+    title: "Senior Developer",
+    href: "https://hitrecord.org",
+  },
+  {
+    period: "2018",
+    company: "Plink",
+    title: "Software Engineer",
+    href: "https://www.plink.ai",
+  },
+  {
+    period: "2015 — 2018",
+    company: "Event Farm",
+    title: "Front-End Engineer",
+    href: "https://www.eventfarm.com/",
+  },
 ];
 
 export function AboutSection() {
@@ -50,7 +70,19 @@ export function AboutSection() {
           {roles.map((role) => (
             <li key={role.company} data-home-step>
               <div>
-                <h3>{role.company}</h3>
+                <h3>
+                  {role.href ? (
+                    <a
+                      href={role.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {role.company}
+                    </a>
+                  ) : (
+                    role.company
+                  )}
+                </h3>
                 <p>{role.title}</p>
               </div>
               <span>{role.period}</span>
