@@ -197,6 +197,7 @@ export const CODABLE_GUIDES: CodableGuide[] = [
         paragraphs: [
           "Choose Elements → Select, tap a table cell, then reopen Codable. In Tree, move up to the table element with id wide-demo. Open Style, change the width value to 100%, and tap Save. Close the popover and inspect the result; run the measurement again.",
           "This small example has short content, so a fluid width is enough. A real data table may need a wrapper with overflow-x: auto to preserve readable columns. A flex or grid child may need min-width: 0. Long unbroken text may need overflow-wrap: anywhere. Test the cause you found instead of hiding overflow on the entire page, which can conceal content and controls.",
+          "Treat each change as a hypothesis. If a property makes no visible or measured difference, reset that override and inspect the next constraint. An ineffective experiment is useful evidence; it is not a reason to keep adding unrelated CSS or to claim the problem is fixed.",
         ],
         expected: "The sample table fits its panel, and page-level sideways scrolling disappears.",
       },
@@ -217,6 +218,127 @@ export const CODABLE_GUIDES: CodableGuide[] = [
       "A live Style edit is a hypothesis you can test. It does not prove the cause across all content, font sizes, or breakpoints, and it does not change the website’s source files.",
       "CSS layout measurements are not screenshot pixels. Browser zoom, transforms, display scale, and device pixel ratio can affect how measurements appear on screen.",
       "Test large text, long translated content, keyboard appearance, and narrower windows as well as a device preset. A preset alone is not a responsive-layout audit.",
+    ],
+  },
+  {
+    slug: "inspect-network-requests-safari-iphone-ipad",
+    publishedAt: "2026-10-26",
+    updatedAt: "2026-10-26",
+    title: "Inspect network requests in Safari on iPhone and iPad",
+    description:
+      "Capture fetch and XMLHttpRequest activity in your current Safari tab. Inspect request status and response previews with Codable, using a local demo without a Mac.",
+    tool: "Network + Console",
+    duration: "6 minutes",
+    screenshot: 4,
+    screenshotCaption:
+      "Codable’s Network panel inspecting the bundled demo page. Request details depend on what the page and Safari make available; this app screenshot shows the compact phone layout.",
+    introduction:
+      "A loading spinner tells you that the page is waiting, but not what it is waiting for. Start with a request you can reproduce. Codable’s Safari extension can capture fetch and XMLHttpRequest activity in the tab you are already using, so you can compare the request, response and visible result without opening a separate browser session.",
+    beforeYouStart:
+      "Install Codable on iPhone or iPad running iOS or iPadOS 26.4 or later. Enable it in Settings → Apps → Safari → Extensions. Open the local demo from Codable’s Extension screen, allow the extension on that Safari page, then open Codable from Safari’s extensions menu. The demo requests stay on the local fixture server.",
+    steps: [
+      {
+        title: "Initialize Network before the action",
+        paragraphs: [
+          "Choose Network and use Clear to empty the list. Opening this panel initializes detailed capture for subsequent fetch and XMLHttpRequest calls. Close the popover before interacting with the page.",
+          "Resource-timing entries may already be present, but they cannot reconstruct an earlier request’s missing method, status, headers or body. After navigating or reloading, open Network again before reproducing the problem.",
+        ],
+        expected: "You have an empty list and a known starting point for the next demo request.",
+      },
+      {
+        title: "Inspect a successful request",
+        paragraphs: [
+          "In the demo’s Network section, tap Fetch products. Reopen Codable → Network, tap Refresh, and select the /api/products entry.",
+          "Read the captured method, status, duration and available response preview. Compare the preview with what appeared on the page. Keep the request URL and the action that triggered it together; a long list of background requests is harder to interpret.",
+        ],
+        expected: "The local products request returns HTTP 200 and a JSON response that the demo displays.",
+      },
+      {
+        title: "Compare an HTTP error with a rejected request",
+        paragraphs: [
+          "Clear Network, close the popover, and tap Fetch error on the demo. Reopen Network, Refresh, and select /api/error. The local server intentionally returns HTTP 500 for this exercise.",
+          "An HTTP error response is still a response. JavaScript fetch does not reject just because the status is 500; application code must check response.ok or the status. A rejected fetch can instead mean that the browser could not provide a response, for example because of a connection or access restriction. Preserve the observed status or error rather than treating those cases as interchangeable.",
+        ],
+        expected: "The /api/error entry has an HTTP 500 response, while the demo remains usable.",
+      },
+      {
+        title: "Connect the observation to the symptom",
+        paragraphs: [
+          "Open Console and reproduce the same demo action to compare its Fetched demo error message with the request. This message is explicitly logged by the demo; it is not a debugger pause or proof that an unrelated exception caused the request.",
+          "On your own page, record the action, expected result, request status and available response detail. If the response is successful but the page stays empty, inspect the code that consumes it. If capture lacks a status or body, record that gap and gather more evidence instead of guessing a server error.",
+        ],
+      },
+    ],
+    checks: [
+      { title: "The request is missing", text: "Confirm permission for the current Safari page, open Network first, and repeat a safe action. Requests made before initialization, by workers, in inaccessible frames, or outside the instrumented page can be absent. An empty list does not establish that no request occurred." },
+      { title: "The row has timing but no body", text: "It may be a resource-timing observation rather than an instrumented fetch or XHR. Timing does not reveal an otherwise unavailable response body. Keep that distinction when describing the result." },
+      { title: "Headers, status or response text are incomplete", text: "Browser access rules and bounded capture can hide or truncate details. An unavailable field is unknown, not a successful value. Use the server’s own logs or desktop remote inspection when the missing detail is necessary." },
+    ],
+    limits: [
+      "This is page-level instrumentation plus resource timing, not a recording of every browser HTTP transaction. Navigation requests, workers, caches and inaccessible frames can have different coverage.",
+      "A response preview is bounded and may not contain the complete body. Browser restrictions also limit exposed headers and cross-origin timing details.",
+      "The extension inspects the current Safari page. Resize and Scratchpad use separate browser contexts and do not inherit its authenticated state.",
+      "URLs, headers and response content can contain private information. Review the details before copying them into an issue or a chat, and omit credentials or personal data.",
+    ],
+  },
+  {
+    slug: "view-page-source-assets-safari",
+    publishedAt: "2026-10-26",
+    updatedAt: "2026-10-26",
+    title: "View page source and website assets in Safari",
+    description:
+      "View HTML source, compare it with the live DOM, and find a page’s scripts, stylesheets and images in Safari on iPhone or iPad with Codable.",
+    tool: "Source + Resources",
+    duration: "5 minutes",
+    screenshot: 3,
+    screenshotCaption:
+      "Codable’s Source panel displaying the bundled demo’s HTML. Check the panel’s response source or live DOM label to understand which representation you are reading.",
+    introduction:
+      "“View source” and “inspect element” answer different questions. Source helps you read the page’s HTML representation. Elements shows the DOM Safari is rendering now. Resources helps you find the scripts, stylesheets and images associated with that page. Use the three together when markup or an asset does not match what you see.",
+    beforeYouStart:
+      "Enable Codable in Settings → Apps → Safari → Extensions on an iPhone or iPad running iOS or iPadOS 26.4 or later. Open the app’s local demo in Safari and allow Codable access. Its /styles.css, /app.js, /sample.json and /image.svg files give you a self-contained practice page.",
+    steps: [
+      {
+        title: "Read the Source label first",
+        paragraphs: [
+          "Open Codable from Safari’s extensions menu, choose Source, and tap Refresh. Read the label above the HTML: response source means Codable fetched a response for the current page; live DOM means it is showing a serialization of the document instead.",
+          "A fresh response is not a saved copy of the original navigation response. It can differ if the server returns different content later. A live DOM fallback can include changes already made by the page’s scripts. Record which representation you are comparing.",
+        ],
+        expected: "The local demo’s HTML includes references to /styles.css and /app.js.",
+      },
+      {
+        title: "Compare source with a rendered element",
+        paragraphs: [
+          "Choose Elements → Select, tap Inspect me on the demo, and reopen Codable. Use HTML to read the selected button and Tree to inspect its parents. This is the current DOM, including changes made since the page loaded.",
+          "On a dynamic page, a node may be absent from a fetched HTML response but present in Elements because JavaScript created it. That difference alone is not an error. Follow the script or rendering path responsible before changing the markup.",
+        ],
+      },
+      {
+        title: "Find scripts, stylesheets and images",
+        paragraphs: [
+          "Choose Resources and tap Refresh. Use All, JS, CSS and Image to narrow the list. Select /app.js, /styles.css or /image.svg to inspect the available metadata and URL. The demo also requests /sample.json, which can appear among the observed resources.",
+          "Resources is an inventory and metadata view, not a source-code debugger. Seeing an asset in the list does not prove that its contents ran successfully or that an image decoded. To investigate a failed load, initialize Network before reproducing and compare the relevant request with Console output.",
+        ],
+        expected: "You can identify the demo’s stylesheet, script and image without leaving its Safari tab.",
+      },
+      {
+        title: "Keep storage and source context separate",
+        paragraphs: [
+          "The Storage filter shows supported storage values available to the page, such as local storage, session storage and script-readable cookies. This is not a complete view of the browser’s cookie jar; HttpOnly cookies are not available to page scripts.",
+          "When reporting a mismatch, name the Safari page, Source label, selected element or resource URL, and what you expected to find. Keep storage values, private HTML and credentials out of shared examples. You usually need a small relevant excerpt, not a dump of the whole page.",
+        ],
+      },
+    ],
+    checks: [
+      { title: "Source differs from Elements", text: "Check whether Source says response source or live DOM. Then consider script-created markup, a later server response, and changes since capture. Refresh deliberately and compare the same page state; do not assume either representation records the original navigation." },
+      { title: "A stylesheet’s rules are unavailable", text: "An external stylesheet can be listed even when browser origin restrictions prevent reading its rules. Its presence and the ability to inspect its contents are separate facts." },
+      { title: "An asset appears but the page still looks broken", text: "Check the resource URL and its relevant Network entry, then inspect the affected element’s computed styles or image state. A listed URL does not establish that the response succeeded, decoded, or was applied." },
+    ],
+    limits: [
+      "Source may issue a fresh request or show a live DOM fallback. It is not the raw, historical response from the first page navigation.",
+      "Resource and storage observations are bounded by the page and Safari’s access rules. Inaccessible frames, protected pages, closed shadow roots and script-inaccessible cookies can limit visibility.",
+      "These panels do not provide desktop debugger breakpoints, a complete source-map workflow, or every browser-level storage and network capability.",
+      "Inspection stays in the current Safari session. Opening the same URL in Resize does not transfer the Safari login or temporary DOM changes.",
     ],
   },
 ];

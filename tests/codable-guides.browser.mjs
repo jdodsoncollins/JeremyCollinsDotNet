@@ -18,6 +18,19 @@ try {
       assert.ok(await page.locator('a[href*="1324741659"]').count(), `${route}: app link`);
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), `https://jeremycollins.net${route}`);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true, `${route}: horizontal overflow at ${width}px`);
+      if (route === "/codable") {
+        const answers = page.getByRole("region", { name: "Inspect the Safari tab you already have open" });
+        assert.equal(await answers.getByRole("heading", { level: 3 }).count(), 3, "Product page exposes three Safari workflow answers");
+        const destinations = await answers.getByRole("link").evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+        assert.equal(destinations.length, 3, "Each Safari answer links to a practical guide");
+        for (const destination of destinations) {
+          assert.ok(slugs.some((slug) => destination === `/codable/guides/${slug}`), `Answer links to a published guide: ${destination}`);
+        }
+        await answers.getByRole("link", { name: "Inspect a request in the current tab" }).click();
+        await page.waitForURL("**/codable/guides/inspect-network-requests-safari-iphone-ipad");
+        assert.equal(new URL(page.url()).pathname, "/codable/guides/inspect-network-requests-safari-iphone-ipad", "Current-session answer opens the Network guide");
+        assert.equal(await page.getByRole("heading", { level: 1 }).textContent(), "Inspect network requests in Safari on iPhone and iPad");
+      }
       if (slugs.some((slug) => route.endsWith(slug))) {
         const article = await page.locator('script[type="application/ld+json"]').evaluate((node) => JSON.parse(node.textContent));
         assert.equal(article["@type"], "TechArticle");

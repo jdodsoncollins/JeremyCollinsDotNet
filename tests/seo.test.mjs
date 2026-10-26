@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
+import { CODABLE_GUIDES, CODABLE_GUIDES_BASE } from "../lib/codable-guides.ts";
 
 test("llms.txt exists for answer engines", () => {
   const text = fs.readFileSync("public/llms.txt", "utf8");
@@ -19,6 +20,16 @@ test("llms-full.txt exists for answer engines", () => {
   assert.match(text, /Codable/);
   assert.match(text, /Taktung/);
   assert.match(text, /jeremy@jeremycollins\.net/);
+});
+
+test("Codable summaries link to the published guide inventory", () => {
+  const paths = [CODABLE_GUIDES_BASE, ...CODABLE_GUIDES.map((guide) => `${CODABLE_GUIDES_BASE}/${guide.slug}`)];
+  for (const file of ["public/llms.txt", "public/llms-full.txt"]) {
+    const text = fs.readFileSync(file, "utf8");
+    for (const path of paths) {
+      assert.ok(text.includes(`https://jeremycollins.net${path}`), `${file} links to ${path}`);
+    }
+  }
 });
 
 test("home JSON-LD describes the person, site, and launched apps", () => {

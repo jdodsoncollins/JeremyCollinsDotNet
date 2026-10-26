@@ -6,7 +6,7 @@ import styles from "./guides.module.css";
 
 export const metadata: Metadata = {
   title: "Safari debugging guides for iPhone and iPad | Codable",
-  description: "Practical guides to inspecting elements, tracing JavaScript errors, and fixing mobile layout problems in Safari with Codable.",
+  description: "Inspect elements, console errors, network requests, page source and mobile layouts in Safari on iPhone and iPad. Practical walkthroughs with Codable’s local demo.",
   alternates: { canonical: CODABLE_GUIDES_BASE },
   openGraph: {
     title: "Safari debugging guides | Codable",
@@ -23,8 +23,8 @@ export default function CodableGuidesPage() {
     <main id="main-content" className={styles.container}>
       <header className={styles.indexHeader}>
         <p className={styles.eyebrow}>Codable field guide</p>
-        <h1>Start with the page.</h1>
-        <p className={styles.lead}>A button that does nothing. A table that spills off-screen. Follow the evidence in Safari, then test a fix.</p>
+        <h1>Safari debugging guides for iPhone and iPad</h1>
+        <p className={styles.lead}>Inspect an element, trace a request, compare page source, or investigate a table that spills off-screen. Follow the evidence in your current Safari tab.</p>
         <p>These walkthroughs use Codable’s bundled local demo, so you can practice on a page made for inspection.</p>
       </header>
       <div className={styles.guideList}>
