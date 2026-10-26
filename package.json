@@ -15,7 +15,8 @@
     "test:videos": "node tests/home-videos.browser.mjs",
     "resume:pdf": "node scripts/export-resume-pdf.js",
     "resume:sync": "node scripts/sync-resume-pdf.js",
-    "resume:build": "pnpm build"
+    "resume:build": "pnpm build",
+    "test:codable-guides": "node tests/codable-guides.browser.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -40,5 +41,6 @@
       "postcss@<8.5.28": "8.5.28",
       "source-map-js@<1.2.2": "1.2.2"
     }
-  }
+  },
+  "packageManager": "pnpm@10.34.9"
 }

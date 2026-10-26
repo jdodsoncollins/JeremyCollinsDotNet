@@ -368,3 +368,24 @@
     padding-block: 32px;
   }
 }
+
+.guides {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: min(100%, 1360px);
+  margin-inline: auto;
+  padding: 56px;
+  gap: 64px;
+  border-top: 1px solid var(--line);
+}
+.page .guides h2 { font-size: 34px; line-height: 1.15; }
+.guides p { margin-top: 20px; max-width: 48ch; }
+.guides > div > a { display: inline-block; color: var(--accent); margin-top: 20px; text-decoration: underline; }
+.guides ol { list-style: none; margin: 0; padding: 0; }
+.guides li { border-bottom: 1px solid var(--line); }
+.guides li:first-child { border-top: 1px solid var(--line); }
+.guides li a { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 80px; padding-block: 20px; color: var(--ink); }
+.guides a:hover { color: var(--accent); }
+.guides li span { color: var(--accent); }
+@media (max-width: 1000px) { .guides { padding-inline: 36px; gap: 40px; } }
+@media (max-width: 700px) { .guides { grid-template-columns: 1fr; padding: 40px 24px; gap: 28px; } }
