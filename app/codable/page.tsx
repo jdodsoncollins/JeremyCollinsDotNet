@@ -13,6 +13,26 @@ import styles from "@/app/app-pages.module.css";
 import design from "@/app/codable.module.css";
 
 const app = APP_PRODUCTS.codable;
+const safariQuestions = [
+  {
+    title: "Can I inspect Safari on iPhone without a Mac?",
+    answer: "Yes. Enable Codable’s Safari extension, allow it on the page, and select an element to inspect its HTML and styles. The Console, Network, Source and Resources panels also work on iPhone and iPad without a desktop connection.",
+    guide: "inspect-element-safari-iphone",
+    link: "Start with element inspection",
+  },
+  {
+    title: "Can I inspect a page I’m already signed into?",
+    answer: "The extension works in your current Safari tab, where that page’s session already exists. Resize and Scratchpad run separately in the companion app; opening the same URL there does not transfer your Safari login or page state.",
+    guide: "inspect-network-requests-safari-iphone-ipad",
+    link: "Inspect a request in the current tab",
+  },
+  {
+    title: "How does it compare with desktop Web Inspector?",
+    answer: "Codable provides live element inspection, CSS edits, a JavaScript console, resource details and captured network activity on your device. Capture can be incomplete, and desktop tools are still useful for breakpoints, source maps and deeper browser-level inspection.",
+    guide: "view-page-source-assets-safari",
+    link: "Understand Source and Resources",
+  },
+];
 const tools = [
   {
     name: "Elements",
@@ -194,9 +214,24 @@ export default function CodablePage() {
           </div>
           <AppScreenshotGallery shots={app.screenshots} appName="Codable" />
         </section>
+        <section className={design.questions} aria-labelledby="codable-safari-questions">
+          <div className={design.questionsIntro}>
+            <h2 id="codable-safari-questions">Inspect the Safari tab you already have open</h2>
+            <p>Choose the tools for the page and the evidence you need.</p>
+          </div>
+          <div className={design.questionList}>
+            {safariQuestions.map((question) => (
+              <div key={question.title}>
+                <h3>{question.title}</h3>
+                <p>{question.answer}</p>
+                <Link href={`${CODABLE_GUIDES_BASE}/${question.guide}`}>{question.link} ↗</Link>
+              </div>
+            ))}
+          </div>
+        </section>
         <section className={design.guides} aria-labelledby="codable-guides">
           <div>
-            <h2 id="codable-guides">Find the cause. Test a fix.</h2>
+            <h2 id="codable-guides">Safari debugging, step by step</h2>
             <p>Practical guides for the moments when a mobile page doesn’t behave as you expect.</p>
             <Link href={CODABLE_GUIDES_BASE}>All Codable guides ↗</Link>
           </div>

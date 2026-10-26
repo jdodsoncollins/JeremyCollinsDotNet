@@ -12,6 +12,8 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 
 - Who is Jeremy Collins? A senior software engineer at Webflow in Los Angeles. He works on growth engineering and makes apps for iPhone and iPad.
 - What is Codable? A free iOS app with Safari-native web developer tools: inspector, console, network monitor, scratchpad, and viewport tester. No ads or tracking.
+- Can Codable inspect Safari without a Mac? Yes. Its Safari extension provides element inspection, CSS editing, a console, Source, Resources and captured network activity on iPhone and iPad. It works in the current Safari tab; the companion app’s Resize and Scratchpad have separate browser contexts.
+- Does Codable provide every desktop debugging feature? No. Capture is bounded and can miss earlier output or inaccessible contexts. Source may show a fresh response or the live DOM. Use desktop remote inspection for breakpoints and deeper browser-level debugging.
 - What is Taktung? A free iOS app for Vercel deploy and incident ops. Site health, deploys, confirmed promote or rollback. Token stays on the phone. Not affiliated with Vercel.
 - What is TabForge? A free, open-source programming keyboard for iPhone and iPad with coding punctuation, indentation, snippets, and input profiles. No Full Access required.
 - What is Paper & Grain? Close an iPhone Duo to fold the paper; device folding requires iOS 27.1 or later. A free origami puzzle game for iPhone and iPad with eight lessons, Free Fold, and saved editable creations. No timer or losing. Requires iOS or iPadOS 26 or later. Touch controls work without a folding device.
@@ -23,6 +25,7 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 - [Resume](https://jeremycollins.net/resume): full resume
 - [Resume PDF](https://jeremycollins.net/resume/jeremy-collins-resume.pdf)
 - [Codable](https://jeremycollins.net/codable): Safari developer tools, responsive testing, and JavaScript Scratchpad
+- [Codable Safari guides](https://jeremycollins.net/codable/guides): practical walkthroughs using the bundled local demo
 - [Taktung](https://jeremycollins.net/taktung): Vercel deployment status, logs, comparisons, and Field Log
 - [TabForge](https://jeremycollins.net/tabforge): programming keyboard for iPhone and iPad
 - [Paper & Grain](https://jeremycollins.net/paper-and-grain): close an iPhone Duo to fold the paper; origami lessons and Free Fold
@@ -31,6 +34,14 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 - [Taktung privacy policy](https://jeremycollins.net/taktung/privacy)
 - [TabForge privacy policy](https://jeremycollins.net/tabforge/privacy)
 - [Paper & Grain privacy policy](https://jeremycollins.net/paper-and-grain/privacy)
+
+## Codable Safari walkthroughs
+
+- [Inspect an element in Safari on iPhone](https://jeremycollins.net/codable/guides/inspect-element-safari-iphone): select live HTML and test a local CSS change
+- [View JavaScript console errors on iPad](https://jeremycollins.net/codable/guides/javascript-console-errors-ipad): initialize capture, reproduce an error, and preserve available stack context
+- [Investigate a broken mobile layout](https://jeremycollins.net/codable/guides/debug-mobile-layout-overflow): measure an overflowing table and test one CSS hypothesis at a time
+- [Inspect network requests in Safari on iPhone and iPad](https://jeremycollins.net/codable/guides/inspect-network-requests-safari-iphone-ipad): compare a successful fetch with an HTTP error and understand missing request details
+- [View page source and website assets in Safari](https://jeremycollins.net/codable/guides/view-page-source-assets-safari): distinguish response source from the live DOM and find scripts, stylesheets and images
 
 ## Apps
 

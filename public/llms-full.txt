@@ -14,6 +14,18 @@ App Store: https://apps.apple.com/us/app/codable/id1324741659
 
 Privacy policy: https://jeremycollins.net/codable/privacy
 
+The Safari extension inspects the page already open in Safari, including its existing signed-in session, without a Mac connection. Resize and Scratchpad have separate browser contexts; they do not inherit Safari authentication, page variables or temporary edits. Console and Network capture must be initialized before reproducing an issue and cannot reconstruct all earlier activity. Network combines instrumented fetch/XHR with resource timing, with limits on exposed status, headers, bodies and timing. Source can show a freshly fetched response or a live DOM fallback, not a stored original navigation response. Desktop Web Inspector remains useful for breakpoints and deeper debugging.
+
+Safari debugging guides: https://jeremycollins.net/codable/guides
+
+- Inspect an element in Safari on iPhone: https://jeremycollins.net/codable/guides/inspect-element-safari-iphone
+- View JavaScript console errors on iPad: https://jeremycollins.net/codable/guides/javascript-console-errors-ipad
+- Investigate a broken mobile layout: https://jeremycollins.net/codable/guides/debug-mobile-layout-overflow
+- Inspect network requests in Safari on iPhone and iPad: https://jeremycollins.net/codable/guides/inspect-network-requests-safari-iphone-ipad
+- View page source and website assets in Safari: https://jeremycollins.net/codable/guides/view-page-source-assets-safari
+
+The walkthroughs use the app’s bundled local demo. CSS edits are temporary hypotheses; compare the visible result and measurements, reset ineffective overrides, and make a verified fix in the website’s source. A captured error, listed resource or nearby request is evidence, not an automatic root-cause diagnosis.
+
 ## Taktung
 
 Taktung is a free app for checking Vercel deployments on iPhone and iPad. Review production status, build logs, visual comparisons, Home Screen widgets, and a local Field Log. Redeploy, promote, and rollback actions require confirmation. A Vercel personal access token stays in the device Keychain; the app calls Vercel directly. History and baselines remain on the device. Requires iOS or iPadOS 27 or later and a Vercel account. Not affiliated with or endorsed by Vercel.
