@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { CODABLE_GUIDES, CODABLE_GUIDES_BASE, CODABLE_GUIDES_INDEX_UPDATED } from "@/lib/codable-guides";
 
 const baseUrl = "https://jeremycollins.net";
 
@@ -15,6 +16,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    {
+      url: `${baseUrl}${CODABLE_GUIDES_BASE}`,
+      lastModified: new Date(CODABLE_GUIDES_INDEX_UPDATED),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...CODABLE_GUIDES.map((guide) => ({
+      url: `${baseUrl}${CODABLE_GUIDES_BASE}/${guide.slug}`,
+      lastModified: new Date(guide.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     {
       url: `${baseUrl}/codable/privacy`,

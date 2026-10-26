@@ -7,6 +7,7 @@ import { AppScreenshotGallery } from "@/components/app-screenshot-gallery";
 import { AppMotion } from "@/components/app-motion";
 import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
+import { CODABLE_GUIDES, CODABLE_GUIDES_BASE } from "@/lib/codable-guides";
 import { AppArrow } from "@/components/app-icons";
 import styles from "@/app/app-pages.module.css";
 import design from "@/app/codable.module.css";
@@ -76,6 +77,7 @@ export default function CodablePage() {
           <a href="#tools">Tools</a>
           <a href="#resize">Resize</a>
           <a href="#screenshots">Screenshots</a>
+          <Link href={CODABLE_GUIDES_BASE}>Guides</Link>
         </div>
         <Link href="/" className={styles.portfolioLink}>
           Jeremy Collins{" "}
@@ -191,6 +193,20 @@ export default function CodablePage() {
             </p>
           </div>
           <AppScreenshotGallery shots={app.screenshots} appName="Codable" />
+        </section>
+        <section className={design.guides} aria-labelledby="codable-guides">
+          <div>
+            <h2 id="codable-guides">Find the cause. Test a fix.</h2>
+            <p>Practical guides for the moments when a mobile page doesn’t behave as you expect.</p>
+            <Link href={CODABLE_GUIDES_BASE}>All Codable guides ↗</Link>
+          </div>
+          <ol>
+            {CODABLE_GUIDES.map((guide) => (
+              <li key={guide.slug}>
+                <Link href={`${CODABLE_GUIDES_BASE}/${guide.slug}`}>{guide.title}<span aria-hidden="true">↗</span></Link>
+              </li>
+            ))}
+          </ol>
         </section>
         <section
           id="download"
