@@ -159,7 +159,7 @@ export default function TabForgePrivacyPolicy() {
             </p>
             <p>
               Version note: tap-aware correction, word-frequency ranking, and
-              Learn my tap positions are new in version 1.0.2. Version 1.0.1 and
+              Learn my tap positions are new in version 1.1.0. Version 1.0.1 and
               earlier do not use tap points for correction or save tap offsets.
             </p>
           </div>
