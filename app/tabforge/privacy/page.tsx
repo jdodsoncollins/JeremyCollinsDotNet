@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { AppDocument } from "@/components/app-document";
 import { tabforgePrivacyJsonLd } from "@/lib/json-ld";
+import { TABFORGE_CREDITS, TABFORGE_NOTICES_HREF } from "@/lib/tabforge-credits";
 
 export const metadata: Metadata = {
   title: "TabForge Privacy Policy",
   description:
-    "Privacy policy for TabForge: Code Keyboard. Learn about keyboard-local settings and snippets, no Full Access request, separate playground drafts, and on-device voice recognition.",
+    "Privacy policy for TabForge: Code Keyboard. TabForge collects no data. Learn what stays on your device, which features are optional, the bundled third-party word lists, and on-device voice recognition.",
   alternates: { canonical: "/tabforge/privacy" },
   openGraph: {
     title: "TabForge Privacy Policy",
     description:
-      "How TabForge handles typing context, local storage, keyboard permissions, and on-device voice recognition.",
+      "TabForge collects no data. How it handles typing context, on-device storage, optional language features, keyboard permissions, and voice recognition.",
     url: "/tabforge/privacy",
     type: "article",
   },
@@ -21,7 +22,7 @@ export default function TabForgePrivacyPolicy() {
     <AppDocument
       app="tabforge"
       title="TabForge Privacy Policy"
-      effectiveDate="October 21, 2026"
+      effectiveDate="October 27, 2026"
       jsonLd={tabforgePrivacyJsonLd}
     >
       <div>
@@ -56,6 +57,44 @@ export default function TabForgePrivacyPolicy() {
         </p>
 
         <section>
+          <h2>At a Glance</h2>
+          <ul>
+            <li>
+              <strong>Nothing is collected.</strong> TabForge has no servers,
+              analytics, advertising, or accounts, and never sends your typing,
+              snippets, drafts, or usage information to the developer or third
+              parties. Text leaves only through the apps and shares you choose.
+              Its App Store privacy label is Data Not Collected.
+            </li>
+            <li>
+              <strong>What is saved stays on your device.</strong> Keyboard
+              preferences, custom snippets, the playground draft, and, only if
+              you turn on Learn my tap positions, average tap offsets for each
+              letter key. Each stays in the keyboard&apos;s or app&apos;s own
+              local storage and is never uploaded. Device backups you set up may
+              include it.
+            </li>
+            <li>
+              <strong>Language features are optional.</strong> Autocorrect,
+              swipe typing, and Learn my tap positions are off until you turn
+              them on in the keyboard&apos;s gear menu. Turning off Learn my tap
+              positions erases what it learned.
+            </li>
+            <li>
+              <strong>Typing context is temporary.</strong> Text around the
+              cursor, the tap points of the word you are typing, and swipe
+              traces are used in memory on the device and never saved.
+            </li>
+            <li>
+              <strong>No network service of its own.</strong> The keyboard makes
+              no network requests. The companion app uses Apple&apos;s StoreKit
+              for the optional Tip Jar, and opens links or shares only when you
+              choose.
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Typing Context and Information Held in Memory</h2>
           <div>
             <p>
@@ -67,18 +106,28 @@ export default function TabForgePrivacyPolicy() {
               not build a keystroke history or save the host document.
             </p>
             <p>
-              The optional, experimental swipe recognizer uses fixed, bundled
-              English and programming vocabularies. TabForge does not download
-              words or learn from typing. Gesture traces and alternatives are
-              temporary; they are not uploaded or used to train a model. Swipe
-              recognition is off by default.
+              The optional swipe recognizer, autocorrect, and English
+              suggestions use fixed English and programming word lists, with
+              word frequencies, that are bundled in the app. TabForge does not
+              download words or add your typing to these lists. To rank
+              corrections, suggestions, and swipe matches, the keyboard also
+              reads words from the text the host app exposes around the cursor.
+              That list is kept only in memory and never saved. Gesture traces,
+              tap points, and alternatives are temporary; they are not uploaded
+              or used to train a model. Swipe recognition is experimental and
+              off by default.
             </p>
             <p>
-              Optional English prose correction uses Apple&apos;s UITextChecker
-              on the device. When enabled, it can request Apple&apos;s
-              supplementary keyboard lexicon, which may include names and text
-              shortcuts. A bounded set is held in memory to avoid correcting
-              those words; TabForge does not save or log the lexicon.
+              Optional English prose correction, off by default, uses
+              Apple&apos;s UITextChecker on the device to decide which words are
+              misspelled. Replacements are chosen on the device from the
+              bundled word list and nearby document words, weighing where each
+              key was tapped. Tap points for the word being typed are held in
+              memory until you finish the word and are then discarded. When
+              enabled, correction can request Apple&apos;s supplementary
+              keyboard lexicon, which may include names and text shortcuts. A
+              bounded set is held in memory to avoid correcting those words;
+              TabForge does not save or log the lexicon.
             </p>
             <p>
               Correction state, spelling resources, swipe traces, repeat tasks,
@@ -86,6 +135,32 @@ export default function TabForgePrivacyPolicy() {
               receives a memory warning. Normal operating-system memory
               management still applies; this is not a guarantee of secure memory
               erasure.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Optional Tap Learning</h2>
+          <div>
+            <p>
+              <strong>Learn my tap positions</strong> is a keyboard option that
+              is off by default and available only when autocorrect is on. When
+              you turn it on, the keyboard keeps a running average of how far
+              your taps land from the center of each letter key, plus a capped
+              count of taps per key, and uses it to judge future taps. It learns
+              only from words already in its word list that you typed and kept.
+            </p>
+            <p>
+              It stores no letters in order, words, text, or timestamps. The
+              averages are saved in the keyboard extension&apos;s local
+              UserDefaults, are never uploaded or shared with the companion app,
+              and are erased when you turn the option off or reset keyboard
+              preferences.
+            </p>
+            <p>
+              Version note: tap-aware correction, word-frequency ranking, and
+              Learn my tap positions are new in version 1.0.2. Version 1.0.1 and
+              earlier do not use tap points for correction or save tap offsets.
             </p>
           </div>
         </section>
@@ -107,6 +182,12 @@ export default function TabForgePrivacyPolicy() {
                 <strong>Custom snippets:</strong> text you choose to save for
                 insertion later, stored with the keyboard extension&apos;s
                 preferences.
+              </li>
+              <li>
+                <strong>Learned tap offsets (optional, off by default):</strong>{" "}
+                the average tap offset and a capped tap count for each letter
+                key, in the keyboard extension&apos;s local UserDefaults, only
+                while Learn my tap positions is on.
               </li>
               <li>
                 <strong>Playground draft:</strong> the companion app&apos;s
@@ -143,7 +224,8 @@ export default function TabForgePrivacyPolicy() {
           <div>
             <p>
               Resetting keyboard preferences in the keyboard clears its current
-              settings and custom snippets. It does not clear the playground
+              settings and custom snippets, and turns Learn my tap positions off,
+              which erases learned tap offsets. It does not clear the playground
               draft; delete or replace the playground text separately.
             </p>
             <p>
@@ -286,6 +368,40 @@ export default function TabForgePrivacyPolicy() {
               app contains setup and compatibility information, source/privacy
               links, credits, and licenses; it does not contain controls for the
               installed keyboard.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Third-Party Resources</h2>
+          <div>
+            <p>
+              TabForge includes no third-party code packages, SDKs, or network
+              services. The word lists and theme colors below are bundled as
+              static data and used offline on the device; Apple&apos;s frameworks
+              come with iOS. Nothing you type is shared with any of these
+              projects.
+            </p>
+            <ul>
+              {TABFORGE_CREDITS.map((credit) => (
+                <li key={credit.name}>
+                  <a href={credit.href} target="_blank" rel="noopener noreferrer">
+                    {credit.name}
+                  </a>{" "}
+                  ({credit.license}): {credit.use}
+                </li>
+              ))}
+            </ul>
+            <p>
+              The full license texts and data provenance are in TabForge&apos;s{" "}
+              <a
+                href={TABFORGE_NOTICES_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                third-party notices
+              </a>{" "}
+              and in the companion app under Licenses &amp; notices.
             </p>
           </div>
         </section>

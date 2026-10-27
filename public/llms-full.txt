@@ -38,7 +38,7 @@ Privacy policy: https://jeremycollins.net/taktung/privacy
 
 ## TabForge
 
-TabForge is a free, MIT-licensed programming keyboard for iPhone and iPad. Coding punctuation, indentation, cursor controls, saved snippets, and input profiles are available from the keyboard. Configure it from its gear menu without Full Access. Terminal and remote behavior depends on the host app; a keyboard extension cannot send arbitrary hardware-key events. The companion playground edits highlighted text but does not run code. Optional voice input requires on-device English recognition in the companion app. The keyboard does not log or transmit keystrokes. No ads, analytics, or accounts. Requires iOS or iPadOS 27 or later.
+TabForge is a free, MIT-licensed programming keyboard for iPhone and iPad. Coding punctuation, indentation, cursor controls, saved snippets, and input profiles are available from the keyboard. Configure it from its gear menu without Full Access. Terminal and remote behavior depends on the host app; a keyboard extension cannot send arbitrary hardware-key events. The companion playground edits highlighted text but does not run code. Optional voice input requires on-device English recognition in the companion app. The keyboard does not log or transmit keystrokes. No ads, analytics, or accounts; TabForge collects no data. Settings, snippets, and anything an optional feature learns stay on the device, and optional features such as autocorrect and swipe are off until turned on. It includes no third-party code; it bundles the English Speller Database word list, SymSpell word frequencies (MIT) derived from Google Books Ngram (CC BY 3.0), and Nord and Dracula theme colors (MIT). Requires iOS or iPadOS 27 or later.
 
 Details: https://jeremycollins.net/tabforge
 

@@ -8,6 +8,7 @@ import { AppMotion } from "@/components/app-motion";
 import { AppOverview } from "@/components/app-overview";
 import { APP_PRODUCTS } from "@/lib/app-products";
 import { tabforgeJsonLd } from "@/lib/json-ld";
+import { TABFORGE_CREDITS, TABFORGE_NOTICES_HREF } from "@/lib/tabforge-credits";
 import shared from "@/app/app-pages.module.css";
 import styles from "@/app/tabforge.module.css";
 
@@ -312,6 +313,11 @@ export default function TabForgePage() {
                 The keyboard does not log or transmit what you type. No Full
                 Access is requested. No ads, analytics, or accounts.
               </p>
+              <p>
+                Settings, snippets, and anything an optional feature learns stay
+                on your device. Optional features, like autocorrect and swipe,
+                are off until you turn them on.
+              </p>
               <Link href="/tabforge/privacy" className={styles.textLink}>
                 Read the privacy policy <AppArrow />
               </Link>
@@ -357,6 +363,33 @@ export default function TabForgePage() {
             decline third-party keyboards. Duo-specific layouts require iOS 27.1
             or later.
           </p>
+          <section className={styles.credits} aria-labelledby="credits-title">
+            <h2 id="credits-title">Built with</h2>
+            <p>
+              No third-party code packages, SDKs, or network services. The word
+              lists and theme colors are bundled as data and used offline;
+              Apple’s frameworks come with iOS.
+            </p>
+            <ul>
+              {TABFORGE_CREDITS.map((credit) => (
+                <li key={credit.name}>
+                  <a href={credit.href} target="_blank" rel="noopener noreferrer">
+                    {credit.name}
+                  </a>
+                  <span>{credit.license}</span>
+                  <p>{credit.use}</p>
+                </li>
+              ))}
+            </ul>
+            <a
+              className={styles.textLink}
+              href={TABFORGE_NOTICES_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Licenses and notices <AppArrow />
+            </a>
+          </section>
         </div>
       </main>
       <footer className={styles.footer}>
