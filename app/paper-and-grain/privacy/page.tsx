@@ -171,7 +171,7 @@ export default function PaperAndGrainPrivacyPolicy() {
           <h2>This website</h2>
           <p>
             This policy describes the installed app. The website hosting this
-            page uses Simple Analytics, Vercel Web Analytics, and Speed Insights
+            page uses Vercel Web Analytics and Speed Insights
             to understand website visits and performance. The Paper &amp; Grain
             app does not include these services. Opening a web page sends a
             request to the website&apos;s hosting service.

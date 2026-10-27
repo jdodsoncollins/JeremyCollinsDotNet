@@ -13,7 +13,6 @@ export default function WebsitePrivacy() {
     <h1>Website privacy</h1>
     <p>This notice applies to JeremyCollins.net, not to the native apps featured here. Each app has its own privacy policy.</p>
     <h2>Website usage and performance</h2>
-    <p>This website uses Simple Analytics for cookie-free page measurements without a consent prompt. The integration measures only reviewed public page paths and excludes authentication callbacks and token utility routes. Raw query strings, fragments, referrer URLs, and campaign parameters are not included. See <a href="https://www.simpleanalytics.com/privacy-policy">Simple Analytics privacy information</a>.</p>
     <p>The site uses Vercel Web Analytics and Speed Insights for website usage and performance measurements. See <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel's Web Analytics privacy information</a>.</p>
     <h2>Contact</h2>
     <p>Questions about this website: <a href="mailto:jeremy@jeremycollins.net">jeremy@jeremycollins.net</a>.</p>
