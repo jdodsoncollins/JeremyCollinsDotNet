@@ -286,36 +286,53 @@
     padding: 0;
     border: 0;
   }
+  .resume :global(.resumeHeader) h1 {
+    font-size: 28pt;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
   .resume :global(.resumeHeader) p {
-    margin-top: 0.45rem;
+    margin-top: 0.3rem;
+    line-height: 1.4;
+  }
+  .resume :global(.resumeHeader) p:first-of-type {
+    font-size: 11pt;
   }
   .resume :global(.resumeSection) {
-    margin-top: 18pt;
+    margin-top: 14pt;
   }
   .resume :global(.resumeEntry) {
-    margin-top: 11pt;
+    margin-top: 8pt;
   }
   .resume :is(h1, h2, h3, p, ul, li) {
     color: #222 !important;
   }
   .resume :is(p, li) {
-    font-size: 9pt;
+    font-size: 10pt;
+    line-height: 1.45;
   }
   .resume h2 {
-    margin-bottom: 1rem;
-    font-size: 14pt;
+    margin-bottom: 0.7rem;
+    font-size: 13pt;
+    line-height: 1.2;
   }
   .resume h3 {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
+    font-size: 11pt;
+    line-height: 1.3;
   }
   .resume ul {
-    margin-top: 0.55rem;
+    margin-top: 0.4rem;
   }
   .resume li + li {
-    margin-top: 0.28rem;
+    margin-top: 0.2rem;
   }
   .resume :global(.resumeSection) > p,
   .resume :global(.resumeEntry) p {
-    margin-top: 0.65rem;
+    margin-top: 0.45rem;
+    line-height: 1.4;
+  }
+  .resume :global(.resumeDownload) {
+    display: none !important;
   }
 }

@@ -68,10 +68,10 @@ async function main() {
       format: "Letter",
       printBackground: true,
       margin: {
-        top: "0.55in",
-        right: "0.6in",
-        bottom: "0.55in",
-        left: "0.6in",
+        top: "0.5in",
+        right: "0.5in",
+        bottom: "0.5in",
+        left: "0.5in",
       },
     });
     await browser.close();
