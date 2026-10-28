@@ -287,13 +287,13 @@
     border: 0;
   }
   .resume :global(.resumeHeader) p {
-    margin-top: 0.45rem;
+    margin-top: 0.35rem;
   }
   .resume :global(.resumeSection) {
-    margin-top: 18pt;
+    margin-top: 14pt;
   }
   .resume :global(.resumeEntry) {
-    margin-top: 11pt;
+    margin-top: 9pt;
   }
   .resume :is(h1, h2, h3, p, ul, li) {
     color: #222 !important;
@@ -309,13 +309,13 @@
     margin-bottom: 0.2rem;
   }
   .resume ul {
-    margin-top: 0.55rem;
+    margin-top: 0.45rem;
   }
   .resume li + li {
-    margin-top: 0.28rem;
+    margin-top: 0.22rem;
   }
   .resume :global(.resumeSection) > p,
   .resume :global(.resumeEntry) p {
-    margin-top: 0.65rem;
+    margin-top: 0.5rem;
   }
 }

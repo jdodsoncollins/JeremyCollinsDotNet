@@ -4,19 +4,8 @@ Product Engineer & Builder
 
 Greater Sacramento, CA  
 jeremycollins.net  
-jeremy@jeremycollins.net
-
-## Summary
-
-Product engineer with 10+ years across SaaS, education, creator, event, and marketing platforms.
-
-I work on growth engineering: lifecycle surfaces, usage-based billing, analytics, and experiments. I use customer context, data, and AI-assisted development to get from idea to a live change faster.
-
-## Selected Impact
-
-- Led growth work across onboarding, activation, monetization, usage-based billing, and experiments.
-- Built customer-facing dashboards, notification systems, billing migration tooling, and enterprise security surfaces.
-- Built internal tools and AI-assisted workflows that shortened billing, entitlement, observability, CI, and account-state investigations.
+jeremy@jeremycollins.net  
+https://www.linkedin.com/in/jeremy-d-collins
 
 ## Experience
 
@@ -25,72 +14,51 @@ I work on growth engineering: lifecycle surfaces, usage-based billing, analytics
 Senior Software Engineer  
 Aug 2022 to Present
 
-- Led lifecycle and growth engineering across dashboard surfaces, paywalls, usage visibility, notifications, and customer-facing product development.
-- Built an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, observability, CI, and internal systems. Support and engineering use it to trace customer-account issues across multiple sources of truth.
-- Rebuilt bandwidth metering and overage lifecycle workflows. Accurate usage pipelines, customer notifications, dashboard visibility, and billing reconciliation supported about $6M in annual incremental revenue.
-- Took Webflow's per-site Web Application Firewall from an early proof of concept to production. A basic blocker became a configurable customer-facing rule system, tied to an estimated $4M self-serve opportunity and later enterprise adoption.
-- Shipped usage dashboard improvements for new pricing and packaging, self-serve upgrades, and role-based access for agency and enterprise businesses, contributing to an estimated $5M ARR lift.
-- Built migration, logging, and defensive cache tooling around entitlement and subscription data, so product and engineering had cleaner signals for billing and lifecycle experiments.
+- Led lifecycle and growth engineering across dashboard surfaces, paywalls, usage visibility, and notifications.
+- Launched Webflow's first AI tooling in 2023: an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, and observability. Support and engineering use AI-assisted workflows to trace customer issues across multiple sources of truth.
+- Rebuilt bandwidth metering and overage lifecycle workflows supporting about $6M in annual incremental revenue. Shipped usage dashboard improvements contributing to an estimated $5M ARR lift through new pricing, packaging, and self-serve upgrades.
 
 ### MasterClass
 
 Senior Software Engineer  
 Apr 2022 to Aug 2022
 
-- Worked on growth: payments, promotions, subscription conversion, experiments, and a Next.js migration.
+Worked on growth: payments, promotions, subscription conversion, experiments, and a Next.js migration.
 
-### HitRecord
+### HitRecord — Senior Developer — Jul 2019 to Apr 2022
 
-Senior Developer  
-Jul 2019 to Apr 2022
+Led frontend modernization and growth engineering during platform relaunch. Built Optimizely experiments for Class Projects launch and improved Angular frontend and Rails backend performance.
 
-- Led frontend modernization and growth engineering during the platform relaunch, including Optimizely experiments for the Class Projects launch.
-- Worked on Angular frontend and Rails backend performance, reducing time-to-interactive and improving search on the consumer social app.
+### Earlier Experience
 
-### Plink.ai
+**Plink.ai** — Software Engineer — Sep 2018 to Jul 2019  
+Built TypeScript, React, server-rendered pages, and Node API features for marketing and asset management.
 
-Software Engineer  
-Sep 2018 to Jul 2019
+**Event Farm** — Software Engineer — Sep 2015 to Sep 2018  
+Led Angular frontend rewrite. Built ticket management and visual page-building tools.
 
-- Built TypeScript, React, server-rendered pages, and Node API features for marketing and asset management.
-
-### Event Farm
-
-Software Engineer  
-Sep 2015 to Sep 2018
-
-- Led a rewrite of the legacy frontend into Angular while keeping the existing AngularJS and jQuery app running.
-- Built ticket management and visual page-building tools for responsive web experiences.
-
-### Act-On
-
-Solutions Engineer  
-Jun 2012 to Sep 2015
-
-- Delivered customer-facing implementation support and built WYSIWYG email, form, and webpage editing tools.
+**Act-On** — Solutions Engineer — Jun 2012 to Sep 2015  
+Delivered implementation support and built WYSIWYG email, form, and webpage editing tools.
 
 ## Projects
 
-### Codable
+### Codable — Founder & Developer — Jun 2017 to Present
 
-Founder & Developer  
-Jun 2017 to Present
+Safari-native iOS developer tool for inspecting, debugging, and testing web content. Elements inspector, Console, Network monitor, and responsive viewport testing.
 
-- Built and maintained a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
+### TabForge
+Open-source programming keyboard for iPhone and iPad. Braces, brackets, Tab, indentation controls, and saved snippets beside letter keys. MIT licensed.
 
-### Open Source
+### Taktung
+Vercel deployment status and logs for iPhone and iPad. Production status, visual comparisons, widgets, and Field Log.
 
-Contributor  
-Jul 2020 to Present
-
-- Contributed to developer-tooling open source projects.
+### Paper & Grain
+Origami lessons and Free Fold for iPhone and iPad. Close iPhone Duo to fold paper.
 
 ## Education
 
-### University of California, Davis
-
-B.A. Communication and Political Science
+**University of California, Davis** — B.A. Communication and Political Science
 
 ## Technologies
 
-TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, SwiftUI, Zod, Nest.js, SQL, Druid, Stigg, Knock, Statsig, Datadog, Braintrust, MCP, Codex, OpenCode, Git, analytics instrumentation.
+TypeScript, JavaScript, React, Next.js, Node.js, Ruby on Rails, Angular, SwiftUI, SQL, Druid, Datadog, MCP, Git.
