@@ -2,6 +2,8 @@
 
 Product Engineer & Builder
 
+Product engineer who started in design and frontend and now works full stack, from UI to usage pipelines and billing.
+
 Greater Sacramento, CA  
 jeremycollins.net  
 jeremy@jeremycollins.net  
@@ -15,7 +17,8 @@ Senior Software Engineer
 Aug 2022 to Present
 
 - Led lifecycle and growth engineering across dashboard surfaces, paywalls, usage visibility, and notifications.
-- Launched Webflow's first AI tooling in 2023: an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, and observability. Support and engineering use AI-assisted workflows to trace customer issues across multiple sources of truth.
+- Launched Webflow's first AI tooling in 2023. Recently built an internal admin MCP platform (2026) with about 20 tools covering billing, entitlements, account state, payments, and observability. Support and engineering use AI-assisted workflows to trace customer issues across multiple sources of truth.
+- Took Webflow's per-site Web Application Firewall from proof of concept to a configurable customer-facing product, tied to an estimated $4M self-serve opportunity.
 - Rebuilt bandwidth metering and overage lifecycle workflows supporting about $6M in annual incremental revenue. Shipped usage dashboard improvements contributing to an estimated $5M ARR lift through new pricing, packaging, and self-serve upgrades.
 
 ### MasterClass
@@ -31,13 +34,13 @@ Led frontend modernization and growth engineering during platform relaunch. Buil
 
 ### Earlier Experience
 
-**Plink.ai** — Software Engineer — Sep 2018 to Jul 2019  
+Plink.ai — Software Engineer — Sep 2018 to Jul 2019  
 Built TypeScript, React, server-rendered pages, and Node API features for marketing and asset management.
 
-**Event Farm** — Software Engineer — Sep 2015 to Sep 2018  
+Event Farm — Software Engineer — Sep 2015 to Sep 2018  
 Led Angular frontend rewrite. Built ticket management and visual page-building tools.
 
-**Act-On** — Solutions Engineer — Jun 2012 to Sep 2015  
+Act-On — Solutions Engineer — Jun 2012 to Sep 2015  
 Delivered implementation support and built WYSIWYG email, form, and webpage editing tools.
 
 ## Projects
@@ -53,11 +56,11 @@ Open-source programming keyboard for iPhone and iPad. Braces, brackets, Tab, ind
 Vercel deployment status and logs for iPhone and iPad. Production status, visual comparisons, widgets, and Field Log.
 
 ### Paper & Grain
-Origami lessons and Free Fold for iPhone and iPad. Close iPhone Duo to fold paper.
+Origami lessons and free folding for iPhone and iPad.
 
 ## Education
 
-**University of California, Davis** — B.A. Communication and Political Science
+University of California, Davis — B.A. Communication and Political Science
 
 ## Technologies
 
