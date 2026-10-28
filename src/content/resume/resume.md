@@ -8,7 +8,7 @@ jeremy@jeremycollins.net
 
 ## Summary
 
-Product engineer with 10+ years across SaaS, education, creator, event, and marketing platforms.
+Product engineer with 10+ years across SaaS, education, creator, event, and marketing platforms. Started in design and frontend; now full stack, from UI to usage pipelines and billing.
 
 I work on growth engineering: lifecycle surfaces, usage-based billing, analytics, and experiments. I use customer context, data, and AI-assisted development to get from idea to a live change faster.
 
@@ -26,7 +26,8 @@ Senior Software Engineer
 Aug 2022 to Present
 
 - Led lifecycle and growth engineering across dashboard surfaces, paywalls, usage visibility, notifications, and customer-facing product development.
-- Built an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, observability, CI, and internal systems. Support and engineering use it to trace customer-account issues across multiple sources of truth.
+- Launched Webflow's first AI tooling in 2023.
+- In 2026, built an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, observability, CI, and internal systems. Support and engineering use it to trace customer-account issues across multiple sources of truth.
 - Rebuilt bandwidth metering and overage lifecycle workflows. Accurate usage pipelines, customer notifications, dashboard visibility, and billing reconciliation supported about $6M in annual incremental revenue.
 - Took Webflow's per-site Web Application Firewall from an early proof of concept to production. A basic blocker became a configurable customer-facing rule system, tied to an estimated $4M self-serve opportunity and later enterprise adoption.
 - Shipped usage dashboard improvements for new pricing and packaging, self-serve upgrades, and role-based access for agency and enterprise businesses, contributing to an estimated $5M ARR lift.
