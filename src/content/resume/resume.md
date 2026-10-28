@@ -2,12 +2,9 @@
 
 Product Engineer & Builder
 
-Product engineer who started in design and frontend and now works full stack, from UI to usage pipelines and billing.
+Started in design and frontend; now full stack, from UI to usage pipelines and billing.
 
-Greater Sacramento, CA  
-jeremycollins.net  
-jeremy@jeremycollins.net  
-https://www.linkedin.com/in/jeremy-d-collins
+Greater Sacramento, CA · jeremycollins.net · jeremy@jeremycollins.net · https://www.linkedin.com/in/jeremy-d-collins
 
 ## Experience
 
@@ -17,7 +14,8 @@ Senior Software Engineer
 Aug 2022 to Present
 
 - Led lifecycle and growth engineering across dashboard surfaces, paywalls, usage visibility, and notifications.
-- Launched Webflow's first AI tooling in 2023. Recently built an internal admin MCP platform (2026) with about 20 tools covering billing, entitlements, account state, payments, and observability. Support and engineering use AI-assisted workflows to trace customer issues across multiple sources of truth.
+- Launched Webflow's first AI tooling in 2023.
+- In 2026, built an internal admin MCP platform with about 20 tools covering billing, entitlements, account state, payments, and observability, so support and engineering can trace customer issues with AI-assisted workflows.
 - Took Webflow's per-site Web Application Firewall from proof of concept to a configurable customer-facing product, tied to an estimated $4M self-serve opportunity.
 - Rebuilt bandwidth metering and overage lifecycle workflows supporting about $6M in annual incremental revenue. Shipped usage dashboard improvements contributing to an estimated $5M ARR lift through new pricing, packaging, and self-serve upgrades.
 
@@ -28,7 +26,10 @@ Apr 2022 to Aug 2022
 
 Worked on growth: payments, promotions, subscription conversion, experiments, and a Next.js migration.
 
-### HitRecord — Senior Developer — Jul 2019 to Apr 2022
+### HitRecord
+
+Senior Developer  
+Jul 2019 to Apr 2022
 
 Led frontend modernization and growth engineering during platform relaunch. Built Optimizely experiments for Class Projects launch and improved Angular frontend and Rails backend performance.
 
