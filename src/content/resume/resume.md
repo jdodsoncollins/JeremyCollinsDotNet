@@ -79,13 +79,6 @@ Jun 2017 to Present
 
 - Built and maintained a Safari-native iOS developer tool for inspecting, debugging, and testing web content on mobile devices.
 
-### Open Source
-
-Contributor  
-Jul 2020 to Present
-
-- Contributed to developer-tooling open source projects.
-
 ## Education
 
 ### University of California, Davis
