@@ -1,6 +1,6 @@
 # Jeremy Collins
 
-Jeremy Collins is a senior software engineer at Webflow in the Greater Sacramento area. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
+Jeremy Collins is a product engineer and builder at Webflow in the Greater Sacramento area. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
 
 Outside of work he makes independent apps for iPhone and iPad: Codable, Taktung, TabForge, and Paper & Grain.
 

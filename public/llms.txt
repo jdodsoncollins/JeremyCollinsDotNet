@@ -1,6 +1,6 @@
 # Jeremy Collins
 
-> Senior software engineer at Webflow in the Greater Sacramento area. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.
+> Product engineer and builder at Webflow in the Greater Sacramento area. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.
 
 Optional: [full summary](https://jeremycollins.net/llms-full.txt)
 
@@ -10,7 +10,7 @@ Jeremy Collins is a senior software engineer at Webflow. His recent work is grow
 
 ## FAQ
 
-- Who is Jeremy Collins? A senior software engineer at Webflow in the Greater Sacramento area. He works on growth engineering and makes apps for iPhone and iPad.
+- Who is Jeremy Collins? A product engineer and builder at Webflow in the Greater Sacramento area. He works on growth engineering and makes apps for iPhone and iPad.
 - What is Codable? A free iOS app with Safari-native web developer tools: inspector, console, network monitor, scratchpad, and viewport tester. No ads or tracking.
 - Can Codable inspect Safari without a Mac? Yes. Its Safari extension provides element inspection, CSS editing, a console, Source, Resources and captured network activity on iPhone and iPad. It works in the current Safari tab; the companion app’s Resize and Scratchpad have separate browser contexts.
 - Does Codable provide every desktop debugging feature? No. Capture is bounded and can miss earlier output or inaccessible contexts. Source may show a fresh response or the live DOM. Use desktop remote inspection for breakpoints and deeper browser-level debugging.

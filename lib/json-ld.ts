@@ -21,7 +21,7 @@ export const personJsonLd = {
   email: "mailto:jeremy@jeremycollins.net",
   jobTitle: "Senior Software Engineer",
   description:
-    "Senior software engineer at Webflow in the Greater Sacramento area. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
+    "Product engineer and builder at Webflow in the Greater Sacramento area. Makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
   knowsLanguage: "en",
   address: {
     "@type": "PostalAddress",
@@ -150,7 +150,7 @@ export const faqJsonLd = {
       name: "Who is Jeremy Collins?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Jeremy Collins is a senior software engineer at Webflow in the Greater Sacramento area. He works on growth engineering, billing, and usage metering, and makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
+        text: "Jeremy Collins is a product engineer and builder at Webflow in the Greater Sacramento area. He works on growth engineering, billing, and usage metering, and makes Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
       },
     },
     {

@@ -21,8 +21,8 @@ export function HeroSection() {
             Collins
           </h1>
           <p className={styles.heroRole}>
-            Senior Software Engineer · Growth & Full-Stack · TypeScript, React,
-            Next.js · iOS apps
+            Product Engineer & Builder · Growth & Full-Stack · TypeScript,
+            React, Next.js · iOS apps
           </p>
           <p className={styles.heroLocation}>Greater Sacramento, CA</p>
           <div className={styles.heroActions}>
