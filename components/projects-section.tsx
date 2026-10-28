@@ -98,6 +98,11 @@ export function ProjectsSection() {
                     Every lesson and Free Fold are free. Optional tips support
                     the app. No ads, tracking, or subscriptions.
                   </>
+                ) : kind === "codable" || kind === "tabforge" ? (
+                  <>
+                    Free to use. Optional tips support the app. No ads,
+                    tracking, or subscriptions.
+                  </>
                 ) : (
                   <>
                     Free to use. No ads, tracking, subscriptions, or in-app

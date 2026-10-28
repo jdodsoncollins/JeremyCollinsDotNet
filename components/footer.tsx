@@ -12,6 +12,13 @@ export function Footer({ home = false }: { home?: boolean }) {
         <a href="mailto:jeremy@jeremycollins.net">jeremy@jeremycollins.net</a>
         <div>
           <a
+            href="https://www.linkedin.com/in/jeremy-d-collins"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn <AppArrow />
+          </a>
+          <a
             href="https://github.com/jdodsoncollins"
             target="_blank"
             rel="noopener noreferrer"
@@ -19,11 +26,11 @@ export function Footer({ home = false }: { home?: boolean }) {
             GitHub <AppArrow />
           </a>
           <a
-            href="https://linkedin.com/in/jeremycollinsnet"
+            href="https://x.com/jollins"
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn <AppArrow />
+            X <AppArrow />
           </a>
         </div>
       </div>

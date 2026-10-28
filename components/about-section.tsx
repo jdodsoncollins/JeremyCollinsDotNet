@@ -12,7 +12,7 @@ const roles = [
   {
     period: "2022",
     company: "MasterClass",
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     href: "https://www.masterclass.com",
   },
   {
@@ -47,19 +47,20 @@ export function AboutSection() {
         <h2 id="about-title">About me</h2>
         <p>
           I like working on products where knowing the business makes the
-          engineering better.
+          engineering better. At Webflow I work on growth, owning experiments
+          from rollout plan to analysis, and the work has added up to millions
+          in new revenue, from usage-based billing to Webflow's first AI
+          features in 2023.
         </p>
         <p>
           These days I spend a lot of time with agents and automation, so I can
-          take on bigger systems without doing every step by hand.
+          take on bigger systems without doing every step by hand. On the side
+          I design, build, and ship my own iOS apps, start to finish.
         </p>
         <p>
-          I try a lot of new tools. The web still matters to me as an open
+          I try a lot of new tools, and the web still matters to me as an open
           platform with portable standards and room for independent software.
-        </p>
-        <p>
-          Outside of work, I hike, parent, read a lot, and build other apps and
-          sites.
+          Outside of work, I hike, parent, and read a lot.
         </p>
         <Link href="/resume" className={styles.resumeLink}>
           View my resume <AppArrow />
