@@ -37,11 +37,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jeremycollins.net"),
   applicationName: "JeremyCollins.net",
   title: {
-    default: "Jeremy Collins",
+    default: "Jeremy Collins · Senior Software Engineer",
     template: "%s | Jeremy Collins",
   },
   description:
-    "Jeremy Collins is a senior software engineer at Webflow in Los Angeles and the maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
+    "Jeremy Collins is a senior software engineer at Webflow in the Greater Sacramento area and the maker of Codable, Taktung, TabForge, and Paper & Grain for iPhone and iPad.",
   keywords: [
     "Jeremy Collins",
     "software engineer",

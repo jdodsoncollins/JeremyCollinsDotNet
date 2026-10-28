@@ -20,34 +20,47 @@ export function HeroSection() {
             <br />
             Collins
           </h1>
+          <p className={styles.heroRole}>
+            Senior Software Engineer · Growth & Full-Stack · TypeScript, React,
+            Next.js · iOS apps
+          </p>
+          <p className={styles.heroLocation}>Greater Sacramento, CA</p>
           <div className={styles.heroActions}>
-            <a className={styles.heroButton} href="#projects">
-              View projects <AppArrow direction="right" />
+            <a className={styles.heroButton} href="/resume">
+              Resume <AppArrow direction="right" />
             </a>
-            <div className={styles.heroSecondary}>
-              <a
-                className={styles.heroTextLink}
-                href="mailto:jeremy@jeremycollins.net"
-              >
-                Email
-              </a>
-              <a
-                className={styles.heroTextLink}
-                href="https://github.com/jdodsoncollins"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                className={styles.heroTextLink}
-                href="https://linkedin.com/in/jeremycollinsnet"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </div>
+            <a
+              className={styles.heroButton}
+              href="mailto:jeremy@jeremycollins.net"
+            >
+              Email <AppArrow direction="right" />
+            </a>
+          </div>
+          <div className={styles.heroSecondary}>
+            <a
+              className={styles.heroTextLink}
+              href="https://github.com/jdodsoncollins"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className={styles.heroTextLink}
+              href="https://www.linkedin.com/in/jeremy-d-collins"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className={styles.heroTextLink}
+              href="https://x.com/jollins"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X
+            </a>
           </div>
         </div>
         <div className={styles.artwork}>

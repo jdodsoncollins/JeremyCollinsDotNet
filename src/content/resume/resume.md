@@ -2,7 +2,7 @@
 
 Product Engineer & Builder
 
-Los Angeles, CA  
+Greater Sacramento, CA  
 jeremycollins.net  
 jeremy@jeremycollins.net
 
@@ -34,7 +34,7 @@ Aug 2022 to Present
 
 ### MasterClass
 
-Software Engineer  
+Senior Software Engineer  
 Apr 2022 to Aug 2022
 
 - Worked on growth: payments, promotions, subscription conversion, experiments, and a Next.js migration.

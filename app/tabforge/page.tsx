@@ -98,9 +98,8 @@ export default function TabForgePage() {
                 Open source · iOS &amp; iPadOS {app.minimumOS} or later
               </p>
               <p className={styles.freeNote}>
-                Free to use. No ads, tracking, or subscriptions. Optional
-                one-time tips through Apple support development. All features
-                remain free.
+                Free to use. Optional tips support the app. No ads, tracking,
+                or subscriptions.
               </p>
             </div>
             <div

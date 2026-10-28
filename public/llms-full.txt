@@ -1,6 +1,6 @@
 # Jeremy Collins
 
-Jeremy Collins is a senior software engineer at Webflow in Los Angeles. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
+Jeremy Collins is a senior software engineer at Webflow in the Greater Sacramento area. He works on growth engineering: billing, usage metering, paywalls, and customer-facing product. He previously worked at MasterClass, HitRecord, Plink, and Event Farm. He studied at the University of California, Davis.
 
 Outside of work he makes independent apps for iPhone and iPad: Codable, Taktung, TabForge, and Paper & Grain.
 
@@ -66,6 +66,6 @@ Privacy policy: https://jeremycollins.net/paper-and-grain/privacy
 - Resume: https://jeremycollins.net/resume
 - Resume PDF: https://jeremycollins.net/resume/jeremy-collins-resume.pdf
 - GitHub: https://github.com/jdodsoncollins
-- LinkedIn: https://linkedin.com/in/jeremycollinsnet
+- LinkedIn: https://www.linkedin.com/in/jeremy-d-collins
 - X: https://x.com/jollins
 - Email: jeremy@jeremycollins.net

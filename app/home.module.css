@@ -288,6 +288,20 @@
   line-height: 0.98;
   font-weight: 500;
 }
+.heroRole {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-weight: 400;
+}
+.heroLocation {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-weight: 400;
+}
 .heroActions {
   display: flex;
   align-items: center;
@@ -300,6 +314,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 23px;
+  margin-top: 20px;
 }
 .heroButton {
   display: inline-flex;
