@@ -12,7 +12,7 @@
 .page h2,
 .page h3 {
   --typeface: var(--font-ibm-plex), system-ui, sans-serif;
-  --tracking: -0.03em;
+  --tracking: -0.01em;
   font-style: normal;
   text-wrap: balance;
 }

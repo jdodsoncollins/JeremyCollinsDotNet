@@ -130,7 +130,7 @@
     400 clamp(56px, 7vw, 96px) / 1.05 Georgia,
     "Times New Roman",
     serif;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 .message p {
   max-width: 52ch;
@@ -172,7 +172,7 @@
     400 clamp(48px, 6vw, 76px) / 1.08 Georgia,
     "Times New Roman",
     serif;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 .resume :global(.resumeHeader) p {
   margin-top: 16px;
@@ -190,7 +190,7 @@
     400 32px/1.2 Georgia,
     "Times New Roman",
     serif;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: 24px;
 }
 .resume h3 {
