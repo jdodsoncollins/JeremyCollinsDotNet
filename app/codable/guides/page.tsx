@@ -28,9 +28,8 @@ export default function CodableGuidesPage() {
         <p>These walkthroughs use Codable’s bundled local demo, so you can practice on a page made for inspection.</p>
       </header>
       <div className={styles.guideList}>
-        {CODABLE_GUIDES.map((guide, index) => (
+        {CODABLE_GUIDES.map((guide) => (
           <Link href={`${CODABLE_GUIDES_BASE}/${guide.slug}`} className={styles.guideLink} key={guide.slug}>
-            <span className={styles.guideNumber} aria-hidden="true">0{index + 1}</span>
             <div>
               <p className={styles.eyebrow}>{guide.tool} · {guide.duration}</p>
               <h2>{guide.title}</h2>

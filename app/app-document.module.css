@@ -70,7 +70,7 @@
 }
 .page .title {
   --typeface: var(--document-heading-font);
-  --tracking: -0.03em;
+  --tracking: -0.01em;
   font-size: clamp(40px, 4.8vw, 62px);
   line-height: 1.12;
   font-weight: 500;
@@ -127,7 +127,7 @@
 }
 .page .content h2 {
   --typeface: var(--document-heading-font);
-  --tracking: -0.02em;
+  --tracking: 0;
   margin-bottom: 20px;
   font-size: clamp(25px, 3vw, 31px);
   line-height: 1.25;

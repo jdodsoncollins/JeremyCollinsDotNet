@@ -20,8 +20,6 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.65rem;
   line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .theme-disclosure-chevron {
@@ -73,8 +71,6 @@
   font-family: var(--font-space-mono), monospace;
   font-size: 0.65rem;
   line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition:
     color 160ms ease,
     background 160ms ease,

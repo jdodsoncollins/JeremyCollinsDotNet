@@ -123,7 +123,6 @@
   max-width: 1360px;
   padding: 28px 56px;
   margin-inline: auto;
-  border-bottom: 1px solid #f3f1e825;
 }
 .page.page .header.header {
   background: #20372f !important;
@@ -282,7 +281,7 @@
   z-index: 2;
 }
 .page .heroTitle {
-  --home-tracking: -0.04em;
+  --home-tracking: -0.02em;
   color: #f3f1e8;
   font-size: clamp(78px, 8.5vw, 122px);
   line-height: 0.98;
@@ -433,7 +432,7 @@
   margin-bottom: 44px;
 }
 .sectionHeading h2 {
-  --home-tracking: -0.04em;
+  --home-tracking: -0.02em;
   color: var(--ink);
   font-size: clamp(48px, 5vw, 70px);
   font-weight: 500;
@@ -460,7 +459,6 @@
   align-content: center;
   min-height: 80px;
   padding-block: 16px;
-  border-block: 1px solid var(--line);
 }
 .appIndex a > span:first-child {
   color: var(--ink);
@@ -490,7 +488,6 @@
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   color: var(--card-ink);
-  border: 1px solid var(--card-line);
   min-width: 0;
   overflow: hidden;
 }
@@ -509,7 +506,7 @@
   border-radius: 11px;
 }
 .appBrand h3 {
-  --home-tracking: -0.04em;
+  --home-tracking: -0.02em;
   color: var(--card-ink);
   font-size: 37px;
   line-height: 1.2;
@@ -521,7 +518,7 @@
   min-height: 44px;
 }
 .page .project h4 {
-  --home-tracking: -0.025em;
+  --home-tracking: 0;
   color: var(--card-ink);
   font-size: clamp(23px, 2.5vw, 33px);
   line-height: 1.22;
@@ -552,8 +549,7 @@
   font-size: 14px;
 }
 .features li {
-  padding-block: 9px;
-  border-top: 1px solid var(--card-line);
+  padding-block: 4px;
 }
 .page .freeNote {
   color: var(--card-ink);
@@ -718,7 +714,7 @@
 }
 :global(:root[data-era="modern"]) .tabforge .appBrand h3 {
   --home-type: var(--mono);
-  --home-tracking: -0.04em;
+  --home-tracking: -0.02em;
   font-size: 30px;
 }
 .tabforge .projectArt {
@@ -729,7 +725,7 @@
 }
 :global(:root[data-era="modern"]) .tabforge h4 {
   --home-type: Georgia, "Times New Roman", serif;
-  --home-tracking: -0.035em;
+  --home-tracking: -0.01em;
   font-size: clamp(34px, 3.3vw, 46px);
 }
 .paper {
@@ -756,7 +752,7 @@
 }
 :global(:root[data-era="modern"]) .paper :is(.appBrand h3, h4) {
   --home-type: Georgia, "Times New Roman", serif;
-  --home-tracking: -0.035em;
+  --home-tracking: -0.01em;
   font-weight: 400;
 }
 :global(:root[data-era="modern"]) .paper h4 {
@@ -788,7 +784,7 @@
 }
 :global(:root[data-era="modern"]) .taktung :is(.appBrand h3, h4) {
   --home-type: Georgia, "Times New Roman", serif;
-  --home-tracking: -0.025em;
+  --home-tracking: 0;
   font-weight: 400;
 }
 :global(:root[data-era="modern"]) .taktung .projectArt {
@@ -807,7 +803,7 @@
   padding-top: 20px;
 }
 .aboutCopy h2 {
-  --home-tracking: -0.04em;
+  --home-tracking: -0.02em;
   color: var(--ink);
   font-size: clamp(32px, 3.4vw, 47px);
   line-height: 1.12;
@@ -851,11 +847,10 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 20px;
-  border-top: 1px solid var(--line);
-  padding-block: 19px;
+  padding-block: 14px;
 }
 .experience h3 {
-  --home-tracking: -0.02em;
+  --home-tracking: 0;
   color: var(--ink);
   font-size: 21px;
   font-weight: 400;
@@ -882,8 +877,7 @@
   margin-top: 5px;
 }
 .experience li > span {
-  --home-type: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 

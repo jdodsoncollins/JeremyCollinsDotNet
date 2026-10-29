@@ -3,16 +3,15 @@
   text-underline-offset: .2em;
 }
 .container { max-width: 1248px; margin-inline: auto; padding: 0 56px 72px; }
-.page .eyebrow { color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .07em !important; text-transform: uppercase; }
+.page .eyebrow { color: var(--accent); font-size: 14px; font-weight: 600; }
 .indexHeader { max-width: 800px; padding-block: 64px 48px; }
-.page h1 { color: var(--ink); font-size: clamp(40px, 5.1vw, 66px); line-height: 1.06; font-weight: 600; letter-spacing: -.045em !important; text-wrap: balance; }
+.page h1 { color: var(--ink); font-size: clamp(40px, 5.1vw, 66px); line-height: 1.06; font-weight: 600; letter-spacing: -0.02em !important; text-wrap: balance; }
 .indexHeader h1 { margin-top: 18px; }
 .page .lead { margin-top: 24px; max-width: 68ch; color: var(--ink); font-size: 20px; line-height: 1.6; }
 .indexHeader > p:last-child { margin-top: 20px; max-width: 62ch; }
 .guideList { border-top: 1px solid var(--line); }
-.guideLink { display: grid; grid-template-columns: 64px 1fr 48px; align-items: start; gap: 20px; padding: 36px 8px; border-bottom: 1px solid var(--line); }
+.guideLink { display: grid; grid-template-columns: 1fr 48px; align-items: start; gap: 20px; padding: 36px 8px; border-bottom: 1px solid var(--line); }
 .guideLink:hover { background: #eaf0f6; }
-.guideNumber { color: var(--accent); font: 20px var(--mono-font); padding-top: 2px; }
 .guideLink h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.2; margin: 12px 0 16px; }
 .guideLink p:last-child { max-width: 70ch; }
 .guideArrow { font-size: 30px; color: var(--accent); text-align: right; }
@@ -29,7 +28,7 @@
 .articleGrid { display: grid; grid-template-columns: minmax(0, 720px) minmax(220px, 300px); align-items: start; justify-content: space-between; gap: 64px; }
 .prose { min-width: 0; }
 .prose p { font-size: 17px; line-height: 1.8; }
-.prose h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.025em !important; text-wrap: pretty; }
+.prose h2 { font-size: 28px; line-height: 1.2; letter-spacing: 0 !important; text-wrap: pretty; }
 .prose p + p { margin-top: 16px; }
 .setup { border-left: 3px solid var(--accent); padding: 4px 0 4px 24px; }
 .setup h2 { font-size: 22px; margin-bottom: 14px; }
@@ -68,8 +67,7 @@
   .indexHeader { padding-block: 40px 32px; }
   .page h1 { font-size: clamp(36px, 8vw, 52px); }
   .page .lead { font-size: 18px; }
-  .guideLink { grid-template-columns: 28px 1fr; gap: 14px; padding-block: 28px; }
-  .guideNumber { font-size: 14px; }
+  .guideLink { grid-template-columns: 1fr; gap: 14px; padding-block: 28px; }
   .guideArrow { display: none; }
   .guideLink h2 { font-size: 25px; }
   .articleHeader { padding-bottom: 32px; }
