@@ -339,7 +339,7 @@ export default function TabForgePage() {
               <p>
                 The companion playground includes syntax highlighting, line
                 numbers, undo, and sharing. It edits text; it does not run code.
-                Its settings and draft are separate from the installed keyboard.
+                Its draft stays separate from the installed keyboard.
               </p>
             </div>
           </section>

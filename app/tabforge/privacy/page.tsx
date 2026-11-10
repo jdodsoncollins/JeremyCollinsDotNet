@@ -22,7 +22,7 @@ export default function TabForgePrivacyPolicy() {
     <AppDocument
       app="tabforge"
       title="TabForge Privacy Policy"
-      effectiveDate="October 27, 2026"
+      effectiveDate="November 10, 2026"
       jsonLd={tabforgePrivacyJsonLd}
     >
       <div>
@@ -70,9 +70,9 @@ export default function TabForgePrivacyPolicy() {
               <strong>What is saved stays on your device.</strong> Keyboard
               preferences, custom snippets, the playground draft, and, only if
               you turn on Learn my tap positions, average tap offsets for each
-              letter key. Each stays in the keyboard&apos;s or app&apos;s own
-              local storage and is never uploaded. Device backups you set up may
-              include it.
+              letter key. Each stays on the device, in the keyboard&apos;s or
+              app&apos;s own storage or in a container the two share there, and
+              is never uploaded. Device backups you set up may include it.
             </li>
             <li>
               <strong>Language features are optional.</strong> Autocorrect,
@@ -184,6 +184,12 @@ export default function TabForgePrivacyPolicy() {
                 preferences.
               </li>
               <li>
+                <strong>Settings and snippets changed in the companion app:</strong>{" "}
+                one file in an App Group container shared by the app and the
+                keyboard, so the app can configure the keyboard. Only the app
+                writes it; the keyboard reads it.
+              </li>
+              <li>
                 <strong>Learned tap offsets (optional, off by default):</strong>{" "}
                 the average tap offset and a capped tap count for each letter
                 key, in the keyboard extension&apos;s local UserDefaults, only
@@ -202,16 +208,16 @@ export default function TabForgePrivacyPolicy() {
               to insert it.
             </p>
             <p>
-              The companion&apos;s keyboard and layout previews use a separate,
-              in-memory set of settings and snippets. Preview changes are
-              discarded when that app process ends. They do not configure the
-              installed keyboard and are not saved as companion keyboard
-              preferences. The playground draft remains saved independently.
+              The companion app&apos;s Playground keyboard, Layouts, and Themes
+              edit the same settings and snippets as the installed keyboard. The
+              app saves them, with the time each setting or snippet changed, in
+              the shared file described below. The playground draft is saved
+              separately and is never shared with the keyboard.
             </p>
             <p>Do not put secrets in drafts or snippets.</p>
             <p>
-              These records use the iOS application sandbox and the
-              device&apos;s normal storage protections. TabForge does not add
+              These records use the iOS application sandbox, including the App
+              Group container, and the device&apos;s normal storage protections. TabForge does not add
               separate encryption or password protection to drafts, snippets, or
               preferences. Device backups and operating-system retention rules
               may apply.
@@ -227,33 +233,68 @@ export default function TabForgePrivacyPolicy() {
               settings and custom snippets, and turns Learn my tap positions off,
               which erases learned tap offsets. It does not clear the playground
               draft; delete or replace the playground text separately.
+              Resetting from the companion app&apos;s Playground keyboard resets
+              the shared copy, and the keyboard adopts that reset the next time
+              it opens, except for changes made in the keyboard after the reset.
             </p>
             <p>
-              The update retains an existing keyboard-local settings record when
-              one is present. It does not read, import, or erase an older App
-              Group record or the companion app&apos;s old keyboard preferences.
-              Settings or snippets that existed only in those old locations are
-              not automatically transferred.
+              An update retains an existing keyboard-local settings record when
+              one is present, and merges the app&apos;s shared file into it
+              setting by setting, so it never replaces the keyboard&apos;s
+              settings wholesale. It does not read, import, or erase the shared
+              records of builds before 11, which used a different format, or the
+              companion app&apos;s old keyboard preferences. Settings or snippets
+              that existed only in those old locations are not automatically
+              transferred.
             </p>
             <p>
               Those legacy records may remain under iOS storage and backup
-              rules; removing the sharing capability is not a guarantee of
-              erasure. Removing the app and keyboard removes their installed
-              containers subject to iOS behavior; backups may retain earlier
-              data.
+              rules. Removing the app and keyboard removes their installed
+              containers, including the shared one, subject to iOS behavior;
+              backups may retain earlier data.
             </p>
           </div>
         </section>
 
         <section>
-          <h2>No Full Access or Shared Container</h2>
+          <h2>Full Access and the Shared Container</h2>
           <div>
             <p>
-              This version does not request keyboard Full Access and does not
-              configure an App Group. Keyboard settings and custom snippets are
-              managed from the keyboard&apos;s gear menu and saved in its own
-              container. The companion app does not read, write, or synchronize
-              those records.
+              TabForge does not request keyboard Full Access. The companion app
+              and the keyboard share an App Group container, and only the
+              companion app writes to it: one file holding the keyboard settings
+              and snippets changed in the app, with the time each changed.
+              Without Full Access, iOS lets a keyboard read its containing
+              app&apos;s shared container but not write to it. The keyboard reads
+              the file when it appears and adopts each setting or snippet the
+              app changed more recently than the keyboard did, then saves the
+              result in its own container. A missing, unreadable, or unusually
+              large file is ignored.
+            </p>
+            <p>
+              Changes made with the keyboard&apos;s own gear menu stay in the
+              keyboard&apos;s container. The keyboard cannot send them back, so
+              the app can show a setting the keyboard has since changed. The
+              shared file never contains host text, typing context, learned tap
+              offsets, or which keyboard tips were shown. It is not sent
+              anywhere.
+            </p>
+            <p>
+              Haptic feedback is the only TabForge feature that needs Full
+              Access, because iOS lets a keyboard vibrate only with it. Key click
+              sounds work without it. The companion app lists such features
+              under Settings, Full Access. Each stays off until you turn it on in
+              the keyboard, even when Full Access is granted, and that choice is
+              never taken from the shared file. Because TabForge does not request
+              Full Access, none of them can turn on in this version. A version
+              that requests Full Access will update this policy first.
+            </p>
+            <p>
+              Version note: sharing settings from the companion app is new in
+              version 1.2.0. In version 1.1.1 and earlier, the companion&apos;s
+              keyboard and layout previews keep their settings in memory, the
+              app does not configure the installed keyboard, and no App Group is
+              used.
             </p>
             <p>
               Snippet names and text are edited in the keyboard&apos;s own
@@ -306,8 +347,8 @@ export default function TabForgePrivacyPolicy() {
               to load products and process optional, one-time tips. Tips do not
               unlock features or start a subscription. All app and keyboard
               features remain free to use. The keyboard extension has no
-              purchase flow and shares no settings, snippets, or typing context
-              with the companion app.
+              purchase flow, shares no typing context with the companion app,
+              and never writes to the container it shares with the app.
             </p>
             <p>
               Apple presents the purchase confirmation and handles payment
@@ -364,10 +405,11 @@ export default function TabForgePrivacyPolicy() {
             </p>
             <p>
               The keyboard extension does not launch the companion app.
-              Configure the installed keyboard from its gear menu. The companion
-              app contains setup and compatibility information, source/privacy
-              links, credits, and licenses; it does not contain controls for the
-              installed keyboard.
+              Configure the keyboard from its gear menu in another app, or in the
+              companion app&apos;s Playground, Layouts, and Themes; changes made
+              in the companion app reach the keyboard the next time it opens. The
+              companion app also contains setup and compatibility information,
+              source/privacy links, credits, and licenses.
             </p>
           </div>
         </section>
